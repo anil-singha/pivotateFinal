@@ -11,6 +11,8 @@ import LoginForm from './components/LoginForm';
 import RegistrationForm from './components/RegistrationForm';
 import Apps from './components/AppInfo/Apps';
 
+import FormModal from './components/FormModal';
+
 const Wrapper = styled.div`
   padding: 5em 5em;
   min-width: 480px;
@@ -50,7 +52,10 @@ const App = () => (
           }
 
           return (
-            <Apps customerId={ currentUser.id } />
+            <>
+              <FormModal />
+              <Apps customerId={ currentUser.id } />
+            </>
           );
         }}
       </NoStackConsumer>
