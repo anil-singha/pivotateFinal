@@ -36,16 +36,15 @@ const SampleForm = ({ onCancel, submitForm, successView }) => {
 
     const executionParameters = JSON.stringify({
       parentInstanceId: 'c9f086e6-15d3-4bfc-8296-783a2bb29cf5',
-      app,
-      description
+      values: { app, description },
     });
 
     try {
-      console.log(executionParameters);
       await submitForm({
         variables: {
           actionId: 'form-submission-add-version-9d2dd0e7-2aca-4212-88bc-59f8bf74e992',
           executionParameters,
+          unrestricted: false,
         },
       });
       
