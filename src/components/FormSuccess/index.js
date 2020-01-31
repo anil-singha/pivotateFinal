@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components'; 
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  padding: 2em;
+  border: 1px solid black;
+`;
 
 const Row = styled.p``;
 
@@ -21,7 +24,7 @@ const FormSuccess = ({ onDismiss }) => {
           type="button"
           onClick={handleDismiss}
         >
-          Ok
+          Dismiss
         </Button>
       </Row>
     </Wrapper>

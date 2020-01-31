@@ -8,7 +8,10 @@ import { graphql } from '@apollo/react-hoc';
 import { EXECUTE } from '@nostack/no-stack';
 import styled from 'styled-components';
 
-const Form = styled(BareForm)``;
+const Form = styled(BareForm)`
+  padding: 2em;
+  border: 1px solid black;
+`;
 
 const Row = styled.p``;
 

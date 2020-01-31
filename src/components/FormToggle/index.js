@@ -4,6 +4,10 @@ import styled from 'styled-components';
 import SampleForm from '../SampleForm';
 import FormSuccess from '../FormSuccess';
 
+const Wrapper = styled.div`
+  margin: 1em;
+`;
+
 const Button = styled.button``;
 
 const FormToggle = () => {
@@ -14,7 +18,7 @@ const FormToggle = () => {
   const closeModal = () => setIsModalVisible(false);
 
   return (
-    <div>
+    <Wrapper>
       <Button type="button" onClick={toggleModal}>
         Show/Hide Sample Form
       </Button>
@@ -26,7 +30,7 @@ const FormToggle = () => {
           }
         />
       )}
-    </div>
+    </Wrapper>
   );
 };
 
