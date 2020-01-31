@@ -44,7 +44,7 @@ const FormModal = () => {
         />
       </Modal>
     </div>
-  )
+  );
 };
 
 export default FormModal;

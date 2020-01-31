@@ -5,7 +5,8 @@ import {
   Field as BareField 
 } from 'formik';
 import { graphql } from '@apollo/react-hoc';
-import { EXECUTE } from '@nostack/no-stack';
+import { withNoStack, EXECUTE } from '@nostack/no-stack';
+import compose from '@shopify/react-compose';
 import styled from 'styled-components';
 
 const Form = styled(BareForm)`
@@ -25,7 +26,7 @@ const SubmitButton = styled.button``;
 
 const CancelButton = styled.button``;
 
-const SampleForm = ({ onCancel, submitForm, successView }) => {
+const SampleForm = ({ currentUser, onCancel, submitForm, successView }) => {
   const [isCompleted, setIsCompleted] = useState(false);
   const [error, setError] = useState('');
 
@@ -38,19 +39,23 @@ const SampleForm = ({ onCancel, submitForm, successView }) => {
     setError('');
 
     const executionParameters = JSON.stringify({
-      parentInstanceId: 'c9f086e6-15d3-4bfc-8296-783a2bb29cf5',
+      parentInstanceId: currentUser.id,
       values: { app, description },
     });
 
     try {
-      await submitForm({
+      const { data } = await submitForm({
         variables: {
           actionId: 'form-submission-add-version-9d2dd0e7-2aca-4212-88bc-59f8bf74e992',
           executionParameters,
           unrestricted: false,
         },
       });
-      
+
+      if (!data.Execute) {
+        throw new Error('Null API response.');
+      }
+
       setIsCompleted(true);
     } catch (e) {
       console.log(e);
@@ -108,6 +113,7 @@ const SampleForm = ({ onCancel, submitForm, successView }) => {
   )
 };
 
-export default graphql(
-  EXECUTE, { name: 'submitForm' }
+export default compose(
+  withNoStack,
+  graphql( EXECUTE, { name: 'submitForm' }),
 )(SampleForm);
