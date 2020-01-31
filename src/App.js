@@ -12,6 +12,7 @@ import RegistrationForm from './components/RegistrationForm';
 import Apps from './components/AppInfo/Apps';
 
 import FormModal from './components/FormModal';
+import FormToggle from './components/FormToggle';
 
 const Wrapper = styled.div`
   padding: 5em 5em;
@@ -54,6 +55,7 @@ const App = () => (
           return (
             <>
               <FormModal />
+              <FormToggle />
               <Apps customerId={ currentUser.id } />
             </>
           );
