@@ -8,6 +8,7 @@ import { graphql } from '@apollo/react-hoc';
 import { withNoStack, EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 import styled from 'styled-components';
+import {SUBMIT_FORM_FOR_REGISTRATION_INFO_ACTION_ID} from "../../config";
 
 const Form = styled(BareForm)`
   padding: 2em;
@@ -33,20 +34,24 @@ const SampleForm = ({ currentUser, onCancel, submitForm, successView }) => {
   const initialValues = {
     app: '',
     description: '',
+    creditCardNumber: '',
+    expirationDate: '',
+    csv: '',
+    creditCardName: '',
   };
 
-  const handleSubmit = async ({ app, description }, { setSubmitting }) => {
+  const handleSubmit = async ({ app, description, creditCardNumber, expirationDate, csv, creditCardName }, { setSubmitting }) => {
     setError('');
 
     const executionParameters = JSON.stringify({
       parentInstanceId: currentUser.id,
-      values: { app, description },
+      values: { app, description, creditCardNumber, expirationDate, csv },
     });
 
     try {
       const { data } = await submitForm({
         variables: {
-          actionId: 'form-submission-add-version-9d2dd0e7-2aca-4212-88bc-59f8bf74e992',
+          actionId: SUBMIT_FORM_FOR_REGISTRATION_INFO_ACTION_ID,
           executionParameters,
           unrestricted: false,
         },
@@ -89,6 +94,26 @@ const SampleForm = ({ currentUser, onCancel, submitForm, successView }) => {
           <Row>
             <Label htmlFor="description">Description</Label>
             <Field name="description" disabled={isSubmitting} />
+          </Row>
+
+          <Row>
+            <Label htmlFor="creditCardNumber">Credit Card Number</Label>
+            <Field name="creditCardNumber" disabled={isSubmitting} />
+          </Row>
+
+          <Row>
+            <Label htmlFor="creditCardName">Credit Card Owner</Label>
+            <Field name="creditCardName" disabled={isSubmitting} />
+          </Row>
+
+          <Row>
+            <Label htmlFor="expirationDate">Expiration Date</Label>
+            <Field name="expirationDate" disabled={isSubmitting} />
+          </Row>
+
+          <Row>
+            <Label htmlFor="csv">CSV (Special code on the back)</Label>
+            <Field name="csv" disabled={isSubmitting} />
           </Row>
 
           <Row>

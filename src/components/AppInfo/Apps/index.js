@@ -8,8 +8,8 @@ import { flattenData } from '../../../flattenData';
 import AppCreationForm from '../AppCreationForm';
 import App from '../App';
 
-import { SOURCE_APP_INFO_ID } from '../../../config';
-import { APP_INFO_RELATIONSHIPS, SOURCE_APP_INFO_QUERY } from '../../source-props/appInfo';
+import { SOURCE_REGISTRATION_INFO_ID } from '../../../config';
+import { REGISTRATION_INFO_RELATIONSHIPS, SOURCE_REGISTRATION_INFO_QUERY } from '../../source-props/appInfo';
 
 // add styling here
 const AppsStyleWrapper = styled.div`
@@ -57,9 +57,9 @@ class Apps extends Component {
 
     return (
       <Unit
-        id={ SOURCE_APP_INFO_ID }
-        typeRelationships={ APP_INFO_RELATIONSHIPS }
-        query={ SOURCE_APP_INFO_QUERY }
+        id={ SOURCE_REGISTRATION_INFO_ID }
+        typeRelationships={ REGISTRATION_INFO_RELATIONSHIPS }
+        query={ SOURCE_REGISTRATION_INFO_QUERY }
         parameters={parameters}
       >
         {({loading, error, data, refetchQueries}) => {

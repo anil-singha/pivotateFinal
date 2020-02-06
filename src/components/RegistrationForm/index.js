@@ -52,6 +52,18 @@ const RegistrationForm = ({
   const [registrationCompleted, setRegistrationCompleted] = useState(false);
   const [formError, setFormError] = useState('');
 
+  /*
+    The following should be replaced.  Probably stored as a state variable and
+    updated by the child forms.
+
+    It seems to me that there could be a state var to determine whether:
+     1. no child form is visible (haven't pushed "submit")
+     2. the child form (or it's child) is visible;
+     3. the submit has been pushed on the sequence of child forms, and it's time to call submit
+     4. The submission succeeded, and the final welcome message should be visible.
+   */
+  const formValuesTemp = "{\"app\":\"newApp\",\"description\":\"newApp Desc\",\"creditCardNumber\":\"232\",\"expirationDate\":\"234243\",\"csv\":\"46\"}";
+
   const handleSubmit = async (
     values,
     { setSubmitting },
@@ -71,6 +83,7 @@ const RegistrationForm = ({
           lastName: values.lastName,
           email: values.email,
           password: values.password,
+          formValues: formValuesTemp,
         },
       });
 
@@ -92,7 +105,7 @@ const RegistrationForm = ({
   if (registrationCompleted) {
     return (
       <Wrapper>
-        <p>Successfully created account! You can now log in.</p>
+        <p>Successfully created account! Please check your email for a verification message.  Push that, and you're in!</p>
       </Wrapper>
     );
   }

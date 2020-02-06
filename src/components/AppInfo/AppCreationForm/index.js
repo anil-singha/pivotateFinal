@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { withNoStack, EXECUTE_ACTION } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 
-import { CREATE_APP_FOR_APP_INFO_ACTION_ID
+import { CREATE_APP_FOR_REGISTRATION_INFO_ACTION_ID
  } from '../../../config';
 
 // change styling here
@@ -46,7 +46,7 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
 
     const createAppResponse = await createApp({
       variables: {
-        actionId: CREATE_APP_FOR_APP_INFO_ACTION_ID,
+        actionId: CREATE_APP_FOR_REGISTRATION_INFO_ACTION_ID,
         executionParameters: JSON.stringify({
           parentInstanceId: customerId,
           value: appValue,

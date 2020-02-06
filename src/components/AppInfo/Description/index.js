@@ -5,8 +5,8 @@ import compose from '@shopify/react-compose';
 import { graphql } from '@apollo/react-hoc';
 
 import {
-  UPDATE_DESCRIPTION_FOR_APP_INFO_ACTION_ID,
-  DELETE_DESCRIPTION_FOR_APP_INFO_ACTION_ID,
+  UPDATE_DESCRIPTION_FOR_REGISTRATION_INFO_ACTION_ID,
+  DELETE_DESCRIPTION_FOR_REGISTRATION_INFO_ACTION_ID,
 } from '../../../config';
 
 import EditInstanceForm from '../../EditInstanceForm';
@@ -82,7 +82,7 @@ function Description({
 
     await updateInstance({
       variables: {
-        actionId: UPDATE_DESCRIPTION_FOR_APP_INFO_ACTION_ID,
+        actionId: UPDATE_DESCRIPTION_FOR_REGISTRATION_INFO_ACTION_ID,
         executionParameters: JSON.stringify({
           value: descriptionValue,
           instanceId: description.id,
@@ -121,7 +121,7 @@ function Description({
     try {
       await deleteInstance({
         variables: {
-          actionId: DELETE_DESCRIPTION_FOR_APP_INFO_ACTION_ID,
+          actionId: DELETE_DESCRIPTION_FOR_REGISTRATION_INFO_ACTION_ID,
           executionParameters: JSON.stringify({
             parentInstanceId: parentId,
             instanceId: description.id,

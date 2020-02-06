@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-  export const SOURCE_APP_INFO_QUERY = gql`
+  export const SOURCE_REGISTRATION_INFO_QUERY = gql`
   query UNIT(
     $id: ID!
     $typeRelationships: String!
@@ -32,7 +32,7 @@ import gql from 'graphql-tag';
   }
 `;
 
-export const APP_INFO_RELATIONSHIPS = {
+export const REGISTRATION_INFO_RELATIONSHIPS = {
    app: {
         description: null
     },
