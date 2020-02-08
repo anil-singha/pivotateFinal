@@ -7,10 +7,10 @@ import Description from '../Description';
 
 const DescriptionsStyleWrapper = styled.div``;
 
-const Button = styled.button`
-  display: block;
-  margin: 0 auto;
-`;
+// const Button = styled.button`
+//   display: block;
+//   margin: 0 auto;
+// `;
 
 class Descriptions extends Component {
   state = {

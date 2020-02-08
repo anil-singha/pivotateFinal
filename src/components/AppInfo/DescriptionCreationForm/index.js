@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { graphql } from '@apollo/react-hoc';
 import styled from 'styled-components';
-import { withNoStack, EXECUTE_ACTION } from '@nostack/no-stack';
+import { EXECUTE_ACTION } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 
-import { CREATE_DESCRIPTION_FOR_REGISTRATION_INFO_ACTION_ID
- } from '../../../config';
+// import { CREATE_DESCRIPTION_FOR_REGISTRATION_INFO_ACTION_ID } from '../../../config';
 
 // change styling here
 const Form = styled.div`
@@ -37,19 +36,19 @@ function DescriptionCreationForm({ parentId, createDescription, refetchQueries }
 
     updateLoading(true);
 
-    const createDescriptionResponse = await createDescription({
-      variables: {
-        actionId: CREATE_DESCRIPTION_FOR_REGISTRATION_INFO_ACTION_ID,
-        executionParameters: JSON.stringify({
-          parentInstanceId: parentId,
-          value: descriptionValue,
-        }),
-        unrestricted: false,
-      },
-      refetchQueries
-    });
+    // const createDescriptionResponse = await createDescription({
+    //   variables: {
+    //     actionId: CREATE_DESCRIPTION_FOR_REGISTRATION_INFO_ACTION_ID,
+    //     executionParameters: JSON.stringify({
+    //       parentInstanceId: parentId,
+    //       value: descriptionValue,
+    //     }),
+    //     unrestricted: false,
+    //   },
+    //   refetchQueries
+    // });
 
-    const newDescriptionData = JSON.parse(createDescriptionResponse.data.ExecuteAction);
+    // const newDescriptionData = JSON.parse(createDescriptionResponse.data.ExecuteAction);
 
     
 

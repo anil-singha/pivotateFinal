@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { graphql } from '@apollo/react-hoc';
 import styled from 'styled-components';
-import { withNoStack, EXECUTE_ACTION } from '@nostack/no-stack';
+import { EXECUTE_ACTION } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 
-import { CREATE_APP_FOR_REGISTRATION_INFO_ACTION_ID
- } from '../../../config';
+// import { CREATE_APP_FOR_REGISTRATION_INFO_ACTION_ID } from '../../../config';
 
 // change styling here
 const Form = styled.div`
@@ -44,19 +43,19 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
 
 
 
-    const createAppResponse = await createApp({
-      variables: {
-        actionId: CREATE_APP_FOR_REGISTRATION_INFO_ACTION_ID,
-        executionParameters: JSON.stringify({
-          parentInstanceId: customerId,
-          value: appValue,
-        }),
-        unrestricted: false,
-      },
-      refetchQueries
-    });
+    // const createAppResponse = await createApp({
+    //   variables: {
+    //     actionId: CREATE_APP_FOR_REGISTRATION_INFO_ACTION_ID,
+    //     executionParameters: JSON.stringify({
+    //       parentInstanceId: customerId,
+    //       value: appValue,
+    //     }),
+    //     unrestricted: false,
+    //   },
+    //   refetchQueries
+    // });
 
-    const newAppData = JSON.parse(createAppResponse.data.ExecuteAction);
+    // const newAppData = JSON.parse(createAppResponse.data.ExecuteAction);
 
     
 
