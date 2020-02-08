@@ -32,14 +32,14 @@ const AuthTabs = ({ menuTitles, children }) => {
     <div>
       <MenuContainer>
         {menuTitles.map((title, index) => (
-          <Button 
+          <Button
+            key={index}
             selected={index === selectedTab}
             onClick={e => {
               e.preventDefault();
-
               setSelectedTab(index);
-            }
-          }>
+            }}
+          >
             {title}
           </Button>
         ))}
@@ -51,7 +51,7 @@ const AuthTabs = ({ menuTitles, children }) => {
           }
 
           return (
-            <div class="test">{child}</div>
+            <div className="test" key={index}>{child}</div>
           );
         })}
       </div>

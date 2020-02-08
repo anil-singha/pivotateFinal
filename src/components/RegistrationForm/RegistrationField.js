@@ -6,16 +6,43 @@ const RegistrationField = ({
   fieldLabel,
   type,
   name,
+  as,
+  placeholder,
+  options = [],
+  value
 }) => (
   <Row>
-    <label>
-      {fieldLabel}
-      <Field type={type} name={name} />
-    </label>
+    {type !== 'checkbox' && (
+      <label>
+        {fieldLabel}
+        {!as && (<Field type={type} name={name} placeholder={placeholder} />)}
+        {as && (
+          <Field name={name} as={as} placeholder={placeholder}>
+            {options.length !== 0 && options.map((opt, index) => <option key={index} value={opt.value}>{opt.label}</option>)}
+          </Field>
+        )}
+      </label>
+    )}
+    {type === 'checkbox' && (
+        <Field name={name}>
+          {({ field, form }) => {
+            return (
+              <label>
+                <input
+                  {...field}
+                  type="checkbox"
+                />
+                {fieldLabel}
+              </label>
+            );
+          }}
+        </Field>
+      )}
     <ErrorContainer>
       <ErrorMessage name={name} />
     </ErrorContainer>
   </Row>
 );
+
 
 export default RegistrationField;
