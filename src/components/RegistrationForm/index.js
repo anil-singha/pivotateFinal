@@ -39,6 +39,15 @@ const RegistrationForm = ({
   const [register] = useMutation(REGISTER_USER);
   const [registrationCompleted, setRegistrationCompleted] = useState(false);
   const [formError, setFormError] = useState('');
+
+
+  /*
+    A "stepper" is created and uses state to be sure that:
+     1. no child form is visible (haven't pushed "submit")
+     2. the child form (or it's child) is visible;
+     3. the submit has been pushed on the sequence of child forms, and it's time to call submit
+     4. The submission succeeded, and the final welcome message should be visible.
+   */
   const [step, setStep] = useState(1);
 
   const [username, setUsername] = useState('');
@@ -49,17 +58,7 @@ const RegistrationForm = ({
 
   const [app, setApp] = useState('');
   const [description, setDescription] = useState('');
-  
-  /*
-    The following should be replaced.  Probably stored as a state variable and
-    updated by the child forms.
 
-    It seems to me that there could be a state var to determine whether:
-     1. no child form is visible (haven't pushed "submit")
-     2. the child form (or it's child) is visible;
-     3. the submit has been pushed on the sequence of child forms, and it's time to call submit
-     4. The submission succeeded, and the final welcome message should be visible.
-   */
   // const formValuesTemp = "{\"app\":\"newApp\",\"description\":\"newApp Desc\",\"creditCardNumber\":\"232\",\"expirationDate\":\"234243\",\"csv\":\"46\"}";
 
   const handleSubmit = async (
