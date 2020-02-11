@@ -79,11 +79,21 @@ const BasicDetailsForm = ({
             </div>
             <div class="flex justify-space-between">
               <button type="button" class="button button--fb">
-                Sign up with
+                Sign up with{" "}
+                <img
+                  class="social-icon"
+                  height="14"
+                  src="images/facebook.png"
+                />
               </button>
               <div style={{ width: "50px" }}></div>
               <button type="button" class="button button--google">
                 Sign up with
+                <img
+                  class="social-icon"
+                  height="14"
+                  src="images/google plus.png"
+                />
               </button>
             </div>
             <br />
