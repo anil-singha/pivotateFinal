@@ -1,13 +1,33 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.is--hidden {
+  display: none;
+}
+.form select {
+  width: 100% !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#how-it-works__img {
+  min-height: 350px;
+  background-image: url("images/How It Works.png");
+  background-repeat: no-repeat;
+  display: block;
+  margin: auto;
+  background-position: center;
+  background-size: contain;
+}
+
+@media screen and (max-width: 769px) {
+  #how-it-works__img {
+    background-image: url("images/How It Works Mobile.png");
+    width: 100%;
+    min-height: 800px;
+  }
+  .why-it-works__img {
+    margin-top: 3em;
+  }
+  .hero__img {
+    width: 400px;
+  }
+  .dialog {
+    margin: 0 !important;
+  }
 }

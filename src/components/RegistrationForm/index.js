@@ -1,45 +1,39 @@
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/react-hooks';
-import { REGISTER_USER } from '@nostack/no-stack';
+import React, { useState } from "react";
+import { useMutation } from "@apollo/react-hooks";
+import { REGISTER_USER } from "@nostack/no-stack";
 
-import { Wrapper } from './RegistrationForm.style';
-
-import BasicDetailsForm from './stepper/BasicDetailsForm';
-import AppDetailsForm from './stepper/AppDetailsForm.js';
-import CreditCardDetailsForm from './stepper/CreditCardDetailsForm';
+import { Wrapper } from "./RegistrationForm.style";
+import BasicDetailsForm from "./stepper/BasicDetailsForm";
+import AppDetailsForm from "./stepper/AppDetailsForm.js";
+import CreditCardDetailsForm from "./stepper/CreditCardDetailsForm";
+import Modal from "../Modal";
 
 import {
   validationSchemaBasic,
   validationSchemaApp,
-  validationSchemaCreditCard,
-} from './stepper/registration-util.js';
+  validationSchemaCreditCard
+} from "./stepper/registration-util.js";
 
 const initialValues = {
-  username: '',
-  firstName: '',
-  lastName: '',
-  email: '',
-  password: '',
-  passwordConfirmation: '',
-  app: '',
-  description: '',
-  cardName: '',
-  cardNumber: '',
-  cvc: '',
-  expiryMonth: '',
-  expiryYear: '',
+  username: "",
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+  passwordConfirmation: "",
+  app: "",
+  description: "",
+  cardName: "",
+  cardNumber: "",
+  cvc: "",
+  expiryMonth: "",
+  expiryYear: ""
 };
 
-
-
-const RegistrationForm = ({
-  userClassId,
-  onSuccess,
-}) => {
+const RegistrationForm = (props, { userClassId, onSuccess }) => {
   const [register] = useMutation(REGISTER_USER);
   const [registrationCompleted, setRegistrationCompleted] = useState(false);
-  const [formError, setFormError] = useState('');
-
+  const [formError, setFormError] = useState("");
 
   /*
     A "stepper" is created and uses state to be sure that:
@@ -50,22 +44,19 @@ const RegistrationForm = ({
    */
   const [step, setStep] = useState(1);
 
-  const [username, setUsername] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [app, setApp] = useState('');
-  const [description, setDescription] = useState('');
+  const [app, setApp] = useState("");
+  const [description, setDescription] = useState("");
 
   // const formValuesTemp = "{\"app\":\"newApp\",\"description\":\"newApp Desc\",\"creditCardNumber\":\"232\",\"expirationDate\":\"234243\",\"csv\":\"46\"}";
 
-  const handleSubmit = async (
-    values,
-    { setSubmitting },
-  ) => {
-    setFormError('');
+  const handleSubmit = async (values, { setSubmitting }) => {
+    setFormError("");
     if (values.password !== values.passwordConfirmation) {
       return;
     }
@@ -75,7 +66,7 @@ const RegistrationForm = ({
       creditCardNumber: values.cardNumber,
       creditCardName: values.cardName,
       expirationDate: `${values.expiryMonth}/${values.expiryYear}`,
-      csv: values.cvc,
+      csv: values.cvc
     };
 
     try {
@@ -87,8 +78,8 @@ const RegistrationForm = ({
           lastName,
           email,
           password,
-          formValues: formValuesTemp,
-        },
+          formValues: formValuesTemp
+        }
       });
 
       setRegistrationCompleted(true);
@@ -100,26 +91,29 @@ const RegistrationForm = ({
       console.log(error);
       console.log(error.graphQLErrors);
 
-      setFormError('Something went wrong. Please try again.');
+      setFormError("Something went wrong. Please try again.");
     }
 
     setSubmitting(false);
   };
 
-  if (registrationCompleted) {
-    return (
-      <Wrapper>
-        <p>Successfully created account! Please check your email for a verification message.  Push that, and you're in!</p>
-      </Wrapper>
-    );
-  }
+  // if (registrationCompleted) {
+  //   return (
+  //     <Wrapper>
+  //       <p>
+  //         Successfully created account! Please check your email for a
+  //         verification message. Push that, and you're in!
+  //       </p>
+  //     </Wrapper>
+  //   );
+  // }
 
   const nextStep = () => {
     setStep(step + 1);
   };
 
   const handleSubmitBasicForm = (values, { setSubmitting }) => {
-    setFormError('');
+    setFormError("");
     if (values.password !== values.passwordConfirmation) {
       return;
     }
@@ -130,54 +124,110 @@ const RegistrationForm = ({
     setPassword(values.password);
     setSubmitting(false);
     nextStep();
-  }
+  };
 
   const handleSubmitAppForm = (values, { setSubmitting }) => {
-    setFormError('');
+    setFormError("");
     setApp(values.app);
     setDescription(values.description);
     setSubmitting(false);
     nextStep();
-  }
+  };
 
   const displayCurrentStep = () => {
     switch (step) {
       case 1:
-        return <BasicDetailsForm
-          initialValues={initialValues}
-          validationSchema={validationSchemaBasic}
-          onSubmit={handleSubmitBasicForm}
-          formError={formError}
-        />;
+        return (
+          <BasicDetailsForm
+            onSwitch={props.onSwitch}
+            initialValues={initialValues}
+            validationSchema={validationSchemaBasic}
+            onSubmit={handleSubmitBasicForm}
+            formError={formError}
+          />
+        );
 
       case 2:
-        return <AppDetailsForm
-          initialValues={initialValues}
-          validationSchema={validationSchemaApp}
-          onSubmit={handleSubmitAppForm}
-          formError={formError}
-        />;
-      
+        return (
+          <AppDetailsForm
+            initialValues={initialValues}
+            validationSchema={validationSchemaApp}
+            onSubmit={handleSubmitAppForm}
+            formError={formError}
+          />
+        );
+
       case 3:
-        return <CreditCardDetailsForm
-          initialValues={initialValues}
-          validationSchema={validationSchemaCreditCard}
-          onSubmit={handleSubmit}
-          formError={formError}
-        />;
+        return (
+          <CreditCardDetailsForm
+            initialValues={initialValues}
+            validationSchema={validationSchemaCreditCard}
+            onSubmit={handleSubmit}
+            formError={formError}
+          />
+        );
 
       default:
-        return <BasicDetailsForm
-          initialValues={initialValues}
-          validationSchema={validationSchemaBasic}
-          onSubmit={handleSubmitBasicForm}
-          formError={formError}
-        />;
+        return (
+          <BasicDetailsForm
+            initialValues={initialValues}
+            validationSchema={validationSchemaBasic}
+            onSubmit={handleSubmitBasicForm}
+            formError={formError}
+          />
+        );
     }
   };
+
+  const displayCurrentDescription = () => {
+    switch (step) {
+      case 1:
+        return {
+          enterText: "ENTER DETAILS",
+          buttonText: "SIGN UP",
+          progressWidth: "33%"
+        };
+
+      case 2:
+        return {
+          enterText: "ENTER APP DESCRIPTION",
+          buttonText: "MAKE MY APP NOW",
+          progressWidth: "66%"
+        };
+
+      case 3:
+        return {
+          enterText: "CREDIT CARD DETAILS",
+          buttonText: "MAKE MY APP NOW",
+          progressWidth: "100%"
+        };
+    }
+  };
+
   return (
     <>
-      {displayCurrentStep()}
+      <Modal
+        progress={displayCurrentDescription().progressWidth}
+        onClose={props.onClose}
+      >
+        <div class="dialog__title">
+          <div class="dialog__step">
+            STEP <span class="teal--text"> {step} </span> of 3
+          </div>
+          <h3>{displayCurrentDescription().enterText}</h3>
+        </div>
+        {step == 3 && (
+          <p class="dialog__text">
+            You won’t be charged a thing until you commit to it explicitly. In
+            fact, the initial consultation is{" "}
+            <strong class="teal--text">FREE</strong>.
+            <br />
+            <br />
+            We just need your credit card in advance to cover ourselves.
+          </p>
+        )}
+        {displayCurrentStep()}
+      </Modal>
     </>
   );
 };

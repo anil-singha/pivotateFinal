@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { graphql } from '@apollo/react-hoc';
-import styled from 'styled-components';
-import { EXECUTE_ACTION } from '@nostack/no-stack';
-import compose from '@shopify/react-compose';
+import React, { useState } from "react";
+import { graphql } from "@apollo/react-hoc";
+import styled from "styled-components";
+import { EXECUTE_ACTION } from "@nostack/no-stack";
+import compose from "@shopify/react-compose";
 
 // import { CREATE_APP_FOR_REGISTRATION_INFO_ACTION_ID } from '../../../config';
 
@@ -12,7 +12,7 @@ const Form = styled.div`
   padding: 1.5em;
   border: none;
   border-radius: 5px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 `;
 
 const Button = styled.button`
@@ -20,8 +20,8 @@ const Button = styled.button`
 `;
 
 function AppCreationForm({ customerId, createApp, refetchQueries }) {
-  const [ appValue, updateAppValue ] = useState('');
-  const [ loading, updateLoading ] = useState(false);
+  const [appValue, updateAppValue] = useState("");
+  const [loading, updateLoading] = useState(false);
 
   function handleChange(e) {
     updateAppValue(e.target.value);
@@ -29,19 +29,10 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
     if (!appValue) {
       return;
     }
-
     updateLoading(true);
-
-
-
-
-
-
-
 
     // const createAppResponse = await createApp({
     //   variables: {
@@ -57,10 +48,7 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
 
     // const newAppData = JSON.parse(createAppResponse.data.ExecuteAction);
 
-    
-
-
-    updateAppValue('');
+    updateAppValue("");
     updateLoading(false);
   }
 
@@ -79,23 +67,17 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
           type="text"
           onChange={handleChange}
           onKeyPress={handleKeyPress}
-          value={ appValue }
+          value={appValue}
           disabled={loading}
         />
       </label>
-      <Button type="submit"  disabled={loading}  onClick={handleSubmit}>
-        {
-          loading
-            ? 'Creating App...'
-            : 'Create App'
-        }
+      <Button type="submit" disabled={loading} onClick={handleSubmit}>
+        {loading ? "Creating App..." : "Create App"}
       </Button>
     </Form>
   );
 }
 
-export default compose(
-  graphql(EXECUTE_ACTION, { name: 'createApp' }),
-  
-  
-)(AppCreationForm);
+export default compose(graphql(EXECUTE_ACTION, { name: "createApp" }))(
+  AppCreationForm
+);

@@ -1,37 +1,15 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
+import Modal from "../Modal";
+import { withNoStack } from "@nostack/no-stack";
 
-import { withNoStack } from '@nostack/no-stack';
+import ForgotPasswordButton from "../ForgotPasswordButton";
 
-import ForgotPasswordButton from '../ForgotPasswordButton';
-
-const Wrapper = styled.div`
-  width: 250px;
-
-  padding: 1em 0;
-
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 10px 10px 10px 10px;
-  box-shadow: 10px 10px 8px -1px rgba(0, 0, 0, 0.6);
-`;
-
-const Row = styled.div`
-  margin: 0.5em;
-  padding: 0.5em;
-  text-align: center;
-
-  input {
-    display: block;
-    margin: 0.5em auto;
-    width: 80%;
-  }
-`;
-
-const LoginForm = ({ loading, currentUser, login }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+const LoginForm = (props, { loading, currentUser, login }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   if (loading || currentUser) {
     return null;
@@ -45,64 +23,92 @@ const LoginForm = ({ loading, currentUser, login }) => {
     try {
       await login({
         username,
-        password,
+        password
       });
     } catch (error) {
       setError(
         error.message ||
-        (error.graphQLErrors &&
-          error.graphQLErrors.length &&
-          error.graphQLErrors[0]) ||
-        error,
+          (error.graphQLErrors &&
+            error.graphQLErrors.length &&
+            error.graphQLErrors[0]) ||
+          error
       );
       setIsSubmitting(false);
     }
   };
 
   return (
-    <Wrapper>
-      <form onSubmit={handleSubmit}>
-        <Row>
+    <Modal onClose={props.onClose}>
+      <div class="dialog__title">
+        <img src="images/Pivotate Logo.png" />
+        <h3>LOGIN</h3>
+      </div>
+      <form onSubmit={handleSubmit} class="form">
+        <div class="form__input">
           <label htmlFor="nostack-username">
-            Username:
             <input
               id="nostack-username"
               type="text"
               name="username"
+              placeholder="Username"
               disabled={isSubmitting}
               value={username}
               onChange={e => setUsername(e.target.value)}
             />
           </label>
-        </Row>
-        <Row>
+        </div>
+        <div class="form__input">
           <label htmlFor="nostack-password">
-            Password:
             <input
               id="nostack-password"
               type="password"
+              placeholder="Password"
               name="password"
               disabled={isSubmitting}
               value={password}
               onChange={e => setPassword(e.target.value)}
             />
           </label>
-        </Row>
-        <Row>
+        </div>
+        <div class="form__input">
           <button
+            class="button button--yellow"
             type="submit"
             disabled={isSubmitting || !username || !password}
           >
             Log In
           </button>
-        </Row>
-        {error && <Row>{error}</Row>}
+        </div>
+        {error && <div class="form__input">{error}</div>}
+
+        <br />
+        <div>
+          <small>or</small>
+        </div>
+        <div class="flex justify-space-between">
+          <button type="button" class="button button--fb">
+            Log in with
+            <img class="social-icon" height="14" src="images/facebook.png" />
+          </button>
+          <div style={{ width: "50px" }}></div>
+          <button type="button" class="button button--google">
+            Log in with
+            <img class="social-icon" height="14" src="images/google plus.png" />
+          </button>
+        </div>
+        <br />
+        <small>
+          Dont have an account?
+          <a href="#" class="teal--text" onClick={props.onSwitch}>
+            &nbsp; Sign Up
+          </a>
+        </small>
       </form>
-      <Row>
+      {/* <div class="form__input">
         <ForgotPasswordButton />
-      </Row>
-    </Wrapper>
+      </div> */}
+    </Modal>
   );
-}
+};
 
 export default withNoStack(LoginForm);
