@@ -51,7 +51,7 @@ class NavBar extends Component {
         <nav className="hide-tablet">
           <ul className="flex header__nav">
             <li>
-              <a href="/pricing.html">PRICING</a>
+              <a href="/pricing">PRICING</a>
             </li>
             <li>
               <a href="#">HOW IT WORKS </a>
@@ -82,7 +82,7 @@ class NavBar extends Component {
               <div className="mobile-menu__wrapper">
                 <ul>
                   <li>
-                    <a href="/pricing.html">PRICING</a>
+                    <a href="/pricing">PRICING</a>
                   </li>
                   <li>
                     <a href="#">HOW IT WORKS </a>
