@@ -82,10 +82,11 @@ const LoginForm = (props, { loading, currentUser, login }) => {
         {error && <div class="form__input">{error}</div>}
 
         <br />
-        <div>
+        {/* <div>
           <small>or</small>
-        </div>
-        <div class="flex justify-space-between">
+        </div> */}
+        {/* Temporarility Hide Social icons */}
+        {/* <div class="flex justify-space-between">
           <button type="button" class="button button--fb">
             Log in with
             <img class="social-icon" height="14" src="images/facebook.png" />
@@ -95,11 +96,15 @@ const LoginForm = (props, { loading, currentUser, login }) => {
             Log in with
             <img class="social-icon" height="14" src="images/google plus.png" />
           </button>
-        </div>
+        </div> */}
         <br />
         <small>
           Dont have an account?
-          <a href="#" class="teal--text" onClick={props.onSwitch}>
+          <a
+            href="javascript:void(0);"
+            class="teal--text"
+            onClick={props.onSwitch}
+          >
             &nbsp; Sign Up
           </a>
         </small>
