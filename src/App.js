@@ -1,4 +1,9 @@
-import React from "react";
+import React, {
+  Component,
+  forwardRef,
+  useRef,
+  useImperativeHandle
+} from "react";
 import styled from "styled-components";
 import "./App.min.css";
 import { NoStackConsumer } from "@nostack/no-stack";
@@ -13,22 +18,23 @@ import AppFooter from "./components/AppFooter";
 // Pages
 import Home from "./components/Pages/Home";
 import Pricing from "./components/Pages/Pricing";
+import privacyPolicy from "./components/Pages/Privacy-policy";
+import underConstruction from "./components/Pages/Under-construction";
+import termsAndCondition from "./components/Pages/Terms-and-condition";
 
-import AuthTabs from "./components/AuthTabs";
-import LoginForm from "./components/LoginForm";
-import RegistrationForm from "./components/RegistrationForm";
-import Apps from "./components/AppInfo/Apps";
-
-import FormModal from "./components/FormModal";
-import FormToggle from "./components/FormToggle";
 const App = () => {
+  const childRef = useRef();
+
   return (
     <BrowserRouter>
-      <AppHeader />
+      <AppHeader ref={childRef} />
       {/* main */}
       <Route exact path="/" component={Home}></Route>
       <Route path="/pricing" component={Pricing}></Route>
-      <AppFooter />
+      <Route path="/under-construction" component={underConstruction}></Route>
+      <Route path="/privacy-policy" component={privacyPolicy}></Route>
+      <Route path="/terms-and-condition" component={termsAndCondition}></Route>
+      <AppFooter onSignUp={() => childRef.current.modalHandlerRegistration()} />
       {/* main end */}
     </BrowserRouter>
   );
