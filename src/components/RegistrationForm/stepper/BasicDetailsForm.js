@@ -74,10 +74,10 @@ const BasicDetailsForm = ({
               {formError && <ErrorContainer>{formError}</ErrorContainer>}
             </div>
             <br />
-            <div>
+            {/* <div>
               <small>or</small>
-            </div>
-            <div class="flex justify-space-between">
+            </div> */}
+            {/* <div class="flex justify-space-between">
               <button type="button" class="button button--fb">
                 Sign up with{" "}
                 <img
@@ -95,11 +95,15 @@ const BasicDetailsForm = ({
                   src="images/google plus.png"
                 />
               </button>
-            </div>
+            </div> */}
             <br />
             <small>
               Already have an account?
-              <a href="#" class="teal--text" onClick={props.onSwitch}>
+              <a
+                href="javascript:void(0);"
+                class="teal--text"
+                onClick={props.onSwitch}
+              >
                 &nbsp;Log In
               </a>
             </small>
