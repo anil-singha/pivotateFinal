@@ -40,7 +40,18 @@ const RegistrationField = ({
           return (
             <label>
               <input {...field} type="checkbox" />I agree to our
-              <b> Terms of Use</b> and <b>Privacy Policy</b> by signing up
+              <b>
+                <a href="/terms-and-condition" target="_blank">
+                  &nbsp; Terms of Use &nbsp;
+                </a>
+              </b>
+              and
+              <b>
+                <a href="/privacy-policy" target="_blank">
+                  &nbsp; Privacy Policy &nbsp;
+                </a>
+              </b>
+              by signing up
             </label>
           );
         }}
