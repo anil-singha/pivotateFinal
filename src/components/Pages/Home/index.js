@@ -118,8 +118,8 @@ const Home = () => {
           Hosting (Server): $20/month.
           <div>
             Pay By the Change (see for
-            <a href="pricing.html" className="teal--text">
-              price list
+            <a href="/pricing" className="teal--text">
+              &nbsp; price list &nbsp;
             </a>
             precise details):
           </div>
