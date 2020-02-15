@@ -31,3 +31,17 @@
     margin: 0 !important;
   }
 }
+
+a {
+  cursor: pointer;
+}
+
+.footer__content a {
+  color: #fff;
+}
+.teal--text {
+  color: #16abbc !important;
+}
+.grey--text {
+  color: #a4a4a4 !important;
+}
