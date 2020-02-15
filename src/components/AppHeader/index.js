@@ -6,7 +6,7 @@ import LoginForm from "../../components/LoginForm";
 
 class NavBar extends Component {
   state = {
-    modalRegistration: false,
+    modalRegistration: this.props.modalRegistration,
     modalLogin: false
   };
 
@@ -91,7 +91,10 @@ class NavBar extends Component {
                     <a href="#">ABOUT US </a>
                   </li>
                   <li>
-                    <a href="#" onClick={this.modalHandlerLogin}>
+                    <a
+                      href="javascript:void(0);"
+                      onClick={this.modalHandlerLogin}
+                    >
                       {" "}
                       LOGIN{" "}
                     </a>
