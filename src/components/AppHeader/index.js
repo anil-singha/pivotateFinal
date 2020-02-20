@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { LogoutButton } from "@nostack/no-stack";
 import RegistrationForm from "../../components/RegistrationForm";
 import LoginForm from "../../components/LoginForm";
+import { PLATFORM_ID, TYPE_CUSTOMER_ID } from "../../config";
 
 class NavBar extends Component {
   state = {
@@ -38,6 +39,8 @@ class NavBar extends Component {
         </div>
         {this.state.modalRegistration && (
           <RegistrationForm
+            platformId={PLATFORM_ID}
+            userClassId={TYPE_CUSTOMER_ID}
             onSwitch={this.modalHandlerSwitchForm}
             onClose={this.modalHandlerRegistration}
           />
