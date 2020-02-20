@@ -14,7 +14,13 @@ import {
   validationSchemaCreditCard
 } from "./stepper/registration-util.js";
 
+// Get Current Month
+let dt = new Date();
+let mm = (dt.getMonth() + 1).toString().padStart(2, "0");
+let yyyy = dt.getFullYear();
+
 const initialValues = {
+  name: "",
   username: "",
   firstName: "",
   lastName: "",
@@ -26,8 +32,8 @@ const initialValues = {
   cardName: "",
   cardNumber: "",
   cvc: "",
-  expiryMonth: "",
-  expiryYear: ""
+  expiryMonth: mm,
+  expiryYear: yyyy
 };
 
 const RegistrationForm = (props, { userClassId, onSuccess }) => {
@@ -53,8 +59,8 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
   const [app, setApp] = useState("");
   const [description, setDescription] = useState("");
 
-  // const formValuesTemp = "{\"app\":\"newApp\",\"description\":\"newApp Desc\",\"creditCardNumber\":\"232\",\"expirationDate\":\"234243\",\"csv\":\"46\"}";
-
+  // const formValuesTemp =
+  //   '{"app":"newApp","description":"newApp Desc","creditCardNumber":"232","expirationDate":"234243","csv":"46"}';
   const handleSubmit = async (values, { setSubmitting }) => {
     setFormError("");
     if (values.password !== values.passwordConfirmation) {
@@ -72,7 +78,8 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
     try {
       await register({
         variables: {
-          userClassId,
+          userClassId: props.userClassId,
+          name: firstName + " " + lastName,
           username: username,
           firstName,
           lastName,
@@ -85,6 +92,7 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
       setRegistrationCompleted(true);
 
       if (onSuccess) {
+        nextStep();
         onSuccess();
       }
     } catch (error) {
