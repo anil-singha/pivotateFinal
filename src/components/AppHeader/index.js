@@ -57,10 +57,10 @@ class NavBar extends Component {
               <a href="/pricing">PRICING</a>
             </li>
             <li>
-              <a href="#">HOW IT WORKS </a>
+              <a href="/#how-it-works">HOW IT WORKS </a>
             </li>
             <li>
-              <a href="#">ABOUT US </a>
+              <a href="/#about-us">ABOUT US </a>
             </li>
           </ul>
         </nav>

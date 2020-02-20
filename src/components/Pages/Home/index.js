@@ -43,7 +43,7 @@ const Home = props => {
       {/* hero end */}
 
       {/* about */}
-      <section className="about">
+      <section className="about" id="about-us">
         <h2 className="text-center">
           <span className="headline headline--teal"> ABOUT PIVOTATE </span>
         </h2>
@@ -72,7 +72,10 @@ const Home = props => {
       {/* end about */}
 
       {/* how it works */}
-      <section className="how-it-works  triangle--grey triangle">
+      <section
+        className="how-it-works  triangle--grey triangle"
+        id="how-it-works"
+      >
         <h2 className="text-center">
           <span className="headline headline--teal"> HOW IT WORKS </span>
         </h2>
