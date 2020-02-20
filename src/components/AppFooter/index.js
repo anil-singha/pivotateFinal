@@ -100,7 +100,7 @@ const AppFooter = props => (
                 <ul className="footer__links">
                   <li>
                     {" "}
-                    <a href="/terms-and-condition"> Terms of Use</a>
+                    <a href="/terms-and-conditions"> Terms of Use</a>
                   </li>
                   <li>
                     {" "}
