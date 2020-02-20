@@ -29,7 +29,10 @@ const App = () => {
     <BrowserRouter>
       <AppHeader ref={childRef} />
       {/* main */}
-      <Route exact path="/" component={Home}></Route>
+      <Route path="/">
+        <Home onSignUp={() => childRef.current.modalHandlerRegistration()} />
+      </Route>
+
       <Route path="/pricing" component={Pricing}></Route>
       <Route path="/under-construction" component={underConstruction}></Route>
       <Route path="/privacy-policy" component={privacyPolicy}></Route>
