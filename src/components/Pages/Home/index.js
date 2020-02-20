@@ -1,6 +1,5 @@
 import React from "react";
-
-const Home = () => {
+const Home = props => {
   return (
     <main role="main">
       {/* hero */}
@@ -25,7 +24,8 @@ const Home = () => {
               </p>
               <div className="button__wrapper">
                 <a
-                  href="/dialogs.html"
+                  onClick={props.onSignUp}
+                  href="javascript:void(0);"
                   className="button button--rounded button--yellow"
                 >
                   GET STARTED <span className="chevron right"></span>
