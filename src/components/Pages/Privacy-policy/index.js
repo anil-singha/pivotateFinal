@@ -5,26 +5,26 @@ const UnderConstruction = () => {
     <div class="container full-width-sm">
       <div class="row">
         <h3>PRIVACY POLICY</h3>
-        <p style={{ margin: "2em 0" }}>Effective: February 12, 2019</p>
+        <p style={{ margin: "2em 0" }}>Effective: February 19, 2020</p>
         <p style={{ margin: "2em 0", textAlign: "right" }}>
-          <a href="javascript:window.cmpConfig.methods.summon()">
-            Review Consent Preferences (EU user only)
-          </a>
+          {/*<a href="javascript:window.cmpConfig.methods.summon()">*/}
+          {/*  Review Consent Preferences (EU user only)*/}
+          {/*</a>*/}
         </p>
         <p>
-          John Wiley &amp; and its subsidiary and affiliate companies
-          (collectively, “Wiley,” “we,” “us” or “our”) recognize the importance
+          Pivotate is a service of NoStack.  NoStack &amp; and its subsidiary and affiliate companies
+          (collectively, “NoStack,” “we,” “us” or “our”) recognize the importance
           of protecting the personal information collected from users in the
           operation of its services and taking reasonable steps to maintain the
           security, integrity and privacy of any information in accordance with
-          this Privacy Policy. By submitting your information to Wiley you
+          this Privacy Policy. By submitting your information to NoStack you
           consent to the practices described in this policy. If you are less
           than 18 years of age, then you must first seek the consent of your
           parent or guardian prior to submitting any personal information.
         </p>
         <p>
-          This Privacy Policy describes how Wiley collects and uses the personal
-          information you provide to Wiley. It also describes the choices
+          This Privacy Policy describes how NoStack collects and uses the personal
+          information you provide to NoStack. It also describes the choices
           available to you regarding our use of your personal information and
           how you can access and update this information.
         </p>
@@ -97,10 +97,10 @@ const UnderConstruction = () => {
           How We Collect Information
         </h4>
         <p>
-          Wiley may collect personal information about you in the following
+          NoStack may collect personal information about you in the following
           ways: (1) directly from your verbal or written input (such as by
           consenting to receiving marketing emails); (2) automatically through
-          Wiley’s website technologies including tracking online, such as by{" "}
+          NoStack’s website technologies including tracking online, such as by{" "}
           <a href="#cookies">Web cookies</a> (which are small text files created
           by websites that are stored on your computer), by smart devices, by
           combining data sets, by collecting data from a browser or device for
@@ -116,7 +116,7 @@ const UnderConstruction = () => {
           Information You Provide
         </h4>
         <p>
-          The types of personal information that Wiley collects directly from
+          The types of personal information that NoStack collects directly from
           you or through your use of our websites and services may include:
         </p>
         <ul>
@@ -133,8 +133,8 @@ const UnderConstruction = () => {
           <li>Usernames and passwords;</li>
           <li>Payment information, such as a credit or debit card number;</li>
           <li>
-            Comments, feedback, posts and other content you provide to Wiley
-            (including through a Wiley website);
+            Comments, feedback, posts and other content you provide to NoStack
+            (including through a NoStack website);
           </li>
           <li>Communication preferences;</li>
           <li>Purchase and search history;</li>
@@ -145,11 +145,11 @@ const UnderConstruction = () => {
           <li>
             Information about your personal preferences, and interests; and
           </li>
-          <li>Communications with other users of Wiley’s services.</li>
+          <li>Communications with other users of NoStack’s services.</li>
         </ul>
         <p>
           In order to access certain content and to make use of additional
-          functionality and features of Wiley’s websites and services, we may
+          functionality and features of NoStack’s websites and services, we may
           ask you to register for an account by completing and submitting a
           registration form, which may request additional information.
         </p>
@@ -157,10 +157,10 @@ const UnderConstruction = () => {
           If you choose to register and sign in by using a third-party account
           (such as your Facebook account), the authentication of your login is
           handled by the third party, and any personal information collected
-          during that third-party login is not covered by this policy. Wiley
+          during that third-party login is not covered by this policy. NoStack
           will collect your name, email address and any other information about
           your third-party account that you agree to share with us at the time
-          you give permission for your Wiley account to be linked to your
+          you give permission for your NoStack account to be linked to your
           third-party account.
         </p>
         <h4
@@ -170,14 +170,14 @@ const UnderConstruction = () => {
           Information We Receive from Other Sources
         </h4>
         <p>
-          Wiley may receive information about you if you use any of the websites
+          NoStack may receive information about you if you use any of the websites
           we operate or the other services we provide. We also work closely with
           third parties (including, for example, business partners and
           sub-contractors in technical, payment and delivery services;
           advertising networks; data and analytics providers; academic
           institutions; journal owners, societies and similar organizations;
           search information providers, and credit reference agencies) from whom
-          Wiley may receive information about you.
+          NoStack may receive information about you.
         </p>
         <h4
           style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
@@ -186,16 +186,16 @@ const UnderConstruction = () => {
           Use of Your Information
         </h4>
         <p>
-          Wiley may use your personal information in the performance of any
+          NoStack may use your personal information in the performance of any
           contract we enter into with you, to comply with legal obligations, or
-          where Wiley has a legitimate business interest in using your
+          where NoStack has a legitimate business interest in using your
           information to enhance the services and products we provide.
           Legitimate business purposes include but are not limited to one or all
           of the following: providing direct marketing and assessing the
           effectiveness of promotions and advertising; modifying, improving or
           personalizing our services, products and communications; detecting
           fraud; investigating suspicious activity (e.g., violations of our
-          Terms of Service, which can be found <a href="/terms-of-use/">here</a>
+          Terms and Conditions, which can be found <a href="/terms-and-conditions/">here</a>
           ) and otherwise keeping our site safe and secure; and conducting data
           analytics.
         </p>
@@ -208,7 +208,7 @@ const UnderConstruction = () => {
             To provide you with information about products and services that you
             request from us;
           </li>
-          <li>To send you periodic catalogues from Wiley;</li>
+          <li>To send you periodic catalogues from NoStack;</li>
           <li>
             To provide you with information about other products, events and
             services we offer that are either (i) similar to those you have
@@ -217,8 +217,8 @@ const UnderConstruction = () => {
           </li>
           <li>
             For internal business and research purposes to help enhance,
-            evaluate, develop, and create Wiley websites (including usage
-            statistics, such as “page views” on Wiley’s websites and the
+            evaluate, develop, and create NoStack websites (including usage
+            statistics, such as “page views” on NoStack’s websites and the
             products therein), products, and services;
           </li>
           <li>
@@ -243,7 +243,7 @@ const UnderConstruction = () => {
           purpose for which it was collected. This means that, unless
           information must be retained for legal or archival purposes, personal
           information will be securely destroyed, put beyond use or erased from
-          Wiley’s systems when it is no longer required or, where applicable,
+          NoStack’s systems when it is no longer required or, where applicable,
           following a request from you to destroy or erase your personal
           information.
         </p>
@@ -254,7 +254,7 @@ const UnderConstruction = () => {
           Disclosure and Sharing of Your Information
         </h4>
         <p>
-          Wiley will not disclose to or share your personal information with any
+          NoStack will not disclose to or share your personal information with any
           unaffiliated third party except as follows:
         </p>
         <ul>
@@ -272,7 +272,7 @@ const UnderConstruction = () => {
           <li>
             Where third party such as an academic institution, school, employer,
             business or other entity which has provided you with access to a
-            Wiley product or service through an integration or access code,
+            NoStack product or service through an integration or access code,
             information may be shared regarding your engagement with the service
             or product, results of assessments taken and other information you
             input into the product or service;
@@ -283,38 +283,38 @@ const UnderConstruction = () => {
             partners;
           </li>
           <li>
-            Where Wiley is required to disclose personal information in response
+            Where NoStack is required to disclose personal information in response
             to lawful requests by public authorities and government agencies,
             including to meet national security or law enforcement requirements;
             to comply with a subpoena or other legal process; when we believe in
             good faith that disclosure is necessary to protect our rights, to
-            enforce our Terms of Service, or to protect the rights, property or
+            enforce our Terms and Conditions, or to protect the rights, property or
             safety of our services, users or others; and to investigate fraud;
           </li>
           <li>
-            Where all or substantially all of the business or assets of Wiley
+            Where all or substantially all of the business or assets of NoStack
             relating to our services are sold, assigned, or transferred to
             another entity;
           </li>
         </ul>
         <ul>
           <li>
-            Where Wiley is required to disclose personal information in response
+            Where NoStack is required to disclose personal information in response
             to lawful requests by public authorities and government agencies,
             including to meet national security or law enforcement requirements;
             to comply with a subpoena or other legal process; when we believe in
             good faith that disclosure is necessary to protect our rights, to
-            enforce our Terms of Service, or to protect the rights, property or
+            enforce our Terms and Conditions, or to protect the rights, property or
             safety of our services, users or others; and to investigate fraud;
             and
           </li>
           <li>
-            Where all or substantially all of the business or assets of Wiley
+            Where all or substantially all of the business or assets of NoStack
             relating to our services are sold, assigned, or transferred to
             another entity.
           </li>
           <li>
-            Where Wiley’s rights to publish, market and/or distribute a specific
+            Where NoStack’s rights to publish, market and/or distribute a specific
             journal or other publication are transferred to another entity, and
             you have subscribed to or requested to receive electronic alerts
             related to that journal or publication;
@@ -330,13 +330,13 @@ const UnderConstruction = () => {
           </li>
           <li>
             Where, even if not described above, you have consented to such
-            disclosure or Wiley has a legitimate interest in making the
+            disclosure or NoStack has a legitimate interest in making the
             disclosure.
           </li>
         </ul>
         <p>
           If necessary in connection with providing publishing services on
-          behalf of third parties, such as institutions and societies, Wiley may
+          behalf of third parties, such as institutions and societies, NoStack may
           disclose navigational and transactional information in the form of
           anonymous, aggregate usage statistics and demographic information that
           does not reveal your identity or personal information.
@@ -348,24 +348,24 @@ const UnderConstruction = () => {
           Cross Border Transfers
         </h4>
         <p>
-          Wiley may transfer your personal information outside of your country
+          NoStack may transfer your personal information outside of your country
           of residence for the following reasons:
         </p>
         <ul>
           <li>
             In order to process your transactions, we may store your personal
             information on our servers and those servers may reside outside the
-            country where you live. Wiley has servers and major office locations
+            country where you live. NoStack has servers and major office locations
             in several countries, including the United States, the United
-            Kingdom, Germany, Singapore, Brazil, India and Australia. Wiley also
+            Kingdom, Germany, Singapore, Brazil, India and Australia. NoStack also
             has service providers located in India and the Philippines amongst
             other countries. Such processing may include, among other things,
             the fulfillment of your order, the processing of your payment
             details and the provision of support services.
           </li>
           <li>
-            In order to satisfy global reporting requirements, Wiley may be
-            required to provide your personal information to Wiley affiliates in
+            In order to satisfy global reporting requirements, NoStack may be
+            required to provide your personal information to NoStack affiliates in
             other countries.
           </li>
         </ul>
@@ -401,7 +401,7 @@ const UnderConstruction = () => {
           your name or e-mail address — that you voluntarily disclose and that
           is accessible to other users (e.g. on social media, forums, bulletin
           boards or in chat areas) could be collected and disclosed by others.
-          Wiley cannot take any responsibility for such collection and
+          NoStack cannot take any responsibility for such collection and
           disclosure.
         </p>
         <h4
@@ -419,7 +419,7 @@ const UnderConstruction = () => {
           the aggregate and administer the site.
         </p>
         <p>
-          Wiley and its partners use cookies or similar technologies to analyze
+          NoStack and its partners use cookies or similar technologies to analyze
           trends, administer the website, track users’ movements around the
           website, and to gather demographic information about our user base as
           a whole. You can control the use of cookies at the individual browser
@@ -428,7 +428,7 @@ const UnderConstruction = () => {
         </p>
         <p>
           For more information on cookies, please click{" "}
-          <a href="https://www.wiley.com/cookies" target="_blank">
+          <a href="https://www.nostack.net/cookies" target="_blank">
             here
           </a>
           .
@@ -442,7 +442,7 @@ const UnderConstruction = () => {
         <p>
           You have the right to make a written request to be informed whether or
           not we hold or process any of your personal information (by emailing{" "}
-          <a href="mailto:privacy@wiley.com">privacy@wiley.com</a>). In your
+          <a href="mailto:info@nostack.net">info@nostack.net</a>). In your
           written request, you may:
         </p>
         <ul>
@@ -486,17 +486,10 @@ const UnderConstruction = () => {
           any point you wish to review or change your preferences you can use
           the “opt-out” or unsubscribe mechanism or other means provided within
           the communications that you receive from us. Note that you may still
-          receive transactional communications from Wiley. For queries, please
+          receive transactional communications from NoStack. For queries, please
           contact our customer support center at{" "}
-          <a href="https://hub.wiley.com/community/support" target="_blank">
-            https://hub.wiley.com/community/support
-          </a>
-          . Some territories have national laws requiring a local Data
-          Protection Officer (for example Singapore and Germany). Please click{" "}
-          <a href="https://www.wiley.com/dataprotection" target="_blank">
-            here
-          </a>{" "}
-          for the relevant contact details.
+          <a href="mailto:info@nostack.net">info@nostack.net</a>
+          .
         </p>
         <h4
           style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
@@ -505,7 +498,7 @@ const UnderConstruction = () => {
           Third-Parties
         </h4>
         <p>
-          Wiley’s websites or services may include links to third-party
+          Pivotate and other NoStack websites or services may include links to third-party
           websites. In using such links, please be aware that each third-party
           website is subject to its own privacy and data protection policies and
           is not covered by our Privacy Policy. In addition, we allow
@@ -527,10 +520,7 @@ const UnderConstruction = () => {
           FERPA
         </h4>
         <p>
-          Please see Wiley’s policy regarding FERPA{" "}
-          <a href="https://www.wiley.com/ferpa" target="_blank">
-            here
-          </a>
+          To find out about Pivotate's policies towards FERPA, please send to{" "}<a href="mailto:info@nostack.net">info@nostack.net</a>
           .
         </p>
         <h4
@@ -542,40 +532,8 @@ const UnderConstruction = () => {
         <p>
           Any comments, complaints or questions concerning this policy or
           complaints or objections about our use of your personal information
-          should be addressed by directing your comments to Wiley’s Data
-          Protection Officers, whose contact information is found{" "}
-          <a href="https://www.wiley.com/dataprotection" target="_blank">
-            here
-          </a>
-          .
-        </p>
-        <p>
-          In relation to personal data processed within the US, Wiley has in
-          place EU Model Clauses between entities within its group of companies
-          that receive and process personal information from countries within
-          the European Economic Area and has further committed to refer
-          unresolved privacy complaints to an independent dispute resolution
-          mechanism, the ICDR/AAA. If you do not receive timely acknowledgment
-          of your complaint, or if your complaint is not satisfactorily
-          addressed by Wiley, please use the following processes which are made
-          available by Wiley at no cost to you.
-        </p>
-        <p>
-          The dispute may be filed on-line utilizing the AAA WebFile® at{" "}
-          <a href="https://www.icdr.org" target="_blank">
-            https://www.icdr.org
-          </a>
-          . The filing party (“claimant”) submits via AAA WebFile a Demand for
-          Arbitration and copies of any supporting documents the claimant wishes
-          to enter into evidence. The filing party may also file a case by mail
-          or fax. The appropriate form(s) must be completed and forwarded to
-          International Centre for Dispute Resolution Case Filing Services, 1101
-          Laurel Oak Road, Suite 100, Voorhees, NJ 08043 United States. The
-          phone number is (856) 435-6401. The toll-free number in the US and
-          Canada is (877) 495-4185. The toll-free fax number within the US and
-          Canada is (877) 304-8457, and outside the US is (212) 484-4178. The
-          email address is{" "}
-          <a href="mailto:casefiling@adr.org">casefiling@adr.org</a>.
+          should be addressed by directing your comments to NoStack at{" "}
+          <a href="mailto:info@nostack.net">info@nostack.net</a>.
         </p>
         <h4
           style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
@@ -584,38 +542,13 @@ const UnderConstruction = () => {
           Updates to This Privacy Policy
         </h4>
         <p>
-          Please note that Wiley’s Privacy Policy is reviewed periodically.
-          Wiley reserves the right to update its Privacy Policy at any time
+          Please note that NoStack’s Privacy Policy is reviewed periodically.
+          NoStack reserves the right to update its Privacy Policy at any time
           without notice. Any changes to the Privacy Policy will be posted on
           this page and will become effective on the date of posting. We
           encourage you to periodically review this page for the latest
           information on our privacy practices.
         </p>
-        <p>
-          By clicking on the links below, you can see previous versions of this
-          policy (beginning with the March 15, 2018 version) and a comparison
-          reflecting changes to the terms.
-        </p>
-        <ul>
-          <li>
-            <a
-              href="https://s3.amazonaws.com/wiley-ecomm-prod-content/Privacy+Policy+effective+March+15%2C+2018.pdf"
-              target="_blank"
-            >
-              Privacy Policy effective March 15, 2018
-            </a>
-            <ul>
-              <li>
-                <a
-                  href="https://s3.amazonaws.com/wiley-ecomm-prod-content/Redline+Comparison+of+Privacy+Policy.3.15.18+versus+2.12.19.docx"
-                  target="_blank"
-                >
-                  Comparison
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
         <h4
           style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
           id="children"
@@ -637,9 +570,7 @@ const UnderConstruction = () => {
           from our active servers, and/or request that there be no further
           collection or use of your child’s information or if you have questions
           about these information practices, you may contact us at{" "}
-          <a href="mailto:privacyamericas@wileycom">privacyamericas@wileycom</a>
-          , or at John Wiley &amp; Sons, Inc., Attention: Chief Privacy Officer,
-          111 River Street, Hoboken, NJ 07030.
+          <a href="mailto:info@nostack.net">info@nostack.net</a>.
         </p>
       </div>
       <br></br>

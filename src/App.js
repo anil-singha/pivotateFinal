@@ -20,7 +20,7 @@ import Home from "./components/Pages/Home";
 import Pricing from "./components/Pages/Pricing";
 import privacyPolicy from "./components/Pages/Privacy-policy";
 import underConstruction from "./components/Pages/Under-construction";
-import termsAndCondition from "./components/Pages/Terms-and-condition";
+import termsAndConditions from "./components/Pages/Terms-and-conditions";
 
 const App = () => {
   const childRef = useRef();
@@ -36,7 +36,7 @@ const App = () => {
       <Route path="/pricing" component={Pricing}></Route>
       <Route path="/under-construction" component={underConstruction}></Route>
       <Route path="/privacy-policy" component={privacyPolicy}></Route>
-      <Route path="/terms-and-condition" component={termsAndCondition}></Route>
+      <Route path="/terms-and-conditions" component={termsAndConditions}></Route>
       <AppFooter onSignUp={() => childRef.current.modalHandlerRegistration()} />
       {/* main end */}
     </BrowserRouter>
