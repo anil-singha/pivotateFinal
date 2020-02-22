@@ -79,13 +79,12 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
       await register({
         variables: {
           userClassId: props.userClassId,
-          name: firstName + " " + lastName,
-          username: username,
+          name: username,
           firstName,
           lastName,
           email,
           password,
-          formValues: formValuesTemp
+          formValues: JSON.stringify(formValuesTemp)
         }
       });
 
@@ -105,16 +104,36 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
     setSubmitting(false);
   };
 
-  // if (registrationCompleted) {
-  //   return (
-  //     <Wrapper>
-  //       <p>
-  //         Successfully created account! Please check your email for a
-  //         verification message. Push that, and you're in!
-  //       </p>
-  //     </Wrapper>
-  //   );
-  // }
+  if (!registrationCompleted) {
+    return (
+      <Modal onClose={props.onClose}>
+        <div class="dialog__title">
+          <h3>Thank you!</h3>
+        </div>
+        <p class="text-center">
+          We will be contacting you shortly. Looking forward working with you!
+        </p>
+        <br />
+        <p>
+          If you got questions you can email us at &nbsp;
+          <a class="teal--text" href="mailto:info@pivotate.com">
+            info@pivotate.com
+          </a>
+        </p>
+        <br />
+        <br />
+        <div>
+          <button
+            class="button button--yellow"
+            type="button"
+            onClick={props.onClose}
+          >
+            GO BACK TO HOME
+          </button>
+        </div>
+      </Modal>
+    );
+  }
 
   const nextStep = () => {
     setStep(step + 1);
