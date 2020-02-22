@@ -5,6 +5,10 @@
   width: 100% !important;
 }
 
+.button {
+  font-weight: 600 !important;
+}
+
 #how-it-works__img {
   min-height: 350px;
   background-image: url("images/How It Works.png");
