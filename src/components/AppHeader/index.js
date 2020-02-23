@@ -82,7 +82,7 @@ class NavBar extends Component {
               <Link to="/#how-it-works"> HOW IT WORKS </Link>
             </li>
             <li>
-              <Link to="/#about-us"> HOW IT WORKS ABOUT US </Link>
+              <Link to="/#about-us"> ABOUT US </Link>
             </li>
           </ul>
         </nav>
