@@ -1,6 +1,6 @@
 import React from "react";
 
-const Pricing = () => {
+const Terms = () => {
   return (
     <div className="container">
       <div id="placeholders">
@@ -11,7 +11,7 @@ const Pricing = () => {
         </h3>
         <p>
           Welcome to{" "}
-          <span className="highlight preview_website_name">Website Name</span>!
+          <span className="highlight preview_website_name">Pivotate</span>!
         </p>
         <p>
           These terms and conditions outline the rules and regulations for the
@@ -24,21 +24,21 @@ const Pricing = () => {
           By accessing this website we assume you accept these terms and
           conditions. Do not continue to use{" "}
           <span className="highlight preview_website_name">Pivotate</span>{" "}
-          if you do not agree to take all of the terms and conditions stated on
+          if you do not agree to accept all of the terms and conditions stated on
           this page.
         </p>
         <p>
           The following terminology applies to these Terms and Conditions,
           Privacy Statement and Disclaimer Notice and all Agreements: “Client”,
-          “You” and “Your” refers to you, the person log on this website and
-          compliant to the Company's terms and conditions. “The Company”,
+          “You” and “Your” refers to you, the person visiting or logging/logged onto
+          this website and compliant to the Company's terms and conditions. “The Company”,
           “Ourselves”, “We”, “Our” and “Us”, refers to our Company. “Party”,
           “Parties”, or “Us”, refers to both the Client and ourselves. All terms
           refer to the offer, acceptance and consideration of payment necessary
           to undertake the process of our assistance to the Client in the most
           appropriate manner for the express purpose of meeting the Client's
           needs in respect of provision of the Company's stated services, in
-          accordance with and subject to, prevailing law of Netherlands. Any use
+          accordance with and subject to, the prevailing law of Israel. Any use
           of the above terminology or other words in the singular, plural,
           capitalization and/or he/she or they, are taken as interchangeable and
           therefore as referring to same.
@@ -100,14 +100,14 @@ const Pricing = () => {
         </ul>
         <p>This Agreement shall begin on the date hereof.</p>
         <p>
-          Parts of this website offer an opportunity for users to post and
+          Parts of this website may offer an opportunity for users to post and
           exchange opinions and information in certain areas of the website.{" "}
           <span className="highlight preview_company_name">NoStack</span>{" "}
           does not filter, edit, publish or review Comments prior to their
           presence on the website. Comments do not reflect the views and
           opinions of{" "}
           <span className="highlight preview_company_name">NoStack</span>
-          ,its agents and/or affiliates. Comments reflect the views and opinions
+          ,its agents and/or affiliates, or of the service Pivotate. Comments reflect the views and opinions
           of the person who post their views and opinions. To the extent
           permitted by applicable laws,{" "}
           <span className="highlight preview_company_name">
@@ -335,4 +335,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing;
+export default Terms;
