@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
+
 import { LogoutButton } from "@nostack/no-stack";
 import RegistrationForm from "../../components/RegistrationForm";
 import LoginForm from "../../components/LoginForm";
@@ -49,21 +51,6 @@ class NavBar extends Component {
     });
   };
 
-  howItWorks = () => {
-    var elmnt = document.getElementById("how-it-works");
-    setTimeout(() => {
-      if (elmnt) elmnt.scrollIntoView();
-    }, 100);
-    return <Redirect to="/" push={true} />;
-  };
-  about = () => {
-    var elmnt = document.getElementById("about-us");
-    setTimeout(() => {
-      if (elmnt) elmnt.scrollIntoView();
-    }, 100);
-    return <Redirect to="/" push={true} />;
-  };
-
   render() {
     return (
       <header className="container header flex items-center">
@@ -92,15 +79,10 @@ class NavBar extends Component {
               <Link to="/pricing">PRICING</Link>
             </li>
             <li>
-              <a href="#" onClick={this.howItWorks}>
-                {" "}
-                HOW IT WORKS{" "}
-              </a>
+              <Link to="/#how-it-works"> HOW IT WORKS </Link>
             </li>
             <li>
-              <a href="/#" onClick={this.about}>
-                ABOUT US{" "}
-              </a>
+              <Link to="/#about-us"> ABOUT US </Link>
             </li>
           </ul>
         </nav>
@@ -133,14 +115,14 @@ class NavBar extends Component {
                     <Link to="/pricing">PRICING</Link>
                   </li>
                   <li>
-                    <a onClick={this.checkboxHandler} href="/">
+                    <Link onClick={this.checkboxHandler} to="/#how-it-works">
                       HOW IT WORKS{" "}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a onClick={this.checkboxHandler} href="/">
+                    <Link onClick={this.checkboxHandler} to="/#about-us">
                       ABOUT US{" "}
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a
