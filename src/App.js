@@ -4,12 +4,19 @@ import React, {
   useRef,
   useImperativeHandle
 } from "react";
-import styled from "styled-components";
+// import 'scss/index.scss'; // assuming a styles directory under src/
+
 import "./App.min.css";
 import { NoStackConsumer } from "@nostack/no-stack";
 
 import { PLATFORM_ID, TYPE_CUSTOMER_ID } from "./config";
-import { BrowserRouter, HashRouter, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter,
+  HashRouter,
+  Route,
+  Link,
+  withRouter
+} from "react-router-dom";
 
 // Default Layout
 import AppHeader from "./components/AppHeader";
@@ -25,7 +32,7 @@ import termsAndConditions from "./components/Pages/Terms-and-conditions";
 const App = () => {
   const childRef = useRef();
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AppHeader ref={childRef} />
       {/* main */}
       <Route path={`${process.env.PUBLIC_URL}/`} exact>
@@ -50,7 +57,7 @@ const App = () => {
       ></Route>
       <AppFooter onSignUp={() => childRef.current.modalHandlerRegistration()} />
       {/* main end */}
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

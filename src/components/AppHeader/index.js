@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { LogoutButton } from "@nostack/no-stack";
 import RegistrationForm from "../../components/RegistrationForm";
 import LoginForm from "../../components/LoginForm";
@@ -10,6 +10,20 @@ class NavBar extends Component {
     modalRegistration: this.props.modalRegistration,
     modalLogin: false,
     checkbox: false
+  };
+  howItWorks = () => {
+    var elmnt = document.getElementById("how-it-works");
+    setTimeout(() => {
+      elmnt.scrollIntoView();
+    }, 100);
+    return <Redirect to="/" push={true} />;
+  };
+  about = () => {
+    var elmnt = document.getElementById("about");
+    setTimeout(() => {
+      elmnt.scrollIntoView();
+    }, 100);
+    return <Redirect to="/" push={true} />;
   };
 
   // Events
@@ -33,6 +47,21 @@ class NavBar extends Component {
     this.setState({
       checkbox: !this.state.checkbox
     });
+  };
+
+  howItWorks = () => {
+    var elmnt = document.getElementById("how-it-works");
+    setTimeout(() => {
+      if (elmnt) elmnt.scrollIntoView();
+    }, 100);
+    return <Redirect to="/" push={true} />;
+  };
+  about = () => {
+    var elmnt = document.getElementById("about-us");
+    setTimeout(() => {
+      if (elmnt) elmnt.scrollIntoView();
+    }, 100);
+    return <Redirect to="/" push={true} />;
   };
 
   render() {
@@ -63,10 +92,15 @@ class NavBar extends Component {
               <Link to="/pricing">PRICING</Link>
             </li>
             <li>
-              <a href="/#how-it-works">HOW IT WORKS </a>
+              <a href="#" onClick={this.howItWorks}>
+                {" "}
+                HOW IT WORKS{" "}
+              </a>
             </li>
             <li>
-              <a href="/#about-us">ABOUT US </a>
+              <a href="/#" onClick={this.about}>
+                ABOUT US{" "}
+              </a>
             </li>
           </ul>
         </nav>
@@ -96,15 +130,15 @@ class NavBar extends Component {
               <div className="mobile-menu__wrapper">
                 <ul>
                   <li>
-                    <a href="/pricing">PRICING</a>
+                    <Link to="/pricing">PRICING</Link>
                   </li>
                   <li>
-                    <a onClick={this.checkboxHandler} href="/#how-it-works">
+                    <a onClick={this.checkboxHandler} href="/">
                       HOW IT WORKS{" "}
                     </a>
                   </li>
                   <li>
-                    <a onClick={this.checkboxHandler} href="/#about-us">
+                    <a onClick={this.checkboxHandler} href="/">
                       ABOUT US{" "}
                     </a>
                   </li>
