@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+
 import { LogoutButton } from "@nostack/no-stack";
 import RegistrationForm from "../../components/RegistrationForm";
 import LoginForm from "../../components/LoginForm";
@@ -60,7 +60,7 @@ class NavBar extends Component {
         <nav className="hide-tablet">
           <ul className="flex header__nav">
             <li>
-              <Link to="/pricing">PRICING</Link>
+              <a href="/pricing">PRICING</a>
             </li>
             <li>
               <a href="/#how-it-works">HOW IT WORKS </a>

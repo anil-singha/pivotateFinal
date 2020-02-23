@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 const Home = props => {
   return (
     <main role="main">
@@ -122,9 +121,9 @@ const Home = props => {
           Hosting (Server): $20/month.
           <div>
             Pay By the Change (see for
-            <Link to="/pricing" className="teal--text">
+            <a href="/pricing" className="teal--text">
               &nbsp; price list &nbsp;
-            </Link>
+            </a>
             precise details):
           </div>
         </div>
