@@ -86,13 +86,13 @@ const AppFooter = props => (
                     <Link to="/pricing"> Pricing</Link>
                   </li>
                   <li>
-                    <Link
-                      to="javascript:void(0);"
+                    <a
+                      href="javascript:void(0);"
                       onClick={props.onSignUp}
                       className="teal--text"
                     >
                       Sign Up Now
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </div>
