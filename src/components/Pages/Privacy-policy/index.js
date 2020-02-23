@@ -2,8 +2,8 @@ import React from "react";
 
 const UnderConstruction = () => {
   return (
-    <div class="container full-width-sm">
-      <div class="row">
+    <div className="container full-width-sm">
+      <div className="row">
         <h3>PRIVACY POLICY</h3>
         <p style={{ margin: "2em 0" }}>Effective: February 19, 2020</p>
         <p style={{ margin: "2em 0", textAlign: "right" }}>
@@ -12,21 +12,22 @@ const UnderConstruction = () => {
           {/*</a>*/}
         </p>
         <p>
-          Pivotate is a service of NoStack.  NoStack &amp; and its subsidiary and affiliate companies
-          (collectively, “NoStack,” “we,” “us” or “our”) recognize the importance
-          of protecting the personal information collected from users in the
-          operation of its services and taking reasonable steps to maintain the
-          security, integrity and privacy of any information in accordance with
-          this Privacy Policy. By submitting your information to NoStack you
-          consent to the practices described in this policy. If you are less
-          than 18 years of age, then you must first seek the consent of your
-          parent or guardian prior to submitting any personal information.
+          Pivotate is a service of NoStack. NoStack &amp; and its subsidiary and
+          affiliate companies (collectively, “NoStack,” “we,” “us” or “our”)
+          recognize the importance of protecting the personal information
+          collected from users in the operation of its services and taking
+          reasonable steps to maintain the security, integrity and privacy of
+          any information in accordance with this Privacy Policy. By submitting
+          your information to NoStack you consent to the practices described in
+          this policy. If you are less than 18 years of age, then you must first
+          seek the consent of your parent or guardian prior to submitting any
+          personal information.
         </p>
         <p>
-          This Privacy Policy describes how NoStack collects and uses the personal
-          information you provide to NoStack. It also describes the choices
-          available to you regarding our use of your personal information and
-          how you can access and update this information.
+          This Privacy Policy describes how NoStack collects and uses the
+          personal information you provide to NoStack. It also describes the
+          choices available to you regarding our use of your personal
+          information and how you can access and update this information.
         </p>
         <div style={{ margin: "2em 0" }}>
           <a
@@ -170,10 +171,10 @@ const UnderConstruction = () => {
           Information We Receive from Other Sources
         </h4>
         <p>
-          NoStack may receive information about you if you use any of the websites
-          we operate or the other services we provide. We also work closely with
-          third parties (including, for example, business partners and
-          sub-contractors in technical, payment and delivery services;
+          NoStack may receive information about you if you use any of the
+          websites we operate or the other services we provide. We also work
+          closely with third parties (including, for example, business partners
+          and sub-contractors in technical, payment and delivery services;
           advertising networks; data and analytics providers; academic
           institutions; journal owners, societies and similar organizations;
           search information providers, and credit reference agencies) from whom
@@ -195,9 +196,9 @@ const UnderConstruction = () => {
           effectiveness of promotions and advertising; modifying, improving or
           personalizing our services, products and communications; detecting
           fraud; investigating suspicious activity (e.g., violations of our
-          Terms and Conditions, which can be found <a href="/terms-and-conditions/">here</a>
-          ) and otherwise keeping our site safe and secure; and conducting data
-          analytics.
+          Terms and Conditions, which can be found{" "}
+          <a href="/terms-and-conditions/">here</a>) and otherwise keeping our
+          site safe and secure; and conducting data analytics.
         </p>
         <p>
           In addition, with your prior, explicit consent (where required), we
@@ -254,8 +255,8 @@ const UnderConstruction = () => {
           Disclosure and Sharing of Your Information
         </h4>
         <p>
-          NoStack will not disclose to or share your personal information with any
-          unaffiliated third party except as follows:
+          NoStack will not disclose to or share your personal information with
+          any unaffiliated third party except as follows:
         </p>
         <ul>
           <li>
@@ -283,13 +284,14 @@ const UnderConstruction = () => {
             partners;
           </li>
           <li>
-            Where NoStack is required to disclose personal information in response
-            to lawful requests by public authorities and government agencies,
-            including to meet national security or law enforcement requirements;
-            to comply with a subpoena or other legal process; when we believe in
-            good faith that disclosure is necessary to protect our rights, to
-            enforce our Terms and Conditions, or to protect the rights, property or
-            safety of our services, users or others; and to investigate fraud;
+            Where NoStack is required to disclose personal information in
+            response to lawful requests by public authorities and government
+            agencies, including to meet national security or law enforcement
+            requirements; to comply with a subpoena or other legal process; when
+            we believe in good faith that disclosure is necessary to protect our
+            rights, to enforce our Terms and Conditions, or to protect the
+            rights, property or safety of our services, users or others; and to
+            investigate fraud;
           </li>
           <li>
             Where all or substantially all of the business or assets of NoStack
@@ -299,14 +301,14 @@ const UnderConstruction = () => {
         </ul>
         <ul>
           <li>
-            Where NoStack is required to disclose personal information in response
-            to lawful requests by public authorities and government agencies,
-            including to meet national security or law enforcement requirements;
-            to comply with a subpoena or other legal process; when we believe in
-            good faith that disclosure is necessary to protect our rights, to
-            enforce our Terms and Conditions, or to protect the rights, property or
-            safety of our services, users or others; and to investigate fraud;
-            and
+            Where NoStack is required to disclose personal information in
+            response to lawful requests by public authorities and government
+            agencies, including to meet national security or law enforcement
+            requirements; to comply with a subpoena or other legal process; when
+            we believe in good faith that disclosure is necessary to protect our
+            rights, to enforce our Terms and Conditions, or to protect the
+            rights, property or safety of our services, users or others; and to
+            investigate fraud; and
           </li>
           <li>
             Where all or substantially all of the business or assets of NoStack
@@ -314,10 +316,10 @@ const UnderConstruction = () => {
             another entity.
           </li>
           <li>
-            Where NoStack’s rights to publish, market and/or distribute a specific
-            journal or other publication are transferred to another entity, and
-            you have subscribed to or requested to receive electronic alerts
-            related to that journal or publication;
+            Where NoStack’s rights to publish, market and/or distribute a
+            specific journal or other publication are transferred to another
+            entity, and you have subscribed to or requested to receive
+            electronic alerts related to that journal or publication;
           </li>
           <li>
             Where you have subscribed to journals, elected to receive electronic
@@ -336,8 +338,8 @@ const UnderConstruction = () => {
         </ul>
         <p>
           If necessary in connection with providing publishing services on
-          behalf of third parties, such as institutions and societies, NoStack may
-          disclose navigational and transactional information in the form of
+          behalf of third parties, such as institutions and societies, NoStack
+          may disclose navigational and transactional information in the form of
           anonymous, aggregate usage statistics and demographic information that
           does not reveal your identity or personal information.
         </p>
@@ -355,18 +357,18 @@ const UnderConstruction = () => {
           <li>
             In order to process your transactions, we may store your personal
             information on our servers and those servers may reside outside the
-            country where you live. NoStack has servers and major office locations
-            in several countries, including the United States, the United
-            Kingdom, Germany, Singapore, Brazil, India and Australia. NoStack also
-            has service providers located in India and the Philippines amongst
-            other countries. Such processing may include, among other things,
-            the fulfillment of your order, the processing of your payment
-            details and the provision of support services.
+            country where you live. NoStack has servers and major office
+            locations in several countries, including the United States, the
+            United Kingdom, Germany, Singapore, Brazil, India and Australia.
+            NoStack also has service providers located in India and the
+            Philippines amongst other countries. Such processing may include,
+            among other things, the fulfillment of your order, the processing of
+            your payment details and the provision of support services.
           </li>
           <li>
             In order to satisfy global reporting requirements, NoStack may be
-            required to provide your personal information to NoStack affiliates in
-            other countries.
+            required to provide your personal information to NoStack affiliates
+            in other countries.
           </li>
         </ul>
         <p>
@@ -419,12 +421,12 @@ const UnderConstruction = () => {
           the aggregate and administer the site.
         </p>
         <p>
-          NoStack and its partners use cookies or similar technologies to analyze
-          trends, administer the website, track users’ movements around the
-          website, and to gather demographic information about our user base as
-          a whole. You can control the use of cookies at the individual browser
-          level, but if you choose to disable cookies, it may limit your use of
-          certain features or functions on our website or services.
+          NoStack and its partners use cookies or similar technologies to
+          analyze trends, administer the website, track users’ movements around
+          the website, and to gather demographic information about our user base
+          as a whole. You can control the use of cookies at the individual
+          browser level, but if you choose to disable cookies, it may limit your
+          use of certain features or functions on our website or services.
         </p>
         <p>
           For more information on cookies, please click{" "}
@@ -488,8 +490,7 @@ const UnderConstruction = () => {
           the communications that you receive from us. Note that you may still
           receive transactional communications from NoStack. For queries, please
           contact our customer support center at{" "}
-          <a href="mailto:info@nostack.net">info@nostack.net</a>
-          .
+          <a href="mailto:info@nostack.net">info@nostack.net</a>.
         </p>
         <h4
           style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
@@ -498,20 +499,20 @@ const UnderConstruction = () => {
           Third-Parties
         </h4>
         <p>
-          Pivotate and other NoStack websites or services may include links to third-party
-          websites. In using such links, please be aware that each third-party
-          website is subject to its own privacy and data protection policies and
-          is not covered by our Privacy Policy. In addition, we allow
-          third-party companies to serve ads and/or collect certain anonymous
-          information when you visit our websites. These companies may be
-          placing and reading cookies in the cookie file of the browser on your
-          computer’s hard disk or using web beacons or other technologies to
-          collect information in the course of ads being served on this website.
-          These companies may use information other than personal information
-          (e.g., click stream information, browser type, time and date, subject
-          of advertisements clicked or scrolled over) during your visits to
-          these and other websites in order to provide advertisements about
-          goods and services likely to be of greater interest to you.
+          Pivotate and other NoStack websites or services may include links to
+          third-party websites. In using such links, please be aware that each
+          third-party website is subject to its own privacy and data protection
+          policies and is not covered by our Privacy Policy. In addition, we
+          allow third-party companies to serve ads and/or collect certain
+          anonymous information when you visit our websites. These companies may
+          be placing and reading cookies in the cookie file of the browser on
+          your computer’s hard disk or using web beacons or other technologies
+          to collect information in the course of ads being served on this
+          website. These companies may use information other than personal
+          information (e.g., click stream information, browser type, time and
+          date, subject of advertisements clicked or scrolled over) during your
+          visits to these and other websites in order to provide advertisements
+          about goods and services likely to be of greater interest to you.
         </p>
         <h4
           style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
@@ -520,8 +521,8 @@ const UnderConstruction = () => {
           FERPA
         </h4>
         <p>
-          To find out about Pivotate's policies towards FERPA, please send to{" "}<a href="mailto:info@nostack.net">info@nostack.net</a>
-          .
+          To find out about Pivotate's policies towards FERPA, please send to{" "}
+          <a href="mailto:info@nostack.net">info@nostack.net</a>.
         </p>
         <h4
           style={{ display: "block", fontWeight: "800", marginTop: "24px" }}

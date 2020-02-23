@@ -107,16 +107,16 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
   if (registrationCompleted) {
     return (
       <Modal onClose={props.onClose}>
-        <div class="dialog__title">
+        <div className="dialog__title">
           <h3>Thank you!</h3>
         </div>
-        <p class="text-center">
+        <p className="text-center">
           We will be contacting you shortly. Looking forward working with you!
         </p>
         <br />
         <p>
           If you got questions you can email us at &nbsp;
-          <a class="teal--text" href="mailto:info@pivotate.com">
+          <a className="teal--text" href="mailto:info@pivotate.com">
             info@pivotate.com
           </a>
         </p>
@@ -124,7 +124,7 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
         <br />
         <div>
           <button
-            class="button button--yellow"
+            className="button button--yellow"
             type="button"
             onClick={props.onClose}
           >
@@ -237,17 +237,17 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
         progress={displayCurrentDescription().progressWidth}
         onClose={props.onClose}
       >
-        <div class="dialog__title">
-          <div class="dialog__step">
-            STEP <span class="teal--text"> {step} </span> of 3
+        <div className="dialog__title">
+          <div className="dialog__step">
+            STEP <span className="teal--text"> {step} </span> of 3
           </div>
           <h3>{displayCurrentDescription().enterText}</h3>
         </div>
         {step == 3 && (
-          <p class="dialog__text">
+          <p className="dialog__text">
             You won’t be charged a thing until you commit to it explicitly. In
             fact, the initial consultation is{" "}
-            <strong class="teal--text">FREE</strong>.
+            <strong className="teal--text">FREE</strong>.
             <br />
             <br />
             We just need your credit card in advance to cover ourselves.

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./modal.css";
 const Modal = props => (
   <>
-    <div class="dialog__backdrop" onClick={props.onClose}></div>
+    <div className="dialog__backdrop" onClick={props.onClose}></div>
     <div
       className={
         props.progress
@@ -10,7 +10,7 @@ const Modal = props => (
           : "dialog text-center"
       }
     >
-      <div class="dialog__close">
+      <div className="dialog__close">
         <button
           onClick={props.onClose}
           type="button"
@@ -20,7 +20,10 @@ const Modal = props => (
         </button>
       </div>
       {props.progress && (
-        <div class="dialog__progress" style={{ width: props.progress }}></div>
+        <div
+          className="dialog__progress"
+          style={{ width: props.progress }}
+        ></div>
       )}
       {props.children}
     </div>
