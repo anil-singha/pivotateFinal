@@ -96,7 +96,7 @@ const initialDevelopment = () => {
                 <div class="">
                   <strong>
                     starting from{" "}
-                    <span class="pricing__price teal--text">$25</span>
+                    <span class="pricing__price teal--text">$30</span>
                   </strong>{" "}
                 </div>
               </div>
@@ -109,10 +109,11 @@ const initialDevelopment = () => {
                 <div class="">
                   {" "}
                   <strong class="">
-                    <span class="pricing__price teal--text">$100</span>+ 20 for
-                    three screens
+                    <span class="pricing__price teal--text">$100</span>for three
+                    screens
                   </strong>{" "}
                 </div>
+                <br></br>
                 <p>
                   excluding animations or other unusual requirements. We will
                   tell you up front if more money is needed. (Or you can work
@@ -120,7 +121,7 @@ const initialDevelopment = () => {
                 </p>
               </div>
 
-              <div style={{ marginTop: "108px" }}>
+              <div>
                 <div class="pricing__sub-description">
                   CLOUD CONFIGURATION MODIFICATION
                 </div>

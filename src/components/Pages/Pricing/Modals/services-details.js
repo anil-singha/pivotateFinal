@@ -80,7 +80,6 @@ const serviceDetails = () => {
                 Note: if graphical design changes are necessary, those are
                 charged separately (see above)
               </p>
-              <br></br>
             </div>
           </div>
           <br></br>
