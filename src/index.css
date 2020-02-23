@@ -39,12 +39,22 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-height: 500px) {
   .dialog {
-    width: 100% !important;
-    max-height: 450px;
+    height: 100%;
     overflow: auto;
   }
+}
+
+@media screen and (max-width: 600px) {
+  .dialog {
+    width: 100% !important;
+  }
+}
+
+.mobile-menu__wrapper {
+  height: 100%;
+  overflow: auto;
 }
 
 a {
