@@ -82,9 +82,7 @@ class NavBar extends Component {
               <Link to="/#how-it-works"> HOW IT WORKS </Link>
             </li>
             <li>
-              <a href="/#" onClick={this.about}>
-                ABOUT US{" "}
-              </a>
+              <Link to="/#about-us"> HOW IT WORKS ABOUT US </Link>
             </li>
           </ul>
         </nav>
