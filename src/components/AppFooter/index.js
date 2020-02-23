@@ -74,15 +74,15 @@ const AppFooter = props => (
                 <ul className="footer__links">
                   <li>
                     {" "}
-                    <a href="/under-construction"> About Us</a>
+                    <a href="/#about-us"> About Us</a>
                   </li>
                   <li>
                     {" "}
-                    <a href="/under-construction"> How it Works</a>
+                    <a href="/#how-it-works"> How it Works</a>
                   </li>
                   <li>
                     {" "}
-                    <a href="/under-construction"> Pricing</a>
+                    <a href="/pricing"> Pricing</a>
                   </li>
                   <li>
                     <a
