@@ -39,7 +39,7 @@
   }
 }
 
-@media screen and (max-width: 401px) {
+@media screen and (max-width: 500px) {
   .dialog {
     width: 100% !important;
     max-height: 450px;

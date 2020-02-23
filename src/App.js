@@ -9,7 +9,7 @@ import "./App.min.css";
 import { NoStackConsumer } from "@nostack/no-stack";
 
 import { PLATFORM_ID, TYPE_CUSTOMER_ID } from "./config";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Link } from "react-router-dom";
 
 // Default Layout
 import AppHeader from "./components/AppHeader";
@@ -24,7 +24,6 @@ import termsAndConditions from "./components/Pages/Terms-and-conditions";
 
 const App = () => {
   const childRef = useRef();
-
   return (
     <BrowserRouter>
       <AppHeader ref={childRef} />

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AppFooter = props => (
   <footer className="footer">
@@ -34,24 +35,24 @@ const AppFooter = props => (
               <ul className="flex external__links">
                 <li>
                   {" "}
-                  <a href="/under-construction"> FAQs</a>
+                  <Link to="/under-construction"> FAQs</Link>
                 </li>
                 <li>
                   {" "}
-                  <a href="/under-construction"> Blog</a>
+                  <Link to="/under-construction"> Blog</Link>
                 </li>
                 <li>
                   {" "}
-                  <a href="/under-construction"> Contact</a>
+                  <Link to="/under-construction"> Contact</Link>
                 </li>
               </ul>
             </div>
             <div className="powered-by">
               <span className="grey--text"> Powered By </span>
-              <a href="javascript:void(0);" className="teal--text">
+              <Link to="javascript:void(0);" className="teal--text">
                 {" "}
                 NoStack
-              </a>
+              </Link>
             </div>
           </div>
           <div className="grow-6 ">
@@ -61,11 +62,11 @@ const AppFooter = props => (
                 <ul className="footer__links">
                   <li>
                     {" "}
-                    <a href="/under-construction"> Facebook </a>
+                    <Link to="/under-construction"> Facebook </Link>
                   </li>
                   <li>
                     {" "}
-                    <a href="/under-construction"> LinkedIn </a>
+                    <Link to="/under-construction"> LinkedIn </Link>
                   </li>
                 </ul>
               </div>
@@ -82,16 +83,16 @@ const AppFooter = props => (
                   </li>
                   <li>
                     {" "}
-                    <a href="/pricing"> Pricing</a>
+                    <Link to="/pricing"> Pricing</Link>
                   </li>
                   <li>
-                    <a
-                      href="javascript:void(0);"
+                    <Link
+                      to="javascript:void(0);"
                       onClick={props.onSignUp}
                       className="teal--text"
                     >
                       Sign Up Now
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -100,11 +101,11 @@ const AppFooter = props => (
                 <ul className="footer__links">
                   <li>
                     {" "}
-                    <a href="/terms-and-conditions"> Terms of Use</a>
+                    <Link to="/terms-and-conditions"> Terms of Use</Link>
                   </li>
                   <li>
                     {" "}
-                    <a href="/privacy-policy"> Privacy</a>
+                    <Link to="/privacy-policy"> Privacy</Link>
                   </li>
                 </ul>
               </div>
