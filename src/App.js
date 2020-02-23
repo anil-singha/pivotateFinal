@@ -29,14 +29,26 @@ const App = () => {
     <BrowserRouter>
       <AppHeader ref={childRef} />
       {/* main */}
-      <Route path="/" exact>
+      <Route path={`${process.env.PUBLIC_URL}/`} exact>
         <Home onSignUp={() => childRef.current.modalHandlerRegistration()} />
       </Route>
 
-      <Route path="/pricing" component={Pricing}></Route>
-      <Route path="/under-construction" component={underConstruction}></Route>
-      <Route path="/privacy-policy" component={privacyPolicy}></Route>
-      <Route path="/terms-and-conditions" component={termsAndConditions}></Route>
+      <Route
+        path={`${process.env.PUBLIC_URL}/pricing`}
+        component={Pricing}
+      ></Route>
+      <Route
+        path={`${process.env.PUBLIC_URL}/under-construction`}
+        component={underConstruction}
+      ></Route>
+      <Route
+        path={`${process.env.PUBLIC_URL}/privacy-policy`}
+        component={privacyPolicy}
+      ></Route>
+      <Route
+        path={`${process.env.PUBLIC_URL}/terms-and-conditions`}
+        component={termsAndConditions}
+      ></Route>
       <AppFooter onSignUp={() => childRef.current.modalHandlerRegistration()} />
       {/* main end */}
     </BrowserRouter>

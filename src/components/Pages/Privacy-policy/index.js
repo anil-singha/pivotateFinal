@@ -3,7 +3,7 @@ import React from "react";
 const UnderConstruction = () => {
   return (
     <div className="container full-width-sm">
-      <div className="row">
+      <div className="row" id="placeholders">
         <h3>PRIVACY POLICY</h3>
         <p style={{ margin: "2em 0" }}>Effective: February 19, 2020</p>
         <p style={{ margin: "2em 0", textAlign: "right" }}>
