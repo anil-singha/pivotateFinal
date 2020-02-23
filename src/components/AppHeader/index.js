@@ -57,7 +57,7 @@ class NavBar extends Component {
     return <Redirect to="/" push={true} />;
   };
   about = () => {
-    var elmnt = document.getElementById("about");
+    var elmnt = document.getElementById("about-us");
     setTimeout(() => {
       if (elmnt) elmnt.scrollIntoView();
     }, 100);
