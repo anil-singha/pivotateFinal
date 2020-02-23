@@ -39,12 +39,33 @@
   }
 }
 
-@media screen and (max-width: 401px) {
+@media screen and (max-height: 500px) {
+  .dialog {
+    height: 100%;
+    overflow: auto;
+    min-height: initial;
+  }
+}
+
+@media screen and (max-height: 300px) {
+  .dialog {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    min-height: initial !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .dialog {
     width: 100% !important;
-    max-height: 450px;
-    overflow: auto;
   }
+}
+
+.mobile-menu__wrapper {
+  height: 100%;
+  overflow: auto;
 }
 
 a {
