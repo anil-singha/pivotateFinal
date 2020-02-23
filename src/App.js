@@ -25,7 +25,7 @@ import termsAndConditions from "./components/Pages/Terms-and-conditions";
 const App = () => {
   const childRef = useRef();
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AppHeader ref={childRef} />
       {/* main */}
       <Route path={`${process.env.PUBLIC_URL}/`} exact>
@@ -50,7 +50,7 @@ const App = () => {
       ></Route>
       <AppFooter onSignUp={() => childRef.current.modalHandlerRegistration()} />
       {/* main end */}
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
