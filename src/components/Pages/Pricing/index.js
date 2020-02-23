@@ -7,7 +7,7 @@ const Pricing = () => {
 
       <div className="container full-width-sm">
         <div className="row" id="placeholders">
-          <h3>Pricing</h3>
+          <h3>Pricing </h3>
         </div>
         <p class="c10 title" id="h.ipkfw2j8vvvm">
           <span class="c2">Services Offered</span>
