@@ -18,15 +18,15 @@ const AppDetailsForm = ({
         onSubmit={onSubmit}
       >
         {({ isSubmitting, isValid, dirty, isValidating }) => (
-          <Form class="form">
-            <div class="form__input">
+          <Form className="form">
+            <div className="form__input">
               <RegistrationField
                 placeholder="App Name:"
                 type="text"
                 name="app"
               />
             </div>
-            <div class="form__input">
+            <div className="form__input">
               <RegistrationField
                 placeholder="Description:"
                 as="textarea"
@@ -34,14 +34,14 @@ const AppDetailsForm = ({
               />
             </div>
             <br></br>
-            <div class="">
+            <div className="">
               <RegistrationField
                 name="terms"
                 type="checkbox"
                 fieldLabel="I agree to our Terms of Use and Privacy Policy by signing up"
               />
             </div>
-            <div class="form__input">
+            <div className="form__input">
               <button
                 className="button button--yellow"
                 type="submit"

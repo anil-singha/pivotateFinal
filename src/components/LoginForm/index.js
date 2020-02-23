@@ -39,12 +39,12 @@ const LoginForm = (props, { loading, currentUser, login }) => {
 
   return (
     <Modal onClose={props.onClose}>
-      <div class="dialog__title">
+      <div className="dialog__title">
         <img src="images/Pivotate Logo.png" />
         <h3>LOGIN</h3>
       </div>
-      <form onSubmit={handleSubmit} class="form">
-        <div class="form__input">
+      <form onSubmit={handleSubmit} className="form">
+        <div className="form__input">
           <label htmlFor="nostack-username">
             <input
               id="nostack-username"
@@ -57,7 +57,7 @@ const LoginForm = (props, { loading, currentUser, login }) => {
             />
           </label>
         </div>
-        <div class="form__input">
+        <div className="form__input">
           <label htmlFor="nostack-password">
             <input
               id="nostack-password"
@@ -70,31 +70,31 @@ const LoginForm = (props, { loading, currentUser, login }) => {
             />
           </label>
         </div>
-        <div class="form__input">
+        <div className="form__input">
           <button
-            class="button button--yellow"
+            className="button button--yellow"
             type="submit"
             disabled={isSubmitting || !username || !password}
           >
             Log In
           </button>
         </div>
-        {error && <div class="form__input">{error}</div>}
+        {error && <div className="form__input">{error}</div>}
 
         <br />
         {/* <div>
           <small>or</small>
         </div> */}
         {/* Temporarility Hide Social icons */}
-        {/* <div class="flex justify-space-between">
-          <button type="button" class="button button--fb">
+        {/* <div className="flex justify-space-between">
+          <button type="button" className="button button--fb">
             Log in with
-            <img class="social-icon" height="14" src="images/facebook.png" />
+            <img className="social-icon" height="14" src="images/facebook.png" />
           </button>
           <div style={{ width: "50px" }}></div>
-          <button type="button" class="button button--google">
+          <button type="button" className="button button--google">
             Log in with
-            <img class="social-icon" height="14" src="images/google plus.png" />
+            <img className="social-icon" height="14" src="images/google plus.png" />
           </button>
         </div> */}
         <br />
@@ -102,14 +102,14 @@ const LoginForm = (props, { loading, currentUser, login }) => {
           Dont have an account?
           <a
             href="javascript:void(0);"
-            class="teal--text"
+            className="teal--text"
             onClick={props.onSwitch}
           >
             &nbsp; Sign Up
           </a>
         </small>
       </form>
-      {/* <div class="form__input">
+      {/* <div className="form__input">
         <ForgotPasswordButton />
       </div> */}
     </Modal>

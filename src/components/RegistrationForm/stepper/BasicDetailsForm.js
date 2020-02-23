@@ -19,43 +19,43 @@ const BasicDetailsForm = ({
         onSubmit={onSubmit}
       >
         {({ isSubmitting, isValid, dirty, isValidating }) => (
-          <Form class="form">
-            <div class="form__input">
+          <Form className="form">
+            <div className="form__input">
               <RegistrationField
                 placeholder="Username"
                 type="text"
                 name="username"
               />
             </div>
-            <div class="form__input">
+            <div className="form__input">
               <RegistrationField
                 placeholder="First Name"
                 type="text"
                 name="firstName"
               />
             </div>
-            <div class="form__input">
+            <div className="form__input">
               <RegistrationField
                 placeholder="Last Name"
                 type="text"
                 name="lastName"
               />
             </div>
-            <div class="form__input">
+            <div className="form__input">
               <RegistrationField
                 placeholder="Email"
                 type="email"
                 name="email"
               />
             </div>
-            <div class="form__input">
+            <div className="form__input">
               <RegistrationField
                 placeholder="Password"
                 type="password"
                 name="password"
               />
             </div>
-            <div class="form__input">
+            <div className="form__input">
               <RegistrationField
                 placeholder="Confirm Password"
                 type="password"
@@ -63,9 +63,9 @@ const BasicDetailsForm = ({
               />
             </div>
 
-            <div class="form__input">
+            <div className="form__input">
               <button
-                class="button button--yellow"
+                className="button button--yellow"
                 type="submit"
                 disabled={isSubmitting || !isValid || isValidating || !dirty}
               >
@@ -77,20 +77,20 @@ const BasicDetailsForm = ({
             {/* <div>
               <small>or</small>
             </div> */}
-            {/* <div class="flex justify-space-between">
-              <button type="button" class="button button--fb">
+            {/* <div className="flex justify-space-between">
+              <button type="button" className="button button--fb">
                 Sign up with{" "}
                 <img
-                  class="social-icon"
+                  className="social-icon"
                   height="14"
                   src="images/facebook.png"
                 />
               </button>
               <div style={{ width: "50px" }}></div>
-              <button type="button" class="button button--google">
+              <button type="button" className="button button--google">
                 Sign up with
                 <img
-                  class="social-icon"
+                  className="social-icon"
                   height="14"
                   src="images/google plus.png"
                 />
@@ -101,7 +101,7 @@ const BasicDetailsForm = ({
               Already have an account?
               <a
                 href="javascript:void(0);"
-                class="teal--text"
+                className="teal--text"
                 onClick={props.onSwitch}
               >
                 &nbsp;Log In

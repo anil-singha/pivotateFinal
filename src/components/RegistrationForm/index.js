@@ -79,13 +79,12 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
       await register({
         variables: {
           userClassId: props.userClassId,
-          name: firstName + " " + lastName,
-          username: username,
+          name: username,
           firstName,
           lastName,
           email,
           password,
-          formValues: formValuesTemp
+          formValues: JSON.stringify(formValuesTemp)
         }
       });
 
@@ -105,16 +104,36 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
     setSubmitting(false);
   };
 
-  // if (registrationCompleted) {
-  //   return (
-  //     <Wrapper>
-  //       <p>
-  //         Successfully created account! Please check your email for a
-  //         verification message. Push that, and you're in!
-  //       </p>
-  //     </Wrapper>
-  //   );
-  // }
+  if (registrationCompleted) {
+    return (
+      <Modal onClose={props.onClose}>
+        <div className="dialog__title">
+          <h3>Thank you!</h3>
+        </div>
+        <p className="text-center">
+          We will be contacting you shortly. Looking forward working with you!
+        </p>
+        <br />
+        <p>
+          If you got questions you can email us at &nbsp;
+          <a className="teal--text" href="mailto:info@pivotate.com">
+            info@pivotate.com
+          </a>
+        </p>
+        <br />
+        <br />
+        <div>
+          <button
+            className="button button--yellow"
+            type="button"
+            onClick={props.onClose}
+          >
+            GO BACK TO HOME
+          </button>
+        </div>
+      </Modal>
+    );
+  }
 
   const nextStep = () => {
     setStep(step + 1);
@@ -218,17 +237,17 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
         progress={displayCurrentDescription().progressWidth}
         onClose={props.onClose}
       >
-        <div class="dialog__title">
-          <div class="dialog__step">
-            STEP <span class="teal--text"> {step} </span> of 3
+        <div className="dialog__title">
+          <div className="dialog__step">
+            STEP <span className="teal--text"> {step} </span> of 3
           </div>
           <h3>{displayCurrentDescription().enterText}</h3>
         </div>
         {step == 3 && (
-          <p class="dialog__text">
+          <p className="dialog__text">
             You won’t be charged a thing until you commit to it explicitly. In
             fact, the initial consultation is{" "}
-            <strong class="teal--text">FREE</strong>.
+            <strong className="teal--text">FREE</strong>.
             <br />
             <br />
             We just need your credit card in advance to cover ourselves.
