@@ -6,7 +6,8 @@ import React, {
 } from "react";
 // import 'scss/index.scss'; // assuming a styles directory under src/
 
-import "./App.min.css";
+import "./scss/style.scss";
+
 import { NoStackConsumer } from "@nostack/no-stack";
 
 import { PLATFORM_ID, TYPE_CUSTOMER_ID } from "./config";
