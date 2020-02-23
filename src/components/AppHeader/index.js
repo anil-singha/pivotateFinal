@@ -8,7 +8,8 @@ import { PLATFORM_ID, TYPE_CUSTOMER_ID } from "../../config";
 class NavBar extends Component {
   state = {
     modalRegistration: this.props.modalRegistration,
-    modalLogin: false
+    modalLogin: false,
+    checkbox: false
   };
 
   // Events
@@ -27,6 +28,11 @@ class NavBar extends Component {
   modalHandlerSwitchForm = () => {
     this.modalHandlerRegistration();
     this.modalHandlerLogin();
+  };
+  checkboxHandler = () => {
+    this.setState({
+      checkbox: !this.state.checkbox
+    });
   };
 
   render() {
@@ -75,9 +81,14 @@ class NavBar extends Component {
           </a>
         </div>
         <div className="show-tablet">
-          <div id="amp-burger">
+          <div id="amp-burger" onClick={this.checkboxHandler}>
             <div className="lines">
-              <input type="checkbox" className="checkbox" />
+              <input
+                type="checkbox"
+                checked={this.state.checkbox}
+                id="checkbox"
+                className="checkbox"
+              />
               <div className="lines-icon" data-menu="">
                 <div className="icon-left"></div>
                 <div className="icon-right"></div>
@@ -88,10 +99,14 @@ class NavBar extends Component {
                     <a href="/pricing">PRICING</a>
                   </li>
                   <li>
-                    <a href="#">HOW IT WORKS </a>
+                    <a onClick={this.checkboxHandler} href="/#how-it-works">
+                      HOW IT WORKS{" "}
+                    </a>
                   </li>
                   <li>
-                    <a href="#">ABOUT US </a>
+                    <a onClick={this.checkboxHandler} href="/#about-us">
+                      ABOUT US{" "}
+                    </a>
                   </li>
                   <li>
                     <a
@@ -104,7 +119,8 @@ class NavBar extends Component {
                   </li>
                   <li>
                     <a
-                      href="/dialogs.html"
+                      href="javascript:void(0);"
+                      onClick={this.modalHandlerRegistration}
                       className="button button--yellow button__sign-up"
                     >
                       FREE CONSULTATION

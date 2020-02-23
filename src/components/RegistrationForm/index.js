@@ -104,7 +104,7 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
     setSubmitting(false);
   };
 
-  if (!registrationCompleted) {
+  if (registrationCompleted) {
     return (
       <Modal onClose={props.onClose}>
         <div class="dialog__title">
