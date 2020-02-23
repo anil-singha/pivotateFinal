@@ -96,7 +96,7 @@ class NavBar extends Component {
               <div className="mobile-menu__wrapper">
                 <ul>
                   <li>
-                    <a href="/pricing">PRICING</a>
+                    <Link to="/pricing">PRICING</Link>
                   </li>
                   <li>
                     <a onClick={this.checkboxHandler} href="/#how-it-works">
