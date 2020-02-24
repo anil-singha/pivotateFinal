@@ -58,7 +58,9 @@ a {
   color: #fff;
   display: flex;
   align-items: center;
-
+  &__header {
+    width: 70%;
+  }
   &__text {
     font-size: 28px;
   }
@@ -94,6 +96,7 @@ section {
 .about {
   &__text {
     max-width: 550px;
+    padding: 3em;
     margin-left: auto;
     color: #4b4b4b;
   }
