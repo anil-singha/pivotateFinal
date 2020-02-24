@@ -17,10 +17,8 @@ const initialDevelopment = () => {
             <strong>FREE</strong>
           </div>
           <p>
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't look even slightly
-            believable. I
+            A complimentary personal call, with no commitment, where you discuss
+            your goals and we offer options and pricing.
           </p>
         </div>
 
@@ -36,7 +34,7 @@ const initialDevelopment = () => {
             Includes initial consultation, guided development of the app flow
             and data needs with a developer, logo graphic design of three
             screens with a graphic designer, and final conversion of the app to
-            the design.
+            the design.  Customized actions not included (see below).
           </p>
         </div>
 
@@ -60,7 +58,7 @@ const initialDevelopment = () => {
                 {" "}
                 <strong>$50</strong>
               </div>
-              <strong> for three screens </strong>
+              <strong> Includes up to three standard browser screens. </strong>
             </div>
           </div>
         </div>
@@ -77,7 +75,7 @@ const initialDevelopment = () => {
                   <strong>
                     {" "}
                     <span class="pricing__price teal--text">$50</span> + 20 per
-                    user type
+                    extra user type
                   </strong>{" "}
                 </div>
               </div>
@@ -116,8 +114,7 @@ const initialDevelopment = () => {
                 <br></br>
                 <p>
                   excluding animations or other unusual requirements. We will
-                  tell you up front if more money is needed. (Or you can work
-                  out a direct private deal with your developer.)
+                  tell you up front if more money is needed.
                 </p>
               </div>
 
