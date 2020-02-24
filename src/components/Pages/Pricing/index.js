@@ -256,7 +256,10 @@ class Pricing extends Component {
         <section id="pivoting-services">
           <div class="container">
             <h2 className="text-center">
-              <span className="headline headline--teal"> MAINTENANCE </span>
+              <span className="headline headline--teal word-break">
+                {" "}
+                MAINTENANCE{" "}
+              </span>
             </h2>
             <div className="subheadline text-center">Keep it up!</div>
             <div class="flex justify-center">
