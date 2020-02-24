@@ -27,7 +27,7 @@ class Pricing extends Component {
       modalServices: !this.state.modalServices
     });
   };
-  render() {
+  render() {at 
     return (
       <>
         <section class="pricing__section triangle triangle--teal">
@@ -41,13 +41,13 @@ class Pricing extends Component {
         </section>
         {/* Initial Development */}
         <section id="initial-development">
-          <div class="container">
+          <div class="container">at 
             <h2 className="text-center">
               <span className="headline headline--teal">
                 {" "}
                 INITIAL DEVELOPMENT{" "}
               </span>
-            </h2>
+            </h2>this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
             <div className="subheadline text-center">
               Get it live!
             </div>
@@ -58,10 +58,10 @@ class Pricing extends Component {
                   <img src="../images/pricing/Initial consultation.png" />
                 </figure>
                 <div class="pricing__content">
-                  <div class="pricing__description">Initial consultation</div>
+                  <div class="pricing__description">Initial consultation</div>this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
                   <div class="pricing__price teal--text">
                     <strong class="teal--text">FREE</strong>
-                  </div>
+                  </div>this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14at 
                   <div>
                     <small>per screen</small>
                   </div>
@@ -75,7 +75,7 @@ class Pricing extends Component {
                   <div class="pricing__description">
                     Discounted Initial App Package
                   </div>
-                  <div class="pricing__price teal--text">
+                  <div class="pricing__price teal--text">at 
                     <strong class="teal--text">$240</strong>
                   </div>
                   <div>
@@ -89,7 +89,7 @@ class Pricing extends Component {
                 </figure>
                 <div class="pricing__content">
                   <div class="pricing__description">Graphic design</div>
-                  <div class="pricing__price teal--text">
+                  <div class="pricing__price teal--text">this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
                     <strong class="teal--text">$30</strong>
                   </div>
                 </div>
@@ -115,7 +115,7 @@ class Pricing extends Component {
               >
                 GET DETAILS{" "}
                 <img
-                  class="pricing__icon"
+                  class="pricing__icon"at 
                   src="../images/pricing/external link.png"
                 ></img>
               </a>
@@ -177,7 +177,7 @@ class Pricing extends Component {
                   <div class="pricing__price teal--text">
                     <strong class="teal--text">$30</strong>
                   </div>
-                </div>
+                </div>at 
               </div>
             </div>
 
@@ -201,7 +201,7 @@ class Pricing extends Component {
         {/* Maintenance */}
         <section id="pivoting-services">
           <div class="container">
-            <h2 className="text-center">
+            <h2 className="text-center">this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
               <span className="headline headline--teal"> MAINTENANCE </span>
             </h2>
             <div className="subheadline text-center">
@@ -233,7 +233,7 @@ class Pricing extends Component {
               </div>
             </div>
             <div class="pricing__detail flex justify-center">
-              <a
+              <aat 
                 onClick={this.modalToggleMaintenance}
                 href="javascript:void(0);"
                 className="button button--rounded button--yellow flex justify-center items-center"
@@ -249,7 +249,7 @@ class Pricing extends Component {
         </section>
         {/* End Maintenance */}
 
-        {this.state.modalInitDev && (
+        {this.state.modalInitDev && (at 
           <Modal fullScreen onClose={this.modalToggleInitDev}>
             <InitialDevelopment> </InitialDevelopment>
           </Modal>
@@ -268,5 +268,6 @@ class Pricing extends Component {
     );
   }
 }
+
 
 export default Pricing;
