@@ -166,6 +166,9 @@
 /* MEDIA FOR LITTLE MOBILE DISPLAY */
 
 @media only screen and (max-width: 480px) and (min-width: 300px) {
+  h2 {
+    font-size: 34px !important;
+  }
   .card__price {
     padding: 0.25em;
   }
