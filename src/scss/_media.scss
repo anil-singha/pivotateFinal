@@ -20,6 +20,9 @@
 /* MEDIA FOR NOTEBOOK DISPLAY */
 
 @media only screen and (max-width: 1200px) and (min-width: 300px) {
+  .hero__img {
+    height: 350px;
+  }
   .dialog {
     &__fullscreen {
       .dialog__close {
@@ -56,6 +59,7 @@
   .pricing__detail {
     margin-top: 40px;
   }
+
   .dialog {
     &__fullscreen {
       padding-top: 100px;
@@ -160,6 +164,13 @@
   .container {
     padding-right: 16px; /* 3 */
     padding-left: 16px; /* 3 */
+  }
+
+  h1 {
+    font-size: 48px !important;
+  }
+  h2 {
+    font-size: 36px !important;
   }
 }
 
