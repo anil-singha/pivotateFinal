@@ -11,7 +11,9 @@ const Home = props => {
               <div className="hero__text">
                 <strong>CREATE A </strong>
               </div>
-              <h1 className="yellow--text">PROFESSIONAL WEB APP</h1>
+              <h1 className="yellow--text">
+                <span className="word-break"> PROFESSIONAL </span> WEB APP
+              </h1>
               <div className="hero__text has--underline">
                 <strong>WITHOUT A TEAM</strong>
               </div>

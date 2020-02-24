@@ -35,6 +35,9 @@
 /* MEDIA FOR TABLET DISPLAY */
 
 @media only screen and (max-width: 992px) and (min-width: 300px) {
+  .button--large {
+    min-width: 250px !important;
+  }
   .dialog {
     &__fullscreen {
       .dialog__close {
@@ -54,16 +57,19 @@
     &__fullscreen {
       padding-top: 100px;
 
-      .grow-6{
-        width: 100% !important;;
+      .grow-6 {
+        width: 100% !important;
       }
     }
-    &__close{
+    &__detail {
+      margin-top: 40px !important;
+    }
+    &__close {
       padding: 0 !important;
     }
   }
   .pricing + .pricing {
-    margin-top: 120px;
+    margin-top: 40px;
   }
   .how-it-works {
     &__img {
