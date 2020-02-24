@@ -91,8 +91,8 @@ class Pricing extends Component {
           <div class="container">
             <h1 class="display-2  has--underline"> SERVICES OFFERED </h1>
             <p>
-              Pay only for what you need. I need something else. Pricing is
-              subject to change
+              Pay only for what you need, when you need it. Prices are
+              subject to change.
             </p>
           </div>
         </section>
@@ -117,10 +117,6 @@ class Pricing extends Component {
 
                   <div class="pricing__price teal--text">
                     <strong class="teal--text">FREE</strong>
-                  </div>
-
-                  <div>
-                    <small>per screen</small>
                   </div>
                 </div>
               </div>

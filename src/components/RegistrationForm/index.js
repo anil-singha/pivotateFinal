@@ -128,7 +128,7 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
             type="button"
             onClick={props.onClose}
           >
-            GO BACK TO HOME
+            DONE
           </button>
         </div>
       </Modal>
