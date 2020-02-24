@@ -47,7 +47,7 @@ class Pricing extends Component {
                 {" "}
                 INITIAL DEVELOPMENT{" "}
               </span>
-            </h2>
+            </h2>this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
             <div className="subheadline text-center">
               Get it live and test it with real users!
             </div>
@@ -58,10 +58,10 @@ class Pricing extends Component {
                   <img src="../images/pricing/Initial consultation.png" />
                 </figure>
                 <div class="pricing__content">
-                  <div class="pricing__description">Initial consultation</div>
+                  <div class="pricing__description">Initial consultation</div>this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
                   <div class="pricing__price teal--text">
                     <strong class="teal--text">FREE</strong>
-                  </div>
+                  </div>this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
                   <div>
                     <small>per screen</small>
                   </div>
@@ -89,7 +89,7 @@ class Pricing extends Component {
                 </figure>
                 <div class="pricing__content">
                   <div class="pricing__description">Graphic design</div>
-                  <div class="pricing__price teal--text">
+                  <div class="pricing__price teal--text">this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
                     <strong class="teal--text">$30</strong>
                   </div>
                 </div>
@@ -202,7 +202,7 @@ class Pricing extends Component {
         {/* Maintenance */}
         <section id="pivoting-services">
           <div class="container">
-            <h2 className="text-center">
+            <h2 className="text-center">this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
               <span className="headline headline--teal"> MAINTENANCE </span>
             </h2>
             <div className="subheadline text-center">
@@ -225,8 +225,8 @@ class Pricing extends Component {
                 <figure class="pricing__img">
                   <img src="../images/pricing/Additional Cloud.png" />
                 </figure>
-                <div class="pricing__content">
-                  <div class="pricing__description">Additional Cloud</div>
+                <div class="pricing__content">this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
+                  <div class="pricing__description">Additional Cloud</div>this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
                   <div class="pricing__price">
                     <strong class="teal--text">At cost</strong>
                   </div>
@@ -269,5 +269,6 @@ class Pricing extends Component {
     );
   }
 }
+
 
 export default Pricing;
