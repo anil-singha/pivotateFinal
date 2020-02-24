@@ -133,7 +133,7 @@ const serviceDetails = () => {
                   <strong>
                     {" "}
                     <span class="pricing__price teal--text">$15 </span>for up to
-                    5 types:
+                    5 types
                   </strong>
                 </div>
                 <div class="">

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Modal from "../../Modal";
 import InitialDevelopment from "./Modals/initial-development.js";
-import ServiceDetails from "./Modals/services-details.js";
+import ServiceDetails from "./Modals/pivoting-services-details.js";
 import MaintenanceDetails from "./Modals/maintenance-details";
-import serviceDetails from "./Modals/services-details.js";
+import serviceDetails from "./Modals/pivoting-services-details.js";
 
 class Pricing extends Component {
   state = {
@@ -27,7 +27,7 @@ class Pricing extends Component {
       modalServices: !this.state.modalServices
     });
   };
-  render() {
+  render() {at 
     return (
       <>
         <section class="pricing__section triangle triangle--teal">
@@ -41,7 +41,7 @@ class Pricing extends Component {
         </section>
         {/* Initial Development */}
         <section id="initial-development">
-          <div class="container">
+          <div class="container">at 
             <h2 className="text-center">
               <span className="headline headline--teal">
                 {" "}
@@ -49,7 +49,7 @@ class Pricing extends Component {
               </span>
             </h2>this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
             <div className="subheadline text-center">
-              Get it live and test it with real users!
+              Get it live!
             </div>
 
             <div class="flex justify-center">
@@ -61,7 +61,7 @@ class Pricing extends Component {
                   <div class="pricing__description">Initial consultation</div>this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
                   <div class="pricing__price teal--text">
                     <strong class="teal--text">FREE</strong>
-                  </div>this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
+                  </div>this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14at 
                   <div>
                     <small>per screen</small>
                   </div>
@@ -75,7 +75,7 @@ class Pricing extends Component {
                   <div class="pricing__description">
                     Discounted Initial App Package
                   </div>
-                  <div class="pricing__price teal--text">
+                  <div class="pricing__price teal--text">at 
                     <strong class="teal--text">$240</strong>
                   </div>
                   <div>
@@ -115,7 +115,7 @@ class Pricing extends Component {
               >
                 GET DETAILS{" "}
                 <img
-                  class="pricing__icon"
+                  class="pricing__icon"at 
                   src="../images/pricing/external link.png"
                 ></img>
               </a>
@@ -134,8 +134,7 @@ class Pricing extends Component {
               </span>
             </h2>
             <div className="subheadline text-center">
-              We don’t leave you after the initial development! You probably
-              won’t get it quite right…{" "}
+              Get it right!{" "}
             </div>
 
             <div class="flex justify-center">
@@ -178,7 +177,7 @@ class Pricing extends Component {
                   <div class="pricing__price teal--text">
                     <strong class="teal--text">$30</strong>
                   </div>
-                </div>
+                </div>at 
               </div>
             </div>
 
@@ -206,7 +205,7 @@ class Pricing extends Component {
               <span className="headline headline--teal"> MAINTENANCE </span>
             </h2>
             <div className="subheadline text-center">
-              We keep it running smoothly for you
+              Keep it up!
             </div>
             <div class="flex justify-center">
               <div class="grow-3 pricing">
@@ -225,8 +224,8 @@ class Pricing extends Component {
                 <figure class="pricing__img">
                   <img src="../images/pricing/Additional Cloud.png" />
                 </figure>
-                <div class="pricing__content">this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
-                  <div class="pricing__description">Additional Cloud</div>this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
+                <div class="pricing__content">
+                  <div class="pricing__description">Special Cloud Services</div>
                   <div class="pricing__price">
                     <strong class="teal--text">At cost</strong>
                   </div>
@@ -234,7 +233,7 @@ class Pricing extends Component {
               </div>
             </div>
             <div class="pricing__detail flex justify-center">
-              <a
+              <aat 
                 onClick={this.modalToggleMaintenance}
                 href="javascript:void(0);"
                 className="button button--rounded button--yellow flex justify-center items-center"
@@ -250,7 +249,7 @@ class Pricing extends Component {
         </section>
         {/* End Maintenance */}
 
-        {this.state.modalInitDev && (
+        {this.state.modalInitDev && (at 
           <Modal fullScreen onClose={this.modalToggleInitDev}>
             <InitialDevelopment> </InitialDevelopment>
           </Modal>
