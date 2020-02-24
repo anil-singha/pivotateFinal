@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Modal from "../../Modal";
 import InitialDevelopment from "./Modals/initial-development.js";
-import ServiceDetails from "./Modals/services-details.js";
+import ServiceDetails from "./Modals/pivoting-services-details.js";
 import MaintenanceDetails from "./Modals/maintenance-details";
-import serviceDetails from "./Modals/services-details.js";
+import serviceDetails from "./Modals/pivoting-services-details.js";
 
 class Pricing extends Component {
   state = {
@@ -49,7 +49,7 @@ class Pricing extends Component {
               </span>
             </h2>
             <div className="subheadline text-center">
-              Get it live and test it with real users!
+              Get it live!
             </div>
 
             <div class="flex justify-center">
@@ -134,8 +134,7 @@ class Pricing extends Component {
               </span>
             </h2>
             <div className="subheadline text-center">
-              We don’t leave you after the initial development! You probably
-              won’t get it quite right…{" "}
+              Get it right!{" "}
             </div>
 
             <div class="flex justify-center">
@@ -206,7 +205,7 @@ class Pricing extends Component {
               <span className="headline headline--teal"> MAINTENANCE </span>
             </h2>
             <div className="subheadline text-center">
-              We keep it running smoothly for you
+              Keep it up!
             </div>
             <div class="flex justify-center">
               <div class="grow-3 pricing">
@@ -226,7 +225,7 @@ class Pricing extends Component {
                   <img src="../images/pricing/Additional Cloud.png" />
                 </figure>
                 <div class="pricing__content">
-                  <div class="pricing__description">Additional Cloud</div>
+                  <div class="pricing__description">Special Cloud Services</div>
                   <div class="pricing__price">
                     <strong class="teal--text">At cost</strong>
                   </div>

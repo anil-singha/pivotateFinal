@@ -20,9 +20,9 @@ const maintenanceDetails = () => {
                 </strong>{" "}
               </div>
               <p>
-                (includes server and cloud storage/computation costs until they
+                Includes server and cloud storage/computation costs until they
                 exceed a cutoff. Also includes a static front end endpoint,
-                which could be used either for a landing page or for a web app)
+                which could be used either for a landing page or for a web app.
               </p>
             </div>
           </div>

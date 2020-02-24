@@ -8,7 +8,7 @@ const AppFooter = props => (
         <div className="flex">
           <div className="grow-6">
             <h2>
-              <div>Don't settle with</div>
+              <div>Don't settle for</div>
               <div>templates or freelancers!</div>
             </h2>
           </div>
