@@ -4,6 +4,16 @@ import InitialDevelopment from "./Modals/initial-development.js";
 import ServiceDetails from "./Modals/pivoting-services-details.js";
 import MaintenanceDetails from "./Modals/maintenance-details";
 import serviceDetails from "./Modals/pivoting-services-details.js";
+import queryString from "query-string";
+
+import {
+  BrowserRouter,
+  HashRouter,
+  useLocation,
+  Route,
+  Link,
+  withRouter
+} from "react-router-dom";
 
 class Pricing extends Component {
   state = {
@@ -12,22 +22,69 @@ class Pricing extends Component {
     modalServices: false
   };
 
+  componentDidMount() {
+    const values = queryString.parse(this.props.location.search);
+
+    switch (values.modal) {
+      case "initial-development":
+        this.modalToggleInitDev();
+        break;
+      case "maintenance":
+        this.modalToggleMaintenance();
+
+        break;
+      case "services":
+        this.modalToggleServices();
+        break;
+      default:
+        break;
+    }
+  }
+
   modalToggleInitDev = props => {
     this.setState({
       modalInitDev: !this.state.modalInitDev
     });
+    if (!this.state.modalInitDev) {
+      this.props.history.push({
+        search:
+          "?" + new URLSearchParams({ modal: "initial-development" }).toString()
+      });
+    } else {
+      this.props.history.push({
+        search: "?" + new URLSearchParams().toString()
+      });
+    }
   };
   modalToggleMaintenance = props => {
     this.setState({
       modalMaintenance: !this.state.modalMaintenance
     });
+    if (!this.state.modalServices) {
+      this.props.history.push({
+        search: "?" + new URLSearchParams({ modal: "maintenance" }).toString()
+      });
+    } else {
+      this.props.history.push({
+        search: "?" + new URLSearchParams().toString()
+      });
+    }
   };
   modalToggleServices = props => {
     this.setState({
       modalServices: !this.state.modalServices
     });
+    if (!this.state.modalServices) {
+      this.props.history.push({
+        search: "?" + new URLSearchParams({ modal: "services" }).toString()
+      });
+    } else {
+      this.props.history.push({
+        search: "?" + new URLSearchParams().toString()
+      });
+    }
   };
-  render() {at 
+  render() {
     return (
       <>
         <section class="pricing__section triangle triangle--teal">
@@ -41,27 +98,27 @@ class Pricing extends Component {
         </section>
         {/* Initial Development */}
         <section id="initial-development">
-          <div class="container">at 
+          <div class="container">
             <h2 className="text-center">
               <span className="headline headline--teal">
                 {" "}
                 INITIAL DEVELOPMENT{" "}
               </span>
-            </h2>this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
-            <div className="subheadline text-center">
-              Get it live!
-            </div>
+            </h2>
 
+            <div className="subheadline text-center">Get it live!</div>
             <div class="flex justify-center">
               <div class="grow-3 pricing">
                 <figure class="pricing__img">
                   <img src="../images/pricing/Initial consultation.png" />
                 </figure>
                 <div class="pricing__content">
-                  <div class="pricing__description">Initial consultation</div>this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
+                  <div class="pricing__description">Initial consultation</div>
+
                   <div class="pricing__price teal--text">
                     <strong class="teal--text">FREE</strong>
-                  </div>this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14at 
+                  </div>
+
                   <div>
                     <small>per screen</small>
                   </div>
@@ -75,7 +132,7 @@ class Pricing extends Component {
                   <div class="pricing__description">
                     Discounted Initial App Package
                   </div>
-                  <div class="pricing__price teal--text">at 
+                  <div class="pricing__price teal--text">
                     <strong class="teal--text">$240</strong>
                   </div>
                   <div>
@@ -89,7 +146,7 @@ class Pricing extends Component {
                 </figure>
                 <div class="pricing__content">
                   <div class="pricing__description">Graphic design</div>
-                  <div class="pricing__price teal--text">this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
+                  <div class="pricing__price teal--text">
                     <strong class="teal--text">$30</strong>
                   </div>
                 </div>
@@ -106,7 +163,6 @@ class Pricing extends Component {
                 </div>
               </div>
             </div>
-
             <div class="pricing__detail flex justify-center">
               <a
                 href="javascript:void(0);"
@@ -115,7 +171,7 @@ class Pricing extends Component {
               >
                 GET DETAILS{" "}
                 <img
-                  class="pricing__icon"at 
+                  class="pricing__icon"
                   src="../images/pricing/external link.png"
                 ></img>
               </a>
@@ -133,9 +189,7 @@ class Pricing extends Component {
                 PIVOTING SERVICES{" "}
               </span>
             </h2>
-            <div className="subheadline text-center">
-              Get it right!{" "}
-            </div>
+            <div className="subheadline text-center">Get it right! </div>
 
             <div class="flex justify-center">
               <div class="grow-3 pricing">
@@ -177,7 +231,7 @@ class Pricing extends Component {
                   <div class="pricing__price teal--text">
                     <strong class="teal--text">$30</strong>
                   </div>
-                </div>at 
+                </div>
               </div>
             </div>
 
@@ -201,12 +255,10 @@ class Pricing extends Component {
         {/* Maintenance */}
         <section id="pivoting-services">
           <div class="container">
-            <h2 className="text-center">this new PR has conflicts with master: https://github.com/YizYah/pivotateFinal/pull/14
+            <h2 className="text-center">
               <span className="headline headline--teal"> MAINTENANCE </span>
             </h2>
-            <div className="subheadline text-center">
-              Keep it up!
-            </div>
+            <div className="subheadline text-center">Keep it up!</div>
             <div class="flex justify-center">
               <div class="grow-3 pricing">
                 <figure class="pricing__img">
@@ -233,7 +285,7 @@ class Pricing extends Component {
               </div>
             </div>
             <div class="pricing__detail flex justify-center">
-              <aat 
+              <a
                 onClick={this.modalToggleMaintenance}
                 href="javascript:void(0);"
                 className="button button--rounded button--yellow flex justify-center items-center"
@@ -249,7 +301,7 @@ class Pricing extends Component {
         </section>
         {/* End Maintenance */}
 
-        {this.state.modalInitDev && (at 
+        {this.state.modalInitDev && (
           <Modal fullScreen onClose={this.modalToggleInitDev}>
             <InitialDevelopment> </InitialDevelopment>
           </Modal>
@@ -268,6 +320,5 @@ class Pricing extends Component {
     );
   }
 }
-
 
 export default Pricing;
