@@ -53,6 +53,9 @@
 /* MEDIA FOR MEDIUM MOBILE DISPLAY */
 
 @media only screen and (max-width: 768px) and (min-width: 300px) {
+  .pricing__detail {
+    margin-top: 40px;
+  }
   .dialog {
     &__fullscreen {
       padding-top: 100px;
@@ -163,11 +166,25 @@
 /* MEDIA FOR LITTLE MOBILE DISPLAY */
 
 @media only screen and (max-width: 480px) and (min-width: 300px) {
+  .card__price {
+    padding: 0.25em;
+  }
+  .container {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+  section:not(.hero) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
   .why-it-works__img,
   .about__img {
     width: 100%;
     height: initial !important;
     margin-top: 2em;
+  }
+  .grow-3 .card {
+    margin: 0.25em;
   }
   .triangle--white::after {
     border-color: #fff transparent transparent transparent;

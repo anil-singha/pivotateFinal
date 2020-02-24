@@ -177,6 +177,9 @@ section {
   color: #a4a4a4;
 }
 
+h1 {
+  word-break: break-all;
+}
 .card {
   text-align: center;
   border-radius: 10px;
@@ -196,6 +199,7 @@ section {
     color: #fff;
     font-size: 60px;
     padding: 0.75em;
+    word-wrap: break-word;
   }
 }
 .grow-3:nth-child(2) .card {
@@ -668,6 +672,11 @@ a {
 
 .pivoting-services {
   background-color: #f0f6f6;
+  &:after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 0 !important;
+  }
 }
 .dialog {
   .headline {
