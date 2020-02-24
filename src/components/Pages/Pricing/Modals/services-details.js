@@ -205,7 +205,7 @@ const serviceDetails = () => {
               </div>
               <div>
                 <div>
-                  <div class="pricing__sub-description">CONTENT WRITERs</div>
+                  <div class="pricing__sub-description">CONTENT WRITERS</div>
                   <div class="">
                     <strong>
                       {" "}

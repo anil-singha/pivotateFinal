@@ -12,7 +12,6 @@ const maintenanceDetails = () => {
           <div class="pricing__description">Basic maintenance</div>
           <div class="flex">
             <div>
-              <div class="pricing__sub-description">ADDING NEW BUTTON</div>
               <div class="">
                 {" "}
                 <strong class="">

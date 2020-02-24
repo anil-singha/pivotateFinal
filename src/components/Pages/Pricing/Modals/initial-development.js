@@ -55,7 +55,7 @@ const initialDevelopment = () => {
               </p>
             </div>
             <div class="grow-6" style={{ width: "50%" }}>
-              <div class="pricing__sub-description">User Interface</div>
+              <div class="pricing__sub-description">USER INTERFACE</div>
               <div class="pricing__price inline-flex teal--text">
                 {" "}
                 <strong>$50</strong>
