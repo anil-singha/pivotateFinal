@@ -11,7 +11,9 @@ const Home = props => {
               <div className="hero__text">
                 <strong>CREATE A </strong>
               </div>
-              <h1 className="yellow--text">PRO WEB APP</h1>
+              <h1 className="yellow--text">
+                <span className="word-break"> PROFESSIONAL </span> WEB APP
+              </h1>
               <div className="hero__text has--underline">
                 <strong>WITHOUT A TEAM</strong>
               </div>
@@ -121,11 +123,11 @@ const Home = props => {
         <div className="subheadline text-center">
           Hosting (Server): $20/month.
           <div>
-            Pay By the Change (see for
+            Low fees for changes (see
             <Link to="/pricing" className="teal--text">
               &nbsp; price list &nbsp;
             </Link>
-            precise details):
+            for precise details):
           </div>
         </div>
         <div className="container">
