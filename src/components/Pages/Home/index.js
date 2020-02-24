@@ -102,7 +102,7 @@ const Home = props => {
           <h2 className="text-center">
             <span className="headline headline--yellow">WHY IT WORKS</span>
           </h2>
-          <div className="container full-width flex flex-wrap items-center">
+          <div className="container full-width flex flex-wrap  items-center">
             <p className="why-it-works__text">
               Our framework makes coding simpler and easier. The developer just
               works on the user interface.
