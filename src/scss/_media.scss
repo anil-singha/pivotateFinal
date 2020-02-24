@@ -35,6 +35,9 @@
 /* MEDIA FOR TABLET DISPLAY */
 
 @media only screen and (max-width: 992px) and (min-width: 300px) {
+  .button--large {
+    min-width: 250px !important;
+  }
   .dialog {
     &__fullscreen {
       .dialog__close {
