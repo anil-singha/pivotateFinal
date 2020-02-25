@@ -6,13 +6,14 @@ const Home = props => {
       {/* hero */}
       <section className="hero triangle--teal triangle">
         <div className="container full-width">
-          <div className="flex items-center">
+          <div className="flex flex-wrap items-center">
             <div className="hero__header">
               <div className="hero__text">
                 <strong>CREATE A </strong>
               </div>
               <h1 className="yellow--text">
-                <span className="word-break"> PROFESSIONAL </span> WEB APP
+                <div className="word-break"> PROFESSIONAL </div>{" "}
+                <div>WEB APP</div>
               </h1>
               <div className="hero__text has--underline">
                 <strong>WITHOUT A TEAM</strong>
@@ -101,7 +102,7 @@ const Home = props => {
           <h2 className="text-center">
             <span className="headline headline--yellow">WHY IT WORKS</span>
           </h2>
-          <div className="container full-width flex items-center">
+          <div className="container full-width flex flex-wrap  items-center">
             <p className="why-it-works__text">
               Our framework makes coding simpler and easier. The developer just
               works on the user interface.
@@ -131,7 +132,7 @@ const Home = props => {
           </div>
         </div>
         <div className="container">
-          <div className="flex">
+          <div className="flex flex-wrap">
             <div className="grow-3">
               <div className="card">
                 <div className="card__title">Minimal App</div>

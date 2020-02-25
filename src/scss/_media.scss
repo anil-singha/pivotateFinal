@@ -8,7 +8,8 @@
 
 @media only screen and (max-width: 2400px) and (min-width: 1500px) {
   .hero__header {
-    padding: 80px 240px 80px 0;
+    padding: 1em 1em 1em 0;
+    width: 50%;
   }
   .how-it-works {
     &__img {
@@ -20,6 +21,19 @@
 /* MEDIA FOR NOTEBOOK DISPLAY */
 
 @media only screen and (max-width: 1200px) and (min-width: 300px) {
+  .hero__img {
+    height: 350px;
+  }
+
+  .pricing {
+    .grow-3 {
+      width: 100%;
+      .card {
+        width: 100%;
+      }
+    }
+  }
+
   .dialog {
     &__fullscreen {
       .dialog__close {
@@ -53,6 +67,16 @@
 /* MEDIA FOR MEDIUM MOBILE DISPLAY */
 
 @media only screen and (max-width: 768px) and (min-width: 300px) {
+  .about {
+    &__text {
+      padding: 1em;
+    }
+  }
+
+  .pricing__detail {
+    margin-top: 40px;
+  }
+
   .dialog {
     &__fullscreen {
       padding-top: 100px;
@@ -144,9 +168,7 @@
       }
     }
   }
-  .grow-3 .card {
-    margin: 1em !important;
-  }
+
   .hide-tablet {
     display: none;
   }
@@ -158,16 +180,43 @@
     padding-right: 16px; /* 3 */
     padding-left: 16px; /* 3 */
   }
+
+  h1 {
+    font-size: 48px !important;
+  }
+  h2 {
+    font-size: 36px !important;
+  }
 }
 
 /* MEDIA FOR LITTLE MOBILE DISPLAY */
 
 @media only screen and (max-width: 480px) and (min-width: 300px) {
+  h1 {
+    font-size: 36px !important;
+  }
+  h2 {
+    font-size: 30px !important;
+  }
+  .card__price {
+    padding: 0.25em;
+  }
+  .container {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+  section:not(.hero) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
   .why-it-works__img,
   .about__img {
     width: 100%;
     height: initial !important;
     margin-top: 2em;
+  }
+  .grow-3 .card {
+    margin: 0.25em;
   }
   .triangle--white::after {
     border-color: #fff transparent transparent transparent;
@@ -175,6 +224,15 @@
     top: -50px !important;
     left: 50% !important;
     transform: translateX(-50%);
+  }
+
+  .pivoting-services {
+    background-color: #f0f6f6;
+    &:after {
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      top: 0 !important;
+    }
   }
 }
 

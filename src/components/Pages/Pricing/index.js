@@ -3,7 +3,6 @@ import Modal from "../../Modal";
 import InitialDevelopment from "./Modals/initial-development.js";
 import ServiceDetails from "./Modals/pivoting-services-details.js";
 import MaintenanceDetails from "./Modals/maintenance-details";
-import serviceDetails from "./Modals/pivoting-services-details.js";
 import queryString from "query-string";
 
 import {
@@ -177,7 +176,7 @@ class Pricing extends Component {
         {/* End Initial Development */}
 
         {/* Pivotating Services */}
-        <section class="pivoting-services  triangle--grey triangle">
+        <section class="pivoting-services  triangle--grey triangle triangle--white triangle">
           <div class="container">
             <h2 className="text-center">
               <span className="headline headline--teal">

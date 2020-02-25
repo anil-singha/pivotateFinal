@@ -9,9 +9,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.word-break {
-  word-break: break-all;
-}
 /* HEADER */
 h1 {
   font-size: 70px;
@@ -97,6 +94,7 @@ section {
 .about {
   &__text {
     max-width: 550px;
+    padding: 3em;
     margin-left: auto;
     color: #4b4b4b;
   }
@@ -127,7 +125,17 @@ section {
   &__img {
     margin-left: auto;
     height: 520px;
+    margin-top: 2em;
   }
+}
+.pricing {
+  .grow-3 {
+    width: 33.33%;
+    padding: 1em;
+  }
+}
+.pricing__section ~ section {
+  padding-bottom: 30px;
 }
 .headline {
   font-weight: 800;
@@ -183,11 +191,14 @@ section {
   background-color: $theme-teal;
   border: 1px solid #dbdbdb;
   font-weight: 800;
+  max-width: 420px;
+  margin: auto !important;
 
   &__title {
     min-height: 100px;
     background-color: $theme-yellow;
     display: flex;
+    padding: 0.5em;
     align-items: center;
     justify-content: center;
     font-size: 26px;
@@ -196,11 +207,10 @@ section {
     color: #fff;
     font-size: 60px;
     padding: 0.75em;
+    word-wrap: break-word;
   }
 }
-.grow-3:nth-child(2) .card {
-  margin: 0 24px;
-}
+
 /* FOOTER */
 .button {
   &__wrapper {
@@ -668,6 +678,11 @@ a {
 
 .pivoting-services {
   background-color: #f0f6f6;
+  &:after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 0 !important;
+  }
 }
 .dialog {
   .headline {
