@@ -34,14 +34,14 @@ const initialDevelopment = () => {
             Includes initial consultation, guided development of the app flow
             and data needs with a developer, logo graphic design of three
             screens with a graphic designer, and final conversion of the app to
-            the design.  Customized actions not included (see below).
+            the design. Customized actions not included (see below).
           </p>
         </div>
 
         <div class="pricing__content">
           <div class="pricing__description">Graphic design</div>
           <div class="flex">
-            <div class="grow-6" style={{ width: "50%" }}>
+            <div class="grow-6" style={{ width: "50%", paddingRight: "1em" }}>
               <div class="pricing__sub-description">LOGO</div>
               <div class="pricing__price teal--text">
                 {" "}
@@ -66,7 +66,7 @@ const initialDevelopment = () => {
         <div class="pricing__content">
           <div class="pricing__description">Development</div>
           <div class="flex">
-            <div class="grow-6" style={{ width: "50%" }}>
+            <div class="grow-6" style={{ width: "50%", paddingRight: "1em" }}>
               <div>
                 <div class="pricing__sub-description">
                   INITIAL UNSTYLED APP DESIGN

@@ -24,6 +24,16 @@
   .hero__img {
     height: 350px;
   }
+
+  .pricing {
+    .grow-3 {
+      width: 100%;
+      .card {
+        width: 100%;
+      }
+    }
+  }
+
   .dialog {
     &__fullscreen {
       .dialog__close {
@@ -158,9 +168,7 @@
       }
     }
   }
-  .grow-3 .card {
-    margin: 1em !important;
-  }
+
   .hide-tablet {
     display: none;
   }

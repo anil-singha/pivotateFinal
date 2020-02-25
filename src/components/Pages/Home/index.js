@@ -132,7 +132,7 @@ const Home = props => {
           </div>
         </div>
         <div className="container">
-          <div className="flex">
+          <div className="flex flex-wrap">
             <div className="grow-3">
               <div className="card">
                 <div className="card__title">Minimal App</div>
