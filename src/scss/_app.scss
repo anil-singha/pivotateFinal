@@ -128,6 +128,9 @@ section {
     margin-top: 2em;
   }
 }
+.pricing__section ~ section {
+  padding-bottom: 30px;
+}
 .headline {
   font-weight: 800;
   position: relative;
