@@ -38,7 +38,7 @@ const Home = props => {
             </div>
             <img
               className="hero__img"
-              src="ximages/Pivotate Hero.png"
+              src="images/Pivotate Hero.png"
               alt="Pivotate Hero"
             />
           </div>
@@ -54,7 +54,7 @@ const Home = props => {
         <div className="container">
           <div className="flex items-center">
             <img
-              src="ximages/About Pivotate.png"
+              src="images/About Pivotate.png"
               className="about__img"
               alt="About Pivotate"
             />
@@ -109,7 +109,7 @@ const Home = props => {
             </p>
             <img
               className="why-it-works__img"
-              src="ximages/Why It Works.png"
+              src="images/Why It Works.png"
               alt="Why It Works"
             />
           </div>
