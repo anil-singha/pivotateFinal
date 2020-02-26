@@ -21,7 +21,7 @@ import {
 } from "react-router-dom";
 
 // Default Layout
-import AppHeader from "./components/AppHeader";
+// import AppHeader from "./components/AppHeader";
 import AppFooter from "./components/AppFooter";
 
 // Pages
