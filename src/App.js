@@ -4,7 +4,7 @@ import React, {
   useRef,
   useImperativeHandle
 } from "react";
-import "scss/index.scss"; // assuming a styles directory under src/
+// import "scss/index.scss"; // assuming a styles directory under src/
 
 import "./scss/style.scss";
 
