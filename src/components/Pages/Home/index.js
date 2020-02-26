@@ -49,7 +49,7 @@ const Home = props => {
       {/* about */}
       <section className="about" id="about-us">
         <h2 className="text-center">
-          <span className="headline headline--teal"> ABOUT PIVOTATE </span>
+          <span className="headline headline--teal"> ABOUT PIVOTATE</span>
         </h2>
         <div className="container">
           <div className="flex items-center">
