@@ -26,10 +26,10 @@ import AppFooter from "./components/AppFooter";
 
 // Pages
 import Home from "./components/Pages/Home";
-// import Pricing from "./components/Pages/Pricing";
-// import privacyPolicy from "./components/Pages/Privacy-policy";
-// import underConstruction from "./components/Pages/Under-construction";
-// import termsAndConditions from "./components/Pages/Terms-and-conditions";
+import Pricing from "./components/Pages/Pricing";
+import privacyPolicy from "./components/Pages/Privacy-policy";
+import underConstruction from "./components/Pages/Under-construction";
+import termsAndConditions from "./components/Pages/Terms-and-conditions";
 import ScrollToTop from "react-router-scroll-top";
 
 const App = () => {
@@ -37,12 +37,12 @@ const App = () => {
   return (
     <HashRouter>
       <ScrollToTop>
-        <AppHeader ref={childRef} />
+        {/* <AppHeader ref={childRef} /> */}
         {/* main */}
         <Route path={`${process.env.PUBLIC_URL}/`} exact>
           <Home onSignUp={() => childRef.current.modalHandlerRegistration()} />
         </Route>
-        {/* 
+
         <Route
           path={`${process.env.PUBLIC_URL}/pricing`}
           component={Pricing}
@@ -58,7 +58,7 @@ const App = () => {
         <Route
           path={`${process.env.PUBLIC_URL}/terms-and-conditions`}
           component={termsAndConditions}
-        ></Route> */}
+        ></Route>
         <AppFooter
           onSignUp={() => childRef.current.modalHandlerRegistration()}
         />
