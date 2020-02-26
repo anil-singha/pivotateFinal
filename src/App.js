@@ -1,9 +1,9 @@
-import React, {
-  Component,
-  forwardRef,
-  useRef,
-  useImperativeHandle
-} from "react";
+// import React, {
+//   Component,
+//   forwardRef,
+//   useRef,
+//   useImperativeHandle
+// } from "react";
 // import 'scss/index.scss'; // assuming a styles directory under src/
 
 import "./scss/style.scss";
@@ -21,7 +21,7 @@ import {
 } from "react-router-dom";
 
 // Default Layout
-// import AppHeader from "./components/AppHeader";
+import AppHeader from "./components/AppHeader";
 import AppFooter from "./components/AppFooter";
 
 // Pages
