@@ -1,10 +1,10 @@
-// import React, {
-//   Component,
-//   forwardRef,
-//   useRef,
-//   useImperativeHandle
-// } from "react";
-// import 'scss/index.scss'; // assuming a styles directory under src/
+import React, {
+  Component,
+  forwardRef,
+  useRef,
+  useImperativeHandle
+} from "react";
+import "scss/index.scss"; // assuming a styles directory under src/
 
 import "./scss/style.scss";
 
@@ -37,7 +37,7 @@ const App = () => {
   return (
     <HashRouter>
       <ScrollToTop>
-        {/* <AppHeader ref={childRef} /> */}
+        <AppHeader ref={childRef} />
         {/* main */}
         <Route path={`${process.env.PUBLIC_URL}/`} exact>
           <Home onSignUp={() => childRef.current.modalHandlerRegistration()} />
