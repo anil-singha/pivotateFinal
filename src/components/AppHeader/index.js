@@ -56,7 +56,7 @@ class NavBar extends Component {
       <header className="container header flex items-center">
         <div className="header__logo">
           <a href="/">
-            <img src="images/Pivotate Logo.png" alt="Pivotate Logo" />
+            <img src="images/Pivotate Logo-min.png" alt="Pivotate Logo" />
           </a>
         </div>
         {this.state.modalRegistration && (
