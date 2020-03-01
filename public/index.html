@@ -7,13 +7,39 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Web site created using create-
+      
+      react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+
+    <style type="text/css">
+      @font-face {
+        font-family: "Tahoma";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap; /* Add this to your @font-face rule */
+      }
+      .hero {
+        min-height: 700px;
+        background-color: #16abbc;
+        width: 100%;
+        color: #fff;
+        display: flex;
+        align-items: center;
+      }
+      .hero__text {
+        font-size: 28px;
+      }
+      .hero__img {
+        max-width: 100%;
+      }
+    </style>
+
+    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
+    <!--     
       manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/ -->
+
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -27,8 +53,15 @@
     <title>Pivotate</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <noscript>You need to enable JavaScript to run this app. - </noscript>
+
+    <div id="root">
+      <div
+        style="padding: 16px;min-height:100vh;background-color:#16abbc;width:100%;color:#ffffff;"
+      >
+        Please wait...
+      </div>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

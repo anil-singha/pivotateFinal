@@ -29,7 +29,7 @@ const AppFooter = props => (
         <div className="flex">
           <div className=" grow-6">
             <div>
-              <img src="images/Pivotate Logo Invert.png" alt="Pivotate Logo" />
+              <img src="images/Pivotate Logo Invert-min.png" alt="Pivotate Logo" />
             </div>
             <div>
               <ul className="flex external__links">

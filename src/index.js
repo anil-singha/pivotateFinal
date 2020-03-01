@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { NoStackProvider } from '@nostack/no-stack';
 
 import { PLATFORM_ID } from './config';
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

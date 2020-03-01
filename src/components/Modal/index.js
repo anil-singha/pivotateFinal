@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./modal.css";
 const Modal = props => (
   <>
     <div className="dialog__backdrop" onClick={props.onClose}></div>
