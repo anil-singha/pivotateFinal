@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/Pages/Home/index.js"],"names":["Home","props"],"mappings":"sHAAA,2BAMeA,UAJF,SAAAC,GACX,OAAO","file":"static/js/7.ebb5f4e8.chunk.js","sourcesContent":["import React from \"react\";\r\nimport { Link } from \"react-router-dom\";\r\nconst Home = props => {\r\n  return <div> test </div>;\r\n};\r\n\r\nexport default Home;\r\n"],"sourceRoot":""}
