@@ -8,6 +8,14 @@ import * as serviceWorker from './serviceWorker';
 
 import client from './client';
 
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+    gtmId: 'GTM-TS3Q48S'
+}
+
+TagManager.initialize(tagManagerArgs)
+
 ReactDOM.render(
   <NoStackProvider client={client} platformId={PLATFORM_ID}>
     <App />
