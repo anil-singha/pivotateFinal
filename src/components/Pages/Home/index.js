@@ -6,13 +6,14 @@ const Home = props => {
       {/* hero */}
       <section className="hero triangle--teal triangle">
         <div className="container full-width">
-          <div className="flex items-center">
+          <div className="flex flex-wrap items-center">
             <div className="hero__header">
               <div className="hero__text">
                 <strong>CREATE A </strong>
               </div>
               <h1 className="yellow--text">
-                <span className="word-break"> PROFESSIONAL </span> WEB APP
+                <div className="word-break"> PROFESSIONAL </div>{" "}
+                <div>WEB APP</div>
               </h1>
               <div className="hero__text has--underline">
                 <strong>WITHOUT A TEAM</strong>
@@ -37,7 +38,7 @@ const Home = props => {
             </div>
             <img
               className="hero__img"
-              src="images/Pivotate Hero.png"
+              src="images/Pivotate Hero-min.png"
               alt="Pivotate Hero"
             />
           </div>
@@ -48,12 +49,12 @@ const Home = props => {
       {/* about */}
       <section className="about" id="about-us">
         <h2 className="text-center">
-          <span className="headline headline--teal"> ABOUT PIVOTATE </span>
+          <span className="headline headline--teal"> ABOUT PIVOTATE</span>
         </h2>
         <div className="container">
           <div className="flex items-center">
             <img
-              src="images/About Pivotate.png"
+              src="images/About Pivotate-min.png"
               className="about__img"
               alt="About Pivotate"
             />
@@ -101,14 +102,14 @@ const Home = props => {
           <h2 className="text-center">
             <span className="headline headline--yellow">WHY IT WORKS</span>
           </h2>
-          <div className="container full-width flex items-center">
+          <div className="container full-width flex flex-wrap  items-center">
             <p className="why-it-works__text">
               Our framework makes coding simpler and easier. The developer just
               works on the user interface.
             </p>
             <img
               className="why-it-works__img"
-              src="images/Why It Works.png"
+              src="images/Why It Works-min.png"
               alt="Why It Works"
             />
           </div>
@@ -131,7 +132,7 @@ const Home = props => {
           </div>
         </div>
         <div className="container">
-          <div className="flex">
+          <div className="flex flex-wrap">
             <div className="grow-3">
               <div className="card">
                 <div className="card__title">Minimal App</div>
