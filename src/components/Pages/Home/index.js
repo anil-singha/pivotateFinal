@@ -23,8 +23,9 @@ const Home = props => {
                 programming team? Pivotate is the answer.
                 <br />
                 <br />
-                We custom design your web app or site for a low price, and allow
-                you to change it almost as easily as if you had your own team.
+                We custom design your web app or site for a low price, and
+                we'll change it whenever you want at transparent pivoting prices.
+                An MVP that you can pivot!
               </p>
               <div className="button__wrapper">
                 <a

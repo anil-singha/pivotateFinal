@@ -1,26 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { NoStackProvider } from '@nostack/no-stack';
+import React from "react";
+import ReactDOM from "react-dom";
+import { NoStackProvider } from "@nostack/no-stack";
 
-import { PLATFORM_ID } from './config';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { PLATFORM_ID } from "./config";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
 
-import client from './client';
+import client from "./client";
 
-import TagManager from 'react-gtm-module'
+import TagManager from "react-gtm-module";
 
 const tagManagerArgs = {
-    gtmId: 'GTM-TS3Q48S'
-}
+  gtmId: "GTM-TS3Q48S",
+  js: new Date()
+};
 
-TagManager.initialize(tagManagerArgs)
+TagManager.initialize(tagManagerArgs);
 
 ReactDOM.render(
   <NoStackProvider client={client} platformId={PLATFORM_ID}>
     <App />
   </NoStackProvider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
