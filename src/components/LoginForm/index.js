@@ -40,7 +40,7 @@ const LoginForm = (props, { loading, currentUser, login }) => {
   return (
     <Modal onClose={props.onClose}>
       <div className="dialog__title">
-        <img src="images/Pivotate Logo.png" />
+        <img src="http://pivotatestaticassets.com/images/Pivotate Logo.png" />
         <h3>LOGIN</h3>
       </div>
       <form onSubmit={handleSubmit} className="form">
@@ -89,12 +89,12 @@ const LoginForm = (props, { loading, currentUser, login }) => {
         {/* <div className="flex justify-space-between">
           <button type="button" className="button button--fb">
             Log in with
-            <img className="social-icon" height="14" src="images/facebook.png" />
+            <img className="social-icon" height="14" src="http://pivotatestaticassets.com/images/facebook.png" />
           </button>
           <div style={{ width: "50px" }}></div>
           <button type="button" className="button button--google">
             Log in with
-            <img className="social-icon" height="14" src="images/google plus.png" />
+            <img className="social-icon" height="14" src="http://pivotatestaticassets.com/images/google plus.png" />
           </button>
         </div> */}
         <br />
