@@ -90,8 +90,8 @@ class Pricing extends Component {
           <div class="container">
             <h1 class="display-2  has--underline"> SERVICES OFFERED </h1>
             <p>
-              Pay only for what you need, when you need it. Prices are
-              subject to change.
+              Pay only for what you need, when you need it. Prices are subject
+              to change.
             </p>
           </div>
         </section>
@@ -109,7 +109,7 @@ class Pricing extends Component {
             <div class="flex justify-center">
               <div class="grow-3 pricing">
                 <figure class="pricing__img">
-                  <img src="../images/pricing/Initial consultation.png" />
+                  <img src="https://pivotatestaticassets.com/images/pricing/Initial consultation.png" />
                 </figure>
                 <div class="pricing__content">
                   <div class="pricing__description">Initial consultation</div>
@@ -121,7 +121,7 @@ class Pricing extends Component {
               </div>
               <div class="grow-3 pricing">
                 <figure class="pricing__img">
-                  <img src="../images/pricing/Discounted Initial App Package.png" />
+                  <img src="https://pivotatestaticassets.com/images/pricing/Discounted Initial App Package.png" />
                 </figure>
                 <div class="pricing__content">
                   <div class="pricing__description">
@@ -137,7 +137,7 @@ class Pricing extends Component {
               </div>
               <div class="grow-3 pricing">
                 <figure class="pricing__img">
-                  <img src="../images/pricing/Graphic design.png" />
+                  <img src="https://pivotatestaticassets.com/images/pricing/Graphic design.png" />
                 </figure>
                 <div class="pricing__content">
                   <div class="pricing__description">Graphic design</div>
@@ -148,7 +148,7 @@ class Pricing extends Component {
               </div>
               <div class="grow-3 pricing">
                 <figure class="pricing__img">
-                  <img src="../images/pricing/Development.png" />
+                  <img src="https://pivotatestaticassets.com/images/pricing/Development.png" />
                 </figure>
                 <div class="pricing__content">
                   <div class="pricing__description">Development</div>
@@ -167,7 +167,7 @@ class Pricing extends Component {
                 GET DETAILS{" "}
                 <img
                   class="pricing__icon"
-                  src="../images/pricing/external link.png"
+                  src="https://pivotatestaticassets.com/images/pricing/external link.png"
                 ></img>
               </a>
             </div>
@@ -189,7 +189,7 @@ class Pricing extends Component {
             <div class="flex justify-center">
               <div class="grow-3 pricing">
                 <figure class="pricing__img">
-                  <img src="../images/pricing/Graphics.png" />
+                  <img src="https://pivotatestaticassets.com/images/pricing/Graphics.png" />
                 </figure>
                 <div class="pricing__content">
                   <div class="pricing__description">Graphics</div>
@@ -204,7 +204,7 @@ class Pricing extends Component {
               </div>
               <div class="grow-3 pricing">
                 <figure class="pricing__img">
-                  <img src="../images/pricing/Content.png" />
+                  <img src="https://pivotatestaticassets.com/images/pricing/Content.png" />
                 </figure>
                 <div class="pricing__content">
                   <div class="pricing__description">Content </div>
@@ -216,7 +216,7 @@ class Pricing extends Component {
 
               <div class="grow-3 pricing">
                 <figure class="pricing__img">
-                  <img src="../images/pricing/Special Services.png" />
+                  <img src="https://pivotatestaticassets.com/images/pricing/Special Services.png" />
                 </figure>
                 <div class="pricing__content">
                   <div class="pricing__description">Special Services</div>
@@ -239,7 +239,7 @@ class Pricing extends Component {
                 GET DETAILS{" "}
                 <img
                   class="pricing__icon"
-                  src="../images/pricing/external link.png"
+                  src="https://pivotatestaticassets.com/images/pricing/external link.png"
                 ></img>
               </a>
             </div>
@@ -260,7 +260,7 @@ class Pricing extends Component {
             <div class="flex justify-center">
               <div class="grow-3 pricing">
                 <figure class="pricing__img">
-                  <img src="../images/pricing/Basic maintenance.png" />
+                  <img src="https://pivotatestaticassets.com/images/pricing/Basic maintenance.png" />
                 </figure>
                 <div class="pricing__content">
                   <div class="pricing__description">Basic maintenance</div>
@@ -272,7 +272,7 @@ class Pricing extends Component {
               </div>
               <div class="grow-3 pricing">
                 <figure class="pricing__img">
-                  <img src="../images/pricing/Additional Cloud.png" />
+                  <img src="https://pivotatestaticassets.com/images/pricing/Additional Cloud.png" />
                 </figure>
                 <div class="pricing__content">
                   <div class="pricing__description">Special Cloud Services</div>
@@ -291,7 +291,7 @@ class Pricing extends Component {
                 GET DETAILS{" "}
                 <img
                   class="pricing__icon"
-                  src="../images/pricing/external link.png"
+                  src="https://pivotatestaticassets.com/images/pricing/external link.png"
                 ></img>
               </a>
             </div>{" "}

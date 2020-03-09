@@ -23,8 +23,9 @@ const Home = props => {
                 programming team? Pivotate is the answer.
                 <br />
                 <br />
-                We custom design your web app or site for a low price, and allow
-                you to change it almost as easily as if you had your own team.
+                We custom design your web app or site for a low price, and we'll
+                change it whenever you want at transparent pivoting prices. An
+                MVP that you can pivot!
               </p>
               <div className="button__wrapper">
                 <a
@@ -38,7 +39,7 @@ const Home = props => {
             </div>
             <img
               className="hero__img"
-              src="images/Pivotate Hero-min.png"
+              src="https://pivotatestaticassets.com/images/Pivotate Hero-min.png"
               alt="Pivotate Hero"
             />
           </div>
@@ -54,7 +55,7 @@ const Home = props => {
         <div className="container">
           <div className="flex items-center">
             <img
-              src="images/About Pivotate-min.png"
+              src="https://pivotatestaticassets.com/images/About Pivotate-min.png"
               className="about__img"
               alt="About Pivotate"
             />
@@ -109,7 +110,7 @@ const Home = props => {
             </p>
             <img
               className="why-it-works__img"
-              src="images/Why It Works-min.png"
+              src="https://pivotatestaticassets.com/images/Why It Works-min.png"
               alt="Why It Works"
             />
           </div>
