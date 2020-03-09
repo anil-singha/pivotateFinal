@@ -34,22 +34,6 @@ const AppFooter = props => (
                 alt="Pivotate Logo"
               />
             </div>
-            <div>
-              <ul className="flex external__links">
-                <li>
-                  {" "}
-                  <Link to="/under-construction"> FAQs</Link>
-                </li>
-                <li>
-                  {" "}
-                  <Link to="/under-construction"> Blog</Link>
-                </li>
-                <li>
-                  {" "}
-                  <Link to="/under-construction"> Contact</Link>
-                </li>
-              </ul>
-            </div>
             <div className="powered-by">
               <span className="grey--text"> Powered By </span>
               <strong href="javascript:void(0);" className="teal--text">
