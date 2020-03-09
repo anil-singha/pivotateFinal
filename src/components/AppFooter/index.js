@@ -44,19 +44,7 @@ const AppFooter = props => (
           </div>
           <div className="grow-6 ">
             <div className="flex footer__group-links">
-              <div className="grow-4">
-                {/* <div className="footer__title">Connect with us</div> */}
-                {/* <ul className="footer__links">
-                  <li>
-                    {" "}
-                    <Link to="/under-construction"> Facebook </Link>
-                  </li>
-                  <li>
-                    {" "}
-                    <Link to="/under-construction"> LinkedIn </Link>
-                  </li>
-                </ul> */}
-              </div>
+              <div className="grow-4"></div>
               <div className="grow-4">
                 <div className="footer__title">About</div>
                 <ul className="footer__links">
@@ -88,11 +76,11 @@ const AppFooter = props => (
                 <ul className="footer__links">
                   <li>
                     {" "}
-                    <Link to="/terms-and-conditions"> Terms of Use</Link>
+                    <Link to="/terms-and-conditions">Terms of Use</Link>
                   </li>
                   <li>
                     {" "}
-                    <Link to="/privacy-policy"> Privacy</Link>
+                    <Link to="/privacy-policy">Privacy</Link>
                   </li>
                 </ul>
               </div>
