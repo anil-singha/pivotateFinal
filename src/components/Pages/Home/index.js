@@ -7,36 +7,38 @@ const Home = props => {
       <section className="hero triangle--teal triangle">
         <div className="container full-width">
           <div className="flex flex-wrap items-center">
-            <div className="hero__header">
-              <div className="hero__text">
-                <strong>CREATE A </strong>
+            <div class="hero__header">
+              <div class="hero__text">
+                <strong>CREATE YOUR </strong>
               </div>
-              <h1 className="yellow--text">
-                <div className="word-break"> PROFESSIONAL </div>{" "}
-                <div>WEB APP</div>
+              <h1 class="yellow--text">
+                <div class="word-break">
+                  {" "}
+                  <strong> CUSTOM </strong> WEB APP{" "}
+                </div>{" "}
+                <div>WITHIN WEEKS...</div>
               </h1>
-              <div className="hero__text has--underline">
-                <strong>WITHOUT A TEAM</strong>
+              <div class="hero__text has--underline">
+                <span>
+                  THEN <strong>EASILY</strong> CHANGE IT!
+                </span>
               </div>
               <p>
-                So you know what you want in your app, but you don’t have a
-                programming team? Pivotate is the answer.
-                <br />
-                <br />
-                We custom design your web app or site for a low price, and we'll
-                change it whenever you want at transparent pivoting prices. An
-                MVP that you can pivot!
+                Unlike all other custom web app builders out there, Pivotate
+                allows you to pivot easily as you learn your users’ needs. No
+                more unpredictable freelancers or cookie-cutter templates.
               </p>
-              <div className="button__wrapper">
+              <div class="button__wrapper">
                 <a
                   onClick={props.onSignUp}
                   href="javascript:void(0);"
-                  className="button button--rounded button--yellow"
+                  class="button button--rounded button--yellow"
                 >
-                  GET STARTED <span className="chevron right"></span>
+                  GET STARTED <span class="chevron right"></span>
                 </a>
               </div>
             </div>
+
             <img
               className="hero__img"
               src="https://pivotatestaticassets.com/images/Pivotate Hero-min.png"

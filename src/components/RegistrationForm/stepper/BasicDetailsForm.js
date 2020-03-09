@@ -20,13 +20,13 @@ const BasicDetailsForm = ({
       >
         {({ isSubmitting, isValid, dirty, isValidating }) => (
           <Form className="form">
-            <div className="form__input">
+            {/* <div className="form__input">
               <RegistrationField
                 placeholder="Username"
                 type="text"
                 name="username"
               />
-            </div>
+            </div> */}
             <div className="form__input">
               <RegistrationField
                 placeholder="First Name"
@@ -48,7 +48,7 @@ const BasicDetailsForm = ({
                 name="email"
               />
             </div>
-            <div className="form__input">
+            {/* <div className="form__input">
               <RegistrationField
                 placeholder="Password"
                 type="password"
@@ -61,8 +61,15 @@ const BasicDetailsForm = ({
                 type="password"
                 name="passwordConfirmation"
               />
+            </div> */}
+            <br></br>
+            <div className="">
+              <RegistrationField
+                name="terms"
+                type="checkbox"
+                fieldLabel="I agree to our Terms of Use and Privacy Policy by signing up"
+              />
             </div>
-
             <div className="form__input">
               <button
                 className="button button--yellow"
@@ -74,28 +81,6 @@ const BasicDetailsForm = ({
               {formError && <ErrorContainer>{formError}</ErrorContainer>}
             </div>
             <br />
-            {/* <div>
-              <small>or</small>
-            </div> */}
-            {/* <div className="flex justify-space-between">
-              <button type="button" className="button button--fb">
-                Sign up with{" "}
-                <img
-                  className="social-icon"
-                  height="14"
-                  src="images/facebook.png"
-                />
-              </button>
-              <div style={{ width: "50px" }}></div>
-              <button type="button" className="button button--google">
-                Sign up with
-                <img
-                  className="social-icon"
-                  height="14"
-                  src="images/google plus.png"
-                />
-              </button>
-            </div> */}
             <br />
             <small>
               Already have an account?
