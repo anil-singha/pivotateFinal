@@ -52,17 +52,17 @@ const AppFooter = props => (
             </div>
             <div className="powered-by">
               <span className="grey--text"> Powered By </span>
-              <Link to="javascript:void(0);" className="teal--text">
+              <strong href="javascript:void(0);" className="teal--text">
                 {" "}
                 NoStack
-              </Link>
+              </strong>
             </div>
           </div>
           <div className="grow-6 ">
             <div className="flex footer__group-links">
               <div className="grow-4">
-                <div className="footer__title">Connect with us</div>
-                <ul className="footer__links">
+                {/* <div className="footer__title">Connect with us</div> */}
+                {/* <ul className="footer__links">
                   <li>
                     {" "}
                     <Link to="/under-construction"> Facebook </Link>
@@ -71,7 +71,7 @@ const AppFooter = props => (
                     {" "}
                     <Link to="/under-construction"> LinkedIn </Link>
                   </li>
-                </ul>
+                </ul> */}
               </div>
               <div className="grow-4">
                 <div className="footer__title">About</div>
