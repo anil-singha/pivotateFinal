@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import "./modal.css";
 const Modal = props => (
   <>
     <div className="dialog__backdrop" onClick={props.onClose}></div>
     <div
-      className={
-        props.progress
-          ? "dialog text-center dialog__bordered"
-          : "dialog text-center"
-      }
+      className={`dialog text-center
+         ${props.progress ? " dialog__bordered" : ""}
+         ${props.fullScreen ? " dialog__fullscreen" : ""}
+      `}
     >
       <div className="dialog__close">
         <button

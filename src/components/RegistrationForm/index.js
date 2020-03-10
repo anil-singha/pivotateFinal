@@ -63,9 +63,18 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
   //   '{"app":"newApp","description":"newApp Desc","creditCardNumber":"232","expirationDate":"234243","csv":"46"}';
   const handleSubmit = async (values, { setSubmitting }) => {
     setFormError("");
-    if (values.password !== values.passwordConfirmation) {
-      return;
-    }
+    console.log(values);
+    // setUsername(values);
+
+    // console.log(app);
+    // console.log(description);
+    setFirstName(values.firstName);
+    setLastName(values.lastName);
+    setEmail(values.email);
+
+    // if (values.password !== values.passwordConfirmation) {
+    //   return;
+    // }
     const formValuesTemp = {
       app,
       description,
@@ -80,11 +89,11 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
         variables: {
           userClassId: props.userClassId,
           name: username,
-          firstName,
-          lastName,
-          email,
+          firstName: values.firstName,
+          lastName: values.lastName,
+          email: values.email,
           password,
-          formValues: JSON.stringify(formValuesTemp)
+          formValues: JSON.stringify({})
         }
       });
 
@@ -105,13 +114,29 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
   };
 
   if (registrationCompleted) {
+    window.history.pushState(
+      { registered: "success" },
+      "Registration Complete",
+      "?registered=success"
+    );
+
     return (
       <Modal onClose={props.onClose}>
         <div className="dialog__title">
-          <h3>Thank you!</h3>
+          <h3>You're In</h3>
         </div>
         <p className="text-center">
-          We will be contacting you shortly. Looking forward working with you!
+          Congratulations on a great decision! Please follow through now to
+          arrange a meeting{" "}
+          <a
+            class="teal--text"
+            href="https://calendly.com/pivotate/clarify-new-app?month=2020-03"
+            target="_blank"
+          >
+            {" "}
+            here{" "}
+          </a>
+          :
         </p>
         <br />
         <p>
@@ -128,7 +153,7 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
             type="button"
             onClick={props.onClose}
           >
-            GO BACK TO HOME
+            DONE
           </button>
         </div>
       </Modal>
@@ -140,17 +165,18 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
   };
 
   const handleSubmitBasicForm = (values, { setSubmitting }) => {
+    console.log(values);
     setFormError("");
     if (values.password !== values.passwordConfirmation) {
       return;
     }
+
     setUsername(values.username);
     setFirstName(values.firstName);
     setLastName(values.lastName);
     setEmail(values.email);
     setPassword(values.password);
-    setSubmitting(false);
-    nextStep();
+    // setSubmitting(false);
   };
 
   const handleSubmitAppForm = (values, { setSubmitting }) => {
@@ -169,7 +195,8 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
             onSwitch={props.onSwitch}
             initialValues={initialValues}
             validationSchema={validationSchemaBasic}
-            onSubmit={handleSubmitBasicForm}
+            // onSubmit={handleSubmitBasicForm}
+            onSubmit={handleSubmit}
             formError={formError}
           />
         );
@@ -238,9 +265,9 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
         onClose={props.onClose}
       >
         <div className="dialog__title">
-          <div className="dialog__step">
+          {/* <div className="dialog__step">
             STEP <span className="teal--text"> {step} </span> of 3
-          </div>
+          </div> */}
           <h3>{displayCurrentDescription().enterText}</h3>
         </div>
         {step == 3 && (

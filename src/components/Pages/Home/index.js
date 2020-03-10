@@ -6,36 +6,42 @@ const Home = props => {
       {/* hero */}
       <section className="hero triangle--teal triangle">
         <div className="container full-width">
-          <div className="flex items-center">
-            <div className="hero__header">
-              <div className="hero__text">
-                <strong>CREATE A </strong>
+          <div className="flex flex-wrap items-center">
+            <div class="hero__header">
+              <div class="hero__text">
+                <strong>CREATE YOUR </strong>
               </div>
-              <h1 className="yellow--text">PRO WEB APP</h1>
-              <div className="hero__text has--underline">
-                <strong>WITHOUT A TEAM</strong>
+              <h1 class="yellow--text">
+                <div class="word-break">
+                  {" "}
+                  <strong> CUSTOM </strong> WEB APP{" "}
+                </div>{" "}
+                <div>WITHIN WEEKS...</div>
+              </h1>
+              <div class="hero__text has--underline">
+                <span>
+                  THEN <strong>EASILY</strong> CHANGE IT!
+                </span>
               </div>
               <p>
-                So you know what you want in your app, but you don’t have a
-                programming team? Pivotate is the answer.
-                <br />
-                <br />
-                We custom design your web app or site for a low price, and allow
-                you to change it almost as easily as if you had your own team.
+                Unlike all other custom web app builders out there, Pivotate
+                allows you to pivot easily as you learn your users’ needs. No
+                more unpredictable freelancers or cookie-cutter templates.
               </p>
-              <div className="button__wrapper">
+              <div class="button__wrapper">
                 <a
                   onClick={props.onSignUp}
                   href="javascript:void(0);"
-                  className="button button--rounded button--yellow"
+                  class="button button--rounded button--yellow"
                 >
-                  GET STARTED <span className="chevron right"></span>
+                  GET STARTED <span class="chevron right"></span>
                 </a>
               </div>
             </div>
+
             <img
               className="hero__img"
-              src="images/Pivotate Hero.png"
+              src="https://pivotatestaticassets.com/images/Pivotate Hero-min.png"
               alt="Pivotate Hero"
             />
           </div>
@@ -46,12 +52,12 @@ const Home = props => {
       {/* about */}
       <section className="about" id="about-us">
         <h2 className="text-center">
-          <span className="headline headline--teal"> ABOUT PIVOTATE </span>
+          <span className="headline headline--teal"> ABOUT PIVOTATE</span>
         </h2>
         <div className="container">
           <div className="flex items-center">
             <img
-              src="images/About Pivotate.png"
+              src="https://pivotatestaticassets.com/images/About Pivotate-min.png"
               className="about__img"
               alt="About Pivotate"
             />
@@ -99,14 +105,14 @@ const Home = props => {
           <h2 className="text-center">
             <span className="headline headline--yellow">WHY IT WORKS</span>
           </h2>
-          <div className="container full-width flex items-center">
+          <div className="container full-width flex flex-wrap  items-center">
             <p className="why-it-works__text">
               Our framework makes coding simpler and easier. The developer just
               works on the user interface.
             </p>
             <img
               className="why-it-works__img"
-              src="images/Why It Works.png"
+              src="https://pivotatestaticassets.com/images/Why It Works-min.png"
               alt="Why It Works"
             />
           </div>
@@ -121,15 +127,15 @@ const Home = props => {
         <div className="subheadline text-center">
           Hosting (Server): $20/month.
           <div>
-            Pay By the Change (see for
+            Low fees for changes (see
             <Link to="/pricing" className="teal--text">
               &nbsp; price list &nbsp;
             </Link>
-            precise details):
+            for precise details):
           </div>
         </div>
         <div className="container">
-          <div className="flex">
+          <div className="flex flex-wrap">
             <div className="grow-3">
               <div className="card">
                 <div className="card__title">Minimal App</div>

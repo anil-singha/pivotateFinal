@@ -8,7 +8,7 @@ const AppFooter = props => (
         <div className="flex">
           <div className="grow-6">
             <h2>
-              <div>Don't settle with</div>
+              <div>Don't settle for</div>
               <div>templates or freelancers!</div>
             </h2>
           </div>
@@ -29,47 +29,22 @@ const AppFooter = props => (
         <div className="flex">
           <div className=" grow-6">
             <div>
-              <img src="images/Pivotate Logo Invert.png" alt="Pivotate Logo" />
-            </div>
-            <div>
-              <ul className="flex external__links">
-                <li>
-                  {" "}
-                  <Link to="/under-construction"> FAQs</Link>
-                </li>
-                <li>
-                  {" "}
-                  <Link to="/under-construction"> Blog</Link>
-                </li>
-                <li>
-                  {" "}
-                  <Link to="/under-construction"> Contact</Link>
-                </li>
-              </ul>
+              <img
+                src="https://pivotatestaticassets.com/images/Pivotate Logo Invert-min.png"
+                alt="Pivotate Logo"
+              />
             </div>
             <div className="powered-by">
               <span className="grey--text"> Powered By </span>
-              <Link to="javascript:void(0);" className="teal--text">
+              <strong href="javascript:void(0);" className="teal--text">
                 {" "}
                 NoStack
-              </Link>
+              </strong>
             </div>
           </div>
           <div className="grow-6 ">
             <div className="flex footer__group-links">
-              <div className="grow-4">
-                <div className="footer__title">Connect with us</div>
-                <ul className="footer__links">
-                  <li>
-                    {" "}
-                    <Link to="/under-construction"> Facebook </Link>
-                  </li>
-                  <li>
-                    {" "}
-                    <Link to="/under-construction"> LinkedIn </Link>
-                  </li>
-                </ul>
-              </div>
+              <div className="grow-4"></div>
               <div className="grow-4">
                 <div className="footer__title">About</div>
                 <ul className="footer__links">
@@ -101,11 +76,11 @@ const AppFooter = props => (
                 <ul className="footer__links">
                   <li>
                     {" "}
-                    <Link to="/terms-and-conditions"> Terms of Use</Link>
+                    <Link to="/terms-and-conditions">Terms of Use</Link>
                   </li>
                   <li>
                     {" "}
-                    <Link to="/privacy-policy"> Privacy</Link>
+                    <Link to="/privacy-policy">Privacy</Link>
                   </li>
                 </ul>
               </div>
