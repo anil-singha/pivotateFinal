@@ -3,7 +3,7 @@ import React from "react";
 const initialDevelopment = () => {
   return (
     <>
-      <div class="container text-left">
+      <div className="container text-left">
         <h2>
           <span className="headline headline--teal">
             {" "}
@@ -11,9 +11,9 @@ const initialDevelopment = () => {
           </span>
         </h2>
 
-        <div class="pricing__content">
-          <div class="pricing__description">Initial consultation</div>
-          <div class="pricing__price teal--text">
+        <div className="pricing__content">
+          <div className="pricing__description">Initial consultation</div>
+          <div className="pricing__price teal--text">
             <strong>FREE</strong>
           </div>
           <p>
@@ -22,12 +22,15 @@ const initialDevelopment = () => {
           </p>
         </div>
 
-        <div class="pricing__content">
-          <div class="pricing__description">Discounted Initial App Package</div>
+        <div className="pricing__content">
+          <div className="pricing__description">
+            Discounted Initial App Package
+          </div>
           <div>
             <strong>
               {" "}
-              <span class="pricing__price teal--text">$240</span> per user type{" "}
+              <span className="pricing__price teal--text">$240</span> per user
+              type{" "}
             </strong>
           </div>
           <p>
@@ -38,12 +41,15 @@ const initialDevelopment = () => {
           </p>
         </div>
 
-        <div class="pricing__content">
-          <div class="pricing__description">Graphic design</div>
-          <div class="flex">
-            <div class="grow-6" style={{ width: "50%", paddingRight: "1em" }}>
-              <div class="pricing__sub-description">LOGO</div>
-              <div class="pricing__price teal--text">
+        <div className="pricing__content">
+          <div className="pricing__description">Graphic design</div>
+          <div className="flex">
+            <div
+              className="grow-6"
+              style={{ width: "50%", paddingRight: "1em" }}
+            >
+              <div className="pricing__sub-description">LOGO</div>
+              <div className="pricing__price teal--text">
                 {" "}
                 <strong>$60</strong>{" "}
               </div>
@@ -52,9 +58,9 @@ const initialDevelopment = () => {
                 <strong> $20 per additional design option </strong>
               </p>
             </div>
-            <div class="grow-6" style={{ width: "50%" }}>
-              <div class="pricing__sub-description">USER INTERFACE</div>
-              <div class="pricing__price inline-flex teal--text">
+            <div className="grow-6" style={{ width: "50%" }}>
+              <div className="pricing__sub-description">USER INTERFACE</div>
+              <div className="pricing__price inline-flex teal--text">
                 {" "}
                 <strong>$50</strong>
               </div>
@@ -63,52 +69,57 @@ const initialDevelopment = () => {
           </div>
         </div>
 
-        <div class="pricing__content">
-          <div class="pricing__description">Development</div>
-          <div class="flex">
-            <div class="grow-6" style={{ width: "50%", paddingRight: "1em" }}>
+        <div className="pricing__content">
+          <div className="pricing__description">Development</div>
+          <div className="flex">
+            <div
+              className="grow-6"
+              style={{ width: "50%", paddingRight: "1em" }}
+            >
               <div>
-                <div class="pricing__sub-description">
+                <div className="pricing__sub-description">
                   INITIAL UNSTYLED APP DESIGN
                 </div>
-                <div class="">
+                <div className="">
                   <strong>
                     {" "}
-                    <span class="pricing__price teal--text">$50</span> + 20 per
-                    extra user type
+                    <span className="pricing__price teal--text">$50</span> + 20
+                    per extra user type
                   </strong>{" "}
                 </div>
               </div>
               <br></br>
               <div>
-                <div class="pricing__sub-description">
+                <div className="pricing__sub-description">
                   CLOUD CONFIGURATION MODIFICATION
                 </div>
-                <div class="pricing__price teal--text">
+                <div className="pricing__price teal--text">
                   <strong> $25</strong>{" "}
                 </div>
               </div>
               <br></br>
               <div>
-                <div class="pricing__sub-description">CUSTOMIZED ACTION</div>
-                <div class="">
+                <div className="pricing__sub-description">
+                  CUSTOMIZED ACTION
+                </div>
+                <div className="">
                   <strong>
                     starting from{" "}
-                    <span class="pricing__price teal--text">$30</span>
+                    <span className="pricing__price teal--text">$30</span>
                   </strong>{" "}
                 </div>
               </div>
             </div>
-            <div class="grow-6" style={{ width: "50%" }}>
+            <div className="grow-6" style={{ width: "50%" }}>
               <div>
-                <div class="pricing__sub-description">
+                <div className="pricing__sub-description">
                   CONVERSION OF UI DESIGN
                 </div>
-                <div class="">
+                <div className="">
                   {" "}
-                  <strong class="">
-                    <span class="pricing__price teal--text">$100</span>for three
-                    screens
+                  <strong className="">
+                    <span className="pricing__price teal--text">$100</span>for
+                    three screens
                   </strong>{" "}
                 </div>
                 <br></br>
@@ -119,10 +130,10 @@ const initialDevelopment = () => {
               </div>
 
               <div>
-                <div class="pricing__sub-description">
+                <div className="pricing__sub-description">
                   CLOUD CONFIGURATION MODIFICATION
                 </div>
-                <div class="pricing__price teal--text">
+                <div className="pricing__price teal--text">
                   {" "}
                   <strong>At cost</strong>{" "}
                 </div>
