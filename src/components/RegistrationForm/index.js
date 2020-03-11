@@ -126,36 +126,29 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
           <h3>You're In</h3>
         </div>
         <p className="text-center">
-          Congratulations on a great decision! Please follow through now to
-          arrange a meeting{" "}
-          <a
-            class="teal--text"
-            href="https://calendly.com/pivotate/clarify-new-app?month=2020-03"
-            target="_blank"
-          >
-            {" "}
-            here{" "}
-          </a>
-          :
+          <h4> Great decision! Let's get going now... </h4>
+          <div>
+            <a
+              style={{ marginTop: "2.5em", marginBottom: "2em" }}
+              class="button button--rounded button--yellow"
+              href="https://calendly.com/pivotate/clarify-new-app?month=2020-03"
+            >
+              Schedule a Meeting
+            </a>
+          </div>
         </p>
         <br />
         <p>
-          If you got questions you can email us at &nbsp;
-          <a className="teal--text" href="mailto:info@pivotate.com">
-            info@pivotate.com
-          </a>
+          <small>
+            If you got questions you can email us at &nbsp;
+            <a className="teal--text" href="mailto:info@pivotate.com">
+              info@pivotate.com
+            </a>
+          </small>
         </p>
         <br />
         <br />
-        <div>
-          <button
-            className="button button--yellow"
-            type="button"
-            onClick={props.onClose}
-          >
-            DONE
-          </button>
-        </div>
+        <div></div>
       </Modal>
     );
   }
