@@ -57,8 +57,9 @@ class NavBar extends Component {
         <div className="header__logo">
           <a href="/">
             <img
-              src="https://pivotatestaticassets.com/images/Pivotate Logo-min.png"
+              src="https://pivotatestaticassets.com/images/Pivotate Logo.svg"
               alt="Pivotate Logo"
+              width="170"
             />
           </a>
         </div>

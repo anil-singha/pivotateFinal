@@ -30,7 +30,7 @@ const AppFooter = props => (
           <div className=" grow-6">
             <div>
               <img
-                src="https://pivotatestaticassets.com/images/Pivotate Logo Invert-min.png"
+                src="https://pivotatestaticassets.com/images/Pivotate Logo Invert.png"
                 alt="Pivotate Logo"
               />
             </div>
