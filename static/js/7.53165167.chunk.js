@@ -1,0 +1,2 @@
+(this["webpackJsonpno-stack-base"]=this["webpackJsonpno-stack-base"]||[]).push([[7],{598:function(e,t,n){"use strict";n.r(t);var a=n(0),s=n.n(a);t.default=function(){return s.a.createElement("div",{className:"text-center container full-width"},s.a.createElement("div",{className:" flex items-center justify-center",style:{minHeight:"400px"}}," ",s.a.createElement("h3",null," Confirmed")," "))}}}]);
+//# sourceMappingURL=7.53165167.chunk.js.map
