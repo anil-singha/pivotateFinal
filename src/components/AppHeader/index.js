@@ -90,16 +90,18 @@ class NavBar extends Component {
             </li>
           </ul>
         </nav>
-        <div className="grow-12 text-right hide-tablet">
-          <a onClick={this.modalHandlerLogin}> LOGIN </a>
-          <LogoutButton />
-          <a
-            onClick={this.modalHandlerRegistration}
-            className="button button--yellow button__sign-up"
-          >
-            SIGN UP
-          </a>
-        </div>
+        {!this.props.noAction && (
+          <div className="grow-12 text-right hide-tablet">
+            <a onClick={this.modalHandlerLogin}> LOGIN </a>
+            <LogoutButton />
+            <a
+              onClick={this.modalHandlerRegistration}
+              className="button button--yellow button__sign-up"
+            >
+              SIGN UP
+            </a>
+          </div>
+        )}
         <div className="show-tablet">
           <div id="amp-burger" onClick={this.checkboxHandler}>
             <div className="lines">
@@ -128,24 +130,28 @@ class NavBar extends Component {
                       ABOUT US{" "}
                     </Link>
                   </li>
-                  <li>
-                    <a
-                      href="javascript:void(0);"
-                      onClick={this.modalHandlerLogin}
-                    >
-                      {" "}
-                      LOGIN{" "}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="javascript:void(0);"
-                      onClick={this.modalHandlerRegistration}
-                      className="button button--yellow button__sign-up"
-                    >
-                      FREE CONSULTATION
-                    </a>
-                  </li>
+                  {!this.props.noAction && (
+                    <li>
+                      <a
+                        href="javascript:void(0);"
+                        onClick={this.modalHandlerLogin}
+                      >
+                        {" "}
+                        LOGIN{" "}
+                      </a>
+                    </li>
+                  )}
+                  {!this.props.noAction && (
+                    <li>
+                      <a
+                        href="javascript:void(0);"
+                        onClick={this.modalHandlerRegistration}
+                        className="button button--yellow button__sign-up"
+                      >
+                        FREE CONSULTATION
+                      </a>
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>

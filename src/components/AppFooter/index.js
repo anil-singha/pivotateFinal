@@ -3,27 +3,29 @@ import { HashLink as Link } from "react-router-hash-link";
 
 const AppFooter = props => (
   <footer className="footer">
-    <div className="footer__sign-up  ">
-      <div className="container triangle--white triangle">
-        <div className="flex">
-          <div className="grow-6">
-            <h2>
-              <div>Don't settle for</div>
-              <div>templates or freelancers!</div>
-            </h2>
-          </div>
-          <div className="grow-6 text-center">
-            <a
-              onClick={props.onSignUp}
-              href="javascript:void(0);"
-              className="button button--large button--teal"
-            >
-              SIGN UP <span className="chevron right"></span>
-            </a>
+    {!props.noAction && (
+      <div className="footer__sign-up  ">
+        <div className="container triangle--white triangle">
+          <div className="flex">
+            <div className="grow-6">
+              <h2>
+                <div>Don't settle for</div>
+                <div>templates or freelancers!</div>
+              </h2>
+            </div>
+            <div className="grow-6 text-center">
+              <a
+                onClick={props.onSignUp}
+                href="javascript:void(0);"
+                className="button button--large button--teal"
+              >
+                SIGN UP <span className="chevron right"></span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    )}
     <div className="footer__content">
       <div className="container">
         <div className="flex">
@@ -59,13 +61,15 @@ const AppFooter = props => (
                     <Link to="/pricing"> Pricing</Link>
                   </li>
                   <li>
-                    <a
-                      href="javascript:void(0);"
-                      onClick={props.onSignUp}
-                      className="teal--text"
-                    >
-                      Sign Up Now
-                    </a>
+                    {!props.noAction && (
+                      <a
+                        href="javascript:void(0);"
+                        onClick={props.onSignUp}
+                        className="teal--text"
+                      >
+                        Sign Up Now
+                      </a>
+                    )}
                   </li>
                 </ul>
               </div>

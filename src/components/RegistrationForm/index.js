@@ -131,7 +131,7 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
             <a
               style={{ marginTop: "2.5em", marginBottom: "2em" }}
               className="button button--rounded button--yellow"
-              href="https://calendly.com/pivotate/clarify-new-app?month=2020-03"
+              href="https://calendly.com/pivotate/clarify-new-app?utm_campaign=website&utm_source=Google"
             >
               Schedule a Meeting
             </a>
