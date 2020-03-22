@@ -80,7 +80,7 @@ class NavBar extends Component {
         <nav className="hide-tablet">
           <ul className="flex header__nav">
             <li>
-              <Link to="/pricing">PRICING</Link>
+              <Link to="/pricing">PRICING &nbsp; </Link>
             </li>
             <li>
               <Link to="/#how-it-works"> HOW IT WORKS </Link>

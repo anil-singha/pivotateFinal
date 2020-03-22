@@ -55,26 +55,32 @@ const App = () => {
         </section>
       }
     >
-      <HashRouter>
+      <BrowserRouter basename="/">
         <ScrollToTop>
           <Switch>
+            <Route exact path={`${process.env.PUBLIC_URL}/confirmation`}>
+              <AppHeader noAction />
+              <Confirmation></Confirmation>
+              <AppFooter noAction />
+            </Route>
             <Route
               exact
               path={[
-                "/privacy-policy",
-                "/pricing",
                 "/",
-                "terms-and-conditions"
+                "/pricing",
+                "/privacy-policy",
+                "/terms-and-conditions"
               ]}
             >
               <AppHeader ref={childRef} />
               {/* main */}
-              <Route path={`${process.env.PUBLIC_URL}/`} exact>
+              <Route exact path={`${process.env.PUBLIC_URL}/`}>
                 <Home
                   onSignUp={() => childRef.current.modalHandlerRegistration()}
                 />
               </Route>
               <Route
+                exact
                 path={`${process.env.PUBLIC_URL}/pricing`}
                 component={Pricing}
               ></Route>
@@ -96,14 +102,10 @@ const App = () => {
               />
               {/* main end */}
             </Route>
-            <Route exact path={`${process.env.PUBLIC_URL}/confirmation`}>
-              <AppHeader noAction />
-              <Confirmation></Confirmation>
-              <AppFooter noAction />
-            </Route>
+            <Route component={underConstruction} />
           </Switch>
         </ScrollToTop>
-      </HashRouter>
+      </BrowserRouter>
     </React.Suspense>
   );
 };
