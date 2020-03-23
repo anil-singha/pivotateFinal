@@ -55,7 +55,7 @@ const App = () => {
         </section>
       }
     >
-      <BrowserRouter basename="/">
+      <BrowserRouter basename={`${process.env.PUBLIC_URL}/`}>
         <ScrollToTop>
           <Switch>
             <Route exact path={`${process.env.PUBLIC_URL}/confirmation`}>
@@ -66,10 +66,11 @@ const App = () => {
             <Route
               exact
               path={[
-                "/",
-                "/pricing",
-                "/privacy-policy",
-                "/terms-and-conditions"
+                `${process.env.PUBLIC_URL}/`,
+                `${process.env.PUBLIC_URL}/pricing`,
+                `${process.env.PUBLIC_URL}/under-construction`,
+                `${process.env.PUBLIC_URL}/privacy-policy`,
+                `${process.env.PUBLIC_URL}/terms-and-conditions`
               ]}
             >
               <AppHeader ref={childRef} />

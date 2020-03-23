@@ -80,7 +80,7 @@ class NavBar extends Component {
         <nav className="hide-tablet">
           <ul className="flex header__nav">
             <li>
-              <Link to="/pricing">PRICING &nbsp; </Link>
+              <Link to="/pricing?=initial"> &nbsp; PRICING </Link>
             </li>
             <li>
               <Link to="/#how-it-works"> HOW IT WORKS </Link>
@@ -118,7 +118,7 @@ class NavBar extends Component {
               <div className="mobile-menu__wrapper">
                 <ul>
                   <li>
-                    <Link to="/pricing">PRICING</Link>
+                    <Link to="/pricing?inital">PRICING</Link>
                   </li>
                   <li>
                     <Link onClick={this.checkboxHandler} to="/#how-it-works">
