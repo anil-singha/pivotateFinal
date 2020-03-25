@@ -3,20 +3,20 @@ import React from "react";
 const maintenanceDetails = () => {
   return (
     <>
-      <div class="container text-left">
+      <div className="container text-left">
         <h2>
           <span className="headline headline--teal"> MAINTENANCE DETAILS </span>
         </h2>
 
-        <div class="pricing__content">
-          <div class="pricing__description">Basic maintenance</div>
-          <div class="flex">
+        <div className="pricing__content">
+          <div className="pricing__description">Basic maintenance</div>
+          <div className="flex">
             <div>
-              <div class="">
+              <div className="">
                 {" "}
-                <strong class="">
+                <strong className="">
                   {" "}
-                  <span class="pricing__price teal--text">$20 </span>/month
+                  <span className="pricing__price teal--text">$20 </span>/month
                 </strong>{" "}
               </div>
               <p>
@@ -28,16 +28,16 @@ const maintenanceDetails = () => {
           </div>
           <br></br>
           <br></br>
-          <div class="flex">
+          <div className="flex">
             <div>
-              <div class="pricing__description">
+              <div className="pricing__description">
                 Special cloud storage/computation needs
               </div>
-              <div class="">
+              <div className="">
                 {" "}
-                <strong class="">
+                <strong className="">
                   {" "}
-                  <span class="pricing__price teal--text">At cost </span>
+                  <span className="pricing__price teal--text">At cost </span>
                 </strong>{" "}
               </div>
               <p>

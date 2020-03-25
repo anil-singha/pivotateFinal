@@ -57,8 +57,9 @@ class NavBar extends Component {
         <div className="header__logo">
           <a href="/">
             <img
-              src="https://pivotatestaticassets.com/images/Pivotate Logo-min.png"
+              src="https://pivotatestaticassets.com/images/Pivotate Logo.svg"
               alt="Pivotate Logo"
+              width="170"
             />
           </a>
         </div>
@@ -79,7 +80,7 @@ class NavBar extends Component {
         <nav className="hide-tablet">
           <ul className="flex header__nav">
             <li>
-              <Link to="/pricing">PRICING</Link>
+              <Link to="/pricing?=initial"> &nbsp; PRICING </Link>
             </li>
             <li>
               <Link to="/#how-it-works"> HOW IT WORKS </Link>
@@ -89,16 +90,18 @@ class NavBar extends Component {
             </li>
           </ul>
         </nav>
-        <div className="grow-12 text-right hide-tablet">
-          <a onClick={this.modalHandlerLogin}> LOGIN </a>
-          <LogoutButton />
-          <a
-            onClick={this.modalHandlerRegistration}
-            className="button button--yellow button__sign-up"
-          >
-            SIGN UP
-          </a>
-        </div>
+        {!this.props.noAction && (
+          <div className="grow-12 text-right hide-tablet">
+            <a onClick={this.modalHandlerLogin}> LOGIN </a>
+            <LogoutButton />
+            <a
+              onClick={this.modalHandlerRegistration}
+              className="button button--yellow button__sign-up"
+            >
+              SIGN UP
+            </a>
+          </div>
+        )}
         <div className="show-tablet">
           <div id="amp-burger" onClick={this.checkboxHandler}>
             <div className="lines">
@@ -115,7 +118,7 @@ class NavBar extends Component {
               <div className="mobile-menu__wrapper">
                 <ul>
                   <li>
-                    <Link to="/pricing">PRICING</Link>
+                    <Link to="/pricing?inital">PRICING</Link>
                   </li>
                   <li>
                     <Link onClick={this.checkboxHandler} to="/#how-it-works">
@@ -127,24 +130,28 @@ class NavBar extends Component {
                       ABOUT US{" "}
                     </Link>
                   </li>
-                  <li>
-                    <a
-                      href="javascript:void(0);"
-                      onClick={this.modalHandlerLogin}
-                    >
-                      {" "}
-                      LOGIN{" "}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="javascript:void(0);"
-                      onClick={this.modalHandlerRegistration}
-                      className="button button--yellow button__sign-up"
-                    >
-                      FREE CONSULTATION
-                    </a>
-                  </li>
+                  {!this.props.noAction && (
+                    <li>
+                      <a
+                        href="javascript:void(0);"
+                        onClick={this.modalHandlerLogin}
+                      >
+                        {" "}
+                        LOGIN{" "}
+                      </a>
+                    </li>
+                  )}
+                  {!this.props.noAction && (
+                    <li>
+                      <a
+                        href="javascript:void(0);"
+                        onClick={this.modalHandlerRegistration}
+                        className="button button--yellow button__sign-up"
+                      >
+                        FREE CONSULTATION
+                      </a>
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>

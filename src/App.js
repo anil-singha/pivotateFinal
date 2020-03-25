@@ -11,10 +11,12 @@ import {
   useLocation,
   Route,
   Link,
+  Switch,
   withRouter
 } from "react-router-dom";
 
 import ScrollToTop from "react-router-scroll-top";
+import Confirmation from "./components/Pages/Confirmation";
 
 const AppHeader = React.lazy(() => import("./components/AppHeader"));
 const AppFooter = React.lazy(() => import("./components/AppFooter"));
@@ -22,6 +24,9 @@ const Home = React.lazy(() => import("./components/Pages/Home"));
 const Pricing = React.lazy(() => import("./components/Pages/Pricing"));
 const privacyPolicy = React.lazy(() =>
   import("./components/Pages/Privacy-policy")
+);
+const confirmation = React.lazy(() =>
+  import("./components/Pages/Confirmation")
 );
 const underConstruction = React.lazy(() =>
   import("./components/Pages/Under-construction")
@@ -35,40 +40,14 @@ const App = () => {
 
   return (
     <React.Suspense
+      path="/"
       fallback={
-        <section class="hero triangle--teal triangle">
-          <div class="container full-width">
-            <div class="flex flex-wrap items-center">
-              <div class="hero__header">
-                <div class="hero__text">
-                  <strong>CREATE YOUR </strong>
-                </div>
-                <h1 class="yellow--text">
-                  <div class="word-break">
-                    {" "}
-                    <strong> CUSTOM </strong> WEB APP{" "}
-                  </div>{" "}
-                  <div>WITHIN WEEKS...</div>
-                </h1>
-                <div class="hero__text has--underline">
-                  <span>
-                    THEN <strong>EASILY</strong> CHANGE IT!
-                  </span>
-                </div>
-                <p>
-                  <br />
-                  <br />
-                  Unlike all other custom web app builders out there, Pivotate
-                  allows you to pivot easily as you learn your users’ needs. No
-                  more unpredictable freelancers or cookie-cutter templates.
-                </p>
-                <div class="button__wrapper">
-                  <a
-                    href="javascript:void(0);"
-                    class="button button--rounded button--yellow"
-                  >
-                    GET STARTED <span class="chevron right"></span>
-                  </a>
+        <section className="">
+          <div className="container full-width">
+            <div className="flex flex-wrap items-center">
+              <div className="hero__header">
+                <div className="hero__text">
+                  <strong></strong>
                 </div>
               </div>
             </div>
@@ -76,38 +55,58 @@ const App = () => {
         </section>
       }
     >
-      <HashRouter>
+      <BrowserRouter basename={`${process.env.PUBLIC_URL}/`}>
         <ScrollToTop>
-          <AppHeader ref={childRef} />
-          {/* main */}
-          <Route path={`${process.env.PUBLIC_URL}/`} exact>
-            <Home
-              onSignUp={() => childRef.current.modalHandlerRegistration()}
-            />
-          </Route>
+          <Switch>
+            <Route exact path={`${process.env.PUBLIC_URL}/confirmation`}>
+              <AppHeader noAction />
+              <Confirmation></Confirmation>
+              <AppFooter noAction />
+            </Route>
+            <Route
+              exact
+              path={[
+                `${process.env.PUBLIC_URL}/`,
+                `${process.env.PUBLIC_URL}/pricing`,
+                `${process.env.PUBLIC_URL}/under-construction`,
+                `${process.env.PUBLIC_URL}/privacy-policy`,
+                `${process.env.PUBLIC_URL}/terms-and-conditions`
+              ]}
+            >
+              <AppHeader ref={childRef} />
+              {/* main */}
+              <Route exact path={`${process.env.PUBLIC_URL}/`}>
+                <Home
+                  onSignUp={() => childRef.current.modalHandlerRegistration()}
+                />
+              </Route>
+              <Route
+                exact
+                path={`${process.env.PUBLIC_URL}/pricing`}
+                component={Pricing}
+              ></Route>
+              <Route
+                path={`${process.env.PUBLIC_URL}/under-construction`}
+                component={underConstruction}
+              ></Route>
+              <Route
+                path={`${process.env.PUBLIC_URL}/privacy-policy`}
+                component={privacyPolicy}
+              ></Route>
+              <Route
+                path={`${process.env.PUBLIC_URL}/terms-and-conditions`}
+                component={termsAndConditions}
+              ></Route>
 
-          <Route
-            path={`${process.env.PUBLIC_URL}/pricing`}
-            component={Pricing}
-          ></Route>
-          <Route
-            path={`${process.env.PUBLIC_URL}/under-construction`}
-            component={underConstruction}
-          ></Route>
-          <Route
-            path={`${process.env.PUBLIC_URL}/privacy-policy`}
-            component={privacyPolicy}
-          ></Route>
-          <Route
-            path={`${process.env.PUBLIC_URL}/terms-and-conditions`}
-            component={termsAndConditions}
-          ></Route>
-          <AppFooter
-            onSignUp={() => childRef.current.modalHandlerRegistration()}
-          />
-          {/* main end */}
+              <AppFooter
+                onSignUp={() => childRef.current.modalHandlerRegistration()}
+              />
+              {/* main end */}
+            </Route>
+            <Route component={underConstruction} />
+          </Switch>
         </ScrollToTop>
-      </HashRouter>
+      </BrowserRouter>
     </React.Suspense>
   );
 };

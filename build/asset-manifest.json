@@ -11,8 +11,8 @@
     "static/js/3.d322fc0a.chunk.js.map": "/static/js/3.d322fc0a.chunk.js.map",
     "static/js/4.9f7ebff8.chunk.js": "/static/js/4.9f7ebff8.chunk.js",
     "static/js/4.9f7ebff8.chunk.js.map": "/static/js/4.9f7ebff8.chunk.js.map",
-    "static/js/5.44e21bcf.chunk.js": "/static/js/5.44e21bcf.chunk.js",
-    "static/js/5.44e21bcf.chunk.js.map": "/static/js/5.44e21bcf.chunk.js.map",
+    "static/js/5.b986a4ed.chunk.js": "/static/js/5.b986a4ed.chunk.js",
+    "static/js/5.b986a4ed.chunk.js.map": "/static/js/5.b986a4ed.chunk.js.map",
     "static/js/6.9a40c2d0.chunk.js": "/static/js/6.9a40c2d0.chunk.js",
     "static/js/6.9a40c2d0.chunk.js.map": "/static/js/6.9a40c2d0.chunk.js.map",
     "static/js/7.15c5f58b.chunk.js": "/static/js/7.15c5f58b.chunk.js",
@@ -31,9 +31,10 @@
     "static/media/style.scss": "/static/media/How It Works min.faa7c013.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.56f04013.js",
+    "static/js/runtime-main.1d3774e9.js",
     "static/js/2.7759eddc.chunk.js",
     "static/css/main.bcd692f5.chunk.css",
+    "static/js/main.48bc6576.chunk.js"
     "static/js/main.ba0dd7c6.chunk.js"
   ]
 }

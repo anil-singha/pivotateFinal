@@ -7,18 +7,18 @@ const Home = props => {
       <section className="hero triangle--teal triangle">
         <div className="container full-width">
           <div className="flex flex-wrap items-center">
-            <div class="hero__header">
-              <div class="hero__text">
+            <div className="hero__header">
+              <div className="hero__text">
                 <strong>CREATE YOUR </strong>
               </div>
-              <h1 class="yellow--text">
-                <div class="word-break">
+              <h1 className="yellow--text">
+                <div className="word-break">
                   {" "}
                   <strong> CUSTOM </strong> WEB APP{" "}
                 </div>{" "}
                 <div>WITHIN WEEKS...</div>
               </h1>
-              <div class="hero__text has--underline">
+              <div className="hero__text has--underline">
                 <span>
                   THEN <strong>EASILY</strong> CHANGE IT!
                 </span>
@@ -28,13 +28,13 @@ const Home = props => {
                 allows you to pivot easily as you learn your users’ needs. No
                 more unpredictable freelancers or cookie-cutter templates.
               </p>
-              <div class="button__wrapper">
+              <div className="button__wrapper">
                 <a
                   onClick={props.onSignUp}
                   href="javascript:void(0);"
-                  class="button button--rounded button--yellow"
+                  className="button button--rounded button--yellow"
                 >
-                  GET STARTED <span class="chevron right"></span>
+                  GET STARTED <span className="chevron right"></span>
                 </a>
               </div>
             </div>

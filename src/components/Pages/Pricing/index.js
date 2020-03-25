@@ -86,9 +86,9 @@ class Pricing extends Component {
   render() {
     return (
       <>
-        <section class="pricing__section triangle triangle--teal">
-          <div class="container">
-            <h1 class="display-2  has--underline"> SERVICES OFFERED </h1>
+        <section className="pricing__section triangle triangle--teal">
+          <div className="container">
+            <h1 className="display-2  has--underline"> SERVICES OFFERED </h1>
             <p>
               Pay only for what you need, when you need it. Prices are subject
               to change.
@@ -97,7 +97,7 @@ class Pricing extends Component {
         </section>
         {/* Initial Development */}
         <section id="initial-development">
-          <div class="container">
+          <div className="container">
             <h2 className="text-center">
               <span className="headline headline--teal">
                 {" "}
@@ -106,59 +106,61 @@ class Pricing extends Component {
             </h2>
 
             <div className="subheadline text-center">Get it live!</div>
-            <div class="flex justify-center">
-              <div class="grow-3 pricing">
-                <figure class="pricing__img">
+            <div className="flex justify-center">
+              <div className="grow-3 pricing">
+                <figure className="pricing__img">
                   <img src="https://pivotatestaticassets.com/images/pricing/Initial consultation.png" />
                 </figure>
-                <div class="pricing__content">
-                  <div class="pricing__description">Initial consultation</div>
+                <div className="pricing__content">
+                  <div className="pricing__description">
+                    Initial consultation
+                  </div>
 
-                  <div class="pricing__price teal--text">
-                    <strong class="teal--text">FREE</strong>
+                  <div className="pricing__price teal--text">
+                    <strong className="teal--text">FREE</strong>
                   </div>
                 </div>
               </div>
-              <div class="grow-3 pricing">
-                <figure class="pricing__img">
+              <div className="grow-3 pricing">
+                <figure className="pricing__img">
                   <img src="https://pivotatestaticassets.com/images/pricing/Discounted Initial App Package.png" />
                 </figure>
-                <div class="pricing__content">
-                  <div class="pricing__description">
+                <div className="pricing__content">
+                  <div className="pricing__description">
                     Discounted Initial App Package
                   </div>
-                  <div class="pricing__price teal--text">
-                    <strong class="teal--text">$240</strong>
+                  <div className="pricing__price teal--text">
+                    <strong className="teal--text">$240</strong>
                   </div>
                   <div>
                     <small> per user type </small>
                   </div>
                 </div>
               </div>
-              <div class="grow-3 pricing">
-                <figure class="pricing__img">
+              <div className="grow-3 pricing">
+                <figure className="pricing__img">
                   <img src="https://pivotatestaticassets.com/images/pricing/Graphic design.png" />
                 </figure>
-                <div class="pricing__content">
-                  <div class="pricing__description">Graphic design</div>
-                  <div class="pricing__price teal--text">
-                    <strong class="teal--text">$30</strong>
+                <div className="pricing__content">
+                  <div className="pricing__description">Graphic design</div>
+                  <div className="pricing__price teal--text">
+                    <strong className="teal--text">$30</strong>
                   </div>
                 </div>
               </div>
-              <div class="grow-3 pricing">
-                <figure class="pricing__img">
+              <div className="grow-3 pricing">
+                <figure className="pricing__img">
                   <img src="https://pivotatestaticassets.com/images/pricing/Development.png" />
                 </figure>
-                <div class="pricing__content">
-                  <div class="pricing__description">Development</div>
-                  <div class="pricing__price teal--text">
-                    <strong class="teal--text">$30</strong>
+                <div className="pricing__content">
+                  <div className="pricing__description">Development</div>
+                  <div className="pricing__price teal--text">
+                    <strong className="teal--text">$30</strong>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="pricing__detail flex justify-center">
+            <div className="pricing__detail flex justify-center">
               <a
                 href="javascript:void(0);"
                 onClick={this.modalToggleInitDev}
@@ -166,7 +168,7 @@ class Pricing extends Component {
               >
                 GET DETAILS{" "}
                 <img
-                  class="pricing__icon"
+                  className="pricing__icon"
                   src="https://pivotatestaticassets.com/images/pricing/external link.png"
                 ></img>
               </a>
@@ -176,8 +178,8 @@ class Pricing extends Component {
         {/* End Initial Development */}
 
         {/* Pivotating Services */}
-        <section class="pivoting-services  triangle--grey triangle triangle--white triangle">
-          <div class="container">
+        <section className="pivoting-services  triangle--grey triangle triangle--white triangle">
+          <div className="container">
             <h2 className="text-center">
               <span className="headline headline--teal">
                 {" "}
@@ -186,15 +188,15 @@ class Pricing extends Component {
             </h2>
             <div className="subheadline text-center">Get it right! </div>
 
-            <div class="flex justify-center">
-              <div class="grow-3 pricing">
-                <figure class="pricing__img">
+            <div className="flex justify-center">
+              <div className="grow-3 pricing">
+                <figure className="pricing__img">
                   <img src="https://pivotatestaticassets.com/images/pricing/Graphics.png" />
                 </figure>
-                <div class="pricing__content">
-                  <div class="pricing__description">Graphics</div>
-                  <div class="pricing__price teal--text">
-                    <strong class="teal--text">$2-$15</strong>
+                <div className="pricing__content">
+                  <div className="pricing__description">Graphics</div>
+                  <div className="pricing__price teal--text">
+                    <strong className="teal--text">$2-$15</strong>
                   </div>
                   <div>
                     {" "}
@@ -202,35 +204,35 @@ class Pricing extends Component {
                   </div>
                 </div>
               </div>
-              <div class="grow-3 pricing">
-                <figure class="pricing__img">
+              <div className="grow-3 pricing">
+                <figure className="pricing__img">
                   <img src="https://pivotatestaticassets.com/images/pricing/Content.png" />
                 </figure>
-                <div class="pricing__content">
-                  <div class="pricing__description">Content </div>
-                  <div class="pricing__price teal--text">
-                    <strong class="teal--text">$2-$90</strong>
+                <div className="pricing__content">
+                  <div className="pricing__description">Content </div>
+                  <div className="pricing__price teal--text">
+                    <strong className="teal--text">$2-$90</strong>
                   </div>
                 </div>
               </div>
 
-              <div class="grow-3 pricing">
-                <figure class="pricing__img">
+              <div className="grow-3 pricing">
+                <figure className="pricing__img">
                   <img src="https://pivotatestaticassets.com/images/pricing/Special Services.png" />
                 </figure>
-                <div class="pricing__content">
-                  <div class="pricing__description">Special Services</div>
+                <div className="pricing__content">
+                  <div className="pricing__description">Special Services</div>
                   <div>
                     <small> starting from </small>
                   </div>
-                  <div class="pricing__price teal--text">
-                    <strong class="teal--text">$30</strong>
+                  <div className="pricing__price teal--text">
+                    <strong className="teal--text">$30</strong>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="pricing__detail flex justify-center">
+            <div className="pricing__detail flex justify-center">
               <a
                 onClick={this.modalToggleServices}
                 href="javascript:void(0);"
@@ -238,7 +240,7 @@ class Pricing extends Component {
               >
                 GET DETAILS{" "}
                 <img
-                  class="pricing__icon"
+                  className="pricing__icon"
                   src="https://pivotatestaticassets.com/images/pricing/external link.png"
                 ></img>
               </a>
@@ -249,7 +251,7 @@ class Pricing extends Component {
 
         {/* Maintenance */}
         <section id="pivoting-services">
-          <div class="container">
+          <div className="container">
             <h2 className="text-center">
               <span className="headline headline--teal word-break">
                 {" "}
@@ -257,32 +259,34 @@ class Pricing extends Component {
               </span>
             </h2>
             <div className="subheadline text-center">Keep it up!</div>
-            <div class="flex justify-center">
-              <div class="grow-3 pricing">
-                <figure class="pricing__img">
+            <div className="flex justify-center">
+              <div className="grow-3 pricing">
+                <figure className="pricing__img">
                   <img src="https://pivotatestaticassets.com/images/pricing/Basic maintenance.png" />
                 </figure>
-                <div class="pricing__content">
-                  <div class="pricing__description">Basic maintenance</div>
-                  <div class="pricing__price teal--text">
-                    <strong class="teal--text">$2-$15 </strong>{" "}
+                <div className="pricing__content">
+                  <div className="pricing__description">Basic maintenance</div>
+                  <div className="pricing__price teal--text">
+                    <strong className="teal--text">$2-$15 </strong>{" "}
                     <small> per screen </small>
                   </div>
                 </div>
               </div>
-              <div class="grow-3 pricing">
-                <figure class="pricing__img">
+              <div className="grow-3 pricing">
+                <figure className="pricing__img">
                   <img src="https://pivotatestaticassets.com/images/pricing/Additional Cloud.png" />
                 </figure>
-                <div class="pricing__content">
-                  <div class="pricing__description">Special Cloud Services</div>
-                  <div class="pricing__price">
-                    <strong class="teal--text">At cost</strong>
+                <div className="pricing__content">
+                  <div className="pricing__description">
+                    Special Cloud Services
+                  </div>
+                  <div className="pricing__price">
+                    <strong className="teal--text">At cost</strong>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="pricing__detail flex justify-center">
+            <div className="pricing__detail flex justify-center">
               <a
                 onClick={this.modalToggleMaintenance}
                 href="javascript:void(0);"
@@ -290,7 +294,7 @@ class Pricing extends Component {
               >
                 GET DETAILS{" "}
                 <img
-                  class="pricing__icon"
+                  className="pricing__icon"
                   src="https://pivotatestaticassets.com/images/pricing/external link.png"
                 ></img>
               </a>

@@ -1,7 +1,7 @@
 {
   "name": "no-stack-base",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
+  "private": false,
   "homepage": "https://pivotate.com",
   "dependencies": {
     "@apollo/react-common": "^3.1.3",

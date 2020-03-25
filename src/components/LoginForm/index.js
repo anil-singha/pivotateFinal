@@ -40,7 +40,10 @@ const LoginForm = (props, { loading, currentUser, login }) => {
   return (
     <Modal onClose={props.onClose}>
       <div className="dialog__title">
-        <img src="http://pivotatestaticassets.com/images/Pivotate Logo.png" />
+        <img
+          src="http://pivotatestaticassets.com/images/Pivotate Logo.svg"
+          width="170"
+        />
         <h3>LOGIN</h3>
       </div>
       <form onSubmit={handleSubmit} className="form">
