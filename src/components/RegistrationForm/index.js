@@ -11,7 +11,7 @@ import Modal from "../Modal";
 import {
   validationSchemaBasic,
   validationSchemaApp,
-  validationSchemaCreditCard
+  validationSchemaCreditCard,
 } from "./stepper/registration-util.js";
 
 // Get Current Month
@@ -33,7 +33,7 @@ const initialValues = {
   cardNumber: "",
   cvc: "",
   expiryMonth: mm,
-  expiryYear: yyyy
+  expiryYear: yyyy,
 };
 
 const RegistrationForm = (props, { userClassId, onSuccess }) => {
@@ -63,7 +63,6 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
   //   '{"app":"newApp","description":"newApp Desc","creditCardNumber":"232","expirationDate":"234243","csv":"46"}';
   const handleSubmit = async (values, { setSubmitting }) => {
     setFormError("");
-    console.log(values);
     // setUsername(values);
 
     // console.log(app);
@@ -81,7 +80,7 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
       creditCardNumber: values.cardNumber,
       creditCardName: values.cardName,
       expirationDate: `${values.expiryMonth}/${values.expiryYear}`,
-      csv: values.cvc
+      csv: values.cvc,
     };
 
     try {
@@ -93,8 +92,8 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
           lastName: values.lastName,
           email: values.email,
           password,
-          formValues: JSON.stringify({})
-        }
+          formValues: JSON.stringify({}),
+        },
       });
 
       setRegistrationCompleted(true);
@@ -232,21 +231,21 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
         return {
           enterText: "ENTER DETAILS",
           buttonText: "SIGN UP",
-          progressWidth: "33%"
+          progressWidth: "33%",
         };
 
       case 2:
         return {
           enterText: "ENTER APP DESCRIPTION",
           buttonText: "MAKE MY APP NOW",
-          progressWidth: "66%"
+          progressWidth: "66%",
         };
 
       case 3:
         return {
           enterText: "CREDIT CARD DETAILS",
           buttonText: "MAKE MY APP NOW",
-          progressWidth: "100%"
+          progressWidth: "100%",
         };
     }
   };

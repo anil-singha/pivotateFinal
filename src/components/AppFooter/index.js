@@ -1,7 +1,7 @@
 import React from "react";
 import { HashLink as Link } from "react-router-hash-link";
 
-const AppFooter = props => (
+const AppFooter = (props) => (
   <footer className="footer">
     {!props.noAction && (
       <div className="footer__sign-up  ">
@@ -36,6 +36,9 @@ const AppFooter = props => (
                 src="https://pivotatestaticassets.com/images/Pivotate Logo_White.svg"
                 alt="Pivotate Logo"
               />
+            </div>
+            <div>
+              <Link to="/contact"> Contact</Link>
             </div>
             <div className="powered-by">
               <span className="grey--text"> Powered By </span>

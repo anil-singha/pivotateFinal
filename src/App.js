@@ -12,7 +12,7 @@ import {
   Route,
   Link,
   Switch,
-  withRouter
+  withRouter,
 } from "react-router-dom";
 
 import ScrollToTop from "react-router-scroll-top";
@@ -21,6 +21,7 @@ import Confirmation from "./components/Pages/Confirmation";
 const AppHeader = React.lazy(() => import("./components/AppHeader"));
 const AppFooter = React.lazy(() => import("./components/AppFooter"));
 const Home = React.lazy(() => import("./components/Pages/Home"));
+const Contact = React.lazy(() => import("./components/Pages/Contact"));
 const Pricing = React.lazy(() => import("./components/Pages/Pricing"));
 const privacyPolicy = React.lazy(() =>
   import("./components/Pages/Privacy-policy")
@@ -34,6 +35,7 @@ const underConstruction = React.lazy(() =>
 const termsAndConditions = React.lazy(() =>
   import("./components/Pages/Terms-and-conditions")
 );
+const schedule = React.lazy(() => import("./components/Pages/Schedule"));
 
 const App = () => {
   const childRef = useRef();
@@ -70,7 +72,9 @@ const App = () => {
                 `${process.env.PUBLIC_URL}/pricing`,
                 `${process.env.PUBLIC_URL}/under-construction`,
                 `${process.env.PUBLIC_URL}/privacy-policy`,
-                `${process.env.PUBLIC_URL}/terms-and-conditions`
+                `${process.env.PUBLIC_URL}/terms-and-conditions`,
+                `${process.env.PUBLIC_URL}/contact`,
+                `${process.env.PUBLIC_URL}/schedule`,
               ]}
             >
               <AppHeader ref={childRef} />
@@ -82,9 +86,21 @@ const App = () => {
               </Route>
               <Route
                 exact
-                path={`${process.env.PUBLIC_URL}/pricing`}
-                component={Pricing}
+                path={`${process.env.PUBLIC_URL}/contact`}
+                component={Contact}
               ></Route>
+              <Route exact path={`${process.env.PUBLIC_URL}/pricing`}></Route>
+
+              <Route
+                path={`${process.env.PUBLIC_URL}/pricing`}
+                render={(props) => (
+                  <Pricing
+                    onSignUp={() => childRef.current.modalHandlerRegistration()}
+                    {...props}
+                  />
+                )}
+              />
+
               <Route
                 path={`${process.env.PUBLIC_URL}/under-construction`}
                 component={underConstruction}
@@ -96,6 +112,10 @@ const App = () => {
               <Route
                 path={`${process.env.PUBLIC_URL}/terms-and-conditions`}
                 component={termsAndConditions}
+              ></Route>
+              <Route
+                path={`${process.env.PUBLIC_URL}/schedule`}
+                component={schedule}
               ></Route>
 
               <AppFooter

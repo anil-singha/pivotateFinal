@@ -1,6 +1,6 @@
 import React from "react";
 
-const initialDevelopment = () => {
+const initialDevelopment = (props) => {
   return (
     <>
       <div className="container text-left">
@@ -141,6 +141,18 @@ const initialDevelopment = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="pricing__content flex justify-center">
+          <a
+            style={{
+              padding: "1em 2.5em",
+            }}
+            className="button button--rounded button--yellow"
+            type="button"
+            onClick={props.onSignUp}
+          >
+            Schedule your free consultation now!
+          </a>
         </div>
       </div>
     </>

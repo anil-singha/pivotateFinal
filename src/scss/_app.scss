@@ -1312,3 +1312,58 @@ a {
   z-index: 10;
   position: fixed;
 }
+.contact {
+  &__wrap {
+    width: 500px;
+    margin: auto;
+
+    textarea {
+      height: 224px;
+      padding: 19px 14px;
+    }
+  }
+  &__input {
+    border: 1px solid #d0d5d8;
+    margin-bottom: 20px;
+    padding: 18px 15px;
+    line-height: 30px;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    &::placeholder {
+      letter-spacing: 1;
+    }
+  }
+}
+.schedule {
+  &__img {
+    display: flex;
+    text-align: center;
+    background-image: url("../images/Banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 380px;
+    padding: 1em;
+    width: 100%;
+    background-color: #15abbc;
+  }
+  &__content {
+    max-width: 550px;
+    display: block;
+    margin: auto;
+    font-size: 24px;
+    width: 100%;
+    h2 {
+      font-weight: 700;
+
+      color: #ffcc00;
+      margin-bottom: 1em;
+    }
+    p {
+      color: #fff;
+      & + p {
+        margin-top: 1em;
+      }
+    }
+  }
+}

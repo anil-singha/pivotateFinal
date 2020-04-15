@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const Home = props => {
+const Home = (props) => {
   return (
     <main role="main">
       {/* hero */}

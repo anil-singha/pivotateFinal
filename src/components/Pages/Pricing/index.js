@@ -11,19 +11,18 @@ import {
   useLocation,
   Route,
   Link,
-  withRouter
+  withRouter,
 } from "react-router-dom";
 
 class Pricing extends Component {
   state = {
     modalInitDev: false,
     modalMaintenance: false,
-    modalServices: false
+    modalServices: false,
   };
 
   componentDidMount() {
-    const values = queryString.parse(this.props.location.search);
-
+    const values = "initial-development";
     switch (values.modal) {
       case "initial-development":
         this.modalToggleInitDev();
@@ -39,47 +38,51 @@ class Pricing extends Component {
         break;
     }
   }
-
-  modalToggleInitDev = props => {
+  signUp = (props) => {
+    this.props.onSignUp();
+    this.modalToggleInitDev();
+  };
+  modalToggleInitDev = (props) => {
     this.setState({
-      modalInitDev: !this.state.modalInitDev
+      modalInitDev: !this.state.modalInitDev,
     });
     if (!this.state.modalInitDev) {
       this.props.history.push({
         search:
-          "?" + new URLSearchParams({ modal: "initial-development" }).toString()
+          "?" +
+          new URLSearchParams({ modal: "initial-development" }).toString(),
       });
     } else {
       this.props.history.push({
-        search: "?" + new URLSearchParams().toString()
+        search: "?" + new URLSearchParams().toString(),
       });
     }
   };
-  modalToggleMaintenance = props => {
+  modalToggleMaintenance = (props) => {
     this.setState({
-      modalMaintenance: !this.state.modalMaintenance
+      modalMaintenance: !this.state.modalMaintenance,
     });
     if (!this.state.modalServices) {
       this.props.history.push({
-        search: "?" + new URLSearchParams({ modal: "maintenance" }).toString()
+        search: "?" + new URLSearchParams({ modal: "maintenance" }).toString(),
       });
     } else {
       this.props.history.push({
-        search: "?" + new URLSearchParams().toString()
+        search: "?" + new URLSearchParams().toString(),
       });
     }
   };
-  modalToggleServices = props => {
+  modalToggleServices = (props) => {
     this.setState({
-      modalServices: !this.state.modalServices
+      modalServices: !this.state.modalServices,
     });
     if (!this.state.modalServices) {
       this.props.history.push({
-        search: "?" + new URLSearchParams({ modal: "services" }).toString()
+        search: "?" + new URLSearchParams({ modal: "services" }).toString(),
       });
     } else {
       this.props.history.push({
-        search: "?" + new URLSearchParams().toString()
+        search: "?" + new URLSearchParams().toString(),
       });
     }
   };
@@ -305,7 +308,7 @@ class Pricing extends Component {
 
         {this.state.modalInitDev && (
           <Modal fullScreen onClose={this.modalToggleInitDev}>
-            <InitialDevelopment> </InitialDevelopment>
+            <InitialDevelopment onSignUp={this.signUp}> </InitialDevelopment>
           </Modal>
         )}
         {this.state.modalMaintenance && (
