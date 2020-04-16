@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/react-hooks";
 import { REGISTER_USER } from "@nostack/no-stack";
+import { HashLink as Link } from "react-router-hash-link";
 
 import { Wrapper } from "./RegistrationForm.style";
 import BasicDetailsForm from "./stepper/BasicDetailsForm";
@@ -122,32 +123,29 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
     return (
       <Modal onClose={props.onClose}>
         <div className="dialog__title">
-          <h3>You're In</h3>
+          <h3>Awesome, You're In</h3>
         </div>
         <p className="text-center">
-          <h4> Great decision! Let's get going now... </h4>
           <div>
-            <a
-              style={{ marginTop: "2.5em", marginBottom: "2em" }}
+            <Link
+              onClick={props.onClose}
+              style={{ marginBottom: "2em" }}
               className="button button--rounded button--yellow"
-              href="https://calendly.com/pivotate/clarify-new-app?utm_campaign=website&utm_source=Google"
+              to="/schedule"
             >
               Schedule a Meeting
-            </a>
+            </Link>
+          </div>
+          <div>
+            <Link
+              onClick={props.onClose}
+              className="button button--rounded button--yellow"
+              to="/contact"
+            >
+              Not Yet
+            </Link>
           </div>
         </p>
-        <br />
-        <p>
-          <small>
-            If you got questions you can email us at &nbsp;
-            <a className="teal--text" href="mailto:info@pivotate.com">
-              info@pivotate.com
-            </a>
-          </small>
-        </p>
-        <br />
-        <br />
-        <div></div>
       </Modal>
     );
   }
