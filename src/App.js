@@ -35,7 +35,7 @@ const underConstruction = React.lazy(() =>
 const termsAndConditions = React.lazy(() =>
   import("./components/Pages/Terms-and-conditions")
 );
-const schedule = React.lazy(() => import("./components/Pages/Schedule"));
+const Schedule = React.lazy(() => import("./components/Pages/Schedule"));
 
 const App = () => {
   const childRef = useRef();
@@ -63,6 +63,11 @@ const App = () => {
             <Route exact path={`${process.env.PUBLIC_URL}/confirmation`}>
               <AppHeader noAction />
               <Confirmation></Confirmation>
+              <AppFooter noAction />
+            </Route>
+            <Route exact path={`${process.env.PUBLIC_URL}/schedule`}>
+              <AppHeader />
+              <Schedule></Schedule>
               <AppFooter noAction />
             </Route>
             <Route
@@ -112,10 +117,6 @@ const App = () => {
               <Route
                 path={`${process.env.PUBLIC_URL}/terms-and-conditions`}
                 component={termsAndConditions}
-              ></Route>
-              <Route
-                path={`${process.env.PUBLIC_URL}/schedule`}
-                component={schedule}
               ></Route>
 
               <AppFooter
