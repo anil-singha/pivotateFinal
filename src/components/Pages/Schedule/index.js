@@ -20,13 +20,10 @@ class Schedule extends Component {
       <div>
         <div class="schedule__img">
           <div class="schedule__content">
-            <h2>Clarify New App</h2>
+            <h2> We would like to meet you! </h2>
             <p>
-              A friendly, no-commitment discussion of what you need in an app.
-            </p>
-            <p>
-              Our goal is that the meeting will help you get clarity, even if
-              you don't build with us! :)
+              A friendly, no-commitment discussion of what you need in an app so
+              we can help you get clarity, even if you don't build with us!
             </p>
           </div>
         </div>
