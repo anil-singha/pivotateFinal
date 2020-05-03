@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CookieConsent from "react-cookie-consent";
+
 const Home = (props) => {
   return (
     <main role="main">
@@ -157,6 +159,24 @@ const Home = (props) => {
           </div>
         </div>
       </section>
+
+      <CookieConsent
+        location="bottom"
+        buttonText="I understand"
+        buttonClasses="button button--rounded button--yellow"
+        cookieName="myAwesomeCookieName2"
+        style={{ background: "#2B373B" }}
+        buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+        expires={150}
+      >
+        This website uses cookies for the functionality, security and
+        performance of the Site, as well as for analytical purposes. For more
+        information on our use of cookies please see our
+        <a className="teal--text" href="/privacy-policy">
+          {" "}
+          Privacy Policy.
+        </a>
+      </CookieConsent>
     </main>
   );
 };
