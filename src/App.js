@@ -21,6 +21,7 @@ import Confirmation from "./components/Pages/Confirmation";
 const AppHeader = React.lazy(() => import("./components/AppHeader"));
 const AppFooter = React.lazy(() => import("./components/AppFooter"));
 const Home = React.lazy(() => import("./components/Pages/Home"));
+const Staging = React.lazy(() => import("./components/Pages/Staging"));
 const Contact = React.lazy(() => import("./components/Pages/Contact"));
 const Pricing = React.lazy(() => import("./components/Pages/Pricing"));
 const privacyPolicy = React.lazy(() =>
@@ -35,6 +36,7 @@ const underConstruction = React.lazy(() =>
 const termsAndConditions = React.lazy(() =>
   import("./components/Pages/Terms-and-conditions")
 );
+const TempVideo = React.lazy(() => import("./components/Pages/Temp-video"));
 const Schedule = React.lazy(() => import("./components/Pages/Schedule"));
 
 const App = () => {
@@ -65,6 +67,11 @@ const App = () => {
               <Confirmation></Confirmation>
               <AppFooter noAction />
             </Route>
+            <Route exact path={`${process.env.PUBLIC_URL}/tempvideo`}>
+              <AppHeader noAction />
+              <TempVideo></TempVideo>
+              <AppFooter noAction />
+            </Route>
             <Route exact path={`${process.env.PUBLIC_URL}/schedule`}>
               <AppHeader />
               <Schedule></Schedule>
@@ -80,12 +87,18 @@ const App = () => {
                 `${process.env.PUBLIC_URL}/terms-and-conditions`,
                 `${process.env.PUBLIC_URL}/contact`,
                 `${process.env.PUBLIC_URL}/schedule`,
+                `${process.env.PUBLIC_URL}/staging`,
               ]}
             >
               <AppHeader ref={childRef} />
               {/* main */}
               <Route exact path={`${process.env.PUBLIC_URL}/`}>
                 <Home
+                  onSignUp={() => childRef.current.modalHandlerRegistration()}
+                />
+              </Route>
+              <Route exact path={`${process.env.PUBLIC_URL}/staging`}>
+                <Staging
                   onSignUp={() => childRef.current.modalHandlerRegistration()}
                 />
               </Route>
