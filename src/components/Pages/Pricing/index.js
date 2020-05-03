@@ -269,9 +269,9 @@ class Pricing extends Component {
                 </figure>
                 <div className="pricing__content">
                   <div className="pricing__description">Basic maintenance</div>
-                  <div className="pricing__price teal--text">
-                    <strong className="teal--text">$2-$15 </strong>{" "}
-                    <small> per screen </small>
+                  <div className="pricing__price">
+                    <strong className="teal--text">$45 </strong>{" "}
+                    <small>/month </small>
                   </div>
                 </div>
               </div>
