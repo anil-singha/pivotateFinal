@@ -2,577 +2,737 @@ import React from "react";
 
 const UnderConstruction = () => {
   return (
-    <div className="container full-width-sm">
+    <div style={{ lineHeight: 1.6 }} className="wysywg container full-width-sm">
       <div className="row" id="placeholders">
         <h3>PRIVACY POLICY</h3>
-        <p style={{ margin: "2em 0" }}>Effective: February 19, 2020</p>
-        <p style={{ margin: "2em 0", textAlign: "right" }}>
-          {/*<a href="javascript:window.cmpConfig.methods.summon()">*/}
-          {/*  Review Consent Preferences (EU user only)*/}
-          {/*</a>*/}
-        </p>
+
+        <p>&nbsp;</p>
         <p>
-          Pivotate is a service of NoStack. NoStack &amp; and its subsidiary and
-          affiliate companies (collectively, “NoStack,” “we,” “us” or “our”)
-          recognize the importance of protecting the personal information
-          collected from users in the operation of its services and taking
-          reasonable steps to maintain the security, integrity and privacy of
-          any information in accordance with this Privacy Policy. By submitting
-          your information to NoStack you consent to the practices described in
-          this policy. If you are less than 18 years of age, then you must first
-          seek the consent of your parent or guardian prior to submitting any
-          personal information.
-        </p>
-        <p>
-          This Privacy Policy describes how NoStack collects and uses the
-          personal information you provide to NoStack. It also describes the
-          choices available to you regarding our use of your personal
-          information and how you can access and update this information.
-        </p>
-        <div style={{ margin: "2em 0" }}>
-          <a
-            href="#how-we-collect-information"
-            name="How We Collect Information"
-          >
-            How We Collect Information
-          </a>{" "}
-          <br />
-          <br />
-          <a
-            href="#information-you-provide"
-            id="Information You Provide"
-            name="Information You Provide"
-          >
-            Information You Provide
-          </a>{" "}
-          <br />
-          <br />
-          <a
-            href="#information-we-receive"
-            id="Information We Receive from Other Sources"
-            name="Information We Receive from Other Sources"
-          >
-            Information We Receive from Other Sources
-          </a>{" "}
-          <br />
-          <br />
-          <a href="#use-of-your-information">Use of Your Information</a> <br />
-          <br />
-          <a href="#chat-rooms-or-forums">
-            Disclosure in Chat Rooms or Forums
-          </a>{" "}
-          <br />
-          <br />
-          <a href="#disclosure-and-sharing">
-            Disclosure and Sharing of Your Information
-          </a>{" "}
-          <br />
-          <br />
-          <a href="#cross-border-transfers">Cross Border Transfers</a> <br />
-          <br />
-          <a href="#security">Security</a> <br />
-          <br />
-          <a href="#cookies">Cookies</a> <br />
-          <br />
-          <a href="#third-parties">Third-Parties</a> <br />
-          <br />
-          <a href="#your-rights">Your Rights</a> <br />
-          <br />
-          <a href="#ferpa">FERPA (US Only)</a> <br />
-          <br />
-          <a href="#recourse">Recourse</a> <br />
-          <br />
-          <a href="#changes-to-privacy-policy">
-            Updates to This Privacy Policy
-          </a>{" "}
-          <br />
-          <br />
-          <a href="#children">
-            Additional Information Regarding Children’s Privacy
+          <span>We at </span>
+          <span>NOSTACK‬‬ </span>
+          <span>Ltd</span>
+          <span> ("</span>
+          <span>
+            <strong>No Stack</strong>
+          </span>
+          <span>", "</span>
+          <span>
+            <strong>us</strong>
+          </span>
+          <span>", "</span>
+          <span>
+            <strong>we</strong>
+          </span>
+          <span>", or "</span>
+          <span>
+            <strong>our</strong>
+          </span>
+          <span>
+            ") recognize and respect the importance of maintaining the privacy
+            of visitors of our website ("
+          </span>
+          <span>
+            <strong>Site</strong>
+          </span>
+          <span>") and customers our platform available thereon ("</span>
+          <span>
+            <strong>Platform</strong>
+          </span>
+          <span>
+            "). This Privacy Notice describes the types of information we
+            collect from you when you visit our Site and/or use our Platform and
+            any services available thereon ("
+          </span>
+          <span>
+            <strong>Services</strong>
+          </span>
+          <span>
+            "). This Privacy Notice also explains how we collect, process,
+            transfer, store and disclose the information collected.{" "}
+          </span>
+          <span>
+            If not otherwise defined herein, capitalized terms have the meaning
+            given to them in the Terms of Service, available at &nbsp;
+          </span>
+          <a href="https://pivotate.com/terms-and-conditions">
+            https://pivotate.com/terms-and-conditions
           </a>
-        </div>
-        <h4
-          style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
-          id="how-we-collect-information"
-        >
-          How We Collect Information
-        </h4>
-        <p>
-          NoStack may collect personal information about you in the following
-          ways: (1) directly from your verbal or written input (such as by
-          consenting to receiving marketing emails); (2) automatically through
-          NoStack’s website technologies including tracking online, such as by{" "}
-          <a href="#cookies">Web cookies</a> (which are small text files created
-          by websites that are stored on your computer), by smart devices, by
-          combining data sets, by collecting data from a browser or device for
-          use on a different computer or device, or by using algorithms to
-          analyze a variety of data such as records of purchases, online
-          behavioral data, or location data; or (3) by closed-circuit television
-          (if visiting our premises).
+          <span> ("</span>
+          <span>
+            <strong>Terms</strong>
+          </span>
+          <span>").</span> <span>"</span>
+          <span>
+            <strong>You</strong>
+          </span>
+          <span>" means any user of the </span>
+          <span>Site and/or Platform</span>
+          <span>. </span>‬‬‬‬‬‬‬‬‬‬
         </p>
-        <h4
-          style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
-          id="information-you-provide"
-        >
-          Information You Provide
-        </h4>
+        <p>&nbsp;</p>
         <p>
-          The types of personal information that NoStack collects directly from
-          you or through your use of our websites and services may include:
+          <span>"</span>
+          <span>
+            <strong>Personal Data</strong>
+          </span>
+          <span>
+            " means any information that refers, is related to, or is associated
+            with an identified or identifiable individual or as otherwise may be
+            defined by applicable law.
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            <u>
+              <strong>Personal Data We Collect </strong>
+            </u>
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            We collect information from you when you visit our Site or choose to
+            use our Platform and/or Services. In order to use our Platform
+            and/or Services, you will be required to register and provide us
+            with certain Personal Data, such as your name and email address.{" "}
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            We also collect Personal Data when you make use of the Platform,
+            Site and/or Services, request information from us, complete online
+            forms, or contact us for any other reason. Examples of the Personal
+            Data that we collect from you when you engage in any of the
+            activities detailed above, may include your name, address, phone
+            number, e-mail address and credit card information. Such Personal
+            Data may be collected by us through the Platform and/or Services.{" "}
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            We also collect any materials including images, photos and/or
+            documents you may upload to the{" "}
+          </span>
+          <span>Platform and/or Services</span>
+          <span>. </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            In addition, when you use the Platform, Site and/or Services certain
+            information may be automatically gathered about your computer or
+            mobile device, including non-Personal Data, such as your operating
+            system, and Personal Data such as your IP address,{" "}
+          </span>
+          <span>device ID</span>
+          <span>, as well as your browsing history </span>
+          <span>
+            and any information regarding your purchase history on our Platform
+          </span>
+          <span>. </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            It is your voluntary decision whether to provide us with any such
+            Personal Data, but if you refuse to provide such information we may
+            not be able to register you to the Platform and/or provide you with
+            the Services.
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            <u>
+              <strong>How We Use Your Personal Data</strong>
+            </u>
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            <u>General</u>
+          </span>
+        </p>
+        <p>
+          <span>
+            We and any of our trusted third-party subcontractors and service
+            providers use the Personal Data we collect from and about you for
+            any of the following purposes: (1) to provide you with the Platform,
+            Site and/or Services; (2) to respond to your inquiries or requests,
+            contact and communicate with you; (3) to develop new products or
+            services and conduct analyses to improve our current content,
+            products, and Services; (4) to provide you with targeted offers, and
+            advertising on the Site, on other third-party sites or apps you may
+            visit, or via e-mail; (5) to review the usage and operations of our
+            Platform, Site and Services; (6) to use your data in an aggregated,
+            non-specific format for analytical purposes (as detailed below); (7)
+            to prevent fraud, protect the security of our Platform, Site and
+            Services, and address any problems with the Platform, Site and/or
+            Services and (8) to provide customer support.{" "}
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p align="left">
+          <span>
+            <u>Statistical Information and Analytics</u>
+          </span>
+        </p>
+        <p align="left">
+          <span>
+            We and/or our service providers use analytics tools, including
+            "Google Analytics" to collect and analyze information about the use
+            of the Site and/or Services, such as how often users visit the Site,
+            what pages they visit when they do so, and what other sites and
+            mobile applications they used prior to visiting the Site. By
+            analyzing the information we receive, we may compile statistical
+            information across a variety of platforms and users, which helps us
+            improve our Site and Services, understand trends and customer needs
+            and consider new products and services, and tailor existing products
+            and services to customer desires.{" "}
+          </span>
+          <span>
+            You can find more information about how Google collects information
+            and how you can control such use at{" "}
+          </span>
+          <span style={{ color: "#0000ff" }}>
+            <u>
+              <a href="https://policies.google.com/technologies/partner-sites">
+                <span>
+                  https://policies.google.com/technologies/partner-sites{" "}
+                </span>
+              </a>
+              .
+            </u>
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            <u>Legal Uses</u>
+          </span>
+        </p>
+        <p>
+          <span>
+            We may use your Personal Data as required or permitted by any
+            applicable law
+          </span>{" "}
+          <span>
+            for example, to comply with audit and other legal requirements
+          </span>
+          <span>. </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            <u>
+              <strong>Sharing the Personal Data We Collect</strong>
+            </u>
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            We share your information, including Personal Data, as follows:
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            <u>
+              Business Partners, Service Providers, Affiliates, and
+              Subcontractors
+            </u>
+          </span>
+        </p>
+        <p>
+          <span>
+            We disclose information, including Personal Data we collect from
+            and/or about you, to our trusted service providers, business
+            partners, affiliates, subcontractors, who use such information to:
+            (1) help us provide you with the Platform, Site and/or Services; (2)
+            aid in their understanding of how users are using our Platform, Site
+            and/or Services; (3) provide to you targeted offers and advertising
+            on both our Site, as well as on other apps, platform or sites you
+            choose to visit.{" "}
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            We may use subcontractors and service providers who are located in
+            countries other than your own and may send them information we
+            receive (including Personal Data). All of our subcontractors and
+            service providers will be subject to non-disclosure and non-use
+            obligations.
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            <u>Business Transfers</u>
+          </span>
+        </p>
+        <p>
+          <span>
+            We may transfer our databases containing your Personal Data if we
+            sell our business or part of it, including in cases of liquidation.
+            Information about our users, including Personal Data, may be
+            disclosed as part of, or during negotiations of, any merger, sale of
+            company assets or acquisition and shall continue being subject to
+            the provisions of this Privacy Notice.
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            <u>Law Enforcement Related Disclosure</u>
+          </span>
+        </p>
+        <p>
+          <span>
+            We will fully cooperate with any law enforcement authorities or
+            court order requesting or directing us to disclose the identity,
+            behavior or (digital) content and information of or related to an
+            individual, including in the event of any user suspected to have
+            engaged in illegal or infringing behavior. We may also share your
+            Personal Data with third parties: (i) if we believe in good faith
+            that disclosure is appropriate to protect our rights, property or
+            safety (including the enforcement of the Terms and this Privacy
+            Notice); (ii) to protect the rights, property or safety of third
+            parties; (iii) when required by law, regulation subpoena, court
+            order or other law enforcement related issues; or (iv) as is
+            necessary to comply with any legal and/or regulatory obligation.{" "}
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            <u>Other Uses or Transfer of Your Information</u>
+          </span>
+        </p>
+        <p>
+          <span>
+            We allow you to use our Platform and Services in connection with
+            third-party services, sites, and/or mobile applications. If you use
+            our Platform and/or Services with or through such third-parties, we
+            may receive information (including Personal Data) about you from
+            those third
+          </span>
+          <span>
+            <span> parties.</span>
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            <u>
+              <strong>Your Rights</strong>
+            </u>
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            Subject to applicable law, you may request to see any Personal Data
+            you have provided to us and request that such Personal Data be
+            corrected or updated by emailing us at{" "}
+          </span>
+          <span>info@pivotate.com</span>
+          <span>.</span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            <u>
+              <strong>Security </strong>
+            </u>
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            We make efforts to follow generally accepted industry standards to
+            protect the Personal Data submitted to and collected by us, both
+            during transmission and once we receive it. However, no method of
+            transmission over the Internet or method of electronic storage is
+            100% secure. Therefore, while we strive to use commercially
+            acceptable means to protect your Personal Data, we cannot guarantee
+            its absolute security.
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            <u>
+              <strong>Data Retention</strong>
+            </u>
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            We retain information as necessary for the purposes set forth above.
+            We may delete information from our systems, without notice to you,
+            once we deem it is no longer necessary for the purposes set forth
+            above.{" "}
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            <u>
+              <strong>Cookies and Similar Technologies</strong>
+            </u>
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            We use cookies and similar technologies to help personalize your
+            experience. Third parties through which we provide the Services
+            and/or our business partners may be placing and reading cookies on
+            your browsers, or using web beacons to collect information in the
+            course of advertising being served on different websites. When
+            visiting this Site, you shall be asked to accept the terms of this
+            Privacy Notice, including the use of and placement of cookies and
+            other similar technologies on your device as specified herein.{" "}
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            <u>What are Cookies?</u>
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            A cookie is a small piece of text that is sent to a user's browser
+            or device. The browser provides this piece of text to the device of
+            the originating user when this visitor returns.
+          </span>
         </p>
         <ul>
           <li>
-            Contact details, such as your name, email address, postal address
-            and telephone number;
+            <p>
+              <span>
+                A "session cookie" is temporary and will remain on your device
+                until you leave the Site.
+              </span>
+            </p>
           </li>
           <li>
-            Internet Protocol (“IP”) addresses used to connect your computer to
-            the Internet;
-          </li>
-          <li>Educational and professional interests;</li>
-          <li>Tracking codes such as cookies;</li>
-          <li>Usernames and passwords;</li>
-          <li>Payment information, such as a credit or debit card number;</li>
-          <li>
-            Comments, feedback, posts and other content you provide to NoStack
-            (including through a NoStack website);
-          </li>
-          <li>Communication preferences;</li>
-          <li>Purchase and search history;</li>
-          <li>
-            Location-aware services, the physical location of your device in
-            order to provide you with more relevant content for your location;
+            <p>
+              <span>
+                A "persistent" cookie may be used to help save your settings and
+                customizations across visits. It will remain on your device for
+                much longer or until you delete it.{" "}
+              </span>
+            </p>
           </li>
           <li>
-            Information about your personal preferences, and interests; and
-          </li>
-          <li>Communications with other users of NoStack’s services.</li>
-        </ul>
-        <p>
-          In order to access certain content and to make use of additional
-          functionality and features of NoStack’s websites and services, we may
-          ask you to register for an account by completing and submitting a
-          registration form, which may request additional information.
-        </p>
-        <p>
-          If you choose to register and sign in by using a third-party account
-          (such as your Facebook account), the authentication of your login is
-          handled by the third party, and any personal information collected
-          during that third-party login is not covered by this policy. NoStack
-          will collect your name, email address and any other information about
-          your third-party account that you agree to share with us at the time
-          you give permission for your NoStack account to be linked to your
-          third-party account.
-        </p>
-        <h4
-          style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
-          id="information-we-receive"
-        >
-          Information We Receive from Other Sources
-        </h4>
-        <p>
-          NoStack may receive information about you if you use any of the
-          websites we operate or the other services we provide. We also work
-          closely with third parties (including, for example, business partners
-          and sub-contractors in technical, payment and delivery services;
-          advertising networks; data and analytics providers; academic
-          institutions; journal owners, societies and similar organizations;
-          search information providers, and credit reference agencies) from whom
-          NoStack may receive information about you.
-        </p>
-        <h4
-          style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
-          id="use-of-your-information"
-        >
-          Use of Your Information
-        </h4>
-        <p>
-          NoStack may use your personal information in the performance of any
-          contract we enter into with you, to comply with legal obligations, or
-          where NoStack has a legitimate business interest in using your
-          information to enhance the services and products we provide.
-          Legitimate business purposes include but are not limited to one or all
-          of the following: providing direct marketing and assessing the
-          effectiveness of promotions and advertising; modifying, improving or
-          personalizing our services, products and communications; detecting
-          fraud; investigating suspicious activity (e.g., violations of our
-          Terms and Conditions, which can be found{" "}
-          <a href="/terms-and-conditions/">here</a>) and otherwise keeping our
-          site safe and secure; and conducting data analytics.
-        </p>
-        <p>
-          In addition, with your prior, explicit consent (where required), we
-          may use your information in the following ways:
-        </p>
-        <ul>
-          <li>
-            To provide you with information about products and services that you
-            request from us;
-          </li>
-          <li>To send you periodic catalogues from NoStack;</li>
-          <li>
-            To provide you with information about other products, events and
-            services we offer that are either (i) similar to those you have
-            already purchased or inquired about, or (ii) entirely new products,
-            events and services;
+            <p>
+              <span>
+                First-party cookies are placed by us, while third-party cookies
+                may be placed by a third party. We use both first- and
+                third-party cookies.
+              </span>
+            </p>
           </li>
           <li>
-            For internal business and research purposes to help enhance,
-            evaluate, develop, and create NoStack websites (including usage
-            statistics, such as “page views” on NoStack’s websites and the
-            products therein), products, and services;
-          </li>
-          <li>
-            To notify you about changes or updates to our websites, products, or
-            services;
-          </li>
-          <li>
-            To administer our services and for internal operations, including
-            troubleshooting, data analysis, testing, statistical, and survey
-            purposes;
-          </li>
-          <li>
-            To allow you to participate in interactive features of our service;
-            and
-          </li>
-          <li>
-            For any other purpose that we may notify you of from time to time.
+            <p>
+              <span>
+                Information may also be collected through web beacons, which are
+                small graphic images ("pixel tags"), which usually work together
+                with cookies in order to identify users and user behavior. These
+                may be shared with third parties.{" "}
+              </span>
+            </p>
           </li>
         </ul>
+        <p>&nbsp;</p>
         <p>
-          Personal information will not be kept longer than is necessary for the
-          purpose for which it was collected. This means that, unless
-          information must be retained for legal or archival purposes, personal
-          information will be securely destroyed, put beyond use or erased from
-          NoStack’s systems when it is no longer required or, where applicable,
-          following a request from you to destroy or erase your personal
-          information.
+          <span>
+            We may use the terms "cookies" to refer to all technologies that we
+            may use to store data in your browser or device or that collect
+            information or help us identify you in the manner described above.
+          </span>
         </p>
-        <h4
-          style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
-          id="disclosure-and-sharing"
-        >
-          Disclosure and Sharing of Your Information
-        </h4>
+        <p>&nbsp;</p>
         <p>
-          NoStack will not disclose to or share your personal information with
-          any unaffiliated third party except as follows:
-        </p>
-        <ul>
-          <li>
-            Where necessary in connection with services provided by third
-            parties (i) who provide us with a wide range of office,
-            administrative, information technology, production, payment,
-            business management, or marketing services; and (ii) who are
-            required to comply with this policy or applicable privacy laws;
-          </li>
-          <li>
-            Where you voluntarily provide information in response to an
-            advertisement from a third party;
-          </li>
-          <li>
-            Where third party such as an academic institution, school, employer,
-            business or other entity which has provided you with access to a
-            NoStack product or service through an integration or access code,
-            information may be shared regarding your engagement with the service
-            or product, results of assessments taken and other information you
-            input into the product or service;
-          </li>
-          <li>
-            Where you participate in a program in which we partner with third
-            parties, we may share your information with those third-party
-            partners;
-          </li>
-          <li>
-            Where NoStack is required to disclose personal information in
-            response to lawful requests by public authorities and government
-            agencies, including to meet national security or law enforcement
-            requirements; to comply with a subpoena or other legal process; when
-            we believe in good faith that disclosure is necessary to protect our
-            rights, to enforce our Terms and Conditions, or to protect the
-            rights, property or safety of our services, users or others; and to
-            investigate fraud;
-          </li>
-          <li>
-            Where all or substantially all of the business or assets of NoStack
-            relating to our services are sold, assigned, or transferred to
-            another entity;
-          </li>
-        </ul>
-        <ul>
-          <li>
-            Where NoStack is required to disclose personal information in
-            response to lawful requests by public authorities and government
-            agencies, including to meet national security or law enforcement
-            requirements; to comply with a subpoena or other legal process; when
-            we believe in good faith that disclosure is necessary to protect our
-            rights, to enforce our Terms and Conditions, or to protect the
-            rights, property or safety of our services, users or others; and to
-            investigate fraud; and
-          </li>
-          <li>
-            Where all or substantially all of the business or assets of NoStack
-            relating to our services are sold, assigned, or transferred to
-            another entity.
-          </li>
-          <li>
-            Where NoStack’s rights to publish, market and/or distribute a
-            specific journal or other publication are transferred to another
-            entity, and you have subscribed to or requested to receive
-            electronic alerts related to that journal or publication;
-          </li>
-          <li>
-            Where you have subscribed to journals, elected to receive electronic
-            alerts about journals or your contribution to one of our journals
-            has been accepted for publication, we may share your information
-            with the journal owner or a society or organization associated with
-            the journal; or Where you have attended an event, webinar, or
-            conference, we may share your information with the sponsor of the
-            activity; or
-          </li>
-          <li>
-            Where, even if not described above, you have consented to such
-            disclosure or NoStack has a legitimate interest in making the
-            disclosure.
-          </li>
-        </ul>
-        <p>
-          If necessary in connection with providing publishing services on
-          behalf of third parties, such as institutions and societies, NoStack
-          may disclose navigational and transactional information in the form of
-          anonymous, aggregate usage statistics and demographic information that
-          does not reveal your identity or personal information.
-        </p>
-        <h4
-          style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
-          id="cross-border-transfers"
-        >
-          Cross Border Transfers
-        </h4>
-        <p>
-          NoStack may transfer your personal information outside of your country
-          of residence for the following reasons:
-        </p>
-        <ul>
-          <li>
-            In order to process your transactions, we may store your personal
-            information on our servers and those servers may reside outside the
-            country where you live. NoStack has servers and major office
-            locations in several countries, including the United States, the
-            United Kingdom, Germany, Singapore, Brazil, India and Australia.
-            NoStack also has service providers located in India and the
-            Philippines amongst other countries. Such processing may include,
-            among other things, the fulfillment of your order, the processing of
-            your payment details and the provision of support services.
-          </li>
-          <li>
-            In order to satisfy global reporting requirements, NoStack may be
-            required to provide your personal information to NoStack affiliates
-            in other countries.
-          </li>
-        </ul>
-        <p>
-          By submitting your personal information, you agree to this transfer,
-          storing or processing of your information. We will take all steps
-          reasonably necessary to ensure that your personal information is
-          treated securely and in accordance with this Privacy Policy and all
-          applicable data protection laws.
-        </p>
-        <h4
-          style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
-          id="security"
-        >
-          Security
-        </h4>
-        <p>
-          We will use appropriate physical, technical and administrative
-          safeguards to protect your data. Access to your personal data will be
-          restricted to only those who need to know that information and
-          required to perform their job function. In addition, we train our
-          employees about the importance of maintaining the confidentiality and
-          security of your information.
-        </p>
-        <h4
-          style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
-          id="chat-rooms-or-forums"
-        >
-          Disclosure in Chat Rooms or Forums
-        </h4>
-        <p>
-          You should be aware that identifiable personal information — such as
-          your name or e-mail address — that you voluntarily disclose and that
-          is accessible to other users (e.g. on social media, forums, bulletin
-          boards or in chat areas) could be collected and disclosed by others.
-          NoStack cannot take any responsibility for such collection and
-          disclosure.
-        </p>
-        <h4
-          style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
-          id="cookies"
-        >
-          Cookies
-        </h4>
-        <p>
-          As is true of most websites, we gather certain information
-          automatically. This information may include IP addresses, browser
-          type, Internet service provider (“ISP”), referring/exit pages, the
-          files viewed on our site (e.g., HTML pages, graphics, etc.), operating
-          system, date/time stamp, and/or clickstream data to analyze trends in
-          the aggregate and administer the site.
+          <span>
+            <u>How We Use Cookies </u>
+          </span>
         </p>
         <p>
-          NoStack and its partners use cookies or similar technologies to
-          analyze trends, administer the website, track users’ movements around
-          the website, and to gather demographic information about our user base
-          as a whole. You can control the use of cookies at the individual
-          browser level, but if you choose to disable cookies, it may limit your
-          use of certain features or functions on our website or services.
+          <span>
+            The specific names and types of the cookies, web beacons, and other
+            similar technologies we use may change from time to time. However,
+            the cookies we use generally fall into one of the following
+            categories:{" "}
+          </span>
         </p>
+        <p>&nbsp;</p>
+        <table id="cookie" width="619" cellspacing="0" cellpadding="7">
+          <tbody>
+            <tr valign="top">
+              <td
+                style={{ background: "#d9d9d9" }}
+                bgcolor="#d9d9d9"
+                width="79"
+              >
+                <p>
+                  <span>
+                    <strong>Type of Cookie</strong>
+                  </span>
+                </p>
+              </td>
+              <td
+                style={{ background: "#d9d9d9" }}
+                bgcolor="#d9d9d9"
+                width="510"
+              >
+                <p>
+                  <span>
+                    <strong>Why We Use These Cookies</strong>
+                  </span>
+                </p>
+              </td>
+            </tr>
+            <tr valign="top">
+              <td style={{ background: "transparent" }} width="79">
+                <p>
+                  <span>Necessary</span>
+                </p>
+              </td>
+              <td style={{ background: "transparent" }} width="510">
+                <p>
+                  <span>
+                    These cookies are necessary in order to allow the Platform
+                    and Site to work correctly. They enable you to access the
+                    Platform and Site, move around, and access different
+                    services, features, and tools. Examples include remembering
+                    previous actions (e.g. entered text) when&nbsp;navigating
+                    back to a page in the same session. These cookies cannot be
+                    disabled.
+                  </span>
+                </p>
+              </td>
+            </tr>
+            <tr valign="top">
+              <td style={{ background: "transparent" }} width="79">
+                <p>
+                  <span>Functionality</span>
+                </p>
+              </td>
+              <td style={{ background: "transparent" }} width="510">
+                <p>
+                  <span>
+                    These cookies remember your settings and preferences and the
+                    choices you make (such as language or regional preferences)
+                    in order to help us personalize your experience and offer
+                    you enhanced functionality and content.
+                  </span>
+                </p>
+              </td>
+            </tr>
+            <tr valign="top">
+              <td style={{ background: "transparent" }} width="79">
+                <p>
+                  <span>Security</span>
+                </p>
+              </td>
+              <td style={{ background: "transparent" }} width="510">
+                <p>
+                  <span>
+                    These cookies can help us identify and prevent security
+                    risks. They may be used to store your session information to
+                    prevent others from changing your password without your
+                    login information.
+                  </span>
+                </p>
+              </td>
+            </tr>
+            <tr valign="top">
+              <td style={{ background: "transparent" }} width="79">
+                <p>
+                  <span>Performance</span>
+                </p>
+              </td>
+              <td style={{ background: "transparent" }} width="510">
+                <p>
+                  <span>
+                    These cookies can help us collect information to help us
+                    understand how you use our Platform and Site, such as
+                    whether you have viewed messages or specific pages and how
+                    long you spent on each page. This helps us improve the
+                    performance of our Platform and Site.
+                  </span>
+                </p>
+              </td>
+            </tr>
+            <tr valign="top">
+              <td style={{ background: "transparent" }} width="79">
+                <p>
+                  <span>Analytics</span>
+                </p>
+              </td>
+              <td style={{ background: "transparent" }} width="510">
+                <p>
+                  <span>
+                    These cookies collect information regarding your activity on
+                    our Platform and Site to help us learn more about which
+                    features are popular with our users and how our Platform and
+                    Site can be improved.{" "}
+                  </span>
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>&nbsp;</p>
         <p>
-          For more information on cookies, please click{" "}
-          <a href="https://www.nostack.net/cookies" target="_blank">
-            here
-          </a>
-          .
+          <span>
+            <u>How to Adjust Your Preferences</u>
+          </span>
         </p>
-        <h4
-          style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
-          id="your-rights"
-        >
-          Your Rights
-        </h4>
+        <p>&nbsp;</p>
         <p>
-          You have the right to make a written request to be informed whether or
-          not we hold or process any of your personal information (by emailing{" "}
-          <a href="mailto:info@nostack.net">info@nostack.net</a>). In your
-          written request, you may:
+          <span>
+            Most web browsers are initially configured to accept cookies, but
+            you can change this setting so your browser either refuses all
+            cookies or informs you when a cookie is being sent. In addition, you
+            are free to delete any existing cookies at any time. Please note
+            that some features of the Services may function improperly when
+            cookies are disabled or removed.
+          </span>
         </p>
-        <ul>
-          <li>
-            Request that we provide you with details of your personal
-            information that we process, the purpose for which it is processed,
-            the recipients of such information, the existence of any automated
-            decision making involving your personal information, and what
-            transfer safeguards we have in place;
-          </li>
-          <li>
-            Request that we rectify any errors in your personal information;
-          </li>
-          <li>
-            Request that we delete your personal information if our continued
-            processing of such information is not justified;
-          </li>
-          <li>
-            Request that we transfer your personal information to a third party;
-          </li>
-          <li>
-            Object to automated decision-making and profiling based on
-            legitimate interests or the performance of a task in the public
-            interest (in which event the processing will cease except where
-            there are compelling legitimate grounds, such as when the processing
-            is necessary for the performance of a contract between us);
-          </li>
-          <li>Object to direct marketing from us; and</li>
-          <li>
-            Object to processing for purposes of scientific, historical research
-            and statistics.
-          </li>
-        </ul>
+        <p>&nbsp;</p>
         <p>
-          Where applicable under your local laws, we will not use your personal
-          information for marketing purposes, nor disclose your information to
-          any third parties, unless we have your prior consent, which we will
-          seek before collecting your personal information. You can exercise
-          your right to prevent such processing by checking certain boxes on the
-          consent forms we use when collecting your personal information. If at
-          any point you wish to review or change your preferences you can use
-          the “opt-out” or unsubscribe mechanism or other means provided within
-          the communications that you receive from us. Note that you may still
-          receive transactional communications from NoStack. For queries, please
-          contact our customer support center at{" "}
-          <a href="mailto:info@nostack.net">info@nostack.net</a>.
+          <span>
+            <u>
+              <strong>Third-Party Applications and Services</strong>
+            </u>
+          </span>
         </p>
-        <h4
-          style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
-          id="third-parties"
-        >
-          Third-Parties
-        </h4>
+        <p>&nbsp;</p>
         <p>
-          Pivotate and other NoStack websites or services may include links to
-          third-party websites. In using such links, please be aware that each
-          third-party website is subject to its own privacy and data protection
-          policies and is not covered by our Privacy Policy. In addition, we
-          allow third-party companies to serve ads and/or collect certain
-          anonymous information when you visit our websites. These companies may
-          be placing and reading cookies in the cookie file of the browser on
-          your computer’s hard disk or using web beacons or other technologies
-          to collect information in the course of ads being served on this
-          website. These companies may use information other than personal
-          information (e.g., click stream information, browser type, time and
-          date, subject of advertisements clicked or scrolled over) during your
-          visits to these and other websites in order to provide advertisements
-          about goods and services likely to be of greater interest to you.
+          <span>
+            All use of third-party applications or services is at your own risk
+            and subject to such third party's privacy policies.{" "}
+          </span>
         </p>
-        <h4
-          style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
-          id="ferpa"
-        >
-          FERPA
-        </h4>
+        <p>&nbsp;</p>
         <p>
-          To find out about Pivotate's policies towards FERPA, please send to{" "}
-          <a href="mailto:info@nostack.net">info@nostack.net</a>.
+          <span>
+            <span>
+              <u>
+                <strong>Communications </strong>
+              </u>
+            </span>
+          </span>
         </p>
-        <h4
-          style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
-          id="recourse"
-        >
-          Recourse
-        </h4>
+        <p>&nbsp;</p>
         <p>
-          Any comments, complaints or questions concerning this policy or
-          complaints or objections about our use of your personal information
-          should be addressed by directing your comments to NoStack at{" "}
-          <a href="mailto:info@nostack.net">info@nostack.net</a>.
+          <a name="_GoBack"></a>{" "}
+          <span>
+            <span>
+              We may send you e-mail or other messages about us or our Services.
+              You will be{" "}
+            </span>
+          </span>
+          <span>
+            given the opportunity to unsubscribe from commercial messages and
+            stop receiving future communication from us by following the
+            UNSUBSCRIBE link in any such email or message, by emailing us at{" "}
+          </span>
+          <span style={{ color: "#0000ff" }}>
+            <u>
+              <a href="mailto:info@pivotate.com">
+                <span>info@pivotate.com</span>
+              </a>
+            </u>
+          </span>
+          <span>
+            . Please note that we reserve the right to send you service-related
+            communications, including service announcements
+          </span>
+          <span>
+            <span>
+              {" "}
+              and administrative messages relating to your account, without
+              offering you the opportunity to opt out of receiving them. Should
+              you not wish to receive such communications you may cancel your
+              account.
+            </span>
+          </span>
         </p>
-        <h4
-          style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
-          id="changes-to-privacy-policy"
-        >
-          Updates to This Privacy Policy
-        </h4>
+        <p>&nbsp;</p>
         <p>
-          Please note that NoStack’s Privacy Policy is reviewed periodically.
-          NoStack reserves the right to update its Privacy Policy at any time
-          without notice. Any changes to the Privacy Policy will be posted on
-          this page and will become effective on the date of posting. We
-          encourage you to periodically review this page for the latest
-          information on our privacy practices.
+          <span>
+            <u>
+              <strong>Children</strong>
+            </u>
+          </span>
         </p>
-        <h4
-          style={{ display: "block", fontWeight: "800", marginTop: "24px" }}
-          id="children"
-        >
-          Additional Information Regarding Children’s Privacy
-        </h4>
+        <p>&nbsp;</p>
         <p>
-          If we ask a child age 13 or under to provide us with certain
-          information such as the child’s full name, home address, email
-          address, telephone number, age information or any other information
-          that would allow someone to identify or contact the child, we ask for
-          a parent or guardian’s consent for a child to provide that
-          information. We may use the parent’s email address to seek the
-          parent’s consent or notify the parent of his/her child’s online
-          activities. We do not share the children’s information with outside
-          third parties not bound by this Privacy Policy for their own marketing
-          purposes. If you would like to review any personal information that we
-          have collected online from your child, have this information deleted
-          from our active servers, and/or request that there be no further
-          collection or use of your child’s information or if you have questions
-          about these information practices, you may contact us at{" "}
-          <a href="mailto:info@nostack.net">info@nostack.net</a>.
+          <span>
+            We do not knowingly collect Personal Data from or market our
+            Services to children under the age of 13.
+          </span>
         </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            <u>
+              <strong>Changes to the Privacy Notice </strong>
+            </u>
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            When visiting the Site and/or Platform, you shall be asked to accept
+            the terms of this Privacy Notice. If you do not agree with the terms
+            hereof, please do not use the Site and/or Platform. We may update
+            this Privacy Notice from time to time in which case, we shall notify
+            you of such changes. We will post the updated Privacy Notice on this
+            page. Please come back to this page every now and then to make sure
+            you are familiar with the latest version. Any new Privacy Notice
+            will be effective from the date it is accepted by you.{" "}
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            <u>
+              <strong>Comments and Questions</strong>
+            </u>
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            If you have any comments or questions about this privacy notice,
+            please contact us at{" "}
+          </span>
+          <span>info@pivotate.com</span>
+          <span>
+            <span>. </span>
+          </span>
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          <span>
+            <em>Last updated: April 2020. </em>
+          </span>
+        </p>
+        <p dir="rtl">&nbsp;</p>
       </div>
       <br></br>
       <br></br>
