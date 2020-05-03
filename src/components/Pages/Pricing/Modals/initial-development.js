@@ -118,7 +118,7 @@ const initialDevelopment = (props) => {
                 <div className="">
                   {" "}
                   <strong className="">
-                    <span className="pricing__price teal--text">$100</span>for
+                    <span className="pricing__price teal--text">$100</span> for
                     three screens
                   </strong>{" "}
                 </div>
