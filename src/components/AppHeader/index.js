@@ -11,7 +11,7 @@ class NavBar extends Component {
   state = {
     modalRegistration: this.props.modalRegistration,
     modalLogin: false,
-    checkbox: false
+    checkbox: false,
   };
   howItWorks = () => {
     var elmnt = document.getElementById("how-it-works");
@@ -31,13 +31,13 @@ class NavBar extends Component {
   // Events
   modalHandlerRegistration = () => {
     this.setState({
-      modalRegistration: !this.state.modalRegistration
+      modalRegistration: !this.state.modalRegistration,
     });
   };
 
   modalHandlerLogin = () => {
     this.setState({
-      modalLogin: !this.state.modalLogin
+      modalLogin: !this.state.modalLogin,
     });
   };
 
@@ -47,7 +47,7 @@ class NavBar extends Component {
   };
   checkboxHandler = () => {
     this.setState({
-      checkbox: !this.state.checkbox
+      checkbox: !this.state.checkbox,
     });
   };
 
@@ -87,6 +87,9 @@ class NavBar extends Component {
             </li>
             <li>
               <Link to="/#about-us"> ABOUT US </Link>
+            </li>
+            <li>
+              <Link to="/contact"> CONTACT </Link>
             </li>
           </ul>
         </nav>
@@ -128,6 +131,11 @@ class NavBar extends Component {
                   <li>
                     <Link onClick={this.checkboxHandler} to="/#about-us">
                       ABOUT US{" "}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link onClick={this.checkboxHandler} to="/contact">
+                      CONTACT
                     </Link>
                   </li>
                   {!this.props.noAction && (
