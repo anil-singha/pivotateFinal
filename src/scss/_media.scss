@@ -11,6 +11,9 @@
     padding: 1em 1em 1em 0;
     width: 50%;
   }
+  .hero__vid {
+    width: 50% !important;
+  }
   .how-it-works {
     &__img {
       width: initial !important;
@@ -49,8 +52,40 @@
 /* MEDIA FOR TABLET DISPLAY */
 
 @media only screen and (max-width: 992px) and (min-width: 300px) {
+  .video-responsive {
+    margin-top: 5em;
+    padding-bottom: 56.25%;
+    margin-bottom: 2em;
+  }
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    z-index: 99;
+    background: #fff !important;
+  }
+  .mobile-menu__wrapper {
+    padding-top: 50px;
+    font-size: 24px !important;
+    display: none;
+    li + li {
+      margin-top: 35px;
+    }
+  }
+  .checkbox[type="checkbox"]:checked ~ .mobile-menu__wrapper {
+    display: block !important;
+  }
   .button--large {
     min-width: 250px !important;
+  }
+  .hide-tablet {
+    display: none;
+  }
+  .show-tablet {
+    margin-left: auto;
+    display: block;
   }
   .dialog {
     &__fullscreen {
@@ -122,26 +157,7 @@
     margin: 0;
     border-radius: 45px;
   }
-  .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 75px;
-    z-index: 99;
-    background: #fff !important;
-  }
-  .mobile-menu__wrapper {
-    padding-top: 100px;
-    font-size: 24px !important;
-    display: none;
-    li + li {
-      margin-top: 55px;
-    }
-  }
-  .checkbox[type="checkbox"]:checked ~ .mobile-menu__wrapper {
-    display: block !important;
-  }
+
   .form__input.flex-row .flex {
     flex-direction: row !important;
   }
@@ -180,13 +196,6 @@
     }
   }
 
-  .hide-tablet {
-    display: none;
-  }
-  .show-tablet {
-    margin-left: auto;
-    display: block;
-  }
   .container {
     padding-right: 16px; /* 3 */
     padding-left: 16px; /* 3 */
@@ -203,6 +212,25 @@
 /* MEDIA FOR LITTLE MOBILE DISPLAY */
 
 @media only screen and (max-width: 480px) and (min-width: 300px) {
+  section {
+    padding-top: 70px;
+    padding-bottom: 0;
+    min-height: 0;
+  }
+  .button__wrapper {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  textarea {
+    resize: none;
+  }
+  .hero__vid {
+    padding: 0 !important;
+    height: initial !important;
+    iframe {
+      height: 200px !important;
+    }
+  }
   h1 {
     font-size: 36px !important;
   }
@@ -247,7 +275,7 @@
   }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 992px) {
   .show-tablet {
     display: none;
   }
