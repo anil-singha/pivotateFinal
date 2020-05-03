@@ -38,7 +38,7 @@ const AppFooter = (props) => (
               />
             </div>
             <div>
-              <Link to="/contact"> Contact</Link>
+              <Link to="/contact?s=footer"> Contact</Link>
             </div>
             <div className="powered-by">
               <span className="grey--text"> Powered By </span>
