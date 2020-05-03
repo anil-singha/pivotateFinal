@@ -30,6 +30,7 @@ const initialValues = {
   passwordConfirmation: "",
   app: "",
   description: "",
+  terms: false,
   cardName: "",
   cardNumber: "",
   cvc: "",
@@ -140,7 +141,7 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
             <Link
               onClick={props.onClose}
               className="button button--rounded button--yellow"
-              to="/contact"
+              to="/contact?s=ny"
             >
               Not Yet
             </Link>
