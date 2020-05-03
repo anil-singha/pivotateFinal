@@ -62,11 +62,12 @@ const BasicDetailsForm = ({
                 name="passwordConfirmation"
               />
             </div> */}
-            <br></br>
-            <div className="">
+
+            <div className="" style={{ marginTop: "0.5em" }}>
               <RegistrationField
                 name="terms"
                 type="checkbox"
+                checked="false"
                 fieldLabel="I agree to our Terms of Use and Privacy Policy by signing up"
               />
             </div>
@@ -74,14 +75,13 @@ const BasicDetailsForm = ({
               <button
                 className="button button--yellow"
                 type="submit"
-                disabled={isSubmitting || !isValid || isValidating || !dirty}
+                // disabled={isSubmitting || !isValid || isValidating || !dirty}
               >
                 SIGN UP
               </button>
               {formError && <ErrorContainer>{formError}</ErrorContainer>}
             </div>
-            <br />
-            <br />
+
             <small>
               Already have an account?
               <a
