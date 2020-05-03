@@ -15,17 +15,17 @@ const LoginForm = (props, { loading, currentUser, login }) => {
     return null;
   }
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
     setIsSubmitting(true);
 
     try {
       await login({
         username,
-        password
+        password,
       });
     } catch (error) {
+      console.log(error);
       setError(
         error.message ||
           (error.graphQLErrors &&
@@ -46,7 +46,7 @@ const LoginForm = (props, { loading, currentUser, login }) => {
         />
         <h3>LOGIN</h3>
       </div>
-      <form onSubmit={handleSubmit} className="form">
+      <form autofill="false" onSubmit={handleSubmit} className="form">
         <div className="form__input">
           <label htmlFor="nostack-username">
             <input
@@ -56,7 +56,7 @@ const LoginForm = (props, { loading, currentUser, login }) => {
               placeholder="Username"
               disabled={isSubmitting}
               value={username}
-              onChange={e => setUsername(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </label>
         </div>
@@ -69,7 +69,7 @@ const LoginForm = (props, { loading, currentUser, login }) => {
               name="password"
               disabled={isSubmitting}
               value={password}
-              onChange={e => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </label>
         </div>
@@ -82,7 +82,12 @@ const LoginForm = (props, { loading, currentUser, login }) => {
             Log In
           </button>
         </div>
-        {error && <div className="form__input">{error}</div>}
+        {error && (
+          <div className="form__input">
+            {" "}
+            You have entered an invalid username or password{" "}
+          </div>
+        )}
 
         <br />
         {/* <div>
