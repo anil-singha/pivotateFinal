@@ -19,7 +19,7 @@ export const validationSchemaBasic = Yup.object().shape({
   terms: Yup.boolean()
     .label("terms")
     .oneOf([true], "Must Accept Terms and Conditions")
-    .required("Please click agree on terms before you can proceed")
+    .required("Please click agree on terms before you can proceed"),
   // password: Yup.string()
   //   .label('password')
   //   .matches(/[a-z]/, 'at least one lowercase char')
@@ -33,16 +33,14 @@ export const validationSchemaBasic = Yup.object().shape({
 });
 
 export const validationSchemaApp = Yup.object().shape({
-  app: Yup.string()
-    .label("app")
-    .required("Please enter desired app name."),
+  app: Yup.string().label("app").required("Please enter desired app name."),
   description: Yup.string()
     .label("description")
     .required("Please enter app description."),
   terms: Yup.boolean()
     .label("terms")
     .oneOf([true], "Must Accept Terms and Conditions")
-    .required("Please click agree on terms before you can proceed")
+    .required("Please click agree on terms before you can proceed"),
 });
 
 export const validationSchemaCreditCard = Yup.object().shape({
@@ -52,27 +50,13 @@ export const validationSchemaCreditCard = Yup.object().shape({
     .test(
       "test-number",
       "Credit Card number is invalid",
-      value => valid.number(value).isValid
+      (value) => valid.number(value).isValid
     )
     .required(),
-  cardName: Yup.string()
-    .label("Name on card")
-    .required(),
-  cvc: Yup.string()
-    .label("CVC")
-    .min(3)
-    .max(4)
-    .required(),
-  expiryMonth: Yup.string()
-    .label("Expiry month")
-    .min(2)
-    .max(2)
-    .required(),
-  expiryYear: Yup.string()
-    .label("Expiry year")
-    .min(4)
-    .max(4)
-    .required()
+  cardName: Yup.string().label("Name on card").required(),
+  cvc: Yup.string().label("CVC").min(3).max(4).required(),
+  expiryMonth: Yup.string().label("Expiry month").min(2).max(2).required(),
+  expiryYear: Yup.string().label("Expiry year").min(4).max(4).required(),
 });
 
 export const creditCardExpirationYear = () => {
