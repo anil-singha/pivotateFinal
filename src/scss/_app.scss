@@ -1409,6 +1409,7 @@ em {
   }
 }
 .wysywg {
+  text-align: justify;
   a {
     color: blue !important;
   }
@@ -1432,6 +1433,7 @@ em {
   margin: auto;
 }
 .hero__vid iframe {
+  border-radius: 3px;
   width: 100% !important;
   height: 400px;
 }
@@ -1440,4 +1442,8 @@ em {
   color: tomato;
   margin-top: 0.25em;
   margin-bottom: 1em;
+}
+
+textarea {
+  resize: none;
 }

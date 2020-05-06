@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CookieConsent from "react-cookie-consent";
+import PivotateVideo from "../Temp-video";
 
 const Home = (props) => {
   return (
     <main role="main">
       {/* hero */}
+
       <section className="hero triangle--teal triangle">
         <div className="container full-width">
           <div className="flex flex-wrap items-center">
@@ -40,18 +42,12 @@ const Home = (props) => {
                 </a>
               </div>
             </div>
-
-            <img
-              className="hero__img"
-              src="https://pivotatestaticassets.com/images/Pivotate Hero-min.png"
-              alt="Pivotate Hero"
-            />
+            <div class="hero__vid">
+              <PivotateVideo></PivotateVideo>
+            </div>
           </div>
         </div>
       </section>
-      {/* hero end */}
-
-      {/* about */}
       <section className="about" id="about-us">
         <h2 className="text-center">
           <span className="headline headline--teal"> ABOUT PIVOTATE</span>
@@ -127,7 +123,7 @@ const Home = (props) => {
           <span className="headline headline--yellow">PRICING</span>
         </h2>
         <div className="subheadline text-center">
-          Hosting (Server): $20/month.
+          Maintenance: $45/month.
           <div>
             Low fees for changes (see
             <Link to="/pricing" className="teal--text">
