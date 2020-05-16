@@ -48,13 +48,14 @@ const BasicDetailsForm = ({
                 name="email"
               />
             </div>
-            {/* <div className="form__input">
+            <div className="form__input">
               <RegistrationField
                 placeholder="Password"
                 type="password"
                 name="password"
               />
             </div>
+            {/*
             <div className="form__input">
               <RegistrationField
                 placeholder="Confirm Password"

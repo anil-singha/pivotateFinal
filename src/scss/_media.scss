@@ -7,6 +7,10 @@
 /* EXTRA LARGE DISPLAY */
 
 @media only screen and (max-width: 2400px) and (min-width: 1500px) {
+  .dialogConfirm {
+    min-width: 550px;
+  }
+
   .hero__header {
     padding: 1em 1em 1em 0;
     width: 50%;

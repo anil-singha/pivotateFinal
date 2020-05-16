@@ -5,7 +5,7 @@ import { withNoStack } from "@nostack/no-stack";
 
 import ForgotPasswordButton from "../ForgotPasswordButton";
 
-const LoginForm = (props, { loading, currentUser, login }) => {
+const LoginForm = ({ loading, currentUser, login }, props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,7 +25,6 @@ const LoginForm = (props, { loading, currentUser, login }) => {
         password,
       });
     } catch (error) {
-      console.log(error);
       setError(
         error.message ||
           (error.graphQLErrors &&
@@ -46,7 +45,12 @@ const LoginForm = (props, { loading, currentUser, login }) => {
         />
         <h3>LOGIN</h3>
       </div>
-      <form autofill="false" onSubmit={handleSubmit} className="form">
+      <form
+        autofill="false"
+        method="post"
+        onSubmit={handleSubmit}
+        className="form"
+      >
         <div className="form__input">
           <label htmlFor="nostack-username">
             <input

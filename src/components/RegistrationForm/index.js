@@ -121,30 +121,78 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
       "?registered=success"
     );
 
+    // return (
+    //   <Modal onClose={props.onClose}>
+    //     <div className="dialog__title">
+    //       <h3>Awesome, </h3>
+    //     </div>
+    //     <p className="text-center">
+    //       <div>
+    //         <Link
+    //           onClick={props.onClose}
+    //           style={{ marginBottom: "2em" }}
+    //           className="button button--rounded button--yellow"
+    //           to="/schedule"
+    //         >
+    //           Schedule a Meeting
+    //         </Link>
+    //       </div>
+    //       <div>
+    //         <Link
+    //           onClick={props.onClose}
+    //           className="button button--rounded button--yellow"
+    //           to="/contact?s=ny"
+    //         >
+    //           Not Yet
+    //         </Link>
+    //       </div>
+    //     </p>
+    //   </Modal>
+    // );
     return (
-      <Modal onClose={props.onClose}>
+      <Modal onClose={props.onClose} styleName="dialogConfirm">
         <div className="dialog__title">
-          <h3>Awesome, You're In</h3>
+          <img src="/images/mail.png" />
         </div>
         <p className="text-center">
           <div>
-            <Link
-              onClick={props.onClose}
-              style={{ marginBottom: "2em" }}
-              className="button button--rounded button--yellow"
-              to="/schedule"
-            >
-              Schedule a Meeting
-            </Link>
-          </div>
-          <div>
-            <Link
-              onClick={props.onClose}
-              className="button button--rounded button--yellow"
-              to="/contact?s=ny"
-            >
-              Not Yet
-            </Link>
+            <div style={{ margin: "1.25em 0", fontSize: "18px" }}>
+              {" "}
+              Confirm your email!{" "}
+            </div>
+            <p style={{ margin: "1.25em 0" }}>
+              Please check your email <strong> sample@gmail.com </strong> for a
+              message to confirm that it’s really you. Then you can log in.
+            </p>
+            <div>
+              <Link
+                onClick={props.onClose}
+                className="button button--rounded button--yellow"
+                to="/schedule"
+              >
+                LOGIN
+              </Link>
+            </div>
+            <div>
+              <Link
+                style={{ marginTop: "1em" }}
+                onClick={props.onClose}
+                className="button button--rounded"
+                to="/schedule"
+              >
+                SEND AGAIN
+              </Link>
+            </div>
+            <div>
+              <Link
+                style={{ marginTop: "1em" }}
+                onClick={props.onClose}
+                className="button button--rounded"
+                to="/schedule"
+              >
+                CHANGE EMAIL
+              </Link>
+            </div>
           </div>
         </p>
       </Modal>

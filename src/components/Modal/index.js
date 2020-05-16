@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-const Modal = props => (
+const Modal = (props, className) => (
   <>
     <div className="dialog__backdrop" onClick={props.onClose}></div>
     <div
-      className={`dialog text-center
+      className={`dialog text-center ${props.styleName}
          ${props.progress ? " dialog__bordered" : ""}
          ${props.fullScreen ? " dialog__fullscreen" : ""}
       `}

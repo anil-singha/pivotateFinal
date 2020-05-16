@@ -202,10 +202,9 @@ const UnderConstruction = () => {
             <u>
               <a href="https://policies.google.com/technologies/partner-sites">
                 <span>
-                  https://policies.google.com/technologies/partner-sites{" "}
+                  https://policies.google.com/technologies/partner-sites.
                 </span>
               </a>
-              .
             </u>
           </span>
         </p>
