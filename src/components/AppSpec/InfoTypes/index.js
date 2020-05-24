@@ -1,9 +1,9 @@
-import React, { Component, createRef } from 'react';
-import styled from 'styled-components';
-import { v4 } from 'uuid';
+import React, { Component, createRef } from "react";
+import styled from "styled-components";
+import { v4 } from "uuid";
 
-import InfoTypeCreationForm from '../InfoTypeCreationForm';
-import InfoType from '../InfoType';
+import InfoTypeCreationForm from "../InfoTypeCreationForm";
+import InfoType from "../InfoType";
 
 // np__added_start unit: appSpec, comp: InfoTypes, loc: styling
 
@@ -23,57 +23,54 @@ class InfoTypes extends Component {
   wrapperRef = createRef();
 
   componentDidMount() {
-    document.addEventListener('mousedown', this.handleClick);
+    document.addEventListener("mousedown", this.handleClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClick);
+    document.removeEventListener("mousedown", this.handleClick);
   }
 
-  handleClick = e => {
+  handleClick = (e) => {
     const node = this.wrapperRef.current;
 
-    if (
-      node &&
-      node !== e.target &&
-      !node.contains(e.target)
-    ) {
+    if (node && node !== e.target && !node.contains(e.target)) {
       this.setState({ selectedInfoTypeId: null });
     }
-  }
+  };
 
-  handleSelect = id => this.setState({ selectedInfoTypeId: id });
+  handleSelect = (id) => this.setState({ selectedInfoTypeId: id });
 
-  render () {
+  render() {
     const { screenId, infoTypes, refetchQueries, onUpdate } = this.props;
     const { selectedInfoTypeId } = this.state;
 
-    {/* np__added_start unit: appSpec, comp: InfoTypes, loc: renderBeginning */}
-    {/* np__added_end unit: appSpec, comp: InfoTypes, loc: renderBeginning */}
+    {
+      /* np__added_start unit: appSpec, comp: InfoTypes, loc: renderBeginning */
+    }
+    {
+      /* np__added_end unit: appSpec, comp: InfoTypes, loc: renderBeginning */
+    }
 
     return (
-      <InfoTypesStyleWrapper ref={this.wrapperRef} onClick={this.handleClick}>
-        <InfoTypeCreationForm
-          parentId={ screenId }
-          refetchQueries={refetchQueries}
-        />
-
-        { infoTypes.map(infoType => (
+      <div ref={this.wrapperRef} onClick={this.handleClick}>
+        {infoTypes.map((infoType) => (
           <InfoType
             key={v4()}
-            infoType={ infoType }
-            selected={ infoType.id === selectedInfoTypeId }
+            infoType={infoType}
+            selected={infoType.id === selectedInfoTypeId}
             onUpdate={onUpdate}
-            parentId={ screenId }
+            parentId={screenId}
             refetchQueries={refetchQueries}
             onSelect={this.handleSelect}
           />
-        )) }
-  {/* np__added_start unit: appSpec, comp: InfoTypes, loc: renderEnding */}
-  {/* np__added_end unit: appSpec, comp: InfoTypes, loc: renderEnding */}
-
-  </InfoTypesStyleWrapper>
-  )
+        ))}
+        <br></br>
+        <InfoTypeCreationForm
+          parentId={screenId}
+          refetchQueries={refetchQueries}
+        />
+      </div>
+    );
   }
 }
 

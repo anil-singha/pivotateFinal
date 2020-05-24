@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { graphql } from '@apollo/react-hoc';
-import styled from 'styled-components';
-import { withNoStack, EXECUTE_ACTION } from '@nostack/no-stack';
-import compose from '@shopify/react-compose';
+import React, { useState } from "react";
+import { graphql } from "@apollo/react-hoc";
+import styled from "styled-components";
+import { withNoStack, EXECUTE_ACTION } from "@nostack/no-stack";
+import compose from "@shopify/react-compose";
 
-import { CREATE_SCREEN_FOR_APP_SPEC_ACTION_ID
- } from '../../../config';
+import { CREATE_SCREEN_FOR_APP_SPEC_ACTION_ID } from "../../../config";
 
 // change styling here
 const Form = styled.div`
@@ -13,7 +12,7 @@ const Form = styled.div`
   padding: 1.5em;
   border: none;
   border-radius: 5px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 `;
 
 const Button = styled.button`
@@ -21,8 +20,8 @@ const Button = styled.button`
 `;
 
 function ScreenCreationForm({ parentId, createScreen, refetchQueries }) {
-  const [ screenValue, updateScreenValue ] = useState('');
-  const [ loading, updateLoading ] = useState(false);
+  const [screenValue, updateScreenValue] = useState("");
+  const [loading, updateLoading] = useState(false);
 
   function handleChange(e) {
     updateScreenValue(e.target.value);
@@ -46,15 +45,12 @@ function ScreenCreationForm({ parentId, createScreen, refetchQueries }) {
         }),
         unrestricted: false,
       },
-      refetchQueries
+      refetchQueries,
     });
 
     const newScreenData = JSON.parse(createScreenResponse.data.ExecuteAction);
 
-    
-
-
-    updateScreenValue('');
+    updateScreenValue("");
     updateLoading(false);
   }
 
@@ -65,31 +61,26 @@ function ScreenCreationForm({ parentId, createScreen, refetchQueries }) {
   }
 
   return (
-    <Form>
+    <form>
       <label htmlFor="screen-value">
-        Screen:
         <input
+          placeholder="New Screen"
+          className="input"
           id="screen-value"
           type="text"
           onChange={handleChange}
           onKeyPress={handleKeyPress}
-          value={ screenValue }
+          value={screenValue}
           disabled={loading}
         />
       </label>
-      <Button type="submit"  disabled={loading}  onClick={handleSubmit}>
-        {
-          loading
-            ? 'Creating Screen...'
-            : 'Create Screen'
-        }
+      <Button type="submit" disabled={loading} onClick={handleSubmit}>
+        {loading ? "Creating Screen..." : "Create Screen"}
       </Button>
-    </Form>
+    </form>
   );
 }
 
-export default compose(
-  graphql(EXECUTE_ACTION, { name: 'createScreen' }),
-  
-  
-)(ScreenCreationForm);
+export default compose(graphql(EXECUTE_ACTION, { name: "createScreen" }))(
+  ScreenCreationForm
+);

@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { graphql } from '@apollo/react-hoc';
-import styled from 'styled-components';
-import { withNoStack, EXECUTE_ACTION } from '@nostack/no-stack';
-import compose from '@shopify/react-compose';
+import React, { useState } from "react";
+import { graphql } from "@apollo/react-hoc";
+import styled from "styled-components";
+import { withNoStack, EXECUTE_ACTION } from "@nostack/no-stack";
+import compose from "@shopify/react-compose";
 
-import { CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID
- } from '../../../config';
+import { CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID } from "../../../config";
 
 // change styling here
 const Form = styled.div`
@@ -13,7 +12,7 @@ const Form = styled.div`
   padding: 1.5em;
   border: none;
   border-radius: 5px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 `;
 
 const Button = styled.button`
@@ -21,8 +20,8 @@ const Button = styled.button`
 `;
 
 function InfoTypeCreationForm({ parentId, createInfoType, refetchQueries }) {
-  const [ infoTypeValue, updateInfoTypeValue ] = useState('');
-  const [ loading, updateLoading ] = useState(false);
+  const [infoTypeValue, updateInfoTypeValue] = useState("");
+  const [loading, updateLoading] = useState(false);
 
   function handleChange(e) {
     updateInfoTypeValue(e.target.value);
@@ -46,15 +45,14 @@ function InfoTypeCreationForm({ parentId, createInfoType, refetchQueries }) {
         }),
         unrestricted: false,
       },
-      refetchQueries
+      refetchQueries,
     });
 
-    const newInfoTypeData = JSON.parse(createInfoTypeResponse.data.ExecuteAction);
+    const newInfoTypeData = JSON.parse(
+      createInfoTypeResponse.data.ExecuteAction
+    );
 
-    
-
-
-    updateInfoTypeValue('');
+    updateInfoTypeValue("");
     updateLoading(false);
   }
 
@@ -65,30 +63,26 @@ function InfoTypeCreationForm({ parentId, createInfoType, refetchQueries }) {
   }
 
   return (
-    <Form>
+    <form>
       <label htmlFor="infoType-value">
-        InfoType:
         <input
+          className="input"
+          placeholder="New Type of Info"
           id="infoType-value"
           type="text"
           onChange={handleChange}
           onKeyPress={handleKeyPress}
-          value={ infoTypeValue }
+          value={infoTypeValue}
           disabled={loading}
         />
       </label>
-      <Button type="submit"  disabled={loading}  onClick={handleSubmit}>
-        {
-          loading
-            ? 'Creating InfoType...'
-            : 'Create InfoType'
-        }
+      <Button type="submit" disabled={loading} onClick={handleSubmit}>
+        {loading ? "Creating InfoType..." : "Create InfoType"}
       </Button>
-    </Form>
+    </form>
   );
 }
 
-export default compose(
-  graphql(EXECUTE_ACTION, { name: 'createInfoType' }),
-  
-)(InfoTypeCreationForm);
+export default compose(graphql(EXECUTE_ACTION, { name: "createInfoType" }))(
+  InfoTypeCreationForm
+);

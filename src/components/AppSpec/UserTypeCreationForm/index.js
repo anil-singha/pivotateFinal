@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { graphql } from '@apollo/react-hoc';
-import styled from 'styled-components';
-import { withNoStack, EXECUTE_ACTION } from '@nostack/no-stack';
-import compose from '@shopify/react-compose';
-
-import { CREATE_USER_TYPE_FOR_APP_SPEC_ACTION_ID
- } from '../../../config';
+import React, { useState } from "react";
+import { graphql } from "@apollo/react-hoc";
+import styled from "styled-components";
+import { withNoStack, EXECUTE_ACTION } from "@nostack/no-stack";
+import compose from "@shopify/react-compose";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement } from "../../../actions";
+import { CREATE_USER_TYPE_FOR_APP_SPEC_ACTION_ID } from "../../../config";
 
 // change styling here
 const Form = styled.div`
@@ -13,7 +13,7 @@ const Form = styled.div`
   padding: 1.5em;
   border: none;
   border-radius: 5px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 `;
 
 const Button = styled.button`
@@ -21,9 +21,10 @@ const Button = styled.button`
 `;
 
 function UserTypeCreationForm({ parentId, createUserType, refetchQueries }) {
-  const [ userTypeValue, updateUserTypeValue ] = useState('');
-  const [ loading, updateLoading ] = useState(false);
-
+  const [userTypeValue, updateUserTypeValue] = useState("");
+  const [loading, updateLoading] = useState(false);
+  const counter = useSelector((state) => state.counter);
+  const dispatch = useDispatch();
   function handleChange(e) {
     updateUserTypeValue(e.target.value);
   }
@@ -46,15 +47,15 @@ function UserTypeCreationForm({ parentId, createUserType, refetchQueries }) {
         }),
         unrestricted: false,
       },
-      refetchQueries
+      refetchQueries,
     });
+    dispatch(increment());
 
-    const newUserTypeData = JSON.parse(createUserTypeResponse.data.ExecuteAction);
+    const newUserTypeData = JSON.parse(
+      createUserTypeResponse.data.ExecuteAction
+    );
 
-    
-
-
-    updateUserTypeValue('');
+    updateUserTypeValue("");
     updateLoading(false);
   }
 
@@ -65,31 +66,27 @@ function UserTypeCreationForm({ parentId, createUserType, refetchQueries }) {
   }
 
   return (
-    <Form>
+    <form>
       <label htmlFor="userType-value">
-        UserType:
         <input
+          placeholder="New User Type"
+          className="input"
           id="userType-value"
           type="text"
           onChange={handleChange}
           onKeyPress={handleKeyPress}
-          value={ userTypeValue }
+          value={userTypeValue}
           disabled={loading}
         />
       </label>
-      <Button type="submit"  disabled={loading}  onClick={handleSubmit}>
-        {
-          loading
-            ? 'Creating UserType...'
-            : 'Create UserType'
-        }
+
+      <Button type="submit" disabled={loading} onClick={handleSubmit}>
+        {loading ? "Creating UserType..." : "Create UserType"}
       </Button>
-    </Form>
+    </form>
   );
 }
 
-export default compose(
-  graphql(EXECUTE_ACTION, { name: 'createUserType' }),
-  
-  
-)(UserTypeCreationForm);
+export default compose(graphql(EXECUTE_ACTION, { name: "createUserType" }))(
+  UserTypeCreationForm
+);

@@ -5,7 +5,7 @@ import { withNoStack } from "@nostack/no-stack";
 
 import ForgotPasswordButton from "../ForgotPasswordButton";
 
-const LoginForm = ({ loading, currentUser, login }, props) => {
+const LoginForm = ({ onSwitch, loading, currentUser, login, onClose }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,7 +37,7 @@ const LoginForm = ({ loading, currentUser, login }, props) => {
   };
 
   return (
-    <Modal onClose={props.onClose}>
+    <Modal onClose={onClose}>
       <div className="dialog__title">
         <img
           src="http://pivotatestaticassets.com/images/Pivotate Logo.svg"
@@ -115,7 +115,7 @@ const LoginForm = ({ loading, currentUser, login }, props) => {
           <a
             href="javascript:void(0);"
             className="teal--text"
-            onClick={props.onSwitch}
+            onClick={onSwitch}
           >
             &nbsp; Sign Up
           </a>

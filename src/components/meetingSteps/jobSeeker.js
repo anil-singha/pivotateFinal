@@ -2,29 +2,19 @@ import React, { Component, createRef } from "react";
 import { Unit } from "@nostack/no-stack";
 import styled from "styled-components";
 import { v4 } from "uuid";
+import { withNoStack } from "@nostack/no-stack";
 
-import { flattenData } from "../../../flattenData";
+import { flattenData } from "../../flattenData";
 
-import AppCreationForm from "../AppCreationForm";
-import App from "../App";
-import { connect } from "react-redux";
-import { increment, decrement } from "../../../actions";
+import AppCreationForm from "../AppSpec/AppCreationForm";
+import App from "../AppSpec/App";
 
-import { SOURCE_APP_SPEC_ID } from "../../../config";
+import { SOURCE_APP_SPEC_ID } from "../../config";
 import {
   APP_SPEC_RELATIONSHIPS,
   SOURCE_APP_SPEC_QUERY,
-} from "../../source-props/appSpec";
+} from "../source-props/appSpec";
 
-const mapStateToProps = (state) => {
-  return {
-    counter: state.counter,
-  };
-};
-
-const mapDispatchToProps = {
-  increment,
-};
 // np__added_start unit: appSpec, comp: Apps, loc: styling
 
 // add styling here
@@ -63,7 +53,7 @@ class Apps extends Component {
   handleSelect = (id) => this.setState({ selectedAppId: id });
 
   render() {
-    const { customerId } = this.props;
+    const customerId = "2ea51c4a-c072-4797-9de7-4bec0fc11db3";
     const { selectedAppId } = this.state;
 
     const parameters = {
@@ -88,22 +78,11 @@ class Apps extends Component {
           const apps = data.unitData.map((el) => flattenData(el));
 
           return (
-            <div style={{ maxWidth: "769px" }}>
-              {this.props.counter == 0 ? (
-                <AppCreationForm
-                  customerId={customerId}
-                  refetchQueries={refetchQueries}
-                />
-              ) : (
-                <div> </div>
-              )}
-              {this.props.counter >= 1 ? (
-                <AppsStyleWrapper
-                  ref={this.wrapperRef}
-                  onClick={this.handleClick}
-                >
+            <>
+              <div class="box">
+                <div class="flex flex-column">
                   {apps &&
-                    apps.map((app) => (
+                    apps.map((app, i) => (
                       <App
                         key={v4()}
                         parentId={customerId}
@@ -113,17 +92,15 @@ class Apps extends Component {
                         onSelect={this.handleSelect}
                       />
                     ))}
-                </AppsStyleWrapper>
-              ) : (
-                <div> </div>
-              )}
-              {/* np__added_start unit: appSpec, comp: Apps, loc: renderEnding */}
-              {/* np__added_end unit: appSpec, comp: Apps, loc: renderEnding */}
-            </div>
+                </div>
+              </div>
+              <br></br>
+            </>
           );
         }}
       </Unit>
     );
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Apps);
+
+export default withNoStack(Apps);

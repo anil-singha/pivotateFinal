@@ -1,39 +1,36 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { EXECUTE_ACTION } from '@nostack/no-stack';
-import compose from '@shopify/react-compose';
-import { graphql } from '@apollo/react-hoc';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { EXECUTE_ACTION } from "@nostack/no-stack";
+import compose from "@shopify/react-compose";
+import { graphql } from "@apollo/react-hoc";
 
 import {
   UPDATE_USER_TYPE_FOR_APP_SPEC_ACTION_ID,
-  DELETE_USER_TYPE_FOR_APP_SPEC_ACTION_ID, TYPE_SCREEN_ID,
-} from '../../../config';
+  DELETE_USER_TYPE_FOR_APP_SPEC_ACTION_ID,
+  TYPE_SCREEN_ID,
+} from "../../../config";
 
-import EditInstanceForm from '../../EditInstanceForm';
-import DeleteInstanceMenu from '../../DeleteInstanceMenu';
+import EditInstanceForm from "../../EditInstanceForm";
+import DeleteInstanceMenu from "../../DeleteInstanceMenu";
 
-
-import Screens from '../Screens';
-
-
+import Screens from "../Screens";
 
 // add styling here
-const UserTypeStyleWrapper = styled.div(({
-  selected,
-  isDeleting,
-}) => `
+const UserTypeStyleWrapper = styled.div(
+  ({ selected, isDeleting }) => `
   margin: 2em 1em;
   padding: 1.5em;
-  border: ${selected ? '1px solid aquamarine': '1px solid white'};
+  border: ${selected ? "1px solid aquamarine" : "1px solid white"};
   border-radius: 10px;
   box-shadow: 5px 5px 10px #888888;
-  background-color: ${isDeleting && 'tomato'};
-  cursor: ${selected ? 'auto' : 'pointer'};
+  background-color: ${isDeleting && "tomato"};
+  cursor: ${selected ? "auto" : "pointer"};
 
   &:hover {
     border: 1px solid aquamarine;
   }
-`);
+`
+);
 
 const Button = styled.button`
   background: none;
@@ -44,7 +41,7 @@ const Button = styled.button`
   color: #bbbbbb;
   transition: color 0.5s ease;
   &:hover {
-    color: ${props => props.hoverColor || '#000000'};
+    color: ${(props) => props.hoverColor || "#000000"};
   }
 `;
 
@@ -63,18 +60,18 @@ function UserType({
   const [isDeleteMode, updateIsDeleteMode] = useState(false);
   const [isDeleting, updateIsDeleting] = useState(false);
 
-  
-  const screenData = userType.children && userType.children.find(child => child.typeId === TYPE_SCREEN_ID);
+  const screenData =
+    userType.children &&
+    userType.children.find((child) => child.typeId === TYPE_SCREEN_ID);
   const screens = screenData ? screenData.instances : [];
 
-
-  if (!selected) {
-    return (
-      <UserTypeStyleWrapper onClick={() => onSelect(userType.id)}>
-        { userTypeValue }
-      </UserTypeStyleWrapper>
-    );
-  }
+  // if (!selected) {
+  //   return (
+  //     <UserTypeStyleWrapper onClick={() => onSelect(userType.id)}>
+  //       { userTypeValue }
+  //     </UserTypeStyleWrapper>
+  //   );
+  // }
 
   function handleUserTypeValueChange(e) {
     updateUserTypeValue(e.target.value);
@@ -106,9 +103,9 @@ function UserType({
     return (
       <UserTypeStyleWrapper>
         <EditInstanceForm
-          id={ userType.id }
+          id={userType.id}
           label="UserType Value:"
-          value={ userTypeValue }
+          value={userTypeValue}
           onChange={handleUserTypeValueChange}
           onSave={handleUserTypeValueSave}
           onCancel={handleCancelEdit}
@@ -130,7 +127,7 @@ function UserType({
             instanceId: userType.id,
           }),
         },
-        refetchQueries
+        refetchQueries,
       });
     } catch (e) {
       updateIsDeleting(false);
@@ -143,11 +140,8 @@ function UserType({
 
   if (isDeleteMode) {
     return (
-      <UserTypeStyleWrapper
-        selected={selected}
-        isDeleting={isDeleting}
-      >
-        { userTypeValue }
+      <UserTypeStyleWrapper selected={selected} isDeleting={isDeleting}>
+        {userTypeValue}
         <DeleteInstanceMenu
           onDelete={handleDelete}
           onCancel={handleCancelDelete}
@@ -158,35 +152,26 @@ function UserType({
   }
 
   return (
-    <UserTypeStyleWrapper selected={selected}>
-      { userTypeValue }
-      <Button
-        type="button"
-        onClick={() => updateIsEditMode(true)}
-      >
+    <div class="box" selected={selected}>
+      <strong> {userTypeValue} </strong>
+      <Button type="button" onClick={() => updateIsEditMode(true)}>
         &#9998;
       </Button>
-      <Button
-        type="button"
-        onClick={() => updateIsDeleteMode(true)}
-      >
+      <Button type="button" onClick={() => updateIsDeleteMode(true)}>
         &#128465;
       </Button>
 
-      
-< Screens
-              screens = { screens }
-              userTypeId = { userType.id }
-              label="Screen?"
-              refetchQueries={refetchQueries}
+      <Screens
+        screens={screens}
+        userTypeId={userType.id}
+        label="Screen?"
+        refetchQueries={refetchQueries}
       />
-
-
-    </UserTypeStyleWrapper>
+    </div>
   );
 }
 
 export default compose(
-  graphql(EXECUTE_ACTION, { name: 'updateInstance' }),
-  graphql(EXECUTE_ACTION, { name: 'deleteInstance' })
+  graphql(EXECUTE_ACTION, { name: "updateInstance" }),
+  graphql(EXECUTE_ACTION, { name: "deleteInstance" })
 )(UserType);

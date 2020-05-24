@@ -41,17 +41,6 @@ import gql from 'graphql-tag';
 				    id
 				    value
 				}
-                    children {
-                        typeId
-                        instances {
-                            
-                        instance {
-                            id
-                            value
-                        }
-                    }
-                }
-
 			    }
 			}
 		    }
@@ -67,9 +56,7 @@ export const APP_SPEC_RELATIONSHIPS = {
    app: {
         userType: {
         screen: {
-        infoType: {
-            hasParent: null
-        }
+        infoType: null
     }
     }, description: null
     },

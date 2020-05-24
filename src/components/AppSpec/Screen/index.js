@@ -1,39 +1,36 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { EXECUTE_ACTION } from '@nostack/no-stack';
-import compose from '@shopify/react-compose';
-import { graphql } from '@apollo/react-hoc';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { EXECUTE_ACTION } from "@nostack/no-stack";
+import compose from "@shopify/react-compose";
+import { graphql } from "@apollo/react-hoc";
 
 import {
   UPDATE_SCREEN_FOR_APP_SPEC_ACTION_ID,
-  DELETE_SCREEN_FOR_APP_SPEC_ACTION_ID, TYPE_INFO_TYPE_ID,
-} from '../../../config';
+  DELETE_SCREEN_FOR_APP_SPEC_ACTION_ID,
+  TYPE_INFO_TYPE_ID,
+} from "../../../config";
 
-import EditInstanceForm from '../../EditInstanceForm';
-import DeleteInstanceMenu from '../../DeleteInstanceMenu';
+import EditInstanceForm from "../../EditInstanceForm";
+import DeleteInstanceMenu from "../../DeleteInstanceMenu";
 
-
-import InfoTypes from '../InfoTypes';
-
-
+import InfoTypes from "../InfoTypes";
 
 // add styling here
-const ScreenStyleWrapper = styled.div(({
-  selected,
-  isDeleting,
-}) => `
+const ScreenStyleWrapper = styled.div(
+  ({ selected, isDeleting }) => `
   margin: 2em 1em;
   padding: 1.5em;
-  border: ${selected ? '1px solid aquamarine': '1px solid white'};
+  border: ${selected ? "1px solid aquamarine" : "1px solid white"};
   border-radius: 10px;
   box-shadow: 5px 5px 10px #888888;
-  background-color: ${isDeleting && 'tomato'};
-  cursor: ${selected ? 'auto' : 'pointer'};
+  background-color: ${isDeleting && "tomato"};
+  cursor: ${selected ? "auto" : "pointer"};
 
   &:hover {
     border: 1px solid aquamarine;
   }
-`);
+`
+);
 
 const Button = styled.button`
   background: none;
@@ -44,7 +41,7 @@ const Button = styled.button`
   color: #bbbbbb;
   transition: color 0.5s ease;
   &:hover {
-    color: ${props => props.hoverColor || '#000000'};
+    color: ${(props) => props.hoverColor || "#000000"};
   }
 `;
 
@@ -63,18 +60,18 @@ function Screen({
   const [isDeleteMode, updateIsDeleteMode] = useState(false);
   const [isDeleting, updateIsDeleting] = useState(false);
 
-  
-  const infoTypeData = screen.children && screen.children.find(child => child.typeId === TYPE_INFO_TYPE_ID);
+  const infoTypeData =
+    screen.children &&
+    screen.children.find((child) => child.typeId === TYPE_INFO_TYPE_ID);
   const infoTypes = infoTypeData ? infoTypeData.instances : [];
 
-
-  if (!selected) {
-    return (
-      <ScreenStyleWrapper onClick={() => onSelect(screen.id)}>
-        { screenValue }
-      </ScreenStyleWrapper>
-    );
-  }
+  // if (!selected) {
+  //   return (
+  //     <ScreenStyleWrapper onClick={() => onSelect(screen.id)}>
+  //       {screenValue}
+  //     </ScreenStyleWrapper>
+  //   );
+  // }
 
   function handleScreenValueChange(e) {
     updateScreenValue(e.target.value);
@@ -102,21 +99,21 @@ function Screen({
     updateIsEditMode(false);
   }
 
-  if (isEditMode) {
-    return (
-      <ScreenStyleWrapper>
-        <EditInstanceForm
-          id={ screen.id }
-          label="Screen Value:"
-          value={ screenValue }
-          onChange={handleScreenValueChange}
-          onSave={handleScreenValueSave}
-          onCancel={handleCancelEdit}
-          disabled={isSaving}
-        />
-      </ScreenStyleWrapper>
-    );
-  }
+  // if (isEditMode) {
+  //   return (
+  //     <ScreenStyleWrapper>
+  //       <EditInstanceForm
+  //         id={ screen.id }
+  //         label="Screen Value:"
+  //         value={ screenValue }
+  //         onChange={handleScreenValueChange}
+  //         onSave={handleScreenValueSave}
+  //         onCancel={handleCancelEdit}
+  //         disabled={isSaving}
+  //       />
+  //     </ScreenStyleWrapper>
+  //   );
+  // }
 
   async function handleDelete() {
     updateIsDeleting(true);
@@ -130,7 +127,7 @@ function Screen({
             instanceId: screen.id,
           }),
         },
-        refetchQueries
+        refetchQueries,
       });
     } catch (e) {
       updateIsDeleting(false);
@@ -143,11 +140,8 @@ function Screen({
 
   if (isDeleteMode) {
     return (
-      <ScreenStyleWrapper
-        selected={selected}
-        isDeleting={isDeleting}
-      >
-        { screenValue }
+      <ScreenStyleWrapper selected={selected} isDeleting={isDeleting}>
+        {screenValue}
         <DeleteInstanceMenu
           onDelete={handleDelete}
           onCancel={handleCancelDelete}
@@ -158,35 +152,26 @@ function Screen({
   }
 
   return (
-    <ScreenStyleWrapper selected={selected}>
-      { screenValue }
-      <Button
-        type="button"
-        onClick={() => updateIsEditMode(true)}
-      >
+    <div class="box" selected={selected}>
+      <strong> {screenValue} </strong>
+      <Button type="button" onClick={() => updateIsEditMode(true)}>
         &#9998;
       </Button>
-      <Button
-        type="button"
-        onClick={() => updateIsDeleteMode(true)}
-      >
+      <Button type="button" onClick={() => updateIsDeleteMode(true)}>
         &#128465;
       </Button>
 
-      
-< InfoTypes
-              infoTypes = { infoTypes }
-              screenId = { screen.id }
-              label="InfoType?"
-              refetchQueries={refetchQueries}
+      <InfoTypes
+        infoTypes={infoTypes}
+        screenId={screen.id}
+        label="InfoType?"
+        refetchQueries={refetchQueries}
       />
-
-
-    </ScreenStyleWrapper>
+    </div>
   );
 }
 
 export default compose(
-  graphql(EXECUTE_ACTION, { name: 'updateInstance' }),
-  graphql(EXECUTE_ACTION, { name: 'deleteInstance' })
+  graphql(EXECUTE_ACTION, { name: "updateInstance" }),
+  graphql(EXECUTE_ACTION, { name: "deleteInstance" })
 )(Screen);

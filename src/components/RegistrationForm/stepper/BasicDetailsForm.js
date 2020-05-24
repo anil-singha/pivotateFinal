@@ -55,7 +55,7 @@ const BasicDetailsForm = ({
                 name="password"
               />
             </div>
-            {/*
+            {/* 
             <div className="form__input">
               <RegistrationField
                 placeholder="Confirm Password"

@@ -17,7 +17,6 @@ import {
 
 import ScrollToTop from "react-router-scroll-top";
 import Confirmation from "./components/Pages/Confirmation";
-
 const AppHeader = React.lazy(() => import("./components/AppHeader"));
 const AppFooter = React.lazy(() => import("./components/AppFooter"));
 const Home = React.lazy(() => import("./components/Pages/Home"));
@@ -38,6 +37,13 @@ const termsAndConditions = React.lazy(() =>
 );
 const TempVideo = React.lazy(() => import("./components/Pages/Temp-video"));
 const Schedule = React.lazy(() => import("./components/Pages/Schedule"));
+
+const JobSeeker = React.lazy(() =>
+  import("./components/meetingSteps/jobSeeker")
+);
+const CreateUserType = React.lazy(() =>
+  import("./components/meetingSteps/createUserType")
+);
 
 const App = () => {
   const childRef = useRef();
@@ -72,6 +78,11 @@ const App = () => {
               <TempVideo></TempVideo>
               <AppFooter noAction />
             </Route>
+            <Route exact path={`${process.env.PUBLIC_URL}/staging`}>
+              <AppHeader />
+              <Staging></Staging>
+              <AppFooter noAction />
+            </Route>
             <Route exact path={`${process.env.PUBLIC_URL}/schedule`}>
               <AppHeader />
               <Schedule></Schedule>
@@ -87,7 +98,8 @@ const App = () => {
                 `${process.env.PUBLIC_URL}/terms-and-conditions`,
                 `${process.env.PUBLIC_URL}/contact`,
                 `${process.env.PUBLIC_URL}/schedule`,
-                `${process.env.PUBLIC_URL}/staging`,
+                `${process.env.PUBLIC_URL}/meeting-step/create-user-type`,
+                `${process.env.PUBLIC_URL}/meeting-step/job-seeker`,
               ]}
             >
               <AppHeader ref={childRef} />
@@ -97,10 +109,18 @@ const App = () => {
                   onSignUp={() => childRef.current.modalHandlerRegistration()}
                 />
               </Route>
-              <Route exact path={`${process.env.PUBLIC_URL}/staging`}>
-                <Staging
-                  onSignUp={() => childRef.current.modalHandlerRegistration()}
-                />
+
+              <Route
+                exact
+                path={`${process.env.PUBLIC_URL}/meeting-step/create-user-type`}
+              >
+                <CreateUserType />
+              </Route>
+              <Route
+                exact
+                path={`${process.env.PUBLIC_URL}/meeting-step/job-seeker`}
+              >
+                <JobSeeker />
               </Route>
               <Route
                 exact

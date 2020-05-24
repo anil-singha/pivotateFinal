@@ -9,18 +9,26 @@ import * as serviceWorker from "./serviceWorker";
 import client from "./client";
 
 import TagManager from "react-gtm-module";
-
+import { createStore } from "redux";
+import allReducers from "./reducers";
+import { Provider } from "react-redux";
 const tagManagerArgs = {
   gtmId: "GTM-TS3Q48S",
-  js: new Date()
+  js: new Date(),
 };
 
+const store = createStore(
+  allReducers,
+  window.__redux_devtools_extension__ && window.__redux_devtools_extension__()
+);
 TagManager.initialize(tagManagerArgs);
 
 ReactDOM.render(
-  <NoStackProvider client={client} platformId={PLATFORM_ID}>
-    <App />
-  </NoStackProvider>,
+  <Provider store={store}>
+    <NoStackProvider client={client} platformId={PLATFORM_ID}>
+      <App />
+    </NoStackProvider>
+  </Provider>,
   document.getElementById("root")
 );
 

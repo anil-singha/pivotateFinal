@@ -1,80 +1,90 @@
-import React, { Component, createRef } from 'react';
-import styled from 'styled-components';
-import { v4 } from 'uuid';
+import React, { Component, createRef } from "react";
+import styled from "styled-components";
+import { v4 } from "uuid";
 
-import UserTypeCreationForm from '../UserTypeCreationForm';
-import UserType from '../UserType';
+import UserTypeCreationForm from "../UserTypeCreationForm";
+import UserType from "../UserType";
+import { connect } from "react-redux";
+import { increment, decrement } from "../../../actions";
 
-// np__added_start unit: appSpec, comp: UserTypes, loc: styling
-
-const UserTypesStyleWrapper = styled.div``;
-
-const Button = styled.button`
-  display: block;
-  margin: 0 auto;
-`;
-// np__added_end unit: appSpec, comp: UserTypes, loc: styling
+const mapStateToProps = (state) => {
+  return {
+    counter: state.counter,
+  };
+};
+const mapDispatchToProps = {
+  increment,
+  decrement,
+};
 
 class UserTypes extends Component {
   state = {
     selectedUserTypeId: null,
   };
-
   wrapperRef = createRef();
-
   componentDidMount() {
-    document.addEventListener('mousedown', this.handleClick);
+    document.addEventListener("mousedown", this.handleClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClick);
+    document.removeEventListener("mousedown", this.handleClick);
   }
 
-  handleClick = e => {
+  handleClick = (e) => {
     const node = this.wrapperRef.current;
 
-    if (
-      node &&
-      node !== e.target &&
-      !node.contains(e.target)
-    ) {
+    if (node && node !== e.target && !node.contains(e.target)) {
       this.setState({ selectedUserTypeId: null });
     }
-  }
+  };
 
-  handleSelect = id => this.setState({ selectedUserTypeId: id });
+  handleSelect = (id) => this.setState({ selectedUserTypeId: id });
 
-  render () {
+  render() {
     const { appId, userTypes, refetchQueries, onUpdate } = this.props;
     const { selectedUserTypeId } = this.state;
 
-    {/* np__added_start unit: appSpec, comp: UserTypes, loc: renderBeginning */}
-    {/* np__added_end unit: appSpec, comp: UserTypes, loc: renderBeginning */}
+    {
+      /* np__added_start unit: appSpec, comp: UserTypes, loc: renderBeginning */
+    }
+    {
+      /* np__added_end unit: appSpec, comp: UserTypes, loc: renderBeginning */
+    }
 
     return (
-      <UserTypesStyleWrapper ref={this.wrapperRef} onClick={this.handleClick}>
-        <UserTypeCreationForm
-          parentId={ appId }
-          refetchQueries={refetchQueries}
-        />
+      <>
+        <div ref={this.wrapperRef} onClick={this.handleClick}>
+          {this.props.counter >= 2 ? (
+            <div>
+              {userTypes.map((userType) => (
+                <UserType
+                  key={v4()}
+                  userType={userType}
+                  selected={userType.id === selectedUserTypeId}
+                  onUpdate={onUpdate}
+                  parentId={appId}
+                  refetchQueries={refetchQueries}
+                  onSelect={this.handleSelect}
+                />
+              ))}
+            </div>
+          ) : (
+            <div> </div>
+          )}
 
-        { userTypes.map(userType => (
-          <UserType
-            key={v4()}
-            userType={ userType }
-            selected={ userType.id === selectedUserTypeId }
-            onUpdate={onUpdate}
-            parentId={ appId }
-            refetchQueries={refetchQueries}
-            onSelect={this.handleSelect}
-          />
-        )) }
-  {/* np__added_start unit: appSpec, comp: UserTypes, loc: renderEnding */}
-  {/* np__added_end unit: appSpec, comp: UserTypes, loc: renderEnding */}
-
-  </UserTypesStyleWrapper>
-  )
+          <br></br>
+          {this.props.counter >= 1 ? (
+            <UserTypeCreationForm
+              parentId={appId}
+              refetchQueries={refetchQueries}
+            />
+          ) : (
+            <div />
+          )}
+        </div>
+      </>
+    );
   }
 }
 
-export default UserTypes;
+export default connect(mapStateToProps, mapDispatchToProps)(UserTypes);

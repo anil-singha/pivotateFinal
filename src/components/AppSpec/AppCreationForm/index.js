@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
-import { graphql } from '@apollo/react-hoc';
-import styled from 'styled-components';
-import { withNoStack, EXECUTE_ACTION } from '@nostack/no-stack';
-import compose from '@shopify/react-compose';
+import React, { useState } from "react";
+import { graphql } from "@apollo/react-hoc";
+import styled from "styled-components";
+import { Redirect } from "react-router";
+import { useHistory } from "react-router-dom";
 
-import { CREATE_APP_FOR_APP_SPEC_ACTION_ID
- } from '../../../config';
+import { withNoStack, EXECUTE_ACTION } from "@nostack/no-stack";
+import compose from "@shopify/react-compose";
+
+import { CREATE_APP_FOR_APP_SPEC_ACTION_ID } from "../../../config";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement } from "../../../actions";
 
 // change styling here
 const Form = styled.div`
@@ -13,7 +17,7 @@ const Form = styled.div`
   padding: 1.5em;
   border: none;
   border-radius: 5px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 `;
 
 const Button = styled.button`
@@ -21,8 +25,11 @@ const Button = styled.button`
 `;
 
 function AppCreationForm({ customerId, createApp, refetchQueries }) {
-  const [ appValue, updateAppValue ] = useState('');
-  const [ loading, updateLoading ] = useState(false);
+  const [appValue, updateAppValue] = useState("");
+  const [loading, updateLoading] = useState(false);
+  const history = useHistory();
+  const counter = useSelector((state) => state.counter);
+  const dispatch = useDispatch();
 
   function handleChange(e) {
     updateAppValue(e.target.value);
@@ -37,13 +44,6 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
 
     updateLoading(true);
 
-
-
-
-
-
-
-
     const createAppResponse = await createApp({
       variables: {
         actionId: CREATE_APP_FOR_APP_SPEC_ACTION_ID,
@@ -53,16 +53,14 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
         }),
         unrestricted: false,
       },
-      refetchQueries
+      refetchQueries,
     });
 
     const newAppData = JSON.parse(createAppResponse.data.ExecuteAction);
-
-    
-
-
-    updateAppValue('');
+    updateAppValue("");
     updateLoading(false);
+    dispatch(increment());
+    // history.push("/meeting-step/create-user-type");
   }
 
   function handleKeyPress(e) {
@@ -72,32 +70,46 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
   }
 
   return (
-    <Form>
-      <label htmlFor="app-value">
-        App:
-        <input
-          id="app-value"
-          type="text"
-          onChange={handleChange}
-          onKeyPress={handleKeyPress}
-          value={ appValue }
+    <>
+      <div className="box">
+        <div
+          class="text-center"
+          style={{ maxWidth: "350px", margin: "1em auto 2em auto" }}
+        >
+          <strong>Tell us more about what you want in your web app! </strong>
+        </div>
+        <form>
+          <label htmlFor="app-value">
+            <input
+              className="input"
+              placeholder="Create Name"
+              id="app-value"
+              type="text"
+              onChange={handleChange}
+              onKeyPress={handleKeyPress}
+              value={appValue}
+              disabled={loading}
+            />
+
+            <textarea className="input" placeholder="Description"></textarea>
+          </label>
+        </form>
+      </div>
+      <div style={{ marginTop: "1em" }}>
+        <button
+          style={{ display: "block", marginLeft: "auto" }}
+          className="button button--yellow"
+          type="submit"
           disabled={loading}
-        />
-      </label>
-      <Button type="submit"  disabled={loading}  onClick={handleSubmit}>
-        {
-          loading
-            ? 'Creating App...'
-            : 'Create App'
-        }
-      </Button>
-    </Form>
+          onClick={handleSubmit}
+        >
+          {loading ? "Creating App..." : "Create App"}
+        </button>
+      </div>
+    </>
   );
 }
 
-export default compose(
-  graphql(EXECUTE_ACTION, { name: 'createApp' }),
-  
-  
-  
-)(AppCreationForm);
+export default compose(graphql(EXECUTE_ACTION, { name: "createApp" }))(
+  AppCreationForm
+);

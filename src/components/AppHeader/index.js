@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
-
+import { NoStackConsumer } from "@nostack/no-stack";
 import { LogoutButton } from "@nostack/no-stack";
 import RegistrationForm from "../../components/RegistrationForm";
 import LoginForm from "../../components/LoginForm";
@@ -93,16 +93,34 @@ class NavBar extends Component {
             </li>
           </ul>
         </nav>
+
         {!this.props.noAction && (
           <div className="grow-12 text-right hide-tablet">
-            <a onClick={this.modalHandlerLogin}> LOGIN </a>
-            <LogoutButton />
-            <a
-              onClick={this.modalHandlerRegistration}
-              className="button button--yellow button__sign-up"
-            >
-              SIGN UP
-            </a>
+            <NoStackConsumer>
+              {({ loading, currentUser }) => {
+                if (loading) return null;
+
+                if (!currentUser) {
+                  return (
+                    <div>
+                      <a onClick={this.modalHandlerLogin}> LOGIN </a>
+                      <a
+                        onClick={this.modalHandlerRegistration}
+                        className="button button--yellow button__sign-up"
+                      >
+                        SIGN UP
+                      </a>
+                    </div>
+                  );
+                } else {
+                  return (
+                    <div class="logout">
+                      <LogoutButton></LogoutButton>
+                    </div>
+                  );
+                }
+              }}
+            </NoStackConsumer>
           </div>
         )}
         <div className="show-tablet">

@@ -28,6 +28,7 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
   }
 
   async function handleSubmit(e) {
+    this.props.onNext();
     e.preventDefault();
     if (!appValue) {
       return;
