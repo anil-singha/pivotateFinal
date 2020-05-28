@@ -10,7 +10,7 @@ const Confirmation = () => {
           maxWidth: "769px",
           backgroundColor: "#ffffff",
           borderRadius: "10px",
-          marginBottom: "100px"
+          marginBottom: "100px",
         }}
       >
         <img
@@ -20,7 +20,9 @@ const Confirmation = () => {
         <p style={{ textAlign: "center" }}>
           <br></br>
           <br></br>
-          <h3 class="c0">Your Meeting is Confirmed! We’ll be talking soon.</h3>
+          <h3 className="c0">
+            Your Meeting is Confirmed! We’ll be talking soon.
+          </h3>
           <h4>Check your email for details.</h4>
         </p>
       </div>

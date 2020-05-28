@@ -1,39 +1,36 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { EXECUTE_ACTION } from '@nostack/no-stack';
-import compose from '@shopify/react-compose';
-import { graphql } from '@apollo/react-hoc';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { EXECUTE } from "@nostack/no-stack";
+import compose from "@shopify/react-compose";
+import { graphql } from "@apollo/react-hoc";
 
 import {
   UPDATE_APP_FOR_REGISTRATION_INFO_ACTION_ID,
-  DELETE_APP_FOR_REGISTRATION_INFO_ACTION_ID, TYPE_DESCRIPTION_ID,
-} from '../../../config';
+  DELETE_APP_FOR_REGISTRATION_INFO_ACTION_ID,
+  TYPE_DESCRIPTION_ID,
+} from "../../../config";
 
-import EditInstanceForm from '../../EditInstanceForm';
-import DeleteInstanceMenu from '../../DeleteInstanceMenu';
+import EditInstanceForm from "../../EditInstanceForm";
+import DeleteInstanceMenu from "../../DeleteInstanceMenu";
 
-
-import Descriptions from '../Descriptions';
-
-
+import Descriptions from "../Descriptions";
 
 // add styling here
-const AppStyleWrapper = styled.div(({
-  selected,
-  isDeleting,
-}) => `
+const AppStyleWrapper = styled.div(
+  ({ selected, isDeleting }) => `
   margin: 2em 1em;
   padding: 1.5em;
-  border: ${selected ? '1px solid aquamarine': '1px solid white'};
+  border: ${selected ? "1px solid aquamarine" : "1px solid white"};
   border-radius: 10px;
   box-shadow: 5px 5px 10px #888888;
-  background-color: ${isDeleting && 'tomato'};
-  cursor: ${selected ? 'auto' : 'pointer'};
+  background-color: ${isDeleting && "tomato"};
+  cursor: ${selected ? "auto" : "pointer"};
 
   &:hover {
     border: 1px solid aquamarine;
   }
-`);
+`
+);
 
 const Button = styled.button`
   background: none;
@@ -44,7 +41,7 @@ const Button = styled.button`
   color: #bbbbbb;
   transition: color 0.5s ease;
   &:hover {
-    color: ${props => props.hoverColor || '#000000'};
+    color: ${(props) => props.hoverColor || "#000000"};
   }
 `;
 
@@ -63,15 +60,15 @@ function App({
   const [isDeleteMode, updateIsDeleteMode] = useState(false);
   const [isDeleting, updateIsDeleting] = useState(false);
 
-  
-  const descriptionData = app.children && app.children.find(child => child.typeId === TYPE_DESCRIPTION_ID);
+  const descriptionData =
+    app.children &&
+    app.children.find((child) => child.typeId === TYPE_DESCRIPTION_ID);
   const descriptions = descriptionData ? descriptionData.instances : [];
-
 
   if (!selected) {
     return (
       <AppStyleWrapper onClick={() => onSelect(app.id)}>
-        { appValue }
+        {appValue}
       </AppStyleWrapper>
     );
   }
@@ -106,9 +103,9 @@ function App({
     return (
       <AppStyleWrapper>
         <EditInstanceForm
-          id={ app.id }
+          id={app.id}
           label="App Value:"
-          value={ appValue }
+          value={appValue}
           onChange={handleAppValueChange}
           onSave={handleAppValueSave}
           onCancel={handleCancelEdit}
@@ -130,7 +127,7 @@ function App({
             instanceId: app.id,
           }),
         },
-        refetchQueries
+        refetchQueries,
       });
     } catch (e) {
       updateIsDeleting(false);
@@ -143,11 +140,8 @@ function App({
 
   if (isDeleteMode) {
     return (
-      <AppStyleWrapper
-        selected={selected}
-        isDeleting={isDeleting}
-      >
-        { appValue }
+      <AppStyleWrapper selected={selected} isDeleting={isDeleting}>
+        {appValue}
         <DeleteInstanceMenu
           onDelete={handleDelete}
           onCancel={handleCancelDelete}
@@ -159,34 +153,25 @@ function App({
 
   return (
     <AppStyleWrapper selected={selected}>
-      { appValue }
-      <Button
-        type="button"
-        onClick={() => updateIsEditMode(true)}
-      >
+      {appValue}
+      <Button type="button" onClick={() => updateIsEditMode(true)}>
         &#9998;
       </Button>
-      <Button
-        type="button"
-        onClick={() => updateIsDeleteMode(true)}
-      >
+      <Button type="button" onClick={() => updateIsDeleteMode(true)}>
         &#128465;
       </Button>
 
-      
-< Descriptions
-              descriptions = { descriptions }
-              appId = { app.id }
-              label="Description?"
-              refetchQueries={refetchQueries}
+      <Descriptions
+        descriptions={descriptions}
+        appId={app.id}
+        label="Description?"
+        refetchQueries={refetchQueries}
       />
-
-
     </AppStyleWrapper>
   );
 }
 
 export default compose(
-  graphql(EXECUTE_ACTION, { name: 'updateInstance' }),
-  graphql(EXECUTE_ACTION, { name: 'deleteInstance' })
+  graphql(EXECUTE, { name: "updateInstance" }),
+  graphql(EXECUTE, { name: "deleteInstance" })
 )(App);

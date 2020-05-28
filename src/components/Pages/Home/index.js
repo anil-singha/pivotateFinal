@@ -35,14 +35,14 @@ const Home = (props) => {
               <div className="button__wrapper">
                 <a
                   onClick={props.onSignUp}
-                  href="javascript:void(0);"
+                  href="#"
                   className="button button--rounded button--yellow"
                 >
                   GET STARTED <span className="chevron right"></span>
                 </a>
               </div>
             </div>
-            <div class="hero__vid">
+            <div className="hero__vid">
               <PivotateVideo></PivotateVideo>
             </div>
           </div>

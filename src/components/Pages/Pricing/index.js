@@ -165,7 +165,7 @@ class Pricing extends Component {
             </div>
             <div className="pricing__detail flex justify-center">
               <a
-                href="javascript:void(0);"
+                href="#"
                 onClick={this.modalToggleInitDev}
                 className="button button--rounded button--yellow flex justify-center items-center"
               >
@@ -238,7 +238,7 @@ class Pricing extends Component {
             <div className="pricing__detail flex justify-center">
               <a
                 onClick={this.modalToggleServices}
-                href="javascript:void(0);"
+                href="#"
                 className="button button--rounded button--yellow flex justify-center items-center"
               >
                 GET DETAILS{" "}
@@ -292,7 +292,7 @@ class Pricing extends Component {
             <div className="pricing__detail flex justify-center">
               <a
                 onClick={this.modalToggleMaintenance}
-                href="javascript:void(0);"
+                href="#"
                 className="button button--rounded button--yellow flex justify-center items-center"
               >
                 GET DETAILS{" "}

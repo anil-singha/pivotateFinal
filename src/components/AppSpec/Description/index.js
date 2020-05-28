@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { EXECUTE_ACTION } from "@nostack/no-stack";
+import { EXECUTE } from "@nostack/no-stack";
 import compose from "@shopify/react-compose";
 import { graphql } from "@apollo/react-hoc";
 
@@ -60,11 +60,7 @@ function Description({
   const [isDeleting, updateIsDeleting] = useState(false);
 
   if (!selected) {
-    return (
-      <DescriptionStyleWrapper onClick={() => onSelect(description.id)}>
-        {descriptionValue}
-      </DescriptionStyleWrapper>
-    );
+    return <div> {descriptionValue} </div>;
   }
 
   function handleDescriptionValueChange(e) {
@@ -159,6 +155,6 @@ function Description({
 }
 
 export default compose(
-  graphql(EXECUTE_ACTION, { name: "updateInstance" }),
-  graphql(EXECUTE_ACTION, { name: "deleteInstance" })
+  graphql(EXECUTE, { name: "updateInstance" }),
+  graphql(EXECUTE, { name: "deleteInstance" })
 )(Description);

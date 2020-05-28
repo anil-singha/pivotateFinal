@@ -1594,17 +1594,18 @@ ol.progtrckr li.progtrckr-done:hover:before {
   }
 }
 .box {
+  min-width: 550px;
   .flex.justify-between {
     padding: 1em 0;
     margin-bottom: 0.5em;
   }
 }
-.grbokr,
-.box button.iLLupq,
-.box button.flppbH,
-.box button.gTMOGG {
-  display: none;
-}
+
+// .box button,
+// .box button,
+// .box button {
+//   display: none;
+// }
 
 .box strong {
   font-size: 1.25em;
@@ -1644,4 +1645,8 @@ ol.progtrckr li.progtrckr-done:hover:before {
   border: 0;
   border-radius: 25px;
   padding: 0.5em 1em;
+}
+
+.App {
+  padding: 5em 1em;
 }

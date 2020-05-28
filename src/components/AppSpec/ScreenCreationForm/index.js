@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { graphql } from "@apollo/react-hoc";
 import styled from "styled-components";
-import { withNoStack, EXECUTE_ACTION } from "@nostack/no-stack";
+import { withNoStack, EXECUTE } from "@nostack/no-stack";
 import compose from "@shopify/react-compose";
 
 import { CREATE_SCREEN_FOR_APP_SPEC_ACTION_ID } from "../../../config";
@@ -29,6 +29,7 @@ function ScreenCreationForm({ parentId, createScreen, refetchQueries }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    console.log(parentId);
 
     if (!screenValue) {
       return;
@@ -48,7 +49,7 @@ function ScreenCreationForm({ parentId, createScreen, refetchQueries }) {
       refetchQueries,
     });
 
-    const newScreenData = JSON.parse(createScreenResponse.data.ExecuteAction);
+    const newScreenData = JSON.parse(createScreenResponse.data.Execute);
 
     updateScreenValue("");
     updateLoading(false);
@@ -81,6 +82,6 @@ function ScreenCreationForm({ parentId, createScreen, refetchQueries }) {
   );
 }
 
-export default compose(graphql(EXECUTE_ACTION, { name: "createScreen" }))(
+export default compose(graphql(EXECUTE, { name: "createScreen" }))(
   ScreenCreationForm
 );

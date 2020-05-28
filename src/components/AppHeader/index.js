@@ -114,7 +114,7 @@ class NavBar extends Component {
                   );
                 } else {
                   return (
-                    <div class="logout">
+                    <div className="logout">
                       <LogoutButton></LogoutButton>
                     </div>
                   );
@@ -128,7 +128,7 @@ class NavBar extends Component {
             <div className="lines">
               <input
                 type="checkbox"
-                checked={this.state.checkbox}
+                // checked={this.state.checkbox}
                 id="checkbox"
                 className="checkbox"
               />
@@ -158,10 +158,7 @@ class NavBar extends Component {
                   </li>
                   {!this.props.noAction && (
                     <li>
-                      <a
-                        href="javascript:void(0);"
-                        onClick={this.modalHandlerLogin}
-                      >
+                      <a href="#" onClick={this.modalHandlerLogin}>
                         {" "}
                         LOGIN{" "}
                       </a>
@@ -170,7 +167,7 @@ class NavBar extends Component {
                   {!this.props.noAction && (
                     <li>
                       <a
-                        href="javascript:void(0);"
+                        href="#"
                         onClick={this.modalHandlerRegistration}
                         className="button button--yellow button__sign-up"
                       >

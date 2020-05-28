@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { EXECUTE_ACTION } from "@nostack/no-stack";
+import { EXECUTE } from "@nostack/no-stack";
 import compose from "@shopify/react-compose";
 import { graphql } from "@apollo/react-hoc";
 
@@ -152,7 +152,7 @@ function Screen({
   }
 
   return (
-    <div class="box" selected={selected}>
+    <div className="box" selected={selected}>
       <strong> {screenValue} </strong>
       <Button type="button" onClick={() => updateIsEditMode(true)}>
         &#9998;
@@ -172,6 +172,6 @@ function Screen({
 }
 
 export default compose(
-  graphql(EXECUTE_ACTION, { name: "updateInstance" }),
-  graphql(EXECUTE_ACTION, { name: "deleteInstance" })
+  graphql(EXECUTE, { name: "updateInstance" }),
+  graphql(EXECUTE, { name: "deleteInstance" })
 )(Screen);

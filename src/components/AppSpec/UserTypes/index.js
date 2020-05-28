@@ -54,33 +54,26 @@ class UserTypes extends Component {
     return (
       <>
         <div ref={this.wrapperRef} onClick={this.handleClick}>
-          {this.props.counter >= 2 ? (
-            <div>
-              {userTypes.map((userType) => (
-                <UserType
-                  key={v4()}
-                  userType={userType}
-                  selected={userType.id === selectedUserTypeId}
-                  onUpdate={onUpdate}
-                  parentId={appId}
-                  refetchQueries={refetchQueries}
-                  onSelect={this.handleSelect}
-                />
-              ))}
-            </div>
-          ) : (
-            <div> </div>
-          )}
+          <div>
+            {userTypes.map((userType) => (
+              <UserType
+                key={v4()}
+                userType={userType}
+                selected={userType.id === selectedUserTypeId}
+                onUpdate={onUpdate}
+                parentId={appId}
+                refetchQueries={refetchQueries}
+                onSelect={this.handleSelect}
+              />
+            ))}
+          </div>
 
           <br></br>
-          {this.props.counter >= 1 ? (
-            <UserTypeCreationForm
-              parentId={appId}
-              refetchQueries={refetchQueries}
-            />
-          ) : (
-            <div />
-          )}
+
+          <UserTypeCreationForm
+            parentId={appId}
+            refetchQueries={refetchQueries}
+          />
         </div>
       </>
     );

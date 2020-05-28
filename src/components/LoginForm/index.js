@@ -112,11 +112,7 @@ const LoginForm = ({ onSwitch, loading, currentUser, login, onClose }) => {
         <br />
         <small>
           Dont have an account?
-          <a
-            href="javascript:void(0);"
-            className="teal--text"
-            onClick={onSwitch}
-          >
+          <a href="#" className="teal--text" onClick={onSwitch}>
             &nbsp; Sign Up
           </a>
         </small>

@@ -15,11 +15,6 @@ import StepZilla from "react-stepzilla";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from "../../../actions";
 
-const Wrapper = styled.div`
-  padding: 5em 5em;
-  min-width: 480px;
-`;
-
 const LoginWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -32,7 +27,7 @@ const App = ({ loading, currentUser, login }) => {
   return (
     <>
       {/* <NavBar /> */}
-      <Wrapper className="App" style={{ backgroundColor: "#f7f7f7" }}>
+      <div className="App" style={{ backgroundColor: "#f7f7f7" }}>
         <NoStackConsumer>
           {({ loading, currentUser }) => {
             if (loading) return null;
@@ -57,7 +52,7 @@ const App = ({ loading, currentUser, login }) => {
                 <button onClick={() => dispatch(decrement())}>-</button>
                Step: {counter} */}
                 <div className="step-progress">
-                  <div class="flex justify-center">
+                  <div className="flex justify-center">
                     <Apps customerId={currentUser.id}> </Apps>
                   </div>
                 </div>
@@ -65,7 +60,7 @@ const App = ({ loading, currentUser, login }) => {
             );
           }}
         </NoStackConsumer>
-      </Wrapper>
+      </div>
     </>
   );
 };

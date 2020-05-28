@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { graphql } from '@apollo/react-hoc';
-import styled from 'styled-components';
-import { EXECUTE_ACTION } from '@nostack/no-stack';
-import compose from '@shopify/react-compose';
+import React, { useState } from "react";
+import { graphql } from "@apollo/react-hoc";
+import styled from "styled-components";
+import { EXECUTE } from "@nostack/no-stack";
+import compose from "@shopify/react-compose";
 
 // import { CREATE_DESCRIPTION_FOR_REGISTRATION_INFO_ACTION_ID } from '../../../config';
 
@@ -12,16 +12,20 @@ const Form = styled.div`
   padding: 1.5em;
   border: none;
   border-radius: 5px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 `;
 
 const Button = styled.button`
   margin-left: 1em;
 `;
 
-function DescriptionCreationForm({ parentId, createDescription, refetchQueries }) {
-  const [ descriptionValue, updateDescriptionValue ] = useState('');
-  const [ loading, updateLoading ] = useState(false);
+function DescriptionCreationForm({
+  parentId,
+  createDescription,
+  refetchQueries,
+}) {
+  const [descriptionValue, updateDescriptionValue] = useState("");
+  const [loading, updateLoading] = useState(false);
 
   function handleChange(e) {
     updateDescriptionValue(e.target.value);
@@ -48,12 +52,9 @@ function DescriptionCreationForm({ parentId, createDescription, refetchQueries }
     //   refetchQueries
     // });
 
-    // const newDescriptionData = JSON.parse(createDescriptionResponse.data.ExecuteAction);
+    // const newDescriptionData = JSON.parse(createDescriptionResponse.data.Execute);
 
-    
-
-
-    updateDescriptionValue('');
+    updateDescriptionValue("");
     updateLoading(false);
   }
 
@@ -72,22 +73,17 @@ function DescriptionCreationForm({ parentId, createDescription, refetchQueries }
           type="text"
           onChange={handleChange}
           onKeyPress={handleKeyPress}
-          value={ descriptionValue }
+          value={descriptionValue}
           disabled={loading}
         />
       </label>
-      <Button type="submit"  disabled={loading}  onClick={handleSubmit}>
-        {
-          loading
-            ? 'Creating Description...'
-            : 'Create Description'
-        }
+      <Button type="submit" disabled={loading} onClick={handleSubmit}>
+        {loading ? "Creating Description..." : "Create Description"}
       </Button>
     </Form>
   );
 }
 
-export default compose(
-  graphql(EXECUTE_ACTION, { name: 'createDescription' }),
-  
-)(DescriptionCreationForm);
+export default compose(graphql(EXECUTE, { name: "createDescription" }))(
+  DescriptionCreationForm
+);

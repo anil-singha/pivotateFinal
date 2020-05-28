@@ -1,15 +1,18 @@
-import React, { Component, createRef } from 'react';
-import { Unit } from '@nostack/no-stack';
-import styled from 'styled-components';
-import { v4 } from 'uuid';
+import React, { Component, createRef } from "react";
+import { Unit } from "@nostack/no-stack";
+import styled from "styled-components";
+import { v4 } from "uuid";
 
-import { flattenData } from '../../../flattenData';
+import { flattenData } from "../../../flattenData";
 
-import AppCreationForm from '../AppCreationForm';
-import App from '../App';
+import AppCreationForm from "../AppCreationForm";
+import App from "../App";
 
-import { SOURCE_REGISTRATION_INFO_ID } from '../../../config';
-import { REGISTRATION_INFO_RELATIONSHIPS, SOURCE_REGISTRATION_INFO_QUERY } from '../../source-props/appInfo';
+import { SOURCE_REGISTRATION_INFO_ID } from "../../../config";
+import {
+  REGISTRATION_INFO_RELATIONSHIPS,
+  SOURCE_REGISTRATION_INFO_QUERY,
+} from "../../source-props/appInfo";
 
 // add styling here
 const AppsStyleWrapper = styled.div`
@@ -26,26 +29,22 @@ class Apps extends Component {
   wrapperRef = createRef();
 
   componentDidMount() {
-    document.addEventListener('mousedown', this.handleClick);
+    document.addEventListener("mousedown", this.handleClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClick);
+    document.removeEventListener("mousedown", this.handleClick);
   }
 
-  handleClick = e => {
+  handleClick = (e) => {
     const node = this.wrapperRef.current;
 
-    if (
-      node &&
-      node !== e.target &&
-      !node.contains(e.target)
-    ) {
+    if (node && node !== e.target && !node.contains(e.target)) {
       this.setState({ selectedAppId: null });
     }
-  }
+  };
 
-  handleSelect = id => this.setState({ selectedAppId: id });
+  handleSelect = (id) => this.setState({ selectedAppId: id });
 
   render() {
     const { customerId } = this.props;
@@ -57,35 +56,42 @@ class Apps extends Component {
 
     return (
       <Unit
-        id={ SOURCE_REGISTRATION_INFO_ID }
-        typeRelationships={ REGISTRATION_INFO_RELATIONSHIPS }
-        query={ SOURCE_REGISTRATION_INFO_QUERY }
+        id={SOURCE_REGISTRATION_INFO_ID}
+        typeRelationships={REGISTRATION_INFO_RELATIONSHIPS}
+        query={SOURCE_REGISTRATION_INFO_QUERY}
         parameters={parameters}
       >
-        {({loading, error, data, refetchQueries}) => {
-          if (loading) return 'Loading...';
+        {({ loading, error, data, refetchQueries }) => {
+          if (loading) return "Loading...";
 
           if (error) {
             console.error(error);
-            return `Error: ${error.graphQLErrors}`
-          };
+            return `Error: ${error.graphQLErrors}`;
+          }
 
-          const apps = data.unitData.map(el => flattenData(el));
-
+          const apps = data.unitData.map((el) => flattenData(el));
+          log(apps);
           return (
             <>
-              <AppCreationForm  customerId={ customerId } refetchQueries={refetchQueries}/>
-              <AppsStyleWrapper ref={this.wrapperRef} onClick={this.handleClick}>
-                { apps && apps.map(app => (
-                  <App
-                    key={v4()}
-                    parentId={ customerId }
-                    app={ app }
-                    selected={ app.id === selectedAppId }
-                    refetchQueries={refetchQueries}
-                    onSelect={this.handleSelect}
-                  />
-                )) }
+              <AppCreationForm
+                customerId={customerId}
+                refetchQueries={refetchQueries}
+              />
+              <AppsStyleWrapper
+                ref={this.wrapperRef}
+                onClick={this.handleClick}
+              >
+                {apps &&
+                  apps.map((app) => (
+                    <App
+                      key={v4()}
+                      parentId={customerId}
+                      app={app}
+                      selected={app.id === selectedAppId}
+                      refetchQueries={refetchQueries}
+                      onSelect={this.handleSelect}
+                    />
+                  ))}
               </AppsStyleWrapper>
             </>
           );

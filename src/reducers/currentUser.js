@@ -1,6 +1,6 @@
 const currentUser = (state = 0, action) => {
   switch (action.type) {
-    case "SEARCHTERMCHANGE":
+    case "CURRENT_USER":
       return {
         ...state,
         value: action.payLoad,

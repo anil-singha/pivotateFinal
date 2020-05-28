@@ -51,31 +51,45 @@ class Descriptions extends Component {
       /* np__added_end unit: appSpec, comp: Descriptions, loc: renderBeginning */
     }
 
-    return (
-      <> </>
-      // <DescriptionsStyleWrapper
-      //   ref={this.wrapperRef}
-      //   onClick={this.handleClick}
-      // >
-      //   {descriptions.map((description) => (
-      //     <Description
-      //       key={v4()}
-      //       description={description}
-      //       selected={description.id === selectedDescriptionId}
-      //       onUpdate={onUpdate}
-      //       parentId={appId}
-      //       refetchQueries={refetchQueries}
-      //       onSelect={this.handleSelect}
-      //     />
-      //   ))}
+    // return (
+    //   <DescriptionsStyleWrapper ref={this.wrapperRef} onClick={this.handleClick}>
+    //     <DescriptionCreationForm
+    //       parentId={appId}
+    //       refetchQueries={refetchQueries}
+    //     />
 
-      //   <DescriptionCreationForm
-      //     parentId={appId}
-      //     refetchQueries={refetchQueries}
-      //   />
-      //   {/* np__added_start unit: appSpec, comp: Descriptions, loc: renderEnding */}
-      //   {/* np__added_end unit: appSpec, comp: Descriptions, loc: renderEnding */}
-      // </DescriptionsStyleWrapper>
+    //     {descriptions.map(description => (
+    //       <Description
+    //         key={v4()}
+    //         description={description}
+    //         selected={description.id === selectedDescriptionId}
+    //         onUpdate={onUpdate}
+    //         parentId={appId}
+    //         refetchQueries={refetchQueries}
+    //         onSelect={this.handleSelect}
+    //       />
+    //     ))}
+    //     {/* np__added_start unit: appSpec, comp: Descriptions, loc: renderEnding */}
+    //     {/* np__added_end unit: appSpec, comp: Descriptions, loc: renderEnding */}
+
+    //   </DescriptionsStyleWrapper>
+    // )
+    return (
+      <div ref={this.wrapperRef} onClick={this.handleClick}>
+        {descriptions.map((description) => (
+          <Description
+            key={v4()}
+            description={description}
+            selected={description.id === selectedDescriptionId}
+            onUpdate={onUpdate}
+            parentId={appId}
+            refetchQueries={refetchQueries}
+            onSelect={this.handleSelect}
+          />
+        ))}
+        {/* np__added_start unit: appSpec, comp: Descriptions, loc: renderEnding */}
+        {/* np__added_end unit: appSpec, comp: Descriptions, loc: renderEnding */}
+      </div>
     );
   }
 }

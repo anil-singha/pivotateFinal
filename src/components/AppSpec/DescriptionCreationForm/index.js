@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef, useImperativeHandle } from "react";
 import { graphql } from "@apollo/react-hoc";
 import styled from "styled-components";
 import { withNoStack, EXECUTE_ACTION } from "@nostack/no-stack";
@@ -19,11 +19,16 @@ const Button = styled.button`
   margin-left: 1em;
 `;
 
-function DescriptionCreationForm({
-  parentId,
-  createDescription,
-  refetchQueries,
-}) {
+const DescriptionCreationForm = forwardRef((props, ref) => {
+  useImperativeHandle(ref, () => ({
+    handleSubmit,
+    yell: (param) => handleSubmit(param),
+  }));
+
+  const parentId = props.parentInstanceId;
+  const createDescription = props.createDescription;
+  const refetchQueries = props.refetchQueries;
+  const parentInstanceId = props.parentInstanceId;
   const [descriptionValue, updateDescriptionValue] = useState("");
   const [loading, updateLoading] = useState(false);
 
@@ -31,9 +36,7 @@ function DescriptionCreationForm({
     updateDescriptionValue(e.target.value);
   }
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-
+  async function handleSubmit(param) {
     if (!descriptionValue) {
       return;
     }
@@ -44,7 +47,7 @@ function DescriptionCreationForm({
       variables: {
         actionId: CREATE_DESCRIPTION_FOR_APP_SPEC_ACTION_ID,
         executionParameters: JSON.stringify({
-          parentInstanceId: parentId,
+          parentInstanceId: param.instanceId,
           value: descriptionValue,
         }),
         unrestricted: false,
@@ -60,32 +63,28 @@ function DescriptionCreationForm({
     updateLoading(false);
   }
 
-  function handleKeyPress(e) {
-    if (e.charCode === 13) {
-      handleSubmit(e);
-    }
-  }
+  // function handleKeyPress(e) {
+  //   if (e.charCode === 13) {
+  //     handleSubmit(e);
+  //   }
+  // }
 
   return (
-    <Form>
-      <label htmlFor="description-value">
-        Description:
-        <input
-          id="description-value"
-          type="text"
-          onChange={handleChange}
-          onKeyPress={handleKeyPress}
-          value={descriptionValue}
-          disabled={loading}
-        />
-      </label>
-      <Button type="submit" disabled={loading} onClick={handleSubmit}>
-        {loading ? "Creating Description..." : "Create Description"}
-      </Button>
-    </Form>
+    <div>
+      <textarea
+        placeholder="Description"
+        className="input"
+        id="description-value"
+        type="text"
+        onChange={handleChange}
+        // onKeyPress={handleKeyPress}
+        value={descriptionValue}
+        disabled={loading}
+      />
+    </div>
   );
-}
+});
 
-export default compose(graphql(EXECUTE_ACTION, { name: "createDescription" }))(
-  DescriptionCreationForm
-);
+export default compose(
+  graphql(EXECUTE_ACTION, { name: "createDescription", withRef: true })
+)(DescriptionCreationForm);

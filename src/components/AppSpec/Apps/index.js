@@ -6,9 +6,10 @@ import { v4 } from "uuid";
 import { flattenData } from "../../../flattenData";
 
 import AppCreationForm from "../AppCreationForm";
+import DescriptionCreationForm from "../DescriptionCreationForm";
 import App from "../App";
 import { connect } from "react-redux";
-import { increment, decrement } from "../../../actions";
+import { increment, decrement, currentUser } from "../../../actions";
 
 import { SOURCE_APP_SPEC_ID } from "../../../config";
 import {
@@ -19,12 +20,14 @@ import {
 const mapStateToProps = (state) => {
   return {
     counter: state.counter,
+    user: state.currentUser,
   };
 };
 
-const mapDispatchToProps = {
+const mapDispatchToProps = (dispatch) => ({
   increment,
-};
+  currentUser,
+});
 // np__added_start unit: appSpec, comp: Apps, loc: styling
 
 // add styling here
@@ -89,7 +92,11 @@ class Apps extends Component {
 
           return (
             <div style={{ maxWidth: "769px" }}>
-              {this.props.counter == 0 ? (
+              {/* <button
+                onClick={() => this.props.dispatch({ type: "CURRENT_USER" })}
+              /> */}
+
+              {apps.length == 0 ? (
                 <AppCreationForm
                   customerId={customerId}
                   refetchQueries={refetchQueries}
@@ -97,7 +104,7 @@ class Apps extends Component {
               ) : (
                 <div> </div>
               )}
-              {this.props.counter >= 1 ? (
+              {apps.length > 0 ? (
                 <AppsStyleWrapper
                   ref={this.wrapperRef}
                   onClick={this.handleClick}
@@ -105,6 +112,7 @@ class Apps extends Component {
                   {apps &&
                     apps.map((app) => (
                       <App
+                        hasApp={apps.length > 0}
                         key={v4()}
                         parentId={customerId}
                         app={app}

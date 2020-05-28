@@ -79,8 +79,8 @@ class Apps extends Component {
 
           return (
             <>
-              <div class="box">
-                <div class="flex flex-column">
+              <div className="box">
+                <div className="flex flex-column">
                   {apps &&
                     apps.map((app, i) => (
                       <App

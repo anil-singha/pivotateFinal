@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { EXECUTE_ACTION } from "@nostack/no-stack";
+import { EXECUTE } from "@nostack/no-stack";
 import compose from "@shopify/react-compose";
 import { graphql } from "@apollo/react-hoc";
 
 import {
   UPDATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
   DELETE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
+  ADD_HAS_PARENT_FOR_PARENT_ACTION_ID,
 } from "../../../config";
 
 import EditInstanceForm from "../../EditInstanceForm";
@@ -48,6 +49,7 @@ function InfoType({
   selected,
   updateInstance,
   deleteInstance,
+  saveInstance,
   refetchQueries,
   onSelect,
 }) {
@@ -62,7 +64,7 @@ function InfoType({
   //     <InfoTypeStyleWrapper onClick={() => onSelect(infoType.id)}>
   //       { infoTypeValue }
   //     </InfoTypeStyleWrapper>
-  //   );
+  //   );k
   // }
 
   function handleInfoTypeValueChange(e) {
@@ -126,6 +128,24 @@ function InfoType({
     }
   }
 
+  async function handleSubmit() {
+    try {
+      await saveInstance({
+        variables: {
+          actionId: ADD_HAS_PARENT_FOR_PARENT_ACTION_ID,
+          executionParameters: JSON.stringify({
+            parentInstanceId: parentId,
+            value: "Clarkkkkkk",
+          }),
+          unrestricted: false,
+        },
+        refetchQueries,
+      });
+    } catch (e) {
+      updateIsDeleting(false);
+    }
+  }
+
   function handleCancelDelete() {
     updateIsDeleteMode(false);
   }
@@ -152,11 +172,17 @@ function InfoType({
       <Button type="button" onClick={() => updateIsDeleteMode(true)}>
         &#128465;
       </Button>
+
+      <button type="button" onClick={handleSubmit}>
+        {" "}
+        test{" "}
+      </button>
     </div>
   );
 }
 
 export default compose(
-  graphql(EXECUTE_ACTION, { name: "updateInstance" }),
-  graphql(EXECUTE_ACTION, { name: "deleteInstance" })
+  graphql(EXECUTE, { name: "updateInstance" }),
+  graphql(EXECUTE, { name: "deleteInstance" }),
+  graphql(EXECUTE, { name: "saveInstance" })
 )(InfoType);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { graphql } from "@apollo/react-hoc";
 import styled from "styled-components";
-import { EXECUTE_ACTION } from "@nostack/no-stack";
+import { EXECUTE } from "@nostack/no-stack";
 import compose from "@shopify/react-compose";
 
 // import { CREATE_APP_FOR_REGISTRATION_INFO_ACTION_ID } from '../../../config';
@@ -47,7 +47,7 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
     //   refetchQueries
     // });
 
-    // const newAppData = JSON.parse(createAppResponse.data.ExecuteAction);
+    // const newAppData = JSON.parse(createAppResponse.data.Execute);
 
     updateAppValue("");
     updateLoading(false);
@@ -79,6 +79,6 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
   );
 }
 
-export default compose(graphql(EXECUTE_ACTION, { name: "createApp" }))(
+export default compose(graphql(EXECUTE, { name: "createApp" }))(
   AppCreationForm
 );

@@ -18,8 +18,8 @@ class Schedule extends Component {
   render() {
     return (
       <div>
-        <div class="schedule__img">
-          <div class="schedule__content">
+        <div className="schedule__img">
+          <div className="schedule__content">
             <h2> We would like to meet you! </h2>
             <p>
               A friendly, no-commitment discussion of what you need in an app so

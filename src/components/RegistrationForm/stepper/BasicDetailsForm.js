@@ -85,11 +85,7 @@ const BasicDetailsForm = ({
 
             <small>
               Already have an account?
-              <a
-                href="javascript:void(0);"
-                className="teal--text"
-                onClick={props.onSwitch}
-              >
+              <a href="#" className="teal--text" onClick={props.onSwitch}>
                 &nbsp;Log In
               </a>
             </small>

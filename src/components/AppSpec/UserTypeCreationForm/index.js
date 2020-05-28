@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { graphql } from "@apollo/react-hoc";
 import styled from "styled-components";
-import { withNoStack, EXECUTE_ACTION } from "@nostack/no-stack";
+import { withNoStack, EXECUTE } from "@nostack/no-stack";
 import compose from "@shopify/react-compose";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from "../../../actions";
@@ -35,6 +35,7 @@ function UserTypeCreationForm({ parentId, createUserType, refetchQueries }) {
     if (!userTypeValue) {
       return;
     }
+    console.log(parentId);
 
     updateLoading(true);
 
@@ -51,9 +52,7 @@ function UserTypeCreationForm({ parentId, createUserType, refetchQueries }) {
     });
     dispatch(increment());
 
-    const newUserTypeData = JSON.parse(
-      createUserTypeResponse.data.ExecuteAction
-    );
+    const newUserTypeData = JSON.parse(createUserTypeResponse.data.Execute);
 
     updateUserTypeValue("");
     updateLoading(false);
@@ -87,6 +86,6 @@ function UserTypeCreationForm({ parentId, createUserType, refetchQueries }) {
   );
 }
 
-export default compose(graphql(EXECUTE_ACTION, { name: "createUserType" }))(
+export default compose(graphql(EXECUTE, { name: "createUserType" }))(
   UserTypeCreationForm
 );

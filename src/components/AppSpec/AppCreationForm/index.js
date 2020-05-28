@@ -1,28 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { graphql } from "@apollo/react-hoc";
 import styled from "styled-components";
 import { Redirect } from "react-router";
 import { useHistory } from "react-router-dom";
 
-import { withNoStack, EXECUTE_ACTION } from "@nostack/no-stack";
+import { withNoStack, EXECUTE } from "@nostack/no-stack";
 import compose from "@shopify/react-compose";
-
+import DescriptionCreationForm from "../DescriptionCreationForm";
+import Descriptions from "../Descriptions";
 import { CREATE_APP_FOR_APP_SPEC_ACTION_ID } from "../../../config";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from "../../../actions";
-
-// change styling here
-const Form = styled.div`
-  margin: 2em;
-  padding: 1.5em;
-  border: none;
-  border-radius: 5px;
-  background-color: #f5f5f5;
-`;
-
-const Button = styled.button`
-  margin-left: 1em;
-`;
 
 function AppCreationForm({ customerId, createApp, refetchQueries }) {
   const [appValue, updateAppValue] = useState("");
@@ -34,7 +22,7 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
   function handleChange(e) {
     updateAppValue(e.target.value);
   }
-
+  const child = useRef();
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -55,11 +43,16 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
       },
       refetchQueries,
     });
+    const newAppData = JSON.parse(createAppResponse.data.Execute);
 
-    const newAppData = JSON.parse(createAppResponse.data.ExecuteAction);
+    await child.current.wrappedInstance.yell(newAppData);
+
     updateAppValue("");
+    // child.current.wrappedInstance.handleSubmit();
     updateLoading(false);
+
     dispatch(increment());
+
     // history.push("/meeting-step/create-user-type");
   }
 
@@ -73,7 +66,7 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
     <>
       <div className="box">
         <div
-          class="text-center"
+          className="text-center"
           style={{ maxWidth: "350px", margin: "1em auto 2em auto" }}
         >
           <strong>Tell us more about what you want in your web app! </strong>
@@ -91,7 +84,13 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
               disabled={loading}
             />
 
-            <textarea className="input" placeholder="Description"></textarea>
+            <DescriptionCreationForm
+              parentInstanceId
+              ref={child}
+              refetchQueries={refetchQueries}
+            >
+              {" "}
+            </DescriptionCreationForm>
           </label>
         </form>
       </div>
@@ -110,6 +109,6 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
   );
 }
 
-export default compose(graphql(EXECUTE_ACTION, { name: "createApp" }))(
+export default compose(graphql(EXECUTE, { name: "createApp" }))(
   AppCreationForm
 );

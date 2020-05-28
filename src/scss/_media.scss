@@ -121,6 +121,9 @@
       background-image: none;
     }
   }
+  .box {
+    min-width: 100%;
+  }
   .contact {
     &__wrap {
       width: 100%;

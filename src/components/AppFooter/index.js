@@ -16,7 +16,7 @@ const AppFooter = (props) => (
             <div className="grow-6 text-center">
               <a
                 onClick={props.onSignUp}
-                href="javascript:void(0);"
+                href="#"
                 className="button button--large button--teal"
               >
                 SIGN UP <span className="chevron right"></span>
@@ -42,7 +42,7 @@ const AppFooter = (props) => (
             </div>
             <div className="powered-by">
               <span className="grey--text"> Powered By </span>
-              <strong href="javascript:void(0);" className="teal--text">
+              <strong href="#" className="teal--text">
                 {" "}
                 NoStack
               </strong>
@@ -66,7 +66,7 @@ const AppFooter = (props) => (
                   <li>
                     {!props.noAction && (
                       <a
-                        href="javascript:void(0);"
+                        href="#"
                         onClick={props.onSignUp}
                         className="teal--text"
                       >

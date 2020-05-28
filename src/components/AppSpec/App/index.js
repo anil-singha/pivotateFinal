@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { EXECUTE_ACTION } from "@nostack/no-stack";
+import { EXECUTE } from "@nostack/no-stack";
 import compose from "@shopify/react-compose";
 import { graphql } from "@apollo/react-hoc";
 
@@ -158,10 +158,17 @@ function App({
   }
 
   return (
-    <div selected={selected} class="box" style={{ minWidth: "550px" }}>
-      <div class="flex justify-between">
+    <div selected={selected} className="box" style={{ width: "100%" }}>
+      <div className="flex justify-between">
         <strong> {appValue} </strong>
-        <div> Description </div>
+        <div>
+          <Descriptions
+            descriptions={descriptions}
+            appId={app.id}
+            label="Description?"
+            refetchQueries={refetchQueries}
+          />
+        </div>
       </div>
       <Button type="button" onClick={() => updateIsEditMode(true)}>
         &#9998;
@@ -176,17 +183,11 @@ function App({
         label="UserType?"
         refetchQueries={refetchQueries}
       />
-      <Descriptions
-        descriptions={descriptions}
-        appId={app.id}
-        label="Description?"
-        refetchQueries={refetchQueries}
-      />
     </div>
   );
 }
 
 export default compose(
-  graphql(EXECUTE_ACTION, { name: "updateInstance" }),
-  graphql(EXECUTE_ACTION, { name: "deleteInstance" })
+  graphql(EXECUTE, { name: "updateInstance" }),
+  graphql(EXECUTE, { name: "deleteInstance" })
 )(App);
