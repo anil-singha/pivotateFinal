@@ -48,11 +48,11 @@ class Apps extends Component {
   wrapperRef = createRef();
 
   componentDidMount() {
-    document.addEventListener("mousedown", this.handleClick);
+    // document.addEventListener("mousedown", this.handleClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleClick);
+    // document.removeEventListener("mousedown", this.handleClick);
   }
 
   handleClick = (e) => {
@@ -82,20 +82,13 @@ class Apps extends Component {
       >
         {({ loading, error, data, refetchQueries }) => {
           if (loading) return "Loading...";
-
           if (error) {
             console.error(error);
             return `Error: ${error.graphQLErrors}`;
           }
-
           const apps = data.unitData.map((el) => flattenData(el));
-
           return (
             <div style={{ maxWidth: "769px" }}>
-              {/* <button
-                onClick={() => this.props.dispatch({ type: "CURRENT_USER" })}
-              /> */}
-
               {apps.length == 0 ? (
                 <AppCreationForm
                   customerId={customerId}
@@ -107,7 +100,6 @@ class Apps extends Component {
               {apps.length > 0 ? (
                 <AppsStyleWrapper
                   ref={this.wrapperRef}
-                  onClick={this.handleClick}
                 >
                   {apps &&
                     apps.map((app) => (

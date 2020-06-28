@@ -22,17 +22,16 @@ class UserTypes extends Component {
     selectedUserTypeId: null,
   };
   wrapperRef = createRef();
-  componentDidMount() {
-    document.addEventListener("mousedown", this.handleClick);
-  }
+  // componentDidMount() {
+  //   document.addEventListener("mousedown", this.handleClick);
+  // }
 
-  componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleClick);
-  }
+  // componentWillUnmount() {
+  //   document.removeEventListener("mousedown", this.handleClick);
+  // }
 
   handleClick = (e) => {
     const node = this.wrapperRef.current;
-
     if (node && node !== e.target && !node.contains(e.target)) {
       this.setState({ selectedUserTypeId: null });
     }
@@ -52,30 +51,29 @@ class UserTypes extends Component {
     }
 
     return (
-      <>
-        <div ref={this.wrapperRef} onClick={this.handleClick}>
-          <div>
-            {userTypes.map((userType) => (
-              <UserType
-                key={v4()}
-                userType={userType}
-                selected={userType.id === selectedUserTypeId}
-                onUpdate={onUpdate}
-                parentId={appId}
-                refetchQueries={refetchQueries}
-                onSelect={this.handleSelect}
-              />
-            ))}
+      <div>
+        <div className="box">
+          <div ref={this.wrapperRef} onClick={this.handleClick}>
+            <div>
+              {userTypes.map((userType) => (
+                <UserType
+                  key={v4()}
+                  userType={userType}
+                  selected={userType.id === selectedUserTypeId}
+                  onUpdate={onUpdate}
+                  parentId={appId}
+                  refetchQueries={refetchQueries}
+                  onSelect={this.handleSelect}
+                />
+              ))}
+            </div>
           </div>
-
-          <br></br>
-
-          <UserTypeCreationForm
-            parentId={appId}
-            refetchQueries={refetchQueries}
-          />
         </div>
-      </>
+        <UserTypeCreationForm
+          parentId={appId}
+          refetchQueries={refetchQueries}
+        />
+      </div>
     );
   }
 }

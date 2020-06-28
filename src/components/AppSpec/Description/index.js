@@ -15,17 +15,7 @@ import DeleteInstanceMenu from "../../DeleteInstanceMenu";
 // add styling here
 const DescriptionStyleWrapper = styled.div(
   ({ selected, isDeleting }) => `
-  margin: 2em 1em;
-  padding: 1.5em;
-  border: ${selected ? "1px solid aquamarine" : "1px solid white"};
-  border-radius: 10px;
-  box-shadow: 5px 5px 10px #888888;
-  background-color: ${isDeleting && "tomato"};
-  cursor: ${selected ? "auto" : "pointer"};
-
-  &:hover {
-    border: 1px solid aquamarine;
-  }
+ 
 `
 );
 
@@ -58,10 +48,6 @@ function Description({
   const [isSaving, updateIsSaving] = useState(false);
   const [isDeleteMode, updateIsDeleteMode] = useState(false);
   const [isDeleting, updateIsDeleting] = useState(false);
-
-  if (!selected) {
-    return <div> {descriptionValue} </div>;
-  }
 
   function handleDescriptionValueChange(e) {
     updateDescriptionValue(e.target.value);
@@ -131,7 +117,7 @@ function Description({
   if (isDeleteMode) {
     return (
       <DescriptionStyleWrapper selected={selected} isDeleting={isDeleting}>
-        {descriptionValue}
+        <label>{descriptionValue}</label>
         <DeleteInstanceMenu
           onDelete={handleDelete}
           onCancel={handleCancelDelete}
@@ -143,13 +129,22 @@ function Description({
 
   return (
     <DescriptionStyleWrapper selected={selected}>
-      {descriptionValue}
-      <Button type="button" onClick={() => updateIsEditMode(true)}>
-        &#9998;
-      </Button>
-      <Button type="button" onClick={() => updateIsDeleteMode(true)}>
-        &#128465;
-      </Button>
+      <input
+        type="checkbox"
+        name="checkbox"
+        className="checkBoxActive"
+        id={description.id}
+        value="value"
+      />
+      <label for={description.id}>{descriptionValue}</label>
+      <span>
+        <Button type="button" onClick={() => updateIsEditMode(true)}>
+          &#9998;
+        </Button>
+        <Button type="button" onClick={() => updateIsDeleteMode(true)}>
+          &#128465;
+        </Button>
+      </span>
     </DescriptionStyleWrapper>
   );
 }

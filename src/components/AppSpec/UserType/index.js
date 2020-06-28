@@ -152,15 +152,27 @@ function UserType({
   }
 
   return (
-    <div className="box" selected={selected}>
-      <strong> {userTypeValue} </strong>
-      <Button type="button" onClick={() => updateIsEditMode(true)}>
-        &#9998;
-      </Button>
-      <Button type="button" onClick={() => updateIsDeleteMode(true)}>
-        &#128465;
-      </Button>
-
+    <div className="box__wrapper" selected={selected}>
+      <div className="box__content">
+        <input
+          type="checkbox"
+          name="checkbox"
+          className="checkBoxActive"
+          id={'data-'+userType.id}
+          value="value"
+        />
+        <label for={'data-'+userType.id} style={{ fontSize: "1em" }}>
+          <small class="grey--text"> User Type: </small> {userTypeValue}
+        </label>
+        <span>
+          <Button type="button" onClick={() => updateIsEditMode(true)}>
+            &#9998;
+          </Button>
+          <Button type="button" onClick={() => updateIsDeleteMode(true)}>
+            &#128465;
+          </Button>
+        </span>
+      </div>
       <Screens
         screens={screens}
         userTypeId={userType.id}

@@ -29,7 +29,6 @@ function ScreenCreationForm({ parentId, createScreen, refetchQueries }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log(parentId);
 
     if (!screenValue) {
       return;
@@ -50,7 +49,6 @@ function ScreenCreationForm({ parentId, createScreen, refetchQueries }) {
     });
 
     const newScreenData = JSON.parse(createScreenResponse.data.Execute);
-
     updateScreenValue("");
     updateLoading(false);
   }

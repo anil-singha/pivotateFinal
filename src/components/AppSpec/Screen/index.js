@@ -99,21 +99,21 @@ function Screen({
     updateIsEditMode(false);
   }
 
-  // if (isEditMode) {
-  //   return (
-  //     <ScreenStyleWrapper>
-  //       <EditInstanceForm
-  //         id={ screen.id }
-  //         label="Screen Value:"
-  //         value={ screenValue }
-  //         onChange={handleScreenValueChange}
-  //         onSave={handleScreenValueSave}
-  //         onCancel={handleCancelEdit}
-  //         disabled={isSaving}
-  //       />
-  //     </ScreenStyleWrapper>
-  //   );
-  // }
+  if (isEditMode) {
+    return (
+      <ScreenStyleWrapper>
+        <EditInstanceForm
+          id={screen.id}
+          label="Screen Value:"
+          value={screenValue}
+          onChange={handleScreenValueChange}
+          onSave={handleScreenValueSave}
+          onCancel={handleCancelEdit}
+          disabled={isSaving}
+        />
+      </ScreenStyleWrapper>
+    );
+  }
 
   async function handleDelete() {
     updateIsDeleting(true);
@@ -152,14 +152,32 @@ function Screen({
   }
 
   return (
-    <div className="box" selected={selected}>
-      <strong> {screenValue} </strong>
-      <Button type="button" onClick={() => updateIsEditMode(true)}>
-        &#9998;
-      </Button>
-      <Button type="button" onClick={() => updateIsDeleteMode(true)}>
-        &#128465;
-      </Button>
+    <div
+      className="box box__wrapper"
+      style={{ marginBottom: "1em" }}
+      selected={selected}
+    >
+      <div class="box__content">
+        {" "}
+        <input
+          type="checkbox"
+          name="checkbox"
+          className="checkBoxActive"
+          id={screen.id}
+          value="value"
+        />
+        <label for={screen.id} style={{ fontSize: "1em" }}>
+          <small class="grey--text"> Screen: </small> {screenValue}{" "}
+        </label>
+        <span>
+          <Button type="button" onClick={() => updateIsEditMode(true)}>
+            &#9998;
+          </Button>
+          <Button type="button" onClick={() => updateIsDeleteMode(true)}>
+            &#128465;
+          </Button>
+        </span>
+      </div>
 
       <InfoTypes
         infoTypes={infoTypes}

@@ -79,9 +79,7 @@ const App = () => {
               <AppFooter noAction />
             </Route>
             <Route exact path={`${process.env.PUBLIC_URL}/staging`}>
-              <AppHeader />
-              <Staging></Staging>
-              <AppFooter noAction />
+              <Staging onSignUp={() => childRef.current.modalHandlerRegistration()}></Staging>
             </Route>
             <Route exact path={`${process.env.PUBLIC_URL}/schedule`}>
               <AppHeader />

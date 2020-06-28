@@ -70,12 +70,13 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
     // console.log(app);
     // console.log(description);
     setFirstName(values.firstName);
+    setPassword(values.password);
     setLastName(values.lastName);
     setEmail(values.email);
 
-    // if (values.password !== values.passwordConfirmation) {
-    //   return;
-    // }
+    if (values.password !== values.passwordConfirmation) {
+      return;
+    }
     const formValuesTemp = {
       app,
       description,
@@ -89,11 +90,11 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
       await register({
         variables: {
           userClassId: props.userClassId,
-          name: username,
+          name: values.username,
           firstName: values.firstName,
           lastName: values.lastName,
           email: values.email,
-          password,
+          password: values.password,
           formValues: JSON.stringify({}),
         },
       });
@@ -166,9 +167,9 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
             </p>
             <div>
               <Link
-                onClick={props.onClose}
+                onClick={props.onSwitch}
                 className="button button--rounded button--yellow"
-                to="/schedule"
+                to="/"
               >
                 LOGIN
               </Link>

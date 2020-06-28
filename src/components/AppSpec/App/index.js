@@ -158,24 +158,47 @@ function App({
   }
 
   return (
-    <div selected={selected} className="box" style={{ width: "100%" }}>
-      <div className="flex justify-between">
-        <strong> {appValue} </strong>
-        <div>
+    <div
+      className="box"
+      style={{ width: "100%", padding: "1em 2em" }}
+    >
+      <div
+        className="box__wrapper flex justify-between"
+        style={{ padding: "1em 0" }}
+      >
+        <div className="box__content">
+          <input
+            type="checkbox"
+            name="checkbox"
+            className="checkBoxActive"
+            id="checkbox_id"
+            value="value"
+          />
+          <label
+            for="checkbox_id"
+            style={{ fontWeight: "800", fontSize: "24px" }}
+          >
+            {appValue}
+          </label>
+          <span>
+            <Button type="button" onClick={() => updateIsEditMode(true)}>
+              &#9998;
+            </Button>
+            <Button type="button" onClick={() => updateIsDeleteMode(true)}>
+              &#128465;
+            </Button>
+          </span>
+        </div>
+
+        <u>
           <Descriptions
             descriptions={descriptions}
             appId={app.id}
             label="Description?"
             refetchQueries={refetchQueries}
           />
-        </div>
+        </u>
       </div>
-      <Button type="button" onClick={() => updateIsEditMode(true)}>
-        &#9998;
-      </Button>
-      <Button type="button" onClick={() => updateIsDeleteMode(true)}>
-        &#128465;
-      </Button>
 
       <UserTypes
         userTypes={userTypes}

@@ -20,13 +20,13 @@ const BasicDetailsForm = ({
       >
         {({ isSubmitting, isValid, dirty, isValidating }) => (
           <Form className="form">
-            {/* <div className="form__input">
+            <div className="form__input">
               <RegistrationField
                 placeholder="Username"
                 type="text"
                 name="username"
               />
-            </div> */}
+            </div>
             <div className="form__input">
               <RegistrationField
                 placeholder="First Name"
@@ -55,14 +55,14 @@ const BasicDetailsForm = ({
                 name="password"
               />
             </div>
-            {/* 
+            
             <div className="form__input">
               <RegistrationField
                 placeholder="Confirm Password"
                 type="password"
                 name="passwordConfirmation"
               />
-            </div> */}
+            </div>
 
             <div className="" style={{ marginTop: "0.5em" }}>
               <RegistrationField

@@ -11,7 +11,6 @@ import {
   CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
 } from "../../../config";
 
-import InfoTypeChild from "../InfoTypeChildren";
 import EditInstanceForm from "../../EditInstanceForm";
 import DeleteInstanceMenu from "../../DeleteInstanceMenu";
 
@@ -56,11 +55,11 @@ function InfoType({
   saveInstance,
   refetchQueries,
   onSelect,
+  value,
 }) {
-  const infoTypeId = useState(infoType.id);
+  const infoTypeId = useState(value.id);
 
-  const [infoTypeValue, updateInfoTypeValue] = useState(infoType.value);
-  const [infoTypeValue1, updateInfoTypeValue1] = useState("");
+  const [infoTypeValue, updateInfoTypeValue] = useState(value.value);
 
   const infoTypeChildren = useState(infoType._children) || [];
 
@@ -83,13 +82,12 @@ function InfoType({
 
   async function handleInfoTypeValueSave() {
     updateIsSaving(true);
-
     await updateInstance({
       variables: {
         actionId: UPDATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
         executionParameters: JSON.stringify({
           value: infoTypeValue,
-          instanceId: infoType.id,
+          instanceId: infoTypeId[0],
         }),
       },
       refetchQueries,
@@ -128,7 +126,7 @@ function InfoType({
           actionId: DELETE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
           executionParameters: JSON.stringify({
             parentInstanceId: parentId,
-            instanceId: infoType.id,
+            instanceId: infoTypeId[0],
           }),
         },
         refetchQueries,
@@ -140,7 +138,7 @@ function InfoType({
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (!infoTypeValue1) {
+    if (!infoTypeValue) {
       return;
     }
 
@@ -150,7 +148,7 @@ function InfoType({
           actionId: CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
           executionParameters: JSON.stringify({
             parentInstanceId: parentId,
-            value: infoTypeValue1,
+            value: infoTypeValue,
           }),
           unrestricted: false,
         },
@@ -179,7 +177,7 @@ function InfoType({
     updateIsDeleteMode(false);
   }
   function handleChange(e) {
-    updateInfoTypeValue1(e.target.value);
+    updateInfoTypeValue(e.target.value);
   }
   function handleKeyPress(e) {
     if (e.charCode === 13) {
@@ -201,70 +199,38 @@ function InfoType({
   }
 
   return (
-    !hasParentId && (
-      <div className=" " selected={selected}>
-        <div class="box">
-          <input
-            type="checkbox"
-            name="checkbox"
-            className="checkBoxActive"
-            id={infoType.id}
-            value="value"
-          />
-          <label for={infoType.id}>
-            {" "}
-            <small class="grey--text"> Info Type: </small> {infoTypeValue}
-          </label>
-          <span>
-            <Button type="button" onClick={() => updateIsEditMode(true)}>
-              &#9998;
-            </Button>
-            <Button type="button" onClick={() => updateIsDeleteMode(true)}>
-              &#128465;
-            </Button>
-          </span>
-        </div>
-        <form>
-          <ul style={{ marginLeft: "1em", marginTop: "1em" }}>
-            {infoTypeChildren[0].map((value, index) => {
-              return (
-                <li key={index} className="box">
-                  <div>
-                    <InfoTypeChild
-                      infoType={infoType}
-                      parentId={parentId}
-                      createInfoType={createInfoType}
-                      hasParentId={hasParentId}
-                      selected={selected}
-                      updateInstance={updateInstance}
-                      deleteInstance={deleteInstance}
-                      saveInstance={saveInstance}
-                      refetchQueries={refetchQueries}
-                      value={value}
-                    ></InfoTypeChild>
-                  </div>
-                </li>
-              );
-            })}
-            <li>
-              <input
-                className="input"
-                placeholder="More Info"
-                id="infoType-value"
-                type="text"
-                onChange={handleChange}
-                onKeyPress={handleKeyPress}
-                value={infoTypeValue1}
-              />
-            </li>
-          </ul>
-          <button type="button" onClick={() => handleSubmit()}>
-            Create Sub-Info Type
-          </button>
-          <br></br>
-        </form>
-      </div>
-    )
+    <div className=" ">
+      <span class="flex">
+        <input
+          type="checkbox"
+          name="checkbox"
+          className="checkBoxActive"
+          id={value.id}
+          value="value"
+        />
+
+        <label for={value.id}>
+          {" "}
+          <small class="grey--text"> Sub Info Type: </small> {value.value}{" "}
+        </label>
+        <span>
+          <a
+            type="a"
+            onClick={() => updateIsEditMode(true)}
+            style={{ display: "inline-block" }}
+          >
+            &#9998;
+          </a>
+          <a
+            type="a"
+            style={{ display: "inline-block" }}
+            onClick={() => updateIsDeleteMode(true)}
+          >
+            &#128465;
+          </a>
+        </span>
+      </span>
+    </div>
   );
 }
 

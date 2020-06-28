@@ -70,7 +70,6 @@ class Apps extends Component {
           }
 
           const apps = data.unitData.map((el) => flattenData(el));
-          log(apps);
           return (
             <>
               <AppCreationForm

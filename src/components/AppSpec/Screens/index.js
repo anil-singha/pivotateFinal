@@ -22,13 +22,13 @@ class Screens extends Component {
 
   wrapperRef = createRef();
 
-  componentDidMount() {
-    document.addEventListener("mousedown", this.handleClick);
-  }
+  // componentDidMount() {
+  //   document.addEventListener("mousedown", this.handleClick);
+  // }
 
-  componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleClick);
-  }
+  // componentWillUnmount() {
+  //   document.removeEventListener("mousedown", this.handleClick);
+  // }
 
   handleClick = (e) => {
     const node = this.wrapperRef.current;
@@ -64,7 +64,6 @@ class Screens extends Component {
             onSelect={this.handleSelect}
           />
         ))}
-        <br></br>
         <ScreenCreationForm
           parentId={userTypeId}
           refetchQueries={refetchQueries}

@@ -1579,26 +1579,30 @@ ol.progtrckr li.progtrckr-done:hover:before {
 }
 
 .box {
+  padding: 1em;
   width: 100%;
   max-width: 769px;
   margin: auto;
-  padding: 1.5em;
   background: #fff;
   border-radius: 3px;
+  &__content {
+    margin-bottom: 1em;
+  }
   &__title {
     justify-content: space-between;
     display: flex;
-  }
-  & + .box {
-    margin-top: 20px;
   }
 }
 .box {
   min-width: 550px;
   .flex.justify-between {
-    padding: 1em 0;
-    margin-bottom: 0.5em;
   }
+}
+.box + .box {
+  margin-top: 1em;
+}
+.box + li input {
+  margin-top: 1em;
 }
 
 // .box button,
@@ -1614,8 +1618,6 @@ ol.progtrckr li.progtrckr-done:hover:before {
 
 .box .box {
   border: 1px solid #dbdbdb;
-
-  padding: 1em 1.25em;
 }
 .box--small {
   padding: 0.75em !important;
@@ -1623,7 +1625,6 @@ ol.progtrckr li.progtrckr-done:hover:before {
 
 .box > strong {
   font-size: 1em;
-  margin-bottom: 0.5em;
   display: block;
 }
 
@@ -1637,16 +1638,33 @@ ol.progtrckr li.progtrckr-done:hover:before {
     font-weight: 700;
   }
 }
-
 .box form button {
   background: $theme-yellow;
   display: block;
   margin-left: auto;
   border: 0;
   border-radius: 25px;
-  padding: 0.5em 1em;
+  display: none;
 }
-
+.box a {
+  color: #bbbbbb;
+}
 .App {
   padding: 5em 1em;
+}
+.checkBoxActive ~ label {
+  cursor: pointer;
+  font-weight: 600;
+  &:hover {
+    color: $theme-teal;
+  }
+}
+.checkBoxActive ~ span {
+  display: none;
+}
+.checkBoxActive:checked ~ span {
+  display: inline-block;
+}
+#app .box input[type="checkbox"]{
+  display: none;
 }
