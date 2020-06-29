@@ -6,7 +6,6 @@ import compose from "@shopify/react-compose";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from "../../../actions";
 import { CREATE_USER_TYPE_FOR_APP_SPEC_ACTION_ID } from "../../../config";
-import $ from "jquery";
 
 // change styling here
 const Form = styled.div`
@@ -53,10 +52,6 @@ function UserTypeCreationForm({ parentId, createUserType, refetchQueries }) {
     dispatch(increment());
 
     const newUserTypeData = JSON.parse(createUserTypeResponse.data.Execute);
-    setTimeout(()=>{
-
-      console.log($('#data-147ffc4c-651d-4500-abc6-7a086587c127').html())
-    },3000)
     updateUserTypeValue("");
     updateLoading(false);
   }
