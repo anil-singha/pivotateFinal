@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import Modal from "../Modal";
 import { withNoStack } from "@nostack/no-stack";
 
+import {Context as AuthContext} from '../../context/AuthContext'
+
 import ForgotPasswordButton from "../ForgotPasswordButton";
 
 const LoginForm = ({ onSwitch, loading, currentUser, login, onClose }) => {
+  const {loginUser} = useContext(AuthContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -18,12 +21,14 @@ const LoginForm = ({ onSwitch, loading, currentUser, login, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+    loginUser();
     try {
-      await login({
+      
+       const response = await login({
         username,
         password,
       });
+     
     } catch (error) {
       setError(
         error.message ||
