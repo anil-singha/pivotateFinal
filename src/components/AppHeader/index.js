@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import { Redirect } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 import { NoStackConsumer } from "@nostack/no-stack";
@@ -6,8 +6,12 @@ import { LogoutButton } from "@nostack/no-stack";
 import RegistrationForm from "../../components/RegistrationForm";
 import LoginForm from "../../components/LoginForm";
 import { PLATFORM_ID, TYPE_CUSTOMER_ID } from "../../config";
+import {Context as AuthContext } from '../../context/AuthContext'
 
 class NavBar extends Component {
+  static contextType = AuthContext;
+
+  
   state = {
     modalRegistration: this.props.modalRegistration,
     modalLogin: false,
@@ -52,6 +56,8 @@ class NavBar extends Component {
   };
 
   render() {
+    console.log(`context`, this.context);
+    const {logoutUser} = this.context;
     return (
       <header className="container header flex items-center">
         <div className="header__logo">
@@ -115,7 +121,7 @@ class NavBar extends Component {
                 } else {
                   return (
                     <div className="logout">
-                      <LogoutButton></LogoutButton>
+                      <LogoutButton onClick={logoutUser}></LogoutButton>
                     </div>
                   );
                 }

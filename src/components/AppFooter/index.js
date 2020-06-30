@@ -1,9 +1,17 @@
-import React from "react";
+import React, {useContext, useState, useEffect} from "react";
 import { HashLink as Link } from "react-router-hash-link";
+import {Context as AuthContext} from '../../context/AuthContext'
 
-const AppFooter = (props) => (
+const AppFooter = (props) => {
+  const {state: {userLoggedIn}} = useContext(AuthContext)
+  const [displaySignUp, setDisplaySignUp] = useState(false);
+
+  console.log(`userLoggedIn`, userLoggedIn)
+
+  return(
+  
   <footer className="footer">
-    {!props.noAction && (
+    {!userLoggedIn ? (
       <div className="footer__sign-up  ">
         <div className="container triangle--white triangle">
           <div className="flex">
@@ -25,7 +33,7 @@ const AppFooter = (props) => (
           </div>
         </div>
       </div>
-    )}
+    ) : null}
     <div className="footer__content">
       <div className="container">
         <div className="flex">
@@ -95,7 +103,7 @@ const AppFooter = (props) => (
         <div className="text-center copyright">Copyright © 2020 Pivotate</div>
       </div>
     </div>
-  </footer>
-);
+  </footer>)
+};
 
 export default AppFooter;
