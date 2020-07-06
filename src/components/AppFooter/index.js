@@ -6,12 +6,15 @@ const AppFooter = (props) => {
   const {state: {userLoggedIn}} = useContext(AuthContext)
   const [displaySignUp, setDisplaySignUp] = useState(false);
 
-  console.log(`userLoggedIn`, userLoggedIn)
+  useEffect(() => {
+    setDisplaySignUp(localStorage.getItem('userFlag'))
+  }, [])
 
+  console.log(`displaySignUp`, displaySignUp)
   return(
   
   <footer className="footer">
-    {!userLoggedIn ? (
+    {!displaySignUp ? (
       <div className="footer__sign-up  ">
         <div className="container triangle--white triangle">
           <div className="flex">

@@ -1,23 +1,33 @@
-import createDateContext from './createDataContext';
+import createDateContext from "./createDataContext";
+import { Link, useHistory } from "react-router-dom";
+
 
 const authReducer = (state, actions) => {
-    switch (actions.type){
-        case 'login':
-            return {userLoggedIn: actions.payload}
-        case 'logout': 
-            return {userLoggedIn: actions.payload}
-    default: 
-        return state;
-    }
-}
+  switch (actions.type) {
+    case "login":
+      return { userLoggedIn: actions.payload };
+    case "logout":
+      return { userLoggedIn: actions.payload };
+    default:
+      return state;
+  }
+};
 
-const loginUser = dispatch => () => {
-  dispatch({type: 'login', payload: true})
-}
+const loginUser = (dispatch) => (userFlag) => {
+  let userLoggedin;
+  if (userFlag < 0) userLoggedin = false;
+  localStorage.setItem("userFlag", true);
+  dispatch({ type: "login", payload: true });
+};
 
-const logoutUser = dispatch => () => {
-    dispatch({type: 'logout', payload: false})
-}
+const logoutUser = (dispatch) => () => {
+  localStorage.removeItem("userFlag");
+  dispatch({ type: "logout", payload: false });
+  
+};
 
-
-export const {Context, Provider} = createDateContext(authReducer, {loginUser, logoutUser}, {userLoggedIn: false})
+export const { Context, Provider } = createDateContext(
+  authReducer,
+  { loginUser, logoutUser },
+  { userLoggedIn: false }
+);

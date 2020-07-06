@@ -1,5 +1,5 @@
-import React, { Component, useContext } from "react";
-import { Redirect } from "react-router-dom";
+import React, { Component } from "react";
+import { Redirect, useHistory } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 import { NoStackConsumer } from "@nostack/no-stack";
 import { LogoutButton } from "@nostack/no-stack";
@@ -11,11 +11,14 @@ import {Context as AuthContext } from '../../context/AuthContext'
 class NavBar extends Component {
   static contextType = AuthContext;
 
+ 
+
   
   state = {
     modalRegistration: this.props.modalRegistration,
     modalLogin: false,
     checkbox: false,
+    
   };
   howItWorks = () => {
     var elmnt = document.getElementById("how-it-works");
@@ -55,9 +58,14 @@ class NavBar extends Component {
     });
   };
 
-  render() {
-    console.log(`context`, this.context);
+  handleClick = () => {
+    
     const {logoutUser} = this.context;
+    logoutUser()
+  }
+
+  render() {
+    
     return (
       <header className="container header flex items-center">
         <div className="header__logo">
@@ -105,7 +113,7 @@ class NavBar extends Component {
             <NoStackConsumer>
               {({ loading, currentUser }) => {
                 if (loading) return null;
-
+                {console.log(`currentUser`, currentUser)}
                 if (!currentUser) {
                   return (
                     <div>
@@ -120,8 +128,10 @@ class NavBar extends Component {
                   );
                 } else {
                   return (
-                    <div className="logout">
-                      <LogoutButton onClick={logoutUser}></LogoutButton>
+                    <div className="logout" >
+                      <Link to={'/'} >
+                      <LogoutButton />
+                      </Link>
                     </div>
                   );
                 }

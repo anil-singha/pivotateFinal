@@ -1,18 +1,42 @@
 import React, { useState, useContext } from "react";
-import styled from "styled-components";
+import { Link, useHistory } from "react-router-dom";
+
 import Modal from "../Modal";
 import { withNoStack } from "@nostack/no-stack";
+import { makeStyles } from '@material-ui/core/styles';
 
-import {Context as AuthContext} from '../../context/AuthContext'
+import { Context as AuthContext } from "../../context/AuthContext";
 
 import ForgotPasswordButton from "../ForgotPasswordButton";
+import { TextField } from "@material-ui/core";
+
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center'
+      
+    },
+  },
+  textField: {
+    margin: '.8rem',
+    width: '80%'
+  }
+
+}));
 
 const LoginForm = ({ onSwitch, loading, currentUser, login, onClose }) => {
-  const {loginUser} = useContext(AuthContext);
+  const { loginUser } = useContext(AuthContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const history = useHistory();
+  const styles = useStyles();
 
   if (loading || currentUser) {
     return null;
@@ -21,14 +45,14 @@ const LoginForm = ({ onSwitch, loading, currentUser, login, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    loginUser();
     try {
-      
-       const response = await login({
+      const response = await login({
         username,
         password,
       });
-     
+
+      loginUser(response.AuthenticationResult.AccessToken.length);
+      history.push("/create");
     } catch (error) {
       setError(
         error.message ||
@@ -48,28 +72,52 @@ const LoginForm = ({ onSwitch, loading, currentUser, login, onClose }) => {
           src="http://pivotatestaticassets.com/images/Pivotate Logo.svg"
           width="170"
         />
-        <h3>LOGIN</h3>
       </div>
       <form
         autofill="false"
         method="post"
         onSubmit={handleSubmit}
         className="form"
+        className={styles.root}
       >
         <div className="form__input">
-          <label htmlFor="nostack-username">
-            <input
-              id="nostack-username"
-              type="text"
-              name="username"
-              placeholder="Username"
-              disabled={isSubmitting}
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </label>
+          <TextField
+            className={styles.textField}
+            value={username}
+            type="text"
+            required
+            onChange={(e) => setUsername(e.target.value)}
+            label="Username"
+            variant="outlined"
+          />
+
+          <TextField
+            className={styles.textField}
+            value={password}
+            type="password"
+            required
+            onChange={(e) => setPassword(e.target.value)}
+            label="Password"
+            variant="outlined"
+          />
+          {/* <FormInput
+            name="username"
+            type="text"
+            label="Username"
+            value={username}
+            required
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <FormInput
+            name="password"
+            type="password"
+            label="Password"
+            value={password}
+            required
+            onChange={(e) => setPassword(e.target.value)}
+          /> */}
         </div>
-        <div className="form__input">
+        {/* <div className="form__input">
           <label htmlFor="nostack-password">
             <input
               id="nostack-password"
@@ -81,7 +129,7 @@ const LoginForm = ({ onSwitch, loading, currentUser, login, onClose }) => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </label>
-        </div>
+        </div> */}
         <div className="form__input">
           <button
             className="button button--yellow"
@@ -90,15 +138,19 @@ const LoginForm = ({ onSwitch, loading, currentUser, login, onClose }) => {
           >
             Log In
           </button>
+          <small>
+            <a href="#" className="teal--text">
+              &nbsp; Forgot Password?
+            </a>
+          </small>
         </div>
         {error && (
           <div className="form__input">
             {" "}
-            You have entered an invalid username or password{" "}
+            <p>You have entered an invalid username or password</p>{" "}
           </div>
         )}
 
-        <br />
         {/* <div>
           <small>or</small>
         </div> */}
@@ -116,7 +168,7 @@ const LoginForm = ({ onSwitch, loading, currentUser, login, onClose }) => {
         </div> */}
         <br />
         <small>
-          Dont have an account?
+          Don't have an account?
           <a href="#" className="teal--text" onClick={onSwitch}>
             &nbsp; Sign Up
           </a>

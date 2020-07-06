@@ -45,6 +45,10 @@ const CreateUserType = React.lazy(() =>
   import("./components/meetingSteps/createUserType")
 );
 
+const AppCreate = React.lazy(() =>
+  import("./components/AppInfo/AppCreationForm/AppCreationForm")
+)
+
 const App = () => {
   const childRef = useRef();
 
@@ -80,6 +84,11 @@ const App = () => {
             </Route>
             <Route exact path={`${process.env.PUBLIC_URL}/staging`}>
               <Staging onSignUp={() => childRef.current.modalHandlerRegistration()}></Staging>
+            </Route>
+            <Route exact path={`${process.env.PUBLIC_URL}/create`}>
+            <AppHeader />
+               <AppCreate />
+              <AppFooter />
             </Route>
             <Route exact path={`${process.env.PUBLIC_URL}/schedule`}>
               <AppHeader />
