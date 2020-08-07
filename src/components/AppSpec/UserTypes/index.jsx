@@ -119,7 +119,9 @@ class UserTypes extends Component {
           label={label}
           // ns__custom_start unit: appSpec, comp: UserTypes, loc: addedPropsForCreationForm 
         />
-   {userTypeCreationCount > 2 ? <ScreenCreationForm disabled={true} validateScreens={0}/> : null}   
+   {userTypeCreationCount >= 3 ? <ScreenCreationForm disabled={true} validateScreens={0}
+   textLabel={`What is the Screen name fo...`} userTypeCreationCount={userTypeCreationCount} label={label}
+   /> : null}   
   </>
   )
   }

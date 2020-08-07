@@ -28,7 +28,7 @@ import { CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 // ns__custom_start unit: appSpec, comp: InfoTypeCreationForm, loc: styling
 // change styling here
 const Form = styled.div`
-  margin:  0 0 0 11%;
+  margin:  .8rem 0 0 11%;
   border: none;
   border-radius: 5px;
 `;
@@ -133,7 +133,10 @@ function InfoTypeCreationForm({
   // ns__custom_start unit: appSpec, comp: InfoTypeCreationForm, loc: addedProps
   validateInfoTypes,
   label,
-  disabled
+  disabled,
+  infoTypeValueCount,
+  textLabel,
+  onChange
   // ns__custom_end unit: appSpec, comp: InfoTypeCreationForm, loc: addedProps
 }) {
   const [infoTypeValue, updateInfoTypeValue] = useState('');
@@ -143,11 +146,18 @@ function InfoTypeCreationForm({
   const styles = useStyles();
   const [callout, setCallout] = useState(false);
   const showCalloutBox = callout || validateInfoTypes === 0;
-  const callOutText = `What is the Info Type for ${label}`;
+  let callOutText= '';
+  
+  if(infoTypeValueCount < 5){
+    callOutText =textLabel
+  }else {
+    callOutText=`What is the Info Type ${label ? `for ${label}` : ''}`;
+  }
   // ns__custom_end unit: appSpec, comp: InfoTypeCreationForm, loc: beginning
 
   function handleChange(e) {
     updateInfoTypeValue(e.target.value);
+    onChange(e.target.value);
   }
 
   async function handleSubmit(e) {
@@ -195,7 +205,7 @@ function InfoTypeCreationForm({
       <Label htmlFor='infoType-value'>
         <TextField
           className={styles.textField}
-          label={`New Info Type for ${label}`}
+          label={callOutText}
           onChange={handleChange}
           onKeyPress={handleKeyPress}
           value={infoTypeValue}

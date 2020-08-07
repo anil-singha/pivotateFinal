@@ -20,6 +20,7 @@ import _ from 'lodash';
 // ns__custom_start unit: appSpec, comp: InfoTypes, loc: addedImports
 import getChildData from '../../../custom/getChildData';
 import { Context as UnitDataContext } from '../../../custom/UnitDataContext';
+import SubInfoTypeCreationForm from '../../../custom/SubInfoTypeCreationForm';
 
 // ns__custom_end unit: appSpec, comp: InfoTypes, loc: addedImports
 
@@ -54,7 +55,7 @@ class InfoTypes extends Component {
     // ns__custom_start unit: appSpec, comp: InfoTypes, loc: componentDidMount
     const { childState, parentState } = this.state;
     const { infoTypes } = this.props;
-    const { setChildState, state, setCurrentStage } = this.context;
+    
 
     if (!childState.length || !parentState.length) {
       let [parentData, childData] = getChildData(infoTypes);
@@ -62,6 +63,7 @@ class InfoTypes extends Component {
       this.setState({
         childState: childData,
         parentState: parentData,
+        subInfoTypeValueCount: 0
       });
     }
 
@@ -87,6 +89,7 @@ class InfoTypes extends Component {
    /* ns__custom_start unit: appSpec, comp: InfoTypes, loc: beforeRender */
    onChangeHelper = value => {
     this.setState({subInfoTypeValueCount: value.length})}
+    
     /* ns__custom_end unit: appSpec, comp: InfoTypes, loc: beforeRender */
 
   render() {
@@ -96,8 +99,8 @@ class InfoTypes extends Component {
     /* ns__custom_start unit: appSpec, comp: InfoTypes, loc: renderBeginning */
     const {label} =this.props;
     let validateInfoTypes = infoTypes.length;
-    const { state } = this.context;
-    const { childState, parentState } = this.state;
+    
+    const { childState, parentState, subInfoTypeValueCount } = this.state;
     const [data] = getChildData(parentState);
 
     /* ns__custom_end unit: appSpec, comp: InfoTypes, loc: renderBeginning */
@@ -137,9 +140,15 @@ class InfoTypes extends Component {
           // ns__custom_start unit: appSpec, comp: InfoTypes, loc: addedPropsForCreationForm
           label={label}
           validateInfoTypes={validateInfoTypes}
+          onChange={this.onChangeHelper}
           /* ns__custom_start unit: appSpec, comp: InfoTypes, loc: addedPropsForCreationForm */
           /* ns__custom_end unit: appSpec, comp: InfoTypes, loc: addedPropsForCreationForm */
         />
+        {console.log(`subInfoTypeValueCount`, subInfoTypeValueCount)}
+         {subInfoTypeValueCount >= 3 ? (
+          <SubInfoTypeCreationForm disabled={true} validateSubInfoTypes={0} textLabel={`What is the sub Info Type fo...`} subInfoTypeValueCount={subInfoTypeValueCount} label={label}/>
+        ) : null}
+      
       </>
     );
     // ns__end_section return

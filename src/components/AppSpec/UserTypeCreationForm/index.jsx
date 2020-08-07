@@ -142,7 +142,10 @@ function UserTypeCreationForm({
   // ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: addedPropsForCreationForm
   validateUserTypes,
   onChange,
-  label
+  label,
+  userTypeCreationCount,
+  disabled,
+  textLabel
   // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: addedPropsForCreationForm
 }) {
   const [userTypeValue, updateUserTypeValue] = useState('');
@@ -152,7 +155,13 @@ function UserTypeCreationForm({
   const styles = useStyles();
   const [callout, setCallout] = useState(false);
   const showCalloutBox = callout || validateUserTypes === 0;
-  const callOutText = `What's the type of user for ${label}?`;
+  let callOutText= '';
+  
+  if(userTypeCreationCount < 4){
+    callOutText =textLabel
+  }else {
+    callOutText=`What is the User Type ${label ? `for ${label}` : ''}`;
+  }
   // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: beginning
 
   function handleChange(e) {
@@ -209,12 +218,12 @@ function UserTypeCreationForm({
       <Label htmlFor='userType-value'>
         <TextField 
            className={styles.textField}
-           label={`User Type for ${label}`}
+           label={callOutText}
            value={userTypeValue}
            onChange={(e) => {handleChange(e); onChange(e.target.value)}}
            onKeyPress={handleKeyPress}
            value={userTypeValue}
-           disabled={loading}
+           disabled={loading||disabled}
            variant="outlined"
            InputProps={{
              endAdornment: (

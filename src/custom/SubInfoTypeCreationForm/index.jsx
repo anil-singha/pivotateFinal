@@ -128,7 +128,10 @@ const SubInfoTypeCreationForm = ({
   saveInstance,
   // ns__custom_start unit: appSpec, comp: Sub_Info_Type_Creation, loc: addedPropsForCreationForm
   validateSubInfoTypes,
-  label
+  label,
+  disabled,
+  subInfoTypeValueCount,
+  textLabel
   // ns__custom_end unit: appSpec, comp: Sub_Info_Type_Creation, loc: addedPropsForCreationForm
 }) => {
   const [subInfoValue, setSubInfoValue] = useState('');
@@ -136,11 +139,17 @@ const SubInfoTypeCreationForm = ({
   const styles = useStyles();
   const [callout, setCallout] = useState(false);
   const showCalloutBox = callout || validateSubInfoTypes === 0;
-  const callOutText = `What is a sub Info Type for ${label ? `for ${label}` : ''}?`;
+  
 
-  // ns__custom_start unit: appSpec, comp: Sub_Info_Type_Creation, loc: addedDeclaration
-
-  // ns__custom_end unit: appSpec, comp: Sub_Info_Type_Creation, loc: addedDeclaration
+  // ns__custom_start unit: appSpec, comp: Sub_Info_Type_Creation, loc: beginning
+  let callOutText= '';
+  
+  if(subInfoTypeValueCount < 5){
+    callOutText =textLabel
+  }else {
+    callOutText=`What is the sub Info Type ${label ? `for ${label}` : ''}`;
+  }
+  // ns__custom_end unit: appSpec, comp: Sub_Info_Type_Creation, loc: beginning
   function handleChange(e) {
     setSubInfoValue(e.target.value);
   }
@@ -214,7 +223,7 @@ const SubInfoTypeCreationForm = ({
            onChange={handleChange}
            onKeyPress={handleKeyPress}
            value={subInfoValue}
-           disabled={loading}
+           disabled={loading|| disabled}
            variant="outlined"
            InputProps={{
              endAdornment: (

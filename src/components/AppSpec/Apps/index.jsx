@@ -16,7 +16,6 @@ import { v4 } from 'uuid';
 
 import { flattenData } from '../../../flattenData';
 
-
 // ns__remove_import AppCreationForm from '../AppCreationForm';
 import App from '../App';
 
@@ -57,9 +56,7 @@ class Apps extends Component {
 
   componentDidMount() {
     // ns__custom_start unit: appSpec, comp: Apps, loc: componentDidMount
-    const { setCurrentStage } = this.context;
 
-    setCurrentStage(1);
     // ns__custom_end unit: appSpec, comp: Apps, loc: componentDidMount
     document.addEventListener('mousedown', this.handleClick);
   }
@@ -89,7 +86,7 @@ class Apps extends Component {
     };
 
     // ns__custom_start unit: appSpec, comp: Apps, loc: renderBeginning
-    const { currentStage } = this.context.state;
+
     // ns__custom_end unit: appSpec, comp: Apps, loc: renderBeginning
 
     return (
@@ -140,7 +137,7 @@ class Apps extends Component {
                 onClick={this.handleClick}
                 show
               >
-              {/* ns__start_section listElements */}
+                {/* ns__start_section listElements */}
                 {apps &&
                   apps.map((app) => (
                     <App
@@ -154,7 +151,7 @@ class Apps extends Component {
                       // ns__custom_end unit: appSpec, comp: Apps, loc: addedPropsForChildren
                     />
                   ))}
-              {/* ns__start_section listElements */}
+                {/* ns__start_section listElements */}
               </AppsStyleWrapper>
 
               {/* ns__custom_start unit: appSpec, comp: Apps, loc: renderEnding */}

@@ -15,9 +15,10 @@ class NavBar extends Component {
 
   
   state = {
-    modalRegistration: this.props.modalRegistration,
+    modalRegistration: false,
     modalLogin: false,
-    checkbox: false,
+    checkbox: false
+    
     
   };
   howItWorks = () => {
@@ -83,12 +84,19 @@ class NavBar extends Component {
             userClassId={TYPE_CUSTOMER_ID}
             onSwitch={this.modalHandlerSwitchForm}
             onClose={this.modalHandlerRegistration}
+             // ns__custom_start unit: general, comp: LoginForm, loc: addedRegistrationFormProps
+            open={this.state.modalRegistration}
+             // ns__custom_start unit: general, comp: LoginForm, loc: addedRegistrationFormProps
           />
         )}
         {this.state.modalLogin && (
           <LoginForm
             onSwitch={this.modalHandlerSwitchForm}
             onClose={this.modalHandlerLogin}
+            // ns__custom_start unit: general, comp: LoginForm, loc: addedLoginFormProps
+            open={this.state.modalLogin}
+           // ns__custom_start unit: general, comp: LoginForm, loc: addedLoginFormProps
+
           />
         )}
         <nav className="hide-tablet">
@@ -107,14 +115,14 @@ class NavBar extends Component {
             </li>
           </ul>
         </nav>
-
+        {console.log(`modalRegistration`, this.state.modalRegistration)}
         {!this.props.noAction && (
           <div className="grow-12 text-right hide-tablet">
             <NoStackConsumer>
               {({ loading, currentUser }) => {
                 if (loading) return null;
-                {console.log(`currentUser`, currentUser)}
                 if (!currentUser) {
+                  
                   return (
                     <div>
                       <a onClick={this.modalHandlerLogin}> LOGIN </a>
@@ -132,6 +140,7 @@ class NavBar extends Component {
                       <Link to={'/'} >
                       <LogoutButton />
                       </Link>
+                      <Redirect to="/staging" />
                     </div>
                   );
                 }

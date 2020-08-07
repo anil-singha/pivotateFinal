@@ -106,8 +106,9 @@ class Screens extends Component {
           label={label}
           /* ns__custom_end unit: appSpec, comp: Screens, loc: addedProps */
         />
-        {infoTypeValueCount > 2 ? (
-          <InfoTypeCreationForm disabled={true} validateInfoTypes={0} />
+        
+        {infoTypeValueCount >= 3 ? (
+          <InfoTypeCreationForm disabled={true} validateInfoTypes={0} textLabel={`What is the Info Type fo...`} infoTypeValueCount={infoTypeValueCount} label={label}/>
         ) : null}
       </>
     );

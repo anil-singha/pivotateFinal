@@ -7,18 +7,43 @@
 
 // ns__custom_start unit: general, comp: RegistrationForm, loc: beforeImports
 
-
-
 // ns__custom_end unit: general, comp: RegistrationForm, loc: beforeImports
 
-import React, {useState} from 'react'
-import {Formik, Form} from 'formik'
-import {useMutation} from '@apollo/react-hooks'
-import * as Yup from 'yup'
-import {REGISTER_USER} from '@nostack/no-stack'
+import React, { useState } from 'react';
+import { Formik, Form } from 'formik';
+import { useMutation } from '@apollo/react-hooks';
+import * as Yup from 'yup';
+import { REGISTER_USER } from '@nostack/no-stack';
 
-import RegistrationField from './RegistrationField'
-import {Wrapper, Row, ErrorContainer} from './RegistrationForm.style'
+import RegistrationField from './RegistrationField';
+import { Wrapper, Row, ErrorContainer } from './RegistrationForm.style';
+
+// ns__custom_start unit: general, comp: RegistrationForm, loc: addedImports
+import TransitionsModal from '../../custom/Modal';
+import styled from 'styled-components'
+import { makeStyles, Button, InputLabel } from '@material-ui/core';
+// ns__custom_start unit: general, comp: RegistrationForm, loc: addedImports
+
+// ns__custom_start unit: general, comp: RegistrationForm, loc: styling
+const LogoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const useStyles = makeStyles((theme) => ({
+  button: {
+    width: '80%',
+    height: '3.5rem',
+    borderRadius: '2rem',
+  },
+  inputLabel: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: '1rem',
+    color: 'black',
+  },
+}));
+// ns__custom_start unit: general, comp: RegistrationForm, loc: addedstylingImports
 
 const initialValues = {
   name: '',
@@ -27,52 +52,55 @@ const initialValues = {
   email: '',
   password: '',
   passwordConfirmation: '',
-}
+};
 
 const validationSchema = Yup.object().shape({
-  name: Yup.string()
-  .label('name')
-  .required('Please enter desired username.'),
+  name: Yup.string().label('name').required('Please enter desired username.'),
   firstName: Yup.string()
-  .label('firstName')
-  .required('Please enter your first name.'),
+    .label('firstName')
+    .required('Please enter your first name.'),
   lastName: Yup.string()
-  .label('lastName')
-  .required('Please enter your last name.'),
+    .label('lastName')
+    .required('Please enter your last name.'),
   email: Yup.string()
-  .label('email')
-  .email('Enter a valid email.')
-  .required('Please enter your email.'),
+    .label('email')
+    .email('Enter a valid email.')
+    .required('Please enter your email.'),
   password: Yup.string()
-  .label('password')
-  .matches(/(?=.*\d)/, 'Must have at least one numerical character')
-  .matches(
-    /(?=.*[#?!@$%^&*-.,:;''><[\]{}()_|\\/~])/,
-    'Must have at least one special character.',
-  )
-  .min(8, 'Must be at least 8 characters.')
-  .required('Please enter your desired password.'),
+    .label('password')
+    .matches(/(?=.*\d)/, 'Must have at least one numerical character')
+    .matches(
+      /(?=.*[#?!@$%^&*-.,:;''><[\]{}()_|\\/~])/,
+      'Must have at least one special character.'
+    )
+    .min(8, 'Must be at least 8 characters.')
+    .required('Please enter your desired password.'),
   passwordConfirmation: Yup.string()
-  .oneOf([Yup.ref('password'), '', null], 'Passwords must match.')
-  .required('Please confirm your password.'),
-})
+    .oneOf([Yup.ref('password'), '', null], 'Passwords must match.')
+    .required('Please confirm your password.'),
+});
 
 const RegistrationForm = ({
   userClassId,
   onSuccess,
+  // ns__custom_start unit: general, comp: RegistrationForm, loc: addedImport
+  open,
+  onClose,
+  // ns__custom_end unit: general, comp: RegistrationForm, loc: addedImport
 }) => {
-  const [register] = useMutation(REGISTER_USER)
-  const [registrationCompleted, setRegistrationCompleted] = useState(false)
-  const [formError, setFormError] = useState('')
+  const [register] = useMutation(REGISTER_USER);
+  const [registrationCompleted, setRegistrationCompleted] = useState(false);
+  const [formError, setFormError] = useState('');
+  // ns__custom_start unit: general, comp: RegistrationForm, loc: beforeReturn
+  const styles = useStyles();
 
-  const handleSubmit = async (
-    values,
-    {setSubmitting},
-  ) => {
-    setFormError('')
+  // ns__custom_end unit: general, comp: RegistrationForm, loc: beforeReturn
+
+  const handleSubmit = async (values, { setSubmitting }) => {
+    setFormError('');
 
     if (values.password !== values.passwordConfirmation) {
-      return
+      return;
     }
 
     try {
@@ -85,76 +113,98 @@ const RegistrationForm = ({
           email: values.email,
           password: values.password,
         },
-      })
+      });
 
-      setRegistrationCompleted(true)
+      setRegistrationCompleted(true);
 
       if (onSuccess) {
-        onSuccess()
+        onSuccess();
       }
     } catch (error) {
-      console.log(error)
-      console.log(error.graphQLErrors)
+      console.log(error);
+      console.log(error.graphQLErrors);
 
-      setFormError('Something went wrong. Please try again.')
+      setFormError('Something went wrong. Please try again.');
     }
 
-    setSubmitting(false)
-  }
+    setSubmitting(false);
+  };
 
   if (registrationCompleted) {
     return (
       <Wrapper>
-        <p>Please check your email and confirm that you are really you.  Then you can log in!</p>
+        <p>
+          Please check your email and confirm that you are really you. Then you
+          can log in!
+        </p>
       </Wrapper>
-    )
+    );
   }
 
   return (
-    <Wrapper>
+    // ns__custom_start unit: general, comp: RegistrationForm, loc: insideReturn
+
+    <TransitionsModal open={open} onClose={onClose}>
+      <div>
+        <LogoContainer>
+          <a href='/'>
+            <img
+              src='https://pivotatestaticassets.com/images/Pivotate Logo.svg'
+              alt='Pivotate Logo'
+              width='170'
+            />
+          </a>
+        </LogoContainer>
+        <InputLabel className={styles.inputLabel}>Register</InputLabel>
+      </div>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {({isSubmitting, isValid, dirty, isValidating}) => (
+        {({ isSubmitting, isValid, dirty, isValidating }) => (
           <Form>
-            <RegistrationField fieldLabel="Username:" type="text" name="name" />
+            <RegistrationField fieldLabel='Username:' type='text' name='name' />
             <RegistrationField
-              fieldLabel="First Name:"
-              type="text"
-              name="firstName"
+              fieldLabel='First Name:'
+              type='text'
+              name='firstName'
             />
             <RegistrationField
-              fieldLabel="Last Name:"
-              type="text"
-              name="lastName"
+              fieldLabel='Last Name:'
+              type='text'
+              name='lastName'
             />
-            <RegistrationField fieldLabel="Email:" type="email" name="email" />
+            <RegistrationField fieldLabel='Email:' type='email' name='email' />
             <RegistrationField
-              fieldLabel="Password:"
-              type="password"
-              name="password"
+              fieldLabel='Password:'
+              type='password'
+              name='password'
             />
             <RegistrationField
-              fieldLabel="Confirm Password:"
-              type="password"
-              name="passwordConfirmation"
+              fieldLabel='Confirm Password:'
+              type='password'
+              name='passwordConfirmation'
             />
             <Row>
-              <button
-                type="submit"
+              <Button
+                className={styles.button}
+                type='submit'
                 disabled={isSubmitting || !isValid || isValidating || !dirty}
+                variant='contained'
+                color='primary'
               >
                 Sign Up!
-              </button>
+              </Button>
               {formError && <ErrorContainer>{formError}</ErrorContainer>}
             </Row>
           </Form>
         )}
       </Formik>
-    </Wrapper>
-  )
-}
+    </TransitionsModal>
 
-export default RegistrationForm
+    // ns__custom_end unit: general, comp: RegistrationForm, loc: insideReturn
+  );
+};
+
+export default RegistrationForm;

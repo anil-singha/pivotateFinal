@@ -27,7 +27,7 @@ import { CREATE_SCREEN_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 // ns__custom_start unit: appSpec, comp: ScreenCreationForm, loc: styling
 // change styling here
 const Form = styled.div`
-  margin: 0 0 .5rem 3.8rem;
+  margin: .8rem 0 .5rem 3.8rem;
   border: none;
   border-radius: 5px;
   
@@ -163,7 +163,10 @@ function ScreenCreationForm({
   validateScreens,
   disabled,
   onChange,
-  label
+  label,
+  userTypeCreationCount,
+  textLabel,
+  
   // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: addedProps
 }) {
   const [screenValue, updateScreenValue] = useState('');
@@ -173,7 +176,13 @@ function ScreenCreationForm({
   const styles = useStyles();
   const [callout, setCallout] = useState(false);
   const showCalloutBox = callout || validateScreens === 0;
-  const callOutText = `What is a screen for a ${label}`;
+  let callOutText= '';
+  
+  if(userTypeCreationCount < 5){
+    callOutText =textLabel
+  }else {
+    callOutText=`What is the Screen name ${label ? `for ${label}` : ''}`;
+  }
   // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: beginning
 
   function handleChange(e) {
@@ -225,7 +234,7 @@ function ScreenCreationForm({
       <Label htmlFor='screen-value'>
       <TextField 
            className={styles.textField}
-           label={`New Screen for ${label}`}
+           label={callOutText}
            value={screenValue}
            onChange={(e) => {handleChange(e); onChange(e.target.value)}}
            onKeyPress={handleKeyPress}

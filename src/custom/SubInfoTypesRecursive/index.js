@@ -40,8 +40,8 @@ const SubInfoTypeWrapper = styled.div(
   
   
     &:last-child:before {
-      top: -76px ;
-      height: ${(selected && '133px') || '116px'}; 
+      top: -11px ;
+      height: ${(selected && '133px') || '55px'}; 
     }
   
    
@@ -90,8 +90,8 @@ const InfoTypesStyleWrapper = styled.div(
   }
 
   &:last-child:before {
-    top: -76px ;
-    height: ${(selected && '133px') || '116px'}; 
+    top: -11px ;
+    height: ${(selected && '133px') || '55px'}; 
   }
 `);
 

@@ -24,6 +24,11 @@ const LoginWrapper = styled.div`
   align-items: center;
 `;
 
+const Container = styled.div`
+  width: 100%;
+  min-height: 65vh;
+`
+
 const App = ({ loading, currentUser, login }) => {
   const childRef = useRef();
   const counter = useSelector((state) => state.counter);
@@ -53,12 +58,12 @@ const App = ({ loading, currentUser, login }) => {
                 <button onClick={() => dispatch(decrement())}>-</button>
                Step: {counter} */}
                <div id="app">
-                <AppHeader ref={childRef} />
-                  <div className="step-progress">
-                    <div className="flex justify-center">
+                <AppHeader  />
+                  <Container >
+                    
                       <Apps customerId={currentUser.id}> </Apps>
-                    </div>
-                  </div>
+                    
+                  </Container>
                   <AppFooter />
                 </div>
               </>
