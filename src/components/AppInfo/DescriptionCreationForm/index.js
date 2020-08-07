@@ -4,7 +4,11 @@ import styled from "styled-components";
 import { EXECUTE } from "@nostack/no-stack";
 import compose from "@shopify/react-compose";
 
+
 // import { CREATE_DESCRIPTION_FOR_REGISTRATION_INFO_ACTION_ID } from '../../../config';
+ // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
+ import { TextField } from '@material-ui/core';
+  // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 
 // change styling here
 const Form = styled.div`
@@ -67,8 +71,8 @@ function DescriptionCreationForm({
   return (
     <Form>
       <label htmlFor="description-value">
-        Description:
-        <input
+        
+        <TextField
           id="description-value"
           type="text"
           onChange={handleChange}

@@ -160,7 +160,7 @@ function App({
       <Button type="button" onClick={() => updateIsDeleteMode(true)}>
         &#128465;
       </Button>
-
+      {console.log(`descriptions`, descriptions)}
       <Descriptions
         descriptions={descriptions}
         appId={app.id}

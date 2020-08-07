@@ -14,8 +14,11 @@ import { CREATE_APP_FOR_APP_SPEC_ACTION_ID } from '../../config';
 
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 import PropTypes from 'prop-types';
+import { TextField, makeStyles } from '@material-ui/core';
+import DescriptionCreationForm from '../../components/AppSpec/DescriptionCreationForm';
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 
+// ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: styling
 // change styling here
 const Form = styled.div`
   margin: 2em;
@@ -23,15 +26,51 @@ const Form = styled.div`
   border: none;
   border-radius: 5px;
   background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  
 `;
 
 const Button = styled.button`
   margin-left: 1em;
 `;
 
+const Label = styled.label`
+width: 50%;
+`
+
+const useStyles = makeStyles((theme) => ({
+  textField: {
+    fontSize: '.8rem',
+    textAlign: 'initial',
+    width: '100%',
+    margin: '6px 0',
+    
+    padding: 0,
+    [`& fieldset`]: {
+      borderRadius: '32px',
+    },
+  },
+  button: {
+    width: '80%',
+    height: '3.5rem',
+    borderRadius: '2rem',
+  },
+  inputLabel: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: '1rem',
+    color: 'black',
+  },
+}));
+
+
+// ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: styling
 function AppCreationForm({ customerId, createApp, refetchQueries }) {
   const [appValue, updateAppValue] = useState('');
   const [loading, updateLoading] = useState(false);
+
+  const styles = useStyles()
 
   function handleChange(e) {
     updateAppValue(e.target.value);
@@ -69,22 +108,29 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
   }
 
   return (
+    <>
     <Form>
-      <label htmlFor='app-value'>
-        App:
-        <input
+      <Label htmlFor='app-value'>
+        
+        <TextField
+          className={styles.textField}
           id='app-value'
           type='text'
           onChange={handleChange}
           onKeyPress={handleKeyPress}
           value={appValue}
           disabled={loading}
+          variant="outlined"
+          label="App"
         />
-      </label>
+        
+      </Label>
       <Button type='submit' disabled={loading} onClick={handleSubmit}>
         {loading ? 'Creating App...' : 'Create App'}
       </Button>
     </Form>
+    
+    </>
   );
 }
 

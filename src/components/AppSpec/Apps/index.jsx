@@ -109,8 +109,10 @@ class Apps extends Component {
           // ns__custom_start unit: appSpec, comp: Apps, loc: beforeReturn
           /* NOTE: one app is assumed here. */
           const appInfo = apps[0];
+          
           const descriptionInfo = getDescriptionChild(appInfo.children);
-          const descriptionValue = descriptionInfo.instances[0].value;
+          console.log(`descriptionInfo`, appInfo)
+          const descriptionValue = true //descriptionInfo.instances[0].value;
 
           // ns__custom_start unit: appSpec, comp: Apps, loc: beforeReturn
           const noApp =
@@ -123,15 +125,14 @@ class Apps extends Component {
 
           return (
             <>
-              {noApp && (
+              {noApp ? (
                 <FirstTimeAppCreationForm
                   customerId={customerId}
                   refetchQueries={refetchQueries}
                   // ns__custom_start unit: appSpec, comp: Apps, loc: addedPropsForCreationForm
                   // ns__custom_end unit: appSpec, comp: Apps, loc: addedPropsForCreationForm
                 />
-              )}
-
+              ): 
               <AppsStyleWrapper
                 ref={this.wrapperRef}
                 onClick={this.handleClick}
@@ -153,6 +154,9 @@ class Apps extends Component {
                   ))}
                 {/* ns__start_section listElements */}
               </AppsStyleWrapper>
+              }
+
+              
 
               {/* ns__custom_start unit: appSpec, comp: Apps, loc: renderEnding */}
               {/* ns__custom_end unit: appSpec, comp: Apps, loc: renderEnding */}

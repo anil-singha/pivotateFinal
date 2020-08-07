@@ -207,12 +207,12 @@ function App({
         label={appValue}
         refetchQueries={refetchQueries}
       />
-      {/* <Descriptions
+      {!descriptions.length ? <Descriptions
         descriptions={descriptions}
         appId={app.id}
-        label='Description?'
+        label={appValue}
         refetchQueries={refetchQueries}
-      /> */}
+      /> : null}
     </AppStyleWrapper>
   );
 }

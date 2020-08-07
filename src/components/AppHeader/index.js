@@ -124,7 +124,7 @@ class NavBar extends Component {
                 if (!currentUser) {
                   
                   return (
-                    <div>
+                    <>
                       <a onClick={this.modalHandlerLogin}> LOGIN </a>
                       <a
                         onClick={this.modalHandlerRegistration}
@@ -132,7 +132,7 @@ class NavBar extends Component {
                       >
                         SIGN UP
                       </a>
-                    </div>
+                    </>
                   );
                 } else {
                   return (
