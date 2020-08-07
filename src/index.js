@@ -12,25 +12,27 @@ import TagManager from "react-gtm-module";
 import { createStore } from "redux";
 import allReducers from "./reducers";
 import { Provider } from "react-redux";
-import {Provider as AuthContext } from './context/AuthContext'
+import { Provider as AuthContext } from "./context/AuthContext";
+import store from "./redux/store";
 const tagManagerArgs = {
   gtmId: "GTM-TS3Q48S",
   js: new Date(),
 };
 
-const store = createStore(
-  allReducers,
-  window.__redux_devtools_extension__ && window.__redux_devtools_extension__()
-);
+// const store = createStore(
+//   allReducers,
+//   window.__redux_devtools_extension__ && window.__redux_devtools_extension__()
+// );
+
 TagManager.initialize(tagManagerArgs);
 
 ReactDOM.render(
   <Provider store={store}>
-   <AuthContext>
-    <NoStackProvider client={client} platformId={PLATFORM_ID}>
-      <App />
-    </NoStackProvider>
-  </AuthContext> 
+    <AuthContext>
+      <NoStackProvider client={client} platformId={PLATFORM_ID}>
+        <App />
+      </NoStackProvider>
+    </AuthContext>
   </Provider>,
   document.getElementById("root")
 );

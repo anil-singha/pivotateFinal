@@ -1,0 +1,15 @@
+.form_creation {
+    width: 70rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+    border: 1px solid rgba($color: #ddd9d9, $alpha: 1.0);
+    border-radius: 10px;
+    height: 30rem;
+    margin-bottom: 2rem;
+
+    &--container {
+        width: 70%
+    }
+}

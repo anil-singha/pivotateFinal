@@ -68,6 +68,8 @@ function InfoType({
   const [isDeleteMode, updateIsDeleteMode] = useState(false);
   const [isDeleting, updateIsDeleting] = useState(false);
 
+  console.log(`infoTypeId`, infoTypeId)
+  console.log(`parentIdparentId, `, parentId)
   // if (!selected) {
   //   return (
   //     <InfoTypeStyleWrapper onClick={() => onSelect(infoType.id)}>
@@ -156,6 +158,7 @@ function InfoType({
       });
 
       const newInfoTypeData = JSON.parse(createInfoTypeResponse.data.Execute);
+      console.log(`newInfoTypeData.instanceId`, newInfoTypeData.instanceId)
       const createChildInfoTypeResponse = await saveInstance({
         variables: {
           actionId: ADD_HAS_PARENT_FOR_PARENT_ACTION_ID,
