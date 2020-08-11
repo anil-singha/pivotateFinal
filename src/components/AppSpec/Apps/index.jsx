@@ -110,14 +110,13 @@ class Apps extends Component {
           /* NOTE: one app is assumed here. */
           const appInfo = apps[0];
           
-          const descriptionInfo = getDescriptionChild(appInfo.children);
-          console.log(`descriptionInfo`, appInfo)
-          const descriptionValue = true //descriptionInfo.instances[0].value;
+          // const descriptionInfo = getDescriptionChild(appInfo.children);
+          // const descriptionValue = descriptionInfo.instances[0].value;
 
           // ns__custom_start unit: appSpec, comp: Apps, loc: beforeReturn
           const noApp =
             apps.length === 0 ||
-            !((apps[0].value && apps[0].value !== '') || descriptionValue); // &&
+            !((apps[0].value && apps[0].value !== '') ); // || descriptionValue); // &&
           // find in apps[0].children array an object o where o.typeId === TYPE_DESCRIPTION_ID
           // and where o.instances contains an object oi where oi.value && oi.value !== ''
           const show = !noApp;
