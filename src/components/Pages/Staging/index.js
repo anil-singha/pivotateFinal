@@ -12,8 +12,8 @@ import LoginForm from "../../LoginForm";
 import RegistrationForm from "../../RegistrationForm";
 import Home from "../../Pages/Home";
 import Apps from "../../AppSpec/Apps";
-import AppHeader from "../../AppHeader";
-import AppFooter from "../../AppFooter";
+import AppHeader from "../../../custom/AppFooter";
+import AppFooter from "../../../custom/AppFooter";
 import StepZilla from "react-stepzilla";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from "../../../actions";
@@ -27,7 +27,7 @@ const LoginWrapper = styled.div`
 const Container = styled.div`
   width: 100%;
   min-height: 65vh;
-`
+`;
 
 const App = ({ loading, currentUser, login }) => {
   const childRef = useRef();
@@ -42,14 +42,15 @@ const App = ({ loading, currentUser, login }) => {
             if (loading) return null;
 
             if (!currentUser) {
-              
               return (
                 <>
-              <AppHeader ref={childRef} />
-                <Home   onSignUp={() => childRef.current.modalHandlerRegistration()}></Home>
-              <AppFooter />
-              </>
-              )
+                  <AppHeader ref={childRef} />
+                  <Home
+                    onSignUp={() => childRef.current.modalHandlerRegistration()}
+                  ></Home>
+                  <AppFooter />
+                </>
+              );
             }
 
             return (
@@ -57,12 +58,10 @@ const App = ({ loading, currentUser, login }) => {
                 {/* <button onClick={() => dispatch(increment())}>+</button>
                 <button onClick={() => dispatch(decrement())}>-</button>
                Step: {counter} */}
-               <div id="app">
-                <AppHeader  />
-                  <Container >
-                    
-                      <Apps customerId={currentUser.id}> </Apps>
-                    
+                <div id="app">
+                  <AppHeader />
+                  <Container>
+                    <Apps customerId={currentUser.id}> </Apps>
                   </Container>
                   <AppFooter />
                 </div>
