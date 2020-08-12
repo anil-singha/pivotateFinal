@@ -6,20 +6,15 @@ import { LogoutButton } from "@nostack/no-stack";
 import RegistrationForm from "../../components/RegistrationForm";
 import LoginForm from "../../components/LoginForm";
 import { PLATFORM_ID, TYPE_CUSTOMER_ID } from "../../config";
-import {Context as AuthContext } from '../../context/AuthContext'
+import { Context as AuthContext } from "../../context/AuthContext";
 
 class NavBar extends Component {
   static contextType = AuthContext;
 
- 
-
-  
   state = {
     modalRegistration: false,
     modalLogin: false,
-    checkbox: false
-    
-    
+    checkbox: false,
   };
   howItWorks = () => {
     var elmnt = document.getElementById("how-it-works");
@@ -60,13 +55,11 @@ class NavBar extends Component {
   };
 
   handleClick = () => {
-    
-    const {logoutUser} = this.context;
-    logoutUser()
-  }
+    const { logoutUser } = this.context;
+    logoutUser();
+  };
 
   render() {
-    
     return (
       <header className="container header flex items-center">
         <div className="header__logo">
@@ -84,9 +77,9 @@ class NavBar extends Component {
             userClassId={TYPE_CUSTOMER_ID}
             onSwitch={this.modalHandlerSwitchForm}
             onClose={this.modalHandlerRegistration}
-             // ns__custom_start unit: general, comp: LoginForm, loc: addedRegistrationFormProps
+            // ns__custom_start unit: general, comp: LoginForm, loc: addedRegistrationFormProps
             open={this.state.modalRegistration}
-             // ns__custom_start unit: general, comp: LoginForm, loc: addedRegistrationFormProps
+            // ns__custom_start unit: general, comp: LoginForm, loc: addedRegistrationFormProps
           />
         )}
         {this.state.modalLogin && (
@@ -95,8 +88,7 @@ class NavBar extends Component {
             onClose={this.modalHandlerLogin}
             // ns__custom_start unit: general, comp: LoginForm, loc: addedLoginFormProps
             open={this.state.modalLogin}
-           // ns__custom_start unit: general, comp: LoginForm, loc: addedLoginFormProps
-
+            // ns__custom_start unit: general, comp: LoginForm, loc: addedLoginFormProps
           />
         )}
         <nav className="hide-tablet">
@@ -122,7 +114,6 @@ class NavBar extends Component {
               {({ loading, currentUser }) => {
                 if (loading) return null;
                 if (!currentUser) {
-                  
                   return (
                     <>
                       <a onClick={this.modalHandlerLogin}> LOGIN </a>
@@ -136,11 +127,11 @@ class NavBar extends Component {
                   );
                 } else {
                   return (
-                    <div className="logout" >
-                      <Link to={'/'} >
-                      <LogoutButton />
+                    <div className="logout">
+                      <Link to={"/"}>
+                        <LogoutButton />
                       </Link>
-                      <Redirect to="/staging" />
+                      <Redirect to="/apps_spec" />
                     </div>
                   );
                 }

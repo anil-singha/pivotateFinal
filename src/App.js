@@ -17,8 +17,8 @@ import {
 
 import ScrollToTop from "react-router-scroll-top";
 import Confirmation from "./components/Pages/Confirmation";
-const AppHeader = React.lazy(() => import("./components/AppHeader"));
-const AppFooter = React.lazy(() => import("./components/AppFooter"));
+const AppHeader = React.lazy(() => import("./custom/AppHeader"));
+const AppFooter = React.lazy(() => import("./custom/AppFooter"));
 const Home = React.lazy(() => import("./components/Pages/Home"));
 const Staging = React.lazy(() => import("./components/Pages/Staging"));
 const Contact = React.lazy(() => import("./components/Pages/Contact"));
@@ -47,7 +47,7 @@ const CreateUserType = React.lazy(() =>
 
 const AppCreate = React.lazy(() =>
   import("./components/AppInfo/AppCreationForm/AppCreationForm")
-)
+);
 
 const App = () => {
   const childRef = useRef();
@@ -82,12 +82,14 @@ const App = () => {
               <TempVideo></TempVideo>
               <AppFooter noAction />
             </Route>
-            <Route exact path={`${process.env.PUBLIC_URL}/staging`}>
-              <Staging onSignUp={() => childRef.current.modalHandlerRegistration()}></Staging>
+            <Route exact path={`${process.env.PUBLIC_URL}/apps_spec`}>
+              <Staging
+                onSignUp={() => childRef.current.modalHandlerRegistration()}
+              ></Staging>
             </Route>
             <Route exact path={`${process.env.PUBLIC_URL}/create`}>
-            <AppHeader />
-               <AppCreate />
+              <AppHeader />
+              <AppCreate />
               <AppFooter />
             </Route>
             <Route exact path={`${process.env.PUBLIC_URL}/schedule`}>
