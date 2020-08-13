@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { Redirect, useHistory } from "react-router-dom";
-import { HashLink as Link } from "react-router-hash-link";
-import { NoStackConsumer } from "@nostack/no-stack";
-import { LogoutButton } from "@nostack/no-stack";
-import RegistrationForm from "../../components/RegistrationForm";
-import LoginForm from "../../components/LoginForm";
-import { PLATFORM_ID, TYPE_CUSTOMER_ID } from "../../config";
-import { Context as AuthContext } from "../../context/AuthContext";
+import React, { Component } from 'react';
+import { Redirect, useHistory } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
+import { NoStackConsumer , LogoutButton } from '@nostack/no-stack';
+
+import RegistrationForm from '../../components/RegistrationForm';
+import LoginForm from '../../components/LoginForm';
+import { PLATFORM_ID, TYPE_CUSTOMER_ID } from '../../config';
+import { Context as AuthContext } from '../../context/AuthContext';
 
 class NavBar extends Component {
   static contextType = AuthContext;
@@ -16,19 +16,21 @@ class NavBar extends Component {
     modalLogin: false,
     checkbox: false,
   };
+
   howItWorks = () => {
-    var elmnt = document.getElementById("how-it-works");
+    const elmnt = document.getElementById('how-it-works');
     setTimeout(() => {
       elmnt.scrollIntoView();
     }, 100);
-    return <Redirect to="/" push={true} />;
+    return <Redirect to="/" push />;
   };
+
   about = () => {
-    var elmnt = document.getElementById("about");
+    const elmnt = document.getElementById('about');
     setTimeout(() => {
       elmnt.scrollIntoView();
     }, 100);
-    return <Redirect to="/" push={true} />;
+    return <Redirect to="/" push />;
   };
 
   // Events
@@ -48,6 +50,7 @@ class NavBar extends Component {
     this.modalHandlerRegistration();
     this.modalHandlerLogin();
   };
+
   checkboxHandler = () => {
     this.setState({
       checkbox: !this.state.checkbox,
@@ -107,7 +110,7 @@ class NavBar extends Component {
             </li>
           </ul>
         </nav>
-        {console.log(`modalRegistration`, this.state.modalRegistration)}
+        {console.log('modalRegistration', this.state.modalRegistration)}
         {!this.props.noAction && (
           <div className="grow-12 text-right hide-tablet">
             <NoStackConsumer>
@@ -125,16 +128,16 @@ class NavBar extends Component {
                       </a>
                     </>
                   );
-                } else {
+                } 
                   return (
                     <div className="logout">
-                      <Link to={"/"}>
+                      <Link to="/">
                         <LogoutButton />
                       </Link>
                       <Redirect to="/apps_spec" />
                     </div>
                   );
-                }
+                
               }}
             </NoStackConsumer>
           </div>
@@ -149,8 +152,8 @@ class NavBar extends Component {
                 className="checkbox"
               />
               <div className="lines-icon" data-menu="">
-                <div className="icon-left"></div>
-                <div className="icon-right"></div>
+                <div className="icon-left" />
+                <div className="icon-right" />
               </div>
               <div className="mobile-menu__wrapper">
                 <ul>
@@ -159,12 +162,14 @@ class NavBar extends Component {
                   </li>
                   <li>
                     <Link onClick={this.checkboxHandler} to="/#how-it-works">
-                      HOW IT WORKS{" "}
+                      HOW IT WORKS
+                      {' '}
                     </Link>
                   </li>
                   <li>
                     <Link onClick={this.checkboxHandler} to="/#about-us">
-                      ABOUT US{" "}
+                      ABOUT US
+                      {' '}
                     </Link>
                   </li>
                   <li>
@@ -175,8 +180,9 @@ class NavBar extends Component {
                   {!this.props.noAction && (
                     <li>
                       <a href="#" onClick={this.modalHandlerLogin}>
-                        {" "}
-                        LOGIN{" "}
+                        {' '}
+                        LOGIN
+                        {' '}
                       </a>
                     </li>
                   )}

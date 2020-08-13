@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { FormCreation, Form } from "../AppCreationForm.styles";
-import FormAccordion from "../FormAccordion/FormWithAccordion";
-import { TextField, Typography } from "@material-ui/core";
+import React, { useState } from 'react';
+import { TextField, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import { FormCreation, Form } from '../AppCreationForm.styles';
+import FormAccordion from '../FormAccordion/FormWithAccordion';
 
-import { makeStyles } from "@material-ui/core/styles";
 
 const FormJobSeeker = () => {
   const styles = useStyles()
-  const [screenTitle, setScreenTitle] = useState("");
+  const [screenTitle, setScreenTitle] = useState('');
 
   const onChangeHandler = (e) => {
-    let value = e.targe.value;
+    const {value} = e.targe;
     setScreenTitle(value);
   };
 
@@ -19,12 +19,13 @@ const FormJobSeeker = () => {
       <Form>
         <FormAccordion />
         <Typography>Job Seeker</Typography>
-        <TextField className={styles.input} 
-        value={screenTitle}
-        label="New Screen"
-        type="text"
-        onChange={onChangeHandler}
-        variant="outlined"
+        <TextField
+          className={styles.input} 
+          value={screenTitle}
+          label="New Screen"
+          type="text"
+          onChange={onChangeHandler}
+          variant="outlined"
         />
       </Form>
       

@@ -1,11 +1,11 @@
 import React, { useState, useEffect, createRef } from 'react';
-import SubInfoTypeCreationForm from '../SubInfoTypeCreationForm';
 import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 import { graphql } from '@apollo/react-hoc';
 import { v4 } from 'uuid';
 
+import { InputLabel, makeStyles } from '@material-ui/core';
 import EditInstanceForm from '../../components/EditInstanceForm';
 import DeleteInstanceMenu from '../../components/DeleteInstanceMenu';
 
@@ -14,7 +14,7 @@ import {
   DELETE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
 } from '../../config';
 
-import { InputLabel, makeStyles } from '@material-ui/core';
+import SubInfoTypeCreationForm from '../SubInfoTypeCreationForm';
 
 const SubInfoTypeWrapper = styled.div(
   ({ selected, isDeleting }) => `
@@ -136,7 +136,7 @@ const SubInfoComponent = ({
   const [isDeleteMode, setIsDeleteMode] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [labelParent, setLabel] = useState(label)
-  let wrapperRef = createRef();
+  const wrapperRef = createRef();
 
   const styles = useStyles();
 
@@ -309,7 +309,7 @@ const SubInfoComponent = ({
                     deleteInstance={deleteInstance}
                     onClick={(id) => setCurrentId(id)}
                     selected={currentId === selectedInfoTypeId}
-                    setLabel={ () => setLabel(instance.value)}
+                    setLabel={() => setLabel(instance.value)}
                   />
                 ) : null}
               </InfoTypesStyleWrapper>
@@ -455,9 +455,9 @@ const Child = ({
                     setLabelValue(instance.value);
                     if (!last) {
                       return null;
-                    } else {
+                    } 
                       onClick();
-                    }
+                    
                   }}
                   onChange={handleSubInfoTypeValueChange}
                   key={v4()}
@@ -493,7 +493,7 @@ const Child = ({
                 <Child
                   {...instance}
                   show={showChild}
-                  last={true}
+                  last
                   instanceId={instance.id}
                   refetchQueries={refetchQueries}
                   updateInstance={() => updateInstance}

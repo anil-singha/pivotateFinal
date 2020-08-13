@@ -111,11 +111,11 @@ function AppCreationForm({
           type='text'
           onChange={handleChange}
           onKeyPress={handleKeyPress}
-          value={ appValue }
+          value={appValue}
           disabled={loading}
         />
       </label>
-      <Button type='submit'  disabled={loading}  onClick={handleSubmit}>
+      <Button type='submit' disabled={loading} onClick={handleSubmit}>
         {
           loading
             ? 'Creating App...'

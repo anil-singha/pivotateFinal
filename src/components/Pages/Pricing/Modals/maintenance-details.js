@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const maintenanceDetails = () => {
   return (
@@ -13,11 +13,13 @@ const maintenanceDetails = () => {
           <div className="flex">
             <div>
               <div className="">
-                {" "}
+                {' '}
                 <strong className="">
-                  {" "}
-                  <span className="pricing__price teal--text">$45 </span>/month
-                </strong>{" "}
+                  {' '}
+                  <span className="pricing__price teal--text">$45 </span>
+                  /month
+                </strong>
+                {' '}
               </div>
               <p>
                 Includes server and cloud storage/computation costs until they
@@ -26,19 +28,20 @@ const maintenanceDetails = () => {
               </p>
             </div>
           </div>
-          <br></br>
-          <br></br>
+          <br />
+          <br />
           <div className="flex">
             <div>
               <div className="pricing__description">
                 Special cloud storage/computation needs
               </div>
               <div className="">
-                {" "}
+                {' '}
                 <strong className="">
-                  {" "}
+                  {' '}
                   <span className="pricing__price teal--text">At cost </span>
-                </strong>{" "}
+                </strong>
+                {' '}
               </div>
               <p>
                 In other words, we don’t charge you more than we need to pay

@@ -14,10 +14,6 @@ import styled from 'styled-components';
 
 import { withNoStack } from '@nostack/no-stack';
 
-import ForgotPasswordButton from '../ForgotPasswordButton';
-
-// ns__custom_start unit: general, comp: LoginForm, loc: addedImport
-
 import {
   
   TextField,
@@ -25,6 +21,10 @@ import {
   Button,
   InputLabel,
 } from '@material-ui/core';
+import ForgotPasswordButton from '../ForgotPasswordButton';
+
+// ns__custom_start unit: general, comp: LoginForm, loc: addedImport
+
 import TransitionsModal from '../../custom/Modal';
 
 // ns__custom_end unit: general, comp: LoginForm, loc: addedImport
@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '6px 0',
     
     padding: 0,
-    [`& fieldset`]: {
+    '& fieldset': {
       borderRadius: '32px',
     },
   },
@@ -129,16 +129,16 @@ const LoginForm = ({
     // ns__custom_start unit: general, comp: LoginForm, loc: insideReturn
     <TransitionsModal open={open} onClose={onClose}>
       <div>
-      <LogoContainer>
-        <a href='/'>
-          <img
-            src='https://pivotatestaticassets.com/images/Pivotate Logo.svg'
-            alt='Pivotate Logo'
-            width='170'
-          />
-        </a>
-      </LogoContainer>
-      <InputLabel className={styles.inputLabel}>Login</InputLabel>
+        <LogoContainer>
+          <a href='/'>
+            <img
+              src='https://pivotatestaticassets.com/images/Pivotate Logo.svg'
+              alt='Pivotate Logo'
+              width='170'
+            />
+          </a>
+        </LogoContainer>
+        <InputLabel className={styles.inputLabel}>Login</InputLabel>
       </div>
       <form onSubmit={handleSubmit}>
         <Row>
@@ -179,7 +179,8 @@ const LoginForm = ({
             variant='contained'
             color='primary'
           >
-            Log In{' '}
+            Log In
+            {' '}
           </Button>
         </Row>
         {error && <Row>{error}</Row>}

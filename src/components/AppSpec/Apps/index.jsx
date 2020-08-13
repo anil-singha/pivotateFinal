@@ -6,7 +6,9 @@
 // ns__file unit: appSpec, comp: Apps
 
 // ns__custom_start unit: appSpec, comp: Apps, loc: beforeImports
-'use strict';
+
+
+
 // ns__custom_end unit: appSpec, comp: Apps, loc: beforeImports
 
 import React, { Component, createRef } from 'react';
@@ -19,15 +21,15 @@ import { flattenData } from '../../../flattenData';
 // ns__remove_import AppCreationForm from '../AppCreationForm';
 import App from '../App';
 
-import { SOURCE_APP_SPEC_ID } from '../../../config';
+import { SOURCE_APP_SPEC_ID , TYPE_DESCRIPTION_ID } from '../../../config';
 import {
   APP_SPEC_RELATIONSHIPS,
   SOURCE_APP_SPEC_QUERY,
-} from '../../source-props/appSpec';
+} from '../../source-props/appInfo';
 
 // ns__custom_start unit: appSpec, comp: Apps, loc: addedImports
 import FirstTimeAppCreationForm from '../../../custom/FirstTimeAppCreationForm';
-import { TYPE_DESCRIPTION_ID } from '../../../config';
+
 import { getDescriptionChild } from '../../../custom/getDescriptionChild';
 import { Context as UnitDataContext } from '../../../custom/UnitDataContext';
 
@@ -47,6 +49,7 @@ const AppsStyleWrapper = styled.div`
 class Apps extends Component {
   // ns__custom_start unit: appSpec, comp: Apps, loc: beginning
   static contextType = UnitDataContext;
+
   // ns__custom_end unit: appSpec, comp: Apps, loc: beginning
   state = {
     selectedAppId: null,
@@ -131,14 +134,14 @@ class Apps extends Component {
                   // ns__custom_start unit: appSpec, comp: Apps, loc: addedPropsForCreationForm
                   // ns__custom_end unit: appSpec, comp: Apps, loc: addedPropsForCreationForm
                 />
-              ): 
-              <AppsStyleWrapper
-                ref={this.wrapperRef}
-                onClick={this.handleClick}
-                show
-              >
-                {/* ns__start_section listElements */}
-                {apps &&
+              ): (
+                <AppsStyleWrapper
+                  ref={this.wrapperRef}
+                  onClick={this.handleClick}
+                  show
+                >
+                  {/* ns__start_section listElements */}
+                  {apps &&
                   apps.map((app) => (
                     <App
                       key={v4()}
@@ -151,9 +154,9 @@ class Apps extends Component {
                       // ns__custom_end unit: appSpec, comp: Apps, loc: addedPropsForChildren
                     />
                   ))}
-                {/* ns__start_section listElements */}
-              </AppsStyleWrapper>
-              }
+                  {/* ns__start_section listElements */}
+                </AppsStyleWrapper>
+            )}
 
               
 

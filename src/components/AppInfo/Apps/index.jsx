@@ -1,18 +1,18 @@
-import React, { Component, createRef } from "react";
-import { Unit } from "@nostack/no-stack";
-import styled from "styled-components";
-import { v4 } from "uuid";
+import React, { Component, createRef } from 'react';
+import { Unit } from '@nostack/no-stack';
+import styled from 'styled-components';
+import { v4 } from 'uuid';
 
-import { flattenData } from "../../../flattenData";
+import { flattenData } from '../../../flattenData';
 
-import AppCreationForm from "../AppCreationForm";
-import App from "../App";
+import AppCreationForm from '../AppCreationForm';
+import App from '../App';
 
-import { SOURCE_REGISTRATION_INFO_ID } from "../../../config";
+import { SOURCE_REGISTRATION_INFO_ID } from '../../../config';
 import {
   REGISTRATION_INFO_RELATIONSHIPS,
   SOURCE_REGISTRATION_INFO_QUERY,
-} from "../../source-props/appInfo";
+} from '../../source-props/appInfo';
 
 // add styling here
 const AppsStyleWrapper = styled.div`
@@ -29,11 +29,11 @@ class Apps extends Component {
   wrapperRef = createRef();
 
   componentDidMount() {
-    document.addEventListener("mousedown", this.handleClick);
+    document.addEventListener('mousedown', this.handleClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleClick);
+    document.removeEventListener('mousedown', this.handleClick);
   }
 
   handleClick = (e) => {
@@ -62,7 +62,7 @@ class Apps extends Component {
         parameters={parameters}
       >
         {({ loading, error, data, refetchQueries }) => {
-          if (loading) return "Loading...";
+          if (loading) return 'Loading...';
 
           if (error) {
             console.error(error);

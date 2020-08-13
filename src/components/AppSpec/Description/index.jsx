@@ -6,7 +6,9 @@
 // ns__file unit: appSpec, comp: Description
 
 // ns__custom_start unit: appSpec, comp: Description, loc: beforeImports
-'use strict';
+
+
+
 // ns__custom_end unit: appSpec, comp: Description, loc: beforeImports
 
 import React, { useState } from 'react';

@@ -7,7 +7,9 @@
 // ns__file unit: appSpec, comp: App
 
 // ns__custom_start unit: appSpec, comp: App, loc: beforeImports
-'use strict';
+
+
+
 // ns__custom_end unit: appSpec, comp: App, loc: beforeImports
 import React, { useState } from 'react';
 import styled from 'styled-components';
@@ -66,11 +68,11 @@ const Button = styled.button`
 
 
 AppStyleWrapper.defaultProps = {
-  "data-id": "App__wrapper"
+  'data-id': 'App__wrapper'
 }
 
 Button.defaultProps = {
-  "data-id": "App__button"
+  'data-id': 'App__button'
 }
 
 // ns__custom_end unit: appSpec, comp: App, loc: styling
@@ -140,7 +142,7 @@ function App({
       <AppStyleWrapper>
         <EditInstanceForm
           id={app.id}
-          label={`What's the preferred title ${appValue ? `for ${appValue}?` : `off you App?`}`}
+          label={`What's the preferred title ${appValue ? `for ${appValue}?` : 'off you App?'}`}
           value={appValue}
           onChange={handleAppValueChange}
           onSave={handleAppValueSave}
@@ -207,12 +209,14 @@ function App({
         label={appValue}
         refetchQueries={refetchQueries}
       />
-      {!descriptions.length ? <Descriptions
-        descriptions={descriptions}
-        appId={app.id}
-        label={appValue}
-        refetchQueries={refetchQueries}
-      /> : null}
+      {!descriptions.length ? (
+        <Descriptions
+          descriptions={descriptions}
+          appId={app.id}
+          label={appValue}
+          refetchQueries={refetchQueries}
+        />
+) : null}
     </AppStyleWrapper>
   );
 }

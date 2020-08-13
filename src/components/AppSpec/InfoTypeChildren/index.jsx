@@ -1,29 +1,29 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { EXECUTE } from "@nostack/no-stack";
-import compose from "@shopify/react-compose";
-import { graphql } from "@apollo/react-hoc";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { EXECUTE } from '@nostack/no-stack';
+import compose from '@shopify/react-compose';
+import { graphql } from '@apollo/react-hoc';
 
 import {
   UPDATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
   DELETE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
   ADD_HAS_PARENT_FOR_PARENT_ACTION_ID,
   CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
-} from "../../../config";
+} from '../../../config';
 
-import EditInstanceForm from "../../EditInstanceForm";
-import DeleteInstanceMenu from "../../DeleteInstanceMenu";
+import EditInstanceForm from '../../EditInstanceForm';
+import DeleteInstanceMenu from '../../DeleteInstanceMenu';
 
 // add styling here
 const InfoTypeStyleWrapper = styled.div(
   ({ selected, isDeleting }) => `
   margin: 2em 1em;
   padding: 1.5em;
-  border: ${selected ? "1px solid aquamarine" : "1px solid white"};
+  border: ${selected ? '1px solid aquamarine' : '1px solid white'};
   border-radius: 10px;
   box-shadow: 5px 5px 10px #888888;
-  background-color: ${isDeleting && "tomato"};
-  cursor: ${selected ? "auto" : "pointer"};
+  background-color: ${isDeleting && 'tomato'};
+  cursor: ${selected ? 'auto' : 'pointer'};
 
   &:hover {
     border: 1px solid aquamarine;
@@ -40,7 +40,7 @@ const Button = styled.button`
   color: #bbbbbb;
   transition: color 0.5s ease;
   &:hover {
-    color: ${(props) => props.hoverColor || "#000000"};
+    color: ${(props) => props.hoverColor || '#000000'};
   }
 `;
 
@@ -68,8 +68,8 @@ function InfoType({
   const [isDeleteMode, updateIsDeleteMode] = useState(false);
   const [isDeleting, updateIsDeleting] = useState(false);
 
-  console.log(`infoTypeId`, infoTypeId)
-  console.log(`parentIdparentId, `, parentId)
+  console.log('infoTypeId', infoTypeId)
+  console.log('parentIdparentId, ', parentId)
   // if (!selected) {
   //   return (
   //     <InfoTypeStyleWrapper onClick={() => onSelect(infoType.id)}>
@@ -158,7 +158,7 @@ function InfoType({
       });
 
       const newInfoTypeData = JSON.parse(createInfoTypeResponse.data.Execute);
-      console.log(`newInfoTypeData.instanceId`, newInfoTypeData.instanceId)
+      console.log('newInfoTypeData.instanceId', newInfoTypeData.instanceId)
       const createChildInfoTypeResponse = await saveInstance({
         variables: {
           actionId: ADD_HAS_PARENT_FOR_PARENT_ACTION_ID,
@@ -203,7 +203,7 @@ function InfoType({
 
   return (
     <div className=" ">
-      <span class="flex">
+      <span className="flex">
         <input
           type="checkbox"
           name="checkbox"
@@ -212,21 +212,24 @@ function InfoType({
           value="value"
         />
 
-        <label for={value.id}>
-          {" "}
-          <small class="grey--text"> Sub Info Type: </small> {value.value}{" "}
+        <label htmlFor={value.id}>
+          {' '}
+          <small className="grey--text"> Sub Info Type: </small> 
+          {' '}
+          {value.value}
+          {' '}
         </label>
         <span>
           <a
             type="a"
             onClick={() => updateIsEditMode(true)}
-            style={{ display: "inline-block" }}
+            style={{ display: 'inline-block' }}
           >
             &#9998;
           </a>
           <a
             type="a"
-            style={{ display: "inline-block" }}
+            style={{ display: 'inline-block' }}
             onClick={() => updateIsDeleteMode(true)}
           >
             &#128465;
@@ -238,8 +241,8 @@ function InfoType({
 }
 
 export default compose(
-  graphql(EXECUTE, { name: "createInfoType" }),
-  graphql(EXECUTE, { name: "updateInstance" }),
-  graphql(EXECUTE, { name: "deleteInstance" }),
-  graphql(EXECUTE, { name: "saveInstance" })
+  graphql(EXECUTE, { name: 'createInfoType' }),
+  graphql(EXECUTE, { name: 'updateInstance' }),
+  graphql(EXECUTE, { name: 'deleteInstance' }),
+  graphql(EXECUTE, { name: 'saveInstance' })
 )(InfoType);

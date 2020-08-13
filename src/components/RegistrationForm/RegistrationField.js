@@ -9,9 +9,9 @@
 
 // ns__custom_end unit: general, comp: RegistrationField, loc: beforeImports
 
-import React from "react";
-import { Field, ErrorMessage } from "formik";
-import { Row, ErrorContainer } from "./RegistrationForm.style";
+import React from 'react';
+import { Field, ErrorMessage } from 'formik';
+import { Row, ErrorContainer } from './RegistrationForm.style';
 
 const RegistrationField = ({
   fieldLabel,
@@ -23,8 +23,8 @@ const RegistrationField = ({
   value
 }) => (
   <Row>
-    {type !== "checkbox" && (
-      <label style={{ width: "100%" }}>
+    {type !== 'checkbox' && (
+      <label style={{ width: '100%' }}>
         {!as && (
           <Field
             className="form__input"
@@ -45,12 +45,13 @@ const RegistrationField = ({
         )}
       </label>
     )}
-    {type === "checkbox" && (
+    {type === 'checkbox' && (
       <Field name={name}>
         {({ field, form }) => {
           return (
             <label>
-              <input {...field} type="checkbox" />I agree to our
+              <input {...field} type="checkbox" />
+              I agree to our
               <b>
                 <a href="/terms-and-conditions" target="_blank">
                   &nbsp; Terms of Use &nbsp;

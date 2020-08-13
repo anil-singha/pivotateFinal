@@ -14,6 +14,7 @@ import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 import { graphql } from '@apollo/react-hoc';
 
+import { InputLabel, makeStyles } from '@material-ui/core';
 import {
   UPDATE_USER_TYPE_FOR_APP_SPEC_ACTION_ID,
   DELETE_USER_TYPE_FOR_APP_SPEC_ACTION_ID,
@@ -26,7 +27,6 @@ import DeleteInstanceMenu from '../../DeleteInstanceMenu';
 import Screens from '../Screens';
 
 // ns__custom_start unit: appSpec, comp: UserType, loc: addedImports
-import { InputLabel, makeStyles } from '@material-ui/core';
 
 // ns__custom_end unit: appSpec, comp: UserType, loc: addedImports
 
@@ -214,12 +214,12 @@ function UserType({
       <TitleWrapper>
         {userTypeValue}
         <div>
-        <Button type='button' onClick={() => updateIsEditMode(true)}>
-          &#9998;
-        </Button>
-        <Button type='button' onClick={() => updateIsDeleteMode(true)}>
-          &#128465;
-        </Button>
+          <Button type='button' onClick={() => updateIsEditMode(true)}>
+            &#9998;
+          </Button>
+          <Button type='button' onClick={() => updateIsDeleteMode(true)}>
+            &#128465;
+          </Button>
         </div>
       </TitleWrapper>
       {/* // ns__custom_end unit: appSpec, comp: UserType, loc: insideReturn */}

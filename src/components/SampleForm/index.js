@@ -8,7 +8,7 @@ import { graphql } from '@apollo/react-hoc';
 import { withNoStack, EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 import styled from 'styled-components';
-import {SUBMIT_FORM_FOR_REGISTRATION_INFO_ACTION_ID} from "../../config";
+import {SUBMIT_FORM_FOR_REGISTRATION_INFO_ACTION_ID} from '../../config';
 
 const Form = styled(BareForm)`
   padding: 2em;

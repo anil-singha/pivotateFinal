@@ -160,18 +160,18 @@ const SubInfoType = ({
   }
 
     return (
-    <SubInfoTypeWrapper selected={selected}>
-      {infoTypeValue}
+      <SubInfoTypeWrapper selected={selected}>
+        {infoTypeValue}
       
-      <Button type='button' onClick={() => setIsEditMode(true)}>
-        &#9998;
-      </Button>
-      <Button type='button' onClick={() => setIsDeleteMode(true)}>
-        &#128465;
-      </Button>
+        <Button type='button' onClick={() => setIsEditMode(true)}>
+          &#9998;
+        </Button>
+        <Button type='button' onClick={() => setIsDeleteMode(true)}>
+          &#128465;
+        </Button>
 
       
-    </SubInfoTypeWrapper>
+      </SubInfoTypeWrapper>
   );
 };
 

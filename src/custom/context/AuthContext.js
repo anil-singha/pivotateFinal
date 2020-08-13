@@ -1,12 +1,12 @@
-import createDateContext from "./createDataContext";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory } from 'react-router-dom';
+import createDateContext from './createDataContext';
 
 
 const authReducer = (state, actions) => {
   switch (actions.type) {
-    case "login":
+    case 'login':
       return { userLoggedIn: actions.payload };
-    case "logout":
+    case 'logout':
       return { userLoggedIn: actions.payload };
     default:
       return state;
@@ -16,13 +16,13 @@ const authReducer = (state, actions) => {
 const loginUser = (dispatch) => (userFlag) => {
   let userLoggedin;
   if (userFlag < 0) userLoggedin = false;
-  localStorage.setItem("userFlag", true);
-  dispatch({ type: "login", payload: true });
+  localStorage.setItem('userFlag', true);
+  dispatch({ type: 'login', payload: true });
 };
 
 const logoutUser = (dispatch) => () => {
-  localStorage.removeItem("userFlag");
-  dispatch({ type: "logout", payload: false });
+  localStorage.removeItem('userFlag');
+  dispatch({ type: 'logout', payload: false });
   
 };
 

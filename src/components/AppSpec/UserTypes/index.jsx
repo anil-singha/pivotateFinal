@@ -30,7 +30,7 @@ const Button = styled.button`
 `;
 
 UserTypesStyleWrapper.defaultProps = {
-  "data-id": "userTypes__wrapper"
+  'data-id': 'userTypes__wrapper'
 }
 // ns__custom_end unit: appSpec, comp: UserTypes, loc: styling
 
@@ -85,8 +85,8 @@ class UserTypes extends Component {
 
     return (
       <>
-      <UserTypesStyleWrapper ref={this.wrapperRef} onClick={this.handleClick}>
-        {/* <UserTypeCreationForm
+        <UserTypesStyleWrapper ref={this.wrapperRef} onClick={this.handleClick}>
+          {/* <UserTypeCreationForm
           parentId={ appId }
           refetchQueries={refetchQueries}
           // ns__custom_start unit: appSpec, comp: UserTypes, loc: addedPropsForCreationForm 
@@ -94,35 +94,40 @@ class UserTypes extends Component {
           // ns__custom_start unit: appSpec, comp: UserTypes, loc: addedPropsForCreationForm 
         /> */}
 
-        { userTypes.map(userType => (
-          <UserType
-            key={v4()}
-            userType={ userType }
-            selected={ userType.id === selectedUserTypeId }
-            onUpdate={onUpdate}
-            parentId={ appId }
-            refetchQueries={refetchQueries}
-            onSelect={this.handleSelect}
-          />
+          { userTypes.map(userType => (
+            <UserType
+              key={v4()}
+              userType={userType}
+              selected={userType.id === selectedUserTypeId}
+              onUpdate={onUpdate}
+              parentId={appId}
+              refetchQueries={refetchQueries}
+              onSelect={this.handleSelect}
+            />
         )) }
-  {/* ns__custom_start unit: appSpec, comp: UserTypes, loc: renderEnding */}
+          {/* ns__custom_start unit: appSpec, comp: UserTypes, loc: renderEnding */}
  
-  {/* ns__custom_end unit: appSpec, comp: UserTypes, loc: renderEnding */}
+          {/* ns__custom_end unit: appSpec, comp: UserTypes, loc: renderEnding */}
 
-  </UserTypesStyleWrapper>
-  <UserTypeCreationForm
-          parentId={ appId }
+        </UserTypesStyleWrapper>
+        <UserTypeCreationForm
+          parentId={appId}
           refetchQueries={refetchQueries}
           // ns__custom_start unit: appSpec, comp: UserTypes, loc: addedPropsForCreationForm 
           validateUserTypes={validateUserTypes}
           onChange={this.onChangeHelper}
           label={label}
-          // ns__custom_start unit: appSpec, comp: UserTypes, loc: addedPropsForCreationForm 
         />
-   {userTypeCreationCount >= 3 ? <ScreenCreationForm disabled={true} validateScreens={0}
-   textLabel={`What is the Screen name fo...`} userTypeCreationCount={userTypeCreationCount} label={label}
-   /> : null}   
-  </>
+        {userTypeCreationCount >= 3 ? (
+          <ScreenCreationForm
+            disabled
+            validateScreens={0}
+            textLabel="What is the Screen name fo..."
+            userTypeCreationCount={userTypeCreationCount}
+            label={label}
+          />
+) : null}   
+      </>
   )
   }
 }

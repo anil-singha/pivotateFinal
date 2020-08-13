@@ -26,7 +26,7 @@ const FormToggle = () => {
         <SampleForm
           onCancel={closeModal}
           successView={
-            <FormSuccess onDismiss={closeModal}/>
+            <FormSuccess onDismiss={closeModal} />
           }
         />
       )}

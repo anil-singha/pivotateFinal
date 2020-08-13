@@ -1,11 +1,11 @@
-import { ApolloClient } from "apollo-client";
-import { ApolloLink } from "apollo-link";
-import { InMemoryCache } from "apollo-cache-inmemory";
-import { v4 } from "uuid";
+import { ApolloClient } from 'apollo-client';
+import { ApolloLink } from 'apollo-link';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { v4 } from 'uuid';
 
-import { createAuthLink, httpLink } from "@nostack/no-stack";
+import { createAuthLink, httpLink } from '@nostack/no-stack';
 
-import { PLATFORM_ID } from "../config";
+import { PLATFORM_ID } from '../config';
 
 const authLink = createAuthLink(PLATFORM_ID);
 

@@ -1,22 +1,22 @@
-import React, { useRef } from "react";
-import styled from "styled-components";
-import { NoStackConsumer } from "@nostack/no-stack";
+import React, { useRef } from 'react';
+import styled from 'styled-components';
+import { NoStackConsumer } from '@nostack/no-stack';
 
-import { PLATFORM_ID, TYPE_CUSTOMER_ID } from "../../../config";
+import StepZilla from 'react-stepzilla';
+import { useSelector, useDispatch } from 'react-redux';
+import { PLATFORM_ID, TYPE_CUSTOMER_ID } from '../../../config';
 
-import AuthTabs from "../../AuthTabs";
-import CreateApp from "../../meetingSteps/createApp";
-import UserType from "../../meetingSteps/createUserType";
-import JobSeeker from "../../meetingSteps/jobSeeker";
-import LoginForm from "../../LoginForm";
-import RegistrationForm from "../../RegistrationForm";
-import Home from "../../Pages/Home";
-import Apps from "../../AppSpec/Apps";
-import AppHeader from "../../../custom/AppFooter";
-import AppFooter from "../../../custom/AppFooter";
-import StepZilla from "react-stepzilla";
-import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement } from "../../../actions";
+import AuthTabs from '../../AuthTabs';
+import CreateApp from '../../meetingSteps/createApp';
+import UserType from '../../meetingSteps/createUserType';
+import JobSeeker from '../../meetingSteps/jobSeeker';
+import LoginForm from '../../LoginForm';
+import RegistrationForm from '../../RegistrationForm';
+import Home from '../Home';
+import Apps from '../../AppSpec/Apps';
+import AppHeader from '../../../custom/AppFooter';
+import AppFooter from '../../../custom/AppFooter';
+import { increment, decrement } from '../../../actions';
 
 const LoginWrapper = styled.div`
   display: flex;
@@ -47,7 +47,7 @@ const App = ({ loading, currentUser, login }) => {
                   <AppHeader ref={childRef} />
                   <Home
                     onSignUp={() => childRef.current.modalHandlerRegistration()}
-                  ></Home>
+                  />
                   <AppFooter />
                 </>
               );

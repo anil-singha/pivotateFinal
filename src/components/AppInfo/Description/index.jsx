@@ -1,27 +1,27 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { EXECUTE } from "@nostack/no-stack";
-import compose from "@shopify/react-compose";
-import { graphql } from "@apollo/react-hoc";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { EXECUTE } from '@nostack/no-stack';
+import compose from '@shopify/react-compose';
+import { graphql } from '@apollo/react-hoc';
 
 import {
   UPDATE_DESCRIPTION_FOR_REGISTRATION_INFO_ACTION_ID,
   DELETE_DESCRIPTION_FOR_REGISTRATION_INFO_ACTION_ID,
-} from "../../../config";
+} from '../../../config';
 
-import EditInstanceForm from "../../EditInstanceForm";
-import DeleteInstanceMenu from "../../DeleteInstanceMenu";
+import EditInstanceForm from '../../EditInstanceForm';
+import DeleteInstanceMenu from '../../DeleteInstanceMenu';
 
 // add styling here
 const DescriptionStyleWrapper = styled.div(
   ({ selected, isDeleting }) => `
   margin: 2em 1em;
   padding: 1.5em;
-  border: ${selected ? "1px solid aquamarine" : "1px solid white"};
+  border: ${selected ? '1px solid aquamarine' : '1px solid white'};
   border-radius: 10px;
   box-shadow: 5px 5px 10px #888888;
-  background-color: ${isDeleting && "tomato"};
-  cursor: ${selected ? "auto" : "pointer"};
+  background-color: ${isDeleting && 'tomato'};
+  cursor: ${selected ? 'auto' : 'pointer'};
 
   &:hover {
     border: 1px solid aquamarine;
@@ -38,7 +38,7 @@ const Button = styled.button`
   color: #bbbbbb;
   transition: color 0.5s ease;
   &:hover {
-    color: ${(props) => props.hoverColor || "#000000"};
+    color: ${(props) => props.hoverColor || '#000000'};
   }
 `;
 
@@ -159,6 +159,6 @@ function Description({
 }
 
 export default compose(
-  graphql(EXECUTE, { name: "updateInstance" }),
-  graphql(EXECUTE, { name: "deleteInstance" })
+  graphql(EXECUTE, { name: 'updateInstance' }),
+  graphql(EXECUTE, { name: 'deleteInstance' })
 )(Description);

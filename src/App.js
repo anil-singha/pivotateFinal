@@ -1,10 +1,9 @@
-import React, { Suspense, lazy, useRef } from "react";
+import React, { Suspense, lazy, useRef } from 'react';
 
-import "./scss/style.scss";
+import './scss/style.scss';
 
-import { NoStackConsumer } from "@nostack/no-stack";
+import { NoStackConsumer } from '@nostack/no-stack';
 
-import { PLATFORM_ID, TYPE_CUSTOMER_ID } from "./config";
 import {
   BrowserRouter,
   HashRouter,
@@ -13,40 +12,42 @@ import {
   Link,
   Switch,
   withRouter,
-} from "react-router-dom";
+} from 'react-router-dom';
 
-import ScrollToTop from "react-router-scroll-top";
-import Confirmation from "./components/Pages/Confirmation";
-const AppHeader = React.lazy(() => import("./custom/AppHeader"));
-const AppFooter = React.lazy(() => import("./custom/AppFooter"));
-const Home = React.lazy(() => import("./components/Pages/Home"));
-const Staging = React.lazy(() => import("./components/Pages/Staging"));
-const Contact = React.lazy(() => import("./components/Pages/Contact"));
-const Pricing = React.lazy(() => import("./components/Pages/Pricing"));
+import ScrollToTop from 'react-router-scroll-top';
+import { PLATFORM_ID, TYPE_CUSTOMER_ID } from './config';
+import Confirmation from './components/Pages/Confirmation';
+
+const AppHeader = React.lazy(() => import('./custom/AppHeader'));
+const AppFooter = React.lazy(() => import('./custom/AppFooter'));
+const Home = React.lazy(() => import('./components/Pages/Home'));
+const Staging = React.lazy(() => import('./components/Pages/Staging'));
+const Contact = React.lazy(() => import('./components/Pages/Contact'));
+const Pricing = React.lazy(() => import('./components/Pages/Pricing'));
 const privacyPolicy = React.lazy(() =>
-  import("./components/Pages/Privacy-policy")
+  import('./components/Pages/Privacy-policy')
 );
 const confirmation = React.lazy(() =>
-  import("./components/Pages/Confirmation")
+  import('./components/Pages/Confirmation')
 );
 const underConstruction = React.lazy(() =>
-  import("./components/Pages/Under-construction")
+  import('./components/Pages/Under-construction')
 );
 const termsAndConditions = React.lazy(() =>
-  import("./components/Pages/Terms-and-conditions")
+  import('./components/Pages/Terms-and-conditions')
 );
-const TempVideo = React.lazy(() => import("./components/Pages/Temp-video"));
-const Schedule = React.lazy(() => import("./components/Pages/Schedule"));
+const TempVideo = React.lazy(() => import('./components/Pages/Temp-video'));
+const Schedule = React.lazy(() => import('./components/Pages/Schedule'));
 
 const JobSeeker = React.lazy(() =>
-  import("./components/meetingSteps/jobSeeker")
+  import('./components/meetingSteps/jobSeeker')
 );
 const CreateUserType = React.lazy(() =>
-  import("./components/meetingSteps/createUserType")
+  import('./components/meetingSteps/createUserType')
 );
 
 const AppCreate = React.lazy(() =>
-  import("./components/AppInfo/AppCreationForm/AppCreationForm")
+  import('./components/AppInfo/AppCreationForm/AppCreationForm')
 );
 
 const App = () => {
@@ -55,37 +56,37 @@ const App = () => {
   return (
     <React.Suspense
       path="/"
-      fallback={
+      fallback={(
         <section className="">
           <div className="container full-width">
             <div className="flex flex-wrap items-center">
               <div className="hero__header">
                 <div className="hero__text">
-                  <strong></strong>
+                  <strong />
                 </div>
               </div>
             </div>
           </div>
         </section>
-      }
+      )}
     >
       <BrowserRouter basename={`${process.env.PUBLIC_URL}/`}>
         <ScrollToTop>
           <Switch>
             <Route exact path={`${process.env.PUBLIC_URL}/confirmation`}>
               <AppHeader noAction />
-              <Confirmation></Confirmation>
+              <Confirmation />
               <AppFooter noAction />
             </Route>
             <Route exact path={`${process.env.PUBLIC_URL}/tempvideo`}>
               <AppHeader noAction />
-              <TempVideo></TempVideo>
+              <TempVideo />
               <AppFooter noAction />
             </Route>
             <Route exact path={`${process.env.PUBLIC_URL}/apps_spec`}>
               <Staging
                 onSignUp={() => childRef.current.modalHandlerRegistration()}
-              ></Staging>
+              />
             </Route>
             <Route exact path={`${process.env.PUBLIC_URL}/create`}>
               <AppHeader />
@@ -94,7 +95,7 @@ const App = () => {
             </Route>
             <Route exact path={`${process.env.PUBLIC_URL}/schedule`}>
               <AppHeader />
-              <Schedule></Schedule>
+              <Schedule />
               <AppFooter noAction />
             </Route>
             <Route
@@ -135,8 +136,8 @@ const App = () => {
                 exact
                 path={`${process.env.PUBLIC_URL}/contact`}
                 component={Contact}
-              ></Route>
-              <Route exact path={`${process.env.PUBLIC_URL}/pricing`}></Route>
+              />
+              <Route exact path={`${process.env.PUBLIC_URL}/pricing`} />
 
               <Route
                 path={`${process.env.PUBLIC_URL}/pricing`}
@@ -151,15 +152,15 @@ const App = () => {
               <Route
                 path={`${process.env.PUBLIC_URL}/under-construction`}
                 component={underConstruction}
-              ></Route>
+              />
               <Route
                 path={`${process.env.PUBLIC_URL}/privacy-policy`}
                 component={privacyPolicy}
-              ></Route>
+              />
               <Route
                 path={`${process.env.PUBLIC_URL}/terms-and-conditions`}
                 component={termsAndConditions}
-              ></Route>
+              />
 
               <AppFooter
                 onSignUp={() => childRef.current.modalHandlerRegistration()}
