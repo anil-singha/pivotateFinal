@@ -19,42 +19,39 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-evenly',
-    borderRadius: '1rem'
+    borderRadius: '1rem',
   },
 }));
- 
-export default function TransitionsModal({label, children, open, onClose}) {
+
+export default function TransitionsModal({ label, children, open, onClose }) {
   const classes = useStyles();
   const [openModal, setOpen] = React.useState(open);
 
   const handleClose = () => {
     setOpen(false);
-    onClose()
+    onClose();
   };
 
   return (
     <>
       {openModal ? (
         <Modal
-          aria-labelledby="transition-modal-title"
-          aria-describedby="transition-modal-description"
+          aria-labelledby='transition-modal-title'
+          aria-describedby='transition-modal-description'
           className={classes.modal}
           open={openModal}
           onClose={handleClose}
           closeAfterTransition
           BackdropComponent={Backdrop}
           BackdropProps={{
-        timeout: 500,
-      }}
+            timeout: 500,
+          }}
         >
           <Fade in={open}>
-            <div className={classes.paper}>
-              {children}
-            </div>
+            <div className={classes.paper}>{children}</div>
           </Fade>
         </Modal>
-) : null}
-   
+      ) : null}
     </>
   );
 }

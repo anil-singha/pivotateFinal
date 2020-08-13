@@ -1,8 +1,7 @@
 import React, { Component, createRef } from 'react';
-import { Unit , withNoStack } from '@nostack/no-stack';
+import { Unit, withNoStack } from '@nostack/no-stack';
 import styled from 'styled-components';
 import { v4 } from 'uuid';
-
 
 import { flattenData } from '../../flattenData';
 
@@ -79,8 +78,8 @@ class Apps extends Component {
 
           return (
             <>
-              <div className="box">
-                <div className="flex flex-column">
+              <div className='box'>
+                <div className='flex flex-column'>
                   {apps &&
                     apps.map((app, i) => (
                       <App

@@ -133,9 +133,9 @@ const SubInfoTypeCreationForm = ({
   const styles = useStyles();
   const [callout, setCallout] = useState(false);
   const showCalloutBox = callout || validateSubInfoTypes === 0;
-  const callOutText = 'What\'s the name of this Sub Info Type?';
+  const callOutText = "What's the name of this Sub Info Type?";
 
-  console.log('validateSubInfoTypes', validateSubInfoTypes)
+  console.log('validateSubInfoTypes', validateSubInfoTypes);
 
   // ns__custom_start unit: appSpec, comp: SubChild_creation, loc: addedDeclaration
 
@@ -176,13 +176,12 @@ const SubInfoTypeCreationForm = ({
           actionId: ADD_HAS_PARENT_FOR_PARENT_ACTION_ID,
           executionParameters: JSON.stringify({
             childInstanceId: infoTypes.id,
-            parentInstanceId: newInfoTypeData.instanceId
+            parentInstanceId: newInfoTypeData.instanceId,
           }),
           unrestricted: false,
         },
         refetchQueries,
       });
-
     } catch (err) {
       console.log(err);
     }
@@ -203,12 +202,12 @@ const SubInfoTypeCreationForm = ({
   return (
     <Form>
       {/* ns__custom_start unit: appSpec, comp: SubChild_creation, loc: insideReturn */}
-      <Label htmlFor="screen-value">
+      <Label htmlFor='screen-value'>
         Sub Info Type:
         <InputContainer>
           <Input
-            id="screen-value"
-            type="text"
+            id='screen-value'
+            type='text'
             onChange={handleChange}
             onKeyPress={handleKeyPress}
             value={subInfoValue}
@@ -219,14 +218,13 @@ const SubInfoTypeCreationForm = ({
             <HelpOutlineIcon className={styles.helpIcon} />
           </IconButton>
         </InputContainer>
-        <Button type="submit" disabled={loading} onClick={handleSubmit}>
+        <Button type='submit' disabled={loading} onClick={handleSubmit}>
           {loading ? 'Creating Sub Info Type...' : 'Create Sub Info Type'}
         </Button>
       </Label>
       {showCalloutBox ? (
         <CalloutBox>
-          {callOutText}
-          {' '}
+          {callOutText}{' '}
           <CloseIcon className={styles.closeIcon} onClick={showCallout} />
         </CalloutBox>
       ) : null}

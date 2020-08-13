@@ -93,7 +93,8 @@ const InfoTypesStyleWrapper = styled.div(
     top: -11px ;
     height: ${(selected && '133px') || '55px'}; 
   }
-`);
+`
+);
 
 const TitleWrapper = styled.div`
   background: #d2ecef;
@@ -123,7 +124,7 @@ const SubInfoComponent = ({
   onClick,
   parentLabel,
   setParentLabel,
-  label
+  label,
 }) => {
   const [infoTypeValue, setSubInfoTypeValue] = useState('');
   const [show, setShow] = useState(false);
@@ -135,7 +136,7 @@ const SubInfoComponent = ({
   const [isSaving, setIsSaving] = useState(false);
   const [isDeleteMode, setIsDeleteMode] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [labelParent, setLabel] = useState(label)
+  const [labelParent, setLabel] = useState(label);
   const wrapperRef = createRef();
 
   const styles = useStyles();
@@ -343,7 +344,7 @@ const Child = ({
   selected,
   label,
   setParentLabel,
-  parentLabel
+  parentLabel,
 }) => {
   const [currentChildId, setChildCurrentId] = useState(null);
   const [showChild, setshowChild] = useState(!show);
@@ -455,9 +456,8 @@ const Child = ({
                     setLabelValue(instance.value);
                     if (!last) {
                       return null;
-                    } 
-                      onClick();
-                    
+                    }
+                    onClick();
                   }}
                   onChange={handleSubInfoTypeValueChange}
                   key={v4()}

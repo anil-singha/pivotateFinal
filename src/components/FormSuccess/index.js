@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   padding: 2em;
@@ -15,20 +15,15 @@ const FormSuccess = ({ onDismiss }) => {
 
   return (
     <Wrapper>
+      <Row>Form submitted successfully!</Row>
+
       <Row>
-        Form submitted successfully!
-      </Row>
-      
-      <Row>
-        <Button 
-          type="button"
-          onClick={handleDismiss}
-        >
+        <Button type='button' onClick={handleDismiss}>
           Dismiss
         </Button>
       </Row>
     </Wrapper>
-  )
+  );
 };
 
 export default FormSuccess;

@@ -7,8 +7,6 @@
 
 // ns__custom_start unit: appSpec, comp: Description, loc: beforeImports
 
-
-
 // ns__custom_end unit: appSpec, comp: Description, loc: beforeImports
 
 import React, { useState } from 'react';
@@ -32,7 +30,7 @@ import DeleteInstanceMenu from '../../DeleteInstanceMenu';
 // ns__custom_start unit: appSpec, comp: Description, loc: styling
 // add styling here
 const DescriptionStyleWrapper = styled.div(
-  ({ selected, isDeleting }) =>`
+  ({ selected, isDeleting }) => `
   margin: 2em 1em;
   padding: 1.5em;
   border: ${selected ? '1px solid aquamarine' : '1px solid white'};
@@ -87,7 +85,7 @@ function Description({
 
   if (!selected) {
     return (
-      <DescriptionStyleWrapper onClick={() =>onSelect(description.id)}>
+      <DescriptionStyleWrapper onClick={() => onSelect(description.id)}>
         {descriptionValue}
       </DescriptionStyleWrapper>
     );
@@ -174,10 +172,10 @@ function Description({
   return (
     <DescriptionStyleWrapper selected={selected}>
       {descriptionValue}
-      <Button type='button' onClick={() =>updateIsEditMode(true)}>
+      <Button type='button' onClick={() => updateIsEditMode(true)}>
         &#9998;
       </Button>
-      <Button type='button' onClick={() =>updateIsDeleteMode(true)}>
+      <Button type='button' onClick={() => updateIsDeleteMode(true)}>
         &#128465;
       </Button>
 

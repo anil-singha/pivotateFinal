@@ -14,13 +14,13 @@ export const FormCreation = styled.div`
 `;
 
 export const Form = styled.form`
-    width: 90%;
-`
+  width: 90%;
+`;
 
 FormCreation.defaultProps = {
-    'data-id': 'form__creation'
-  }
+  'data-id': 'form__creation',
+};
 
 Form.defaultProps = {
-    'data-id': 'form__container'
-}
+  'data-id': 'form__container',
+};

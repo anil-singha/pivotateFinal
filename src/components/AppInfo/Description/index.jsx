@@ -98,7 +98,7 @@ function Description({
       <DescriptionStyleWrapper>
         <EditInstanceForm
           id={description.id}
-          label="Description Value:"
+          label='Description Value:'
           value={descriptionValue}
           onChange={handleDescriptionValueChange}
           onSave={handleDescriptionValueSave}
@@ -148,10 +148,10 @@ function Description({
   return (
     <DescriptionStyleWrapper selected={selected}>
       {descriptionValue}
-      <Button type="button" onClick={() => updateIsEditMode(true)}>
+      <Button type='button' onClick={() => updateIsEditMode(true)}>
         &#9998;
       </Button>
-      <Button type="button" onClick={() => updateIsDeleteMode(true)}>
+      <Button type='button' onClick={() => updateIsDeleteMode(true)}>
         &#128465;
       </Button>
     </DescriptionStyleWrapper>

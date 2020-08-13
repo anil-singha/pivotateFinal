@@ -36,7 +36,7 @@ const App = ({ loading, currentUser, login }) => {
   return (
     <>
       {/* <NavBar /> */}
-      <div className="">
+      <div className=''>
         <NoStackConsumer>
           {({ loading, currentUser }) => {
             if (loading) return null;
@@ -58,7 +58,7 @@ const App = ({ loading, currentUser, login }) => {
                 {/* <button onClick={() => dispatch(increment())}>+</button>
                 <button onClick={() => dispatch(decrement())}>-</button>
                Step: {counter} */}
-                <div id="app">
+                <div id='app'>
                   <AppHeader />
                   <Container>
                     <Apps customerId={currentUser.id}> </Apps>

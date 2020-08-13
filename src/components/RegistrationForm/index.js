@@ -162,30 +162,25 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
     //   </Modal>
     // );
     return (
-      <Modal onClose={props.onClose} styleName="dialogConfirm">
-        <div className="dialog__title">
-          <img src="/images/mail.png" />
+      <Modal onClose={props.onClose} styleName='dialogConfirm'>
+        <div className='dialog__title'>
+          <img src='/images/mail.png' />
         </div>
-        <p className="text-center">
+        <p className='text-center'>
           <div>
             <div style={{ margin: '1.25em 0', fontSize: '18px' }}>
               {' '}
-              Confirm your email!
-              {' '}
+              Confirm your email!{' '}
             </div>
             <p style={{ margin: '1.25em 0' }}>
-              Please check your email 
-              {' '}
-              <strong> sample@gmail.com </strong>
-              {' '}
-              for a
+              Please check your email <strong> sample@gmail.com </strong> for a
               message to confirm that it’s really you. Then you can log in.
             </p>
             <div>
               <Link
                 onClick={props.onSwitch}
-                className="button button--rounded button--yellow"
-                to="/"
+                className='button button--rounded button--yellow'
+                to='/'
               >
                 LOGIN
               </Link>
@@ -194,8 +189,8 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
               <Link
                 style={{ marginTop: '1em' }}
                 onClick={props.onClose}
-                className="button button--rounded"
-                to="/schedule"
+                className='button button--rounded'
+                to='/schedule'
               >
                 SEND AGAIN
               </Link>
@@ -204,8 +199,8 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
               <Link
                 style={{ marginTop: '1em' }}
                 onClick={props.onClose}
-                className="button button--rounded"
-                to="/schedule"
+                className='button button--rounded'
+                to='/schedule'
               >
                 CHANGE EMAIL
               </Link>
@@ -320,18 +315,17 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
         progress={displayCurrentDescription().progressWidth}
         onClose={props.onClose}
       >
-        <div className="dialog__title">
+        <div className='dialog__title'>
           {/* <div className="dialog__step">
             STEP <span className="teal--text"> {step} </span> of 3
           </div> */}
           <h3>{displayCurrentDescription().enterText}</h3>
         </div>
         {step == 3 && (
-          <p className="dialog__text">
+          <p className='dialog__text'>
             You won’t be charged a thing until you commit to it explicitly. In
-            fact, the initial consultation is
-            {' '}
-            <strong className="teal--text">FREE</strong>
+            fact, the initial consultation is{' '}
+            <strong className='teal--text'>FREE</strong>
             .
             <br />
             <br />

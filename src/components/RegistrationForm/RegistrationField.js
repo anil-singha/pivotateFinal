@@ -20,14 +20,14 @@ const RegistrationField = ({
   as,
   placeholder,
   options = [],
-  value
+  value,
 }) => (
   <Row>
     {type !== 'checkbox' && (
       <label style={{ width: '100%' }}>
         {!as && (
           <Field
-            className="form__input"
+            className='form__input'
             type={type}
             name={name}
             placeholder={placeholder}
@@ -50,16 +50,15 @@ const RegistrationField = ({
         {({ field, form }) => {
           return (
             <label>
-              <input {...field} type="checkbox" />
-              I agree to our
+              <input {...field} type='checkbox' />I agree to our
               <b>
-                <a href="/terms-and-conditions" target="_blank">
+                <a href='/terms-and-conditions' target='_blank'>
                   &nbsp; Terms of Use &nbsp;
                 </a>
               </b>
               and
               <b>
-                <a href="/privacy-policy" target="_blank">
+                <a href='/privacy-policy' target='_blank'>
                   &nbsp; Privacy Policy &nbsp;
                 </a>
               </b>

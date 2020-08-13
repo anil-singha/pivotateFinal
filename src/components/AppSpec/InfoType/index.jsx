@@ -7,11 +7,9 @@
 
 // ns__custom_start unit: appSpec, comp: InfoType, loc: beforeImports
 
-
-
 // ns__custom_end unit: appSpec, comp: InfoType, loc: beforeImports
 
-import React, { useState , useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
@@ -41,7 +39,7 @@ import SubInfoComponent from '../../../custom/SubInfoTypesRecursive';
 // ns__custom_start unit: appSpec, comp: InfoType, loc: styling
 // add styling here
 const InfoTypeStyleWrapper = styled.div(
-  ({ selected, isDeleting }) =>`
+  ({ selected, isDeleting }) => `
   margin: 2rem 0 .5rem 1rem;
   padding: ${selected ? '0' : '1.5rem'};
   
@@ -81,7 +79,6 @@ const InfoTypeStyleWrapper = styled.div(
 `
 );
 
-
 const Button = styled.button`
   background: none;
   border: none;
@@ -91,12 +88,12 @@ const Button = styled.button`
   color: #bbbbbb;
   transition: color 0.5s ease;
   &:hover {
-    color: ${(props) =>props.hoverColor || '#000000'};
+    color: ${(props) => props.hoverColor || '#000000'};
   }
 `;
 
 const TitleWrapper = styled.div`
-  background: #D2ECEF;
+  background: #d2ecef;
   padding: 25px;
   border-radius: 10px;
   text-align: initial;
@@ -105,13 +102,12 @@ const TitleWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   titleLabel: {
-      fontSize: '.8rem',
-      textAlign: 'initial',
-
-  }
-}))
+    fontSize: '.8rem',
+    textAlign: 'initial',
+  },
+}));
 
 // ns__custom_end unit: appSpec, comp: InfoType, loc: styling
 
@@ -151,7 +147,7 @@ function InfoType({
 
   if (!selected) {
     return (
-      <InfoTypeStyleWrapper onClick={() =>onSelect(infoType.id)}>
+      <InfoTypeStyleWrapper onClick={() => onSelect(infoType.id)}>
         {infoTypeValue}
       </InfoTypeStyleWrapper>
     );
@@ -242,16 +238,15 @@ function InfoType({
       <TitleWrapper>
         {infoTypeValue}
         <div>
-          <Button type='button' onClick={() =>updateIsEditMode(true)}>
+          <Button type='button' onClick={() => updateIsEditMode(true)}>
             &#9998;
           </Button>
-          <Button type='button' onClick={() =>updateIsDeleteMode(true)}>
+          <Button type='button' onClick={() => updateIsDeleteMode(true)}>
             &#128465;
           </Button>
         </div>
       </TitleWrapper>
       {/* // ns__custom_end unit: appSpec, comp: InfoType, loc: insideReturn */}
-      
 
       {/* // ns__custom_start unit: appSpec, comp: InfoType, loc: renderEnding */}
       <SubInfoComponent

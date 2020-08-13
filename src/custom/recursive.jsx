@@ -115,7 +115,7 @@ const DataList = memo(
         <InfoTypesStyleWrapper>
           <EditInstanceForm
             id={currentId}
-            label="InfoType Value:"
+            label='InfoType Value:'
             value={subInfoValue}
             onChange={handleInfoTypeValueChange}
             onSave={handleInfoTypeValueSave}
@@ -149,12 +149,10 @@ const DataList = memo(
                   Sub Info Type
                 </InputLabel>
                 <TitleWrapper>
-                  {instance.value} 
-                  {' '}
-                  {instance.id}
+                  {instance.value} {instance.id}
                 </TitleWrapper>
                 <Button
-                  type="button"
+                  type='button'
                   onClick={() => {
                     updateIsEditMode(true);
                     setSubInfoValue(instance.value);
@@ -163,7 +161,7 @@ const DataList = memo(
                 >
                   &#9998;
                 </Button>
-                <Button type="button" onClick={() => updateIsDeleteMode(true)}>
+                <Button type='button' onClick={() => updateIsDeleteMode(true)}>
                   &#128465;
                 </Button>
 
@@ -176,7 +174,8 @@ const DataList = memo(
                       subinfoTypeData={instance._children}
                       // selectedDataProps={selectedDataProps[instance.id]}
                       onChange={(subSelections) =>
-                        handleSubOptionsListChange(instance.id, subSelections)}
+                        handleSubOptionsListChange(instance.id, subSelections)
+                      }
                       updateInstance={updateInstance}
                       deleteInstance={deleteInstance}
                     />

@@ -7,8 +7,6 @@
 
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: beforeImports
 
-
-
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: beforeImports
 import React, { useState } from 'react';
 import { graphql } from '@apollo/react-hoc';
@@ -34,16 +32,14 @@ const Form = styled.div`
   padding: 1.5em;
   border: none;
   border-radius: 5px;
-  
 `;
 
 const Label = styled.label`
   display: flex;
   align-items: center;
   flex-direction: row;
-  width: 100%
+  width: 100%;
 `;
-
 
 const fadeInDown = keyframes`
 0% {
@@ -86,7 +82,6 @@ const CalloutBox = styled.div`
   }
 `;
 
-
 const useStyles = makeStyles({
   button: {
     minWidth: 0,
@@ -105,8 +100,8 @@ const useStyles = makeStyles({
     fontSize: '1.2rem',
   },
   textField: {
-    width: '100%'
-  }
+    width: '100%',
+  },
 });
 
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: styling
@@ -120,7 +115,7 @@ function DescriptionCreationForm({
   createDescription,
   refetchQueries,
   // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: addedPropsForCreationForm
-  label
+  label,
   // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: addedPropsForCreationForm
 }) {
   const [descriptionValue, updateDescriptionValue] = useState('');
@@ -129,7 +124,7 @@ function DescriptionCreationForm({
   const styles = useStyles();
   const [callout, setCallout] = useState(true);
   const showCalloutBox = callout;
-  const callOutText='Enter a description for your App';
+  const callOutText = 'Enter a description for your App';
   // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: beginning
 
   function handleChange(e) {
@@ -181,7 +176,6 @@ function DescriptionCreationForm({
   return (
     <Form>
       <Label htmlFor='description-value'>
-        
         <TextField
           className={styles.textField}
           id='description-value'
@@ -191,9 +185,9 @@ function DescriptionCreationForm({
           value={descriptionValue}
           disabled={loading}
           multiline
-          variant="outlined"
-          label="Description"
-          rows="10"
+          variant='outlined'
+          label='Description'
+          rows='10'
           // InputProps={{
           //   endAdornment: (
           //     <InputAdornment position="end">
@@ -201,7 +195,6 @@ function DescriptionCreationForm({
           //     </InputAdornment>
           //   )
           // }}
-
         />
       </Label>
       {/* {showCalloutBox ? (

@@ -7,8 +7,6 @@
 
 // ns__custom_start unit: general, comp: RegistrationFormStyle, loc: beforeImports
 
-
-
 // ns__custom_end unit: general, comp: RegistrationFormStyle, loc: beforeImports
 
 import styled from 'styled-components';

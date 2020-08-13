@@ -43,7 +43,6 @@ const SubInfoChildTypes = ({
       />
 
       {subInfoTypeData.map((infoType) => {
-        
         if (subInfoId === infoType.parentId) {
           if (validateCount === 0) setvalidateCount(validateCount + 1);
           return (

@@ -78,7 +78,7 @@ function App({
 
   if (!selected) {
     return (
-      <AppStyleWrapper onClick={() =onSelect(app.id)}>
+      <AppStyleWrapper onClick={() => onSelect(app.id)}>
         {appValue}
       </AppStyleWrapper>
     );

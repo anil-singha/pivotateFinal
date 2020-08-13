@@ -1,7 +1,6 @@
 import { Link, useHistory } from 'react-router-dom';
 import createDateContext from './createDataContext';
 
-
 const authReducer = (state, actions) => {
   switch (actions.type) {
     case 'login':
@@ -23,7 +22,6 @@ const loginUser = (dispatch) => (userFlag) => {
 const logoutUser = (dispatch) => () => {
   localStorage.removeItem('userFlag');
   dispatch({ type: 'logout', payload: false });
-  
 };
 
 export const { Context, Provider } = createDateContext(

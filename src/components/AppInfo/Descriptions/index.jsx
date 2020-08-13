@@ -14,7 +14,7 @@ const DescriptionsStyleWrapper = styled.div``;
 
 class Descriptions extends Component {
   state = {
-    selectedDescriptionId: null
+    selectedDescriptionId: null,
   };
 
   wrapperRef = createRef();
@@ -27,7 +27,7 @@ class Descriptions extends Component {
     document.removeEventListener('mousedown', this.handleClick);
   }
 
-  handleClick = e => {
+  handleClick = (e) => {
     const node = this.wrapperRef.current;
 
     if (node && node !== e.target && !node.contains(e.target)) {
@@ -35,7 +35,7 @@ class Descriptions extends Component {
     }
   };
 
-  handleSelect = id => this.setState({ selectedDescriptionId: id });
+  handleSelect = (id) => this.setState({ selectedDescriptionId: id });
 
   render() {
     const { appId, descriptions, refetchQueries, onUpdate } = this.props;
@@ -51,8 +51,7 @@ class Descriptions extends Component {
           parentId={appId}
           refetchQueries={refetchQueries}
         />
-
-        {descriptions.map(description => (
+        {descriptions.map((description) => (
           <Description
             key={v4()}
             description={description}

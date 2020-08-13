@@ -124,7 +124,7 @@ function getStepContent(stepIndex, action, values) {
 const CreateForm = ({
   handleChange,
   nextStep,
-  
+
   hasApp,
   keyId,
   parentId,
@@ -149,7 +149,7 @@ const CreateForm = ({
     onSelect,
   };
 
-  console.log(values)
+  console.log(values);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -187,7 +187,7 @@ const CreateForm = ({
           </>
         ) : (
           <>
-            <Typography component="span" className={styles.instructions}>
+            <Typography component='span' className={styles.instructions}>
               {getStepContent(activeStep, handleChange, values)}
             </Typography>
             <div className={styles.button}>
@@ -198,7 +198,7 @@ const CreateForm = ({
               >
                 Back
               </Button>
-              <Button variant="contained" color="primary" onClick={handleNext}>
+              <Button variant='contained' color='primary' onClick={handleNext}>
                 {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
               </Button>
             </div>

@@ -19,9 +19,7 @@ import ScreenCreationForm from '../ScreenCreationForm';
 // ns__custom_start unit: appSpec, comp: UserTypes, loc: styling
 
 const UserTypesStyleWrapper = styled.div`
-
-
-padding-right: .5rem;
+  padding-right: 0.5rem;
 `;
 
 const Button = styled.button`
@@ -30,14 +28,14 @@ const Button = styled.button`
 `;
 
 UserTypesStyleWrapper.defaultProps = {
-  'data-id': 'userTypes__wrapper'
-}
+  'data-id': 'userTypes__wrapper',
+};
 // ns__custom_end unit: appSpec, comp: UserTypes, loc: styling
 
 class UserTypes extends Component {
   state = {
     selectedUserTypeId: null,
-    userTypeCreationCount: 0
+    userTypeCreationCount: 0,
   };
 
   wrapperRef = createRef();
@@ -50,34 +48,30 @@ class UserTypes extends Component {
     document.removeEventListener('mousedown', this.handleClick);
   }
 
-  handleClick = e => {
+  handleClick = (e) => {
     const node = this.wrapperRef.current;
 
-    if (
-      node &&
-      node !== e.target &&
-      !node.contains(e.target)
-    ) {
+    if (node && node !== e.target && !node.contains(e.target)) {
       this.setState({ selectedUserTypeId: null });
     }
-  }
+  };
 
-  handleSelect = id => this.setState({ selectedUserTypeId: id });
+  handleSelect = (id) => this.setState({ selectedUserTypeId: id });
 
   // ns__custom_start unit: appSpec, comp: UserTypes, loc: beforeRender
-  onChangeHelper = value => {
-    this.setState({userTypeCreationCount: value.length})}
+  onChangeHelper = (value) => {
+    this.setState({ userTypeCreationCount: value.length });
+  };
   // ns__custom_end unit: appSpec, comp: UserTypes, loc: beforeRender
 
-  render () {
-    const { appId, userTypes, refetchQueries, onUpdate  } = this.props;
+  render() {
+    const { appId, userTypes, refetchQueries, onUpdate } = this.props;
     const { selectedUserTypeId } = this.state;
 
-
     // ns__custom_start unit: appSpec, comp: UserTypes, loc: beforeReturn
-    const {label} =this.props;
-    const validateUserTypes = userTypes.length
-    const {userTypeCreationCount} = this.state;
+    const { label } = this.props;
+    const validateUserTypes = userTypes.length;
+    const { userTypeCreationCount } = this.state;
     // ns__custom_end unit: appSpec, comp: UserTypes, loc: beforeReturn
 
     // ns__custom_start unit: appSpec, comp: UserTypes, loc: renderBeginning
@@ -94,7 +88,7 @@ class UserTypes extends Component {
           // ns__custom_start unit: appSpec, comp: UserTypes, loc: addedPropsForCreationForm 
         /> */}
 
-          { userTypes.map(userType => (
+          {userTypes.map((userType) => (
             <UserType
               key={v4()}
               userType={userType}
@@ -104,16 +98,15 @@ class UserTypes extends Component {
               refetchQueries={refetchQueries}
               onSelect={this.handleSelect}
             />
-        )) }
+          ))}
           {/* ns__custom_start unit: appSpec, comp: UserTypes, loc: renderEnding */}
- 
-          {/* ns__custom_end unit: appSpec, comp: UserTypes, loc: renderEnding */}
 
+          {/* ns__custom_end unit: appSpec, comp: UserTypes, loc: renderEnding */}
         </UserTypesStyleWrapper>
         <UserTypeCreationForm
           parentId={appId}
           refetchQueries={refetchQueries}
-          // ns__custom_start unit: appSpec, comp: UserTypes, loc: addedPropsForCreationForm 
+          // ns__custom_start unit: appSpec, comp: UserTypes, loc: addedPropsForCreationForm
           validateUserTypes={validateUserTypes}
           onChange={this.onChangeHelper}
           label={label}
@@ -122,13 +115,13 @@ class UserTypes extends Component {
           <ScreenCreationForm
             disabled
             validateScreens={0}
-            textLabel="What is the Screen name fo..."
+            textLabel='What is the Screen name fo...'
             userTypeCreationCount={userTypeCreationCount}
             label={label}
           />
-) : null}   
+        ) : null}
       </>
-  )
+    );
   }
 }
 

@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
-import { 
-  Formik,
-  Form as BareForm,
-  Field as BareField 
-} from 'formik';
+import { Formik, Form as BareForm, Field as BareField } from 'formik';
 import { graphql } from '@apollo/react-hoc';
 import { withNoStack, EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 import styled from 'styled-components';
-import {SUBMIT_FORM_FOR_REGISTRATION_INFO_ACTION_ID} from '../../config';
+import { SUBMIT_FORM_FOR_REGISTRATION_INFO_ACTION_ID } from '../../config';
 
 const Form = styled(BareForm)`
   padding: 2em;
@@ -40,7 +36,10 @@ const SampleForm = ({ currentUser, onCancel, submitForm, successView }) => {
     creditCardName: '',
   };
 
-  const handleSubmit = async ({ app, description, creditCardNumber, expirationDate, csv, creditCardName }, { setSubmitting }) => {
+  const handleSubmit = async (
+    { app, description, creditCardNumber, expirationDate, csv, creditCardName },
+    { setSubmitting }
+  ) => {
     setError('');
 
     const executionParameters = JSON.stringify({
@@ -80,51 +79,45 @@ const SampleForm = ({ currentUser, onCancel, submitForm, successView }) => {
   }
 
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={handleSubmit}
-    >
+    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
       {({ isSubmitting }) => (
         <Form>
           <Row>
-            <Label htmlFor="app">App</Label>
-            <Field id="app" name="app" disabled={isSubmitting} />
+            <Label htmlFor='app'>App</Label>
+            <Field id='app' name='app' disabled={isSubmitting} />
           </Row>
 
           <Row>
-            <Label htmlFor="description">Description</Label>
-            <Field name="description" disabled={isSubmitting} />
+            <Label htmlFor='description'>Description</Label>
+            <Field name='description' disabled={isSubmitting} />
           </Row>
 
           <Row>
-            <Label htmlFor="creditCardNumber">Credit Card Number</Label>
-            <Field name="creditCardNumber" disabled={isSubmitting} />
+            <Label htmlFor='creditCardNumber'>Credit Card Number</Label>
+            <Field name='creditCardNumber' disabled={isSubmitting} />
           </Row>
 
           <Row>
-            <Label htmlFor="creditCardName">Credit Card Owner</Label>
-            <Field name="creditCardName" disabled={isSubmitting} />
+            <Label htmlFor='creditCardName'>Credit Card Owner</Label>
+            <Field name='creditCardName' disabled={isSubmitting} />
           </Row>
 
           <Row>
-            <Label htmlFor="expirationDate">Expiration Date</Label>
-            <Field name="expirationDate" disabled={isSubmitting} />
+            <Label htmlFor='expirationDate'>Expiration Date</Label>
+            <Field name='expirationDate' disabled={isSubmitting} />
           </Row>
 
           <Row>
-            <Label htmlFor="csv">CSV (Special code on the back)</Label>
-            <Field name="csv" disabled={isSubmitting} />
+            <Label htmlFor='csv'>CSV (Special code on the back)</Label>
+            <Field name='csv' disabled={isSubmitting} />
           </Row>
 
           <Row>
-            <SubmitButton
-              type="submit"
-              disabled={isSubmitting}
-            >
+            <SubmitButton type='submit' disabled={isSubmitting}>
               Submit
             </SubmitButton>
-            <CancelButton 
-              type="button"
+            <CancelButton
+              type='button'
               disabled={isSubmitting}
               onClick={handleCancel}
             >
@@ -135,10 +128,10 @@ const SampleForm = ({ currentUser, onCancel, submitForm, successView }) => {
         </Form>
       )}
     </Formik>
-  )
+  );
 };
 
 export default compose(
   withNoStack,
-  graphql( EXECUTE, { name: 'submitForm' }),
+  graphql(EXECUTE, { name: 'submitForm' })
 )(SampleForm);

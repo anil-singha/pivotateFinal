@@ -31,24 +31,20 @@ class Contact extends Component {
 
     return (
       <div
-        className="container full-width-sm"
+        className='container full-width-sm'
         style={{ marginBottom: '124px', marginTop: '100px' }}
       >
-        <div className="row">
-          <div className="contact__wrap text-center">
+        <div className='row'>
+          <div className='contact__wrap text-center'>
             <form
               disabled
-              className="contact__form"
+              className='contact__form'
               onSubmit={sendEmail}
               style={{ lineHeight: '1.5' }}
             >
               <div>
-                <h3 className="headline" style={{ marginBottom: '0' }}>
-                  Get in touch with the 
-                  {' '}
-                  <br />
-                  {' '}
-                  Pivotate Team!
+                <h3 className='headline' style={{ marginBottom: '0' }}>
+                  Get in touch with the <br /> Pivotate Team!
                 </h3>
                 <p
                   style={{
@@ -71,29 +67,29 @@ class Contact extends Component {
                 <div>
                   <input
                     required
-                    className="contact__input"
-                    placeholder="Name..."
-                    type="text"
-                    name="name"
+                    className='contact__input'
+                    placeholder='Name...'
+                    type='text'
+                    name='name'
                   />
                   <input
                     required
-                    className="contact__input"
-                    placeholder="Email..."
-                    type="email"
-                    name="from_email"
+                    className='contact__input'
+                    placeholder='Email...'
+                    type='email'
+                    name='from_email'
                   />
                   <textarea
                     required
-                    placeholder="Message..."
-                    row="5"
-                    className="contact__input"
-                    name="message"
+                    placeholder='Message...'
+                    row='5'
+                    className='contact__input'
+                    name='message'
                   />
                   <input
-                    type="submit"
-                    className="button button--rounded button--yellow"
-                    value="SEND IT"
+                    type='submit'
+                    className='button button--rounded button--yellow'
+                    value='SEND IT'
                     style={{
                       width: '100%',
                       minHeight: ' 50px',

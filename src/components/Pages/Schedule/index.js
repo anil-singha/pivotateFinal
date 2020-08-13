@@ -18,8 +18,8 @@ class Schedule extends Component {
   render() {
     return (
       <div>
-        <div className="schedule__img">
-          <div className="schedule__content">
+        <div className='schedule__img'>
+          <div className='schedule__content'>
             <h2> We would like to meet you! </h2>
             <p>
               A friendly, no-commitment discussion of what you need in an app so
@@ -28,11 +28,11 @@ class Schedule extends Component {
           </div>
         </div>
 
-        <div id="schedule_form">
+        <div id='schedule_form'>
           <div
-            data-url="https://calendly.com/pivotate/clarify-new-app?hide_event_type_details=1&primary_color=16abbc
-        "
-            className="calendly-inline-widget"
+            data-url='https://calendly.com/pivotate/clarify-new-app?hide_event_type_details=1&primary_color=16abbc
+        '
+            className='calendly-inline-widget'
             style={{ minWidth: '320px', height: '700px' }}
           />
         </div>
