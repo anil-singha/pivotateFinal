@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Schedule extends Component {
   componentDidMount() {
-    const head = document.querySelector("head");
-    const script = document.createElement("script");
+    const head = document.querySelector('head');
+    const script = document.createElement('script');
     script.setAttribute(
-      "src",
-      "https://assets.calendly.com/assets/external/widget.js"
+      'src',
+      'https://assets.calendly.com/assets/external/widget.js'
     );
     head.appendChild(script);
   }
@@ -33,7 +33,7 @@ class Schedule extends Component {
             data-url="https://calendly.com/pivotate/clarify-new-app?hide_event_type_details=1&primary_color=16abbc
         "
             className="calendly-inline-widget"
-            style={{ minWidth: "320px", height: "700px" }}
+            style={{ minWidth: '320px', height: '700px' }}
           />
         </div>
       </div>

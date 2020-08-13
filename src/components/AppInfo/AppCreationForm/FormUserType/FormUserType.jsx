@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import { FormCreation, Form } from "../AppCreationForm.styles";
-import FormInput from "../../../FormInput/form-input";
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { makeStyles } from '@material-ui/core/styles';
+import { TextField } from '@material-ui/core';
+import { FormCreation, Form } from '../AppCreationForm.styles';
+import FormInput from '../../../FormInput/form-input';
 
-import { makeStyles } from "@material-ui/core/styles";
 
 import {
   appName,
   appDescription,
   addUserType,
-} from "../../../../redux/appCreateInfo/appDetails.actions";
+} from '../../../../redux/appCreateInfo/appDetails.actions';
 
-import FormAccordion from "../FormAccordion/FormWithAccordion";
-import { TextField } from "@material-ui/core";
+import FormAccordion from '../FormAccordion/FormWithAccordion';
 
 const UserTypeForm = ({ appDetails, setUserType }) => {
   const styles = useStyles();
-  const [appTitle, setAppName] = useState("");
-  const [userType, setType] = useState("");
-  const [description, setDescription] = useState("");
+  const [appTitle, setAppName] = useState('');
+  const [userType, setType] = useState('');
+  const [description, setDescription] = useState('');
   const [expanded, setExpanded] = React.useState(false);
 
   useEffect(() => {
@@ -27,21 +27,21 @@ const UserTypeForm = ({ appDetails, setUserType }) => {
   }, []);
 
   const onChangeHandler = (e) => {
-    let value = e.target.value;
+    const {value} = e.target;
     setUserType(value);
     setType(value);
   };
 
   return (
 
-        <TextField
-          className={styles.input}
-          label="User Type"
-          value={userType}
-          type="text"
-          onChange={onChangeHandler}
-          variant="outlined"
-        />
+    <TextField
+      className={styles.input}
+      label="User Type"
+      value={userType}
+      type="text"
+      onChange={onChangeHandler}
+      variant="outlined"
+    />
 
   );
 };
@@ -58,6 +58,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(UserTypeForm);
 
 const useStyles = makeStyles({
   input: {
-    width: "100%",
+    width: '100%',
   },
 });

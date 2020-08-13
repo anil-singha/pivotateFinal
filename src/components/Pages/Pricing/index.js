@@ -1,10 +1,5 @@
-import React, { Component } from "react";
-import Modal from "../../Modal";
-import InitialDevelopment from "./Modals/initial-development.js";
-import ServiceDetails from "./Modals/pivoting-services-details.js";
-import MaintenanceDetails from "./Modals/maintenance-details";
-import queryString from "query-string";
-
+import React, { Component } from 'react';
+import queryString from 'query-string';
 import {
   BrowserRouter,
   HashRouter,
@@ -12,7 +7,12 @@ import {
   Route,
   Link,
   withRouter,
-} from "react-router-dom";
+} from 'react-router-dom';
+import Modal from '../../Modal';
+import InitialDevelopment from './Modals/initial-development.js';
+import ServiceDetails from './Modals/pivoting-services-details.js';
+import MaintenanceDetails from './Modals/maintenance-details';
+
 
 class Pricing extends Component {
   state = {
@@ -22,26 +22,28 @@ class Pricing extends Component {
   };
 
   componentDidMount() {
-    const values = "initial-development";
+    const values = 'initial-development';
     switch (values.modal) {
-      case "initial-development":
+      case 'initial-development':
         this.modalToggleInitDev();
         break;
-      case "maintenance":
+      case 'maintenance':
         this.modalToggleMaintenance();
 
         break;
-      case "services":
+      case 'services':
         this.modalToggleServices();
         break;
       default:
         break;
     }
   }
+
   signUp = (props) => {
     this.props.onSignUp();
     this.modalToggleInitDev();
   };
+
   modalToggleInitDev = (props) => {
     this.setState({
       modalInitDev: !this.state.modalInitDev,
@@ -49,43 +51,46 @@ class Pricing extends Component {
     if (!this.state.modalInitDev) {
       this.props.history.push({
         search:
-          "?" +
-          new URLSearchParams({ modal: "initial-development" }).toString(),
+          `?${ 
+          new URLSearchParams({ modal: 'initial-development' }).toString()}`,
       });
     } else {
       this.props.history.push({
-        search: "?" + new URLSearchParams().toString(),
+        search: `?${  new URLSearchParams().toString()}`,
       });
     }
   };
+
   modalToggleMaintenance = (props) => {
     this.setState({
       modalMaintenance: !this.state.modalMaintenance,
     });
     if (!this.state.modalServices) {
       this.props.history.push({
-        search: "?" + new URLSearchParams({ modal: "maintenance" }).toString(),
+        search: `?${  new URLSearchParams({ modal: 'maintenance' }).toString()}`,
       });
     } else {
       this.props.history.push({
-        search: "?" + new URLSearchParams().toString(),
+        search: `?${  new URLSearchParams().toString()}`,
       });
     }
   };
+
   modalToggleServices = (props) => {
     this.setState({
       modalServices: !this.state.modalServices,
     });
     if (!this.state.modalServices) {
       this.props.history.push({
-        search: "?" + new URLSearchParams({ modal: "services" }).toString(),
+        search: `?${  new URLSearchParams({ modal: 'services' }).toString()}`,
       });
     } else {
       this.props.history.push({
-        search: "?" + new URLSearchParams().toString(),
+        search: `?${  new URLSearchParams().toString()}`,
       });
     }
   };
+
   render() {
     return (
       <>
@@ -103,8 +108,9 @@ class Pricing extends Component {
           <div className="container">
             <h2 className="text-center">
               <span className="headline headline--teal">
-                {" "}
-                INITIAL DEVELOPMENT{" "}
+                {' '}
+                INITIAL DEVELOPMENT
+                {' '}
               </span>
             </h2>
 
@@ -169,11 +175,12 @@ class Pricing extends Component {
                 onClick={this.modalToggleInitDev}
                 className="button button--rounded button--yellow flex justify-center items-center"
               >
-                GET DETAILS{" "}
+                GET DETAILS
+                {' '}
                 <img
                   className="pricing__icon"
                   src="https://pivotatestaticassets.com/images/pricing/external link.png"
-                ></img>
+                />
               </a>
             </div>
           </div>
@@ -185,8 +192,9 @@ class Pricing extends Component {
           <div className="container">
             <h2 className="text-center">
               <span className="headline headline--teal">
-                {" "}
-                PIVOTING SERVICES{" "}
+                {' '}
+                PIVOTING SERVICES
+                {' '}
               </span>
             </h2>
             <div className="subheadline text-center">Get it right! </div>
@@ -202,7 +210,7 @@ class Pricing extends Component {
                     <strong className="teal--text">$2-$15</strong>
                   </div>
                   <div>
-                    {" "}
+                    {' '}
                     <small> per screen </small>
                   </div>
                 </div>
@@ -241,11 +249,12 @@ class Pricing extends Component {
                 href="#"
                 className="button button--rounded button--yellow flex justify-center items-center"
               >
-                GET DETAILS{" "}
+                GET DETAILS
+                {' '}
                 <img
                   className="pricing__icon"
                   src="https://pivotatestaticassets.com/images/pricing/external link.png"
-                ></img>
+                />
               </a>
             </div>
           </div>
@@ -257,8 +266,9 @@ class Pricing extends Component {
           <div className="container">
             <h2 className="text-center">
               <span className="headline headline--teal word-break">
-                {" "}
-                MAINTENANCE{" "}
+                {' '}
+                MAINTENANCE
+                {' '}
               </span>
             </h2>
             <div className="subheadline text-center">Keep it up!</div>
@@ -270,7 +280,8 @@ class Pricing extends Component {
                 <div className="pricing__content">
                   <div className="pricing__description">Basic maintenance</div>
                   <div className="pricing__price">
-                    <strong className="teal--text">$45 </strong>{" "}
+                    <strong className="teal--text">$45 </strong>
+                    {' '}
                     <small>/month </small>
                   </div>
                 </div>
@@ -295,13 +306,15 @@ class Pricing extends Component {
                 href="#"
                 className="button button--rounded button--yellow flex justify-center items-center"
               >
-                GET DETAILS{" "}
+                GET DETAILS
+                {' '}
                 <img
                   className="pricing__icon"
                   src="https://pivotatestaticassets.com/images/pricing/external link.png"
-                ></img>
+                />
               </a>
-            </div>{" "}
+            </div>
+            {' '}
           </div>
         </section>
         {/* End Maintenance */}

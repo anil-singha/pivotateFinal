@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { graphql } from "@apollo/react-hoc";
-import styled from "styled-components";
-import { EXECUTE } from "@nostack/no-stack";
-import compose from "@shopify/react-compose";
+import React, { useState } from 'react';
+import { graphql } from '@apollo/react-hoc';
+import styled from 'styled-components';
+import { EXECUTE } from '@nostack/no-stack';
+import compose from '@shopify/react-compose';
 
 
 // import { CREATE_DESCRIPTION_FOR_REGISTRATION_INFO_ACTION_ID } from '../../../config';
@@ -28,7 +28,7 @@ function DescriptionCreationForm({
   createDescription,
   refetchQueries,
 }) {
-  const [descriptionValue, updateDescriptionValue] = useState("");
+  const [descriptionValue, updateDescriptionValue] = useState('');
   const [loading, updateLoading] = useState(false);
 
   function handleChange(e) {
@@ -58,7 +58,7 @@ function DescriptionCreationForm({
 
     // const newDescriptionData = JSON.parse(createDescriptionResponse.data.Execute);
 
-    updateDescriptionValue("");
+    updateDescriptionValue('');
     updateLoading(false);
   }
 
@@ -82,12 +82,12 @@ function DescriptionCreationForm({
         />
       </label>
       <Button type="submit" disabled={loading} onClick={handleSubmit}>
-        {loading ? "Creating Description..." : "Create Description"}
+        {loading ? 'Creating Description...' : 'Create Description'}
       </Button>
     </Form>
   );
 }
 
-export default compose(graphql(EXECUTE, { name: "createDescription" }))(
+export default compose(graphql(EXECUTE, { name: 'createDescription' }))(
   DescriptionCreationForm
 );

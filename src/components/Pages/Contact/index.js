@@ -1,20 +1,21 @@
-import React, { Component } from "react";
-import emailjs from "emailjs-com";
+import React, { Component } from 'react';
+import emailjs from 'emailjs-com';
 
 class Contact extends Component {
   state = {
     active: false,
   };
+
   render() {
-    let vm = this;
+    const vm = this;
     function sendEmail(e) {
       e.preventDefault();
       emailjs
         .sendForm(
-          "mailgun",
-          "template_qoPOGXNS",
+          'mailgun',
+          'template_qoPOGXNS',
           e.target,
-          "user_PVCtRCUc6W81aPgHxjTXj"
+          'user_PVCtRCUc6W81aPgHxjTXj'
         )
         .then(
           (result) => {
@@ -31,7 +32,7 @@ class Contact extends Component {
     return (
       <div
         className="container full-width-sm"
-        style={{ marginBottom: "124px", marginTop: "100px" }}
+        style={{ marginBottom: '124px', marginTop: '100px' }}
       >
         <div className="row">
           <div className="contact__wrap text-center">
@@ -39,16 +40,20 @@ class Contact extends Component {
               disabled
               className="contact__form"
               onSubmit={sendEmail}
-              style={{ lineHeight: "1.5" }}
+              style={{ lineHeight: '1.5' }}
             >
               <div>
-                <h3 className="headline" style={{ marginBottom: "0" }}>
-                  Get in touch with the <br /> Pivotate Team!
+                <h3 className="headline" style={{ marginBottom: '0' }}>
+                  Get in touch with the 
+                  {' '}
+                  <br />
+                  {' '}
+                  Pivotate Team!
                 </h3>
                 <p
                   style={{
-                    color: "#777",
-                    marginBottom: "2em",
+                    color: '#777',
+                    marginBottom: '2em',
                   }}
                 >
                   We're here to help you with any questions you may have.
@@ -84,16 +89,16 @@ class Contact extends Component {
                     row="5"
                     className="contact__input"
                     name="message"
-                  ></textarea>
+                  />
                   <input
                     type="submit"
                     className="button button--rounded button--yellow"
                     value="SEND IT"
                     style={{
-                      width: "100%",
-                      minHeight: " 50px",
-                      fontWeight: "600",
-                      fontSize: "1em",
+                      width: '100%',
+                      minHeight: ' 50px',
+                      fontWeight: '600',
+                      fontSize: '1em',
                     }}
                   />
                 </div>

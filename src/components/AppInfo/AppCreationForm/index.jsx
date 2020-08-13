@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { graphql } from "@apollo/react-hoc";
-import styled from "styled-components";
-import { EXECUTE } from "@nostack/no-stack";
-import compose from "@shopify/react-compose";
+import React, { useState } from 'react';
+import { graphql } from '@apollo/react-hoc';
+import styled from 'styled-components';
+import { EXECUTE } from '@nostack/no-stack';
+import compose from '@shopify/react-compose';
 
 // import { CREATE_APP_FOR_REGISTRATION_INFO_ACTION_ID } from '../../../config';
 
@@ -20,7 +20,7 @@ const Button = styled.button`
 `;
 
 function AppCreationForm({ customerId, createApp, refetchQueries }) {
-  const [appValue, updateAppValue] = useState("");
+  const [appValue, updateAppValue] = useState('');
   const [loading, updateLoading] = useState(false);
 
   function handleChange(e) {
@@ -49,7 +49,7 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
 
     // const newAppData = JSON.parse(createAppResponse.data.Execute);
 
-    updateAppValue("");
+    updateAppValue('');
     updateLoading(false);
   }
 
@@ -73,12 +73,12 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
         />
       </label>
       <Button type="submit" disabled={loading} onClick={handleSubmit}>
-        {loading ? "Creating App..." : "Create App"}
+        {loading ? 'Creating App...' : 'Create App'}
       </Button>
     </Form>
   );
 }
 
-export default compose(graphql(EXECUTE, { name: "createApp" }))(
+export default compose(graphql(EXECUTE, { name: 'createApp' }))(
   AppCreationForm
 );

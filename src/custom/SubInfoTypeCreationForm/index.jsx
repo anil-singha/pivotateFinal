@@ -9,11 +9,11 @@ import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
 import { makeStyles, TextField, InputAdornment } from '@material-ui/core';
 import IconButton from '@material-ui/core/Button';
+import PropTypes from 'prop-types';
 import {
   CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
   ADD_HAS_PARENT_FOR_PARENT_ACTION_ID,
 } from '../../config';
-import PropTypes from 'prop-types';
 
 // ns__custom_end unit: appSpec, comp: Sub_Info_TypeCreationForm, loc: addedImports
 
@@ -218,17 +218,17 @@ const SubInfoTypeCreationForm = ({
       <Label htmlFor='screen-value'>
      
         <TextField 
-           className={styles.textField}
-           label={`New Sub Info Type  ${label ? `for ${label}` : ''}`}
-           onChange={handleChange}
-           onKeyPress={handleKeyPress}
-           value={subInfoValue}
-           disabled={loading|| disabled}
-           variant="outlined"
-           InputProps={{
+          className={styles.textField}
+          label={`New Sub Info Type  ${label ? `for ${label}` : ''}`}
+          onChange={handleChange}
+          onKeyPress={handleKeyPress}
+          value={subInfoValue}
+          disabled={loading|| disabled}
+          variant="outlined"
+          InputProps={{
              endAdornment: (
                <InputAdornment position="end">
-                    <HelpOutlineIcon className={styles.helpIcon} onClick={showCallout}/>
+                 <HelpOutlineIcon className={styles.helpIcon} onClick={showCallout} />
                </InputAdornment>
              )
            }}
@@ -237,7 +237,8 @@ const SubInfoTypeCreationForm = ({
       </Label>
       {showCalloutBox ? (
         <CalloutBox>
-          {callOutText}{' '}
+          {callOutText}
+          {' '}
           <CloseIcon className={styles.closeIcon} onClick={showCallout} />
         </CalloutBox>
       ) : null}

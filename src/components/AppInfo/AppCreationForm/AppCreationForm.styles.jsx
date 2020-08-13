@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const FormCreation = styled.div`
   width: 50vw;
@@ -18,9 +18,9 @@ export const Form = styled.form`
 `
 
 FormCreation.defaultProps = {
-    "data-id": "form__creation"
+    'data-id': 'form__creation'
   }
 
 Form.defaultProps = {
-    "data-id": "form__container"
+    'data-id': 'form__container'
 }

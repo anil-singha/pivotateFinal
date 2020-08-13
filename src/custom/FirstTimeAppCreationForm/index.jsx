@@ -10,11 +10,11 @@ import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 
-import { CREATE_APP_FOR_APP_SPEC_ACTION_ID } from '../../config';
 
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 import PropTypes from 'prop-types';
 import { TextField, makeStyles } from '@material-ui/core';
+import { CREATE_APP_FOR_APP_SPEC_ACTION_ID } from '../../config';
 import DescriptionCreationForm from '../../components/AppSpec/DescriptionCreationForm';
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '6px 0',
     
     padding: 0,
-    [`& fieldset`]: {
+    '& fieldset': {
       borderRadius: '32px',
     },
   },
@@ -109,26 +109,26 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
 
   return (
     <>
-    <Form>
-      <Label htmlFor='app-value'>
+      <Form>
+        <Label htmlFor='app-value'>
         
-        <TextField
-          className={styles.textField}
-          id='app-value'
-          type='text'
-          onChange={handleChange}
-          onKeyPress={handleKeyPress}
-          value={appValue}
-          disabled={loading}
-          variant="outlined"
-          label="App"
-        />
+          <TextField
+            className={styles.textField}
+            id='app-value'
+            type='text'
+            onChange={handleChange}
+            onKeyPress={handleKeyPress}
+            value={appValue}
+            disabled={loading}
+            variant="outlined"
+            label="App"
+          />
         
-      </Label>
-      <Button type='submit' disabled={loading} onClick={handleSubmit}>
-        {loading ? 'Creating App...' : 'Create App'}
-      </Button>
-    </Form>
+        </Label>
+        <Button type='submit' disabled={loading} onClick={handleSubmit}>
+          {loading ? 'Creating App...' : 'Create App'}
+        </Button>
+      </Form>
     
     </>
   );

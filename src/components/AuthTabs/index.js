@@ -48,8 +48,8 @@ const AuthTabs = ({ menuTitles, children }) => {
               e.preventDefault();
 
               setSelectedTab(index);
-            }
-            }>
+            }}
+          >
             {title}
           </Button>
         ))}

@@ -1,8 +1,8 @@
-import React from "react";
-import { Formik, Form } from "formik";
+import React from 'react';
+import { Formik, Form } from 'formik';
 
-import { Wrapper, Row, ErrorContainer } from "../RegistrationForm.style";
-import RegistrationField from "../RegistrationField";
+import { Wrapper, Row, ErrorContainer } from '../RegistrationForm.style';
+import RegistrationField from '../RegistrationField';
 
 const AppDetailsForm = ({
   initialValues,
@@ -33,7 +33,7 @@ const AppDetailsForm = ({
                 name="description"
               />
             </div>
-            <br></br>
+            <br />
             <div className="">
               <RegistrationField
                 name="terms"

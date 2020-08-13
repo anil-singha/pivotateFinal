@@ -1,74 +1,74 @@
-import React, { useState } from "react";
-import clsx from "clsx";
+import React, { useState } from 'react';
+import clsx from 'clsx';
 
-import { makeStyles, withStyles } from "@material-ui/core/styles";
-import Stepper from "@material-ui/core/Stepper";
-import Step from "@material-ui/core/Step";
-import StepLabel from "@material-ui/core/StepLabel";
-import Button from "@material-ui/core/Button";
-import StepConnector from "@material-ui/core/StepConnector";
-import Typography from "@material-ui/core/Typography";
-import FormAppDetails from "../AppInfo/AppCreationForm/FormDetails/FormAppDetails";
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import Stepper from '@material-ui/core/Stepper';
+import Step from '@material-ui/core/Step';
+import StepLabel from '@material-ui/core/StepLabel';
+import Button from '@material-ui/core/Button';
+import StepConnector from '@material-ui/core/StepConnector';
+import Typography from '@material-ui/core/Typography';
+import FormAppDetails from '../AppInfo/AppCreationForm/FormDetails/FormAppDetails';
 
-import FormUserType from "../AppInfo/AppCreationForm/FormUserType/FormUserType";
-import FormJobSeeker from "../AppInfo/AppCreationForm/FormJobSeeker/FormJobSeeker";
-import FormProfileDetails from "../AppInfo/AppCreationForm/FormProfileDetails/FormProfileDetails";
+import FormUserType from '../AppInfo/AppCreationForm/FormUserType/FormUserType';
+import FormJobSeeker from '../AppInfo/AppCreationForm/FormJobSeeker/FormJobSeeker';
+import FormProfileDetails from '../AppInfo/AppCreationForm/FormProfileDetails/FormProfileDetails';
 
 const ColorlibConnector = withStyles({
   alternativeLabel: {
     top: 22,
   },
   active: {
-    "& $line": {
+    '& $line': {
       backgroundImage:
-        "linear-gradient( 95deg,rgb(33,137,242) 0%,rgb(232,223,51) 50%,rgb(245,245,240) 100%)",
+        'linear-gradient( 95deg,rgb(33,137,242) 0%,rgb(232,223,51) 50%,rgb(245,245,240) 100%)',
     },
   },
   completed: {
-    "& $line": {
+    '& $line': {
       backgroundImage:
-        "linear-gradient( 95deg,rgb(33,137,242) 0%,rgb(232,223,51) 50%,rgb(245,245,240) 100%)",
+        'linear-gradient( 95deg,rgb(33,137,242) 0%,rgb(232,223,51) 50%,rgb(245,245,240) 100%)',
     },
   },
   line: {
     height: 3,
     border: 0,
-    backgroundColor: "#eaeaf0",
+    backgroundColor: '#eaeaf0',
     borderRadius: 1,
   },
 })(StepConnector);
 
 const useColorlibStepIconStyles = makeStyles({
   root: {
-    backgroundColor: "#ccc",
+    backgroundColor: '#ccc',
     zIndex: 1,
-    color: "#fff",
+    color: '#fff',
     width: 50,
     height: 50,
-    display: "flex",
-    borderRadius: "50%",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    borderRadius: '50%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   active: {
     backgroundImage:
-      "linear-gradient( 136deg, rgb(33,137,242) 0%, rgb(232,223,51) 50%, rgb(245,245,240) 100%)",
-    boxShadow: "0 4px 10px 0 rgba(0,0,0,.25)",
+      'linear-gradient( 136deg, rgb(33,137,242) 0%, rgb(232,223,51) 50%, rgb(245,245,240) 100%)',
+    boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
   },
   completed: {
     backgroundImage:
-      "linear-gradient( 136deg, rgb(33,137,242) 0%, rgb(232,223,51) 50%, rgb(245,245,240) 100%)",
+      'linear-gradient( 136deg, rgb(33,137,242) 0%, rgb(232,223,51) 50%, rgb(245,245,240) 100%)',
   },
 });
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
-    justifyContent: "center",
-    display: "flex",
-    flexWrap: "wrap",
-    flexDirection: "column",
-    position: "relative",
+    width: '100%',
+    justifyContent: 'center',
+    display: 'flex',
+    flexWrap: 'wrap',
+    flexDirection: 'column',
+    position: 'relative',
     marginBottom: theme.spacing(1),
   },
   backButton: {
@@ -79,23 +79,23 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(1),
   },
   stepper: {
-    alignSelf: "center",
-    width: "60%",
+    alignSelf: 'center',
+    width: '60%',
   },
   button: {
-    position: "relative",
-    left: "60%",
+    position: 'relative',
+    left: '60%',
   },
 }));
 
 function getSteps() {
   return [
-    "Tell us more about your App?",
-    "What is the user type?",
-    "Job Seeker title",
-    "Profile details",
-    "Type info",
-    "Review your changes",
+    'Tell us more about your App?',
+    'What is the user type?',
+    'Job Seeker title',
+    'Profile details',
+    'Type info',
+    'Review your changes',
   ];
 }
 
@@ -117,7 +117,7 @@ function getStepContent(stepIndex, action, values) {
       return <FormAppDetails handleChange={action} values={values} />;
 
     default:
-      return "Unknown stepIndex";
+      return 'Unknown stepIndex';
   }
 }
 
@@ -187,7 +187,7 @@ const CreateForm = ({
           </>
         ) : (
           <>
-            <Typography component={"span"} className={styles.instructions}>
+            <Typography component="span" className={styles.instructions}>
               {getStepContent(activeStep, handleChange, values)}
             </Typography>
             <div className={styles.button}>
@@ -199,7 +199,7 @@ const CreateForm = ({
                 Back
               </Button>
               <Button variant="contained" color="primary" onClick={handleNext}>
-                {activeStep === steps.length - 1 ? "Finish" : "Next"}
+                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
               </Button>
             </div>
           </>

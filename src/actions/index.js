@@ -1,17 +1,17 @@
 export const increment = () => {
   return {
-    type: "INCREMENT",
+    type: 'INCREMENT',
   };
 };
 
 export const decrement = () => {
   return {
-    type: "DECREMENT",
+    type: 'DECREMENT',
   };
 };
 
 export const currentUser = () => {
   return {
-    type: "CURRENT_USER",
+    type: 'CURRENT_USER',
   };
 };

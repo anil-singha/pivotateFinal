@@ -1,9 +1,9 @@
-import React, { Component, createRef } from "react";
-import styled from "styled-components";
-import { v4 } from "uuid";
+import React, { Component, createRef } from 'react';
+import styled from 'styled-components';
+import { v4 } from 'uuid';
 
-import DescriptionCreationForm from "../DescriptionCreationForm";
-import Description from "../Description";
+import DescriptionCreationForm from '../DescriptionCreationForm';
+import Description from '../Description';
 
 const DescriptionsStyleWrapper = styled.div``;
 
@@ -20,11 +20,11 @@ class Descriptions extends Component {
   wrapperRef = createRef();
 
   componentDidMount() {
-    document.addEventListener("mousedown", this.handleClick);
+    document.addEventListener('mousedown', this.handleClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleClick);
+    document.removeEventListener('mousedown', this.handleClick);
   }
 
   handleClick = e => {
@@ -46,7 +46,7 @@ class Descriptions extends Component {
         ref={this.wrapperRef}
         onClick={this.handleClick}
       >
-        {`asdsadsa`}
+        asdsadsa
         <DescriptionCreationForm
           parentId={appId}
           refetchQueries={refetchQueries}

@@ -12,19 +12,19 @@
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: beforeImports
 import React, { useState } from 'react';
 import { graphql } from '@apollo/react-hoc';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 
 import PropTypes from 'prop-types';
-import { CREATE_DESCRIPTION_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
-import  { keyframes } from 'styled-components';
+
 import { makeStyles, TextField, InputAdornment } from '@material-ui/core';
 import IconButton from '@material-ui/core/Button';
+import { CREATE_DESCRIPTION_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: styling
@@ -129,7 +129,7 @@ function DescriptionCreationForm({
   const styles = useStyles();
   const [callout, setCallout] = useState(true);
   const showCalloutBox = callout;
-  let callOutText=`Enter a description for your App`;
+  const callOutText='Enter a description for your App';
   // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: beginning
 
   function handleChange(e) {
@@ -183,17 +183,17 @@ function DescriptionCreationForm({
       <Label htmlFor='description-value'>
         
         <TextField
-        className={styles.textField}
+          className={styles.textField}
           id='description-value'
           type='text'
           onChange={handleChange}
           onKeyPress={handleKeyPress}
           value={descriptionValue}
           disabled={loading}
-          multiline={true}
+          multiline
           variant="outlined"
           label="Description"
-          rows={'10'}
+          rows="10"
           // InputProps={{
           //   endAdornment: (
           //     <InputAdornment position="end">

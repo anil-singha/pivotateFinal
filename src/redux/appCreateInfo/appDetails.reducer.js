@@ -1,10 +1,10 @@
 const INITIAL_STATE = {
-  appTitle: "",
-  description: "",
-  userType: "",
-  appName: "",
-  screenName: "",
-  subTypeInfo: "",
+  appTitle: '',
+  description: '',
+  userType: '',
+  appName: '',
+  screenName: '',
+  subTypeInfo: '',
 
 };
 const appDetailsReducer = (state = INITIAL_STATE, action) => {

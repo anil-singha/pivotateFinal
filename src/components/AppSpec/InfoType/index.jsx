@@ -6,16 +6,20 @@
 // ns__file unit: appSpec, comp: InfoType
 
 // ns__custom_start unit: appSpec, comp: InfoType, loc: beforeImports
-'use strict';
+
+
+
 // ns__custom_end unit: appSpec, comp: InfoType, loc: beforeImports
 
-import React, { useState } from 'react';
+import React, { useState , useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 import { graphql } from '@apollo/react-hoc';
 
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
+import { InputLabel, makeStyles } from '@material-ui/core';
 import {
   UPDATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
   DELETE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
@@ -27,12 +31,10 @@ import DeleteInstanceMenu from '../../DeleteInstanceMenu';
 // ns__custom_start unit: appSpec, comp: InfoType, loc: addedImports
 import SubInfoTypes from '../../../custom/SubInfoTypes';
 import InfoTypeCreationForm from '../InfoTypeCreationForm';
-import { v4 } from 'uuid';
-import { useContext, useEffect } from 'react';
+
 import { Context as UnitDataContext } from '../../../custom/UnitDataContext';
 import getChildData from '../../../custom/getChildData';
 import SubInfoComponent from '../../../custom/SubInfoTypesRecursive';
-import { InputLabel, makeStyles } from '@material-ui/core';
 
 // ns__custom_end unit: appSpec, comp: InfoType, loc: addedImports
 
@@ -235,19 +237,20 @@ function InfoType({
 
   return (
     <InfoTypeStyleWrapper selected={selected}>
-       {/* // ns__custom_start unit: appSpec, comp: InfoType, loc: insideReturn */}
-       <InputLabel className={styles.titleLabel}>Info Type</InputLabel>
-      <TitleWrapper>{infoTypeValue}
-          <div>
+      {/* // ns__custom_start unit: appSpec, comp: InfoType, loc: insideReturn */}
+      <InputLabel className={styles.titleLabel}>Info Type</InputLabel>
+      <TitleWrapper>
+        {infoTypeValue}
+        <div>
           <Button type='button' onClick={() =>updateIsEditMode(true)}>
             &#9998;
           </Button>
           <Button type='button' onClick={() =>updateIsDeleteMode(true)}>
             &#128465;
           </Button>
-          </div>
+        </div>
       </TitleWrapper>
-       {/* // ns__custom_end unit: appSpec, comp: InfoType, loc: insideReturn */}
+      {/* // ns__custom_end unit: appSpec, comp: InfoType, loc: insideReturn */}
       
 
       {/* // ns__custom_start unit: appSpec, comp: InfoType, loc: renderEnding */}

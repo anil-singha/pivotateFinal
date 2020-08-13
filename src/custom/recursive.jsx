@@ -1,30 +1,30 @@
-import React, { useState, useEffect, createRef, Component, memo } from "react";
-import styled from "styled-components";
-import { EXECUTE } from "@nostack/no-stack";
-import compose from "@shopify/react-compose";
-import { graphql } from "@apollo/react-hoc";
-import { v4 } from "uuid";
+import React, { useState, useEffect, createRef, Component, memo } from 'react';
+import styled from 'styled-components';
+import { EXECUTE } from '@nostack/no-stack';
+import compose from '@shopify/react-compose';
+import { graphql } from '@apollo/react-hoc';
+import { v4 } from 'uuid';
 
-import { InputLabel, makeStyles } from "@material-ui/core";
-import EditInstanceForm from "../components/EditInstanceForm";
-import DeleteInstanceMenu from "../components/DeleteInstanceMenu";
+import { InputLabel, makeStyles } from '@material-ui/core';
+import EditInstanceForm from '../components/EditInstanceForm';
+import DeleteInstanceMenu from '../components/DeleteInstanceMenu';
 
 import {
   UPDATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
   DELETE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
-} from "../config";
+} from '../config';
 
-import SubInfoTypeCreationForm from "./SubInfoTypeCreationForm";
+import SubInfoTypeCreationForm from './SubInfoTypeCreationForm';
 
 const SubInfoTypeWrapper = styled.div(
   ({ selected, isDeleting }) => `
     margin: 2em 1em;
     padding: 1.5em;
-    border: ${selected ? "1px solid aquamarine" : "1px solid white"};
+    border: ${selected ? '1px solid aquamarine' : '1px solid white'};
     border-radius: 10px;
     box-shadow: 5px 5px 10px #888888;
-    background-color: ${isDeleting && "tomato"};
-    cursor: ${selected ? "auto" : "pointer"};
+    background-color: ${isDeleting && 'tomato'};
+    cursor: ${selected ? 'auto' : 'pointer'};
   
     &:hover {
       border: 1px solid aquamarine;
@@ -42,7 +42,7 @@ const Button = styled.button`
   color: #bbbbbb;
   transition: color 0.5s ease;
   &:hover {
-    color: ${(props) => props.hoverColor || "#000000"};
+    color: ${(props) => props.hoverColor || '#000000'};
   }
 `;
 
@@ -56,8 +56,8 @@ const TitleWrapper = styled.p`
 
 const useStyles = makeStyles((theme) => ({
   titleLabel: {
-    fontSize: ".8rem",
-    textAlign: "initial",
+    fontSize: '.8rem',
+    textAlign: 'initial',
   },
 }));
 
@@ -75,7 +75,7 @@ const DataList = memo(
     updateInstance,
     deleteInstance,
   }) => {
-    const [subInfoValue, setSubInfoValue] = useState("");
+    const [subInfoValue, setSubInfoValue] = useState('');
     const [isEditMode, updateIsEditMode] = useState(false);
     const [isSaving, updateIsSaving] = useState(false);
     const [isDeleteMode, updateIsDeleteMode] = useState(false);
@@ -110,7 +110,7 @@ const DataList = memo(
     }
 
     if (isEditMode) {
-      console.log("isEditMode");
+      console.log('isEditMode');
       return (
         <InfoTypesStyleWrapper>
           <EditInstanceForm
@@ -149,7 +149,9 @@ const DataList = memo(
                   Sub Info Type
                 </InputLabel>
                 <TitleWrapper>
-                  {instance.value} {instance.id}
+                  {instance.value} 
+                  {' '}
+                  {instance.id}
                 </TitleWrapper>
                 <Button
                   type="button"
@@ -174,8 +176,7 @@ const DataList = memo(
                       subinfoTypeData={instance._children}
                       // selectedDataProps={selectedDataProps[instance.id]}
                       onChange={(subSelections) =>
-                        handleSubOptionsListChange(instance.id, subSelections)
-                      }
+                        handleSubOptionsListChange(instance.id, subSelections)}
                       updateInstance={updateInstance}
                       deleteInstance={deleteInstance}
                     />
@@ -185,7 +186,7 @@ const DataList = memo(
                         {instance._children.map((instance) => {
                           {
                             console.log(
-                              "inside data list again",
+                              'inside data list again',
                               instance._children
                             );
                           }
@@ -220,7 +221,7 @@ class SubComponentInfo extends Component {
     this.state = {
       selectedData: {},
       instanceId: null,
-      infoTypeValue: "",
+      infoTypeValue: '',
       currentId: null,
     };
   }
@@ -267,6 +268,6 @@ class SubComponentInfo extends Component {
 }
 
 export default compose(
-  graphql(EXECUTE, { name: "updateInstance" }),
-  graphql(EXECUTE, { name: "deleteInstance" })
+  graphql(EXECUTE, { name: 'updateInstance' }),
+  graphql(EXECUTE, { name: 'deleteInstance' })
 )(SubComponentInfo);

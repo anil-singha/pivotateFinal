@@ -1,21 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { NoStackProvider } from "@nostack/no-stack";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { NoStackProvider } from '@nostack/no-stack';
 
-import { PLATFORM_ID } from "./config";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
+import TagManager from 'react-gtm-module';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { PLATFORM_ID } from './config';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-import client from "./client";
+import client from './client';
 
-import TagManager from "react-gtm-module";
-import { createStore } from "redux";
-import allReducers from "./reducers";
-import { Provider } from "react-redux";
-import { Provider as AuthContext } from "./context/AuthContext";
-import store from "./redux/store";
+import allReducers from './reducers';
+import { Provider as AuthContext } from './context/AuthContext';
+import store from './redux/store';
+
 const tagManagerArgs = {
-  gtmId: "GTM-TS3Q48S",
+  gtmId: 'GTM-TS3Q48S',
   js: new Date(),
 };
 
@@ -34,7 +35,7 @@ ReactDOM.render(
       </NoStackProvider>
     </AuthContext>
   </Provider>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

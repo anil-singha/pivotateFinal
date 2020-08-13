@@ -232,29 +232,30 @@ function ScreenCreationForm({
   return (
     <Form>
       <Label htmlFor='screen-value'>
-      <TextField 
-           className={styles.textField}
-           label={callOutText}
-           value={screenValue}
-           onChange={(e) => {handleChange(e); onChange(e.target.value)}}
-           onKeyPress={handleKeyPress}
-           value={screenValue}
-           disabled={disabled||loading}
-           variant="outlined"
-           InputProps={{
+        <TextField 
+          className={styles.textField}
+          label={callOutText}
+          value={screenValue}
+          onChange={(e) => {handleChange(e); onChange(e.target.value)}}
+          onKeyPress={handleKeyPress}
+          value={screenValue}
+          disabled={disabled||loading}
+          variant="outlined"
+          InputProps={{
              endAdornment: (
                <InputAdornment position="end">
-                    <HelpOutlineIcon className={styles.helpIcon} onClick={showCallout}/>
+                 <HelpOutlineIcon className={styles.helpIcon} onClick={showCallout} />
                </InputAdornment>
              )
            }}
         />
       </Label>
       {showCalloutBox ? (
-          <CalloutBox>
-            {callOutText}{' '}
-            <CloseIcon className={styles.closeIcon} onClick={showCallout} />
-          </CalloutBox>
+        <CalloutBox>
+          {callOutText}
+          {' '}
+          <CloseIcon className={styles.closeIcon} onClick={showCallout} />
+        </CalloutBox>
       ) : null}
     </Form>
 );

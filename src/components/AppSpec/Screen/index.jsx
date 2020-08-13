@@ -15,6 +15,7 @@ import compose from '@shopify/react-compose';
 import { graphql } from '@apollo/react-hoc';
 
 import PropTypes from 'prop-types';
+import { InputLabel, makeStyles } from '@material-ui/core';
 import {
   UPDATE_SCREEN_FOR_APP_SPEC_ACTION_ID,
   DELETE_SCREEN_FOR_APP_SPEC_ACTION_ID,
@@ -27,7 +28,6 @@ import DeleteInstanceMenu from '../../DeleteInstanceMenu';
 import InfoTypes from '../InfoTypes';
 
 // ns__custom_start unit: appSpec, comp: Screen, loc: addedImports
-import { InputLabel, makeStyles } from '@material-ui/core';
 // ns__custom_end unit: appSpec, comp: Screen, loc: addedImports
 
 // ns__custom_start unit: appSpec, comp: Screen, loc: styling
@@ -229,10 +229,10 @@ function Screen({
         {screenValue}
         <div>
           <Button type='button' onClick={() => updateIsEditMode(true)}>
-          &#9998;
+            &#9998;
           </Button>
           <Button type='button' onClick={() => updateIsDeleteMode(true)}>
-          &#128465;
+            &#128465;
           </Button>
         </div>
       </TitleWrapper>

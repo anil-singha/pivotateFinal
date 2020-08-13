@@ -56,7 +56,7 @@ class Screens extends Component {
   };
 
   handleSelect = (id) => {
-    console.log(`id screens`, id);
+    console.log('id screens', id);
 
     this.setState({ selectedScreenId: id });
   };
@@ -108,7 +108,7 @@ class Screens extends Component {
         />
         
         {infoTypeValueCount >= 3 ? (
-          <InfoTypeCreationForm disabled={true} validateInfoTypes={0} textLabel={`What is the Info Type fo...`} infoTypeValueCount={infoTypeValueCount} label={label}/>
+          <InfoTypeCreationForm disabled validateInfoTypes={0} textLabel="What is the Info Type fo..." infoTypeValueCount={infoTypeValueCount} label={label} />
         ) : null}
       </>
     );

@@ -1,8 +1,8 @@
-import React from "react";
-import { Formik, Form } from "formik";
+import React from 'react';
+import { Formik, Form } from 'formik';
 
-import { Wrapper, Row, ErrorContainer } from "../RegistrationForm.style";
-import RegistrationField from "../RegistrationField";
+import { Wrapper, Row, ErrorContainer } from '../RegistrationForm.style';
+import RegistrationField from '../RegistrationField';
 
 const BasicDetailsForm = ({
   initialValues,
@@ -64,7 +64,7 @@ const BasicDetailsForm = ({
               />
             </div>
 
-            <div className="" style={{ marginTop: "0.5em" }}>
+            <div className="" style={{ marginTop: '0.5em' }}>
               <RegistrationField
                 name="terms"
                 type="checkbox"

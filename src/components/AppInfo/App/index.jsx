@@ -1,4 +1,15 @@
-import React, { useState } from "react";
+/*
+  This file has been partially generated!
+  To permit updates to the generated portions of this code in the future,
+  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+ */
+// ns__file unit: appInfo, comp: App
+
+// ns__custom_start unit: appInfo, comp: App, loc: beforeImports
+// ns__custom_end unit: appInfo, comp: App, loc: beforeImports
+
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import { EXECUTE } from "@nostack/no-stack";
 import compose from "@shopify/react-compose";
@@ -17,7 +28,7 @@ import Descriptions from "../Descriptions";
 
 // add styling here
 const AppStyleWrapper = styled.div(
-  ({ selected, isDeleting }) => `
+  ({ selected, isDeleting }) =`
   margin: 2em 1em;
   padding: 1.5em;
   border: ${selected ? "1px solid aquamarine" : "1px solid white"};
@@ -41,7 +52,7 @@ const Button = styled.button`
   color: #bbbbbb;
   transition: color 0.5s ease;
   &:hover {
-    color: ${(props) => props.hoverColor || "#000000"};
+    color: ${(props) =props.hoverColor || "#000000"};
   }
 `;
 
@@ -62,12 +73,12 @@ function App({
 
   const descriptionData =
     app.children &&
-    app.children.find((child) => child.typeId === TYPE_DESCRIPTION_ID);
+    app.children.find((child) =child.typeId === TYPE_DESCRIPTION_ID);
   const descriptions = descriptionData ? descriptionData.instances : [];
 
   if (!selected) {
     return (
-      <AppStyleWrapper onClick={() => onSelect(app.id)}>
+      <AppStyleWrapper onClick={() =onSelect(app.id)}>
         {appValue}
       </AppStyleWrapper>
     );
@@ -154,10 +165,10 @@ function App({
   return (
     <AppStyleWrapper selected={selected}>
       {appValue}
-      <Button type="button" onClick={() => updateIsEditMode(true)}>
+      <Button type="button" onClick={() =updateIsEditMode(true)}>
         &#9998;
       </Button>
-      <Button type="button" onClick={() => updateIsDeleteMode(true)}>
+      <Button type="button" onClick={() =updateIsDeleteMode(true)}>
         &#128465;
       </Button>
       {console.log(`descriptions`, descriptions)}

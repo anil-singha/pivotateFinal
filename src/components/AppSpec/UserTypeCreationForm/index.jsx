@@ -217,18 +217,18 @@ function UserTypeCreationForm({
       {/* ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: insideReturn */}
       <Label htmlFor='userType-value'>
         <TextField 
-           className={styles.textField}
-           label={callOutText}
-           value={userTypeValue}
-           onChange={(e) => {handleChange(e); onChange(e.target.value)}}
-           onKeyPress={handleKeyPress}
-           value={userTypeValue}
-           disabled={loading||disabled}
-           variant="outlined"
-           InputProps={{
+          className={styles.textField}
+          label={callOutText}
+          value={userTypeValue}
+          onChange={(e) => {handleChange(e); onChange(e.target.value)}}
+          onKeyPress={handleKeyPress}
+          value={userTypeValue}
+          disabled={loading||disabled}
+          variant="outlined"
+          InputProps={{
              endAdornment: (
                <InputAdornment position="end">
-                    <HelpOutlineIcon className={styles.helpIcon} onClick={showCallout}/>
+                 <HelpOutlineIcon className={styles.helpIcon} onClick={showCallout} />
                </InputAdornment>
              )
            }}
@@ -237,11 +237,12 @@ function UserTypeCreationForm({
       </Label>
       {showCalloutBox ? (
         <CalloutBox>
-          {callOutText}{' '}
+          {callOutText}
+          {' '}
           <CloseIcon className={styles.closeIcon} onClick={showCallout} />
         </CalloutBox>
       ) : null}
-    {/* ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: insideReturn */}
+      {/* ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: insideReturn */}
     </Form>
   );
   // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: beforeReturn

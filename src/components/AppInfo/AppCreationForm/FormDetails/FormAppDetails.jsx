@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import FormInput from "../../../FormInput/form-input";
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import FormInput from '../../../FormInput/form-input';
 
-import { FormCreation, Form } from "../AppCreationForm.styles";
+import { FormCreation, Form } from '../AppCreationForm.styles';
 
 import {
   addName,
   addDescription,
-} from "../../../../redux/appCreateInfo/appDetails.actions";
+} from '../../../../redux/appCreateInfo/appDetails.actions';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
+    width: '100%',
   },
   input: {
     width: '100%',
@@ -35,13 +35,13 @@ const FormAppDetails = ({
   const [description, setDescription] = useState('');
 
   const onNameChange = (e) => {
-    let value = e.target.value;
+    const {value} = e.target;
     setAppName(value);
     setAppTitle(value);
   };
 
   const onDescriptionChange = (e) => {
-    let value = e.target.value;
+    const {value} = e.target;
     setAppDescription(value);
     setDescription(value);
   };
@@ -50,7 +50,7 @@ const FormAppDetails = ({
     <FormCreation>
       <Form>
         <div>
-        <TextField
+          <TextField
             className={styles.input} 
             value={appName}
             type="text"
