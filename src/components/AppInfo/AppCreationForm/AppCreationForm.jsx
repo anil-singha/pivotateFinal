@@ -19,7 +19,7 @@ export class AppCreationForm extends Component {
   }
 
   render() {
-    console.log('this.props', this.props)
+    console.log('this.props', this.props);
     const { step } = this.state;
     const {
       appTitle,
@@ -38,10 +38,7 @@ export class AppCreationForm extends Component {
       subTypeInfo,
     };
     // 4 screens
-    return (
-      <CreateForm />
-            
-    );
+    return <CreateForm />;
   }
 }
 

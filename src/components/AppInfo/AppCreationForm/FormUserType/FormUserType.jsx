@@ -5,7 +5,6 @@ import { TextField } from '@material-ui/core';
 import { FormCreation, Form } from '../AppCreationForm.styles';
 import FormInput from '../../../FormInput/form-input';
 
-
 import {
   appName,
   appDescription,
@@ -27,22 +26,20 @@ const UserTypeForm = ({ appDetails, setUserType }) => {
   }, []);
 
   const onChangeHandler = (e) => {
-    const {value} = e.target;
+    const { value } = e.target;
     setUserType(value);
     setType(value);
   };
 
   return (
-
     <TextField
       className={styles.input}
-      label="User Type"
+      label='User Type'
       value={userType}
-      type="text"
+      type='text'
       onChange={onChangeHandler}
-      variant="outlined"
+      variant='outlined'
     />
-
   );
 };
 

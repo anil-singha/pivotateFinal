@@ -55,20 +55,20 @@ const App = () => {
 
   return (
     <React.Suspense
-      path="/"
-      fallback={(
-        <section className="">
-          <div className="container full-width">
-            <div className="flex flex-wrap items-center">
-              <div className="hero__header">
-                <div className="hero__text">
+      path='/'
+      fallback={
+        <section className=''>
+          <div className='container full-width'>
+            <div className='flex flex-wrap items-center'>
+              <div className='hero__header'>
+                <div className='hero__text'>
                   <strong />
                 </div>
               </div>
             </div>
           </div>
         </section>
-      )}
+      }
     >
       <BrowserRouter basename={`${process.env.PUBLIC_URL}/`}>
         <ScrollToTop>

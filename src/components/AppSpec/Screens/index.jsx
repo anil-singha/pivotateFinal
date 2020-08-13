@@ -20,7 +20,6 @@ import InfoTypeCreationForm from '../InfoTypeCreationForm';
 
 const ScreensStyleWrapper = styled.div`
   margin: 0 0 0 7%;
-
 `;
 
 const Button = styled.button`
@@ -68,15 +67,14 @@ class Screens extends Component {
   // ns__custom_end unit: appSpec, comp: UserTypes, loc: beforeRender
 
   render() {
-    const { userTypeId, screens, refetchQueries, onUpdate  } = this.props;
+    const { userTypeId, screens, refetchQueries, onUpdate } = this.props;
     const { selectedScreenId } = this.state;
 
-
     // ns__custom_start unit: appSpec, comp: UserTypes, loc: beginning
-    const {label} = this.props;
+    const { label } = this.props;
     const validateScreens = screens.length;
     const { infoTypeValueCount } = this.state;
-    
+
     // ns__custom_end unit: appSpec, comp: UserTypes, loc: beginning
 
     // ns__custom_start unit: appSpec, comp: Screens, loc: renderBeginning
@@ -106,9 +104,15 @@ class Screens extends Component {
           label={label}
           /* ns__custom_end unit: appSpec, comp: Screens, loc: addedProps */
         />
-        
+
         {infoTypeValueCount >= 3 ? (
-          <InfoTypeCreationForm disabled validateInfoTypes={0} textLabel="What is the Info Type fo..." infoTypeValueCount={infoTypeValueCount} label={label} />
+          <InfoTypeCreationForm
+            disabled
+            validateInfoTypes={0}
+            textLabel='What is the Info Type fo...'
+            infoTypeValueCount={infoTypeValueCount}
+            label={label}
+          />
         ) : null}
       </>
     );

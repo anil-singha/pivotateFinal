@@ -68,8 +68,8 @@ function InfoType({
   const [isDeleteMode, updateIsDeleteMode] = useState(false);
   const [isDeleting, updateIsDeleting] = useState(false);
 
-  console.log('infoTypeId', infoTypeId)
-  console.log('parentIdparentId, ', parentId)
+  console.log('infoTypeId', infoTypeId);
+  console.log('parentIdparentId, ', parentId);
   // if (!selected) {
   //   return (
   //     <InfoTypeStyleWrapper onClick={() => onSelect(infoType.id)}>
@@ -108,7 +108,7 @@ function InfoType({
       <InfoTypeStyleWrapper>
         <EditInstanceForm
           id={infoType.id}
-          label="InfoType Value:"
+          label='InfoType Value:'
           value={infoTypeValue}
           onChange={handleInfoTypeValueChange}
           onSave={handleInfoTypeValueSave}
@@ -158,7 +158,7 @@ function InfoType({
       });
 
       const newInfoTypeData = JSON.parse(createInfoTypeResponse.data.Execute);
-      console.log('newInfoTypeData.instanceId', newInfoTypeData.instanceId)
+      console.log('newInfoTypeData.instanceId', newInfoTypeData.instanceId);
       const createChildInfoTypeResponse = await saveInstance({
         variables: {
           actionId: ADD_HAS_PARENT_FOR_PARENT_ACTION_ID,
@@ -202,33 +202,30 @@ function InfoType({
   }
 
   return (
-    <div className=" ">
-      <span className="flex">
+    <div className=' '>
+      <span className='flex'>
         <input
-          type="checkbox"
-          name="checkbox"
-          className="checkBoxActive"
+          type='checkbox'
+          name='checkbox'
+          className='checkBoxActive'
           id={value.id}
-          value="value"
+          value='value'
         />
 
         <label htmlFor={value.id}>
           {' '}
-          <small className="grey--text"> Sub Info Type: </small> 
-          {' '}
-          {value.value}
-          {' '}
+          <small className='grey--text'> Sub Info Type: </small> {value.value}{' '}
         </label>
         <span>
           <a
-            type="a"
+            type='a'
             onClick={() => updateIsEditMode(true)}
             style={{ display: 'inline-block' }}
           >
             &#9998;
           </a>
           <a
-            type="a"
+            type='a'
             style={{ display: 'inline-block' }}
             onClick={() => updateIsDeleteMode(true)}
           >

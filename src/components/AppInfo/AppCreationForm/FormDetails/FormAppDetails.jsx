@@ -17,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
   },
   input: {
     width: '100%',
-    margin: '1rem 0 '
-  }
+    margin: '1rem 0 ',
+  },
 }));
 
 const FormAppDetails = ({
@@ -35,13 +35,13 @@ const FormAppDetails = ({
   const [description, setDescription] = useState('');
 
   const onNameChange = (e) => {
-    const {value} = e.target;
+    const { value } = e.target;
     setAppName(value);
     setAppTitle(value);
   };
 
   const onDescriptionChange = (e) => {
-    const {value} = e.target;
+    const { value } = e.target;
     setAppDescription(value);
     setDescription(value);
   };
@@ -51,23 +51,23 @@ const FormAppDetails = ({
       <Form>
         <div>
           <TextField
-            className={styles.input} 
+            className={styles.input}
             value={appName}
-            type="text"
+            type='text'
             required
             onChange={onNameChange}
             label="What's the name of your App?"
-            variant="outlined"
+            variant='outlined'
           />
-          
+
           <TextField
             className={styles.root}
-            id="multiline"
-            label="Describe your app"
+            id='multiline'
+            label='Describe your app'
             multiline
             rows={15}
             value={description}
-            variant="outlined"
+            variant='outlined'
             onChange={onDescriptionChange}
           />
         </div>

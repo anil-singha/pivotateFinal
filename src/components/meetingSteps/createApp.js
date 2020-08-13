@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { withNoStack , NoStackConsumer } from '@nostack/no-stack';
+import { withNoStack, NoStackConsumer } from '@nostack/no-stack';
 
 import { useSelector, useDispatch } from 'react-redux';
 import Apps from '../AppSpec/Apps';

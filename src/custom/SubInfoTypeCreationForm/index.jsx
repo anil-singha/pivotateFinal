@@ -29,7 +29,7 @@ const Label = styled.label`
   display: flex;
   align-items: center;
   flex-direction: row;
-  width: 100%
+  width: 100%;
 `;
 
 const Input = styled.input`
@@ -110,8 +110,8 @@ const useStyles = makeStyles({
     fontSize: '1rem',
   },
   textField: {
-    width: '100%'
-  }
+    width: '100%',
+  },
 });
 
 const Button = styled.button`
@@ -131,7 +131,7 @@ const SubInfoTypeCreationForm = ({
   label,
   disabled,
   subInfoTypeValueCount,
-  textLabel
+  textLabel,
   // ns__custom_end unit: appSpec, comp: Sub_Info_Type_Creation, loc: addedPropsForCreationForm
 }) => {
   const [subInfoValue, setSubInfoValue] = useState('');
@@ -139,15 +139,14 @@ const SubInfoTypeCreationForm = ({
   const styles = useStyles();
   const [callout, setCallout] = useState(false);
   const showCalloutBox = callout || validateSubInfoTypes === 0;
-  
 
   // ns__custom_start unit: appSpec, comp: Sub_Info_Type_Creation, loc: beginning
-  let callOutText= '';
-  
-  if(subInfoTypeValueCount < 5){
-    callOutText =textLabel
-  }else {
-    callOutText=`What is the sub Info Type ${label ? `for ${label}` : ''}`;
+  let callOutText = '';
+
+  if (subInfoTypeValueCount < 5) {
+    callOutText = textLabel;
+  } else {
+    callOutText = `What is the sub Info Type ${label ? `for ${label}` : ''}`;
   }
   // ns__custom_end unit: appSpec, comp: Sub_Info_Type_Creation, loc: beginning
   function handleChange(e) {
@@ -180,7 +179,7 @@ const SubInfoTypeCreationForm = ({
       });
 
       const newInfoTypeData = JSON.parse(createInfoTypeResponse.data.Execute);
-      
+
       const createChildInfoTypeResponse = await saveInstance({
         variables: {
           actionId: ADD_HAS_PARENT_FOR_PARENT_ACTION_ID,
@@ -216,29 +215,29 @@ const SubInfoTypeCreationForm = ({
     <Form>
       {/* // ns__custom_start unit: appSpec, comp: Sub_Info_Type_Creation, loc: insideReturn */}
       <Label htmlFor='screen-value'>
-     
-        <TextField 
+        <TextField
           className={styles.textField}
           label={`New Sub Info Type  ${label ? `for ${label}` : ''}`}
           onChange={handleChange}
           onKeyPress={handleKeyPress}
           value={subInfoValue}
-          disabled={loading|| disabled}
-          variant="outlined"
+          disabled={loading || disabled}
+          variant='outlined'
           InputProps={{
-             endAdornment: (
-               <InputAdornment position="end">
-                 <HelpOutlineIcon className={styles.helpIcon} onClick={showCallout} />
-               </InputAdornment>
-             )
-           }}
+            endAdornment: (
+              <InputAdornment position='end'>
+                <HelpOutlineIcon
+                  className={styles.helpIcon}
+                  onClick={showCallout}
+                />
+              </InputAdornment>
+            ),
+          }}
         />
-        
       </Label>
       {showCalloutBox ? (
         <CalloutBox>
-          {callOutText}
-          {' '}
+          {callOutText}{' '}
           <CloseIcon className={styles.closeIcon} onClick={showCallout} />
         </CalloutBox>
       ) : null}

@@ -237,7 +237,6 @@ function Screen({
         </div>
       </TitleWrapper>
       {/* ns__custom_end unit: appSpec, comp: Screen, loc: insideReturn */}
-      
 
       <InfoTypes
         infoTypes={infoTypes}

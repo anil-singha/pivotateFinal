@@ -17,7 +17,6 @@ function FormWithAccordion({ appTitle, description, children }) {
   };
 
   return (
-    
     <FormCreation className={styles.root}>
       <Form>
         <Accordion
@@ -27,11 +26,11 @@ function FormWithAccordion({ appTitle, description, children }) {
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1bh-content"
-            id="panel1bh-header"
+            aria-controls='panel1bh-content'
+            id='panel1bh-header'
             classes={{
-            content: styles.accordionSummary,
-          }}
+              content: styles.accordionSummary,
+            }}
           >
             <Typography className={styles.heading}>{appTitle}</Typography>
             <Typography className={styles.secondaryHeading}>
@@ -68,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
   accordion: {
     backgroundColor: 'inherit',
     margin: '1rem 0',
-    border: 'none'
+    border: 'none',
   },
   accordionSummary: {
     display: 'flex',

@@ -19,15 +19,13 @@ const FormToggle = () => {
 
   return (
     <Wrapper>
-      <Button type="button" onClick={toggleModal}>
+      <Button type='button' onClick={toggleModal}>
         Show/Hide Sample Form
       </Button>
       {isModalVisible && (
         <SampleForm
           onCancel={closeModal}
-          successView={
-            <FormSuccess onDismiss={closeModal} />
-          }
+          successView={<FormSuccess onDismiss={closeModal} />}
         />
       )}
     </Wrapper>

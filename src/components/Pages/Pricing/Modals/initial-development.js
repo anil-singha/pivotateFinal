@@ -3,18 +3,17 @@ import React from 'react';
 const initialDevelopment = (props) => {
   return (
     <>
-      <div className="container text-left">
+      <div className='container text-left'>
         <h2>
-          <span className="headline headline--teal">
+          <span className='headline headline--teal'>
             {' '}
-            INITIAL DEVELOPMENT DETAILS
-            {' '}
+            INITIAL DEVELOPMENT DETAILS{' '}
           </span>
         </h2>
 
-        <div className="pricing__content">
-          <div className="pricing__description">Initial consultation</div>
-          <div className="pricing__price teal--text">
+        <div className='pricing__content'>
+          <div className='pricing__description'>Initial consultation</div>
+          <div className='pricing__price teal--text'>
             <strong>FREE</strong>
           </div>
           <p>
@@ -23,18 +22,15 @@ const initialDevelopment = (props) => {
           </p>
         </div>
 
-        <div className="pricing__content">
-          <div className="pricing__description">
+        <div className='pricing__content'>
+          <div className='pricing__description'>
             Discounted Initial App Package
           </div>
           <div>
             <strong>
               {' '}
-              <span className="pricing__price teal--text">$240</span>
-              {' '}
-              per user
-              type
-              {' '}
+              <span className='pricing__price teal--text'>$240</span> per user
+              type{' '}
             </strong>
           </div>
           <p>
@@ -45,27 +41,26 @@ const initialDevelopment = (props) => {
           </p>
         </div>
 
-        <div className="pricing__content">
-          <div className="pricing__description">Graphic design</div>
-          <div className="flex">
+        <div className='pricing__content'>
+          <div className='pricing__description'>Graphic design</div>
+          <div className='flex'>
             <div
-              className="grow-6"
+              className='grow-6'
               style={{ width: '50%', paddingRight: '1em' }}
             >
-              <div className="pricing__sub-description">LOGO</div>
-              <div className="pricing__price teal--text">
+              <div className='pricing__sub-description'>LOGO</div>
+              <div className='pricing__price teal--text'>
                 {' '}
-                <strong>$60</strong>
-                {' '}
+                <strong>$60</strong>{' '}
               </div>
               <p>
                 Includes two design options with unlimited revisions.
                 <strong> $20 per additional design option </strong>
               </p>
             </div>
-            <div className="grow-6" style={{ width: '50%' }}>
-              <div className="pricing__sub-description">USER INTERFACE</div>
-              <div className="pricing__price inline-flex teal--text">
+            <div className='grow-6' style={{ width: '50%' }}>
+              <div className='pricing__sub-description'>USER INTERFACE</div>
+              <div className='pricing__price inline-flex teal--text'>
                 {' '}
                 <strong>$50</strong>
               </div>
@@ -74,67 +69,58 @@ const initialDevelopment = (props) => {
           </div>
         </div>
 
-        <div className="pricing__content">
-          <div className="pricing__description">Development</div>
-          <div className="flex">
+        <div className='pricing__content'>
+          <div className='pricing__description'>Development</div>
+          <div className='flex'>
             <div
-              className="grow-6"
+              className='grow-6'
               style={{ width: '50%', paddingRight: '1em' }}
             >
               <div>
-                <div className="pricing__sub-description">
+                <div className='pricing__sub-description'>
                   INITIAL UNSTYLED APP DESIGN
                 </div>
-                <div className="">
+                <div className=''>
                   <strong>
                     {' '}
-                    <span className="pricing__price teal--text">$50</span>
-                    {' '}
-                    + 20
+                    <span className='pricing__price teal--text'>$50</span> + 20
                     per extra user type
-                  </strong>
-                  {' '}
+                  </strong>{' '}
                 </div>
               </div>
               <br />
               <div>
-                <div className="pricing__sub-description">
+                <div className='pricing__sub-description'>
                   CLOUD CONFIGURATION MODIFICATION
                 </div>
-                <div className="pricing__price teal--text">
-                  <strong> $25</strong>
-                  {' '}
+                <div className='pricing__price teal--text'>
+                  <strong> $25</strong>{' '}
                 </div>
               </div>
               <br />
               <div>
-                <div className="pricing__sub-description">
+                <div className='pricing__sub-description'>
                   CUSTOMIZED ACTION
                 </div>
-                <div className="">
+                <div className=''>
                   <strong>
-                    starting from
-                    {' '}
-                    <span className="pricing__price teal--text">$30</span>
-                  </strong>
-                  {' '}
+                    starting from{' '}
+                    <span className='pricing__price teal--text'>$30</span>
+                  </strong>{' '}
                 </div>
               </div>
             </div>
-            <div className="grow-6" style={{ width: '50%' }}>
+            <div className='grow-6' style={{ width: '50%' }}>
               <div>
-                <div className="pricing__sub-description">
+                <div className='pricing__sub-description'>
                   CONVERSION OF UI DESIGN
                 </div>
-                <div className="">
+                <div className=''>
                   {' '}
-                  <strong className="">
-                    <span className="pricing__price teal--text">$100</span>
-                    {' '}
-                    for
+                  <strong className=''>
+                    <span className='pricing__price teal--text'>$100</span> for
                     three screens
-                  </strong>
-                  {' '}
+                  </strong>{' '}
                 </div>
                 <br />
                 <p>
@@ -144,26 +130,25 @@ const initialDevelopment = (props) => {
               </div>
 
               <div>
-                <div className="pricing__sub-description">
+                <div className='pricing__sub-description'>
                   CLOUD CONFIGURATION MODIFICATION
                 </div>
-                <div className="pricing__price teal--text">
+                <div className='pricing__price teal--text'>
                   {' '}
-                  <strong>At cost</strong>
-                  {' '}
+                  <strong>At cost</strong>{' '}
                 </div>
                 <p>(besides the one-time configuration fee above)</p>
               </div>
             </div>
           </div>
         </div>
-        <div className="pricing__content flex justify-center">
+        <div className='pricing__content flex justify-center'>
           <a
             style={{
               padding: '1em 2.5em',
             }}
-            className="button button--rounded button--yellow"
-            type="button"
+            className='button button--rounded button--yellow'
+            type='button'
             onClick={props.onSignUp}
           >
             Schedule your free consultation now!

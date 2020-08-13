@@ -50,14 +50,13 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     margin: '1.2rem 0',
-    
   },
   heading: {
     fontSize: theme.typography.pxToRem(16),
     fontWeight: 'Bold',
     flexBasis: '33.33%',
     flexShrink: 0,
-    textAlign: 'initial'
+    textAlign: 'initial',
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
@@ -68,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '1rem 0',
     border: 'none',
     borderRadius: '10px',
-    padding: '10px'
+    padding: '10px',
   },
   accordionSummary: {
     display: 'flex',

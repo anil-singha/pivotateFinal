@@ -14,13 +14,7 @@ import styled from 'styled-components';
 
 import { withNoStack } from '@nostack/no-stack';
 
-import {
-  
-  TextField,
-  makeStyles,
-  Button,
-  InputLabel,
-} from '@material-ui/core';
+import { TextField, makeStyles, Button, InputLabel } from '@material-ui/core';
 import ForgotPasswordButton from '../ForgotPasswordButton';
 
 // ns__custom_start unit: general, comp: LoginForm, loc: addedImport
@@ -44,10 +38,8 @@ const Wrapper = styled.div(
 );
 
 const Row = styled.div`
-  
   text-align: center;
-  margin-bottom: .5rem;
-  
+  margin-bottom: 0.5rem;
 `;
 
 const LogoContainer = styled.div`
@@ -61,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'initial',
     width: '100%',
     margin: '6px 0',
-    
+
     padding: 0,
     '& fieldset': {
       borderRadius: '32px',
@@ -87,7 +79,7 @@ const LoginForm = ({
   login,
   // ns__custom_start unit: general, comp: LoginForm, loc: addedProps}
   open,
-  onClose
+  onClose,
 }) => {
   // ns__custom_end unit: general, comp: LoginForm, loc: addedProps
   const [username, setUsername] = useState('');
@@ -179,8 +171,7 @@ const LoginForm = ({
             variant='contained'
             color='primary'
           >
-            Log In
-            {' '}
+            Log In{' '}
           </Button>
         </Row>
         {error && <Row>{error}</Row>}

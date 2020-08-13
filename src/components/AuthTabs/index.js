@@ -20,7 +20,7 @@ const MenuContainer = styled.div`
   margin-bottom: 20px;
 `;
 
-const Button = styled.button(({ selected }) =>`
+const Button = styled.button(({ selected }) => `
   font-size: 1.25em;
   background-color: #ffffff;
   opacity: ${selected ? 1.0 : 0.5};
@@ -56,7 +56,7 @@ const AuthTabs = ({ menuTitles, children }) => {
       </MenuContainer>
       <div>
         {React.Children.map(children, (child, index) => {
-          if(index !== selectedTab) {
+          if (index !== selectedTab) {
             return null;
           }
 

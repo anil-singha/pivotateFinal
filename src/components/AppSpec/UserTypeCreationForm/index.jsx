@@ -14,7 +14,6 @@ import styled, { keyframes } from 'styled-components';
 import { withNoStack, EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 
-
 // ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: addedImports
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
@@ -28,21 +27,20 @@ import { CREATE_USER_TYPE_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 // change styling here
 const Form = styled.div`
   margin: 2em;
-  
+
   border: none;
   border-radius: 5px;
-  
+
   display: flex;
   align-items: center;
   flex-direction: column;
-  
 `;
 
 const Label = styled.label`
   display: flex;
   align-items: center;
   flex-direction: row;
-  width: 100%
+  width: 100%;
 `;
 
 const Input = styled.input`
@@ -62,8 +60,6 @@ const Input = styled.input`
 const InputContainer = styled.div`
   background-color: white;
   border-radius: 10px;
-  
-
 `;
 
 const fadeInDown = keyframes`
@@ -125,8 +121,8 @@ const useStyles = makeStyles({
     fontSize: '1.2rem',
   },
   textField: {
-    width: '100%'
-  }
+    width: '100%',
+  },
 });
 
 // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: styling
@@ -145,7 +141,7 @@ function UserTypeCreationForm({
   label,
   userTypeCreationCount,
   disabled,
-  textLabel
+  textLabel,
   // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: addedPropsForCreationForm
 }) {
   const [userTypeValue, updateUserTypeValue] = useState('');
@@ -155,12 +151,12 @@ function UserTypeCreationForm({
   const styles = useStyles();
   const [callout, setCallout] = useState(false);
   const showCalloutBox = callout || validateUserTypes === 0;
-  let callOutText= '';
-  
-  if(userTypeCreationCount < 4){
-    callOutText =textLabel
-  }else {
-    callOutText=`What is the User Type ${label ? `for ${label}` : ''}`;
+  let callOutText = '';
+
+  if (userTypeCreationCount < 4) {
+    callOutText = textLabel;
+  } else {
+    callOutText = `What is the User Type ${label ? `for ${label}` : ''}`;
   }
   // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: beginning
 
@@ -191,9 +187,6 @@ function UserTypeCreationForm({
 
     const newUserTypeData = JSON.parse(createUserTypeResponse.data.Execute);
 
-    
-    
-    
     updateUserTypeValue('');
     updateLoading(false);
   }
@@ -216,29 +209,33 @@ function UserTypeCreationForm({
     <Form>
       {/* ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: insideReturn */}
       <Label htmlFor='userType-value'>
-        <TextField 
+        <TextField
           className={styles.textField}
           label={callOutText}
           value={userTypeValue}
-          onChange={(e) => {handleChange(e); onChange(e.target.value)}}
+          onChange={(e) => {
+            handleChange(e);
+            onChange(e.target.value);
+          }}
           onKeyPress={handleKeyPress}
           value={userTypeValue}
-          disabled={loading||disabled}
-          variant="outlined"
+          disabled={loading || disabled}
+          variant='outlined'
           InputProps={{
-             endAdornment: (
-               <InputAdornment position="end">
-                 <HelpOutlineIcon className={styles.helpIcon} onClick={showCallout} />
-               </InputAdornment>
-             )
-           }}
+            endAdornment: (
+              <InputAdornment position='end'>
+                <HelpOutlineIcon
+                  className={styles.helpIcon}
+                  onClick={showCallout}
+                />
+              </InputAdornment>
+            ),
+          }}
         />
-       
       </Label>
       {showCalloutBox ? (
         <CalloutBox>
-          {callOutText}
-          {' '}
+          {callOutText}{' '}
           <CloseIcon className={styles.closeIcon} onClick={showCallout} />
         </CalloutBox>
       ) : null}
@@ -251,7 +248,7 @@ function UserTypeCreationForm({
   //   <Form>
   //     {/* ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: insideReturn */}
   //     <Label htmlFor='userType-value'>
-  //       
+  //
   //       UserType:
   //       <InputContainer>
   //         <Input
@@ -261,14 +258,14 @@ function UserTypeCreationForm({
   //           onKeyPress={handleKeyPress}
   //           value={userTypeValue}
   //           disabled={loading}
-            
+
   //         />
 
   //         <IconButton className={styles.button} onClick={showCallout}>
   //           <HelpOutlineIcon className={styles.helpIcon} />
   //         </IconButton>
   //       </InputContainer>
-     
+
   //       <Button type='submit' disabled={loading} onClick={handleSubmit}>
   //         {loading ? 'Creating UserType...' : 'Create UserType'}
   //       </Button>

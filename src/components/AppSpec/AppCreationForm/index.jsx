@@ -7,8 +7,6 @@
 
 // ns__custom_start unit: appSpec, comp: AppCreationForm, loc: beforeImports
 
-
-
 // ns__custom_end unit: appSpec, comp: AppCreationForm, loc: beforeImports
 
 import React, { useState } from 'react';
@@ -17,8 +15,7 @@ import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 
-import { CREATE_APP_FOR_APP_SPEC_ACTION_ID
- } from '../../../config';
+import { CREATE_APP_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 
 // ns__custom_start unit: appSpec, comp: AppCreationForm, loc: addedImports
 // ns__custom_end unit: appSpec, comp: AppCreationForm, loc: addedImports
@@ -30,7 +27,7 @@ const Form = styled.div`
   padding: 1.5em;
   border: none;
   border-radius: 5px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 `;
 // ns__custom_end unit: appSpec, comp: AppCreationForm, loc: styling
 
@@ -39,15 +36,14 @@ const Button = styled.button`
 `;
 
 function AppCreationForm({
-                           customerId,
-                           createApp,
-                           refetchQueries,
-// ns__custom_start unit: appSpec, comp: AppCreationForm, loc: addedProps
-// ns__custom_end unit: appSpec, comp: AppCreationForm, loc: addedProps
-
-                         }) {
-  const [ appValue, updateAppValue ] = useState('');
-  const [ loading, updateLoading ] = useState(false);
+  customerId,
+  createApp,
+  refetchQueries,
+  // ns__custom_start unit: appSpec, comp: AppCreationForm, loc: addedProps
+  // ns__custom_end unit: appSpec, comp: AppCreationForm, loc: addedProps
+}) {
+  const [appValue, updateAppValue] = useState('');
+  const [loading, updateLoading] = useState(false);
   // ns__custom_start unit: appSpec, comp: AppCreationForm, loc: beginning
   // ns__custom_end unit: appSpec, comp: AppCreationForm, loc: beginning
 
@@ -64,13 +60,6 @@ function AppCreationForm({
 
     updateLoading(true);
 
-
-
-
-
-
-
-
     const createAppResponse = await createApp({
       variables: {
         actionId: CREATE_APP_FOR_APP_SPEC_ACTION_ID,
@@ -80,13 +69,10 @@ function AppCreationForm({
         }),
         unrestricted: false,
       },
-      refetchQueries
+      refetchQueries,
     });
 
     // const newAppData = JSON.parse(createAppResponse.data.Execute);
-
-    
-
 
     updateAppValue('');
     updateLoading(false);
@@ -116,20 +102,13 @@ function AppCreationForm({
         />
       </label>
       <Button type='submit' disabled={loading} onClick={handleSubmit}>
-        {
-          loading
-            ? 'Creating App...'
-            : 'Create App'
-        }
+        {loading ? 'Creating App...' : 'Create App'}
       </Button>
     </Form>
   );
   // ns__end_section return
 }
 
-export default compose(
-  graphql(EXECUTE, { name: 'createApp' }),
-  
-  
-  
-)(AppCreationForm);
+export default compose(graphql(EXECUTE, { name: 'createApp' }))(
+  AppCreationForm
+);

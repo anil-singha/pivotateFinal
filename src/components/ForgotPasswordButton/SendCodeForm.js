@@ -7,8 +7,6 @@
 
 // ns__custom_start unit: general, comp: SendCodeForm, loc: beforeImports
 
-
-
 // ns__custom_end unit: general, comp: SendCodeForm, loc: beforeImports
 
 import React, { useState } from 'react';
@@ -16,19 +14,19 @@ import React, { useState } from 'react';
 const SendCodeForm = ({ onSubmit, onCancel, error, disabled }) => {
   const [email, setEmail] = useState('');
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     e.preventDefault();
 
     setEmail(e.target.value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     onSubmit(email);
   };
 
-  const handleCancel = e => {
+  const handleCancel = (e) => {
     e.preventDefault();
 
     onCancel();
@@ -39,13 +37,13 @@ const SendCodeForm = ({ onSubmit, onCancel, error, disabled }) => {
       <h3>Reset Password</h3>
       <div>
         Your Username/Email:
-        <input type="text" onChange={handleChange} disabled={disabled} />
+        <input type='text' onChange={handleChange} disabled={disabled} />
       </div>
       <div>
-        <button type="submit" disabled={disabled || !email}>
+        <button type='submit' disabled={disabled || !email}>
           Send Code
         </button>
-        <button type="button" onClick={handleCancel} disabled={disabled}>
+        <button type='button' onClick={handleCancel} disabled={disabled}>
           Cancel
         </button>
       </div>

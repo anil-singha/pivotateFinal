@@ -28,7 +28,7 @@ import { CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 // ns__custom_start unit: appSpec, comp: InfoTypeCreationForm, loc: styling
 // change styling here
 const Form = styled.div`
-  margin:  .8rem 0 0 11%;
+  margin: 0.8rem 0 0 11%;
   border: none;
   border-radius: 5px;
 `;
@@ -117,8 +117,8 @@ const useStyles = makeStyles({
     fontSize: '1rem',
   },
   textField: {
-    width: '100%'
-  }
+    width: '100%',
+  },
 });
 // ns__custom_end unit: appSpec, comp: InfoTypeCreationForm, loc: styling
 
@@ -136,7 +136,7 @@ function InfoTypeCreationForm({
   disabled,
   infoTypeValueCount,
   textLabel,
-  onChange
+  onChange,
   // ns__custom_end unit: appSpec, comp: InfoTypeCreationForm, loc: addedProps
 }) {
   const [infoTypeValue, updateInfoTypeValue] = useState('');
@@ -146,12 +146,12 @@ function InfoTypeCreationForm({
   const styles = useStyles();
   const [callout, setCallout] = useState(false);
   const showCalloutBox = callout || validateInfoTypes === 0;
-  let callOutText= '';
-  
-  if(infoTypeValueCount < 5){
-    callOutText =textLabel
-  }else {
-    callOutText=`What is the Info Type ${label ? `for ${label}` : ''}`;
+  let callOutText = '';
+
+  if (infoTypeValueCount < 5) {
+    callOutText = textLabel;
+  } else {
+    callOutText = `What is the Info Type ${label ? `for ${label}` : ''}`;
   }
   // ns__custom_end unit: appSpec, comp: InfoTypeCreationForm, loc: beginning
 
@@ -226,8 +226,7 @@ function InfoTypeCreationForm({
 
       {showCalloutBox ? (
         <CalloutBox>
-          {callOutText}
-          {' '}
+          {callOutText}{' '}
           <CloseIcon className={styles.closeIcon} onClick={showCallout} />
         </CalloutBox>
       ) : null}

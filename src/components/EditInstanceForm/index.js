@@ -7,20 +7,14 @@
 
 // ns__custom_start unit: general, comp: EditInstanceForm, loc: beforeImports
 
-
-
 // ns__custom_end unit: general, comp: EditInstanceForm, loc: beforeImports
-
-
 
 import React from 'react';
 import styled from 'styled-components';
 
-
 // ns__custom_start unit: general, comp: EditInstanceForm, loc: addedImports
 import { TextField, makeStyles } from '@material-ui/core';
 // ns__custom_end unit: general, comp: EditInstanceForm, loc: addedImports
-
 
 // ns__custom_start unit: general, comp: EditInstanceForm, loc: styling
 const Button = styled.button`
@@ -32,20 +26,19 @@ const Button = styled.button`
   color: #bbbbbb;
   transition: color 0.5s ease;
   &:hover {
-    color: ${props => props.hoverColor || '#000000'};
+    color: ${(props) => props.hoverColor || '#000000'};
   }
 `;
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   titleLabel: {
-      fontSize: '.8rem',
-      textAlign: 'initial',
-
+    fontSize: '.8rem',
+    textAlign: 'initial',
   },
   textArea: {
     width: '90%',
-    backgroundColor: 'white'
-  }
+    backgroundColor: 'white',
+  },
 }));
 // ns__custom_end unit: general, comp: EditInstanceForm, loc: styling
 
@@ -59,37 +52,34 @@ function EditInstanceForm({
   disabled,
 }) {
   // ns__custom_start unit: general, comp: EditInstanceForm, loc: beforeReturn
-  const styles = useStyles(); 
+  const styles = useStyles();
   // ns__custom_end unit: general, comp: EditInstanceForm, loc: beforeReturn
   return (
     <>
       {/* // ns__custom_start unit: general, comp: EditInstanceForm, loc: insideReturn */}
       <label htmlFor={id}>
-        
-        <TextField 
+        <TextField
           className={styles.textArea}
           label={label}
           id={id}
-          type="text"
+          type='text'
           value={value}
           onChange={onChange}
           disabled={disabled}
-          variant="outlined"
-        />        
-        
-        
+          variant='outlined'
+        />
       </label>
       <Button
-        type="button"
-        hoverColor="#00FF00"
+        type='button'
+        hoverColor='#00FF00'
         onClick={onSave}
         disabled={disabled}
       >
         &#10003;
       </Button>
       <Button
-        type="button"
-        hoverColor="#FF0000"
+        type='button'
+        hoverColor='#FF0000'
         onClick={onCancel}
         disabled={disabled}
       >

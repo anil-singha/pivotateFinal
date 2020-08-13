@@ -8,8 +8,6 @@
 
 // ns__custom_start unit: appSpec, comp: App, loc: beforeImports
 
-
-
 // ns__custom_end unit: appSpec, comp: App, loc: beforeImports
 import React, { useState } from 'react';
 import styled from 'styled-components';
@@ -44,14 +42,15 @@ const AppStyleWrapper = styled.div(
   
   border-radius: 10px;
   
-  background-color: ${isDeleting && 'tomato' || selected && 'white' ||  '#D2ECEF'};
+  background-color: ${
+    (isDeleting && 'tomato') || (selected && 'white') || '#D2ECEF'
+  };
   cursor: ${selected ? 'auto' : 'pointer'};
   width: 50%;
 
  
 `
 );
-
 
 const Button = styled.button`
   background: none;
@@ -66,14 +65,13 @@ const Button = styled.button`
   }
 `;
 
-
 AppStyleWrapper.defaultProps = {
-  'data-id': 'App__wrapper'
-}
+  'data-id': 'App__wrapper',
+};
 
 Button.defaultProps = {
-  'data-id': 'App__button'
-}
+  'data-id': 'App__button',
+};
 
 // ns__custom_end unit: appSpec, comp: App, loc: styling
 
@@ -142,7 +140,9 @@ function App({
       <AppStyleWrapper>
         <EditInstanceForm
           id={app.id}
-          label={`What's the preferred title ${appValue ? `for ${appValue}?` : 'off you App?'}`}
+          label={`What's the preferred title ${
+            appValue ? `for ${appValue}?` : 'off you App?'
+          }`}
           value={appValue}
           onChange={handleAppValueChange}
           onSave={handleAppValueSave}
@@ -191,8 +191,7 @@ function App({
 
   return (
     <AppStyleWrapper selected={selected}>
-
-      <AppTitleAccordion 
+      <AppTitleAccordion
         title={appValue}
         description={descriptions[0] && descriptions[0].value}
       />
@@ -216,7 +215,7 @@ function App({
           label={appValue}
           refetchQueries={refetchQueries}
         />
-) : null}
+      ) : null}
     </AppStyleWrapper>
   );
 }

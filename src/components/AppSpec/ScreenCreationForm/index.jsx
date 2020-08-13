@@ -27,37 +27,33 @@ import { CREATE_SCREEN_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 // ns__custom_start unit: appSpec, comp: ScreenCreationForm, loc: styling
 // change styling here
 const Form = styled.div`
-  margin: .8rem 0 .5rem 3.8rem;
+  margin: 0.8rem 0 0.5rem 3.8rem;
   border: none;
   border-radius: 5px;
-  
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     top: -31px;
     left: -31px;
     border-left: 2px dashed #a2a5b5;
     width: 1px;
-    height: '141%'; 
-   
+    height: '141%';
   }
 
- 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     border-top: 2px dashed #a2a5b5;
-    top:  '44px';
+    top: '44px';
     left: -30px;
-    width: '29px'; 
+    width: '29px';
   }
 
   &:last-child:before {
-    top: -76px ;
-    height: '116px'; 
+    top: -76px;
+    height: '116px';
   }
-  
 `;
 
 const Label = styled.label`
@@ -145,8 +141,8 @@ const useStyles = makeStyles({
     fontSize: '1rem',
   },
   textField: {
-    width: '100%'
-  }
+    width: '100%',
+  },
 });
 
 // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: styling
@@ -166,7 +162,7 @@ function ScreenCreationForm({
   label,
   userTypeCreationCount,
   textLabel,
-  
+
   // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: addedProps
 }) {
   const [screenValue, updateScreenValue] = useState('');
@@ -176,12 +172,12 @@ function ScreenCreationForm({
   const styles = useStyles();
   const [callout, setCallout] = useState(false);
   const showCalloutBox = callout || validateScreens === 0;
-  let callOutText= '';
-  
-  if(userTypeCreationCount < 5){
-    callOutText =textLabel
-  }else {
-    callOutText=`What is the Screen name ${label ? `for ${label}` : ''}`;
+  let callOutText = '';
+
+  if (userTypeCreationCount < 5) {
+    callOutText = textLabel;
+  } else {
+    callOutText = `What is the Screen name ${label ? `for ${label}` : ''}`;
   }
   // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: beginning
 
@@ -232,33 +228,38 @@ function ScreenCreationForm({
   return (
     <Form>
       <Label htmlFor='screen-value'>
-        <TextField 
+        <TextField
           className={styles.textField}
           label={callOutText}
           value={screenValue}
-          onChange={(e) => {handleChange(e); onChange(e.target.value)}}
+          onChange={(e) => {
+            handleChange(e);
+            onChange(e.target.value);
+          }}
           onKeyPress={handleKeyPress}
           value={screenValue}
-          disabled={disabled||loading}
-          variant="outlined"
+          disabled={disabled || loading}
+          variant='outlined'
           InputProps={{
-             endAdornment: (
-               <InputAdornment position="end">
-                 <HelpOutlineIcon className={styles.helpIcon} onClick={showCallout} />
-               </InputAdornment>
-             )
-           }}
+            endAdornment: (
+              <InputAdornment position='end'>
+                <HelpOutlineIcon
+                  className={styles.helpIcon}
+                  onClick={showCallout}
+                />
+              </InputAdornment>
+            ),
+          }}
         />
       </Label>
       {showCalloutBox ? (
         <CalloutBox>
-          {callOutText}
-          {' '}
+          {callOutText}{' '}
           <CloseIcon className={styles.closeIcon} onClick={showCallout} />
         </CalloutBox>
       ) : null}
     </Form>
-);
+  );
   // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: beforeReturn
 
   // ns__start_replacement return
