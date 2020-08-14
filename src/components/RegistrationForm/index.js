@@ -1,7 +1,7 @@
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+  please follow all rules at https://bit.ly/nsFrontEndRules
  */
 // ns__file unit: general, comp: RegistrationForm
 
@@ -55,8 +55,8 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
   const [formError, setFormError] = useState('');
 
   /*
-    A "stepper" is created and uses state to be sure that:
-     1. no child form is visible (haven't pushed "submit")
+    A 'stepper' is created and uses state to be sure that:
+     1. no child form is visible (haven't pushed 'submit')
      2. the child form (or it's child) is visible;
      3. the submit has been pushed on the sequence of child forms, and it's time to call submit
      4. The submission succeeded, and the final welcome message should be visible.
@@ -73,7 +73,7 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
   const [description, setDescription] = useState('');
 
   // const formValuesTemp =
-  //   '{"app":"newApp","description":"newApp Desc","creditCardNumber":"232","expirationDate":"234243","csv":"46"}';
+  //   '{'app':'newApp','description':'newApp Desc','creditCardNumber':'232','expirationDate':'234243','csv':'46'}';
   const handleSubmit = async (values, { setSubmitting }) => {
     setFormError('');
     // setUsername(values);
@@ -135,16 +135,16 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
 
     // return (
     //   <Modal onClose={props.onClose}>
-    //     <div className="dialog__title">
+    //     <div className='dialog__title'>
     //       <h3>Awesome, </h3>
     //     </div>
-    //     <p className="text-center">
+    //     <p className='text-center'>
     //       <div>
     //         <Link
     //           onClick={props.onClose}
-    //           style={{ marginBottom: "2em" }}
-    //           className="button button--rounded button--yellow"
-    //           to="/schedule"
+    //           style={{ marginBottom: '2em' }}
+    //           className='button button--rounded button--yellow'
+    //           to='/schedule'
     //         >
     //           Schedule a Meeting
     //         </Link>
@@ -152,8 +152,8 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
     //       <div>
     //         <Link
     //           onClick={props.onClose}
-    //           className="button button--rounded button--yellow"
-    //           to="/contact?s=ny"
+    //           className='button button--rounded button--yellow'
+    //           to='/contact?s=ny'
     //         >
     //           Not Yet
     //         </Link>
@@ -170,10 +170,15 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
           <div>
             <div style={{ margin: '1.25em 0', fontSize: '18px' }}>
               {' '}
-              Confirm your email!{' '}
+              Confirm your email!
+              {' '}
             </div>
             <p style={{ margin: '1.25em 0' }}>
-              Please check your email <strong> sample@gmail.com </strong> for a
+              Please check your email 
+              {' '}
+              <strong> sample@gmail.com </strong>
+              {' '}
+              for a
               message to confirm that it’s really you. Then you can log in.
             </p>
             <div>
@@ -316,15 +321,16 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
         onClose={props.onClose}
       >
         <div className='dialog__title'>
-          {/* <div className="dialog__step">
-            STEP <span className="teal--text"> {step} </span> of 3
+          {/* <div className='dialog__step'>
+            STEP <span className='teal--text'> {step} </span> of 3
           </div> */}
           <h3>{displayCurrentDescription().enterText}</h3>
         </div>
         {step == 3 && (
           <p className='dialog__text'>
             You won’t be charged a thing until you commit to it explicitly. In
-            fact, the initial consultation is{' '}
+            fact, the initial consultation is
+            {' '}
             <strong className='teal--text'>FREE</strong>
             .
             <br />

@@ -18,7 +18,8 @@ const maintenanceDetails = () => {
                   {' '}
                   <span className='pricing__price teal--text'>$45 </span>
                   /month
-                </strong>{' '}
+                </strong>
+                {' '}
               </div>
               <p>
                 Includes server and cloud storage/computation costs until they
@@ -39,7 +40,8 @@ const maintenanceDetails = () => {
                 <strong className=''>
                   {' '}
                   <span className='pricing__price teal--text'>At cost </span>
-                </strong>{' '}
+                </strong>
+                {' '}
               </div>
               <p>
                 In other words, we don’t charge you more than we need to pay

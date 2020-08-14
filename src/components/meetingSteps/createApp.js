@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { withNoStack, NoStackConsumer } from '@nostack/no-stack';
 
 import { useSelector, useDispatch } from 'react-redux';
-import Apps from '../AppSpec/Apps';
+import Apps from '../AppInfo/Apps';
 import { increment, decrement } from '../../actions';
 
 const meetingApp = ({ loading, currentUser, login, jumpToStep }) => {
@@ -12,10 +12,10 @@ const meetingApp = ({ loading, currentUser, login, jumpToStep }) => {
 
   // const mapDispatchToProps = (dispatch) => {
   //   dispatch({
-  //     type: "SEARCHTERMCHANGE",
+  //     type: 'SEARCHTERMCHANGE',
   //     payLoad: {
-  //       userId: "1",
-  //       sample: "wew",
+  //       userId: '1',
+  //       sample: 'wew',
   //     },
   //   });
   // };

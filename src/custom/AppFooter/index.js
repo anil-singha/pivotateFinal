@@ -31,7 +31,9 @@ const AppFooter = (props) => {
                   href='#'
                   className='button button--large button--teal'
                 >
-                  SIGN UP <span className='chevron right' />
+                  SIGN UP 
+                  {' '}
+                  <span className='chevron right' />
                 </a>
               </div>
             </div>

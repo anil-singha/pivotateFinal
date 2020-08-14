@@ -161,12 +161,14 @@ class NavBar extends Component {
                   </li>
                   <li>
                     <Link onClick={this.checkboxHandler} to='/#how-it-works'>
-                      HOW IT WORKS{' '}
+                      HOW IT WORKS
+                      {' '}
                     </Link>
                   </li>
                   <li>
                     <Link onClick={this.checkboxHandler} to='/#about-us'>
-                      ABOUT US{' '}
+                      ABOUT US
+                      {' '}
                     </Link>
                   </li>
                   <li>
@@ -178,7 +180,8 @@ class NavBar extends Component {
                     <li>
                       <a href='#' onClick={this.modalHandlerLogin}>
                         {' '}
-                        LOGIN{' '}
+                        LOGIN
+                        {' '}
                       </a>
                     </li>
                   )}

@@ -7,7 +7,8 @@ const initialDevelopment = (props) => {
         <h2>
           <span className='headline headline--teal'>
             {' '}
-            INITIAL DEVELOPMENT DETAILS{' '}
+            INITIAL DEVELOPMENT DETAILS
+            {' '}
           </span>
         </h2>
 
@@ -29,8 +30,11 @@ const initialDevelopment = (props) => {
           <div>
             <strong>
               {' '}
-              <span className='pricing__price teal--text'>$240</span> per user
-              type{' '}
+              <span className='pricing__price teal--text'>$240</span>
+              {' '}
+              per user
+              type
+              {' '}
             </strong>
           </div>
           <p>
@@ -51,7 +55,8 @@ const initialDevelopment = (props) => {
               <div className='pricing__sub-description'>LOGO</div>
               <div className='pricing__price teal--text'>
                 {' '}
-                <strong>$60</strong>{' '}
+                <strong>$60</strong>
+                {' '}
               </div>
               <p>
                 Includes two design options with unlimited revisions.
@@ -83,9 +88,12 @@ const initialDevelopment = (props) => {
                 <div className=''>
                   <strong>
                     {' '}
-                    <span className='pricing__price teal--text'>$50</span> + 20
+                    <span className='pricing__price teal--text'>$50</span>
+                    {' '}
+                    + 20
                     per extra user type
-                  </strong>{' '}
+                  </strong>
+                  {' '}
                 </div>
               </div>
               <br />
@@ -94,7 +102,8 @@ const initialDevelopment = (props) => {
                   CLOUD CONFIGURATION MODIFICATION
                 </div>
                 <div className='pricing__price teal--text'>
-                  <strong> $25</strong>{' '}
+                  <strong> $25</strong>
+                  {' '}
                 </div>
               </div>
               <br />
@@ -104,9 +113,11 @@ const initialDevelopment = (props) => {
                 </div>
                 <div className=''>
                   <strong>
-                    starting from{' '}
+                    starting from
+                    {' '}
                     <span className='pricing__price teal--text'>$30</span>
-                  </strong>{' '}
+                  </strong>
+                  {' '}
                 </div>
               </div>
             </div>
@@ -118,9 +129,12 @@ const initialDevelopment = (props) => {
                 <div className=''>
                   {' '}
                   <strong className=''>
-                    <span className='pricing__price teal--text'>$100</span> for
+                    <span className='pricing__price teal--text'>$100</span>
+                    {' '}
+                    for
                     three screens
-                  </strong>{' '}
+                  </strong>
+                  {' '}
                 </div>
                 <br />
                 <p>
@@ -135,7 +149,8 @@ const initialDevelopment = (props) => {
                 </div>
                 <div className='pricing__price teal--text'>
                   {' '}
-                  <strong>At cost</strong>{' '}
+                  <strong>At cost</strong>
+                  {' '}
                 </div>
                 <p>(besides the one-time configuration fee above)</p>
               </div>

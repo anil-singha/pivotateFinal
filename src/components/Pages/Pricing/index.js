@@ -108,7 +108,8 @@ class Pricing extends Component {
             <h2 className='text-center'>
               <span className='headline headline--teal'>
                 {' '}
-                INITIAL DEVELOPMENT{' '}
+                INITIAL DEVELOPMENT
+                {' '}
               </span>
             </h2>
 
@@ -173,7 +174,8 @@ class Pricing extends Component {
                 onClick={this.modalToggleInitDev}
                 className='button button--rounded button--yellow flex justify-center items-center'
               >
-                GET DETAILS{' '}
+                GET DETAILS
+                {' '}
                 <img
                   className='pricing__icon'
                   src='https://pivotatestaticassets.com/images/pricing/external link.png'
@@ -190,7 +192,8 @@ class Pricing extends Component {
             <h2 className='text-center'>
               <span className='headline headline--teal'>
                 {' '}
-                PIVOTING SERVICES{' '}
+                PIVOTING SERVICES
+                {' '}
               </span>
             </h2>
             <div className='subheadline text-center'>Get it right! </div>
@@ -245,7 +248,8 @@ class Pricing extends Component {
                 href='#'
                 className='button button--rounded button--yellow flex justify-center items-center'
               >
-                GET DETAILS{' '}
+                GET DETAILS
+                {' '}
                 <img
                   className='pricing__icon'
                   src='https://pivotatestaticassets.com/images/pricing/external link.png'
@@ -262,7 +266,8 @@ class Pricing extends Component {
             <h2 className='text-center'>
               <span className='headline headline--teal word-break'>
                 {' '}
-                MAINTENANCE{' '}
+                MAINTENANCE
+                {' '}
               </span>
             </h2>
             <div className='subheadline text-center'>Keep it up!</div>
@@ -274,7 +279,8 @@ class Pricing extends Component {
                 <div className='pricing__content'>
                   <div className='pricing__description'>Basic maintenance</div>
                   <div className='pricing__price'>
-                    <strong className='teal--text'>$45 </strong>{' '}
+                    <strong className='teal--text'>$45 </strong>
+                    {' '}
                     <small>/month </small>
                   </div>
                 </div>
@@ -299,13 +305,15 @@ class Pricing extends Component {
                 href='#'
                 className='button button--rounded button--yellow flex justify-center items-center'
               >
-                GET DETAILS{' '}
+                GET DETAILS
+                {' '}
                 <img
                   className='pricing__icon'
                   src='https://pivotatestaticassets.com/images/pricing/external link.png'
                 />
               </a>
-            </div>{' '}
+            </div>
+            {' '}
           </div>
         </section>
         {/* End Maintenance */}

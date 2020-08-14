@@ -18,13 +18,21 @@ const Home = (props) => {
               <h1 className='yellow--text'>
                 <div className='word-break'>
                   {' '}
-                  <strong> CUSTOM </strong> WEB APP{' '}
-                </div>{' '}
+                  <strong> CUSTOM </strong>
+                  {' '}
+                  WEB APP
+                  {' '}
+                </div>
+                {' '}
                 <div>WITHIN WEEKS...</div>
               </h1>
               <div className='hero__text has--underline'>
                 <span>
-                  THEN <strong>EASILY</strong> CHANGE IT!
+                  THEN 
+                  {' '}
+                  <strong>EASILY</strong>
+                  {' '}
+                  CHANGE IT!
                 </span>
               </div>
               <p>
@@ -38,7 +46,9 @@ const Home = (props) => {
                   href='#'
                   className='button button--rounded button--yellow'
                 >
-                  GET STARTED <span className='chevron right' />
+                  GET STARTED 
+                  {' '}
+                  <span className='chevron right' />
                 </a>
               </div>
             </div>
