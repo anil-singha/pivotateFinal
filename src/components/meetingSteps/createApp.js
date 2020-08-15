@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { withNoStack, NoStackConsumer } from '@nostack/no-stack';
 
 import { useSelector, useDispatch } from 'react-redux';
-import Apps from '../AppInfo/Apps';
+import Apps from '../__OldAppInfo/Apps';
 import { increment, decrement } from '../../actions';
 
 const meetingApp = ({ loading, currentUser, login, jumpToStep }) => {

@@ -1,26 +1,11 @@
-/*
-  This file has been partially generated!
-  To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://bit.ly/nsFrontEndRules
- */
-// ns__file unit: appInfo, comp: AppCreationForm
-
-// ns__custom_start unit: appInfo, comp: AppCreationForm, loc: beforeImports
-
-// ns__custom_end unit: appInfo, comp: AppCreationForm, loc: beforeImports
-
 import React, { useState } from 'react';
 import { graphql } from '@apollo/react-hoc';
 import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 
-import { CREATE_APP_FOR_APP_SPEC_ACTION_ID } from '../../../config';
+// import { CREATE_APP_FOR_REGISTRATION_INFO_ACTION_ID } from '../../../config';
 
-// ns__custom_start unit: appInfo, comp: AppCreationForm, loc: addedImports
-// ns__custom_end unit: appInfo, comp: AppCreationForm, loc: addedImports
-
-// ns__custom_start unit: appInfo, comp: AppCreationForm, loc: styling
 // change styling here
 const Form = styled.div`
   margin: 2em;
@@ -29,48 +14,38 @@ const Form = styled.div`
   border-radius: 5px;
   background-color: #f5f5f5;
 `;
-// ns__custom_end unit: appInfo, comp: AppCreationForm, loc: styling
 
 const Button = styled.button`
   margin-left: 1em;
 `;
 
-function AppCreationForm({
-  customerId,
-  createApp,
-  refetchQueries,
-  // ns__custom_start unit: appInfo, comp: AppCreationForm, loc: addedProps
-  // ns__custom_end unit: appInfo, comp: AppCreationForm, loc: addedProps
-}) {
+function AppCreationForm({ customerId, createApp, refetchQueries }) {
   const [appValue, updateAppValue] = useState('');
   const [loading, updateLoading] = useState(false);
-  // ns__custom_start unit: appInfo, comp: AppCreationForm, loc: beginning
-  // ns__custom_end unit: appInfo, comp: AppCreationForm, loc: beginning
 
   function handleChange(e) {
     updateAppValue(e.target.value);
   }
 
   async function handleSubmit(e) {
+    this.props.onNext();
     e.preventDefault();
-
     if (!appValue) {
       return;
     }
-
     updateLoading(true);
 
-    const createAppResponse = await createApp({
-      variables: {
-        actionId: CREATE_APP_FOR_APP_SPEC_ACTION_ID,
-        executionParameters: JSON.stringify({
-          parentInstanceId: customerId,
-          value: appValue,
-        }),
-        unrestricted: false,
-      },
-      refetchQueries,
-    });
+    // const createAppResponse = await createApp({
+    //   variables: {
+    //     actionId: CREATE_APP_FOR_REGISTRATION_INFO_ACTION_ID,
+    //     executionParameters: JSON.stringify({
+    //       parentInstanceId: customerId,
+    //       value: appValue,
+    //     }),
+    //     unrestricted: false,
+    //   },
+    //   refetchQueries
+    // });
 
     // const newAppData = JSON.parse(createAppResponse.data.Execute);
 
@@ -84,10 +59,6 @@ function AppCreationForm({
     }
   }
 
-  // ns__custom_start unit: appInfo, comp: AppCreationForm, loc: beforeReturn
-  // ns__custom_end unit: appInfo, comp: AppCreationForm, loc: beforeReturn
-
-  // ns__start_section return
   return (
     <Form>
       <label htmlFor='app-value'>
@@ -106,7 +77,6 @@ function AppCreationForm({
       </Button>
     </Form>
   );
-  // ns__end_section return
 }
 
 export default compose(graphql(EXECUTE, { name: 'createApp' }))(

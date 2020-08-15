@@ -13,8 +13,8 @@ import JobSeeker from '../../meetingSteps/jobSeeker';
 import LoginForm from '../../LoginForm';
 import RegistrationForm from '../../RegistrationForm';
 import Home from '../Home';
-import Apps from '../../AppInfo/Apps';
-import AppHeader from '../../../custom/AppFooter';
+import Apps from '../../__OldAppInfo/Apps';
+import AppHeader from '../../../custom/AppHeader';
 import AppFooter from '../../../custom/AppFooter';
 import { increment, decrement } from '../../../actions';
 

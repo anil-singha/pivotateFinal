@@ -1,17 +1,33 @@
+/*
+  This file has been partially generated!
+  To permit updates to the generated portions of this code in the future,
+  please follow all rules at https://bit.ly/nsFrontEndRules
+ */
+// ns__file unit: appInfo, comp: Description
+
+// ns__custom_start unit: appInfo, comp: Description, loc: beforeImports
+
+// ns__custom_end unit: appInfo, comp: Description, loc: beforeImports
+
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 import { graphql } from '@apollo/react-hoc';
 
+import PropTypes from 'prop-types';
 import {
-  UPDATE_DESCRIPTION_FOR_REGISTRATION_INFO_ACTION_ID,
-  DELETE_DESCRIPTION_FOR_REGISTRATION_INFO_ACTION_ID,
+  UPDATE_DESCRIPTION_FOR_APP_SPEC_ACTION_ID,
+  DELETE_DESCRIPTION_FOR_APP_SPEC_ACTION_ID,
 } from '../../../config';
 
 import EditInstanceForm from '../../EditInstanceForm';
 import DeleteInstanceMenu from '../../DeleteInstanceMenu';
 
+// ns__custom_start unit: appInfo, comp: Description, loc: addedImports
+// ns__custom_end unit: appInfo, comp: Description, loc: addedImports
+
+// ns__custom_start unit: appInfo, comp: Description, loc: styling
 // add styling here
 const DescriptionStyleWrapper = styled.div(
   ({ selected, isDeleting }) => `
@@ -28,6 +44,7 @@ const DescriptionStyleWrapper = styled.div(
   }
 `
 );
+// ns__custom_end unit: appInfo, comp: Description, loc: styling
 
 const Button = styled.button`
   background: none;
@@ -50,6 +67,8 @@ function Description({
   deleteInstance,
   refetchQueries,
   onSelect,
+  // ns__custom_start unit: appInfo, comp: Description, loc: addedProps
+  // ns__custom_end unit: appInfo, comp: Description, loc: addedProps
 }) {
   const [descriptionValue, updateDescriptionValue] = useState(
     description.value
@@ -58,6 +77,11 @@ function Description({
   const [isSaving, updateIsSaving] = useState(false);
   const [isDeleteMode, updateIsDeleteMode] = useState(false);
   const [isDeleting, updateIsDeleting] = useState(false);
+  // ns__custom_start unit: appInfo, comp: Description, loc: beginning
+  // ns__custom_end unit: appInfo, comp: Description, loc: beginning
+
+  // ns__custom_start unit: appInfo, comp: Description, loc: beforeReturn
+  // ns__custom_end unit: appInfo, comp: Description, loc: beforeReturn
 
   if (!selected) {
     return (
@@ -76,7 +100,7 @@ function Description({
 
     await updateInstance({
       variables: {
-        actionId: UPDATE_DESCRIPTION_FOR_REGISTRATION_INFO_ACTION_ID,
+        actionId: UPDATE_DESCRIPTION_FOR_APP_SPEC_ACTION_ID,
         executionParameters: JSON.stringify({
           value: descriptionValue,
           instanceId: description.id,
@@ -115,7 +139,7 @@ function Description({
     try {
       await deleteInstance({
         variables: {
-          actionId: DELETE_DESCRIPTION_FOR_REGISTRATION_INFO_ACTION_ID,
+          actionId: DELETE_DESCRIPTION_FOR_APP_SPEC_ACTION_ID,
           executionParameters: JSON.stringify({
             parentInstanceId: parentId,
             instanceId: description.id,
@@ -154,6 +178,9 @@ function Description({
       <Button type='button' onClick={() => updateIsDeleteMode(true)}>
         &#128465;
       </Button>
+
+      {/* ns__custom_start unit: appInfo, comp: Description, loc: renderEnding */}
+      {/* ns__custom_end unit: appInfo, comp: Description, loc: renderEnding */}
     </DescriptionStyleWrapper>
   );
 }
@@ -162,3 +189,23 @@ export default compose(
   graphql(EXECUTE, { name: 'updateInstance' }),
   graphql(EXECUTE, { name: 'deleteInstance' })
 )(Description);
+
+Description.propTypes = {
+  description: PropTypes.object,
+  parentId: PropTypes.string,
+  selected: PropTypes.bool,
+  updateInstance: PropTypes.func,
+  deleteInstance: PropTypes.func,
+  refetchQueries: PropTypes.array,
+  onSelect: PropTypes.func,
+  app: PropTypes.shape({
+    children: PropTypes.array,
+    id: PropTypes.string,
+  }),
+  description: PropTypes.shape({
+    value: PropTypes.string,
+    id: PropTypes.string,
+  }),
+  // ns__custom_start unit: appInfo, comp: Description, loc: addedPropTypes
+  // ns__custom_end unit: appInfo, comp: Description, loc: addedPropTypes
+};

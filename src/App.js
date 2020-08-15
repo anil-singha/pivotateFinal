@@ -47,7 +47,7 @@ const CreateUserType = React.lazy(() =>
 );
 
 const AppCreate = React.lazy(() =>
-  import('./components/OldAppInfo/AppCreationForm/AppCreationForm')
+  import('./components/AppInfo/AppCreationForm/AppCreationForm')
 );
 
 const App = () => {
@@ -56,7 +56,7 @@ const App = () => {
   return (
     <React.Suspense
       path='/'
-      fallback={(
+      fallback={
         <section className=''>
           <div className='container full-width'>
             <div className='flex flex-wrap items-center'>
@@ -68,7 +68,7 @@ const App = () => {
             </div>
           </div>
         </section>
-      )}
+      }
     >
       <BrowserRouter basename={`${process.env.PUBLIC_URL}/`}>
         <ScrollToTop>

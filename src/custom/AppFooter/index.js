@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
-import { Context as AuthContext } from '../../context/AuthContext';
+import { Context as AuthContext } from '../../custom/context/AuthContext';
 
 const AppFooter = (props) => {
   const {
@@ -31,9 +31,7 @@ const AppFooter = (props) => {
                   href='#'
                   className='button button--large button--teal'
                 >
-                  SIGN UP 
-                  {' '}
-                  <span className='chevron right' />
+                  SIGN UP <span className='chevron right' />
                 </a>
               </div>
             </div>

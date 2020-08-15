@@ -12,7 +12,7 @@ import * as serviceWorker from './serviceWorker';
 import client from './client';
 
 import allReducers from './reducers';
-import { Provider as AuthContext } from './context/AuthContext';
+import { Provider as AuthContext } from './custom/context/AuthContext';
 import store from './redux/store';
 
 const tagManagerArgs = {

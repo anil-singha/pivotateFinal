@@ -14,7 +14,7 @@ import compose from '@shopify/react-compose';
 import PropTypes from 'prop-types';
 import { TextField, makeStyles } from '@material-ui/core';
 import { CREATE_APP_FOR_APP_SPEC_ACTION_ID } from '../../config';
-import DescriptionCreationForm from '../../components/AppInfo/DescriptionCreationForm';
+import DescriptionCreationForm from '../../components/__OldAppInfo/DescriptionCreationForm';
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: styling

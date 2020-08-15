@@ -8,11 +8,11 @@ import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import StepConnector from '@material-ui/core/StepConnector';
 import Typography from '@material-ui/core/Typography';
-import FormAppDetails from '../OldAppInfo/AppCreationForm/FormDetails/FormAppDetails';
+import FormAppDetails from '../AppInfo/AppCreationForm/FormDetails/FormAppDetails';
 
-import FormUserType from '../OldAppInfo/AppCreationForm/FormUserType/FormUserType';
-import FormJobSeeker from '../OldAppInfo/AppCreationForm/FormJobSeeker/FormJobSeeker';
-import FormProfileDetails from '../OldAppInfo/AppCreationForm/FormProfileDetails/FormProfileDetails';
+import FormUserType from '../AppInfo/AppCreationForm/FormUserType/FormUserType';
+import FormJobSeeker from '../AppInfo/AppCreationForm/FormJobSeeker/FormJobSeeker';
+import FormProfileDetails from '../AppInfo/AppCreationForm/FormProfileDetails/FormProfileDetails';
 
 const ColorlibConnector = withStyles({
   alternativeLabel: {

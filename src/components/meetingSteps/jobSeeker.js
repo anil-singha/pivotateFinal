@@ -5,8 +5,8 @@ import { v4 } from 'uuid';
 
 import { flattenData } from '../../flattenData';
 
-import AppCreationForm from '../AppInfo/AppCreationForm';
-import App from '../AppInfo/App';
+import AppCreationForm from '../__OldAppInfo/AppCreationForm';
+import App from '../__OldAppInfo/App';
 
 import { SOURCE_APP_SPEC_ID } from '../../config';
 import {

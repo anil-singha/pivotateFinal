@@ -6,7 +6,7 @@ import { NoStackConsumer, LogoutButton } from '@nostack/no-stack';
 import RegistrationForm from '../../components/RegistrationForm';
 import LoginForm from '../../components/LoginForm';
 import { PLATFORM_ID, TYPE_CUSTOMER_ID } from '../../config';
-import { Context as AuthContext } from '../../context/AuthContext';
+import { Context as AuthContext } from '../../custom/context/AuthContext';
 
 class NavBar extends Component {
   static contextType = AuthContext;
@@ -161,14 +161,12 @@ class NavBar extends Component {
                   </li>
                   <li>
                     <Link onClick={this.checkboxHandler} to='/#how-it-works'>
-                      HOW IT WORKS
-                      {' '}
+                      HOW IT WORKS{' '}
                     </Link>
                   </li>
                   <li>
                     <Link onClick={this.checkboxHandler} to='/#about-us'>
-                      ABOUT US
-                      {' '}
+                      ABOUT US{' '}
                     </Link>
                   </li>
                   <li>
@@ -180,8 +178,7 @@ class NavBar extends Component {
                     <li>
                       <a href='#' onClick={this.modalHandlerLogin}>
                         {' '}
-                        LOGIN
-                        {' '}
+                        LOGIN{' '}
                       </a>
                     </li>
                   )}

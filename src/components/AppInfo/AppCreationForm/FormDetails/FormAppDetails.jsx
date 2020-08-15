@@ -6,10 +6,7 @@ import FormInput from '../../../FormInput/form-input';
 
 import { FormCreation, Form } from '../AppCreationForm.styles';
 
-import {
-  addName,
-  addDescription,
-} from '../../../../redux/appCreateInfo/appDetails.actions';
+import { addName, addDescription } from '../../../../redux/appCreateInfo/appDetails.actions';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -53,21 +50,21 @@ const FormAppDetails = ({
           <TextField
             className={styles.input}
             value={appName}
-            type='text'
+            type="text"
             required
             onChange={onNameChange}
-            label='What's the name of your App?'
-            variant='outlined'
+            label="What's the name of your App?"
+            variant="outlined"
           />
 
           <TextField
             className={styles.root}
-            id='multiline'
-            label='Describe your app'
+            id="multiline"
+            label="Describe your app"
             multiline
             rows={15}
             value={description}
-            variant='outlined'
+            variant="outlined"
             onChange={onDescriptionChange}
           />
         </div>
