@@ -133,7 +133,7 @@ const SubInfoTypeCreationForm = ({
   const styles = useStyles();
   const [callout, setCallout] = useState(false);
   const showCalloutBox = callout || validateSubInfoTypes === 0;
-  const callOutText = "What's the name of this Sub Info Type?";
+  const callOutText = 'What\'s the name of this Sub Info Type?';
 
   console.log('validateSubInfoTypes', validateSubInfoTypes);
 
@@ -224,7 +224,8 @@ const SubInfoTypeCreationForm = ({
       </Label>
       {showCalloutBox ? (
         <CalloutBox>
-          {callOutText}{' '}
+          {callOutText}
+          {' '}
           <CloseIcon className={styles.closeIcon} onClick={showCallout} />
         </CalloutBox>
       ) : null}

@@ -10,49 +10,57 @@ const Terms = () => {
           </strong>
         </h3>
         <p>
-          ‬NOSTACK‬‬ Ltd. ("
+          ‬NOSTACK‬‬ Ltd. ('
           <strong>No Stack</strong>
-          ", "<strong>us</strong>
-          ", "<strong>our</strong>
-          ", or "<strong>we</strong>
-          "), a company incorporated in the State of Israel with Company No.
+          ', '
+          <strong>us</strong>
+          ', '
+          <strong>our</strong>
+          ', or '
+          <strong>we</strong>
+          '), a company incorporated in the State of Israel with Company No.
           516184462‬‬, is the creator and owner of a platform for creating,
-          designing and managing full stack applications ("
-          <strong>Platform</strong>" and "<strong>Applications</strong>
-          ", respectively), available to you through our website ("
+          designing and managing full stack applications ('
+          <strong>Platform</strong>
+          ' and '
+          <strong>Applications</strong>
+          ', respectively), available to you through our website ('
           <strong>Site</strong>
-          "). These Terms of Service ("
+          '). These Terms of Service ('
           <strong>Terms</strong>
-          ") govern your access and use of the Platform and any services
-          available thereon ("
+          ') govern your access and use of the Platform and any services
+          available thereon ('
           <strong>Services</strong>
-          "). Our Privacy Notice, available at &nbsp;
+          '). Our Privacy Notice, available at &nbsp;
           <a href='https://pivotate.com/privacy-policy'>
             https://pivotate.com/privacy-policy
-          </a>{' '}
-          ("
+          </a>
+          {' '}
+          ('
           <strong>Privacy Notice</strong>
-          ") governs our collection, processing and transfer of any Personal
-          Data (as such term is defined in the Privacy Notice). "
-          <strong>You</strong>" means any individual using the
+          ') governs our collection, processing and transfer of any Personal
+          Data (as such term is defined in the Privacy Notice). '
+          <strong>You</strong>
+          ' means any individual using the
           Services.‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬
         </p>
         <p>
-          Please read these Terms carefully. By clicking on the button marked "I
-          agree" you signify your assent to these Terms. Changes may be made to
+          Please read these Terms carefully. By clicking on the button marked 'I
+          agree' you signify your assent to these Terms. Changes may be made to
           these Terms from time to time. If you do not agree to any of these
-          Terms, please do not click the button marked "I agree" and do not use
+          Terms, please do not click the button marked 'I agree' and do not use
           the Services.
         </p>
         <p>
-          If you are registering on behalf of any entity or company ("
+          If you are registering on behalf of any entity or company ('
           <strong>Company</strong>
-          "), you represent that you are authorized to enter into, and bind the
+          '), you represent that you are authorized to enter into, and bind the
           Company to these Terms and register for the Services. You are solely
           responsible for ensuring that these Terms are in compliance with all
           laws, rules, and regulations applicable to you and the Company and the
           right to access the Services is revoked where these Terms or use of
-          the Services is prohibited.{' '}
+          the Services is prohibited.
+          {' '}
         </p>
         <ol>
           <li>
@@ -71,12 +79,13 @@ const Terms = () => {
                 perform certain modifications to such Applications, including,
                 without limitation, any components or features of an Application
                 or any other developments in connection therewith, from time to
-                time during the term hereof (collectively, "
+                time during the term hereof (collectively, '
                 <strong>Deliverables</strong>
-                "). No Stack may, at its sole discretion and at any time, modify
+                '). No Stack may, at its sole discretion and at any time, modify
                 or discontinue providing the Services or any part thereof
                 without notice and shall not be liable to you or any third party
-                for any modification or discontinuance of the Services.{' '}
+                for any modification or discontinuance of the Services.
+                {' '}
               </p>
             </li>
           </ol>
@@ -86,11 +95,12 @@ const Terms = () => {
             <li>
               <p>
                 In the event that you shall register for the beta version of the
-                Platform and/or Services ("
+                Platform and/or Services ('
                 <strong>Beta Version</strong>
-                "), you hereby agree to provide No Stack with feedback regarding
+                '), you hereby agree to provide No Stack with feedback regarding
                 your use thereof in such manner reasonably requested by No
-                Stack.{' '}
+                Stack.
+                {' '}
               </p>
             </li>
           </ol>
@@ -109,9 +119,9 @@ const Terms = () => {
                 third party; (e) in the event you shall (i) direct or request
                 from No Stack to create or develop any Deliverables, or (ii)
                 provide No Stack with any materials in connection with the
-                creation and development of any Deliverables hereunder ("
+                creation and development of any Deliverables hereunder ('
                 <strong>User Materials</strong>
-                "), you have all right, title, license and consent required to
+                '), you have all right, title, license and consent required to
                 provide us with any such User Material and/or direct us to
                 create the Deliverable/s in accordance with these Terms and all
                 such Deliverables and User Materials do not and will not
@@ -145,7 +155,9 @@ const Terms = () => {
           its sole discretion.
         </p>
         <p>
-          <a name='__DdeLink__1422_3648855855' /> You agree to notify us
+          <a name='__DdeLink__1422_3648855855' />
+          {' '}
+          You agree to notify us
           immediately of any unauthorized use of your account or password. You
           are fully and solely responsible for the security of your computer
           system and/or mobile device and all activity on your account, even if
@@ -200,7 +212,8 @@ const Terms = () => {
                 authorities or court order requesting or directing us to
                 disclose the identity, behavior or Content of anyone believed to
                 have violated these Terms or to have engaged in illegal behavior
-                in connection with the Services.{' '}
+                in connection with the Services.
+                {' '}
               </p>
             </li>
           </ol>
@@ -217,7 +230,8 @@ const Terms = () => {
                 (including but not limited to ownership, indemnification, any
                 representations and warranties made by you, limitation of
                 liability, and payment obligations), which by their sense and
-                context are intended to survive such suspension or termination.{' '}
+                context are intended to survive such suspension or termination.
+                {' '}
               </p>
             </li>
           </ol>
@@ -234,9 +248,9 @@ const Terms = () => {
             <li>
               <p>
                 You agree to pay No Stack the fees as specified on the Site in
-                accordance with the plan for which you have registered ("
+                accordance with the plan for which you have registered ('
                 <strong>Fees</strong>
-                "). The Fees payable in respect of any use of the Beta Version
+                '). The Fees payable in respect of any use of the Beta Version
                 shall be in a reduced amount as specified on the Site for the
                 limited period set forth therein. Payment of the Fees shall be
                 made on a monthly basis, in advance of the applicable month. It
@@ -253,7 +267,8 @@ const Terms = () => {
                 governing use of that third party's service and that third
                 party's Personal Data collection practices. Please review such
                 terms and conditions and privacy policy before using such
-                services.{' '}
+                services.
+                {' '}
               </p>
             </li>
           </ol>
@@ -275,7 +290,8 @@ const Terms = () => {
                 Please note that No Stack may impose or deduct foreign currency
                 processing costs on or from any payments or payouts by No Stack
                 in currencies other than U.S. dollars. When converting currency,
-                prices may be rounded up to the nearest whole number.{' '}
+                prices may be rounded up to the nearest whole number.
+                {' '}
               </p>
             </li>
           </ol>
@@ -292,15 +308,18 @@ const Terms = () => {
             <li>
               <p>
                 Certain types of content may be made available through the
-                Services. "<strong>Content</strong>" as used in these Terms
+                Services. '
+                <strong>Content</strong>
+                ' as used in these Terms
                 means, collectively, all content on or made available through
                 the Services, including any images, photos, text, pictures or
                 videos and any modifications or derivatives of the foregoing. No
                 Stack allows you to upload certain content including but not
                 limited to images, text, videos, pictures and/or feedback on or
                 through the Services, including User Materials, referred to
-                herein as "<strong>User Content</strong>
-                ".
+                herein as '
+                <strong>User Content</strong>
+                '.
               </p>
             </li>
           </ol>
@@ -309,7 +328,9 @@ const Terms = () => {
           <ol start='2'>
             <li>
               <p>
-                <a name='_Hlk13065850' /> NO STACK DOES NOT ENDORSE ANY CONTENT
+                <a name='_Hlk13065850' />
+                {' '}
+                NO STACK DOES NOT ENDORSE ANY CONTENT
                 (INCLUDING WITHOUT LIMITATION ANY USER CONTENT) OR ANY OPINION,
                 RECOMMENDATION, OR ADVICE EXPRESSED IN ANY CONTENT AND EXPRESSLY
                 DISCLAIMS ANY AND ALL LIABILITY IN CONNECTION WITH THE CONTENT
@@ -347,7 +368,8 @@ const Terms = () => {
                 and (iii) that you have all necessary rights and authorities to
                 submit such User Content. Any User Content posted or submitted
                 through the Services shall not be considered confidential and
-                may be disseminated by No Stack without compensation to you.{' '}
+                may be disseminated by No Stack without compensation to you.
+                {' '}
               </p>
             </li>
           </ol>
@@ -418,7 +440,8 @@ const Terms = () => {
                 may post or transmit offensive or obscene materials and that you
                 may be involuntarily exposed to such offensive or obscene
                 materials. You hereby waive any legal or equitable rights or
-                remedies you have or may have against us with respect thereto.{' '}
+                remedies you have or may have against us with respect thereto.
+                {' '}
               </p>
             </li>
           </ol>
@@ -492,7 +515,9 @@ const Terms = () => {
           <ol start='2'>
             <li>
               <p>
-                <a name='_Hlk13142993' /> You have all right, title and interest
+                <a name='_Hlk13142993' />
+                {' '}
+                You have all right, title and interest
                 in the User Content you submit. By uploading any User Content,
                 you grant No Stack and its successors and assignees a worldwide,
                 non-exclusive, royalty-free, perpetual, sub-licensable and
@@ -513,15 +538,17 @@ const Terms = () => {
                 payment of any and all Fees payable hereunder, No Stack hereby
                 transfers and assigns to you all right, title and interest in
                 any User Application IP (as defined below) included in any
-                Deliverable created hereunder. "
-                <strong>User Application IP</strong>" shall mean all
+                Deliverable created hereunder. '
+                <strong>User Application IP</strong>
+                ' shall mean all
                 intellectual property or other rights in any Deliverable other
-                than any (i) preexisting intellectual property of No Stack ("
+                than any (i) preexisting intellectual property of No Stack ('
                 <strong>No Stack IP</strong>
-                "); (ii) reusable or standard components, systems, processes,
+                '); (ii) reusable or standard components, systems, processes,
                 code, libraries, technologies or know-how therein (collectively,
-                "<strong>Background IP</strong>
-                "); and (ii) materials or software subject to an open source
+                '
+                <strong>Background IP</strong>
+                '); and (ii) materials or software subject to an open source
                 license, as defined by the Open Source Initiative, or a
                 creative-commons license. For the avoidance of doubt, Background
                 IP shall not include (i) any components of Deliverable/s
@@ -535,7 +562,8 @@ const Terms = () => {
                 distribute, transmit, modify, prepare derivative works of,
                 publicly display, alter, decompile, publicly perform any
                 Background IP incorporated in any applicable Deliverable created
-                in connection with the Services in accordance with these Terms.{' '}
+                in connection with the Services in accordance with these Terms.
+                {' '}
               </p>
             </li>
           </ol>
@@ -556,8 +584,9 @@ const Terms = () => {
                 and No Stack will refuse to use and remove any User Content in
                 connection with the Services that infringes the rights of any
                 third party. Under the Digital Millennium Copyright Act of 1998
-                (the "<strong>DMCA</strong>
-                "), No Stack will remove any Content (including, without
+                (the '
+                <strong>DMCA</strong>
+                '), No Stack will remove any Content (including, without
                 limitation, any User Content) if properly notified that such
                 material infringes third party rights, and may do so at its sole
                 discretion, without prior notice to users at any time.&nbsp;The
@@ -584,7 +613,9 @@ const Terms = () => {
           <ol start='3'>
             <li>
               <p>
-                <a name='_Hlk25137137' /> If you believe that something
+                <a name='_Hlk25137137' />
+                {' '}
+                If you believe that something
                 appearing on the Services infringes your copyright, you may send
                 us a notice requesting that it be removed, or that access to it
                 blocked. If you believe that such a notice has been wrongly
@@ -603,7 +634,9 @@ const Terms = () => {
           <li>
             <p>
               <a name='_Hlk17646253' />
-              <a name='_Hlk17646264' /> <strong>Disclaimers</strong>
+              <a name='_Hlk17646264' /> 
+              {' '}
+              <strong>Disclaimers</strong>
               <strong> and Disclaimer of Warranty</strong>
             </p>
           </li>
@@ -612,7 +645,9 @@ const Terms = () => {
           <ol>
             <li>
               <p>
-                <a name='_Hlk17646285' /> All information and content posted on
+                <a name='_Hlk17646285' />
+                {' '}
+                All information and content posted on
                 the Site is for informational purposes only and No Stack
                 provides no guarantees with respect thereto. Your use of the
                 Site, Platform Services or any Deliverable is at your sole
@@ -620,7 +655,8 @@ const Terms = () => {
                 Services, as well as any Content thereon, are provided on an AS
                 IS and AS AVAILABLE basis without warranties of any kind. We do
                 not represent or warrant that the Platform, Services or any
-                Deliverable will be of good quality or useful for your needs.{' '}
+                Deliverable will be of good quality or useful for your needs.
+                {' '}
               </p>
             </li>
           </ol>
@@ -641,7 +677,8 @@ const Terms = () => {
                 PLATFOR, SERVICES OR ANY DELIVERABLE WILL BE ERROR-FREE OR THAT
                 ANY ERRORS WILL BE CORRECTED; OR (III) REGARDING THE PERFORMANCE
                 OF OR ACCURACY, QUALITY, CURRENCY, COMPLETENESS OR USEFULNESS OF
-                ANY INFORMATION PROVIDED ON THE PLATFORM AND/OR SERVICES.{' '}
+                ANY INFORMATION PROVIDED ON THE PLATFORM AND/OR SERVICES.
+                {' '}
               </p>
             </li>
           </ol>
@@ -663,7 +700,8 @@ const Terms = () => {
           </ol>
         </ol>
         <p>
-          <a name='_Ref292385655' />{' '}
+          <a name='_Ref292385655' />
+          {' '}
         </p>
         <ol>
           <ol start='4'>
@@ -724,7 +762,8 @@ const Terms = () => {
                 solely responsible for any and all data provided to No Stack,
                 including any incorrect data and you shall assume any and all
                 liability for any consequences of provision of such incorrect
-                data to us.{' '}
+                data to us.
+                {' '}
               </p>
             </li>
           </ol>
@@ -734,7 +773,9 @@ const Terms = () => {
             <li>
               <p>
                 <a name='_Hlk10393158' />
-                <a name='_Hlk17646515' /> IN NO EVENT SHALL NO STACK, OR ANY OF
+                <a name='_Hlk17646515' />
+                {' '}
+                IN NO EVENT SHALL NO STACK, OR ANY OF
                 ITS RESPECTIVE OFFICERS, DIRECTORS, EMPLOYEES, ASSIGNEES, OR
                 AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DAMAGES
                 WHATSOEVER, INCLUDING WITHOUT LIMITATION INDIRECT, INCIDENTAL,
@@ -774,14 +815,16 @@ const Terms = () => {
               protection laws and regulations to which you are subject; (d) your
               infringement of any right of any third party; and (e) any other
               matter for which you are responsible hereunder or under applicable
-              law.{' '}
+              law.
+              {' '}
             </p>
           </li>
         </ol>
         <ol start='13'>
           <li>
             <p>
-              <strong>Third-Party Content and Services</strong>. The Site,
+              <strong>Third-Party Content and Services</strong>
+              . The Site,
               Platform and/or Services may be used together with certain
               third-party services and provide you with third-party links
               (including, without limitation, advertisements) to websites,
@@ -793,7 +836,8 @@ const Terms = () => {
               applications or for the privacy policies of such third parties. We
               do not endorse any products offered by third parties and we urge
               our users to exercise caution in using third-party websites or
-              applications.{' '}
+              applications.
+              {' '}
             </p>
           </li>
         </ol>

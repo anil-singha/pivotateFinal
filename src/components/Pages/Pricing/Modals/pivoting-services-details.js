@@ -18,7 +18,8 @@ const serviceDetails = () => {
               <div className='pricing__sub-description'>ADDING NEW BUTTON</div>
               <div className='pricing__price teal--text'>
                 {' '}
-                <strong>$2</strong>{' '}
+                <strong>$2</strong>
+                {' '}
               </div>
             </div>
             <div className='grow-6' style={{ width: '50%' }}>
@@ -38,9 +39,12 @@ const serviceDetails = () => {
                 <div className=' inline-flex'>
                   {' '}
                   <strong>
-                    <span className=' teal--text pricing__price'>$15 </span> per
+                    <span className=' teal--text pricing__price'>$15 </span>
+                    {' '}
+                    per
                     screen
-                  </strong>{' '}
+                  </strong>
+                  {' '}
                 </div>
               </div>
               <div>
@@ -52,9 +56,12 @@ const serviceDetails = () => {
                 <div className=' inline-flex'>
                   {' '}
                   <strong>
-                    <span className=' teal--text pricing__price'>$10 </span> per
+                    <span className=' teal--text pricing__price'>$10 </span>
+                    {' '}
+                    per
                     screen
-                  </strong>{' '}
+                  </strong>
+                  {' '}
                 </div>
               </div>
             </div>
@@ -157,7 +164,9 @@ const serviceDetails = () => {
                 <div className=''>
                   <strong>
                     {' '}
-                    <span className='pricing__price teal--text'>$90 </span> per
+                    <span className='pricing__price teal--text'>$90 </span>
+                    {' '}
+                    per
                     10 types
                   </strong>
                   <p> (needing a fundamental change to the data)</p>
@@ -217,8 +226,10 @@ const serviceDetails = () => {
                     <strong>
                       {' '}
                       <span className='pricing__price teal--text'>
-                        $75{' '}
-                      </span>{' '}
+                        $75
+                        {' '}
+                      </span>
+                      {' '}
                       per 500 words
                     </strong>
                   </div>

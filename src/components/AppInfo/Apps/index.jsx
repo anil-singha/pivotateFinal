@@ -1,3 +1,14 @@
+/*
+  This file has been partially generated!
+  To permit updates to the generated portions of this code in the future,
+  please follow all rules at https://bit.ly/nsFrontEndRules
+ */
+// ns__file unit: appInfo, comp: Apps
+
+// ns__custom_start unit: appInfo, comp: Apps, loc: beforeImports
+
+// ns__custom_end unit: appInfo, comp: Apps, loc: beforeImports
+
 import React, { Component, createRef } from 'react';
 import { Unit } from '@nostack/no-stack';
 import styled from 'styled-components';
@@ -5,23 +16,39 @@ import { v4 } from 'uuid';
 
 import { flattenData } from '../../../flattenData';
 
-import AppCreationForm from '../AppCreationForm';
+// ns__remove_import AppCreationForm from '../AppCreationForm';
 import App from '../App';
 
-import { SOURCE_REGISTRATION_INFO_ID } from '../../../config';
+import { SOURCE_APP_SPEC_ID, TYPE_DESCRIPTION_ID } from '../../../config';
 import {
-  REGISTRATION_INFO_RELATIONSHIPS,
-  SOURCE_REGISTRATION_INFO_QUERY,
+  APP_SPEC_RELATIONSHIPS,
+  SOURCE_APP_SPEC_QUERY,
 } from '../../source-props/appInfo';
 
-// add styling here
+// ns__custom_start unit: appInfo, comp: Apps, loc: addedImports
+import FirstTimeAppCreationForm from '../../../custom/FirstTimeAppCreationForm';
+
+import { getDescriptionChild } from '../../../custom/getDescriptionChild';
+import { Context as UnitDataContext } from '../../../custom/UnitDataContext';
+
+// ns__custom_end unit: appInfo, comp: Apps, loc: addedImports
+
+// ns__custom_start unit: appInfo, comp: Apps, loc: styling
+
+// add a prop called `show`
 const AppsStyleWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  // mystyling...
 `;
+// ns__custom_end unit: appInfo, comp: Apps, loc: styling
 
 class Apps extends Component {
+  // ns__custom_start unit: appInfo, comp: Apps, loc: beginning
+  static contextType = UnitDataContext;
+
+  // ns__custom_end unit: appInfo, comp: Apps, loc: beginning
   state = {
     selectedAppId: null,
   };
@@ -29,10 +56,16 @@ class Apps extends Component {
   wrapperRef = createRef();
 
   componentDidMount() {
+    // ns__custom_start unit: appInfo, comp: Apps, loc: componentDidMount
+
+    // ns__custom_end unit: appInfo, comp: Apps, loc: componentDidMount
     document.addEventListener('mousedown', this.handleClick);
   }
 
   componentWillUnmount() {
+    // ns__custom_start unit: appInfo, comp: Apps, loc: componentWillUnmount
+    // ns__custom_end unit: appInfo, comp: Apps, loc: componentWillUnmount
+
     document.removeEventListener('mousedown', this.handleClick);
   }
 
@@ -49,16 +82,19 @@ class Apps extends Component {
   render() {
     const { customerId } = this.props;
     const { selectedAppId } = this.state;
-
     const parameters = {
-      ignoredParameter: customerId,
+      currentCustomer: customerId,
     };
+
+    // ns__custom_start unit: appInfo, comp: Apps, loc: renderBeginning
+
+    // ns__custom_end unit: appInfo, comp: Apps, loc: renderBeginning
 
     return (
       <Unit
-        id={SOURCE_REGISTRATION_INFO_ID}
-        typeRelationships={REGISTRATION_INFO_RELATIONSHIPS}
-        query={SOURCE_REGISTRATION_INFO_QUERY}
+        id={SOURCE_APP_SPEC_ID}
+        typeRelationships={APP_SPEC_RELATIONSHIPS}
+        query={SOURCE_APP_SPEC_QUERY}
         parameters={parameters}
       >
         {({ loading, error, data, refetchQueries }) => {
@@ -70,28 +106,57 @@ class Apps extends Component {
           }
 
           const apps = data.unitData.map((el) => flattenData(el));
+
+          // ns__custom_start unit: appInfo, comp: Apps, loc: beforeReturn
+          /* NOTE: one app is assumed here. */
+          const appInfo = apps[0];
+
+          // const descriptionInfo = getDescriptionChild(appInfo.children);
+          // const descriptionValue = descriptionInfo.instances[0].value;
+
+          // ns__custom_start unit: appInfo, comp: Apps, loc: beforeReturn
+          const noApp =
+            apps.length === 0 || !(apps[0].value && apps[0].value !== ''); // || descriptionValue); // &&
+          // find in apps[0].children array an object o where o.typeId === TYPE_DESCRIPTION_ID
+          // and where o.instances contains an object oi where oi.value && oi.value !== ''
+          const show = !noApp;
+          // ns__custom_end unit: appInfo, comp: Apps, loc: beforeReturn
+
           return (
             <>
-              <AppCreationForm
-                customerId={customerId}
-                refetchQueries={refetchQueries}
-              />
-              <AppsStyleWrapper
-                ref={this.wrapperRef}
-                onClick={this.handleClick}
-              >
-                {apps &&
-                  apps.map((app) => (
-                    <App
-                      key={v4()}
-                      parentId={customerId}
-                      app={app}
-                      selected={app.id === selectedAppId}
-                      refetchQueries={refetchQueries}
-                      onSelect={this.handleSelect}
-                    />
-                  ))}
-              </AppsStyleWrapper>
+              {noApp ? (
+                <FirstTimeAppCreationForm
+                  customerId={customerId}
+                  refetchQueries={refetchQueries}
+                  // ns__custom_start unit: appInfo, comp: Apps, loc: addedPropsForCreationForm
+                  // ns__custom_end unit: appInfo, comp: Apps, loc: addedPropsForCreationForm
+                />
+              ) : (
+                <AppsStyleWrapper
+                  ref={this.wrapperRef}
+                  onClick={this.handleClick}
+                  show
+                >
+                  {/* ns__start_section listElements */}
+                  {apps &&
+                    apps.map((app) => (
+                      <App
+                        key={v4()}
+                        parentId={customerId}
+                        app={app}
+                        selected={app.id === selectedAppId}
+                        refetchQueries={refetchQueries}
+                        onSelect={this.handleSelect}
+                        // ns__custom_start unit: appInfo, comp: Apps, loc: addedPropsForChildren
+                        // ns__custom_end unit: appInfo, comp: Apps, loc: addedPropsForChildren
+                      />
+                    ))}
+                  {/* ns__start_section listElements */}
+                </AppsStyleWrapper>
+              )}
+
+              {/* ns__custom_start unit: appInfo, comp: Apps, loc: renderEnding */}
+              {/* ns__custom_end unit: appInfo, comp: Apps, loc: renderEnding */}
             </>
           );
         }}

@@ -149,7 +149,9 @@ const DataList = memo(
                   Sub Info Type
                 </InputLabel>
                 <TitleWrapper>
-                  {instance.value} {instance.id}
+                  {instance.value} 
+                  {' '}
+                  {instance.id}
                 </TitleWrapper>
                 <Button
                   type='button'
@@ -174,8 +176,7 @@ const DataList = memo(
                       subinfoTypeData={instance._children}
                       // selectedDataProps={selectedDataProps[instance.id]}
                       onChange={(subSelections) =>
-                        handleSubOptionsListChange(instance.id, subSelections)
-                      }
+                        handleSubOptionsListChange(instance.id, subSelections)}
                       updateInstance={updateInstance}
                       deleteInstance={deleteInstance}
                     />

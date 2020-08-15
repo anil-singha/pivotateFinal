@@ -1,7 +1,7 @@
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+  please follow all rules at https://bit.ly/nsFrontEndRules
  */
 
 import React, { useState } from 'react';
@@ -14,7 +14,7 @@ import compose from '@shopify/react-compose';
 import PropTypes from 'prop-types';
 import { TextField, makeStyles } from '@material-ui/core';
 import { CREATE_APP_FOR_APP_SPEC_ACTION_ID } from '../../config';
-import DescriptionCreationForm from '../../components/AppSpec/DescriptionCreationForm';
+import DescriptionCreationForm from '../../components/AppInfo/DescriptionCreationForm';
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: styling

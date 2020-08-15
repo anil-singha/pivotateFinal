@@ -44,7 +44,11 @@ class Contact extends Component {
             >
               <div>
                 <h3 className='headline' style={{ marginBottom: '0' }}>
-                  Get in touch with the <br /> Pivotate Team!
+                  Get in touch with the 
+                  {' '}
+                  <br />
+                  {' '}
+                  Pivotate Team!
                 </h3>
                 <p
                   style={{
