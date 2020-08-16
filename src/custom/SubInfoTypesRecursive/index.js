@@ -10,8 +10,8 @@ import EditInstanceForm from '../../components/EditInstanceForm';
 import DeleteInstanceMenu from '../../components/DeleteInstanceMenu';
 
 import {
-  UPDATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
-  DELETE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
+  UPDATE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
+  DELETE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
 } from '../../config';
 
 import { InputLabel, makeStyles } from '@material-ui/core';
@@ -151,7 +151,7 @@ const SubInfoComponent = ({
 
     await updateInstance({
       variables: {
-        actionId: UPDATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
+        actionId: UPDATE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
         executionParameters: JSON.stringify({
           value: infoTypeValue,
           instanceId: currentId,
@@ -171,7 +171,7 @@ const SubInfoComponent = ({
     try {
       await deleteInstance({
         variables: {
-          actionId: DELETE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
+          actionId: DELETE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
           executionParameters: JSON.stringify({
             parentInstanceId: parentId,
             instanceId: currentId,
@@ -369,7 +369,7 @@ const Child = ({
 
     await updateInstance({
       variables: {
-        actionId: UPDATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
+        actionId: UPDATE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
         executionParameters: JSON.stringify({
           value: infoTypeValue,
           instanceId: currentId,
@@ -388,7 +388,7 @@ const Child = ({
     try {
       await deleteInstance({
         variables: {
-          actionId: DELETE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
+          actionId: DELETE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
           executionParameters: JSON.stringify({
             parentInstanceId: parentId,
             instanceId: currentId,

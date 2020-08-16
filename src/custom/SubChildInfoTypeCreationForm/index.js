@@ -11,7 +11,7 @@ import { makeStyles } from '@material-ui/core';
 import IconButton from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import {
-  CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
+  CREATE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
   ADD_HAS_PARENT_FOR_PARENT_ACTION_ID,
 } from '../../config';
 
@@ -159,7 +159,7 @@ const SubInfoTypeCreationForm = ({
       updateLoading(false);
       const createInfoTypeResponse = await createSubInfoType({
         variables: {
-          actionId: CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
+          actionId: CREATE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
           executionParameters: JSON.stringify({
             parentInstanceId: parentId,
             value: subInfoValue,

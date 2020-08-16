@@ -10,8 +10,8 @@ import EditInstanceForm from "../components/EditInstanceForm";
 import DeleteInstanceMenu from "../components/DeleteInstanceMenu";
 
 import {
-  UPDATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
-  DELETE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
+  UPDATE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
+  DELETE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
 } from "../config";
 
 import SubInfoTypeCreationForm from "./SubInfoTypeCreationForm";
@@ -88,7 +88,7 @@ const DataList = memo(
 
       await updateInstance({
         variables: {
-          actionId: UPDATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
+          actionId: UPDATE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
           executionParameters: JSON.stringify({
             value: subInfoValue,
             instanceId: currentId,

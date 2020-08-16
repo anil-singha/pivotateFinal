@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { withNoStack } from "@nostack/no-stack";
 import { NoStackConsumer } from "@nostack/no-stack";
-import Apps from "../AppSpec/Apps";
+import Apps from "../AppInfo/Apps";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from "../../actions";
 
