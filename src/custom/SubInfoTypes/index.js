@@ -1,6 +1,5 @@
 import React, { useState, createRef } from 'react';
 
-import styled from 'styled-components';
 import { v4 } from 'uuid';
 import SubInfoTypeCreationForm from '../SubInfoTypeCreationForm';
 import SubInfoType from '../SubInfoType';
@@ -12,7 +11,7 @@ const SubInfoTypes = ({
   label,
   hasParentId,
   parentId,
-  childState
+  childState,
 }) => {
   const [subInfoTypeID, setSubInfoTypeID] = useState(null);
   const wrapperRef = createRef();
@@ -42,21 +41,21 @@ const SubInfoTypes = ({
         /* // ns__custom_end unit: appSpec, comp: SubInfo_Types, loc: addedPropsForCreationForm */
       />
 
-      {subInfoTypeData && subInfoTypeData.map((infoType) => (
-
-        <SubInfoType
-          key={v4()}
-          infoType={infoType}
-          infoTypeId={infoType.id}
-          selected={infoType.id === subInfoTypeID}
-          refetchQueries={refetchQueries}
-          label={label}
-          hasParentId={hasParentId}
-          onSelect={handleSelect}
-          parentId={parentId}
-          childState={childState}
-        />
-      ))}
+      {subInfoTypeData &&
+        subInfoTypeData.map((infoType) => (
+          <SubInfoType
+            key={v4()}
+            infoType={infoType}
+            infoTypeId={infoType.id}
+            selected={infoType.id === subInfoTypeID}
+            refetchQueries={refetchQueries}
+            label={label}
+            hasParentId={hasParentId}
+            onSelect={handleSelect}
+            parentId={parentId}
+            childState={childState}
+          />
+        ))}
     </div>
   );
 };

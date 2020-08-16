@@ -7,7 +7,6 @@
 
 // ns__start_section imports
 // ns__custom_start unit: appInfo, comp: Description, loc: beforeImports
-'use strict';
 // ns__custom_end unit: appInfo, comp: Description, loc: beforeImports
 
 import React, { useState } from 'react';
@@ -16,9 +15,11 @@ import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 import { graphql } from '@apollo/react-hoc';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import {
   UPDATE_DESCRIPTION_FOR_APP_INFO_ACTION_ID,
+  // eslint-disable-next-line comma-dangle
   DELETE_DESCRIPTION_FOR_APP_INFO_ACTION_ID,
 } from '../../../config';
 
@@ -32,7 +33,7 @@ import DeleteInstanceMenu from '../../DeleteInstanceMenu';
 // ns__custom_start unit: appInfo, comp: Description, loc: styling
 // add styling here
 const DescriptionStyleWrapper = styled.div(
-  ({ selected, isDeleting }) =>`
+  ({ selected, isDeleting }) => `
   margin: 2em 1em;
   padding: 1.5em;
   border: ${selected ? '1px solid aquamarine' : '1px solid white'};
@@ -89,7 +90,7 @@ function Description({
 
   if (!selected) {
     return (
-      <DescriptionStyleWrapper onClick={() =>onSelect(description.id)}>
+      <DescriptionStyleWrapper onClick={() => onSelect(description.id)}>
         {descriptionValue}
       </DescriptionStyleWrapper>
     );
@@ -176,10 +177,10 @@ function Description({
   return (
     <DescriptionStyleWrapper selected={selected}>
       {descriptionValue}
-      <Button type='button' onClick={() =>updateIsEditMode(true)}>
+      <Button type='button' onClick={() => updateIsEditMode(true)}>
         &#9998;
       </Button>
-      <Button type='button' onClick={() =>updateIsDeleteMode(true)}>
+      <Button type='button' onClick={() => updateIsDeleteMode(true)}>
         &#128465;
       </Button>
 
@@ -195,7 +196,6 @@ export default compose(
 )(Description);
 
 Description.propTypes = {
-  description: PropTypes.object,
   parentId: PropTypes.string,
   selected: PropTypes.bool,
   updateInstance: PropTypes.func,

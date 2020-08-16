@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect, createRef } from 'react';
-import SubInfoTypeCreationForm from '../SubInfoTypeCreationForm';
 import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 import { graphql } from '@apollo/react-hoc';
 import { v4 } from 'uuid';
 
+import { InputLabel, makeStyles } from '@material-ui/core';
 import EditInstanceForm from '../../components/EditInstanceForm';
 import DeleteInstanceMenu from '../../components/DeleteInstanceMenu';
 
@@ -14,7 +15,7 @@ import {
   DELETE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
 } from '../../config';
 
-import { InputLabel, makeStyles } from '@material-ui/core';
+import SubInfoTypeCreationForm from '../SubInfoTypeCreationForm';
 
 const SubInfoTypeWrapper = styled.div(
   ({ selected, isDeleting }) => `
@@ -62,7 +63,7 @@ const Button = styled.button`
 `;
 
 const InfoTypesStyleWrapper = styled.div(
-  ({ selected, isDeleting }) => `
+  ({ selected }) => `
   
   margin: 15px 0 0 7%;
   position: relative;
@@ -93,7 +94,8 @@ const InfoTypesStyleWrapper = styled.div(
     top: -11px ;
     height: ${(selected && '133px') || '55px'}; 
   }
-`);
+`
+);
 
 const TitleWrapper = styled.div`
   background: #d2ecef;
@@ -105,7 +107,7 @@ const TitleWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   titleLabel: {
     fontSize: '.8rem',
     textAlign: 'initial',
@@ -123,20 +125,20 @@ const SubInfoComponent = ({
   onClick,
   parentLabel,
   setParentLabel,
-  label
+  label,
 }) => {
   const [infoTypeValue, setSubInfoTypeValue] = useState('');
   const [show, setShow] = useState(false);
   const [currentId, setCurrentId] = useState(null);
   const [selectedInfoTypeId, setselectedInfoTypeId] = useState(null);
-  const [subInfoTypeID, setSubInfoTypeID] = useState(null);
+  const [setSubInfoTypeID] = useState(null);
   const [isEditMode, setIsEditMode] = useState(false);
 
   const [isSaving, setIsSaving] = useState(false);
   const [isDeleteMode, setIsDeleteMode] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [labelParent, setLabel] = useState(label)
-  let wrapperRef = createRef();
+  const [labelParent, setLabel] = useState(label);
+  const wrapperRef = createRef();
 
   const styles = useStyles();
 
@@ -234,10 +236,6 @@ const SubInfoComponent = ({
     }
   };
 
-  const handleSelect = (id) => {
-    setSubInfoTypeID(id);
-  };
-
   if (!infoType) return null;
 
   return (
@@ -248,6 +246,7 @@ const SubInfoComponent = ({
             return (
               <InfoTypesStyleWrapper key={v4()}>
                 <div
+                  role='button'
                   onClick={() => {
                     checkID(instance.id, instance._children);
                     setselectedInfoTypeId(instance.id);
@@ -309,7 +308,7 @@ const SubInfoComponent = ({
                     deleteInstance={deleteInstance}
                     onClick={(id) => setCurrentId(id)}
                     selected={currentId === selectedInfoTypeId}
-                    setLabel={ () => setLabel(instance.value)}
+                    setLabel={() => setLabel(instance.value)}
                   />
                 ) : null}
               </InfoTypesStyleWrapper>
@@ -342,8 +341,7 @@ const Child = ({
   currentId,
   selected,
   label,
-  setParentLabel,
-  parentLabel
+  parentLabel,
 }) => {
   const [currentChildId, setChildCurrentId] = useState(null);
   const [showChild, setshowChild] = useState(!show);
@@ -455,9 +453,8 @@ const Child = ({
                     setLabelValue(instance.value);
                     if (!last) {
                       return null;
-                    } else {
-                      onClick();
                     }
+                    onClick();
                   }}
                   onChange={handleSubInfoTypeValueChange}
                   key={v4()}
@@ -493,7 +490,7 @@ const Child = ({
                 <Child
                   {...instance}
                   show={showChild}
-                  last={true}
+                  last
                   instanceId={instance.id}
                   refetchQueries={refetchQueries}
                   updateInstance={() => updateInstance}

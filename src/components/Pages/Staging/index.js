@@ -1,55 +1,40 @@
-import React, { useRef } from "react";
-import styled from "styled-components";
-import { NoStackConsumer } from "@nostack/no-stack";
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/no-named-as-default-member */
 
-import { PLATFORM_ID, TYPE_CUSTOMER_ID } from "../../../config";
+import React, { useRef } from 'react';
+import styled from 'styled-components';
+import { NoStackConsumer } from '@nostack/no-stack';
 
-import AuthTabs from "../../AuthTabs";
-import CreateApp from "../../meetingSteps/createApp";
-import UserType from "../../meetingSteps/createUserType";
-import JobSeeker from "../../meetingSteps/jobSeeker";
-import LoginForm from "../../LoginForm";
-import RegistrationForm from "../../RegistrationForm";
-import Home from "../../Pages/Home";
-import Apps from "../../AppInfo/Apps";
-import AppHeader from "../../AppHeader";
-import AppFooter from "../../AppFooter";
-import StepZilla from "react-stepzilla";
-import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement } from "../../../actions";
-
-const LoginWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+import Home from '../Home';
+import Apps from '../../AppInfo/Apps';
+import AppHeader from '../../AppHeader';
+import AppFooter from '../../AppFooter';
 
 const Container = styled.div`
   width: 100%;
   min-height: 65vh;
-`
+`;
 
-const App = ({ loading, currentUser, login }) => {
+const App = () => {
   const childRef = useRef();
-  const counter = useSelector((state) => state.counter);
-  const dispatch = useDispatch();
   return (
     <>
       {/* <NavBar /> */}
-      <div className="">
+      <div className=''>
         <NoStackConsumer>
           {({ loading, currentUser }) => {
             if (loading) return null;
 
             if (!currentUser) {
-              
               return (
                 <>
-              <AppHeader ref={childRef} />
-                <Home   onSignUp={() => childRef.current.modalHandlerRegistration()}></Home>
-              <AppFooter />
-              </>
-              )
+                  <AppHeader ref={childRef} />
+                  <Home
+                    onSignUp={() => childRef.current.modalHandlerRegistration()}
+                  />
+                  <AppFooter />
+                </>
+              );
             }
 
             return (
@@ -57,12 +42,10 @@ const App = ({ loading, currentUser, login }) => {
                 {/* <button onClick={() => dispatch(increment())}>+</button>
                 <button onClick={() => dispatch(decrement())}>-</button>
                Step: {counter} */}
-               <div id="app">
-                <AppHeader  />
-                  <Container >
-                    
-                      <Apps customerId={currentUser.id}> </Apps>
-                    
+                <div id='app'>
+                  <AppHeader />
+                  <Container>
+                    <Apps customerId={currentUser.id}> </Apps>
                   </Container>
                   <AppFooter />
                 </div>

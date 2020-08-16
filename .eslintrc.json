@@ -9,19 +9,37 @@
   },
   "plugins": ["react", "prettier"],
   "rules": {
+    "react/require-default-props": 0,
+    "react/prop-types": 0,
+    "react/forbid-prop-types": 0,
     "react/jsx-filename-extension": [
       1,
       {
         "extensions": [".js", ".jsx"]
       }
     ],
-
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "never",
+        "objects": "always-multiline",
+        "imports": "ignore",
+        "exports": "never",
+        "functions": "never"
+      }
+    ],
     "prettier/prettier": [
       "error",
       {
         "printWidth": 80,
         "trailingComma": "es5",
-        "semi": false,
+        "semi": true,
         "jsxSingleQuote": true,
         "singleQuote": true,
         "usetabs": true,

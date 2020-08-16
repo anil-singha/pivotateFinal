@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { graphql } from '@apollo/react-hoc';
 import styled, { keyframes } from 'styled-components';
@@ -8,12 +9,11 @@ import compose from '@shopify/react-compose';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
 import { makeStyles, TextField, InputAdornment } from '@material-ui/core';
-import IconButton from '@material-ui/core/Button';
 import {
   CREATE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
+  // eslint-disable-next-line comma-dangle
   ADD_HAS_PARENT_FOR_PARENT_ACTION_ID,
 } from '../../config';
-import PropTypes from 'prop-types';
 
 // ns__custom_end unit: appSpec, comp: Sub_Info_TypeCreationForm, loc: addedImports
 
@@ -29,26 +29,7 @@ const Label = styled.label`
   display: flex;
   align-items: center;
   flex-direction: row;
-  width: 100%
-`;
-
-const Input = styled.input`
-  :focus,
-  textarea:focus,
-  select:focus {
-    outline: none;
-    border: 0;
-  }
-  border: 0;
-  -webkit-appearance: none;
-  background-color: inherit;
-  padding: 10px 0;
-  border-radius: 10px;
-`;
-
-const InputContainer = styled.div`
-  background-color: white;
-  border-radius: 10px;
+  width: 100%;
 `;
 
 const fadeInDown = keyframes`
@@ -110,13 +91,9 @@ const useStyles = makeStyles({
     fontSize: '1rem',
   },
   textField: {
-    width: '100%'
-  }
+    width: '100%',
+  },
 });
-
-const Button = styled.button`
-  margin-left: 1em;
-`;
 
 // ns__custom_end unit: appSpec, comp: Sub_Info_TypeCreationForm, loc: styling
 
@@ -131,7 +108,7 @@ const SubInfoTypeCreationForm = ({
   label,
   disabled,
   subInfoTypeValueCount,
-  textLabel
+  textLabel,
   // ns__custom_end unit: appSpec, comp: Sub_Info_Type_Creation, loc: addedPropsForCreationForm
 }) => {
   const [subInfoValue, setSubInfoValue] = useState('');
@@ -139,15 +116,14 @@ const SubInfoTypeCreationForm = ({
   const styles = useStyles();
   const [callout, setCallout] = useState(false);
   const showCalloutBox = callout || validateSubInfoTypes === 0;
-  
 
   // ns__custom_start unit: appSpec, comp: Sub_Info_Type_Creation, loc: beginning
-  let callOutText= '';
-  
-  if(subInfoTypeValueCount < 5){
-    callOutText =textLabel
-  }else {
-    callOutText=`What is the sub Info Type ${label ? `for ${label}` : ''}`;
+  let callOutText = '';
+
+  if (subInfoTypeValueCount < 5) {
+    callOutText = textLabel;
+  } else {
+    callOutText = `What is the sub Info Type ${label ? `for ${label}` : ''}`;
   }
   // ns__custom_end unit: appSpec, comp: Sub_Info_Type_Creation, loc: beginning
   function handleChange(e) {
@@ -180,8 +156,8 @@ const SubInfoTypeCreationForm = ({
       });
 
       const newInfoTypeData = JSON.parse(createInfoTypeResponse.data.Execute);
-      
-      const createChildInfoTypeResponse = await saveInstance({
+
+      await saveInstance({
         variables: {
           actionId: ADD_HAS_PARENT_FOR_PARENT_ACTION_ID,
           executionParameters: JSON.stringify({
@@ -193,7 +169,7 @@ const SubInfoTypeCreationForm = ({
         refetchQueries,
       });
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   }
 
@@ -216,28 +192,29 @@ const SubInfoTypeCreationForm = ({
     <Form>
       {/* // ns__custom_start unit: appSpec, comp: Sub_Info_Type_Creation, loc: insideReturn */}
       <Label htmlFor='screen-value'>
-     
-        <TextField 
-           className={styles.textField}
-           label={`New Sub Info Type  ${label ? `for ${label}` : ''}`}
-           onChange={handleChange}
-           onKeyPress={handleKeyPress}
-           value={subInfoValue}
-           disabled={loading|| disabled}
-           variant="outlined"
-           InputProps={{
-             endAdornment: (
-               <InputAdornment position="end">
-                    <HelpOutlineIcon className={styles.helpIcon} onClick={showCallout}/>
-               </InputAdornment>
-             )
-           }}
+        <TextField
+          className={styles.textField}
+          label={`New Sub Info Type  ${label ? `for ${label}` : ''}`}
+          onChange={handleChange}
+          onKeyPress={handleKeyPress}
+          value={subInfoValue}
+          disabled={loading || disabled}
+          variant='outlined'
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position='end'>
+                <HelpOutlineIcon
+                  className={styles.helpIcon}
+                  onClick={showCallout}
+                />
+              </InputAdornment>
+            ),
+          }}
         />
-        
       </Label>
       {showCalloutBox ? (
         <CalloutBox>
-          {callOutText}{' '}
+          {callOutText}
           <CloseIcon className={styles.closeIcon} onClick={showCallout} />
         </CalloutBox>
       ) : null}
