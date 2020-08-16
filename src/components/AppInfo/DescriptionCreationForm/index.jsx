@@ -1,30 +1,28 @@
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+  please follow all rules at https://bit.ly/nsFrontEndRules
  */
 // ns__file unit: appInfo, comp: DescriptionCreationForm
 
 // ns__custom_start unit: appInfo, comp: DescriptionCreationForm, loc: beforeImports
 
-
-
 // ns__custom_end unit: appInfo, comp: DescriptionCreationForm, loc: beforeImports
-import React, { useState } from 'react';
-import { graphql } from '@apollo/react-hoc';
-import styled from 'styled-components';
-import { EXECUTE } from '@nostack/no-stack';
-import compose from '@shopify/react-compose';
+import React, { useState } from 'react'
+import { graphql } from '@apollo/react-hoc'
+import styled, { keyframes } from 'styled-components'
+import { EXECUTE } from '@nostack/no-stack'
+import compose from '@shopify/react-compose'
 
-import PropTypes from 'prop-types';
-import { CREATE_DESCRIPTION_FOR_APP_INFO_ACTION_ID } from '../../../config';
+import PropTypes from 'prop-types'
 
 // ns__custom_start unit: appInfo, comp: DescriptionCreationForm, loc: addedImports
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
-import CloseIcon from '@material-ui/icons/Close';
-import  { keyframes } from 'styled-components';
-import { makeStyles, TextField, InputAdornment } from '@material-ui/core';
-import IconButton from '@material-ui/core/Button';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline'
+import CloseIcon from '@material-ui/icons/Close'
+
+import { makeStyles, TextField, InputAdornment } from '@material-ui/core'
+import IconButton from '@material-ui/core/Button'
+import { CREATE_DESCRIPTION_FOR_APP_INFO_ACTION_ID } from '../../../config'
 // ns__custom_end unit: appInfo, comp: DescriptionCreationForm, loc: addedImports
 
 // ns__custom_start unit: appInfo, comp: DescriptionCreationForm, loc: styling
@@ -34,16 +32,14 @@ const Form = styled.div`
   padding: 1.5em;
   border: none;
   border-radius: 5px;
-  
-`;
+`
 
 const Label = styled.label`
   display: flex;
   align-items: center;
   flex-direction: row;
-  width: 100%
-`;
-
+  width: 100%;
+`
 
 const fadeInDown = keyframes`
 0% {
@@ -54,7 +50,7 @@ const fadeInDown = keyframes`
   opacity: 1;
   
 }
-`;
+`
 
 const CalloutBox = styled.div`
   padding: 1rem;
@@ -84,8 +80,7 @@ const CalloutBox = styled.div`
     margin-top: -13px;
     }
   }
-`;
-
+`
 
 const useStyles = makeStyles({
   button: {
@@ -105,45 +100,45 @@ const useStyles = makeStyles({
     fontSize: '1.2rem',
   },
   textField: {
-    width: '100%'
-  }
-});
+    width: '100%',
+  },
+})
 
 // ns__custom_end unit: appInfo, comp: DescriptionCreationForm, loc: styling
 
 const Button = styled.button`
   margin-left: 1em;
-`;
+`
 
 function DescriptionCreationForm({
   parentId,
   createDescription,
   refetchQueries,
   // ns__custom_start unit: appInfo, comp: DescriptionCreationForm, loc: addedProps
-  label
+  label,
   // ns__custom_end unit: appInfo, comp: DescriptionCreationForm, loc: addedProps
 }) {
-  const [descriptionValue, updateDescriptionValue] = useState('');
-  const [loading, updateLoading] = useState(false);
+  const [descriptionValue, updateDescriptionValue] = useState('')
+  const [loading, updateLoading] = useState(false)
   // ns__custom_start unit: appInfo, comp: DescriptionCreationForm, loc: beginning
-  const styles = useStyles();
-  const [callout, setCallout] = useState(true);
-  const showCalloutBox = callout;
-  let callOutText=`Enter a description for your App`;
+  const styles = useStyles()
+  const [callout, setCallout] = useState(true)
+  const showCalloutBox = callout
+  const callOutText = `Enter a description for your App`
   // ns__custom_end unit: appInfo, comp: DescriptionCreationForm, loc: beginning
 
   function handleChange(e) {
-    updateDescriptionValue(e.target.value);
+    updateDescriptionValue(e.target.value)
   }
 
   async function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
 
     if (!descriptionValue) {
-      return;
+      return
     }
 
-    updateLoading(true);
+    updateLoading(true)
 
     const createDescriptionResponse = await createDescription({
       variables: {
@@ -155,10 +150,10 @@ function DescriptionCreationForm({
         unrestricted: false,
       },
       refetchQueries,
-    });
+    })
 
-    updateDescriptionValue('');
-    updateLoading(false);
+    updateDescriptionValue('')
+    updateLoading(false)
   }
 
   function handleKeyPress(e) {
@@ -167,33 +162,32 @@ function DescriptionCreationForm({
     //   handleSubmit(e);
     // }
     if (e.key === 'Enter') {
-      handleSubmit(e);
+      handleSubmit(e)
     }
     // ns__custom_end unit: appInfo, comp: DescriptionCreationForm, loc: insideHandleKeyPress
   }
   // ns__custom_start unit: appInfo, comp: DescriptionCreationForm, loc: beforeReturn
   const showCallout = () => {
-    setCallout(!callout);
-  };
+    setCallout(!callout)
+  }
   // ns__custom_end unit: appInfo, comp: DescriptionCreationForm, loc: beforeReturn
 
   // ns__start_section return
   return (
     <Form>
       <Label htmlFor='description-value'>
-        
         <TextField
-        className={styles.textField}
+          className={styles.textField}
           id='description-value'
           type='text'
           onChange={handleChange}
           onKeyPress={handleKeyPress}
           value={descriptionValue}
           disabled={loading}
-          multiline={true}
-          variant="outlined"
-          label="Description"
-          rows={'10'}
+          multiline
+          variant='outlined'
+          label='Description'
+          rows='10'
           // InputProps={{
           //   endAdornment: (
           //     <InputAdornment position="end">
@@ -201,7 +195,6 @@ function DescriptionCreationForm({
           //     </InputAdornment>
           //   )
           // }}
-
         />
       </Label>
       {/* {showCalloutBox ? (
@@ -211,13 +204,13 @@ function DescriptionCreationForm({
         </CalloutBox>
       ) : null} */}
     </Form>
-  );
+  )
   // ns__end_section return
 }
 
 export default compose(graphql(EXECUTE, { name: 'createDescription' }))(
   DescriptionCreationForm
-);
+)
 
 DescriptionCreationForm.propTypes = {
   parentId: PropTypes.string,
@@ -225,4 +218,4 @@ DescriptionCreationForm.propTypes = {
   createDescription: PropTypes.func,
   // ns__custom_start unit: appInfo, comp: DescriptionCreationForm, loc: addedPropTypes
   // ns__custom_end unit: appInfo, comp: DescriptionCreationForm, loc: addedPropTypes
-};
+}

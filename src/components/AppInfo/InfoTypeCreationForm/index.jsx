@@ -1,7 +1,7 @@
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+  please follow all rules at https://bit.ly/nsFrontEndRules
  */
 // ns__file unit: appInfo, comp: InfoTypeCreationForm
 
@@ -9,36 +9,36 @@
 
 // ns__custom_end unit: appInfo, comp: InfoTypeCreationForm, loc: beforeImports
 
-import React, { useState } from 'react';
-import { graphql } from '@apollo/react-hoc';
-import styled, { keyframes } from 'styled-components';
-import { EXECUTE } from '@nostack/no-stack';
-import compose from '@shopify/react-compose';
+import React, { useState } from 'react'
+import { graphql } from '@apollo/react-hoc'
+import styled, { keyframes } from 'styled-components'
+import { EXECUTE } from '@nostack/no-stack'
+import compose from '@shopify/react-compose'
 
 // ns__custom_start unit: appInfo, comp: InfoTypeCreationForm, loc: addedImports
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
-import CloseIcon from '@material-ui/icons/Close';
-import { makeStyles, TextField, InputAdornment } from '@material-ui/core';
-import IconButton from '@material-ui/core/Button';
-import PropTypes from 'prop-types';
-import { CREATE_INFO_TYPE_FOR_APP_INFO_ACTION_ID } from '../../../config';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline'
+import CloseIcon from '@material-ui/icons/Close'
+import { makeStyles, TextField, InputAdornment } from '@material-ui/core'
+import IconButton from '@material-ui/core/Button'
+import PropTypes from 'prop-types'
+import { CREATE_INFO_TYPE_FOR_APP_INFO_ACTION_ID } from '../../../config'
 
 // ns__custom_end unit: appInfo, comp: InfoTypeCreationForm, loc: addedImports
 
 // ns__custom_start unit: appInfo, comp: InfoTypeCreationForm, loc: styling
 // change styling here
 const Form = styled.div`
-  margin:  .8rem 0 0 11%;
+  margin: 0.8rem 0 0 11%;
   border: none;
   border-radius: 5px;
-`;
+`
 
 const Label = styled.label`
   display: flex;
   align-items: center;
   flex-direction: row;
   width: 100%;
-`;
+`
 const Input = styled.input`
   :focus,
   textarea:focus,
@@ -51,12 +51,12 @@ const Input = styled.input`
   background-color: inherit;
   padding: 10px 0;
   border-radius: 10px;
-`;
+`
 
 const InputContainer = styled.div`
   background-color: white;
   border-radius: 10px;
-`;
+`
 
 const fadeInDown = keyframes`
   0% {
@@ -67,7 +67,7 @@ const fadeInDown = keyframes`
     opacity: 1;
     
   }
-`;
+`
 
 const CalloutBox = styled.div`
   padding: 1rem;
@@ -97,7 +97,7 @@ const CalloutBox = styled.div`
     margin-top: -13px;
     }
   }
-`;
+`
 
 const useStyles = makeStyles({
   button: {
@@ -117,14 +117,14 @@ const useStyles = makeStyles({
     fontSize: '1rem',
   },
   textField: {
-    width: '100%'
-  }
-});
+    width: '100%',
+  },
+})
 // ns__custom_end unit: appInfo, comp: InfoTypeCreationForm, loc: styling
 
 const Button = styled.button`
   margin-left: 1em;
-`;
+`
 
 function InfoTypeCreationForm({
   parentId,
@@ -136,38 +136,38 @@ function InfoTypeCreationForm({
   disabled,
   infoTypeValueCount,
   textLabel,
-  onChange
+  onChange,
   // ns__custom_end unit: appInfo, comp: InfoTypeCreationForm, loc: addedProps
 }) {
-  const [infoTypeValue, updateInfoTypeValue] = useState('');
-  const [loading, updateLoading] = useState(false);
+  const [infoTypeValue, updateInfoTypeValue] = useState('')
+  const [loading, updateLoading] = useState(false)
 
   // ns__custom_start unit: appInfo, comp: InfoTypeCreationForm, loc: beginning
-  const styles = useStyles();
-  const [callout, setCallout] = useState(false);
-  const showCalloutBox = callout || validateInfoTypes === 0;
-  let callOutText= '';
-  
-  if(infoTypeValueCount < 5){
-    callOutText =textLabel
-  }else {
-    callOutText=`What is the Info Type ${label ? `for ${label}` : ''}`;
+  const styles = useStyles()
+  const [callout, setCallout] = useState(false)
+  const showCalloutBox = callout || validateInfoTypes === 0
+  let callOutText = ''
+
+  if (infoTypeValueCount < 5) {
+    callOutText = textLabel
+  } else {
+    callOutText = `What is the Info Type ${label ? `for ${label}` : ''}`
   }
   // ns__custom_end unit: appInfo, comp: InfoTypeCreationForm, loc: beginning
 
   function handleChange(e) {
-    updateInfoTypeValue(e.target.value);
-    onChange(e.target.value);
+    updateInfoTypeValue(e.target.value)
+    onChange(e.target.value)
   }
 
   async function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
 
     if (!infoTypeValue) {
-      return;
+      return
     }
 
-    updateLoading(true);
+    updateLoading(true)
 
     const createInfoTypeResponse = await createInfoType({
       variables: {
@@ -179,10 +179,10 @@ function InfoTypeCreationForm({
         unrestricted: false,
       },
       refetchQueries,
-    });
+    })
 
-    updateInfoTypeValue('');
-    updateLoading(false);
+    updateInfoTypeValue('')
+    updateLoading(false)
   }
 
   function handleKeyPress(e) {
@@ -191,15 +191,15 @@ function InfoTypeCreationForm({
     //   handleSubmit(e);
     // }
     if (e.key === 'Enter') {
-      handleSubmit(e);
+      handleSubmit(e)
     }
     // ns__custom_end unit: appInfo, comp: UserTypeCreationForm, loc: insideHandleKeyPress
   }
 
   // ns__custom_start unit: appInfo, comp: InfoTypeCreationForm, loc: beforeReturn
   const showCallout = () => {
-    setCallout(!callout);
-  };
+    setCallout(!callout)
+  }
   return (
     <Form>
       <Label htmlFor='infoType-value'>
@@ -231,7 +231,7 @@ function InfoTypeCreationForm({
         </CalloutBox>
       ) : null}
     </Form>
-  );
+  )
   // ns__custom_end unit: appInfo, comp: InfoTypeCreationForm, loc: beforeReturn
 
   // ns__start_replacement return
@@ -287,7 +287,7 @@ function InfoTypeCreationForm({
 
 export default compose(graphql(EXECUTE, { name: 'createInfoType' }))(
   InfoTypeCreationForm
-);
+)
 
 InfoTypeCreationForm.propTypes = {
   parentId: PropTypes.string,
@@ -307,4 +307,4 @@ InfoTypeCreationForm.propTypes = {
 
   // ns__custom_start unit: appInfo, comp: InfoTypeCreationForm, loc: addedPropTypes
   // ns__custom_end unit: appInfo, comp: InfoTypeCreationForm, loc: addedPropTypes
-};
+}

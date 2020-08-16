@@ -1,18 +1,16 @@
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+  please follow all rules at https://bit.ly/nsFrontEndRules
  */
 // ns__file unit: general, comp: DeleteInstanceMenu
 
 // ns__custom_start unit: general, comp: DeleteInstanceMenu, loc: beforeImports
 
-
-
 // ns__custom_end unit: general, comp: DeleteInstanceMenu, loc: beforeImports
 
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const Button = styled.button`
   background: none;
@@ -25,20 +23,16 @@ const Button = styled.button`
   &:hover {
     color: ${(props) => props.hoverColor || '#000000'};
   }
-`;
+`
 
 const Container = styled.div`
   color: red;
   margin: 1em;
   padding: 1em;
   border: 1px solid #eeeeee;
-`;
+`
 
-function DeleteInstanceMenu({
-  onDelete,
-  onCancel,
-  disabled,
-}) {
+function DeleteInstanceMenu({ onDelete, onCancel, disabled }) {
   return (
     <Container>
       Delete?
@@ -62,4 +56,4 @@ function DeleteInstanceMenu({
   )
 }
 
-export default DeleteInstanceMenu;
+export default DeleteInstanceMenu

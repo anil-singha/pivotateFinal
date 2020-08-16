@@ -1,33 +1,33 @@
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+  please follow all rules at https://bit.ly/nsFrontEndRules
  */
 // ns__file unit: appInfo, comp: Screen
 
 // ns__custom_start unit: appInfo, comp: Screen, loc: beforeImports
 // ns__custom_end unit: appInfo, comp: Screen, loc: beforeImports
 
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { EXECUTE } from '@nostack/no-stack';
-import compose from '@shopify/react-compose';
-import { graphql } from '@apollo/react-hoc';
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import { EXECUTE } from '@nostack/no-stack'
+import compose from '@shopify/react-compose'
+import { graphql } from '@apollo/react-hoc'
 
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
+import { InputLabel, makeStyles } from '@material-ui/core'
 import {
   UPDATE_SCREEN_FOR_APP_INFO_ACTION_ID,
   DELETE_SCREEN_FOR_APP_INFO_ACTION_ID,
   TYPE_INFO_TYPE_ID,
-} from '../../../config';
+} from '../../../config'
 
-import EditInstanceForm from '../../EditInstanceForm';
-import DeleteInstanceMenu from '../../DeleteInstanceMenu';
+import EditInstanceForm from '../../EditInstanceForm'
+import DeleteInstanceMenu from '../../DeleteInstanceMenu'
 
-import InfoTypes from '../InfoTypes';
+import InfoTypes from '../InfoTypes'
 
 // ns__custom_start unit: appInfo, comp: Screen, loc: addedImports
-import { InputLabel, makeStyles } from '@material-ui/core';
 // ns__custom_end unit: appInfo, comp: Screen, loc: addedImports
 
 // ns__custom_start unit: appInfo, comp: Screen, loc: styling
@@ -72,7 +72,7 @@ const ScreenStyleWrapper = styled.div(
   }
    
 `
-);
+)
 
 const Button = styled.button`
   background: none;
@@ -85,7 +85,7 @@ const Button = styled.button`
   &:hover {
     color: ${(props) => props.hoverColor || '#000000'};
   }
-`;
+`
 
 const TitleWrapper = styled.div`
   background: #d2ecef;
@@ -96,14 +96,14 @@ const TitleWrapper = styled.div`
   margin-top: 8px;
   display: flex;
   justify-content: space-between;
-`;
+`
 
 const useStyles = makeStyles((theme) => ({
   titleLabel: {
     fontSize: '.8rem',
     textAlign: 'initial',
   },
-}));
+}))
 // ns__custom_end unit: appInfo, comp: Screen, loc: styling
 
 function Screen({
@@ -117,20 +117,20 @@ function Screen({
   // ns__custom_start unit: appInfo, comp: Screen, loc: addedProps
   // ns__custom_end unit: appInfo, comp: Screen, loc: addedProps
 }) {
-  const [screenValue, updateScreenValue] = useState(screen.value);
-  const [isEditMode, updateIsEditMode] = useState(false);
-  const [isSaving, updateIsSaving] = useState(false);
-  const [isDeleteMode, updateIsDeleteMode] = useState(false);
-  const [isDeleting, updateIsDeleting] = useState(false);
+  const [screenValue, updateScreenValue] = useState(screen.value)
+  const [isEditMode, updateIsEditMode] = useState(false)
+  const [isSaving, updateIsSaving] = useState(false)
+  const [isDeleteMode, updateIsDeleteMode] = useState(false)
+  const [isDeleting, updateIsDeleting] = useState(false)
 
   // ns__custom_start unit: appInfo, comp: Screen, loc: beginning
-  const styles = useStyles();
+  const styles = useStyles()
   // ns__custom_end unit: appInfo, comp: Screen, loc: beginning
 
   const infoTypeData =
     screen.children &&
-    screen.children.find((child) => child.typeId === TYPE_INFO_TYPE_ID);
-  const infoTypes = infoTypeData ? infoTypeData.instances : [];
+    screen.children.find((child) => child.typeId === TYPE_INFO_TYPE_ID)
+  const infoTypes = infoTypeData ? infoTypeData.instances : []
 
   // ns__custom_start unit: appInfo, comp: Screen, loc: beforeReturn
   // ns__custom_end unit: appInfo, comp: Screen, loc: beforeReturn
@@ -140,15 +140,15 @@ function Screen({
       <ScreenStyleWrapper onClick={() => onSelect(screen.id)}>
         {screenValue}
       </ScreenStyleWrapper>
-    );
+    )
   }
 
   function handleScreenValueChange(e) {
-    updateScreenValue(e.target.value);
+    updateScreenValue(e.target.value)
   }
 
   async function handleScreenValueSave() {
-    updateIsSaving(true);
+    updateIsSaving(true)
 
     await updateInstance({
       variables: {
@@ -159,14 +159,14 @@ function Screen({
         }),
       },
       refetchQueries,
-    });
+    })
 
-    updateIsEditMode(false);
-    updateIsSaving(false);
+    updateIsEditMode(false)
+    updateIsSaving(false)
   }
 
   function handleCancelEdit() {
-    updateIsEditMode(false);
+    updateIsEditMode(false)
   }
 
   if (isEditMode) {
@@ -182,11 +182,11 @@ function Screen({
           disabled={isSaving}
         />
       </ScreenStyleWrapper>
-    );
+    )
   }
 
   async function handleDelete() {
-    updateIsDeleting(true);
+    updateIsDeleting(true)
 
     try {
       await deleteInstance({
@@ -198,14 +198,14 @@ function Screen({
           }),
         },
         refetchQueries,
-      });
+      })
     } catch (e) {
-      updateIsDeleting(false);
+      updateIsDeleting(false)
     }
   }
 
   function handleCancelDelete() {
-    updateIsDeleteMode(false);
+    updateIsDeleteMode(false)
   }
 
   if (isDeleteMode) {
@@ -218,7 +218,7 @@ function Screen({
           disabled={isDeleting}
         />
       </ScreenStyleWrapper>
-    );
+    )
   }
 
   return (
@@ -229,15 +229,14 @@ function Screen({
         {screenValue}
         <div>
           <Button type='button' onClick={() => updateIsEditMode(true)}>
-          &#9998;
+            &#9998;
           </Button>
           <Button type='button' onClick={() => updateIsDeleteMode(true)}>
-          &#128465;
+            &#128465;
           </Button>
         </div>
       </TitleWrapper>
       {/* ns__custom_end unit: appInfo, comp: Screen, loc: insideReturn */}
-      
 
       <InfoTypes
         infoTypes={infoTypes}
@@ -249,13 +248,13 @@ function Screen({
       {/* ns__custom_start unit: appInfo, comp: Screen, loc: renderEnding */}
       {/* ns__custom_end unit: appInfo, comp: Screen, loc: renderEnding */}
     </ScreenStyleWrapper>
-  );
+  )
 }
 
 export default compose(
   graphql(EXECUTE, { name: 'updateInstance' }),
   graphql(EXECUTE, { name: 'deleteInstance' })
-)(Screen);
+)(Screen)
 
 Screen.propTypes = {
   parentId: PropTypes.string,
@@ -275,4 +274,4 @@ Screen.propTypes = {
   }),
   // ns__custom_start unit: appInfo, comp: Screen, loc: addedPropTypes
   // ns__custom_end unit: appInfo, comp: Screen, loc: addedPropTypes
-};
+}

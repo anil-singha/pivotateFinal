@@ -1,15 +1,14 @@
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+  please follow all rules at https://bit.ly/nsFrontEndRules
  */
 
 // ns__file unit: appInfo, comp: App
 
-// ns__start_section imports
 // ns__custom_start unit: appInfo, comp: App, loc: beforeImports
-
 // ns__custom_end unit: appInfo, comp: App, loc: beforeImports
+// ns__start_section imports
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { EXECUTE } from '@nostack/no-stack'

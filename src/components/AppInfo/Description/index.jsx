@@ -1,29 +1,28 @@
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+  please follow all rules at https://bit.ly/nsFrontEndRules
  */
 // ns__file unit: appInfo, comp: Description
 
-// ns__start_section imports
 // ns__custom_start unit: appInfo, comp: Description, loc: beforeImports
-'use strict';
 // ns__custom_end unit: appInfo, comp: Description, loc: beforeImports
 
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { EXECUTE } from '@nostack/no-stack';
-import compose from '@shopify/react-compose';
-import { graphql } from '@apollo/react-hoc';
+// ns__start_section imports
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import { EXECUTE } from '@nostack/no-stack'
+import compose from '@shopify/react-compose'
+import { graphql } from '@apollo/react-hoc'
 
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import {
   UPDATE_DESCRIPTION_FOR_APP_INFO_ACTION_ID,
   DELETE_DESCRIPTION_FOR_APP_INFO_ACTION_ID,
-} from '../../../config';
+} from '../../../config'
 
-import EditInstanceForm from '../../EditInstanceForm';
-import DeleteInstanceMenu from '../../DeleteInstanceMenu';
+import EditInstanceForm from '../../EditInstanceForm'
+import DeleteInstanceMenu from '../../DeleteInstanceMenu'
 
 // ns__custom_start unit: appInfo, comp: Description, loc: addedImports
 // ns__custom_end unit: appInfo, comp: Description, loc: addedImports
@@ -32,7 +31,7 @@ import DeleteInstanceMenu from '../../DeleteInstanceMenu';
 // ns__custom_start unit: appInfo, comp: Description, loc: styling
 // add styling here
 const DescriptionStyleWrapper = styled.div(
-  ({ selected, isDeleting }) =>`
+  ({ selected, isDeleting }) => `
   margin: 2em 1em;
   padding: 1.5em;
   border: ${selected ? '1px solid aquamarine' : '1px solid white'};
@@ -45,7 +44,7 @@ const DescriptionStyleWrapper = styled.div(
     border: 1px solid aquamarine;
   }
 `
-);
+)
 // ns__custom_end unit: appInfo, comp: Description, loc: styling
 
 // ns__start_section button
@@ -60,7 +59,7 @@ const Button = styled.button`
   &:hover {
     color: ${(props) => props.hoverColor || '#000000'};
   }
-`;
+`
 // ns__end_section button
 
 function Description({
@@ -74,13 +73,11 @@ function Description({
   // ns__custom_start unit: appInfo, comp: Description, loc: addedProps
   // ns__custom_end unit: appInfo, comp: Description, loc: addedProps
 }) {
-  const [descriptionValue, updateDescriptionValue] = useState(
-    description.value
-  );
-  const [isEditMode, updateIsEditMode] = useState(false);
-  const [isSaving, updateIsSaving] = useState(false);
-  const [isDeleteMode, updateIsDeleteMode] = useState(false);
-  const [isDeleting, updateIsDeleting] = useState(false);
+  const [descriptionValue, updateDescriptionValue] = useState(description.value)
+  const [isEditMode, updateIsEditMode] = useState(false)
+  const [isSaving, updateIsSaving] = useState(false)
+  const [isDeleteMode, updateIsDeleteMode] = useState(false)
+  const [isDeleting, updateIsDeleting] = useState(false)
   // ns__custom_start unit: appInfo, comp: Description, loc: beginning
   // ns__custom_end unit: appInfo, comp: Description, loc: beginning
 
@@ -89,18 +86,21 @@ function Description({
 
   if (!selected) {
     return (
-      <DescriptionStyleWrapper onClick={() =>onSelect(description.id)}>
+      <DescriptionStyleWrapper onClick={() => onSelect(description.id)}>
         {descriptionValue}
       </DescriptionStyleWrapper>
-    );
+    )
   }
 
+  // ns__start_section handleChange
   function handleDescriptionValueChange(e) {
-    updateDescriptionValue(e.target.value);
+    updateDescriptionValue(e.target.value)
   }
+  // ns__end_section handleChange
 
+  // ns__start_section handleSubmit
   async function handleDescriptionValueSave() {
-    updateIsSaving(true);
+    updateIsSaving(true)
 
     await updateInstance({
       variables: {
@@ -111,14 +111,16 @@ function Description({
         }),
       },
       refetchQueries,
-    });
+    })
 
-    updateIsEditMode(false);
-    updateIsSaving(false);
+    updateIsEditMode(false)
+    updateIsSaving(false)
   }
+  // ns__end_section handleSubmit
 
+  // ns__start_section handleKeyPress
   function handleCancelEdit() {
-    updateIsEditMode(false);
+    updateIsEditMode(false)
   }
 
   if (isEditMode) {
@@ -134,11 +136,11 @@ function Description({
           disabled={isSaving}
         />
       </DescriptionStyleWrapper>
-    );
+    )
   }
 
   async function handleDelete() {
-    updateIsDeleting(true);
+    updateIsDeleting(true)
 
     try {
       await deleteInstance({
@@ -150,14 +152,14 @@ function Description({
           }),
         },
         refetchQueries,
-      });
+      })
     } catch (e) {
-      updateIsDeleting(false);
+      updateIsDeleting(false)
     }
   }
 
   function handleCancelDelete() {
-    updateIsDeleteMode(false);
+    updateIsDeleteMode(false)
   }
 
   if (isDeleteMode) {
@@ -170,29 +172,29 @@ function Description({
           disabled={isDeleting}
         />
       </DescriptionStyleWrapper>
-    );
+    )
   }
 
   return (
     <DescriptionStyleWrapper selected={selected}>
       {descriptionValue}
-      <Button type='button' onClick={() =>updateIsEditMode(true)}>
+      <Button type='button' onClick={() => updateIsEditMode(true)}>
         &#9998;
       </Button>
-      <Button type='button' onClick={() =>updateIsDeleteMode(true)}>
+      <Button type='button' onClick={() => updateIsDeleteMode(true)}>
         &#128465;
       </Button>
 
       {/* ns__custom_start unit: appInfo, comp: Description, loc: renderEnding */}
       {/* ns__custom_end unit: appInfo, comp: Description, loc: renderEnding */}
     </DescriptionStyleWrapper>
-  );
+  )
 }
 
 export default compose(
   graphql(EXECUTE, { name: 'updateInstance' }),
   graphql(EXECUTE, { name: 'deleteInstance' })
-)(Description);
+)(Description)
 
 Description.propTypes = {
   description: PropTypes.object,
@@ -212,4 +214,4 @@ Description.propTypes = {
   }),
   // ns__custom_start unit: appInfo, comp: Description, loc: addedPropTypes
   // ns__custom_end unit: appInfo, comp: Description, loc: addedPropTypes
-};
+}

@@ -1,7 +1,7 @@
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+  please follow all rules at https://bit.ly/nsFrontEndRules
  */
 // ns__file unit: appInfo, comp: AppCreationForm
 
@@ -9,13 +9,13 @@
 
 // ns__custom_end unit: appInfo, comp: AppCreationForm, loc: beforeImports
 
-import React, { useState } from 'react';
-import { graphql } from '@apollo/react-hoc';
-import styled from 'styled-components';
-import { EXECUTE } from '@nostack/no-stack';
-import compose from '@shopify/react-compose';
+import React, { useState } from 'react'
+import { graphql } from '@apollo/react-hoc'
+import styled from 'styled-components'
+import { EXECUTE } from '@nostack/no-stack'
+import compose from '@shopify/react-compose'
 
-import { CREATE_APP_FOR_APP_INFO_ACTION_ID } from '../../../config';
+import { CREATE_APP_FOR_APP_INFO_ACTION_ID } from '../../../config'
 
 // ns__custom_start unit: appInfo, comp: AppCreationForm, loc: addedImports
 // ns__custom_end unit: appInfo, comp: AppCreationForm, loc: addedImports
@@ -28,12 +28,12 @@ const Form = styled.div`
   border: none;
   border-radius: 5px;
   background-color: #f5f5f5;
-`;
+`
 // ns__custom_end unit: appInfo, comp: AppCreationForm, loc: styling
 
 const Button = styled.button`
   margin-left: 1em;
-`;
+`
 
 function AppCreationForm({
   customerId,
@@ -42,23 +42,23 @@ function AppCreationForm({
   // ns__custom_start unit: appInfo, comp: AppCreationForm, loc: addedProps
   // ns__custom_end unit: appInfo, comp: AppCreationForm, loc: addedProps
 }) {
-  const [appValue, updateAppValue] = useState('');
-  const [loading, updateLoading] = useState(false);
+  const [appValue, updateAppValue] = useState('')
+  const [loading, updateLoading] = useState(false)
   // ns__custom_start unit: appInfo, comp: AppCreationForm, loc: beginning
   // ns__custom_end unit: appInfo, comp: AppCreationForm, loc: beginning
 
   function handleChange(e) {
-    updateAppValue(e.target.value);
+    updateAppValue(e.target.value)
   }
 
   async function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
 
     if (!appValue) {
-      return;
+      return
     }
 
-    updateLoading(true);
+    updateLoading(true)
 
     const createAppResponse = await createApp({
       variables: {
@@ -70,17 +70,17 @@ function AppCreationForm({
         unrestricted: false,
       },
       refetchQueries,
-    });
+    })
 
     // const newAppData = JSON.parse(createAppResponse.data.Execute);
 
-    updateAppValue('');
-    updateLoading(false);
+    updateAppValue('')
+    updateLoading(false)
   }
 
   function handleKeyPress(e) {
     if (e.charCode === 13) {
-      handleSubmit(e);
+      handleSubmit(e)
     }
   }
 
@@ -105,10 +105,8 @@ function AppCreationForm({
         {loading ? 'Creating App...' : 'Create App'}
       </Button>
     </Form>
-  );
+  )
   // ns__end_section return
 }
 
-export default compose(graphql(EXECUTE, { name: 'createApp' }))(
-  AppCreationForm
-);
+export default compose(graphql(EXECUTE, { name: 'createApp' }))(AppCreationForm)

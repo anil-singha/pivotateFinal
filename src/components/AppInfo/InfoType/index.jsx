@@ -1,45 +1,45 @@
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+  please follow all rules at https://bit.ly/nsFrontEndRules
  */
 // ns__file unit: appInfo, comp: InfoType
 
 // ns__custom_start unit: appInfo, comp: InfoType, loc: beforeImports
-'use strict';
+
 // ns__custom_end unit: appInfo, comp: InfoType, loc: beforeImports
 
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { EXECUTE } from '@nostack/no-stack';
-import compose from '@shopify/react-compose';
-import { graphql } from '@apollo/react-hoc';
+import React, { useState, useContext, useEffect } from 'react'
+import styled from 'styled-components'
+import { EXECUTE } from '@nostack/no-stack'
+import compose from '@shopify/react-compose'
+import { graphql } from '@apollo/react-hoc'
 
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
+import { v4 } from 'uuid'
+import { InputLabel, makeStyles } from '@material-ui/core'
 import {
   UPDATE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
   DELETE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
-} from '../../../config';
+} from '../../../config'
 
-import EditInstanceForm from '../../EditInstanceForm';
-import DeleteInstanceMenu from '../../DeleteInstanceMenu';
+import EditInstanceForm from '../../EditInstanceForm'
+import DeleteInstanceMenu from '../../DeleteInstanceMenu'
 
 // ns__custom_start unit: appInfo, comp: InfoType, loc: addedImports
-import SubInfoTypes from '../../../custom/SubInfoTypes';
-import InfoTypeCreationForm from '../InfoTypeCreationForm';
-import { v4 } from 'uuid';
-import { useContext, useEffect } from 'react';
-import { Context as UnitDataContext } from '../../../custom/UnitDataContext';
-import getChildData from '../../../custom/getChildData';
-import SubInfoComponent from '../../../custom/SubInfoTypesRecursive';
-import { InputLabel, makeStyles } from '@material-ui/core';
+import SubInfoTypes from '../../../custom/SubInfoTypes'
+import InfoTypeCreationForm from '../InfoTypeCreationForm'
+
+import { Context as UnitDataContext } from '../../../custom/UnitDataContext'
+import getChildData from '../../../custom/getChildData'
+import SubInfoComponent from '../../../custom/SubInfoTypesRecursive'
 
 // ns__custom_end unit: appInfo, comp: InfoType, loc: addedImports
 
 // ns__custom_start unit: appInfo, comp: InfoType, loc: styling
 // add styling here
 const InfoTypeStyleWrapper = styled.div(
-  ({ selected, isDeleting }) =>`
+  ({ selected, isDeleting }) => `
   margin: 2rem 0 .5rem 1rem;
   padding: ${selected ? '0' : '1.5rem'};
   
@@ -77,8 +77,7 @@ const InfoTypeStyleWrapper = styled.div(
   }
   
 `
-);
-
+)
 
 const Button = styled.button`
   background: none;
@@ -89,26 +88,25 @@ const Button = styled.button`
   color: #bbbbbb;
   transition: color 0.5s ease;
   &:hover {
-    color: ${(props) =>props.hoverColor || '#000000'};
+    color: ${(props) => props.hoverColor || '#000000'};
   }
-`;
+`
 
 const TitleWrapper = styled.div`
-  background: #D2ECEF;
+  background: #d2ecef;
   padding: 25px;
   border-radius: 10px;
   text-align: initial;
   text-transfor: capitalize;
   display: flex;
   justify-content: space-between;
-`;
+`
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   titleLabel: {
-      fontSize: '.8rem',
-      textAlign: 'initial',
-
-  }
+    fontSize: '.8rem',
+    textAlign: 'initial',
+  },
 }))
 
 // ns__custom_end unit: appInfo, comp: InfoType, loc: styling
@@ -126,22 +124,22 @@ function InfoType({
   childState,
   // ns__custom_end unit: appInfo, comp: InfoType, loc: addedProps
 }) {
-  const [infoTypeValue, updateInfoTypeValue] = useState(infoType.value);
-  const [isEditMode, updateIsEditMode] = useState(false);
-  const [isSaving, updateIsSaving] = useState(false);
-  const [isDeleteMode, updateIsDeleteMode] = useState(false);
-  const [isDeleting, updateIsDeleting] = useState(false);
+  const [infoTypeValue, updateInfoTypeValue] = useState(infoType.value)
+  const [isEditMode, updateIsEditMode] = useState(false)
+  const [isSaving, updateIsSaving] = useState(false)
+  const [isDeleteMode, updateIsDeleteMode] = useState(false)
+  const [isDeleting, updateIsDeleting] = useState(false)
 
   // ns__custom_start unit: appInfo, comp: InfoType, loc: beginning
-  const [parentState, setParentState] = useState([]);
-  const [selectSubInfoId, setSubInfoId] = useState(null);
+  const [parentState, setParentState] = useState([])
+  const [selectSubInfoId, setSubInfoId] = useState(null)
 
   useEffect(() => {
-    const [parentData] = getChildData(childState);
-    setParentState(parentData);
-  }, [infoType]);
-  const handleSelect = (id) => setSubInfoId(id);
-  const styles = useStyles();
+    const [parentData] = getChildData(childState)
+    setParentState(parentData)
+  }, [infoType])
+  const handleSelect = (id) => setSubInfoId(id)
+  const styles = useStyles()
   // ns__custom_end unit: appInfo, comp: InfoType, loc: beginning
 
   // ns__custom_start unit: appInfo, comp: InfoType, loc: beforeReturn
@@ -149,18 +147,18 @@ function InfoType({
 
   if (!selected) {
     return (
-      <InfoTypeStyleWrapper onClick={() =>onSelect(infoType.id)}>
+      <InfoTypeStyleWrapper onClick={() => onSelect(infoType.id)}>
         {infoTypeValue}
       </InfoTypeStyleWrapper>
-    );
+    )
   }
 
   function handleInfoTypeValueChange(e) {
-    updateInfoTypeValue(e.target.value);
+    updateInfoTypeValue(e.target.value)
   }
 
   async function handleInfoTypeValueSave() {
-    updateIsSaving(true);
+    updateIsSaving(true)
 
     await updateInstance({
       variables: {
@@ -171,14 +169,14 @@ function InfoType({
         }),
       },
       refetchQueries,
-    });
+    })
 
-    updateIsEditMode(false);
-    updateIsSaving(false);
+    updateIsEditMode(false)
+    updateIsSaving(false)
   }
 
   function handleCancelEdit() {
-    updateIsEditMode(false);
+    updateIsEditMode(false)
   }
 
   if (isEditMode) {
@@ -194,11 +192,11 @@ function InfoType({
           disabled={isSaving}
         />
       </InfoTypeStyleWrapper>
-    );
+    )
   }
 
   async function handleDelete() {
-    updateIsDeleting(true);
+    updateIsDeleting(true)
 
     try {
       await deleteInstance({
@@ -210,14 +208,14 @@ function InfoType({
           }),
         },
         refetchQueries,
-      });
+      })
     } catch (e) {
-      updateIsDeleting(false);
+      updateIsDeleting(false)
     }
   }
 
   function handleCancelDelete() {
-    updateIsDeleteMode(false);
+    updateIsDeleteMode(false)
   }
 
   if (isDeleteMode) {
@@ -230,25 +228,25 @@ function InfoType({
           disabled={isDeleting}
         />
       </InfoTypeStyleWrapper>
-    );
+    )
   }
 
   return (
     <InfoTypeStyleWrapper selected={selected}>
-       {/* // ns__custom_start unit: appInfo, comp: InfoType, loc: insideReturn */}
-       <InputLabel className={styles.titleLabel}>Info Type</InputLabel>
-      <TitleWrapper>{infoTypeValue}
-          <div>
-          <Button type='button' onClick={() =>updateIsEditMode(true)}>
+      {/* // ns__custom_start unit: appInfo, comp: InfoType, loc: insideReturn */}
+      <InputLabel className={styles.titleLabel}>Info Type</InputLabel>
+      <TitleWrapper>
+        {infoTypeValue}
+        <div>
+          <Button type='button' onClick={() => updateIsEditMode(true)}>
             &#9998;
           </Button>
-          <Button type='button' onClick={() =>updateIsDeleteMode(true)}>
+          <Button type='button' onClick={() => updateIsDeleteMode(true)}>
             &#128465;
           </Button>
-          </div>
+        </div>
       </TitleWrapper>
-       {/* // ns__custom_end unit: appInfo, comp: InfoType, loc: insideReturn */}
-      
+      {/* // ns__custom_end unit: appInfo, comp: InfoType, loc: insideReturn */}
 
       {/* // ns__custom_start unit: appInfo, comp: InfoType, loc: renderEnding */}
       <SubInfoComponent
@@ -273,13 +271,13 @@ function InfoType({
 
       {/* // ns__custom_end unit: appInfo, comp: InfoType, loc: renderEnding */}
     </InfoTypeStyleWrapper>
-  );
+  )
 }
 
 export default compose(
   graphql(EXECUTE, { name: 'updateInstance' }),
   graphql(EXECUTE, { name: 'deleteInstance' })
-)(InfoType);
+)(InfoType)
 
 InfoType.propTypes = {
   app: PropTypes.object,
@@ -299,4 +297,4 @@ InfoType.propTypes = {
   }),
   // ns__custom_start unit: appInfo, comp: InfoType, loc: addedPropTypes
   // ns__custom_end unit: appInfo, comp: InfoType, loc: addedPropTypes
-};
+}

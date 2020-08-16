@@ -1,7 +1,7 @@
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+  please follow all rules at https://bit.ly/nsFrontEndRules
  */
 // ns__file unit: general, comp: RegistrationForm
 
@@ -9,50 +9,50 @@
 
 // ns__custom_end unit: general, comp: RegistrationForm, loc: beforeImports
 
-import React, { useState } from "react";
-import { useMutation } from "@apollo/react-hooks";
-import { REGISTER_USER } from "@nostack/no-stack";
-import { HashLink as Link } from "react-router-hash-link";
+import React, { useState } from 'react'
+import { useMutation } from '@apollo/react-hooks'
+import { REGISTER_USER } from '@nostack/no-stack'
+import { HashLink as Link } from 'react-router-hash-link'
 
-import { Wrapper } from "./RegistrationForm.style";
-import BasicDetailsForm from "./stepper/BasicDetailsForm";
-import AppDetailsForm from "./stepper/AppDetailsForm.js";
-import CreditCardDetailsForm from "./stepper/CreditCardDetailsForm";
-import Modal from "../Modal";
+import { Wrapper } from './RegistrationForm.style'
+import BasicDetailsForm from './stepper/BasicDetailsForm'
+import AppDetailsForm from './stepper/AppDetailsForm.js'
+import CreditCardDetailsForm from './stepper/CreditCardDetailsForm'
+import Modal from '../Modal'
 
 import {
   validationSchemaBasic,
   validationSchemaApp,
   validationSchemaCreditCard,
-} from "./stepper/registration-util.js";
+} from './stepper/registration-util.js'
 
 // Get Current Month
-let dt = new Date();
-let mm = (dt.getMonth() + 1).toString().padStart(2, "0");
-let yyyy = dt.getFullYear();
+const dt = new Date()
+const mm = (dt.getMonth() + 1).toString().padStart(2, '0')
+const yyyy = dt.getFullYear()
 
 const initialValues = {
-  name: "",
-  username: "",
-  firstName: "",
-  lastName: "",
-  email: "",
-  password: "",
-  passwordConfirmation: "",
-  app: "",
-  description: "",
+  name: '',
+  username: '',
+  firstName: '',
+  lastName: '',
+  email: '',
+  password: '',
+  passwordConfirmation: '',
+  app: '',
+  description: '',
   terms: false,
-  cardName: "",
-  cardNumber: "",
-  cvc: "",
+  cardName: '',
+  cardNumber: '',
+  cvc: '',
   expiryMonth: mm,
   expiryYear: yyyy,
-};
+}
 
 const RegistrationForm = (props, { userClassId, onSuccess }) => {
-  const [register] = useMutation(REGISTER_USER);
-  const [registrationCompleted, setRegistrationCompleted] = useState(false);
-  const [formError, setFormError] = useState("");
+  const [register] = useMutation(REGISTER_USER)
+  const [registrationCompleted, setRegistrationCompleted] = useState(false)
+  const [formError, setFormError] = useState('')
 
   /*
     A "stepper" is created and uses state to be sure that:
@@ -61,32 +61,32 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
      3. the submit has been pushed on the sequence of child forms, and it's time to call submit
      4. The submission succeeded, and the final welcome message should be visible.
    */
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(1)
 
-  const [username, setUsername] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
-  const [app, setApp] = useState("");
-  const [description, setDescription] = useState("");
+  const [app, setApp] = useState('')
+  const [description, setDescription] = useState('')
 
   // const formValuesTemp =
   //   '{"app":"newApp","description":"newApp Desc","creditCardNumber":"232","expirationDate":"234243","csv":"46"}';
   const handleSubmit = async (values, { setSubmitting }) => {
-    setFormError("");
+    setFormError('')
     // setUsername(values);
 
     // console.log(app);
     // console.log(description);
-    setFirstName(values.firstName);
-    setPassword(values.password);
-    setLastName(values.lastName);
-    setEmail(values.email);
+    setFirstName(values.firstName)
+    setPassword(values.password)
+    setLastName(values.lastName)
+    setEmail(values.email)
 
     if (values.password !== values.passwordConfirmation) {
-      return;
+      return
     }
     const formValuesTemp = {
       app,
@@ -95,7 +95,7 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
       creditCardName: values.cardName,
       expirationDate: `${values.expiryMonth}/${values.expiryYear}`,
       csv: values.cvc,
-    };
+    }
 
     try {
       await register({
@@ -108,30 +108,30 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
           password: values.password,
           formValues: JSON.stringify({}),
         },
-      });
+      })
 
-      setRegistrationCompleted(true);
+      setRegistrationCompleted(true)
 
       if (onSuccess) {
-        nextStep();
-        onSuccess();
+        nextStep()
+        onSuccess()
       }
     } catch (error) {
-      console.log(error);
-      console.log(error.graphQLErrors);
+      console.log(error)
+      console.log(error.graphQLErrors)
 
-      setFormError("Something went wrong. Please try again.");
+      setFormError('Something went wrong. Please try again.')
     }
 
-    setSubmitting(false);
-  };
+    setSubmitting(false)
+  }
 
   if (registrationCompleted) {
     window.history.pushState(
-      { registered: "success" },
-      "Registration Complete",
-      "?registered=success"
-    );
+      { registered: 'success' },
+      'Registration Complete',
+      '?registered=success'
+    )
 
     // return (
     //   <Modal onClose={props.onClose}>
@@ -162,45 +162,47 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
     //   </Modal>
     // );
     return (
-      <Modal onClose={props.onClose} styleName="dialogConfirm">
-        <div className="dialog__title">
-          <img src="/images/mail.png" />
+      <Modal onClose={props.onClose} styleName='dialogConfirm'>
+        <div className='dialog__title'>
+          <img src='/images/mail.png' />
         </div>
-        <p className="text-center">
+        <p className='text-center'>
           <div>
-            <div style={{ margin: "1.25em 0", fontSize: "18px" }}>
-              {" "}
-              Confirm your email!{" "}
+            <div style={{ margin: '1.25em 0', fontSize: '18px' }}>
+              {' '}
+              Confirm your email!{' '}
             </div>
-            <p style={{ margin: "1.25em 0" }}>
-              Please check your email <strong> sample@gmail.com </strong> for a
+            <p style={{ margin: '1.25em 0' }}>
+              Please check your email <strong> sample@gmail.com </strong>
+{' '}
+for a
               message to confirm that it’s really you. Then you can log in.
-            </p>
+</p>
             <div>
               <Link
                 onClick={props.onSwitch}
-                className="button button--rounded button--yellow"
-                to="/"
+                className='button button--rounded button--yellow'
+                to='/'
               >
                 LOGIN
               </Link>
             </div>
             <div>
               <Link
-                style={{ marginTop: "1em" }}
+                style={{ marginTop: '1em' }}
                 onClick={props.onClose}
-                className="button button--rounded"
-                to="/schedule"
+                className='button button--rounded'
+                to='/schedule'
               >
                 SEND AGAIN
               </Link>
             </div>
             <div>
               <Link
-                style={{ marginTop: "1em" }}
+                style={{ marginTop: '1em' }}
                 onClick={props.onClose}
-                className="button button--rounded"
-                to="/schedule"
+                className='button button--rounded'
+                to='/schedule'
               >
                 CHANGE EMAIL
               </Link>
@@ -208,35 +210,35 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
           </div>
         </p>
       </Modal>
-    );
+    )
   }
 
   const nextStep = () => {
-    setStep(step + 1);
-  };
+    setStep(step + 1)
+  }
 
   const handleSubmitBasicForm = (values, { setSubmitting }) => {
-    console.log(values);
-    setFormError("");
+    console.log(values)
+    setFormError('')
     if (values.password !== values.passwordConfirmation) {
-      return;
+      return
     }
 
-    setUsername(values.username);
-    setFirstName(values.firstName);
-    setLastName(values.lastName);
-    setEmail(values.email);
-    setPassword(values.password);
+    setUsername(values.username)
+    setFirstName(values.firstName)
+    setLastName(values.lastName)
+    setEmail(values.email)
+    setPassword(values.password)
     // setSubmitting(false);
-  };
+  }
 
   const handleSubmitAppForm = (values, { setSubmitting }) => {
-    setFormError("");
-    setApp(values.app);
-    setDescription(values.description);
-    setSubmitting(false);
-    nextStep();
-  };
+    setFormError('')
+    setApp(values.app)
+    setDescription(values.description)
+    setSubmitting(false)
+    nextStep()
+  }
 
   const displayCurrentStep = () => {
     switch (step) {
@@ -250,7 +252,7 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
             onSubmit={handleSubmit}
             formError={formError}
           />
-        );
+        )
 
       case 2:
         return (
@@ -260,7 +262,7 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
             onSubmit={handleSubmitAppForm}
             formError={formError}
           />
-        );
+        )
 
       case 3:
         return (
@@ -270,7 +272,7 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
             onSubmit={handleSubmit}
             formError={formError}
           />
-        );
+        )
 
       default:
         return (
@@ -280,34 +282,34 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
             onSubmit={handleSubmitBasicForm}
             formError={formError}
           />
-        );
+        )
     }
-  };
+  }
 
   const displayCurrentDescription = () => {
     switch (step) {
       case 1:
         return {
-          enterText: "ENTER DETAILS",
-          buttonText: "SIGN UP",
-          progressWidth: "33%",
-        };
+          enterText: 'ENTER DETAILS',
+          buttonText: 'SIGN UP',
+          progressWidth: '33%',
+        }
 
       case 2:
         return {
-          enterText: "ENTER APP DESCRIPTION",
-          buttonText: "MAKE MY APP NOW",
-          progressWidth: "66%",
-        };
+          enterText: 'ENTER APP DESCRIPTION',
+          buttonText: 'MAKE MY APP NOW',
+          progressWidth: '66%',
+        }
 
       case 3:
         return {
-          enterText: "CREDIT CARD DETAILS",
-          buttonText: "MAKE MY APP NOW",
-          progressWidth: "100%",
-        };
+          enterText: 'CREDIT CARD DETAILS',
+          buttonText: 'MAKE MY APP NOW',
+          progressWidth: '100%',
+        }
     }
-  };
+  }
 
   return (
     <>
@@ -315,17 +317,18 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
         progress={displayCurrentDescription().progressWidth}
         onClose={props.onClose}
       >
-        <div className="dialog__title">
+        <div className='dialog__title'>
           {/* <div className="dialog__step">
             STEP <span className="teal--text"> {step} </span> of 3
           </div> */}
           <h3>{displayCurrentDescription().enterText}</h3>
         </div>
         {step == 3 && (
-          <p className="dialog__text">
+          <p className='dialog__text'>
             You won’t be charged a thing until you commit to it explicitly. In
-            fact, the initial consultation is{" "}
-            <strong className="teal--text">FREE</strong>.
+            fact, the initial consultation is{' '}
+            <strong className='teal--text'>FREE</strong>
+            .
             <br />
             <br />
             We just need your credit card in advance to cover ourselves.
@@ -334,7 +337,7 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
         {displayCurrentStep()}
       </Modal>
     </>
-  );
-};
+  )
+}
 
-export default RegistrationForm;
+export default RegistrationForm
