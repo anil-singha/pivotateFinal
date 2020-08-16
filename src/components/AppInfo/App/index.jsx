@@ -6,32 +6,34 @@
 
 // ns__file unit: appInfo, comp: App
 
+// ns__start_section imports
 // ns__custom_start unit: appInfo, comp: App, loc: beforeImports
-'use strict';
-// ns__custom_end unit: appInfo, comp: App, loc: beforeImports
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { EXECUTE } from '@nostack/no-stack';
-import compose from '@shopify/react-compose';
-import { graphql } from '@apollo/react-hoc';
 
-import PropTypes from 'prop-types';
+// ns__custom_end unit: appInfo, comp: App, loc: beforeImports
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import { EXECUTE } from '@nostack/no-stack'
+import compose from '@shopify/react-compose'
+import { graphql } from '@apollo/react-hoc'
+
+import PropTypes from 'prop-types'
 import {
   UPDATE_APP_FOR_APP_INFO_ACTION_ID,
   DELETE_APP_FOR_APP_INFO_ACTION_ID,
   TYPE_USER_TYPE_ID,
   TYPE_DESCRIPTION_ID,
-} from '../../../config';
+} from '../../../config'
 
-import EditInstanceForm from '../../EditInstanceForm';
-import DeleteInstanceMenu from '../../DeleteInstanceMenu';
+import EditInstanceForm from '../../EditInstanceForm'
+import DeleteInstanceMenu from '../../DeleteInstanceMenu'
 
-import UserTypes from '../UserTypes';
-import Descriptions from '../Descriptions';
-import AppTitleAccordion from '../../../custom/AppTitleAccordion';
+import UserTypes from '../UserTypes'
+import Descriptions from '../Descriptions'
+import AppTitleAccordion from '../../../custom/AppTitleAccordion'
 
 // ns__custom_start unit: appInfo, comp: App, loc: addedImports
 // ns__custom_end unit: appInfo, comp: App, loc: addedImports
+// ns__end_section imports
 
 // ns__custom_start unit: appInfo, comp: App, loc: styling
 // add styling here
@@ -42,15 +44,18 @@ const AppStyleWrapper = styled.div(
   
   border-radius: 10px;
   
-  background-color: ${isDeleting && 'tomato' || selected && 'white' ||  '#D2ECEF'};
+  background-color: ${
+    (isDeleting && 'tomato') || (selected && 'white') || '#D2ECEF'
+  };
   cursor: ${selected ? 'auto' : 'pointer'};
   width: 50%;
 
  
 `
-);
+)
+// ns__custom_end unit: appInfo, comp: App, loc: styling
 
-
+// ns__start_section button
 const Button = styled.button`
   background: none;
   border: none;
@@ -62,18 +67,16 @@ const Button = styled.button`
   &:hover {
     color: ${(props) => props.hoverColor || '#000000'};
   }
-`;
-
+`
+// ns__end_section button
 
 AppStyleWrapper.defaultProps = {
-  "data-id": "App__wrapper"
+  'data-id': 'App__wrapper',
 }
 
 Button.defaultProps = {
-  "data-id": "App__button"
+  'data-id': 'App__button',
 }
-
-// ns__custom_end unit: appInfo, comp: App, loc: styling
 
 function App({
   app,
@@ -84,37 +87,37 @@ function App({
   refetchQueries,
   onSelect,
 }) {
-  const [appValue, updateAppValue] = useState(app.value);
-  const [isEditMode, updateIsEditMode] = useState(false);
-  const [isSaving, updateIsSaving] = useState(false);
-  const [isDeleteMode, updateIsDeleteMode] = useState(false);
-  const [isDeleting, updateIsDeleting] = useState(false);
+  const [appValue, updateAppValue] = useState(app.value)
+  const [isEditMode, updateIsEditMode] = useState(false)
+  const [isSaving, updateIsSaving] = useState(false)
+  const [isDeleteMode, updateIsDeleteMode] = useState(false)
+  const [isDeleting, updateIsDeleting] = useState(false)
   // ns__custom_start unit: appInfo, comp: App, loc: beginning
   // ns__custom_end unit: appInfo, comp: App, loc: beginning
 
   const userTypeData =
     app.children &&
-    app.children.find((child) => child.typeId === TYPE_USER_TYPE_ID);
-  const userTypes = userTypeData ? userTypeData.instances : [];
+    app.children.find((child) => child.typeId === TYPE_USER_TYPE_ID)
+  const userTypes = userTypeData ? userTypeData.instances : []
   const descriptionData =
     app.children &&
-    app.children.find((child) => child.typeId === TYPE_DESCRIPTION_ID);
-  const descriptions = descriptionData ? descriptionData.instances : [];
+    app.children.find((child) => child.typeId === TYPE_DESCRIPTION_ID)
+  const descriptions = descriptionData ? descriptionData.instances : []
 
   if (!selected) {
     return (
       <AppStyleWrapper onClick={() => onSelect(app.id)}>
         {appValue}
       </AppStyleWrapper>
-    );
+    )
   }
 
   function handleAppValueChange(e) {
-    updateAppValue(e.target.value);
+    updateAppValue(e.target.value)
   }
 
   async function handleAppValueSave() {
-    updateIsSaving(true);
+    updateIsSaving(true)
 
     await updateInstance({
       variables: {
@@ -125,14 +128,14 @@ function App({
         }),
       },
       refetchQueries,
-    });
+    })
 
-    updateIsEditMode(false);
-    updateIsSaving(false);
+    updateIsEditMode(false)
+    updateIsSaving(false)
   }
 
   function handleCancelEdit() {
-    updateIsEditMode(false);
+    updateIsEditMode(false)
   }
 
   if (isEditMode) {
@@ -140,7 +143,9 @@ function App({
       <AppStyleWrapper>
         <EditInstanceForm
           id={app.id}
-          label={`What's the preferred title ${appValue ? `for ${appValue}?` : `off you App?`}`}
+          label={`What's the preferred title ${
+            appValue ? `for ${appValue}?` : `off you App?`
+          }`}
           value={appValue}
           onChange={handleAppValueChange}
           onSave={handleAppValueSave}
@@ -148,11 +153,11 @@ function App({
           disabled={isSaving}
         />
       </AppStyleWrapper>
-    );
+    )
   }
 
   async function handleDelete() {
-    updateIsDeleting(true);
+    updateIsDeleting(true)
 
     try {
       await deleteInstance({
@@ -164,14 +169,14 @@ function App({
           }),
         },
         refetchQueries,
-      });
+      })
     } catch (e) {
-      updateIsDeleting(false);
+      updateIsDeleting(false)
     }
   }
 
   function handleCancelDelete() {
-    updateIsDeleteMode(false);
+    updateIsDeleteMode(false)
   }
 
   if (isDeleteMode) {
@@ -184,13 +189,12 @@ function App({
           disabled={isDeleting}
         />
       </AppStyleWrapper>
-    );
+    )
   }
 
   return (
     <AppStyleWrapper selected={selected}>
-
-      <AppTitleAccordion 
+      <AppTitleAccordion
         title={appValue}
         description={descriptions[0] && descriptions[0].value}
       />
@@ -207,20 +211,22 @@ function App({
         label={appValue}
         refetchQueries={refetchQueries}
       />
-      {!descriptions.length ? <Descriptions
-        descriptions={descriptions}
-        appId={app.id}
-        label={appValue}
-        refetchQueries={refetchQueries}
-      /> : null}
+      {!descriptions.length ? (
+        <Descriptions
+          descriptions={descriptions}
+          appId={app.id}
+          label={appValue}
+          refetchQueries={refetchQueries}
+        />
+      ) : null}
     </AppStyleWrapper>
-  );
+  )
 }
 
 export default compose(
   graphql(EXECUTE, { name: 'updateInstance' }),
   graphql(EXECUTE, { name: 'deleteInstance' })
-)(App);
+)(App)
 
 App.propTypes = {
   app: PropTypes.object,
@@ -235,4 +241,4 @@ App.propTypes = {
   }),
   // ns__custom_start unit: appInfo, comp: App, loc: addedPropTypes
   // ns__custom_end unit: appInfo, comp: App, loc: addedPropTypes
-};
+}
