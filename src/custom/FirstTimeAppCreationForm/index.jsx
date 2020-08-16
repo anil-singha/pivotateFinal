@@ -15,7 +15,7 @@ import { CREATE_APP_FOR_APP_SPEC_ACTION_ID } from '../../config';
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 import PropTypes from 'prop-types';
 import { TextField, makeStyles } from '@material-ui/core';
-import DescriptionCreationForm from '../../components/AppSpec/DescriptionCreationForm';
+import DescriptionCreationForm from '../../components/AppInfo/DescriptionCreationForm';
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: styling

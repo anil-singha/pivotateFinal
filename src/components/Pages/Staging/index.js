@@ -11,7 +11,7 @@ import JobSeeker from "../../meetingSteps/jobSeeker";
 import LoginForm from "../../LoginForm";
 import RegistrationForm from "../../RegistrationForm";
 import Home from "../../Pages/Home";
-import Apps from "../../AppSpec/Apps";
+import Apps from "../../AppInfo/Apps";
 import AppHeader from "../../AppHeader";
 import AppFooter from "../../AppFooter";
 import StepZilla from "react-stepzilla";

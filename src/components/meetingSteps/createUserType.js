@@ -6,8 +6,8 @@ import { withNoStack } from "@nostack/no-stack";
 
 import { flattenData } from "../../flattenData";
 
-import AppCreationForm from "../AppSpec/AppCreationForm";
-import App from "../AppSpec/App";
+import AppCreationForm from "../AppInfo/AppCreationForm";
+import App from "../AppInfo/App";
 
 import { SOURCE_APP_SPEC_ID } from "../../config";
 import {
