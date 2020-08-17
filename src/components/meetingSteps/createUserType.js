@@ -6,14 +6,14 @@ import { withNoStack } from "@nostack/no-stack";
 
 import { flattenData } from "../../flattenData";
 
-import AppCreationForm from "../AppInfo/AppCreationForm";
-import App from "../AppInfo/App";
+import AppCreationForm from "../AppSpec/AppCreationForm";
+import App from "../AppSpec/App";
 
 import { SOURCE_APP_SPEC_ID } from "../../config";
 import {
   APP_SPEC_RELATIONSHIPS,
   SOURCE_APP_SPEC_QUERY,
-} from "../source-props/appInfo";
+} from "../source-props/appSpec";
 
 // np__added_start unit: appSpec2, comp: Apps, loc: styling
 

@@ -11,7 +11,7 @@ import { makeStyles } from '@material-ui/core';
 import IconButton from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import {
-  CREATE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
+  CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
   ADD_HAS_PARENT_FOR_PARENT_ACTION_ID,
 } from '../../config';
 
@@ -135,7 +135,7 @@ const SubInfoTypeCreationForm = ({
   const showCalloutBox = callout || validateSubInfoTypes === 0;
   const callOutText = "What's the name of this Sub Info Type?";
 
-  console.log(`validateSubInfoTypes`, validateSubInfoTypes)
+  console.log(`validateSubInfoTypes`, validateSubInfoTypes);
 
   // ns__custom_start unit: appSpec, comp: SubChild_creation, loc: addedDeclaration
 
@@ -159,7 +159,7 @@ const SubInfoTypeCreationForm = ({
       updateLoading(false);
       const createInfoTypeResponse = await createSubInfoType({
         variables: {
-          actionId: CREATE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
+          actionId: CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
           executionParameters: JSON.stringify({
             parentInstanceId: parentId,
             value: subInfoValue,
@@ -176,13 +176,12 @@ const SubInfoTypeCreationForm = ({
           actionId: ADD_HAS_PARENT_FOR_PARENT_ACTION_ID,
           executionParameters: JSON.stringify({
             childInstanceId: infoTypes.id,
-            parentInstanceId: newInfoTypeData.instanceId
+            parentInstanceId: newInfoTypeData.instanceId,
           }),
           unrestricted: false,
         },
         refetchQueries,
       });
-
     } catch (err) {
       console.log(err);
     }
@@ -203,12 +202,12 @@ const SubInfoTypeCreationForm = ({
   return (
     <Form>
       {/* ns__custom_start unit: appSpec, comp: SubChild_creation, loc: insideReturn */}
-      <Label htmlFor="screen-value">
+      <Label htmlFor='screen-value'>
         Sub Info Type:
         <InputContainer>
           <Input
-            id="screen-value"
-            type="text"
+            id='screen-value'
+            type='text'
             onChange={handleChange}
             onKeyPress={handleKeyPress}
             value={subInfoValue}
@@ -219,7 +218,7 @@ const SubInfoTypeCreationForm = ({
             <HelpOutlineIcon className={styles.helpIcon} />
           </IconButton>
         </InputContainer>
-        <Button type="submit" disabled={loading} onClick={handleSubmit}>
+        <Button type='submit' disabled={loading} onClick={handleSubmit}>
           {loading ? 'Creating Sub Info Type...' : 'Create Sub Info Type'}
         </Button>
       </Label>

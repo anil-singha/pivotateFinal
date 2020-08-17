@@ -6,10 +6,10 @@ import { graphql } from '@apollo/react-hoc';
 
 import PropTypes from 'prop-types';
 import {
-  UPDATE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
-  DELETE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
+  UPDATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
+  DELETE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
   ADD_HAS_PARENT_FOR_PARENT_ACTION_ID,
-  CREATE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
+  CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
   TYPE_INFO_TYPE_ID,
 } from '../../config';
 
@@ -90,7 +90,7 @@ const SubInfoType = ({
 
     await updateInstance({
       variables: {
-        actionId: UPDATE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
+        actionId: UPDATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
         executionParameters: JSON.stringify({
           value: infoTypeValue,
           instanceId: infoType.id,
@@ -129,7 +129,7 @@ const SubInfoType = ({
     try {
       await deleteInstance({
         variables: {
-          actionId: DELETE_INFO_TYPE_FOR_APP_INFO_ACTION_ID,
+          actionId: DELETE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
           executionParameters: JSON.stringify({
             parentInstanceId: parentId,
             instanceId: infoTypeId,

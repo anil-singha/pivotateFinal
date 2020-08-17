@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { NoStackConsumer } from '@nostack/no-stack';
 
 import Home from '../Home';
-import Apps from '../../AppInfo/Apps';
+import Apps from '../../AppSpec/Apps';
 import AppHeader from '../../AppHeader';
 import AppFooter from '../../AppFooter';
 

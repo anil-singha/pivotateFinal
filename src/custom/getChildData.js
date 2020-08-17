@@ -8,17 +8,17 @@ export default (data) => {
       : null,
   }));
 
-  let hasParentId = _.groupBy(parentData, 'parentId');
+  const hasParentId = _.groupBy(parentData, 'parentId');
 
   parentData = parentData.map((instance) => ({
     ...instance,
     _children: hasParentId[instance.id] || [],
   }));
 
-  let prData = Object.keys(hasParentId);
-  let childData = [];
+  const prData = Object.keys(hasParentId);
+  const childData = [];
 
-  for (let id in prData) {
+  for (const id in prData) {
     if (prData[id]) {
       parentData.map((instance) => {
         if (instance.parentId && prData[id] === instance.parentId) {

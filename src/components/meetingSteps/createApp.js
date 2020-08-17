@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { withNoStack } from "@nostack/no-stack";
-import { NoStackConsumer } from "@nostack/no-stack";
-import Apps from "../AppInfo/Apps";
-import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement } from "../../actions";
+import React, { useState } from 'react';
+import { withNoStack, NoStackConsumer } from '@nostack/no-stack';
+
+import { useSelector, useDispatch } from 'react-redux';
+import Apps from '../AppSpec/Apps';
+import { increment, decrement } from '../../actions';
 
 const meetingApp = ({ loading, currentUser, login, jumpToStep }) => {
   const onNext = () => {
@@ -22,7 +22,7 @@ const meetingApp = ({ loading, currentUser, login, jumpToStep }) => {
 
   return (
     <>
-      <Apps customerId={currentUser.id} onNext={() => onNext()}></Apps>
+      <Apps customerId={currentUser.id} onNext={() => onNext()} />
       {/* <button onClick={() => dispatch(increment())}>+</button> */}
     </>
   );

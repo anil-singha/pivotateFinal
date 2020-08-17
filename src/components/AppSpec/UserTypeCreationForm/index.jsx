@@ -1,28 +1,36 @@
-/* eslint-disable react/prop-types */
+/*
+  This file has been partially generated!
+  To permit updates to the generated portions of this code in the future,
+  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+ */
+// ns__file unit: appSpec, comp: UserTypeCreationForm
+
+// ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: beforeImports
+// ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: beforeImports
+
 import React, { useState } from 'react';
 import { graphql } from '@apollo/react-hoc';
 import styled, { keyframes } from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 
-// ns__custom_start unit: appSpec, comp: Sub_Info_TypeCreationForm, loc: addedImports
+// ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: addedImports
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
 import { makeStyles, TextField, InputAdornment } from '@material-ui/core';
-import {
-  CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
-  // eslint-disable-next-line comma-dangle
-  ADD_HAS_PARENT_FOR_PARENT_ACTION_ID,
-} from '../../config';
+import { CREATE_USER_TYPE_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 
-// ns__custom_end unit: appSpec, comp: Sub_Info_TypeCreationForm, loc: addedImports
+// ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: addedImports
 
-// ns__custom_start unit: appSpec, comp: Sub_Info_TypeCreationForm, loc: styling
+// ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: styling
 // change styling here
 const Form = styled.div`
   margin: 2em;
   border: none;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;
 
 const Label = styled.label`
@@ -33,21 +41,21 @@ const Label = styled.label`
 `;
 
 const fadeInDown = keyframes`
-  0% {
-    opacity: 0;
-    
-  }
-  100% {
-    opacity: 1;
-    
-  }
+0% {
+  opacity: 0;
+  
+}
+100% {
+  opacity: 1;
+  
+}
 `;
 
 const CalloutBox = styled.div`
   padding: 1rem;
   animation: ${fadeInDown} 1.5s;
   background-color: #F3E196;
-  width: inherit;
+  width: 100%;
   border-radius: 10px;  
   position: relative;
   margin: .5rem;
@@ -64,7 +72,7 @@ const CalloutBox = styled.div`
     border-right: 2px solid #F3E196;
     border-left: 0px solid #F3E196;
     border-bottom: 2px solid #F3E196;
-    left: 81%;
+    left: 60%;
     
     content: '';
     transform: rotate(45deg);
@@ -88,89 +96,72 @@ const useStyles = makeStyles({
   },
   closeIcon: {
     color: 'white',
-    fontSize: '1rem',
+    fontSize: '1.2rem',
   },
   textField: {
     width: '100%',
   },
 });
 
-// ns__custom_end unit: appSpec, comp: Sub_Info_TypeCreationForm, loc: styling
+// ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: styling
 
-const SubInfoTypeCreationForm = ({
-  childId,
+function UserTypeCreationForm({
   parentId,
-  createSubInfoType,
+  createUserType,
   refetchQueries,
-  saveInstance,
-  // ns__custom_start unit: appSpec, comp: Sub_Info_Type_Creation, loc: addedPropsForCreationForm
-  validateSubInfoTypes,
+  // ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: addedProps
+  validateUserTypes,
+  onChange,
   label,
+  userTypeCreationCount,
   disabled,
-  subInfoTypeValueCount,
   textLabel,
-  // ns__custom_end unit: appSpec, comp: Sub_Info_Type_Creation, loc: addedPropsForCreationForm
-}) => {
-  const [subInfoValue, setSubInfoValue] = useState('');
+  // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: addedProps
+}) {
+  const [userTypeValue, updateUserTypeValue] = useState('');
   const [loading, updateLoading] = useState(false);
+
+  // ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: beginning
   const styles = useStyles();
   const [callout, setCallout] = useState(false);
-  const showCalloutBox = callout || validateSubInfoTypes === 0;
-
-  // ns__custom_start unit: appSpec, comp: Sub_Info_Type_Creation, loc: beginning
+  const showCalloutBox = callout || validateUserTypes === 0;
   let callOutText = '';
-
-  if (subInfoTypeValueCount < 5) {
+  if (userTypeCreationCount < 4) {
     callOutText = textLabel;
   } else {
-    callOutText = `What is the sub Info Type ${label ? `for ${label}` : ''}`;
+    callOutText = `What is the User Type ${label ? `for ${label}` : ''}`;
   }
-  // ns__custom_end unit: appSpec, comp: Sub_Info_Type_Creation, loc: beginning
+  // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: beginning
+
   function handleChange(e) {
-    setSubInfoValue(e.target.value);
+    updateUserTypeValue(e.target.value);
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    if (!subInfoValue) {
+    if (!userTypeValue) {
       return;
     }
 
     updateLoading(true);
 
-    try {
-      // const newInfoTypeData = JSON.parse(createSubInfoResponse.data.Execute);
-      setSubInfoValue('');
-      updateLoading(false);
-      const createInfoTypeResponse = await createSubInfoType({
-        variables: {
-          actionId: CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
-          executionParameters: JSON.stringify({
-            parentInstanceId: parentId,
-            value: subInfoValue,
-          }),
-          unrestricted: false,
-        },
-        refetchQueries,
-      });
+    const createUserTypeResponse = await createUserType({
+      variables: {
+        actionId: CREATE_USER_TYPE_FOR_APP_SPEC_ACTION_ID,
+        executionParameters: JSON.stringify({
+          parentInstanceId: parentId,
+          value: userTypeValue,
+        }),
+        unrestricted: false,
+      },
+      refetchQueries,
+    });
 
-      const newInfoTypeData = JSON.parse(createInfoTypeResponse.data.Execute);
+    const newUserTypeData = JSON.parse(createUserTypeResponse.data.Execute);
 
-      await saveInstance({
-        variables: {
-          actionId: ADD_HAS_PARENT_FOR_PARENT_ACTION_ID,
-          executionParameters: JSON.stringify({
-            childInstanceId: childId,
-            parentInstanceId: newInfoTypeData.instanceId,
-          }),
-          unrestricted: false,
-        },
-        refetchQueries,
-      });
-    } catch (err) {
-      // console.log(err);
-    }
+    updateUserTypeValue('');
+    updateLoading(false);
   }
 
   function handleKeyPress(e) {
@@ -183,21 +174,23 @@ const SubInfoTypeCreationForm = ({
     }
     // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: insideHandleKeyPress
   }
-
-  // ns__custom_start unit: appSpec, comp: Sub_Info_Type_Creation, loc: beforeReturn*/
+  // ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: beforeReturn
   const showCallout = () => {
     setCallout(!callout);
   };
   return (
     <Form>
-      {/* // ns__custom_start unit: appSpec, comp: Sub_Info_Type_Creation, loc: insideReturn */}
-      <Label htmlFor='screen-value'>
+      {/* ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: insideReturn */}
+      <Label htmlFor='userType-value'>
         <TextField
           className={styles.textField}
-          label={`New Sub Info Type  ${label ? `for ${label}` : ''}`}
-          onChange={handleChange}
+          label={callOutText}
+          value={userTypeValue}
+          onChange={(e) => {
+            handleChange(e);
+            onChange(e.target.value);
+          }}
           onKeyPress={handleKeyPress}
-          value={subInfoValue}
           disabled={loading || disabled}
           variant='outlined'
           InputProps={{
@@ -218,31 +211,35 @@ const SubInfoTypeCreationForm = ({
           <CloseIcon className={styles.closeIcon} onClick={showCallout} />
         </CalloutBox>
       ) : null}
-      {/* // ns__custom_end unit: appSpec, comp: Sub_Info_Type_Creation, loc: insideReturn */}
+      {/* ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: insideReturn */}
     </Form>
   );
-  // ns__custom_end unit: appSpec, comp: Sub_Info_Type_Creation, loc: beforeReturn*/
+  // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: beforeReturn
 
   // return (
   //   <Form>
-  //     {/* // ns__custom_start unit: appSpec, comp: Sub_Info_Type_Creation, loc: insideReturn */}
-  //     <Label htmlFor='screen-value'>
-  //       Sub Info Type:
+  //     {/* ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: insideReturn */}
+  //     <Label htmlFor='userType-value'>
+  //
+  //       UserType:
   //       <InputContainer>
   //         <Input
+  //           id='userType-value'
   //           type='text'
   //           onChange={handleChange}
   //           onKeyPress={handleKeyPress}
-  //           value={subInfoValue}
+  //           value={userTypeValue}
   //           disabled={loading}
+
   //         />
 
   //         <IconButton className={styles.button} onClick={showCallout}>
   //           <HelpOutlineIcon className={styles.helpIcon} />
   //         </IconButton>
   //       </InputContainer>
+
   //       <Button type='submit' disabled={loading} onClick={handleSubmit}>
-  //         {loading ? 'Creating Sub Info Type...' : 'Create Sub Info Type'}
+  //         {loading ? 'Creating UserType...' : 'Create UserType'}
   //       </Button>
   //     </Label>
   //     {showCalloutBox ? (
@@ -251,12 +248,11 @@ const SubInfoTypeCreationForm = ({
   //         <CloseIcon className={styles.closeIcon} onClick={showCallout} />
   //       </CalloutBox>
   //     ) : null}
-  //     {/* // ns__custom_end unit: appSpec, comp: Sub_Info_Type_Creation, loc: insideReturn */}
+  //   {/* ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: insideReturn */}
   //   </Form>
   // );
-};
+}
 
-export default compose(
-  graphql(EXECUTE, { name: 'createSubInfoType' }),
-  graphql(EXECUTE, { name: 'saveInstance' })
-)(SubInfoTypeCreationForm);
+export default compose(graphql(EXECUTE, { name: 'createUserType' }))(
+  UserTypeCreationForm
+);

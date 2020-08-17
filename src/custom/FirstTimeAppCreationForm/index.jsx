@@ -13,7 +13,7 @@ import compose from '@shopify/react-compose';
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 import PropTypes from 'prop-types';
 import { TextField, makeStyles } from '@material-ui/core';
-import { CREATE_APP_FOR_APP_INFO_ACTION_ID } from '../../config';
+import { CREATE_APP_FOR_APP_SPEC_ACTION_ID } from '../../config';
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: styling
@@ -83,7 +83,7 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
 
     await createApp({
       variables: {
-        actionId: CREATE_APP_FOR_APP_INFO_ACTION_ID,
+        actionId: CREATE_APP_FOR_APP_SPEC_ACTION_ID,
         executionParameters: JSON.stringify({
           parentInstanceId: customerId,
           value: appValue,
