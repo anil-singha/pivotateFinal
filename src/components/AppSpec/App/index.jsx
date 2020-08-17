@@ -16,6 +16,7 @@ import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 import { graphql } from '@apollo/react-hoc';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import {
   UPDATE_APP_FOR_APP_SPEC_ACTION_ID,
@@ -260,7 +261,7 @@ export default compose(
 )(App);
 
 App.propTypes = {
-  app: PropTypes.object,
+  // app: PropTypes.object,
   parentId: PropTypes.string,
   selected: PropTypes.bool,
   updateInstance: PropTypes.func,

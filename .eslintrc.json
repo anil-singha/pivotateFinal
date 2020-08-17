@@ -3,15 +3,42 @@
     "browser": true,
     "es2020": true
   },
+  "parser": "babel-eslint",
+
   "extends": ["plugin:react/recommended", "airbnb", "prettier"],
   "parserOptions": {
-    "ecmaVersion": 11
+    "ecmaVersion": 2018
   },
   "plugins": ["react", "prettier"],
   "rules": {
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "labelComponents": [],
+        "labelAttributes": [],
+        "controlComponents": [],
+        "assert": "either",
+        "depth": 25
+      }
+    ],
+    "import/extensions": [
+      "error",
+      {
+        "js": "never"
+      }
+    ],
+    "react/state-in-constructor": 0,
     "react/require-default-props": 0,
     "react/prop-types": 0,
     "react/forbid-prop-types": 0,
+    "react/destructuring-assignment": 0,
+    "no-duplicate-imports": 0,
+    "import/no-useless-path-segments": [
+      "error",
+      {
+        "noUselessIndex": false
+      }
+    ],
     "react/jsx-filename-extension": [
       1,
       {

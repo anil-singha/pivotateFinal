@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 const UnderConstruction = () => {
   return (
-    <div style={{ lineHeight: 1.6 }} className="wysywg container full-width-sm">
-      <div className="row" id="placeholders">
+    <div style={{ lineHeight: 1.6 }} className='wysywg container full-width-sm'>
+      <div className='row' id='placeholders'>
         <h3>PRIVACY POLICY</h3>
 
         <p>&nbsp;</p>
@@ -48,13 +48,13 @@ const UnderConstruction = () => {
           </span>
           <span>
             "). This Privacy Notice also explains how we collect, process,
-            transfer, store and disclose the information collected.{" "}
+            transfer, store and disclose the information collected.
           </span>
           <span>
             If not otherwise defined herein, capitalized terms have the meaning
             given to them in the Terms of Service, available at &nbsp;
           </span>
-          <a href="https://pivotate.com/terms-and-conditions">
+          <a href='https://pivotate.com/terms-and-conditions'>
             https://pivotate.com/terms-and-conditions
           </a>
           <span> ("</span>
@@ -95,7 +95,7 @@ const UnderConstruction = () => {
             We collect information from you when you visit our Site or choose to
             use our Platform and/or Services. In order to use our Platform
             and/or Services, you will be required to register and provide us
-            with certain Personal Data, such as your name and email address.{" "}
+            with certain Personal Data, such as your name and email address.
           </span>
         </p>
         <p>&nbsp;</p>
@@ -107,14 +107,14 @@ const UnderConstruction = () => {
             Data that we collect from you when you engage in any of the
             activities detailed above, may include your name, address, phone
             number, e-mail address and credit card information. Such Personal
-            Data may be collected by us through the Platform and/or Services.{" "}
+            Data may be collected by us through the Platform and/or Services.
           </span>
         </p>
         <p>&nbsp;</p>
         <p>
           <span>
             We also collect any materials including images, photos and/or
-            documents you may upload to the{" "}
+            documents you may upload to the
           </span>
           <span>Platform and/or Services</span>
           <span>. </span>
@@ -125,7 +125,7 @@ const UnderConstruction = () => {
             In addition, when you use the Platform, Site and/or Services certain
             information may be automatically gathered about your computer or
             mobile device, including non-Personal Data, such as your operating
-            system, and Personal Data such as your IP address,{" "}
+            system, and Personal Data such as your IP address,
           </span>
           <span>device ID</span>
           <span>, as well as your browsing history </span>
@@ -172,16 +172,16 @@ const UnderConstruction = () => {
             non-specific format for analytical purposes (as detailed below); (7)
             to prevent fraud, protect the security of our Platform, Site and
             Services, and address any problems with the Platform, Site and/or
-            Services and (8) to provide customer support.{" "}
+            Services and (8) to provide customer support.
           </span>
         </p>
         <p>&nbsp;</p>
-        <p align="left">
+        <p align='left'>
           <span>
             <u>Statistical Information and Analytics</u>
           </span>
         </p>
-        <p align="left">
+        <p align='left'>
           <span>
             We and/or our service providers use analytics tools, including
             "Google Analytics" to collect and analyze information about the use
@@ -192,15 +192,15 @@ const UnderConstruction = () => {
             information across a variety of platforms and users, which helps us
             improve our Site and Services, understand trends and customer needs
             and consider new products and services, and tailor existing products
-            and services to customer desires.{" "}
+            and services to customer desires.
           </span>
           <span>
             You can find more information about how Google collects information
-            and how you can control such use at{" "}
+            and how you can control such use at
           </span>
-          <span style={{ color: "#0000ff" }}>
+          <span style={{ color: '#0000ff' }}>
             <u>
-              <a href="https://policies.google.com/technologies/partner-sites">
+              <a href='https://policies.google.com/technologies/partner-sites'>
                 <span>
                   https://policies.google.com/technologies/partner-sites.
                 </span>
@@ -218,7 +218,7 @@ const UnderConstruction = () => {
           <span>
             We may use your Personal Data as required or permitted by any
             applicable law
-          </span>{" "}
+          </span>
           <span>
             for example, to comply with audit and other legal requirements
           </span>
@@ -256,7 +256,7 @@ const UnderConstruction = () => {
             aid in their understanding of how users are using our Platform, Site
             and/or Services; (3) provide to you targeted offers and advertising
             on both our Site, as well as on other apps, platform or sites you
-            choose to visit.{" "}
+            choose to visit.
           </span>
         </p>
         <p>&nbsp;</p>
@@ -304,7 +304,7 @@ const UnderConstruction = () => {
             Notice); (ii) to protect the rights, property or safety of third
             parties; (iii) when required by law, regulation subpoena, court
             order or other law enforcement related issues; or (iv) as is
-            necessary to comply with any legal and/or regulatory obligation.{" "}
+            necessary to comply with any legal and/or regulatory obligation.
           </span>
         </p>
         <p>&nbsp;</p>
@@ -338,7 +338,7 @@ const UnderConstruction = () => {
           <span>
             Subject to applicable law, you may request to see any Personal Data
             you have provided to us and request that such Personal Data be
-            corrected or updated by emailing us at{" "}
+            corrected or updated by emailing us at
           </span>
           <span>info@pivotate.com</span>
           <span>.</span>
@@ -377,7 +377,7 @@ const UnderConstruction = () => {
             We retain information as necessary for the purposes set forth above.
             We may delete information from our systems, without notice to you,
             once we deem it is no longer necessary for the purposes set forth
-            above.{" "}
+            above.
           </span>
         </p>
         <p>&nbsp;</p>
@@ -398,7 +398,7 @@ const UnderConstruction = () => {
             course of advertising being served on different websites. When
             visiting this Site, you shall be asked to accept the terms of this
             Privacy Notice, including the use of and placement of cookies and
-            other similar technologies on your device as specified herein.{" "}
+            other similar technologies on your device as specified herein.
           </span>
         </p>
         <p>&nbsp;</p>
@@ -429,7 +429,7 @@ const UnderConstruction = () => {
               <span>
                 A "persistent" cookie may be used to help save your settings and
                 customizations across visits. It will remain on your device for
-                much longer or until you delete it.{" "}
+                much longer or until you delete it.
               </span>
             </p>
           </li>
@@ -448,7 +448,7 @@ const UnderConstruction = () => {
                 Information may also be collected through web beacons, which are
                 small graphic images ("pixel tags"), which usually work together
                 with cookies in order to identify users and user behavior. These
-                may be shared with third parties.{" "}
+                may be shared with third parties.
               </span>
             </p>
           </li>
@@ -472,17 +472,17 @@ const UnderConstruction = () => {
             The specific names and types of the cookies, web beacons, and other
             similar technologies we use may change from time to time. However,
             the cookies we use generally fall into one of the following
-            categories:{" "}
+            categories:
           </span>
         </p>
         <p>&nbsp;</p>
-        <table id="cookie" width="619" cellspacing="0" cellpadding="7">
+        <table id='cookie' width='619' cellspacing='0' cellpadding='7'>
           <tbody>
-            <tr valign="top">
+            <tr valign='top'>
               <td
-                style={{ background: "#d9d9d9" }}
-                bgcolor="#d9d9d9"
-                width="79"
+                style={{ background: '#d9d9d9' }}
+                bgcolor='#d9d9d9'
+                width='79'
               >
                 <p>
                   <span>
@@ -491,9 +491,9 @@ const UnderConstruction = () => {
                 </p>
               </td>
               <td
-                style={{ background: "#d9d9d9" }}
-                bgcolor="#d9d9d9"
-                width="510"
+                style={{ background: '#d9d9d9' }}
+                bgcolor='#d9d9d9'
+                width='510'
               >
                 <p>
                   <span>
@@ -502,13 +502,13 @@ const UnderConstruction = () => {
                 </p>
               </td>
             </tr>
-            <tr valign="top">
-              <td style={{ background: "transparent" }} width="79">
+            <tr valign='top'>
+              <td style={{ background: 'transparent' }} width='79'>
                 <p>
                   <span>Necessary</span>
                 </p>
               </td>
-              <td style={{ background: "transparent" }} width="510">
+              <td style={{ background: 'transparent' }} width='510'>
                 <p>
                   <span>
                     These cookies are necessary in order to allow the Platform
@@ -522,13 +522,13 @@ const UnderConstruction = () => {
                 </p>
               </td>
             </tr>
-            <tr valign="top">
-              <td style={{ background: "transparent" }} width="79">
+            <tr valign='top'>
+              <td style={{ background: 'transparent' }} width='79'>
                 <p>
                   <span>Functionality</span>
                 </p>
               </td>
-              <td style={{ background: "transparent" }} width="510">
+              <td style={{ background: 'transparent' }} width='510'>
                 <p>
                   <span>
                     These cookies remember your settings and preferences and the
@@ -539,13 +539,13 @@ const UnderConstruction = () => {
                 </p>
               </td>
             </tr>
-            <tr valign="top">
-              <td style={{ background: "transparent" }} width="79">
+            <tr valign='top'>
+              <td style={{ background: 'transparent' }} width='79'>
                 <p>
                   <span>Security</span>
                 </p>
               </td>
-              <td style={{ background: "transparent" }} width="510">
+              <td style={{ background: 'transparent' }} width='510'>
                 <p>
                   <span>
                     These cookies can help us identify and prevent security
@@ -556,13 +556,13 @@ const UnderConstruction = () => {
                 </p>
               </td>
             </tr>
-            <tr valign="top">
-              <td style={{ background: "transparent" }} width="79">
+            <tr valign='top'>
+              <td style={{ background: 'transparent' }} width='79'>
                 <p>
                   <span>Performance</span>
                 </p>
               </td>
-              <td style={{ background: "transparent" }} width="510">
+              <td style={{ background: 'transparent' }} width='510'>
                 <p>
                   <span>
                     These cookies can help us collect information to help us
@@ -574,19 +574,19 @@ const UnderConstruction = () => {
                 </p>
               </td>
             </tr>
-            <tr valign="top">
-              <td style={{ background: "transparent" }} width="79">
+            <tr valign='top'>
+              <td style={{ background: 'transparent' }} width='79'>
                 <p>
                   <span>Analytics</span>
                 </p>
               </td>
-              <td style={{ background: "transparent" }} width="510">
+              <td style={{ background: 'transparent' }} width='510'>
                 <p>
                   <span>
                     These cookies collect information regarding your activity on
                     our Platform and Site to help us learn more about which
                     features are popular with our users and how our Platform and
-                    Site can be improved.{" "}
+                    Site can be improved.
                   </span>
                 </p>
               </td>
@@ -622,7 +622,7 @@ const UnderConstruction = () => {
         <p>
           <span>
             All use of third-party applications or services is at your own risk
-            and subject to such third party's privacy policies.{" "}
+            and subject to such third party's privacy policies.
           </span>
         </p>
         <p>&nbsp;</p>
@@ -637,21 +637,20 @@ const UnderConstruction = () => {
         </p>
         <p>&nbsp;</p>
         <p>
-          <a name="_GoBack"></a>{" "}
           <span>
             <span>
               We may send you e-mail or other messages about us or our Services.
-              You will be{" "}
+              You will be
             </span>
           </span>
           <span>
             given the opportunity to unsubscribe from commercial messages and
             stop receiving future communication from us by following the
-            UNSUBSCRIBE link in any such email or message, by emailing us at{" "}
+            UNSUBSCRIBE link in any such email or message, by emailing us at
           </span>
-          <span style={{ color: "#0000ff" }}>
+          <span style={{ color: '#0000ff' }}>
             <u>
-              <a href="mailto:info@pivotate.com">
+              <a href='mailto:info@pivotate.com'>
                 <span>info@pivotate.com</span>
               </a>
             </u>
@@ -662,7 +661,6 @@ const UnderConstruction = () => {
           </span>
           <span>
             <span>
-              {" "}
               and administrative messages relating to your account, without
               offering you the opportunity to opt out of receiving them. Should
               you not wish to receive such communications you may cancel your
@@ -703,7 +701,7 @@ const UnderConstruction = () => {
             you of such changes. We will post the updated Privacy Notice on this
             page. Please come back to this page every now and then to make sure
             you are familiar with the latest version. Any new Privacy Notice
-            will be effective from the date it is accepted by you.{" "}
+            will be effective from the date it is accepted by you.
           </span>
         </p>
         <p>&nbsp;</p>
@@ -718,7 +716,7 @@ const UnderConstruction = () => {
         <p>
           <span>
             If you have any comments or questions about this privacy notice,
-            please contact us at{" "}
+            please contact us at
           </span>
           <span>info@pivotate.com</span>
           <span>
@@ -731,7 +729,7 @@ const UnderConstruction = () => {
             <em>Last updated: April 2020. </em>
           </span>
         </p>
-        <p dir="rtl">&nbsp;</p>
+        <p dir='rtl'>&nbsp;</p>
       </div>
       <br></br>
       <br></br>

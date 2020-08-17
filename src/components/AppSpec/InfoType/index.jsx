@@ -15,6 +15,7 @@ import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 import { graphql } from '@apollo/react-hoc';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import { InputLabel, makeStyles } from '@material-ui/core';
 import {
@@ -275,7 +276,6 @@ export default compose(
 )(InfoType);
 
 InfoType.propTypes = {
-  app: PropTypes.object,
   parentId: PropTypes.string,
   selected: PropTypes.bool,
   updateInstance: PropTypes.func,

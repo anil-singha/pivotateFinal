@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Modal from '../../Modal';
-import InitialDevelopment from './Modals/initial-development.js';
-import ServiceDetails from './Modals/pivoting-services-details.js';
+import InitialDevelopment from './Modals/initial-development';
+import ServiceDetails from './Modals/pivoting-services-details';
 import MaintenanceDetails from './Modals/maintenance-details';
 
 class Pricing extends Component {
@@ -19,7 +19,6 @@ class Pricing extends Component {
         break;
       case 'maintenance':
         this.modalToggleMaintenance();
-
         break;
       case 'services':
         this.modalToggleServices();
@@ -28,54 +27,59 @@ class Pricing extends Component {
         break;
     }
   }
-  signUp = (props) => {
+
+  signUp = () => {
     this.props.onSignUp();
     this.modalToggleInitDev();
   };
-  modalToggleInitDev = (props) => {
+
+  modalToggleInitDev = () => {
     this.setState({
       modalInitDev: !this.state.modalInitDev,
     });
     if (!this.state.modalInitDev) {
       this.props.history.push({
-        search:
-          '?' +
-          new URLSearchParams({ modal: 'initial-development' }).toString(),
+        search: `?${new URLSearchParams({
+          modal: 'initial-development',
+        }).toString()}`,
       });
     } else {
       this.props.history.push({
-        search: '?' + new URLSearchParams().toString(),
+        search: `?${new URLSearchParams().toString()}`,
       });
     }
   };
-  modalToggleMaintenance = (props) => {
+
+  modalToggleMaintenance = () => {
     this.setState({
       modalMaintenance: !this.state.modalMaintenance,
     });
     if (!this.state.modalServices) {
       this.props.history.push({
-        search: '?' + new URLSearchParams({ modal: 'maintenance' }).toString(),
+        search: `?${new URLSearchParams({ modal: 'maintenance' }).toString()}`,
       });
     } else {
       this.props.history.push({
-        search: '?' + new URLSearchParams().toString(),
+        search: `?${new URLSearchParams().toString()}`,
       });
     }
   };
+
   modalToggleServices = (props) => {
     this.setState({
       modalServices: !this.state.modalServices,
     });
     if (!this.state.modalServices) {
       this.props.history.push({
-        search: '?' + new URLSearchParams({ modal: 'services' }).toString(),
+        search: `?${new URLSearchParams({ modal: 'services' }).toString()}`,
       });
     } else {
       this.props.history.push({
-        search: '?' + new URLSearchParams().toString(),
+        search: `?${new URLSearchParams().toString()}`,
       });
     }
   };
+
   render() {
     return (
       <>
@@ -94,7 +98,7 @@ class Pricing extends Component {
             <h2 className='text-center'>
               <span className='headline headline--teal'>
                 {' '}
-                INITIAL DEVELOPMENT{' '}
+                INITIAL DEVELOPMENT
               </span>
             </h2>
 
@@ -102,7 +106,10 @@ class Pricing extends Component {
             <div className='flex justify-center'>
               <div className='grow-3 pricing'>
                 <figure className='pricing__img'>
-                  <img src='https://pivotatestaticassets.com/images/pricing/Initial consultation.png' />
+                  <img
+                    alt='Initial consultation'
+                    src='https://pivotatestaticassets.com/images/pricing/Initial consultation.png'
+                  />
                 </figure>
                 <div className='pricing__content'>
                   <div className='pricing__description'>
@@ -116,7 +123,10 @@ class Pricing extends Component {
               </div>
               <div className='grow-3 pricing'>
                 <figure className='pricing__img'>
-                  <img src='https://pivotatestaticassets.com/images/pricing/Discounted Initial App Package.png' />
+                  <img
+                    alt='Initial App Package'
+                    src='https://pivotatestaticassets.com/images/pricing/Discounted Initial App Package.png'
+                  />
                 </figure>
                 <div className='pricing__content'>
                   <div className='pricing__description'>
@@ -132,7 +142,10 @@ class Pricing extends Component {
               </div>
               <div className='grow-3 pricing'>
                 <figure className='pricing__img'>
-                  <img src='https://pivotatestaticassets.com/images/pricing/Graphic design.png' />
+                  <img
+                    alt='Graphic Design'
+                    src='https://pivotatestaticassets.com/images/pricing/Graphic design.png'
+                  />
                 </figure>
                 <div className='pricing__content'>
                   <div className='pricing__description'>Graphic design</div>
@@ -143,7 +156,10 @@ class Pricing extends Component {
               </div>
               <div className='grow-3 pricing'>
                 <figure className='pricing__img'>
-                  <img src='https://pivotatestaticassets.com/images/pricing/Development.png' />
+                  <img
+                    alt='Development'
+                    src='https://pivotatestaticassets.com/images/pricing/Development.png'
+                  />
                 </figure>
                 <div className='pricing__content'>
                   <div className='pricing__description'>Development</div>
@@ -154,17 +170,19 @@ class Pricing extends Component {
               </div>
             </div>
             <div className='pricing__detail flex justify-center'>
-              <a
+              <div
+                role='button'
                 href='#'
                 onClick={this.modalToggleInitDev}
                 className='button button--rounded button--yellow flex justify-center items-center'
               >
-                GET DETAILS{' '}
+                GET DETAILS
                 <img
+                  alt='External Link'
                   className='pricing__icon'
                   src='https://pivotatestaticassets.com/images/pricing/external link.png'
-                ></img>
-              </a>
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -184,7 +202,10 @@ class Pricing extends Component {
             <div className='flex justify-center'>
               <div className='grow-3 pricing'>
                 <figure className='pricing__img'>
-                  <img src='https://pivotatestaticassets.com/images/pricing/Graphics.png' />
+                  <img
+                    alt='Graphics'
+                    src='https://pivotatestaticassets.com/images/pricing/Graphics.png'
+                  />
                 </figure>
                 <div className='pricing__content'>
                   <div className='pricing__description'>Graphics</div>
@@ -199,7 +220,10 @@ class Pricing extends Component {
               </div>
               <div className='grow-3 pricing'>
                 <figure className='pricing__img'>
-                  <img src='https://pivotatestaticassets.com/images/pricing/Content.png' />
+                  <img
+                    alt='Content'
+                    src='https://pivotatestaticassets.com/images/pricing/Content.png'
+                  />
                 </figure>
                 <div className='pricing__content'>
                   <div className='pricing__description'>Content </div>
@@ -211,7 +235,10 @@ class Pricing extends Component {
 
               <div className='grow-3 pricing'>
                 <figure className='pricing__img'>
-                  <img src='https://pivotatestaticassets.com/images/pricing/Special Services.png' />
+                  <img
+                    alt='Services'
+                    src='https://pivotatestaticassets.com/images/pricing/Special Services.png'
+                  />
                 </figure>
                 <div className='pricing__content'>
                   <div className='pricing__description'>Special Services</div>
@@ -234,6 +261,7 @@ class Pricing extends Component {
                 GET DETAILS{' '}
                 <img
                   className='pricing__icon'
+                  alt='External Link'
                   src='https://pivotatestaticassets.com/images/pricing/external link.png'
                 ></img>
               </a>
@@ -255,7 +283,10 @@ class Pricing extends Component {
             <div className='flex justify-center'>
               <div className='grow-3 pricing'>
                 <figure className='pricing__img'>
-                  <img src='https://pivotatestaticassets.com/images/pricing/Basic maintenance.png' />
+                  <img
+                    alt='Maintance'
+                    src='https://pivotatestaticassets.com/images/pricing/Basic maintenance.png'
+                  />
                 </figure>
                 <div className='pricing__content'>
                   <div className='pricing__description'>Basic maintenance</div>
@@ -267,7 +298,10 @@ class Pricing extends Component {
               </div>
               <div className='grow-3 pricing'>
                 <figure className='pricing__img'>
-                  <img src='https://pivotatestaticassets.com/images/pricing/Additional Cloud.png' />
+                  <img
+                    alt='Additional Cloud'
+                    src='https://pivotatestaticassets.com/images/pricing/Additional Cloud.png'
+                  />
                 </figure>
                 <div className='pricing__content'>
                   <div className='pricing__description'>

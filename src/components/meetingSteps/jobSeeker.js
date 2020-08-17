@@ -1,29 +1,19 @@
-import React, { Component, createRef } from "react";
-import { Unit } from "@nostack/no-stack";
-import styled from "styled-components";
-import { v4 } from "uuid";
-import { withNoStack } from "@nostack/no-stack";
+import React, { Component, createRef } from 'react';
+import { Unit } from '@nostack/no-stack';
+import { v4 } from 'uuid';
+import { withNoStack } from '@nostack/no-stack';
 
-import { flattenData } from "../../flattenData";
+import { flattenData } from '../../flattenData';
 
-import AppCreationForm from "../AppSpec/AppCreationForm";
-import App from "../AppSpec/App";
+import App from '../AppSpec/App';
 
-import { SOURCE_APP_SPEC_ID } from "../../config";
+import { SOURCE_APP_SPEC_ID } from '../../config';
 import {
   APP_SPEC_RELATIONSHIPS,
   SOURCE_APP_SPEC_QUERY,
-} from "../source-props/appSpec";
+} from '../source-props/appSpec';
 
 // np__added_start unit: appSpec, comp: Apps, loc: styling
-
-// add styling here
-const AppsStyleWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-`;
-// np__added_end unit: appSpec, comp: Apps, loc: styling
 
 class Apps extends Component {
   // np__added_start unit: appSpec, comp: Apps, loc: beginning
@@ -35,11 +25,11 @@ class Apps extends Component {
   wrapperRef = createRef();
 
   componentDidMount() {
-    document.addEventListener("mousedown", this.handleClick);
+    document.addEventListener('mousedown', this.handleClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleClick);
+    document.removeEventListener('mousedown', this.handleClick);
   }
 
   handleClick = (e) => {
@@ -53,7 +43,7 @@ class Apps extends Component {
   handleSelect = (id) => this.setState({ selectedAppId: id });
 
   render() {
-    const customerId = "2ea51c4a-c072-4797-9de7-4bec0fc11db3";
+    const customerId = '2ea51c4a-c072-4797-9de7-4bec0fc11db3';
     const { selectedAppId } = this.state;
 
     const parameters = {
@@ -68,7 +58,7 @@ class Apps extends Component {
         parameters={parameters}
       >
         {({ loading, error, data, refetchQueries }) => {
-          if (loading) return "Loading...";
+          if (loading) return 'Loading...';
 
           if (error) {
             console.error(error);
@@ -79,8 +69,8 @@ class Apps extends Component {
 
           return (
             <>
-              <div className="box">
-                <div className="flex flex-column">
+              <div className='box'>
+                <div className='flex flex-column'>
                   {apps &&
                     apps.map((app, i) => (
                       <App

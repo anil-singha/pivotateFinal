@@ -158,7 +158,7 @@ function UserTypeCreationForm({
       refetchQueries,
     });
 
-    const newUserTypeData = JSON.parse(createUserTypeResponse.data.Execute);
+    JSON.parse(createUserTypeResponse.data.Execute);
 
     updateUserTypeValue('');
     updateLoading(false);

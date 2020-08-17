@@ -131,7 +131,6 @@ const SubInfoComponent = ({
   const [show, setShow] = useState(false);
   const [currentId, setCurrentId] = useState(null);
   const [selectedInfoTypeId, setselectedInfoTypeId] = useState(null);
-  const [setSubInfoTypeID] = useState(null);
   const [isEditMode, setIsEditMode] = useState(false);
 
   const [isSaving, setIsSaving] = useState(false);
@@ -233,7 +232,9 @@ const SubInfoComponent = ({
     if (!data || !data.length) return null;
     if (id === data[0].parentId) {
       setShow(!show);
+      return true;
     }
+    return true;
   };
 
   if (!infoType) return null;

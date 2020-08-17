@@ -13,41 +13,21 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { withNoStack } from '@nostack/no-stack';
+import { TextField, makeStyles, Button, InputLabel } from '@material-ui/core';
 
 import ForgotPasswordButton from '../ForgotPasswordButton';
 
 // ns__custom_start unit: general, comp: LoginForm, loc: addedImport
 
-import {
-  
-  TextField,
-  makeStyles,
-  Button,
-  InputLabel,
-} from '@material-ui/core';
 import TransitionsModal from '../../custom/Modal';
 
 // ns__custom_end unit: general, comp: LoginForm, loc: addedImport
 
 // ns__custom_start unit: general, comp: LoginForm, loc: styling
-const Wrapper = styled.div(
-  ({ open }) => `
-  width: 100%;
-
-  padding: 1em 0;
-
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 10px 10px 10px 10px;
-  box-shadow: 10px 10px 8px -1px rgba(0, 0, 0, 0.6);
-  
-`
-);
 
 const Row = styled.div`
-  
   text-align: center;
-  margin-bottom: .5rem;
-  
+  margin-bottom: 0.5rem;
 `;
 
 const LogoContainer = styled.div`
@@ -55,13 +35,13 @@ const LogoContainer = styled.div`
   justify-content: center;
 `;
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   textField: {
     fontSize: '.8rem',
     textAlign: 'initial',
     width: '100%',
     margin: '6px 0',
-    
+
     padding: 0,
     [`& fieldset`]: {
       borderRadius: '32px',
@@ -87,7 +67,7 @@ const LoginForm = ({
   login,
   // ns__custom_start unit: general, comp: LoginForm, loc: addedProps}
   open,
-  onClose
+  onClose,
 }) => {
   // ns__custom_end unit: general, comp: LoginForm, loc: addedProps
   const [username, setUsername] = useState('');
@@ -113,12 +93,12 @@ const LoginForm = ({
         username,
         password,
       });
-    } catch (error) {
+    } catch (err) {
       setError(
-        error.message ||
-          (error.graphQLErrors &&
-            error.graphQLErrors.length &&
-            error.graphQLErrors[0]) ||
+        err.message ||
+          (err.graphQLErrors &&
+            err.graphQLErrors.length &&
+            err.graphQLErrors[0]) ||
           error
       );
       setIsSubmitting(false);
@@ -129,16 +109,16 @@ const LoginForm = ({
     // ns__custom_start unit: general, comp: LoginForm, loc: insideReturn
     <TransitionsModal open={open} onClose={onClose}>
       <div>
-      <LogoContainer>
-        <a href='/'>
-          <img
-            src='https://pivotatestaticassets.com/images/Pivotate Logo.svg'
-            alt='Pivotate Logo'
-            width='170'
-          />
-        </a>
-      </LogoContainer>
-      <InputLabel className={styles.inputLabel}>Login</InputLabel>
+        <LogoContainer>
+          <a href='/'>
+            <img
+              src='https://pivotatestaticassets.com/images/Pivotate Logo.svg'
+              alt='Pivotate Logo'
+              width='170'
+            />
+          </a>
+        </LogoContainer>
+        <InputLabel className={styles.inputLabel}>Login</InputLabel>
       </div>
       <form onSubmit={handleSubmit}>
         <Row>
@@ -179,7 +159,7 @@ const LoginForm = ({
             variant='contained'
             color='primary'
           >
-            Log In{' '}
+            Log In
           </Button>
         </Row>
         {error && <Row>{error}</Row>}
