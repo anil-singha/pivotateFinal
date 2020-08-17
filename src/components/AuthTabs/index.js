@@ -1,7 +1,7 @@
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+  please follow all rules at https://bit.ly/nsFrontEndRules
  */
 // ns__file unit: general, comp: AuthTabs
 
@@ -20,7 +20,8 @@ const MenuContainer = styled.div`
   margin-bottom: 20px;
 `;
 
-const Button = styled.button(({ selected }) =>`
+const Button = styled.button(
+  ({ selected }) => `
   font-size: 1.25em;
   background-color: #ffffff;
   opacity: ${selected ? 1.0 : 0.5};
@@ -33,7 +34,8 @@ const Button = styled.button(({ selected }) =>`
     opacity: 1.0;
     text-decoration: underline;
   }
-`);
+`
+);
 
 const AuthTabs = ({ menuTitles, children }) => {
   const [selectedTab, setSelectedTab] = useState(0);
@@ -44,29 +46,27 @@ const AuthTabs = ({ menuTitles, children }) => {
         {menuTitles.map((title, index) => (
           <Button
             selected={index === selectedTab}
-            onClick={e => {
+            onClick={(e) => {
               e.preventDefault();
 
               setSelectedTab(index);
-            }
-            }>
+            }}
+          >
             {title}
           </Button>
         ))}
       </MenuContainer>
       <div>
         {React.Children.map(children, (child, index) => {
-          if(index !== selectedTab) {
+          if (index !== selectedTab) {
             return null;
           }
 
-          return (
-            <div className='test'>{child}</div>
-          );
+          return <div className='test'>{child}</div>;
         })}
       </div>
     </div>
   );
-}
+};
 
 export default AuthTabs;

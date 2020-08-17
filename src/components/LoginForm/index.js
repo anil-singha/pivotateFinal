@@ -1,7 +1,7 @@
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+  please follow all rules at https://bit.ly/nsFrontEndRules
  */
 // ns__file unit: general, comp: LoginForm
 
@@ -14,17 +14,11 @@ import styled from 'styled-components';
 
 import { withNoStack } from '@nostack/no-stack';
 
+import { TextField, makeStyles, Button, InputLabel } from '@material-ui/core';
 import ForgotPasswordButton from '../ForgotPasswordButton';
 
 // ns__custom_start unit: general, comp: LoginForm, loc: addedImport
 
-import {
-  
-  TextField,
-  makeStyles,
-  Button,
-  InputLabel,
-} from '@material-ui/core';
 import TransitionsModal from '../../custom/Modal';
 
 // ns__custom_end unit: general, comp: LoginForm, loc: addedImport
@@ -44,10 +38,8 @@ const Wrapper = styled.div(
 );
 
 const Row = styled.div`
-  
   text-align: center;
-  margin-bottom: .5rem;
-  
+  margin-bottom: 0.5rem;
 `;
 
 const LogoContainer = styled.div`
@@ -61,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'initial',
     width: '100%',
     margin: '6px 0',
-    
+
     padding: 0,
     [`& fieldset`]: {
       borderRadius: '32px',
@@ -87,7 +79,7 @@ const LoginForm = ({
   login,
   // ns__custom_start unit: general, comp: LoginForm, loc: addedProps}
   open,
-  onClose
+  onClose,
 }) => {
   // ns__custom_end unit: general, comp: LoginForm, loc: addedProps
   const [username, setUsername] = useState('');
@@ -129,16 +121,16 @@ const LoginForm = ({
     // ns__custom_start unit: general, comp: LoginForm, loc: insideReturn
     <TransitionsModal open={open} onClose={onClose}>
       <div>
-      <LogoContainer>
-        <a href='/'>
-          <img
-            src='https://pivotatestaticassets.com/images/Pivotate Logo.svg'
-            alt='Pivotate Logo'
-            width='170'
-          />
-        </a>
-      </LogoContainer>
-      <InputLabel className={styles.inputLabel}>Login</InputLabel>
+        <LogoContainer>
+          <a href='/'>
+            <img
+              src='https://pivotatestaticassets.com/images/Pivotate Logo.svg'
+              alt='Pivotate Logo'
+              width='170'
+            />
+          </a>
+        </LogoContainer>
+        <InputLabel className={styles.inputLabel}>Login</InputLabel>
       </div>
       <form onSubmit={handleSubmit}>
         <Row>

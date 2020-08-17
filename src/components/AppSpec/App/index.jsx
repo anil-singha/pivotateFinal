@@ -254,10 +254,12 @@ function App({
 }
 // ns__end_section function
 
+// ns__start_section  compose
 export default compose(
   graphql(EXECUTE, { name: 'updateInstance' }),
   graphql(EXECUTE, { name: 'deleteInstance' })
 )(App);
+// ns__end_section  compose
 
 App.propTypes = {
   app: PropTypes.object,

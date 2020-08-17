@@ -1,7 +1,7 @@
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+  please follow all rules at https://bit.ly/nsFrontEndRules
  */
 // ns__file unit: appSpec, comp: AppCreationForm
 
@@ -72,8 +72,6 @@ function AppCreationForm({
       refetchQueries,
     });
 
-    // const newAppData = JSON.parse(createAppResponse.data.Execute);
-
     updateAppValue('');
     updateLoading(false);
   }
@@ -108,7 +106,10 @@ function AppCreationForm({
   );
   // ns__end_section return
 }
+// ns__end_section function
 
+// ns__start_section  compose
 export default compose(graphql(EXECUTE, { name: 'createApp' }))(
   AppCreationForm
 );
+// ns__end_section  compose
