@@ -111,6 +111,8 @@ function App({
 
   // ns__custom_start unit: appSpec, comp: App, loc: beforeReturn
   // ns__custom_end unit: appSpec, comp: App, loc: beforeReturn
+
+  // ns__start_section notSelected
   if (!selected) {
     return (
       <AppStyleWrapper onClick={() => onSelect(app.id)}>
@@ -118,11 +120,16 @@ function App({
       </AppStyleWrapper>
     );
   }
+  // ns__end_section notSelected
 
+  // ns__start_section change
   function handleAppValueChange(e) {
     updateAppValue(e.target.value);
   }
 
+  // ns__end_section change
+
+  // ns__start_section save
   async function handleAppValueSave() {
     updateIsSaving(true);
 
@@ -140,11 +147,15 @@ function App({
     updateIsEditMode(false);
     updateIsSaving(false);
   }
+  // ns__end_section save
 
+  // ns__start_section cancel
   function handleCancelEdit() {
     updateIsEditMode(false);
   }
+  // ns__end_section cancel
 
+  // ns__start_replacement isEdit
   if (isEditMode) {
     return (
       <AppStyleWrapper>
@@ -162,7 +173,9 @@ function App({
       </AppStyleWrapper>
     );
   }
+  // ns__end_replacement isEdit
 
+  // ns__start_section delete
   async function handleDelete() {
     updateIsDeleting(true);
 
@@ -181,11 +194,15 @@ function App({
       updateIsDeleting(false);
     }
   }
+  // ns__end_section delete
 
+  // ns__start_section cancelDelete
   function handleCancelDelete() {
     updateIsDeleteMode(false);
   }
+  // ns__end_section cancelDelete
 
+  // ns__start_section isDelete
   if (isDeleteMode) {
     return (
       <AppStyleWrapper selected={selected} isDeleting={isDeleting}>
@@ -198,6 +215,7 @@ function App({
       </AppStyleWrapper>
     );
   }
+  // ns__end_section isDelete
 
   // ns__start_replacement functionReturn
   return (
