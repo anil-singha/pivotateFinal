@@ -5,7 +5,7 @@
   },
   "extends": ["plugin:react/recommended", "airbnb", "prettier"],
   "parserOptions": {
-    "ecmaVersion": 11
+    "ecmaVersion`": 11
   },
   "plugins": ["react", "prettier"],
   "rules": {
@@ -24,6 +24,7 @@
         "devDependencies": true
       }
     ],
+    "sort-imports": "off",
     "comma-dangle": [
       "error",
       {

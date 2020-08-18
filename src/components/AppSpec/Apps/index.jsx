@@ -1,3 +1,4 @@
+
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
@@ -9,14 +10,16 @@
 'use strict';
 // ns__custom_end unit: appSpec, comp: Apps, loc: beforeImports
 
+
+
+// ns__start_section imports
 import React, { Component, createRef } from 'react';
 import { Unit } from '@nostack/no-stack';
 import styled from 'styled-components';
 import { v4 } from 'uuid';
-
 import { flattenData } from '../../../flattenData';
 
-// ns__remove_import AppCreationForm from '../AppCreationForm';
+//ns__remove_import AppCreationForm from '../AppCreationForm';
 import App from '../App';
 
 import { SOURCE_APP_SPEC_ID } from '../../../config';
@@ -24,7 +27,6 @@ import {
   APP_SPEC_RELATIONSHIPS,
   SOURCE_APP_SPEC_QUERY,
 } from '../../source-props/appSpec';
-
 // ns__custom_start unit: appSpec, comp: Apps, loc: addedImports
 import FirstTimeAppCreationForm from '../../../custom/FirstTimeAppCreationForm';
 import { TYPE_DESCRIPTION_ID } from '../../../config';
@@ -32,7 +34,11 @@ import { getDescriptionChild } from '../../../custom/getDescriptionChild';
 import { Context as UnitDataContext } from '../../../custom/UnitDataContext';
 
 // ns__custom_end unit: appSpec, comp: Apps, loc: addedImports
+// ns__end_section imports
 
+
+
+// ns__start_section stylingSection
 const AppsStyleWrapper = styled.div`
   // ns__custom_start unit: appSpec, comp: Apps, loc: styling
   // add a prop called \`show\`
@@ -43,30 +49,50 @@ const AppsStyleWrapper = styled.div`
   // ns__custom_end unit: appSpec, comp: Apps, loc: styling
 `;
 
+// ns__end_section stylingSection
+
+
+
+// ns__start_section button
+
+// ns__end_section button
+
+
+
+// ns__custom_start unit: appSpec, comp: Apps, loc: beforeFunction
+// ns__custom_end unit: appSpec, comp: Apps, loc: beforeFunction
+
+// ns__start_section function
 class Apps extends Component {
-  // ns__custom_start unit: appSpec, comp: Apps, loc: beginning
+// ns__custom_start unit: appSpec, comp: Apps, loc: beginning
   static contextType = UnitDataContext;
   // ns__custom_end unit: appSpec, comp: Apps, loc: beginning
   state = {
     selectedAppId: null,
+      // ns__custom_start unit: appSpec, comp: Apps, loc: addedState
+// ns__custom_end unit: appSpec, comp: Apps, loc: addedState
   };
 
   wrapperRef = createRef();
 
+  // ns__start_section didMount
   componentDidMount() {
     // ns__custom_start unit: appSpec, comp: Apps, loc: componentDidMount
 
     // ns__custom_end unit: appSpec, comp: Apps, loc: componentDidMount
     document.addEventListener('mousedown', this.handleClick);
   }
+  // ns__end_section didMount
 
+  // ns__start_section willMount
   componentWillUnmount() {
     // ns__custom_start unit: appSpec, comp: Apps, loc: componentWillUnmount
     // ns__custom_end unit: appSpec, comp: Apps, loc: componentWillUnmount
-
     document.removeEventListener('mousedown', this.handleClick);
   }
+  // ns__end_section willMount
 
+  // ns__start_section handleClick
   handleClick = (e) => {
     const node = this.wrapperRef.current;
 
@@ -74,16 +100,20 @@ class Apps extends Component {
       this.setState({ selectedAppId: null });
     }
   };
+  // ns__end_section handleClick
 
+  // ns__start_section handleSelect
   handleSelect = (id) => this.setState({ selectedAppId: id });
+  // ns__end_section handleSelect
 
+  // ns__start_section render
   render() {
     const { customerId } = this.props;
+
     const { selectedAppId } = this.state;
     const parameters = {
       currentCustomer: customerId,
     };
-
     // ns__custom_start unit: appSpec, comp: Apps, loc: renderBeginning
     // ns__custom_end unit: appSpec, comp: Apps, loc: renderBeginning
 
@@ -165,6 +195,8 @@ class Apps extends Component {
     );
     // ns__end_replacement renderReturn
   }
+  // ns__end_section render
 }
+// ns__end_section function
 
 export default Apps;
