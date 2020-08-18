@@ -15,6 +15,7 @@ export default new ApolloClient({
   link,
   cache: new InMemoryCache({
     dataIdFromObject: (object) =>
+      // eslint-disable-next-line no-underscore-dangle
       object.id ? object.id + object.__typename : v4(),
   }),
 });

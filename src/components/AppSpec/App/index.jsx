@@ -36,10 +36,10 @@ import AppTitleAccordion from '../../../custom/AppTitleAccordion';
 // ns__custom_end unit: appSpec, comp: App, loc: addedImports
 // ns__end_section imports
 
-// ns__custom_start unit: appSpec, comp: App, loc: styling
-// add styling here
+// ns__start_section stylingSection
 const AppStyleWrapper = styled.div(
   ({ selected, isDeleting }) => `
+  // ns__custom_start unit: appSpec, comp: App, loc: styling
   margin: 2em 1em;
   padding: 1.5em;
   
@@ -50,15 +50,10 @@ const AppStyleWrapper = styled.div(
   };
   cursor: ${selected ? 'auto' : 'pointer'};
   width: 50%;
-
- 
+  // ns__custom_end unit: appSpec, comp: App, loc: styling
 `
 );
-
-AppStyleWrapper.defaultProps = {
-  'data-id': 'App__wrapper',
-};
-// ns__custom_end unit: appSpec, comp: App, loc: styling
+// ns__end_section stylingSection
 
 // ns__start_section button
 const Button = styled.button`
@@ -76,6 +71,11 @@ const Button = styled.button`
 // ns__end_section button
 
 // ns__custom_start unit: appSpec, comp: App, loc: beforeFunction
+
+AppStyleWrapper.defaultProps = {
+  'data-id': 'App__wrapper',
+};
+
 Button.defaultProps = {
   'data-id': 'App__button',
 };
@@ -255,10 +255,12 @@ function App({
 }
 // ns__end_section function
 
+// ns__start_section  compose
 export default compose(
   graphql(EXECUTE, { name: 'updateInstance' }),
   graphql(EXECUTE, { name: 'deleteInstance' })
 )(App);
+// ns__end_section  compose
 
 App.propTypes = {
   // app: PropTypes.object,

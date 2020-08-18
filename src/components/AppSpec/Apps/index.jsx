@@ -1,7 +1,7 @@
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+  please follow all rules at https://bit.ly/nsFrontEndRules
  */
 // ns__file unit: appSpec, comp: Apps
 
@@ -27,16 +27,15 @@ import { Context as UnitDataContext } from '../../../custom/UnitDataContext';
 
 // ns__custom_end unit: appSpec, comp: Apps, loc: addedImports
 
-// ns__custom_start unit: appSpec, comp: Apps, loc: styling
-
-// add a prop called `show`
 const AppsStyleWrapper = styled.div`
+  // ns__custom_start unit: appSpec, comp: Apps, loc: styling
+  // add a prop called \`show\`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   // mystyling...
+  // ns__custom_end unit: appSpec, comp: Apps, loc: styling
 `;
-// ns__custom_end unit: appSpec, comp: Apps, loc: styling
 
 class Apps extends Component {
   // ns__custom_start unit: appSpec, comp: Apps, loc: beginning
@@ -82,9 +81,9 @@ class Apps extends Component {
     };
 
     // ns__custom_start unit: appSpec, comp: Apps, loc: renderBeginning
-
     // ns__custom_end unit: appSpec, comp: Apps, loc: renderBeginning
 
+    // ns__start_replacement renderReturn
     return (
       <Unit
         id={SOURCE_APP_SPEC_ID}
@@ -146,7 +145,7 @@ class Apps extends Component {
                         // ns__custom_end unit: appSpec, comp: Apps, loc: addedPropsForChildren
                       />
                     ))}
-                  {/* ns__start_section listElements */}
+                  {/* ns__end_section listElements */}
                 </AppsStyleWrapper>
               )}
 
@@ -157,6 +156,7 @@ class Apps extends Component {
         }}
       </Unit>
     );
+    // ns__end_replacement renderReturn
   }
 }
 

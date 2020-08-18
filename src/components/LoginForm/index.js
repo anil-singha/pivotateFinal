@@ -1,7 +1,7 @@
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+  please follow all rules at https://bit.ly/nsFrontEndRules
  */
 // ns__file unit: general, comp: LoginForm
 
@@ -15,6 +15,7 @@ import styled from 'styled-components';
 import { withNoStack } from '@nostack/no-stack';
 import { TextField, makeStyles, Button, InputLabel } from '@material-ui/core';
 
+import { TextField, makeStyles, Button, InputLabel } from '@material-ui/core';
 import ForgotPasswordButton from '../ForgotPasswordButton';
 
 // ns__custom_start unit: general, comp: LoginForm, loc: addedImport

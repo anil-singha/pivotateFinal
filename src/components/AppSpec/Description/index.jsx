@@ -5,10 +5,10 @@
  */
 // ns__file unit: appSpec, comp: Description
 
-// ns__start_section imports
 // ns__custom_start unit: appSpec, comp: Description, loc: beforeImports
 // ns__custom_end unit: appSpec, comp: Description, loc: beforeImports
 
+// ns__start_section imports
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
@@ -19,7 +19,6 @@ import { graphql } from '@apollo/react-hoc';
 import PropTypes from 'prop-types';
 import {
   UPDATE_DESCRIPTION_FOR_APP_SPEC_ACTION_ID,
-  // eslint-disable-next-line comma-dangle
   DELETE_DESCRIPTION_FOR_APP_SPEC_ACTION_ID,
 } from '../../../config';
 

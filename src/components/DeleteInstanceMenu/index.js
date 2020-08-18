@@ -1,13 +1,11 @@
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
-  please follow all rules at https://docs.google.com/document/d/1vYGEyX2Gnvd_VwAcWGv6Ie37oa2vXNL7wtl7oUyyJcw/edit?usp=sharing
+  please follow all rules at https://bit.ly/nsFrontEndRules
  */
 // ns__file unit: general, comp: DeleteInstanceMenu
 
 // ns__custom_start unit: general, comp: DeleteInstanceMenu, loc: beforeImports
-
-
 
 // ns__custom_end unit: general, comp: DeleteInstanceMenu, loc: beforeImports
 
@@ -34,11 +32,7 @@ const Container = styled.div`
   border: 1px solid #eeeeee;
 `;
 
-function DeleteInstanceMenu({
-  onDelete,
-  onCancel,
-  disabled,
-}) {
+function DeleteInstanceMenu({ onDelete, onCancel, disabled }) {
   return (
     <Container>
       Delete?
@@ -59,7 +53,7 @@ function DeleteInstanceMenu({
         &#10005;
       </Button>
     </Container>
-  )
+  );
 }
 
 export default DeleteInstanceMenu;
