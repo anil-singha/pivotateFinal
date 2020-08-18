@@ -5,7 +5,6 @@ const currentUser = (state = 0, action) => {
         ...state,
         value: action.payLoad,
       };
-      break;
     default:
       return state;
   }

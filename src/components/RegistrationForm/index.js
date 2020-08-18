@@ -14,9 +14,8 @@ import { useMutation } from '@apollo/react-hooks';
 import { REGISTER_USER } from '@nostack/no-stack';
 import { HashLink as Link } from 'react-router-hash-link';
 
-import { Wrapper } from './RegistrationForm.style';
 import BasicDetailsForm from './stepper/BasicDetailsForm';
-import AppDetailsForm from './stepper/AppDetailsForm.js';
+import AppDetailsForm from './stepper/AppDetailsForm';
 import CreditCardDetailsForm from './stepper/CreditCardDetailsForm';
 import Modal from '../Modal';
 
@@ -24,7 +23,7 @@ import {
   validationSchemaBasic,
   validationSchemaApp,
   validationSchemaCreditCard,
-} from './stepper/registration-util.js';
+} from './stepper/registration-util';
 
 // Get Current Month
 const dt = new Date();
@@ -323,7 +322,7 @@ for a
           </div> */}
           <h3>{displayCurrentDescription().enterText}</h3>
         </div>
-        {step == 3 && (
+        {step === 3 && (
           <p className='dialog__text'>
             You won’t be charged a thing until you commit to it explicitly. In
             fact, the initial consultation is{' '}

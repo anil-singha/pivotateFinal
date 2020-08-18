@@ -20,16 +20,16 @@ import { CREATE_APP_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 // ns__custom_start unit: appSpec, comp: AppCreationForm, loc: addedImports
 // ns__custom_end unit: appSpec, comp: AppCreationForm, loc: addedImports
 
-// ns__custom_start unit: appSpec, comp: AppCreationForm, loc: styling
-// change styling here
 const Form = styled.div`
+  // ns__custom_start unit: appSpec, comp: AppCreationForm, loc: styling
+  // change styling here
   margin: 2em;
   padding: 1.5em;
   border: none;
   border-radius: 5px;
   background-color: #f5f5f5;
+  // ns__custom_end unit: appSpec, comp: AppCreationForm, loc: styling
 `;
-// ns__custom_end unit: appSpec, comp: AppCreationForm, loc: styling
 
 const Button = styled.button`
   margin-left: 1em;

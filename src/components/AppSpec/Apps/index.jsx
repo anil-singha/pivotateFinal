@@ -33,16 +33,15 @@ import { Context as UnitDataContext } from '../../../custom/UnitDataContext';
 
 // ns__custom_end unit: appSpec, comp: Apps, loc: addedImports
 
-// ns__custom_start unit: appSpec, comp: Apps, loc: styling
-
-// add a prop called `show`
 const AppsStyleWrapper = styled.div`
+  // ns__custom_start unit: appSpec, comp: Apps, loc: styling
+  // add a prop called \`show\`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   // mystyling...
+  // ns__custom_end unit: appSpec, comp: Apps, loc: styling
 `;
-// ns__custom_end unit: appSpec, comp: Apps, loc: styling
 
 class Apps extends Component {
   // ns__custom_start unit: appSpec, comp: Apps, loc: beginning
