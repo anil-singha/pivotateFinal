@@ -15,7 +15,6 @@ import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 import { graphql } from '@apollo/react-hoc';
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import {
   UPDATE_DESCRIPTION_FOR_APP_SPEC_ACTION_ID,
@@ -29,10 +28,11 @@ import DeleteInstanceMenu from '../../DeleteInstanceMenu';
 // ns__custom_end unit: appSpec, comp: Description, loc: addedImports
 // ns__end_section imports
 
-// ns__custom_start unit: appSpec, comp: Description, loc: styling
-// add styling here
+// ns__start_section stylingSection
 const DescriptionStyleWrapper = styled.div(
   ({ selected, isDeleting }) => `
+  // ns__custom_start unit: appSpec, comp: Description, loc: styling
+  // add styling here
   margin: 2em 1em;
   padding: 1.5em;
   border: ${selected ? '1px solid aquamarine' : '1px solid white'};
@@ -44,12 +44,15 @@ const DescriptionStyleWrapper = styled.div(
   &:hover {
     border: 1px solid aquamarine;
   }
+  // ns__custom_end unit: appSpec, comp: Description, loc: styling
 `
 );
-// ns__custom_end unit: appSpec, comp: Description, loc: styling
+// ns__end_section stylingSection
 
 // ns__start_section button
+
 const Button = styled.button`
+  // ns__custom_start unit: appSpec, comp: Description, loc: buttonStyling
   background: none;
   border: none;
   cursor: pointer;
@@ -60,9 +63,14 @@ const Button = styled.button`
   &:hover {
     color: ${(props) => props.hoverColor || '#000000'};
   }
+  // ns__custom_end unit: appSpec, comp: Description, loc: buttonStyling
 `;
 // ns__end_section button
 
+// ns__custom_start unit: appSpec, comp: Description, loc: beforeFunction
+// ns__custom_end unit: appSpec, comp: Description, loc: beforeFunction
+
+// ns__start_section function
 function Description({
   description,
   parentId,
@@ -87,6 +95,7 @@ function Description({
   // ns__custom_start unit: appSpec, comp: Description, loc: beforeReturn
   // ns__custom_end unit: appSpec, comp: Description, loc: beforeReturn
 
+  // ns__start_section notSelected
   if (!selected) {
     return (
       <DescriptionStyleWrapper onClick={() => onSelect(description.id)}>
@@ -94,11 +103,15 @@ function Description({
       </DescriptionStyleWrapper>
     );
   }
+  // ns__end_section notSelected
 
+  // ns__start_section change
   function handleDescriptionValueChange(e) {
     updateDescriptionValue(e.target.value);
   }
+  // ns__end_section change
 
+  // ns__start_section save
   async function handleDescriptionValueSave() {
     updateIsSaving(true);
 
@@ -116,11 +129,15 @@ function Description({
     updateIsEditMode(false);
     updateIsSaving(false);
   }
+  // ns__end_section save
 
+  // ns__start_section cancel
   function handleCancelEdit() {
     updateIsEditMode(false);
   }
+  // ns__end_section cancel
 
+  // ns__start_section isEdit
   if (isEditMode) {
     return (
       <DescriptionStyleWrapper>
@@ -136,7 +153,9 @@ function Description({
       </DescriptionStyleWrapper>
     );
   }
+  // ns__end_section isEdit
 
+  // ns__start_section delete
   async function handleDelete() {
     updateIsDeleting(true);
 
@@ -155,11 +174,15 @@ function Description({
       updateIsDeleting(false);
     }
   }
+  // ns__end_section delete
 
+  // ns__start_section cancelDelete
   function handleCancelDelete() {
     updateIsDeleteMode(false);
   }
+  // ns__end_section cancelDelete
 
+  // ns__start_section isDelete
   if (isDeleteMode) {
     return (
       <DescriptionStyleWrapper selected={selected} isDeleting={isDeleting}>
@@ -172,7 +195,9 @@ function Description({
       </DescriptionStyleWrapper>
     );
   }
+  // ns__end_section isDelete
 
+  // ns__start_section functionReturn
   return (
     <DescriptionStyleWrapper selected={selected}>
       {descriptionValue}
@@ -187,13 +212,19 @@ function Description({
       {/* ns__custom_end unit: appSpec, comp: Description, loc: renderEnding */}
     </DescriptionStyleWrapper>
   );
+  // ns__end_section functionReturn
 }
 
+// ns__end_section function
+
+// ns__start_section  compose
 export default compose(
   graphql(EXECUTE, { name: 'updateInstance' }),
   graphql(EXECUTE, { name: 'deleteInstance' })
 )(Description);
+// ns__end_section  compose
 
+// ns__start_section propTypes
 Description.propTypes = {
   parentId: PropTypes.string,
   selected: PropTypes.bool,
@@ -201,14 +232,11 @@ Description.propTypes = {
   deleteInstance: PropTypes.func,
   refetchQueries: PropTypes.array,
   onSelect: PropTypes.func,
-  app: PropTypes.shape({
-    children: PropTypes.array,
-    id: PropTypes.string,
-  }),
   description: PropTypes.shape({
-    value: PropTypes.string,
+    children: PropTypes.array,
     id: PropTypes.string,
   }),
   // ns__custom_start unit: appSpec, comp: Description, loc: addedPropTypes
   // ns__custom_end unit: appSpec, comp: Description, loc: addedPropTypes
 };
+// ns__end_section propTypes

@@ -57,6 +57,7 @@ const AppStyleWrapper = styled.div(
 
 // ns__start_section button
 const Button = styled.button`
+  // ns__custom_start unit: appSpec, comp: App, loc: buttonStyling
   background: none;
   border: none;
   cursor: pointer;
@@ -67,6 +68,7 @@ const Button = styled.button`
   &:hover {
     color: ${(props) => props.hoverColor || '#000000'};
   }
+  // ns__custom_end unit: appSpec, comp: App, loc: buttonStyling
 `;
 // ns__end_section button
 
@@ -262,8 +264,8 @@ export default compose(
 )(App);
 // ns__end_section  compose
 
+// ns__start_section propTypes
 App.propTypes = {
-  // app: PropTypes.object,
   parentId: PropTypes.string,
   selected: PropTypes.bool,
   updateInstance: PropTypes.func,
@@ -276,3 +278,4 @@ App.propTypes = {
   // ns__custom_start unit: appSpec, comp: App, loc: addedPropTypes
   // ns__custom_end unit: appSpec, comp: App, loc: addedPropTypes
 };
+// ns__end_section propTypes

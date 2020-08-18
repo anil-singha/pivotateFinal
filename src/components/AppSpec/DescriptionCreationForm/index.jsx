@@ -19,21 +19,28 @@ import PropTypes from 'prop-types';
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
-
 import { makeStyles, TextField, InputAdornment } from '@material-ui/core';
 import IconButton from '@material-ui/core/Button';
 import { CREATE_DESCRIPTION_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 
-// ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: styling
-// change styling here
 const Form = styled.div`
+  // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: styling
+  // change styling here
   margin: 2em;
   padding: 1.5em;
   border: none;
   border-radius: 5px;
+  // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: styling
 `;
 
+const Button = styled.button`
+  // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: buttonStyling
+  margin-left: 1em;
+  // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: buttonStyling
+`;
+
+// ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: beforeFunction
 const Label = styled.label`
   display: flex;
   align-items: center;
@@ -103,12 +110,7 @@ const useStyles = makeStyles({
     width: '100%',
   },
 });
-
-// ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: styling
-
-const Button = styled.button`
-  margin-left: 1em;
-`;
+// ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: beforeFunction
 
 function DescriptionCreationForm({
   parentId,
@@ -156,16 +158,17 @@ function DescriptionCreationForm({
     updateLoading(false);
   }
 
+  // ns__start_replacement handleKeyPress
   function handleKeyPress(e) {
-    // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: insideHandleKeyPress
     // if (e.charCode === 13) {
     //   handleSubmit(e);
     // }
     if (e.key === 'Enter') {
       handleSubmit(e);
     }
-    // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: insideHandleKeyPress
   }
+  // ns__end_replacement handleKeyPress
+
   // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: beforeReturn
   const showCallout = () => {
     setCallout(!callout);
