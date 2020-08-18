@@ -85,9 +85,9 @@ class Apps extends Component {
     };
 
     // ns__custom_start unit: appSpec, comp: Apps, loc: renderBeginning
-
     // ns__custom_end unit: appSpec, comp: Apps, loc: renderBeginning
 
+    // ns__start_replacement renderReturn
     return (
       <Unit
         id={SOURCE_APP_SPEC_ID}
@@ -150,7 +150,7 @@ class Apps extends Component {
                       // ns__custom_end unit: appSpec, comp: Apps, loc: addedPropsForChildren
                     />
                   ))}
-                {/* ns__start_section listElements */}
+                {/* ns__end_section listElements */}
               </AppsStyleWrapper>
               }
 
@@ -163,6 +163,7 @@ class Apps extends Component {
         }}
       </Unit>
     );
+    // ns__end_replacement renderReturn
   }
 }
 
