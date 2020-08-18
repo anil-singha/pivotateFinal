@@ -15,7 +15,6 @@ import styled from 'styled-components';
 import { withNoStack } from '@nostack/no-stack';
 import { TextField, makeStyles, Button, InputLabel } from '@material-ui/core';
 
-import { TextField, makeStyles, Button, InputLabel } from '@material-ui/core';
 import ForgotPasswordButton from '../ForgotPasswordButton';
 
 // ns__custom_start unit: general, comp: LoginForm, loc: addedImport

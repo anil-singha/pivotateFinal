@@ -119,7 +119,6 @@ class Apps extends Component {
           if (loading) return 'Loading...';
 
           if (error) {
-            console.error(error);
             return `Error: ${error.graphQLErrors}`;
           }
 

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
@@ -129,7 +130,6 @@ function InfoType({
   // ns__custom_start unit: appSpec, comp: InfoType, loc: beginning
   const [parentState, setParentState] = useState([]);
   const [selectSubInfoId, setSubInfoId] = useState(null);
-
   useEffect(() => {
     const [parentData] = getChildData(childState);
     setParentState(parentData);

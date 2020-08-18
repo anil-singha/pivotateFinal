@@ -1,3 +1,4 @@
+/* eslint-disable react/no-access-state-in-setstate */
 import React, { Component } from 'react';
 import Modal from '../../Modal';
 import InitialDevelopment from './Modals/initial-development';
@@ -65,7 +66,7 @@ class Pricing extends Component {
     }
   };
 
-  modalToggleServices = (props) => {
+  modalToggleServices = () => {
     this.setState({
       modalServices: !this.state.modalServices,
     });
@@ -171,8 +172,7 @@ class Pricing extends Component {
             </div>
             <div className='pricing__detail flex justify-center'>
               <div
-                role='button'
-                href='#'
+                role='presentation'
                 onClick={this.modalToggleInitDev}
                 className='button button--rounded button--yellow flex justify-center items-center'
               >
@@ -194,7 +194,7 @@ class Pricing extends Component {
             <h2 className='text-center'>
               <span className='headline headline--teal'>
                 {' '}
-                PIVOTING SERVICES{' '}
+                PIVOTING SERVICES
               </span>
             </h2>
             <div className='subheadline text-center'>Get it right! </div>
@@ -253,18 +253,18 @@ class Pricing extends Component {
             </div>
 
             <div className='pricing__detail flex justify-center'>
-              <a
+              <span
+                role='presentation'
                 onClick={this.modalToggleServices}
-                href='#'
                 className='button button--rounded button--yellow flex justify-center items-center'
               >
-                GET DETAILS{' '}
+                GET DETAILS
                 <img
                   className='pricing__icon'
                   alt='External Link'
                   src='https://pivotatestaticassets.com/images/pricing/external link.png'
-                ></img>
-              </a>
+                />
+              </span>
             </div>
           </div>
         </section>
@@ -276,7 +276,7 @@ class Pricing extends Component {
             <h2 className='text-center'>
               <span className='headline headline--teal word-break'>
                 {' '}
-                MAINTENANCE{' '}
+                MAINTENANCE
               </span>
             </h2>
             <div className='subheadline text-center'>Keep it up!</div>
@@ -291,7 +291,7 @@ class Pricing extends Component {
                 <div className='pricing__content'>
                   <div className='pricing__description'>Basic maintenance</div>
                   <div className='pricing__price'>
-                    <strong className='teal--text'>$45 </strong>{' '}
+                    <strong className='teal--text'>$45 </strong>
                     <small>/month </small>
                   </div>
                 </div>
@@ -314,18 +314,19 @@ class Pricing extends Component {
               </div>
             </div>
             <div className='pricing__detail flex justify-center'>
-              <a
+              <span
                 onClick={this.modalToggleMaintenance}
-                href='#'
+                role='presentation'
                 className='button button--rounded button--yellow flex justify-center items-center'
               >
-                GET DETAILS{' '}
+                GET DETAILS
                 <img
+                  alt='pricing icon'
                   className='pricing__icon'
                   src='https://pivotatestaticassets.com/images/pricing/external link.png'
-                ></img>
-              </a>
-            </div>{' '}
+                />
+              </span>
+            </div>
           </div>
         </section>
         {/* End Maintenance */}

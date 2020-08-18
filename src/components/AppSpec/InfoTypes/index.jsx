@@ -29,6 +29,7 @@ const InfoTypesStyleWrapper = styled.div`
 
 class InfoTypes extends Component {
   // ns__custom_start unit: appSpec, comp: InfoTypes, loc: beginning
+  // eslint-disable-next-line react/static-property-placement
   static contextType = UnitDataContext;
 
   // ns__custom_end unit: appSpec, comp: InfoTypes, loc: beginning
@@ -103,7 +104,7 @@ class InfoTypes extends Component {
         <InfoTypesStyleWrapper ref={this.wrapperRef} onClick={this.handleClick}>
           {/* ns__custom_start unit: appSpec, comp: InfoTypes, loc: addedValidation */}
           {parentState.map((infoType) => {
-            if (infoType.parentId) return;
+            if (infoType.parentId) return true;
 
             /* ns__custom_end unit: appSpec, comp: InfoTypes, loc: addedValidation */
 
@@ -139,7 +140,6 @@ class InfoTypes extends Component {
           /* ns__custom_start unit: appSpec, comp: InfoTypes, loc: addedPropsForCreationForm */
           /* ns__custom_end unit: appSpec, comp: InfoTypes, loc: addedPropsForCreationForm */
         />
-        {console.log(`subInfoTypeValueCount`, subInfoTypeValueCount)}
         {subInfoTypeValueCount >= 3 ? (
           <SubInfoTypeCreationForm
             disabled

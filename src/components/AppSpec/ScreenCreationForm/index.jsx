@@ -128,10 +128,6 @@ const useStyles = makeStyles({
 
 // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: styling
 
-const Button = styled.button`
-  margin-left: 1em;
-`;
-
 function ScreenCreationForm({
   parentId,
   createScreen,
@@ -218,7 +214,6 @@ function ScreenCreationForm({
             onChange(e.target.value);
           }}
           onKeyPress={handleKeyPress}
-          value={screenValue}
           disabled={disabled || loading}
           variant='outlined'
           InputProps={{
@@ -235,7 +230,7 @@ function ScreenCreationForm({
       </Label>
       {showCalloutBox ? (
         <CalloutBox>
-          {callOutText}{' '}
+          {callOutText}
           <CloseIcon className={styles.closeIcon} onClick={showCallout} />
         </CalloutBox>
       ) : null}

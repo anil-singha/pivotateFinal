@@ -9,8 +9,10 @@
   "parserOptions": {
     "ecmaVersion`": 11
   },
+
   "plugins": ["react", "prettier"],
   "rules": {
+    "no-underscore-dangle": "off",
     "jsx-a11y/label-has-associated-control": [
       "error",
       {
@@ -24,7 +26,8 @@
     "import/extensions": [
       "error",
       {
-        "js": "never"
+        "js": "never",
+        "jsx": "never"
       }
     ],
     "react/state-in-constructor": 0,
@@ -62,6 +65,7 @@
         "functions": "never"
       }
     ],
+
     "prettier/prettier": [
       "error",
       {

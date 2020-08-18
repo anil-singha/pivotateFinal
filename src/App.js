@@ -6,9 +6,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ScrollToTop from 'react-router-scroll-top';
 import Confirmation from './components/Pages/Confirmation';
 
-const AppHeader = React.lazy(() => import('./components/AppHeader'));
 const AppFooter = React.lazy(() => import('./components/AppFooter'));
 const Home = React.lazy(() => import('./components/Pages/Home'));
+const AppHeader = React.lazy(() => import('./components/AppHeader'));
 const Staging = React.lazy(() => import('./components/Pages/Staging'));
 const Contact = React.lazy(() => import('./components/Pages/Contact'));
 const Pricing = React.lazy(() => import('./components/Pages/Pricing'));
