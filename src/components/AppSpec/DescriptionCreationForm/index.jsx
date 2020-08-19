@@ -10,17 +10,16 @@
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: beforeImports
 import React, { useState } from 'react';
 import { graphql } from '@apollo/react-hoc';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
-import CloseIcon from '@material-ui/icons/Close';
-import { makeStyles, TextField, InputAdornment } from '@material-ui/core';
-import IconButton from '@material-ui/core/Button';
+
+import { makeStyles, TextField } from '@material-ui/core';
 import { CREATE_DESCRIPTION_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 
@@ -34,59 +33,12 @@ const Form = styled.div`
   // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: styling
 `;
 
-const Button = styled.button`
-  // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: buttonStyling
-  margin-left: 1em;
-  // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: buttonStyling
-`;
-
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: beforeFunction
 const Label = styled.label`
   display: flex;
   align-items: center;
   flex-direction: row;
   width: 100%;
-`;
-
-const fadeInDown = keyframes`
-0% {
-  opacity: 0;
-  
-}
-100% {
-  opacity: 1;
-  
-}
-`;
-
-const CalloutBox = styled.div`
-  padding: 1rem;
-  animation: ${fadeInDown} 1.5s;
-  background-color: #F3E196;
-  width: 100%;
-  border-radius: 10px;  
-  position: relative;
-  margin: .5rem;
-  display: flex;
-  justify-content: space-between;
-  
-
-  :after{
-    background-color: #F3E196;
-    position: absolute;
-    width: 30px;
-    height: 10px;
-    border-top: 0px solid #F3E196;
-    border-right: 2px solid #F3E196;
-    border-left: 0px solid #F3E196;
-    border-bottom: 2px solid #F3E196;
-    left: 60%;
-    
-    content: '';
-    transform: rotate(45deg);
-    margin-top: -13px;
-    }
-  }
 `;
 
 const useStyles = makeStyles({
@@ -110,23 +62,21 @@ const useStyles = makeStyles({
     width: '100%',
   },
 });
-// ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: beforeFunction
+
+// ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: styling
 
 function DescriptionCreationForm({
   parentId,
   createDescription,
   refetchQueries,
   // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: addedProps
-  label,
   // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: addedProps
 }) {
   const [descriptionValue, updateDescriptionValue] = useState('');
   const [loading, updateLoading] = useState(false);
   // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: beginning
   const styles = useStyles();
-  const [callout, setCallout] = useState(true);
-  const showCalloutBox = callout;
-  const callOutText = `Enter a description for your App`;
+
   // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: beginning
 
   function handleChange(e) {
@@ -142,7 +92,7 @@ function DescriptionCreationForm({
 
     updateLoading(true);
 
-    const createDescriptionResponse = await createDescription({
+    await createDescription({
       variables: {
         actionId: CREATE_DESCRIPTION_FOR_APP_SPEC_ACTION_ID,
         executionParameters: JSON.stringify({
@@ -170,9 +120,9 @@ function DescriptionCreationForm({
   // ns__end_replacement handleKeyPress
 
   // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: beforeReturn
-  const showCallout = () => {
-    setCallout(!callout);
-  };
+  // const showCallout = () => {
+  //   setCallout(!callout);
+  // };
   // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: beforeReturn
 
   // ns__start_section return

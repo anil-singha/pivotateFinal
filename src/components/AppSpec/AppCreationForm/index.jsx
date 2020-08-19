@@ -37,13 +37,11 @@ const Form = styled.div`
 `;
 // ns__end_section stylingSection
 
-// ns__start_section button
 const Button = styled.button`
   // ns__custom_start unit: appSpec, comp: AppCreationForm, loc: buttonStyling
   margin-left: 1em;
   // ns__custom_end unit: appSpec, comp: AppCreationForm, loc: buttonStyling
 `;
-// ns__end_section button
 
 // ns__custom_start unit: appSpec, comp: AppCreationForm, loc: beforeFunction
 // ns__custom_end unit: appSpec, comp: AppCreationForm, loc: beforeFunction
@@ -77,7 +75,7 @@ function AppCreationForm({
 
     updateLoading(true);
 
-    const createAppResponse = await createApp({
+    await createApp({
       variables: {
         actionId: CREATE_APP_FOR_APP_SPEC_ACTION_ID,
         executionParameters: JSON.stringify({
@@ -133,14 +131,5 @@ function AppCreationForm({
 export default compose(graphql(EXECUTE, { name: 'createApp' }))(
   AppCreationForm
 );
-// ns__end_section  compose
 
-// ns__start_section propTypes
-AppCreationForm.propTypes = {
-  parentId: PropTypes.string,
-  refetchQueries: PropTypes.array,
-  create: PropTypes.func,
-  // ns__custom_start unit: appSpec, comp: AppCreationForm, loc: addedPropTypes
-  // ns__custom_end unit: appSpec, comp: AppCreationForm, loc: addedPropTypes
-};
-// ns__end_section propTypes
+// ns__end_section  compose

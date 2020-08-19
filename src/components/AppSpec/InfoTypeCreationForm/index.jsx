@@ -19,7 +19,7 @@ import compose from '@shopify/react-compose';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
 import { makeStyles, TextField, InputAdornment } from '@material-ui/core';
-import IconButton from '@material-ui/core/Button';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import { CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 
@@ -38,24 +38,6 @@ const Label = styled.label`
   align-items: center;
   flex-direction: row;
   width: 100%;
-`;
-const Input = styled.input`
-  :focus,
-  textarea:focus,
-  select:focus {
-    outline: none;
-    border: 0;
-  }
-  border: 0;
-  -webkit-appearance: none;
-  background-color: inherit;
-  padding: 10px 0;
-  border-radius: 10px;
-`;
-
-const InputContainer = styled.div`
-  background-color: white;
-  border-radius: 10px;
 `;
 
 const fadeInDown = keyframes`
@@ -122,10 +104,6 @@ const useStyles = makeStyles({
 });
 // ns__custom_end unit: appSpec, comp: InfoTypeCreationForm, loc: styling
 
-const Button = styled.button`
-  margin-left: 1em;
-`;
-
 function InfoTypeCreationForm({
   parentId,
   createInfoType,
@@ -169,7 +147,7 @@ function InfoTypeCreationForm({
 
     updateLoading(true);
 
-    const createInfoTypeResponse = await createInfoType({
+    await createInfoType({
       variables: {
         actionId: CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
         executionParameters: JSON.stringify({
@@ -226,7 +204,7 @@ function InfoTypeCreationForm({
 
       {showCalloutBox ? (
         <CalloutBox>
-          {callOutText}{' '}
+          {callOutText}
           <CloseIcon className={styles.closeIcon} onClick={showCallout} />
         </CalloutBox>
       ) : null}
@@ -291,11 +269,11 @@ export default compose(graphql(EXECUTE, { name: 'createInfoType' }))(
 
 InfoTypeCreationForm.propTypes = {
   parentId: PropTypes.string,
-  selected: PropTypes.bool,
+  // selected: PropTypes.bool,
   validateInfoTypes: PropTypes.number,
   createInfoType: PropTypes.func,
   refetchQueries: PropTypes.array,
-  onSelect: PropTypes.func,
+  // onSelect: PropTypes.func,
   app: PropTypes.shape({
     children: PropTypes.array,
     id: PropTypes.string,

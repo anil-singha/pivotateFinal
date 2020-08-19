@@ -18,12 +18,14 @@ export default (data) => {
   const prData = Object.keys(hasParentId);
   const childData = [];
 
+  // eslint-disable-next-line no-restricted-syntax
   for (const id in prData) {
     if (prData[id]) {
       parentData.map((instance) => {
         if (instance.parentId && prData[id] === instance.parentId) {
           childData.push(instance);
         }
+        return true;
       });
     }
   }

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
@@ -112,13 +113,9 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
       setRegistrationCompleted(true);
 
       if (onSuccess) {
-        nextStep();
         onSuccess();
       }
     } catch (error) {
-      console.log(error);
-      console.log(error.graphQLErrors);
-
       setFormError('Something went wrong. Please try again.');
     }
 
@@ -163,20 +160,19 @@ const RegistrationForm = (props, { userClassId, onSuccess }) => {
     return (
       <Modal onClose={props.onClose} styleName='dialogConfirm'>
         <div className='dialog__title'>
-          <img src='/images/mail.png' />
+          <img src='/images/mail.png' alt='png' />
         </div>
         <p className='text-center'>
           <div>
             <div style={{ margin: '1.25em 0', fontSize: '18px' }}>
-              {' '}
-              Confirm your email!{' '}
+              Confirm your email!
             </div>
             <p style={{ margin: '1.25em 0' }}>
-              Please check your email <strong> sample@gmail.com </strong>
-{' '}
-for a
-              message to confirm that it’s really you. Then you can log in.
-</p>
+              Please check your email
+              <strong> sample@gmail.com </strong>
+              for a message to confirm that it’s really you. Then you can log
+              in.
+            </p>
             <div>
               <Link
                 onClick={props.onSwitch}
@@ -217,7 +213,6 @@ for a
   };
 
   const handleSubmitBasicForm = (values, { setSubmitting }) => {
-    console.log(values);
     setFormError('');
     if (values.password !== values.passwordConfirmation) {
       return;
@@ -307,6 +302,8 @@ for a
           buttonText: 'MAKE MY APP NOW',
           progressWidth: '100%',
         };
+      default:
+        return false;
     }
   };
 
@@ -325,7 +322,7 @@ for a
         {step === 3 && (
           <p className='dialog__text'>
             You won’t be charged a thing until you commit to it explicitly. In
-            fact, the initial consultation is{' '}
+            fact, the initial consultation is
             <strong className='teal--text'>FREE</strong>
             .
             <br />

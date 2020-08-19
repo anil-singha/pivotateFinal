@@ -13,8 +13,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { withNoStack } from '@nostack/no-stack';
-
 import { TextField, makeStyles, Button, InputLabel } from '@material-ui/core';
+
 import ForgotPasswordButton from '../ForgotPasswordButton';
 
 // ns__custom_start unit: general, comp: LoginForm, loc: addedImport
@@ -24,18 +24,6 @@ import TransitionsModal from '../../custom/Modal';
 // ns__custom_end unit: general, comp: LoginForm, loc: addedImport
 
 // ns__custom_start unit: general, comp: LoginForm, loc: styling
-const Wrapper = styled.div(
-  ({ open }) => `
-  width: 100%;
-
-  padding: 1em 0;
-
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 10px 10px 10px 10px;
-  box-shadow: 10px 10px 8px -1px rgba(0, 0, 0, 0.6);
-  
-`
-);
 
 const Row = styled.div`
   text-align: center;
@@ -47,7 +35,7 @@ const LogoContainer = styled.div`
   justify-content: center;
 `;
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   textField: {
     fontSize: '.8rem',
     textAlign: 'initial',
@@ -105,12 +93,12 @@ const LoginForm = ({
         username,
         password,
       });
-    } catch (error) {
+    } catch (err) {
       setError(
-        error.message ||
-          (error.graphQLErrors &&
-            error.graphQLErrors.length &&
-            error.graphQLErrors[0]) ||
+        err.message ||
+          (err.graphQLErrors &&
+            err.graphQLErrors.length &&
+            err.graphQLErrors[0]) ||
           error
       );
       setIsSubmitting(false);
@@ -171,7 +159,7 @@ const LoginForm = ({
             variant='contained'
             color='primary'
           >
-            Log In{' '}
+            Log In
           </Button>
         </Row>
         {error && <Row>{error}</Row>}

@@ -1,3 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable array-callback-return */
+/* eslint-disable consistent-return */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect, createRef } from 'react';
 import styled from 'styled-components';
@@ -131,7 +135,6 @@ const SubInfoComponent = ({
   const [show, setShow] = useState(false);
   const [currentId, setCurrentId] = useState(null);
   const [selectedInfoTypeId, setselectedInfoTypeId] = useState(null);
-  const [setSubInfoTypeID] = useState(null);
   const [isEditMode, setIsEditMode] = useState(false);
 
   const [isSaving, setIsSaving] = useState(false);
@@ -233,7 +236,9 @@ const SubInfoComponent = ({
     if (!data || !data.length) return null;
     if (id === data[0].parentId) {
       setShow(!show);
+      return true;
     }
+    return true;
   };
 
   if (!infoType) return null;
@@ -246,7 +251,7 @@ const SubInfoComponent = ({
             return (
               <InfoTypesStyleWrapper key={v4()}>
                 <div
-                  role='button'
+                  role='presentation'
                   onClick={() => {
                     checkID(instance.id, instance._children);
                     setselectedInfoTypeId(instance.id);
@@ -285,11 +290,13 @@ const SubInfoComponent = ({
                   </TitleWrapper>
                 </div>
                 <Child
+                  // eslint-disable-next-line react/jsx-props-no-spreading
                   {...instance}
                   show={show}
                   parentId={parentId}
                   instanceId={instance.id}
                   selected={instance.id === currentId}
+                  // eslint-disable-next-line react/jsx-no-duplicate-props
                   instanceId={instanceId}
                   refetchQueries={refetchQueries}
                   updateInstance={updateInstance}
@@ -352,8 +359,6 @@ const Child = ({
   const [isChildEditMode, setIsChildEditMode] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [labelValue, setLabelValue] = useState(parentLabel);
-
-  const styles = useStyles();
 
   useEffect(() => {
     setChildState(_children);
@@ -448,6 +453,7 @@ const Child = ({
             {selected && show ? (
               <SubInfoTypeWrapper key={v4()}>
                 <div
+                  role='presentation'
                   onClick={() => {
                     setChildCurrentId(instance.id);
                     setLabelValue(instance.value);
@@ -488,6 +494,7 @@ const Child = ({
                 </div>
 
                 <Child
+                  // eslint-disable-next-line react/jsx-props-no-spreading
                   {...instance}
                   show={showChild}
                   last

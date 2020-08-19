@@ -1,15 +1,9 @@
-import React from "react";
-import { Formik, Form } from "formik";
+import React from 'react';
+import { Formik, Form } from 'formik';
 
-import { Wrapper, Row, ErrorContainer } from "../RegistrationForm.style";
-import RegistrationField from "../RegistrationField";
+import RegistrationField from '../RegistrationField';
 
-const AppDetailsForm = ({
-  initialValues,
-  validationSchema,
-  onSubmit,
-  formError
-}) => {
+const AppDetailsForm = ({ initialValues, validationSchema, onSubmit }) => {
   return (
     <>
       <Formik
@@ -18,38 +12,37 @@ const AppDetailsForm = ({
         onSubmit={onSubmit}
       >
         {({ isSubmitting, isValid, dirty, isValidating }) => (
-          <Form className="form">
-            <div className="form__input">
+          <Form className='form'>
+            <div className='form__input'>
               <RegistrationField
-                placeholder="App Name:"
-                type="text"
-                name="app"
+                placeholder='App Name:'
+                type='text'
+                name='app'
               />
             </div>
-            <div className="form__input">
+            <div className='form__input'>
               <RegistrationField
-                placeholder="Description:"
-                as="textarea"
-                name="description"
+                placeholder='Description:'
+                as='textarea'
+                name='description'
               />
             </div>
             <br></br>
-            <div className="">
+            <div className=''>
               <RegistrationField
-                name="terms"
-                type="checkbox"
-                fieldLabel="I agree to our Terms of Use and Privacy Policy by signing up"
+                name='terms'
+                type='checkbox'
+                fieldLabel='I agree to our Terms of Use and Privacy Policy by signing up'
               />
             </div>
-            <div className="form__input">
+            <div className='form__input'>
               <button
-                className="button button--yellow"
-                type="submit"
+                className='button button--yellow'
+                type='submit'
                 disabled={isSubmitting || !isValid || isValidating || !dirty}
               >
                 MAKE MY APP NOW
               </button>
-              {formError && <ErrorContainer>{formError}</ErrorContainer>}
             </div>
           </Form>
         )}

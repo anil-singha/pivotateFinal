@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
@@ -15,6 +16,7 @@ import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 import { graphql } from '@apollo/react-hoc';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import { InputLabel, makeStyles } from '@material-ui/core';
 import {
@@ -128,7 +130,6 @@ function InfoType({
   // ns__custom_start unit: appSpec, comp: InfoType, loc: beginning
   const [parentState, setParentState] = useState([]);
   const [selectSubInfoId, setSubInfoId] = useState(null);
-
   useEffect(() => {
     const [parentData] = getChildData(childState);
     setParentState(parentData);
@@ -275,7 +276,6 @@ export default compose(
 )(InfoType);
 
 InfoType.propTypes = {
-  app: PropTypes.object,
   parentId: PropTypes.string,
   selected: PropTypes.bool,
   updateInstance: PropTypes.func,

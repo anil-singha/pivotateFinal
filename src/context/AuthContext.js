@@ -1,4 +1,3 @@
-import { Link, useHistory } from 'react-router-dom';
 import createDateContext from './createDataContext';
 
 const authReducer = (state, actions) => {
@@ -13,8 +12,9 @@ const authReducer = (state, actions) => {
 };
 
 const loginUser = (dispatch) => (userFlag) => {
-  let userLoggedin;
+  let userLoggedin = true;
   if (userFlag < 0) userLoggedin = false;
+  console.log(userLoggedin);
   localStorage.setItem('userFlag', true);
   dispatch({ type: 'login', payload: true });
 };

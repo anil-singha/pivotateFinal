@@ -18,7 +18,7 @@ import compose from '@shopify/react-compose';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
 import { makeStyles, TextField, InputAdornment } from '@material-ui/core';
-import IconButton from '@material-ui/core/Button';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import { CREATE_SCREEN_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 
@@ -61,25 +61,6 @@ const Label = styled.label`
   align-items: center;
   flex-direction: row;
   width: 100%;
-`;
-
-const Input = styled.input`
-  :focus,
-  textarea:focus,
-  select:focus {
-    outline: none;
-    border: 0;
-  }
-  border: 0;
-  -webkit-appearance: none;
-  background-color: inherit;
-  padding: 10px 0;
-  border-radius: 10px;
-`;
-
-const InputContainer = styled.div`
-  background-color: white;
-  border-radius: 10px;
 `;
 
 const fadeInDown = keyframes`
@@ -147,10 +128,6 @@ const useStyles = makeStyles({
 
 // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: styling
 
-const Button = styled.button`
-  margin-left: 1em;
-`;
-
 function ScreenCreationForm({
   parentId,
   createScreen,
@@ -194,7 +171,7 @@ function ScreenCreationForm({
 
     updateLoading(true);
 
-    const createScreenResponse = await createScreen({
+    await createScreen({
       variables: {
         actionId: CREATE_SCREEN_FOR_APP_SPEC_ACTION_ID,
         executionParameters: JSON.stringify({
@@ -237,7 +214,6 @@ function ScreenCreationForm({
             onChange(e.target.value);
           }}
           onKeyPress={handleKeyPress}
-          value={screenValue}
           disabled={disabled || loading}
           variant='outlined'
           InputProps={{
@@ -254,7 +230,7 @@ function ScreenCreationForm({
       </Label>
       {showCalloutBox ? (
         <CalloutBox>
-          {callOutText}{' '}
+          {callOutText}
           <CloseIcon className={styles.closeIcon} onClick={showCallout} />
         </CalloutBox>
       ) : null}
