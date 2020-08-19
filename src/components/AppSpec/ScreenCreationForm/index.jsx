@@ -18,7 +18,6 @@ import compose from '@shopify/react-compose';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
 import { makeStyles, TextField, InputAdornment } from '@material-ui/core';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import { CREATE_SCREEN_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 

@@ -15,6 +15,7 @@ import { Unit } from '@nostack/no-stack';
 import styled from 'styled-components';
 import { v4 } from 'uuid';
 import { flattenData } from '../../../flattenData';
+
 // ns__remove_import AppCreationForm from '../AppCreationForm';
 import App from '../App';
 
@@ -42,10 +43,6 @@ const AppsStyleWrapper = styled.div`
 `;
 
 // ns__end_section stylingSection
-
-// ns__start_section button
-
-// ns__end_section button
 
 // ns__custom_start unit: appSpec, comp: Apps, loc: beforeFunction
 // ns__custom_end unit: appSpec, comp: Apps, loc: beforeFunction

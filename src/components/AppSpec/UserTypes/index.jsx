@@ -16,16 +16,15 @@ import UserTypeCreationForm from '../UserTypeCreationForm';
 import UserType from '../UserType';
 import ScreenCreationForm from '../ScreenCreationForm';
 
-// ns__custom_start unit: appSpec, comp: UserTypes, loc: styling
-
 const UserTypesStyleWrapper = styled.div`
+  // ns__custom_start unit: appSpec, comp: UserTypes, loc: styling
   padding-right: 0.5rem;
+  // ns__custom_end unit: appSpec, comp: UserTypes, loc: styling
 `;
 
 UserTypesStyleWrapper.defaultProps = {
   'data-id': 'userTypes__wrapper',
 };
-// ns__custom_end unit: appSpec, comp: UserTypes, loc: styling
 
 class UserTypes extends Component {
   state = {
@@ -109,9 +108,9 @@ class UserTypes extends Component {
         />
         {userTypeCreationCount >= 3 ? (
           <ScreenCreationForm
-            disabled={true}
+            disabled
             validateScreens={0}
-            textLabel={`What is the Screen name fo...`}
+            textLabel='What is the Screen name fo...'
             userTypeCreationCount={userTypeCreationCount}
             label={label}
           />

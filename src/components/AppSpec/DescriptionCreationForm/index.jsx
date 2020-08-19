@@ -8,21 +8,24 @@
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: beforeImports
 
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: beforeImports
+
+// ns__start_section imports
 import React, { useState } from 'react';
 import { graphql } from '@apollo/react-hoc';
 import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 
+import { CREATE_DESCRIPTION_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 
 import { makeStyles, TextField } from '@material-ui/core';
-import { CREATE_DESCRIPTION_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
+// ns__end_section imports
 
+// ns__start_section stylingSection
 const Form = styled.div`
   // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: styling
   // change styling here
@@ -32,6 +35,14 @@ const Form = styled.div`
   border-radius: 5px;
   // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: styling
 `;
+// ns__end_section stylingSection
+
+// ns__start_section button
+const Button = styled.button`
+  // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: buttonStyling
+  // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: buttonStyling
+`;
+// ns__end_section button
 
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: beforeFunction
 const Label = styled.label`
@@ -63,8 +74,9 @@ const useStyles = makeStyles({
   },
 });
 
-// ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: styling
+// ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: beforeFunction
 
+// ns__start_section function
 function DescriptionCreationForm({
   parentId,
   createDescription,
@@ -79,10 +91,13 @@ function DescriptionCreationForm({
 
   // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: beginning
 
+  // ns__start_section handleChange
   function handleChange(e) {
     updateDescriptionValue(e.target.value);
   }
+  // ns__end_section handleChange
 
+  // ns__start_section handleSubmit
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -107,6 +122,7 @@ function DescriptionCreationForm({
     updateDescriptionValue('');
     updateLoading(false);
   }
+  // ns__end_section handleSubmit
 
   // ns__start_replacement handleKeyPress
   function handleKeyPress(e) {
@@ -125,7 +141,7 @@ function DescriptionCreationForm({
   // };
   // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: beforeReturn
 
-  // ns__start_section return
+  // ns__start_replacement return
   return (
     <Form>
       <Label htmlFor='description-value'>
@@ -141,13 +157,6 @@ function DescriptionCreationForm({
           variant='outlined'
           label='Description'
           rows='10'
-          // InputProps={{
-          //   endAdornment: (
-          //     <InputAdornment position="end">
-          //          <HelpOutlineIcon className={styles.helpIcon} onClick={showCallout}/>
-          //     </InputAdornment>
-          //   )
-          // }}
         />
       </Label>
       {/* {showCalloutBox ? (
@@ -158,13 +167,18 @@ function DescriptionCreationForm({
       ) : null} */}
     </Form>
   );
-  // ns__end_section return
+  // ns__end_replacement return
 }
 
+// ns__end_section function
+
+// ns__start_section  compose
 export default compose(graphql(EXECUTE, { name: 'createDescription' }))(
   DescriptionCreationForm
 );
+// ns__end_section  compose
 
+// ns__start_section propTypes
 DescriptionCreationForm.propTypes = {
   parentId: PropTypes.string,
   refetchQueries: PropTypes.array,
@@ -172,3 +186,4 @@ DescriptionCreationForm.propTypes = {
   // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: addedPropTypes
   // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: addedPropTypes
 };
+// ns__end_section propTypes

@@ -15,11 +15,10 @@ import Description from '../Description';
 // ns__custom_start unit: appSpec, comp: Descriptions, loc: addedImports
 // ns__custom_end unit: appSpec, comp: Descriptions, loc: addedImports
 
-// ns__custom_start unit: appSpec, comp: Descriptions, loc: styling
-
-const DescriptionsStyleWrapper = styled.div``;
-
-// ns__custom_end unit: appSpec, comp: Descriptions, loc: styling
+const DescriptionsStyleWrapper = styled.div`
+  // ns__custom_start unit: appSpec, comp: Descriptions, loc: styling
+  // ns__custom_end unit: appSpec, comp: Descriptions, loc: styling
+`;
 
 class Descriptions extends Component {
   // ns__custom_start unit: appSpec, comp: Descriptions, loc: beginning
@@ -34,15 +33,15 @@ class Descriptions extends Component {
   wrapperRef = createRef();
 
   componentDidMount() {
-    document.addEventListener('mousedown', this.handleClick);
     // ns__custom_start unit: appSpec, comp: Descriptions, loc: componentDidMount
     // ns__custom_end unit: appSpec, comp: Descriptions, loc: componentDidMount
+    document.addEventListener('mousedown', this.handleClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClick);
     // ns__custom_start unit: appSpec, comp: Descriptions, loc: componentWillUnmount
     // ns__custom_end unit: appSpec, comp: Descriptions, loc: componentWillUnmount
+    document.removeEventListener('mousedown', this.handleClick);
   }
 
   handleClick = (e) => {
@@ -57,6 +56,7 @@ class Descriptions extends Component {
 
   render() {
     const { appId, descriptions, refetchQueries, onUpdate } = this.props;
+
     const { selectedDescriptionId } = this.state;
 
     // ns__custom_start unit: appSpec, comp: Descriptions, loc: renderBeginning
@@ -74,6 +74,7 @@ class Descriptions extends Component {
           // ns__custom_end unit: appSpec, comp: Descriptions, loc: addedPropsForCreationForm
         />
 
+        {/* ns__start_section listElements */}
         {descriptions.map((description) => (
           <Description
             key={v4()}
@@ -87,6 +88,8 @@ class Descriptions extends Component {
             // ns__custom_end unit: appSpec, comp: Descriptions, loc: addedPropsForChildren
           />
         ))}
+        {/* ns__end_section listElements */}
+
         {/* ns__custom_start unit: appSpec, comp: Descriptions, loc: renderEnding */}
         {/* ns__custom_end unit: appSpec, comp: Descriptions, loc: renderEnding */}
       </DescriptionsStyleWrapper>

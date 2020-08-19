@@ -50,7 +50,6 @@ const DescriptionStyleWrapper = styled.div(
 // ns__end_section stylingSection
 
 // ns__start_section button
-
 const Button = styled.button`
   // ns__custom_start unit: appSpec, comp: Description, loc: buttonStyling
   background: none;
