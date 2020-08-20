@@ -1,4 +1,15 @@
-import styled from "styled-components";
+/*
+  This file has been partially generated!
+  To permit updates to the generated portions of this code in the future,
+  please follow all rules at https://bit.ly/nsFrontEndRules
+ */
+// ns__file unit: general, comp: RegistrationFormStyle
+
+// ns__custom_start unit: general, comp: RegistrationFormStyle, loc: beforeImports
+
+// ns__custom_end unit: general, comp: RegistrationFormStyle, loc: beforeImports
+
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 250px;
@@ -16,6 +27,13 @@ export const ErrorContainer = styled.div`
 `;
 
 export const Row = styled.div`
-  
+  margin: 0.5em;
+  padding: 0.5em;
+  text-align: center;
+
+  input {
+    display: block;
+    margin: 0.5em auto;
+    width: 80%;
   }
 `;

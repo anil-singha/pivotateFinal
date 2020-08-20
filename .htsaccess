@@ -16,4 +16,4 @@
 # CSS and JavaScript
   ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType text/css "access plus 1 year"
-</IfModule>
+</IfModule> 

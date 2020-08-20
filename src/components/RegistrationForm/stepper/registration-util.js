@@ -3,9 +3,9 @@ import valid from "card-validator";
 import moment from "moment";
 
 export const validationSchemaBasic = Yup.object().shape({
-  // username: Yup.string()
-  //   .label('username')
-  //   .required('Please enter desired username.'),
+  username: Yup.string()
+    .label('username')
+    .required('Please enter desired username.'),
   firstName: Yup.string()
     .label("firstName")
     .required("Please enter your first name."),
@@ -19,30 +19,28 @@ export const validationSchemaBasic = Yup.object().shape({
   terms: Yup.boolean()
     .label("terms")
     .oneOf([true], "Must Accept Terms and Conditions")
-    .required("Please click agree on terms before you can proceed")
-  // password: Yup.string()
-  //   .label('password')
-  //   .matches(/[a-z]/, 'at least one lowercase char')
-  //   .matches(/[A-Z]/, 'at least one uppercase char')
-  //   .matches(/[a-zA-Z]+[^a-zA-Z\s]+/, 'at least 1 number or special char (@,!,#, etc).')
-  //   .min(8, 'Must be at least 8 characters.')
-  //   .required('Please enter your desired password.'),
-  // passwordConfirmation: Yup.string()
-  //   .oneOf([Yup.ref('password'), '', null], 'Passwords must match.')
-  //   .required('Please confirm your password.'),
+    .required("Please click agree on terms before you can proceed"),
+  password: Yup.string()
+    .label('password')
+    .matches(/[a-z]/, 'at least one lowercase char')
+    .matches(/[A-Z]/, 'at least one uppercase char')
+    .matches(/[a-zA-Z]+[^a-zA-Z\s]+/, 'at least 1 number or special char (@,!,#, etc).')
+    .min(8, 'Must be at least 8 characters.')
+    .required('Please enter your desired password.'),
+  passwordConfirmation: Yup.string()
+    .oneOf([Yup.ref('password'), '', null], 'Passwords must match.')
+    .required('Please confirm your password.'),
 });
 
 export const validationSchemaApp = Yup.object().shape({
-  app: Yup.string()
-    .label("app")
-    .required("Please enter desired app name."),
+  app: Yup.string().label("app").required("Please enter desired app name."),
   description: Yup.string()
     .label("description")
     .required("Please enter app description."),
   terms: Yup.boolean()
     .label("terms")
     .oneOf([true], "Must Accept Terms and Conditions")
-    .required("Please click agree on terms before you can proceed")
+    .required("Please click agree on terms before you can proceed"),
 });
 
 export const validationSchemaCreditCard = Yup.object().shape({
@@ -52,27 +50,13 @@ export const validationSchemaCreditCard = Yup.object().shape({
     .test(
       "test-number",
       "Credit Card number is invalid",
-      value => valid.number(value).isValid
+      (value) => valid.number(value).isValid
     )
     .required(),
-  cardName: Yup.string()
-    .label("Name on card")
-    .required(),
-  cvc: Yup.string()
-    .label("CVC")
-    .min(3)
-    .max(4)
-    .required(),
-  expiryMonth: Yup.string()
-    .label("Expiry month")
-    .min(2)
-    .max(2)
-    .required(),
-  expiryYear: Yup.string()
-    .label("Expiry year")
-    .min(4)
-    .max(4)
-    .required()
+  cardName: Yup.string().label("Name on card").required(),
+  cvc: Yup.string().label("CVC").min(3).max(4).required(),
+  expiryMonth: Yup.string().label("Expiry month").min(2).max(2).required(),
+  expiryYear: Yup.string().label("Expiry year").min(4).max(4).required(),
 });
 
 export const creditCardExpirationYear = () => {

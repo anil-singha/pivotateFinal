@@ -16,7 +16,7 @@ const maintenanceDetails = () => {
                 {" "}
                 <strong className="">
                   {" "}
-                  <span className="pricing__price teal--text">$20 </span>/month
+                  <span className="pricing__price teal--text">$45 </span>/month
                 </strong>{" "}
               </div>
               <p>

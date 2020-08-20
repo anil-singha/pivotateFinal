@@ -1,8 +1,23 @@
+/*
+  This file has been partially generated!
+  To permit updates to the generated portions of this code in the future,
+  please follow all rules at https://bit.ly/nsFrontEndRules
+ */
+// ns__file unit: general, comp: ForgotPasswordButton
+
+// ns__custom_start unit: general, comp: ForgotPasswordButton, loc: beforeImports
+
+// ns__custom_end unit: general, comp: ForgotPasswordButton, loc: beforeImports
+
 import React, { useState } from 'react';
 import { graphql } from '@apollo/react-hoc';
 import compose from '@shopify/react-compose';
 import styled from 'styled-components';
-import { withNoStack, FORGOT_PASSWORD, RESET_PASSWORD } from '@nostack/no-stack';
+import {
+  withNoStack,
+  FORGOT_PASSWORD,
+  RESET_PASSWORD,
+} from '@nostack/no-stack';
 
 import SendCodeForm from './SendCodeForm';
 import ResetPasswordForm from './ResetPasswordForm';
@@ -18,7 +33,11 @@ const Button = styled.button`
   }
 `;
 
-const ForgotPasswordButton = ({ getPasswordResetCode, resetPassword, platformId }) => {
+const ForgotPasswordButton = ({
+  getPasswordResetCode,
+  resetPassword,
+  platformId,
+}) => {
   const [formVisible, setFormVisible] = useState(false);
   const [userNameOrEmail, setUsernameOrEmail] = useState('');
   const [passwordReset, setPasswordReset] = useState(false);
@@ -35,10 +54,10 @@ const ForgotPasswordButton = ({ getPasswordResetCode, resetPassword, platformId 
     setUsernameOrEmail('');
   };
 
-  const handleEmailSubmit = async userNameOrEmail => {
+  const handleEmailSubmit = async (userNameOrEmail) => {
     setError('');
     setSubmitting(true);
-    
+
     try {
       await getPasswordResetCode({
         variables: {
@@ -62,7 +81,7 @@ const ForgotPasswordButton = ({ getPasswordResetCode, resetPassword, platformId 
     try {
       await resetPassword({
         variables: {
-          userNameOrEmail, 
+          userNameOrEmail,
           password,
           code,
           stackId: platformId,
@@ -79,7 +98,7 @@ const ForgotPasswordButton = ({ getPasswordResetCode, resetPassword, platformId 
 
   if (!formVisible) {
     return (
-      <Button type="button" onClick={showForm}>
+      <Button type='button' onClick={showForm}>
         Forgot Password?
       </Button>
     );
@@ -87,12 +106,12 @@ const ForgotPasswordButton = ({ getPasswordResetCode, resetPassword, platformId 
 
   if (!userNameOrEmail) {
     return (
-      <SendCodeForm 
+      <SendCodeForm
         onSubmit={handleEmailSubmit}
-        onCancel={hideForm} 
+        onCancel={hideForm}
         disabled={submitting}
         error={error}
-      /> 
+      />
     );
   }
 
@@ -100,7 +119,7 @@ const ForgotPasswordButton = ({ getPasswordResetCode, resetPassword, platformId 
     return (
       <ResetPasswordForm
         onSubmit={handlePasswordSubmit}
-        onCancel={hideForm} 
+        onCancel={hideForm}
         disabled={submitting}
         error={error}
       />
@@ -110,7 +129,9 @@ const ForgotPasswordButton = ({ getPasswordResetCode, resetPassword, platformId 
   return (
     <p>
       Your password has been reset. You may now login.
-      <Button type="button" onClick={hideForm}>Ok.</Button>
+      <Button type='button' onClick={hideForm}>
+        Ok.
+      </Button>
     </p>
   );
 };
@@ -118,5 +139,5 @@ const ForgotPasswordButton = ({ getPasswordResetCode, resetPassword, platformId 
 export default compose(
   graphql(FORGOT_PASSWORD, { name: 'getPasswordResetCode' }),
   graphql(RESET_PASSWORD, { name: 'resetPassword' }),
-  withNoStack,
+  withNoStack
 )(ForgotPasswordButton);

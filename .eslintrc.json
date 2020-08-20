@@ -1,0 +1,85 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "parser": "babel-eslint",
+
+  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "parserOptions": {
+    "ecmaVersion`": 11
+  },
+
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "no-underscore-dangle": "off",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "labelComponents": [],
+        "labelAttributes": [],
+        "controlComponents": [],
+        "assert": "either",
+        "depth": 25
+      }
+    ],
+    "import/extensions": [
+      "error",
+      {
+        "js": "never",
+        "jsx": "never"
+      }
+    ],
+    "react/state-in-constructor": 0,
+    "react/require-default-props": 0,
+    "react/prop-types": 0,
+    "react/forbid-prop-types": 0,
+    "react/destructuring-assignment": 0,
+    "no-duplicate-imports": 0,
+    "no-inline-comments": 0,
+    "import/no-useless-path-segments": [
+      "error",
+      {
+        "noUselessIndex": false
+      }
+    ],
+    "import/order": 0,
+    "import/no-duplicates": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "sort-imports": "off",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "never",
+        "objects": "always-multiline",
+        "imports": "ignore",
+        "exports": "never",
+        "functions": "never"
+      }
+    ],
+
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 80,
+        "trailingComma": "es5",
+        "semi": true,
+        "jsxSingleQuote": true,
+        "singleQuote": true,
+        "usetabs": true,
+        "endOfLine": "auto"
+      }
+    ]
+  }
+}

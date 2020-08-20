@@ -1,3 +1,13 @@
+/*
+  This file has been partially generated!
+  To permit updates to the generated portions of this code in the future,
+  please follow all rules at https://bit.ly/nsFrontEndRules
+ */
+// ns__file unit: general, comp: AuthTabs
+
+// ns__custom_start unit: general, comp: AuthTabs, loc: beforeImports
+// ns__custom_end unit: general, comp: AuthTabs, loc: beforeImports
+
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
@@ -10,7 +20,8 @@ const MenuContainer = styled.div`
   margin-bottom: 20px;
 `;
 
-const Button = styled.button(({ selected }) => `
+const Button = styled.button(
+  ({ selected }) => `
   font-size: 1.25em;
   background-color: #ffffff;
   opacity: ${selected ? 1.0 : 0.5};
@@ -23,7 +34,8 @@ const Button = styled.button(({ selected }) => `
     opacity: 1.0;
     text-decoration: underline;
   }
-`);
+`
+);
 
 const AuthTabs = ({ menuTitles, children }) => {
   const [selectedTab, setSelectedTab] = useState(0);
@@ -33,10 +45,10 @@ const AuthTabs = ({ menuTitles, children }) => {
       <MenuContainer>
         {menuTitles.map((title, index) => (
           <Button
-            key={index}
             selected={index === selectedTab}
-            onClick={e => {
+            onClick={(e) => {
               e.preventDefault();
+
               setSelectedTab(index);
             }}
           >
@@ -50,13 +62,11 @@ const AuthTabs = ({ menuTitles, children }) => {
             return null;
           }
 
-          return (
-            <div className="test" key={index}>{child}</div>
-          );
+          return <div className='test'>{child}</div>;
         })}
       </div>
     </div>
   );
-}
+};
 
 export default AuthTabs;

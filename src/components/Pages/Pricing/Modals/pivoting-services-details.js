@@ -170,7 +170,7 @@ const serviceDetails = () => {
         <div className="pricing__content">
           <div className="pricing__description">Special Services</div>
           <p>
-            It okay if you’ve never done this before. We can connect you with
+            It's okay if you’ve never done this before. We can connect you with
             experts for many services! If you don’t see what you need, request
             something new.
           </p>
