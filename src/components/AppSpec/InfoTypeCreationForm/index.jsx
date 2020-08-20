@@ -24,7 +24,6 @@ import { CREATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
 import { makeStyles, TextField, InputAdornment } from '@material-ui/core';
-import PropTypes from 'prop-types';
 import { keyframes } from 'styled-components';
 // <!-- prettier-ignore-end -->
 // ns__custom_end unit: appSpec, comp: InfoTypeCreationForm, loc: addedImports

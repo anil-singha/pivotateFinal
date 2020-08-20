@@ -24,7 +24,7 @@ import { keyframes } from 'styled-components';
 import { InputLabel, makeStyles } from '@material-ui/core';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
-import { makeStyles, TextField, InputAdornment } from '@material-ui/core';
+import { TextField, InputAdornment } from '@material-ui/core';
 // <!-- prettier-ignore-end -->
 // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: addedImports
 // ns__end_section imports
