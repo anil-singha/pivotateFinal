@@ -8,40 +8,72 @@
 // ns__custom_start unit: appSpec, comp: UserTypes, loc: beforeImports
 // ns__custom_end unit: appSpec, comp: UserTypes, loc: beforeImports
 
+// ns__start_section imports
 import React, { Component, createRef } from 'react';
 import styled from 'styled-components';
 import { v4 } from 'uuid';
 
 import UserTypeCreationForm from '../UserTypeCreationForm';
 import UserType from '../UserType';
+// ns__custom_start unit: appSpec, comp: UserTypes, loc: addedImports
+// <!-- prettier-ignore-start -->
 import ScreenCreationForm from '../ScreenCreationForm';
+// <!-- prettier-ignore-end -->
+// ns__custom_end unit: appSpec, comp: UserTypes, loc: addedImports
+// ns__end_section imports
 
+// ns__start_section stylingSection
 const UserTypesStyleWrapper = styled.div`
   // ns__custom_start unit: appSpec, comp: UserTypes, loc: styling
   padding-right: 0.5rem;
   // ns__custom_end unit: appSpec, comp: UserTypes, loc: styling
 `;
 
+// ns__end_section stylingSection
+
+// ns__start_section button
+const Button = styled.button`
+  // ns__custom_start unit: appSpec, comp: UserTypes, loc: buttonStyling
+  // ns__custom_end unit: appSpec, comp: UserTypes, loc: buttonStyling
+`;
+// ns__end_section button
+
+// ns__custom_start unit: appSpec, comp: UserTypes, loc: beforeFunction
 UserTypesStyleWrapper.defaultProps = {
   'data-id': 'userTypes__wrapper',
 };
+// ns__custom_end unit: appSpec, comp: UserTypes, loc: beforeFunction
 
+// ns__start_section function
 class UserTypes extends Component {
+  // ns__custom_start unit: appSpec, comp: UserTypes, loc: beginning
+  // ns__custom_end unit: appSpec, comp: UserTypes, loc: beginning
   state = {
     selectedUserTypeId: null,
+    // ns__custom_start unit: appSpec, comp: UserTypes, loc: addedState
     userTypeCreationCount: 0,
+    // ns__custom_end unit: appSpec, comp: UserTypes, loc: addedState
   };
 
   wrapperRef = createRef();
 
+  // ns__start_section didMount
   componentDidMount() {
+    // ns__custom_start unit: appSpec, comp: UserTypes, loc: componentDidMount
+    // ns__custom_end unit: appSpec, comp: UserTypes, loc: componentDidMount
     document.addEventListener('mousedown', this.handleClick);
   }
+  // ns__end_section didMount
 
+  // ns__start_section willMount
   componentWillUnmount() {
+    // ns__custom_start unit: appSpec, comp: UserTypes, loc: componentWillUnmount
+    // ns__custom_end unit: appSpec, comp: UserTypes, loc: componentWillUnmount
     document.removeEventListener('mousedown', this.handleClick);
   }
+  // ns__end_section willMount
 
+  // ns__start_section handleClick
   handleClick = (e) => {
     const node = this.wrapperRef.current;
 
@@ -49,8 +81,11 @@ class UserTypes extends Component {
       this.setState({ selectedUserTypeId: null });
     }
   };
+  // ns__end_section handleClick
 
+  // ns__start_section handleSelect
   handleSelect = (id) => this.setState({ selectedUserTypeId: id });
+  // ns__end_section handleSelect
 
   // ns__custom_start unit: appSpec, comp: UserTypes, loc: beforeRender
   onChangeHelper = (value) => {
@@ -58,18 +93,19 @@ class UserTypes extends Component {
   };
   // ns__custom_end unit: appSpec, comp: UserTypes, loc: beforeRender
 
+  // ns__start_section render
   render() {
     const { appId, userTypes, refetchQueries, onUpdate } = this.props;
+
     const { selectedUserTypeId } = this.state;
 
-    // ns__custom_start unit: appSpec, comp: UserTypes, loc: beforeReturn
+    // ns__custom_start unit: appSpec, comp: UserTypes, loc: renderBeginning
     const { label } = this.props;
     const validateUserTypes = userTypes.length;
     const { userTypeCreationCount } = this.state;
-    // ns__custom_end unit: appSpec, comp: UserTypes, loc: beforeReturn
-
-    // ns__custom_start unit: appSpec, comp: UserTypes, loc: renderBeginning
     // ns__custom_end unit: appSpec, comp: UserTypes, loc: renderBeginning
+
+    // ns__start_replacement renderReturn
 
     return (
       <>
@@ -117,7 +153,11 @@ class UserTypes extends Component {
         ) : null}
       </>
     );
+
+    // ns__end_replacement renderReturn
   }
+  // ns__end_section render
 }
+// ns__end_section function
 
 export default UserTypes;

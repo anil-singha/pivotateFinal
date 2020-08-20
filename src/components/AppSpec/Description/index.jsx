@@ -199,6 +199,7 @@ function Description({
   // ns__start_section functionReturn
   return (
     <DescriptionStyleWrapper selected={selected}>
+      {/* ns__start_section instanceValue */}
       {descriptionValue}
       <Button type='button' onClick={() => updateIsEditMode(true)}>
         &#9998;
@@ -206,6 +207,11 @@ function Description({
       <Button type='button' onClick={() => updateIsDeleteMode(true)}>
         &#128465;
       </Button>
+      {/* ns__end_section instanceValue */}
+
+      {/* ns__start_section childrenList */}
+
+      {/* ns__end_section childrenList */}
 
       {/* ns__custom_start unit: appSpec, comp: Description, loc: renderEnding */}
       {/* ns__custom_end unit: appSpec, comp: Description, loc: renderEnding */}

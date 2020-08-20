@@ -8,24 +8,29 @@
 // ns__custom_start unit: appSpec, comp: ScreenCreationForm, loc: beforeImports
 // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: beforeImports
 
+// ns__start_section imports
 import React, { useState } from 'react';
 import { graphql } from '@apollo/react-hoc';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 
+import PropTypes from 'prop-types';
+
+import { CREATE_SCREEN_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 // ns__custom_start unit: appSpec, comp: ScreenCreationForm, loc: addedImports
+// <!-- prettier-ignore-start -->
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
 import { makeStyles, TextField, InputAdornment } from '@material-ui/core';
-import PropTypes from 'prop-types';
-import { CREATE_SCREEN_FOR_APP_SPEC_ACTION_ID } from '../../../config';
-
+import { keyframes } from 'styled-components';
+// <!-- prettier-ignore-end -->
 // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: addedImports
+// ns__end_section imports
 
-// ns__custom_start unit: appSpec, comp: ScreenCreationForm, loc: styling
-// change styling here
+// ns__start_section stylingSection
 const Form = styled.div`
+  // ns__custom_start unit: appSpec, comp: ScreenCreationForm, loc: styling
   margin: 0.8rem 0 0.5rem 3.8rem;
   border: none;
   border-radius: 5px;
@@ -53,8 +58,18 @@ const Form = styled.div`
     top: -76px;
     height: '116px';
   }
+  // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: styling
 `;
+// ns__end_section stylingSection
 
+// ns__start_section button
+const Button = styled.button`
+  // ns__custom_start unit: appSpec, comp: ScreenCreationForm, loc: buttonStyling
+  // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: buttonStyling
+`;
+// ns__end_section button
+
+// ns__custom_start unit: appSpec, comp: ScreenCreationForm, loc: beforeFunction
 const Label = styled.label`
   display: flex;
   align-items: center;
@@ -124,9 +139,9 @@ const useStyles = makeStyles({
     width: '100%',
   },
 });
+// ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: beforeFunction
 
-// ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: styling
-
+// ns__start_section function
 function ScreenCreationForm({
   parentId,
   createScreen,
@@ -143,7 +158,6 @@ function ScreenCreationForm({
 }) {
   const [screenValue, updateScreenValue] = useState('');
   const [loading, updateLoading] = useState(false);
-
   // ns__custom_start unit: appSpec, comp: ScreenCreationForm, loc: beginning
   const styles = useStyles();
   const [callout, setCallout] = useState(false);
@@ -157,10 +171,13 @@ function ScreenCreationForm({
   }
   // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: beginning
 
+  // ns__start_section handleChange
   function handleChange(e) {
     updateScreenValue(e.target.value);
   }
+  // ns__end_section handleChange
 
+  // ns__start_section handleSubmit
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -185,6 +202,9 @@ function ScreenCreationForm({
     updateScreenValue('');
     updateLoading(false);
   }
+  // ns__end_section handleSubmit
+
+  // ns__start_replacement handleKeyPress
 
   function handleKeyPress(e) {
     // ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: insideHandleKeyPress
@@ -196,6 +216,8 @@ function ScreenCreationForm({
     }
     // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: insideHandleKeyPress
   }
+
+  // ns__end_replacement handleKeyPress
 
   // ns__custom_start unit: appSpec, comp: ScreenCreationForm, loc: beforeReturn
   const showCallout = () => {
@@ -238,6 +260,7 @@ function ScreenCreationForm({
   // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: beforeReturn
 
   // ns__start_replacement return
+
   // return (
   //     <Form>
   //       <Label htmlFor='screen-value'>
@@ -268,20 +291,24 @@ function ScreenCreationForm({
   //       ) : null}
   //     </Form>
   // );
+
   // ns__end_replacement return
 }
 
+// ns__end_section function
+
+// ns__start_section  compose
 export default compose(graphql(EXECUTE, { name: 'createScreen' }))(
   ScreenCreationForm
 );
+// ns__end_section  compose
 
+// ns__start_section propTypes
 ScreenCreationForm.propTypes = {
   parentId: PropTypes.string,
-  selected: PropTypes.bool,
-  createScreen: PropTypes.func,
   refetchQueries: PropTypes.array,
-  onSelect: PropTypes.func,
-  validateScreens: PropTypes.number,
+  createScreen: PropTypes.func,
   // ns__custom_start unit: appSpec, comp: ScreenCreationForm, loc: addedPropTypes
   // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: addedPropTypes
 };
+// ns__end_section propTypes

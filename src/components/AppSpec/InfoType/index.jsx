@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /*
   This file has been partially generated!
   To permit updates to the generated portions of this code in the future,
@@ -10,14 +9,14 @@
 
 // ns__custom_end unit: appSpec, comp: InfoType, loc: beforeImports
 
-import React, { useState, useEffect } from 'react';
+// ns__start_section imports
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 import { graphql } from '@apollo/react-hoc';
 
 import PropTypes from 'prop-types';
-import { InputLabel, makeStyles } from '@material-ui/core';
 import {
   UPDATE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
   DELETE_INFO_TYPE_FOR_APP_SPEC_ACTION_ID,
@@ -27,16 +26,21 @@ import EditInstanceForm from '../../EditInstanceForm';
 import DeleteInstanceMenu from '../../DeleteInstanceMenu';
 
 // ns__custom_start unit: appSpec, comp: InfoType, loc: addedImports
+// <!-- prettier-ignore-start -->
+import { useEffect } from 'react';
+import { InputLabel, makeStyles } from '@material-ui/core';
 
 import getChildData from '../../../custom/getChildData';
 import SubInfoComponent from '../../../custom/SubInfoTypesRecursive';
-
+// <!-- prettier-ignore-end -->
 // ns__custom_end unit: appSpec, comp: InfoType, loc: addedImports
+// ns__end_section imports
 
-// ns__custom_start unit: appSpec, comp: InfoType, loc: styling
-// add styling here
+// ns__start_section stylingSection
 const InfoTypeStyleWrapper = styled.div(
   ({ selected, isDeleting }) => `
+  // ns__custom_start unit: appSpec, comp: InfoType, loc: styling
+  // add styling here
   margin: 2rem 0 .5rem 1rem;
   padding: ${selected ? '0' : '1.5rem'};
   
@@ -72,11 +76,14 @@ const InfoTypeStyleWrapper = styled.div(
     top: -32px ;
     height: ${(selected && '94px') || '71px'}; 
   }
-  
+  // ns__custom_end unit: appSpec, comp: InfoType, loc: styling
 `
 );
+// ns__end_section stylingSection
 
+// ns__start_section button
 const Button = styled.button`
+  // ns__custom_start unit: appSpec, comp: InfoType, loc: buttonStyling
   background: none;
   border: none;
   cursor: pointer;
@@ -87,8 +94,11 @@ const Button = styled.button`
   &:hover {
     color: ${(props) => props.hoverColor || '#000000'};
   }
+  // ns__custom_end unit: appSpec, comp: InfoType, loc: buttonStyling
 `;
+// ns__end_section button
 
+// ns__custom_start unit: appSpec, comp: InfoType, loc: beforeFunction
 const TitleWrapper = styled.div`
   background: #d2ecef;
   padding: 25px;
@@ -105,9 +115,9 @@ const useStyles = makeStyles(() => ({
     textAlign: 'initial',
   },
 }));
+// ns__custom_end unit: appSpec, comp: InfoType, loc: beforeFunction
 
-// ns__custom_end unit: appSpec, comp: InfoType, loc: styling
-
+// ns__start_section function
 function InfoType({
   infoType,
   parentId,
@@ -125,7 +135,6 @@ function InfoType({
   const [isSaving, updateIsSaving] = useState(false);
   const [isDeleteMode, updateIsDeleteMode] = useState(false);
   const [isDeleting, updateIsDeleting] = useState(false);
-
   // ns__custom_start unit: appSpec, comp: InfoType, loc: beginning
   const [parentState, setParentState] = useState([]);
   const [selectSubInfoId, setSubInfoId] = useState(null);
@@ -140,6 +149,7 @@ function InfoType({
   // ns__custom_start unit: appSpec, comp: InfoType, loc: beforeReturn
   // ns__custom_end unit: appSpec, comp: InfoType, loc: beforeReturn
 
+  // ns__start_section notSelected
   if (!selected) {
     return (
       <InfoTypeStyleWrapper onClick={() => onSelect(infoType.id)}>
@@ -147,11 +157,15 @@ function InfoType({
       </InfoTypeStyleWrapper>
     );
   }
+  // ns__end_section notSelected
 
+  // ns__start_section change
   function handleInfoTypeValueChange(e) {
     updateInfoTypeValue(e.target.value);
   }
+  // ns__end_section change
 
+  // ns__start_section save
   async function handleInfoTypeValueSave() {
     updateIsSaving(true);
 
@@ -169,11 +183,15 @@ function InfoType({
     updateIsEditMode(false);
     updateIsSaving(false);
   }
+  // ns__end_section save
 
+  // ns__start_section cancel
   function handleCancelEdit() {
     updateIsEditMode(false);
   }
+  // ns__end_section cancel
 
+  // ns__start_section isEdit
   if (isEditMode) {
     return (
       <InfoTypeStyleWrapper>
@@ -189,7 +207,9 @@ function InfoType({
       </InfoTypeStyleWrapper>
     );
   }
+  // ns__end_section isEdit
 
+  // ns__start_section delete
   async function handleDelete() {
     updateIsDeleting(true);
 
@@ -208,11 +228,15 @@ function InfoType({
       updateIsDeleting(false);
     }
   }
+  // ns__end_section delete
 
+  // ns__start_section cancelDelete
   function handleCancelDelete() {
     updateIsDeleteMode(false);
   }
+  // ns__end_section cancelDelete
 
+  // ns__start_section isDelete
   if (isDeleteMode) {
     return (
       <InfoTypeStyleWrapper selected={selected} isDeleting={isDeleting}>
@@ -225,10 +249,13 @@ function InfoType({
       </InfoTypeStyleWrapper>
     );
   }
+  // ns__end_section isDelete
 
+  // ns__start_section functionReturn
   return (
     <InfoTypeStyleWrapper selected={selected}>
-      {/* // ns__custom_start unit: appSpec, comp: InfoType, loc: insideReturn */}
+      {/* ns__start_replacement instanceValue */}
+
       <InputLabel className={styles.titleLabel}>Info Type</InputLabel>
       <TitleWrapper>
         {infoTypeValue}
@@ -241,9 +268,14 @@ function InfoType({
           </Button>
         </div>
       </TitleWrapper>
-      {/* // ns__custom_end unit: appSpec, comp: InfoType, loc: insideReturn */}
 
-      {/* // ns__custom_start unit: appSpec, comp: InfoType, loc: renderEnding */}
+      {/* ns__end_replacement instanceValue */}
+
+      {/* ns__start_section childrenList */}
+
+      {/* ns__end_section childrenList */}
+
+      {/* ns__custom_start unit: appSpec, comp: InfoType, loc: renderEnding */}
       <SubInfoComponent
         infoType={parentState}
         instanceId={infoType.id}
@@ -264,16 +296,22 @@ function InfoType({
         childState={childState}
       /> */}
 
-      {/* // ns__custom_end unit: appSpec, comp: InfoType, loc: renderEnding */}
+      {/* ns__custom_end unit: appSpec, comp: InfoType, loc: renderEnding */}
     </InfoTypeStyleWrapper>
   );
+  // ns__end_section functionReturn
 }
 
+// ns__end_section function
+
+// ns__start_section  compose
 export default compose(
   graphql(EXECUTE, { name: 'updateInstance' }),
   graphql(EXECUTE, { name: 'deleteInstance' })
 )(InfoType);
+// ns__end_section  compose
 
+// ns__start_section propTypes
 InfoType.propTypes = {
   parentId: PropTypes.string,
   selected: PropTypes.bool,
@@ -281,14 +319,11 @@ InfoType.propTypes = {
   deleteInstance: PropTypes.func,
   refetchQueries: PropTypes.array,
   onSelect: PropTypes.func,
-  app: PropTypes.shape({
-    children: PropTypes.array,
-    id: PropTypes.string,
-  }),
   infoType: PropTypes.shape({
-    value: PropTypes.string,
+    children: PropTypes.array,
     id: PropTypes.string,
   }),
   // ns__custom_start unit: appSpec, comp: InfoType, loc: addedPropTypes
   // ns__custom_end unit: appSpec, comp: InfoType, loc: addedPropTypes
 };
+// ns__end_section propTypes

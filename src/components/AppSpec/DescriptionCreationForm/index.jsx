@@ -75,7 +75,6 @@ const useStyles = makeStyles({
 });
 
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: beforeFunction
-
 // ns__start_section function
 function DescriptionCreationForm({
   parentId,
@@ -157,6 +156,13 @@ function DescriptionCreationForm({
           variant='outlined'
           label='Description'
           rows='10'
+          // InputProps={{
+          //   endAdornment: (
+          //     <InputAdornment position="end">
+          //          <HelpOutlineIcon className={styles.helpIcon} onClick={showCallout}/>
+          //     </InputAdornment>
+          //   )
+          // }}
         />
       </Label>
       {/* {showCalloutBox ? (

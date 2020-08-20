@@ -93,6 +93,9 @@ class Apps extends Component {
   handleSelect = (id) => this.setState({ selectedAppId: id });
   // ns__end_section handleSelect
 
+  // ns__custom_start unit: appSpec, comp: Apps, loc: beforeRender
+  // ns__custom_end unit: appSpec, comp: Apps, loc: beforeRender
+
   // ns__start_section render
   render() {
     const { customerId } = this.props;
@@ -101,10 +104,12 @@ class Apps extends Component {
     const parameters = {
       currentCustomer: customerId,
     };
+
     // ns__custom_start unit: appSpec, comp: Apps, loc: renderBeginning
     // ns__custom_end unit: appSpec, comp: Apps, loc: renderBeginning
 
     // ns__start_replacement renderReturn
+
     return (
       <Unit
         id={SOURCE_APP_SPEC_ID}
@@ -176,6 +181,7 @@ class Apps extends Component {
         }}
       </Unit>
     );
+
     // ns__end_replacement renderReturn
   }
   // ns__end_section render
