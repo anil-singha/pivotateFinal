@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import SampleForm from '../SampleForm';
-import FormSuccess from '../FormSuccess';
+import FormSuccess from '../../components/FormSuccess';
 
 const Wrapper = styled.div`
   margin: 1em;

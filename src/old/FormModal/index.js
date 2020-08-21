@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import styled from 'styled-components';
 
 import SampleForm from '../SampleForm';
-import FormSuccess from '../FormSuccess';
+import FormSuccess from '../../components/FormSuccess';
 
 const Button = styled.button``;
 

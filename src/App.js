@@ -25,12 +25,6 @@ const termsAndConditions = React.lazy(() =>
 const TempVideo = React.lazy(() => import('./components/Pages/Temp-video'));
 const Schedule = React.lazy(() => import('./components/Pages/Schedule'));
 
-const JobSeeker = React.lazy(() =>
-  import('./components/meetingSteps/jobSeeker')
-);
-const CreateUserType = React.lazy(() =>
-  import('./components/meetingSteps/createUserType')
-);
 
 const App = () => {
   const childRef = useRef();
@@ -98,18 +92,7 @@ const App = () => {
                 />
               </Route>
 
-              <Route
-                exact
-                path={`${process.env.PUBLIC_URL}/meeting-step/create-user-type`}
-              >
-                <CreateUserType />
-              </Route>
-              <Route
-                exact
-                path={`${process.env.PUBLIC_URL}/meeting-step/job-seeker`}
-              >
-                <JobSeeker />
-              </Route>
+
               <Route
                 exact
                 path={`${process.env.PUBLIC_URL}/contact`}
