@@ -21,7 +21,7 @@ import { CREATE_USER_TYPE_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 // ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: addedImports
 // <!-- prettier-ignore-start -->
 import { keyframes } from 'styled-components';
-import { InputLabel, makeStyles } from '@material-ui/core';
+import {  makeStyles } from '@material-ui/core';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
 import { TextField, InputAdornment } from '@material-ui/core';
@@ -43,12 +43,6 @@ const Form = styled.div`
 `;
 // ns__end_section stylingSection
 
-// ns__start_section button
-const Button = styled.button`
-  // ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: buttonStyling
-  // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: buttonStyling
-`;
-// ns__end_section button
 
 // ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: beforeFunction
 const Label = styled.label`

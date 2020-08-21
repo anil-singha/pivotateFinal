@@ -27,12 +27,7 @@ const DescriptionsStyleWrapper = styled.div`
 
 // ns__end_section stylingSection
 
-// ns__start_section button
-const Button = styled.button`
-  // ns__custom_start unit: appSpec, comp: Descriptions, loc: buttonStyling
-  // ns__custom_end unit: appSpec, comp: Descriptions, loc: buttonStyling
-`;
-// ns__end_section button
+
 
 // ns__custom_start unit: appSpec, comp: Descriptions, loc: beforeFunction
 // ns__custom_end unit: appSpec, comp: Descriptions, loc: beforeFunction

@@ -5,13 +5,13 @@ import { withNoStack } from '@nostack/no-stack';
 
 import { flattenData } from '../../flattenData';
 
-import App from '../AppSpec/App';
+import App from '../../components/AppSpec/App';
 
 import { SOURCE_APP_SPEC_ID } from '../../config';
 import {
   APP_SPEC_RELATIONSHIPS,
   SOURCE_APP_SPEC_QUERY,
-} from '../source-props/appSpec';
+} from '../../components/source-props/appSpec';
 
 // np__added_start unit: appSpec, comp: Apps, loc: styling
 
