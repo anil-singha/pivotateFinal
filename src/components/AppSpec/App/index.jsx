@@ -31,6 +31,7 @@ import UserTypes from '../UserTypes';
 import Descriptions from '../Descriptions';
 
 // ns__custom_start unit: appSpec, comp: App, loc: addedImports
+import { Container } from '@material-ui/core';
 import AppTitleAccordion from '../../../custom/AppTitleAccordion';
 // ns__custom_end unit: appSpec, comp: App, loc: addedImports
 // ns__end_section imports
@@ -52,6 +53,10 @@ const AppStyleWrapper = styled.div(
   // ns__custom_end unit: appSpec, comp: App, loc: styling
 `
 );
+
+const CustomWrapper = styled(Container) `
+
+`;
 // ns__end_section stylingSection
 
 // ns__start_section button
@@ -221,7 +226,7 @@ function App({
 
   // ns__start_replacement functionReturn
   return (
-    <AppStyleWrapper selected={selected}>
+    <CustomWrapper maxWidth="sm">
       <AppTitleAccordion
         title={appValue}
         description={descriptions[0] && descriptions[0].value}
@@ -250,7 +255,9 @@ function App({
 
       {/* ns__custom_start unit: appSpec, comp: App, loc: renderEnding */}
       {/* ns__custom_end unit: appSpec, comp: App, loc: renderEnding */}
-    </AppStyleWrapper>
+
+    </CustomWrapper>
+    
   );
   // ns__end_replacement functionReturn
 }

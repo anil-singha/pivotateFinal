@@ -207,15 +207,13 @@ function UserTypeCreationForm({
   return (
     <Form>
       {/* ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: insideReturn */}
+  
       <Label htmlFor='userType-value'>
         <TextField
           className={styles.textField}
           label={callOutText}
           value={userTypeValue}
-          onChange={(e) => {
-            handleChange(e);
-            onChange(e.target.value);
-          }}
+          onChange={handleChange}
           onKeyPress={handleKeyPress}
           disabled={loading || disabled}
           variant='outlined'

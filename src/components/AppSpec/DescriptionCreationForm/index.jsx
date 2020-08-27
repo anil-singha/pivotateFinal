@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
 import { CREATE_DESCRIPTION_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 
-import { makeStyles, TextField } from '@material-ui/core';
+import { makeStyles, TextField, Container } from '@material-ui/core';
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 // ns__end_section imports
 
@@ -37,6 +37,7 @@ const Form = styled.div`
 `;
 // ns__end_section stylingSection
 
+const CustomWrapper = styled(Container) ``;
 
 
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: beforeFunction
@@ -137,8 +138,7 @@ function DescriptionCreationForm({
 
   // ns__start_replacement return
   return (
-    <Form>
-      <Label htmlFor='description-value'>
+    <CustomWrapper maxWidth="sm">
         <TextField
           className={styles.textField}
           id='description-value'
@@ -159,14 +159,13 @@ function DescriptionCreationForm({
           //   )
           // }}
         />
-      </Label>
       {/* {showCalloutBox ? (
         <CalloutBox>
           {callOutText}{' '}
           <CloseIcon className={styles.closeIcon} onClick={showCallout} />
         </CalloutBox>
       ) : null} */}
-    </Form>
+    </CustomWrapper>
   );
   // ns__end_replacement return
 }

@@ -22,7 +22,7 @@ import { CREATE_SCREEN_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 // <!-- prettier-ignore-start -->
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
-import { makeStyles, TextField, InputAdornment } from '@material-ui/core';
+import { makeStyles, TextField, InputAdornment,Component } from '@material-ui/core';
 import { keyframes } from 'styled-components';
 // <!-- prettier-ignore-end -->
 // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: addedImports
@@ -31,7 +31,7 @@ import { keyframes } from 'styled-components';
 // ns__start_section stylingSection
 const Form = styled.div`
   // ns__custom_start unit: appSpec, comp: ScreenCreationForm, loc: styling
-  margin: 0.8rem 0 0.5rem 3.8rem;
+  margin: 2em
   border: none;
   border-radius: 5px;
 
@@ -131,7 +131,11 @@ const useStyles = makeStyles({
     fontSize: '1rem',
   },
   textField: {
+    fontSize: '.8rem',
+    textAlign: 'initial',
     width: '100%',
+    margin: '6px 0',
+    padding: 0,
   },
 });
 // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: beforeFunction
@@ -220,7 +224,7 @@ function ScreenCreationForm({
   };
   return (
     <Form>
-      <Label htmlFor='screen-value'>
+      <Label>
         <TextField
           className={styles.textField}
           label={callOutText}

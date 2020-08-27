@@ -27,6 +27,7 @@ import {
 // ns__custom_start unit: appSpec, comp: Apps, loc: addedImports
 import FirstTimeAppCreationForm from '../../../custom/FirstTimeAppCreationForm';
 import { Context as UnitDataContext } from '../../../custom/UnitDataContext';
+import  ProgressBar from '../../ProgressBar/CreateAppForm';
 
 // ns__custom_end unit: appSpec, comp: Apps, loc: addedImports
 // ns__end_section imports
@@ -144,11 +145,16 @@ class Apps extends Component {
           return (
             <>
               {noApp ? (
-                <FirstTimeAppCreationForm
-                  customerId={customerId}
-                  refetchQueries={refetchQueries}
-                  // ns__custom_start unit: appSpec, comp: Apps, loc: addedPropsForCreationForm
-                  // ns__custom_end unit: appSpec, comp: Apps, loc: addedPropsForCreationForm
+                // <FirstTimeAppCreationForm
+                //   customerId={customerId}
+                //   refetchQueries={refetchQueries}
+                //   // ns__custom_start unit: appSpec, comp: Apps, loc: addedPropsForCreationForm
+                //   // ns__custom_end unit: appSpec, comp: Apps, loc: addedPropsForCreationForm
+                // />
+                <ProgressBar
+                customerId={customerId}                
+                refetchQueries={refetchQueries}
+                
                 />
               ) : (
                 <AppsStyleWrapper
