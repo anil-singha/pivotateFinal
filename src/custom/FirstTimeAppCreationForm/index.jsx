@@ -182,7 +182,7 @@ function AppCreationForm({
     <>
       <Form>
         <Label> 
-           {/* <TextField
+           <TextField
             label={callOutText}
             type='text'
             className={styles.textField}
@@ -239,14 +239,14 @@ function AppCreationForm({
               {descCallText}
               <CloseIcon className={styles.closeIcon} onClick={showCallout} />
             </CalloutBox>
-          ) : null}  */}
+          ) : null} 
                {/* <Button type='submit' disabled={loading} onClick={handleSubmit}>
           {loading ? 'Creating App...' : 'Create App'}
         </Button> */}
         </Label> 
 
 
-        <Label htmlFor='app-value'>
+        {/* <Label htmlFor='app-value'>
           <TextField
             className={styles.textField}
             id='app-value'
@@ -261,7 +261,7 @@ function AppCreationForm({
         </Label>
         <Button type='submit' disabled={loading} onClick={handleSubmit}>
           {loading ? 'Creating App...' : 'Create App'}
-        </Button> 
+        </Button>  */}
       </Form>
     </>
   );

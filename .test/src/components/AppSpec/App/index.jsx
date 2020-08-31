@@ -54,7 +54,9 @@ const AppStyleWrapper = styled.div(
 `
 );
 
+const CustomWrapper = styled(Container) `
 
+`;
 // ns__end_section stylingSection
 
 // ns__start_section button
@@ -224,7 +226,7 @@ function App({
 
   // ns__start_replacement functionReturn
   return (
-    <Container maxWidth="sm">
+    <CustomWrapper maxWidth="sm">
       <AppTitleAccordion
         title={appValue}
         description={descriptions[0] && descriptions[0].value}
@@ -254,7 +256,7 @@ function App({
       {/* ns__custom_start unit: appSpec, comp: App, loc: renderEnding */}
       {/* ns__custom_end unit: appSpec, comp: App, loc: renderEnding */}
 
-    </Container>
+    </CustomWrapper>
     
   );
   // ns__end_replacement functionReturn

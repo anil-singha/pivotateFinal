@@ -7,7 +7,6 @@ const AppFooter = (props) => {
   const [displaySignUp, setDisplaySignUp] = useState(false);
 
   useEffect(() => {
-    debugger;
     setDisplaySignUp(localStorage.getItem('userFlag'));
   }, []);
 

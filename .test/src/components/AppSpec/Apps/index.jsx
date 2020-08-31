@@ -105,7 +105,6 @@ class Apps extends Component {
     const parameters = {
       currentCustomer: customerId,
     };
-    
 
     // ns__custom_start unit: appSpec, comp: Apps, loc: renderBeginning
     // ns__custom_end unit: appSpec, comp: Apps, loc: renderBeginning
@@ -142,16 +141,11 @@ class Apps extends Component {
           // and where o.instances contains an object oi where oi.value && oi.value !== ''
           // const show = !noApp;
           // ns__custom_end unit: appSpec, comp: Apps, loc: beforeReturn
-          debugger;
+console.log('apssssssssss',customerId);
           return (
-            
             <>
-            
-
               {noApp ? (
-                
-
-              <ProgressBar
+                     <ProgressBar
                 customerId={customerId}                
                 refetchQueries={refetchQueries}
                 

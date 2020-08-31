@@ -299,14 +299,14 @@ function getSteps() {
 }
 
 
-function getStepContent(stepIndex, action, values) {
-  debugger;
+function getStepContent(stepIndex, action, values, customerId) {
+  console.log('form ceation ', customerId);
 
   switch (stepIndex) {
     case 0:
-      return <FormAppDetails handleChange={action} values={values} />;
+      return <FormAppDetails handleChange={action} values={values} customerId={customerId} />;
     case 1:
-      return <UserTypeCreationForm  handleChange={action} values={values}/>;
+      return <UserTypeCreationForm  handleChange={action} values={values} customerId={customerId}/>;
     case 2:
       return <ScreenCreationForm handleChange={action} values={values} />;
       case 3:
@@ -367,7 +367,6 @@ function CreateForm({
   const handleReset = () => {
     setActiveStep(0);
   };
-  debugger;
 
   return (
     <div className={classes.root}>
@@ -402,7 +401,7 @@ function CreateForm({
           </div>
         ) : (
           <div>
-            <Typography className={classes.instructions}>{getStepContent(activeStep,handleChange,values) }</Typography>
+            <Typography className={classes.instructions}>{getStepContent(activeStep,handleChange,customerId,parentId,values) }</Typography>
             <div className={classes.buttonWrapper}>
            
             
