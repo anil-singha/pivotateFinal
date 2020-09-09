@@ -47,6 +47,8 @@ const DescriptionStyleWrapper = styled.div(
   // ns__custom_end unit: appSpec, comp: Description, loc: styling
 `
 );
+
+
 // ns__end_section stylingSection
 
 // ns__start_section button
@@ -241,7 +243,9 @@ Description.propTypes = {
     children: PropTypes.array,
     id: PropTypes.string,
   }),
-  // ns__custom_start unit: appSpec, comp: Description, loc: addedPropTypes
+    // ns__custom_start unit: appSpec, comp: Description, loc: addedPropTypes
+
+
   // ns__custom_end unit: appSpec, comp: Description, loc: addedPropTypes
 };
 // ns__end_section propTypes

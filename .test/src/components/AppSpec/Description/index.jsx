@@ -49,7 +49,7 @@ const DescriptionStyleWrapper = styled.div(
 );
 // ns__end_section stylingSection
 
-// ns__start_section button
+// ns__start_replacement button
 const Button = styled.button`
   // ns__custom_start unit: appSpec, comp: Description, loc: buttonStyling
   background: none;
@@ -64,7 +64,7 @@ const Button = styled.button`
   }
   // ns__custom_end unit: appSpec, comp: Description, loc: buttonStyling
 `;
-// ns__end_section button
+// ns__end_replacement button
 
 // ns__custom_start unit: appSpec, comp: Description, loc: beforeFunction
 // ns__custom_end unit: appSpec, comp: Description, loc: beforeFunction

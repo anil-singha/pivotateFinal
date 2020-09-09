@@ -54,7 +54,6 @@ const AppStyleWrapper = styled.div(
 `
 );
 
-
 // ns__end_section stylingSection
 
 // ns__start_section button
@@ -104,6 +103,8 @@ function App({
   const [isDeleting, updateIsDeleting] = useState(false);
 
   // ns__custom_start unit: appSpec, comp: App, loc: beginning
+
+  // ns__custom_end unit: appSpec, comp: App, loc: beginning
   const userTypeData =
     app.children &&
     app.children.find((child) => child.typeId === TYPE_USER_TYPE_ID);
@@ -112,7 +113,6 @@ function App({
     app.children &&
     app.children.find((child) => child.typeId === TYPE_DESCRIPTION_ID);
   const descriptions = descriptionData ? descriptionData.instances : [];
-  // ns__custom_end unit: appSpec, comp: App, loc: beginning
 
   // ns__custom_start unit: appSpec, comp: App, loc: beforeReturn
   // ns__custom_end unit: appSpec, comp: App, loc: beforeReturn
@@ -224,7 +224,7 @@ function App({
 
   // ns__start_replacement functionReturn
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth='sm'>
       <AppTitleAccordion
         title={appValue}
         description={descriptions[0] && descriptions[0].value}
@@ -253,9 +253,7 @@ function App({
 
       {/* ns__custom_start unit: appSpec, comp: App, loc: renderEnding */}
       {/* ns__custom_end unit: appSpec, comp: App, loc: renderEnding */}
-
     </Container>
-    
   );
   // ns__end_replacement functionReturn
 }

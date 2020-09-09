@@ -33,9 +33,12 @@ import { keyframes } from 'styled-components';
 const Form = styled.div`
   // ns__custom_start unit: appSpec, comp: InfoTypeCreationForm, loc: styling
   // change styling here
-  margin: 0.8rem 0 0 11%;
+  margin: 2em;
   border: none;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   // ns__custom_end unit: appSpec, comp: InfoTypeCreationForm, loc: styling
 `;
 // ns__end_section stylingSection

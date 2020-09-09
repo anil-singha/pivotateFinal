@@ -27,7 +27,7 @@ import {
 // ns__custom_start unit: appSpec, comp: Apps, loc: addedImports
 import FirstTimeAppCreationForm from '../../../custom/FirstTimeAppCreationForm';
 import { Context as UnitDataContext } from '../../../custom/UnitDataContext';
-import  ProgressBar from '../../ProgressBar/CreateAppForm';
+import ProgressBar from '../../ProgressBar/CreateAppForm';
 
 // ns__custom_end unit: appSpec, comp: Apps, loc: addedImports
 // ns__end_section imports
@@ -100,12 +100,10 @@ class Apps extends Component {
   // ns__start_section render
   render() {
     const { customerId } = this.props;
-
     const { selectedAppId } = this.state;
     const parameters = {
       currentCustomer: customerId,
     };
-    
 
     // ns__custom_start unit: appSpec, comp: Apps, loc: renderBeginning
     // ns__custom_end unit: appSpec, comp: Apps, loc: renderBeginning
@@ -144,26 +142,22 @@ class Apps extends Component {
           // ns__custom_end unit: appSpec, comp: Apps, loc: beforeReturn
           debugger;
           return (
-            
             <>
-            
-
               {noApp ? (
-                
-
-              <ProgressBar
-                customerId={customerId}                
-                refetchQueries={refetchQueries}
-                
+                <ProgressBar
+                  customerId={customerId}
+                  refetchQueries={refetchQueries}
+                  parentId={customerId}
                 />
-                // <FirstTimeAppCreationForm
-                //   customerId={customerId}
-                //   refetchQueries={refetchQueries}
-                //   // ns__custom_start unit: appSpec, comp: Apps, loc: addedPropsForCreationForm
-                //   // ns__custom_end unit: appSpec, comp: Apps, loc: addedPropsForCreationForm
-                // />
-           
+              //   <FirstTimeAppCreationForm
+              //   customerId={customerId}
+              //   refetchQueries={refetchQueries}
+              //   // ns__custom_start unit: appSpec, comp: Apps, loc: addedPropsForCreationForm
+              //   // ns__custom_end unit: appSpec, comp: Apps, loc: addedPropsForCreationForm
+              // />
               ) : (
+             
+
                 <AppsStyleWrapper
                   ref={this.wrapperRef}
                   onClick={this.handleClick}
@@ -201,4 +195,13 @@ class Apps extends Component {
 }
 // ns__end_section function
 
+// ns__start_section  compose
+// ns__end_section  compose
+
+// ns__start_section propTypes
+Apps.propTypes = {
+  // ns__custom_start unit: appSpec, comp: Apps, loc: addedPropTypes
+  // ns__custom_end unit: appSpec, comp: Apps, loc: addedPropTypes
+};
+// ns__end_section propTypes
 export default Apps;

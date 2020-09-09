@@ -139,11 +139,12 @@ function Screen({
   const styles = useStyles();
   // ns__custom_end unit: appSpec, comp: Screen, loc: beginning
 
-  // ns__custom_start unit: appSpec, comp: Screen, loc: beforeReturn
   const infoTypeData =
     screen.children &&
     screen.children.find((child) => child.typeId === TYPE_INFO_TYPE_ID);
   const infoTypes = infoTypeData ? infoTypeData.instances : [];
+
+  // ns__custom_start unit: appSpec, comp: Screen, loc: beforeReturn
   // ns__custom_end unit: appSpec, comp: Screen, loc: beforeReturn
 
   // ns__start_section notSelected

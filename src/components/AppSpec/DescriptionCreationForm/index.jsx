@@ -37,8 +37,8 @@ const Form = styled.div`
 `;
 // ns__end_section stylingSection
 
-const CustomWrapper = styled(Container) ``;
-
+// ns__start_replacement button
+// ns__end_replacement button
 
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: beforeFunction
 const Label = styled.label`
@@ -138,7 +138,7 @@ function DescriptionCreationForm({
 
   // ns__start_replacement return
   return (
-    <CustomWrapper maxWidth="sm">
+    <Container maxWidth="sm">
         <TextField
           className={styles.textField}
           id='description-value'
@@ -165,7 +165,7 @@ function DescriptionCreationForm({
           <CloseIcon className={styles.closeIcon} onClick={showCallout} />
         </CalloutBox>
       ) : null} */}
-    </CustomWrapper>
+    </Container>
   );
   // ns__end_replacement return
 }

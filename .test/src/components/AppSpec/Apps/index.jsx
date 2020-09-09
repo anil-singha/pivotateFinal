@@ -101,6 +101,8 @@ class Apps extends Component {
   render() {
     const { customerId } = this.props;
 
+    console.log('cutsommmmmmmmmm', customerId);
+
     const { selectedAppId } = this.state;
     const parameters = {
       currentCustomer: customerId,

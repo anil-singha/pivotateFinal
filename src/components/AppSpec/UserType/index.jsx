@@ -124,14 +124,14 @@ function UserType({
   const [isDeleteMode, updateIsDeleteMode] = useState(false);
   const [isDeleting, updateIsDeleting] = useState(false);
   // ns__custom_start unit: appSpec, comp: UserType, loc: beginning
-  const screenData =
-    userType.children &&
-    userType.children.find((child) => child.typeId === TYPE_SCREEN_ID);
-  const screens = screenData ? screenData.instances : [];
 
   const styles = useStyles();
   // ns__custom_end unit: appSpec, comp: UserType, loc: beginning
 
+  const screenData =
+    userType.children &&
+    userType.children.find((child) => child.typeId === TYPE_SCREEN_ID);
+  const screens = screenData ? screenData.instances : [];
   // ns__custom_start unit: appSpec, comp: UserType, loc: beforeReturn
   // ns__custom_end unit: appSpec, comp: UserType, loc: beforeReturn
 

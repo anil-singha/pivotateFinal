@@ -13,6 +13,7 @@ import TagManager from 'react-gtm-module';
 import { Provider } from 'react-redux';
 import { Provider as AuthContext } from './context/AuthContext';
 import store from './redux/store';
+import StepContext from './custom/StepperContext';
 const tagManagerArgs = {
   gtmId: 'GTM-TS3Q48S',
   js: new Date(),
@@ -24,7 +25,7 @@ ReactDOM.render(
   <Provider store={store}>
     <AuthContext>
       <NoStackProvider client={client} platformId={PLATFORM_ID}>
-        <App />
+          <App />
       </NoStackProvider>
     </AuthContext>
   </Provider>,

@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
-// import { Context as AuthContext } from '../../context/AuthContext';
+import { Context as AuthContext } from '../../context/AuthContext';
 
 const AppFooter = (props) => {
-  // const {state: {userLoggedIn}} = useContext(AuthContext)
   const [displaySignUp, setDisplaySignUp] = useState(false);
 
   useEffect(() => {
-    debugger;
-    setDisplaySignUp(localStorage.getItem('userFlag'));
-  }, []);
+    setDisplaySignUp(localStorage.getItem('accessToken'));
+  }, [displaySignUp]);
 
-  console.log(`displaySignUp`, displaySignUp);
   return (
     <footer className='footer'>
       {!displaySignUp ? (
@@ -23,8 +20,6 @@ const AppFooter = (props) => {
                   <div>Don't settle for</div>
                   <div>templates or freelancers!</div>
                 </h2>
-              </div>
-              <div className='grow-6 text-center'>
                 <button
                   type='button'
                   onClick={props.onSignUp}
@@ -76,7 +71,7 @@ const AppFooter = (props) => {
                       <Link to='/pricing'> Pricing</Link>
                     </li>
                     <li>
-                      {!props.noAction && (
+                      {!displaySignUp ? (
                         <strong
                           role='button'
                           style={{ cursor: 'pointer' }}
@@ -88,7 +83,7 @@ const AppFooter = (props) => {
                         >
                           Sign Up Now
                         </strong>
-                      )}
+                      ) : null}
                     </li>
                   </ul>
                 </div>

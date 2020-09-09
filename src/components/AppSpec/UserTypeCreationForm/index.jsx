@@ -14,17 +14,16 @@ import { graphql } from '@apollo/react-hoc';
 import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
-
 import PropTypes from 'prop-types';
-
 import { CREATE_USER_TYPE_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 // ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: addedImports
 // <!-- prettier-ignore-start -->
 import { keyframes } from 'styled-components';
-import {  makeStyles } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
 import { TextField, InputAdornment } from '@material-ui/core';
+import { multiStepContext } from '../../../custom/StepperContext';
 // <!-- prettier-ignore-end -->
 // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: addedImports
 // ns__end_section imports
@@ -43,6 +42,8 @@ const Form = styled.div`
 `;
 // ns__end_section stylingSection
 
+// ns__start_replacement button
+// ns__end_replacement button
 
 // ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: beforeFunction
 const Label = styled.label`
@@ -66,30 +67,28 @@ const fadeInDown = keyframes`
 const CalloutBox = styled.div`
   padding: 1rem;
   animation: ${fadeInDown} 1.5s;
-  background-color: #F3E196;
+  background-color: #f3e196;
   width: 100%;
-  border-radius: 10px;  
+  border-radius: 10px;
   position: relative;
-  margin: .5rem;
+  margin: 0.5rem;
   display: flex;
   justify-content: space-between;
-  
 
-  :after{
-    background-color: #F3E196;
+  :after {
+    background-color: #f3e196;
     position: absolute;
     width: 30px;
     height: 10px;
-    border-top: 0px solid #F3E196;
-    border-right: 2px solid #F3E196;
-    border-left: 0px solid #F3E196;
-    border-bottom: 2px solid #F3E196;
+    border-top: 0px solid #f3e196;
+    border-right: 2px solid #f3e196;
+    border-left: 0px solid #f3e196;
+    border-bottom: 2px solid #f3e196;
     left: 60%;
-    
+
     content: '';
     transform: rotate(45deg);
     margin-top: -13px;
-    }
   }
 `;
 
@@ -207,7 +206,7 @@ function UserTypeCreationForm({
   return (
     <Form>
       {/* ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: insideReturn */}
-  
+
       <Label htmlFor='userType-value'>
         <TextField
           className={styles.textField}

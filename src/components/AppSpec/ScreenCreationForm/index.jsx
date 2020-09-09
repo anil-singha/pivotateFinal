@@ -22,8 +22,14 @@ import { CREATE_SCREEN_FOR_APP_SPEC_ACTION_ID } from '../../../config';
 // <!-- prettier-ignore-start -->
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
-import { makeStyles, TextField, InputAdornment,Component } from '@material-ui/core';
+import {
+  makeStyles,
+  TextField,
+  InputAdornment,
+  Component,
+} from '@material-ui/core';
 import { keyframes } from 'styled-components';
+import { multiStepContext } from '../../../custom/StepperContext';
 // <!-- prettier-ignore-end -->
 // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: addedImports
 // ns__end_section imports
@@ -31,38 +37,42 @@ import { keyframes } from 'styled-components';
 // ns__start_section stylingSection
 const Form = styled.div`
   // ns__custom_start unit: appSpec, comp: ScreenCreationForm, loc: styling
-  margin: 2em
+  margin: 2em;
   border: none;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: -31px;
-    left: -31px;
-    border-left: 2px dashed #a2a5b5;
-    width: 1px;
-    height: '141%';
-  }
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   top: -31px;
+  //   left: -31px;
+  //   border-left: 2px dashed #a2a5b5;
+  //   width: 1px;
+  //   height: '141%';
+  // }
 
-  &:after {
-    content: '';
-    position: absolute;
-    border-top: 2px dashed #a2a5b5;
-    top: '44px';
-    left: -30px;
-    width: '29px';
-  }
+  // &:after {
+  //   content: '';
+  //   position: absolute;
+  //   border-top: 2px dashed #a2a5b5;
+  //   top: '44px';
+  //   left: -30px;
+  //   width: '29px';
+  // }
 
-  &:last-child:before {
-    top: -76px;
-    height: '116px';
-  }
+  // &:last-child:before {
+  //   top: -76px;
+  //   height: '116px';
+  // }
   // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: styling
 `;
 // ns__end_section stylingSection
 
-
+// ns__start_replacement button
+// ns__end_replacement button
 
 // ns__custom_start unit: appSpec, comp: ScreenCreationForm, loc: beforeFunction
 const Label = styled.label`
@@ -82,34 +92,38 @@ const fadeInDown = keyframes`
     
   }
 `;
+//ns__start_section button
+const Button = styled.button`
+  // ns__custom_start unit: appSpec, comp: ScreenCreationForm, loc: buttonStyling
+  // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: buttonStyling
+`;
+//ns__end_section button
 
 const CalloutBox = styled.div`
   padding: 1rem;
   animation: ${fadeInDown} 1.5s;
-  background-color: #F3E196;
-  width: inherit;
-  border-radius: 10px;  
+  background-color: #f3e196;
+  width: 100%;
+  border-radius: 10px;
   position: relative;
-  margin: .5rem;
+  margin: 0.5rem;
   display: flex;
   justify-content: space-between;
-  
 
-  :after{
-    background-color: #F3E196;
+  :after {
+    background-color: #f3e196;
     position: absolute;
     width: 30px;
     height: 10px;
-    border-top: 0px solid #F3E196;
-    border-right: 2px solid #F3E196;
-    border-left: 0px solid #F3E196;
-    border-bottom: 2px solid #F3E196;
-    left: 93%;
-    
+    border-top: 0px solid #f3e196;
+    border-right: 2px solid #f3e196;
+    border-left: 0px solid #f3e196;
+    border-bottom: 2px solid #f3e196;
+    left: 60%;
+
     content: '';
     transform: rotate(45deg);
     margin-top: -13px;
-    }
   }
 `;
 
@@ -131,11 +145,7 @@ const useStyles = makeStyles({
     fontSize: '1rem',
   },
   textField: {
-    fontSize: '.8rem',
-    textAlign: 'initial',
     width: '100%',
-    margin: '6px 0',
-    padding: 0,
   },
 });
 // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: beforeFunction
