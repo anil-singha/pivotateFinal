@@ -12,20 +12,65 @@ import compose from '@shopify/react-compose';
 
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 import PropTypes from 'prop-types';
-import { TextField, makeStyles } from '@material-ui/core';
+import { TextField, makeStyles, InputAdornment, Container } from '@material-ui/core';
 import { CREATE_APP_FOR_APP_SPEC_ACTION_ID } from '../../config';
+import { keyframes } from 'styled-components';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import CloseIcon from '@material-ui/icons/Close';
+
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 
 // ns__custom_start unit: appSpec, comp: DescriptionCreationForm, loc: styling
 // change styling here
+const CustomWrapper = styled(Container)`
+padding-top: 5rem;
+
+`;
 const Form = styled.div`
-  margin: 2em;
   padding: 1.5em;
   border: none;
   border-radius: 5px;
-  background-color: #f5f5f5;
+  // background-color: #f5f5f5;
   display: flex;
   justify-content: center;
+`;
+const fadeInDown = keyframes`
+0% {
+  opacity: 0;
+  
+}
+100% {
+  opacity: 1;
+  
+}
+`;
+const CalloutBox = styled.div`
+  padding: 1rem;
+  animation: ${fadeInDown} 1.5s;
+  background-color: #F3E196;
+  width: 100%;
+  border-radius: 10px;  
+  position: relative;
+  margin: .5rem;
+  display: flex;
+  justify-content: space-between;
+  
+  :after{
+    background-color: #F3E196;
+    position: absolute;
+    width: 30px;
+    height: 10px;
+    border-top: 0px solid #F3E196;
+    border-right: 2px solid #F3E196;
+    border-left: 0px solid #F3E196;
+    border-bottom: 2px solid #F3E196;
+    left: 60%;
+    
+    content: '';
+    transform: rotate(45deg);
+    margin-top: -13px;
+    }
+  }
 `;
 
 const Button = styled.button`
@@ -33,7 +78,8 @@ const Button = styled.button`
 `;
 
 const Label = styled.label`
-  width: 50%;
+  // margin-top: 4rem;
+  // width: 50%;
 `;
 
 const useStyles = makeStyles(() => ({
@@ -42,11 +88,7 @@ const useStyles = makeStyles(() => ({
     textAlign: 'initial',
     width: '100%',
     margin: '6px 0',
-
     padding: 0,
-    [`& fieldset`]: {
-      borderRadius: '32px',
-    },
   },
   button: {
     width: '80%',
@@ -59,12 +101,28 @@ const useStyles = makeStyles(() => ({
     fontSize: '1rem',
     color: 'black',
   },
+  closeIcon: {
+    color: 'white',
+    fontSize: '1.2rem',
+  },
+  helpIcon: {
+    fontSize: '1.5rem',
+    color: '#FDCC00',
+  },
 }));
 
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: styling
-function AppCreationForm({ customerId, createApp, refetchQueries }) {
+function AppCreationForm({ customerId, createApp, refetchQueries,   validateUserTypes,
+}) {
   const [appValue, updateAppValue] = useState('');
   const [loading, updateLoading] = useState(false);
+  const [callout, setCallout] = useState(false);
+
+  const showCalloutBox = callout || validateUserTypes === 0;
+
+  let callOutText =
+  "What is your app name? (Don't worry, you can change it later! )";
+  
 
   const styles = useStyles();
 
@@ -102,11 +160,48 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
       handleSubmit(e);
     }
   }
+  const showCallout = () => {
+    setCallout(!callout);
+  };
 
   return (
-    <>
-      <Form>
-        <Label htmlFor='app-value'>
+      <CustomWrapper maxWidth='sm'>
+        <Label>
+          <TextField
+            label={callOutText}
+            type='text'
+            className={styles.textField}
+            onChange={handleChange}
+            value={appValue}
+            variant='outlined'
+            disabled={loading}
+            onKeyPress={handleKeyPress}
+            id='app-value'
+            label='Application Name'
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position='end'>
+                  <HelpOutlineIcon
+                    className={styles.helpIcon}
+                    onClick={showCallout}
+                  />
+                </InputAdornment>
+              ),
+            }}
+          />
+          {showCalloutBox ? (
+            <CalloutBox>
+              {callOutText}
+              <CloseIcon className={styles.closeIcon} onClick={showCallout} />
+            </CalloutBox>
+          ) : null}
+
+          {/* <Button type='submit' disabled={loading} onClick={handleSubmit}>
+          {loading ? 'Creating App...' : 'Create App'}
+        </Button> */}
+        </Label>
+
+        {/* <Label htmlFor='app-value'>
           <TextField
             className={styles.textField}
             id='app-value'
@@ -121,9 +216,8 @@ function AppCreationForm({ customerId, createApp, refetchQueries }) {
         </Label>
         <Button type='submit' disabled={loading} onClick={handleSubmit}>
           {loading ? 'Creating App...' : 'Create App'}
-        </Button>
-      </Form>
-    </>
+        </Button>  */}
+      </CustomWrapper>
   );
 }
 

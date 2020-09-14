@@ -31,6 +31,7 @@ import UserTypes from '../UserTypes';
 import Descriptions from '../Descriptions';
 
 // ns__custom_start unit: appSpec, comp: App, loc: addedImports
+import { Container } from '@material-ui/core';
 import AppTitleAccordion from '../../../custom/AppTitleAccordion';
 // ns__custom_end unit: appSpec, comp: App, loc: addedImports
 // ns__end_section imports
@@ -48,10 +49,11 @@ const AppStyleWrapper = styled.div(
     (isDeleting && 'tomato') || (selected && 'white') || '#D2ECEF'
   };
   cursor: ${selected ? 'auto' : 'pointer'};
-  width: 50%;
   // ns__custom_end unit: appSpec, comp: App, loc: styling
 `
 );
+
+
 // ns__end_section stylingSection
 
 // ns__start_section button
@@ -221,7 +223,7 @@ function App({
 
   // ns__start_replacement functionReturn
   return (
-    <AppStyleWrapper selected={selected}>
+    <Container maxWidth='sm'>
       <AppTitleAccordion
         title={appValue}
         description={descriptions[0] && descriptions[0].value}
@@ -250,7 +252,7 @@ function App({
 
       {/* ns__custom_start unit: appSpec, comp: App, loc: renderEnding */}
       {/* ns__custom_end unit: appSpec, comp: App, loc: renderEnding */}
-    </AppStyleWrapper>
+    </Container>
   );
   // ns__end_replacement functionReturn
 }

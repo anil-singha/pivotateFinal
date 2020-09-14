@@ -173,7 +173,7 @@ function UserTypeCreationForm({
       refetchQueries,
     });
 
-    JSON.parse(createUserTypeResponse.data.Execute);
+    // JSON.parse(createUserTypeResponse.data.Execute);
 
     updateUserTypeValue('');
     updateLoading(false);

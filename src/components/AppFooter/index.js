@@ -7,10 +7,9 @@ const AppFooter = (props) => {
   const [displaySignUp, setDisplaySignUp] = useState(false);
 
   useEffect(() => {
-    setDisplaySignUp(localStorage.getItem('userFlag'));
-  }, []);
+    setDisplaySignUp(localStorage.getItem('accessToken'));
+  }, [displaySignUp]);
 
-  console.log(`displaySignUp`, displaySignUp);
   return (
     <footer className='footer'>
       {!displaySignUp ? (
@@ -75,7 +74,7 @@ const AppFooter = (props) => {
                       <Link to='/pricing'> Pricing</Link>
                     </li>
                     <li>
-                      {!props.noAction && (
+                      {!displaySignUp ? (
                         <strong
                           role='button'
                           style={{ cursor: 'pointer' }}
@@ -87,7 +86,7 @@ const AppFooter = (props) => {
                         >
                           Sign Up Now
                         </strong>
-                      )}
+                      ) : null}
                     </li>
                   </ul>
                 </div>

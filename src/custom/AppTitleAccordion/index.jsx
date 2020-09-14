@@ -2,6 +2,7 @@ import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
+import { Container } from '@material-ui/core'
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
@@ -16,7 +17,7 @@ function AppTitleAccordion({ title, description, children }) {
   };
 
   return (
-    <div className={styles.root}>
+    <Container maxWidth='sm' >
       <Accordion
         expanded={expanded === 'panel1'}
         onChange={handleAccordionChange('panel1')}
@@ -25,7 +26,7 @@ function AppTitleAccordion({ title, description, children }) {
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls='panel1bh-content'
-          id='panel1bh-header'
+          id='panel1bh-header'Container
           classes={{
             content: styles.accordionSummary,
           }}
@@ -40,7 +41,7 @@ function AppTitleAccordion({ title, description, children }) {
         </AccordionDetails>
       </Accordion>
       {children}
-    </div>
+    </Container>
   );
 }
 
