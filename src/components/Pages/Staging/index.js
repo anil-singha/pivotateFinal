@@ -10,6 +10,7 @@ import Apps from '../../AppSpec/Apps';
 import AppHeader from '../../AppHeader';
 import AppFooter from '../../AppFooter';
 
+
 const Container = styled.div`
   width: 100%;
   min-height: 65vh;
@@ -17,6 +18,7 @@ const Container = styled.div`
 
 const App = () => {
   const childRef = useRef();
+  
   return (
     <>
       {/* <NavBar /> */}

@@ -143,44 +143,12 @@ class Apps extends Component {
           debugger;
           return (
             <>
-              {noApp ? (
-                <ProgressBar
+                   <ProgressBar
                   customerId={customerId}
                   refetchQueries={refetchQueries}
+                  app={apps}
                   parentId={customerId}
                 />
-              //   <FirstTimeAppCreationForm
-              //   customerId={customerId}
-              //   refetchQueries={refetchQueries}
-              //   // ns__custom_start unit: appSpec, comp: Apps, loc: addedPropsForCreationForm
-              //   // ns__custom_end unit: appSpec, comp: Apps, loc: addedPropsForCreationForm
-              // />
-              ) : (
-             
-
-                <AppsStyleWrapper
-                  ref={this.wrapperRef}
-                  onClick={this.handleClick}
-                  show
-                >
-                  {/* ns__start_section listElements */}
-                  {apps &&
-                    apps.map((app) => (
-                      <App
-                        key={v4()}
-                        parentId={customerId}
-                        app={app}
-                        selected={app.id === selectedAppId}
-                        refetchQueries={refetchQueries}
-                        onSelect={this.handleSelect}
-                        // ns__custom_start unit: appSpec, comp: Apps, loc: addedPropsForChildren
-                        // ns__custom_end unit: appSpec, comp: Apps, loc: addedPropsForChildren
-                      />
-                    ))}
-                  {/* ns__end_section listElements */}
-                </AppsStyleWrapper>
-              )}
-
               {/* ns__custom_start unit: appSpec, comp: Apps, loc: renderEnding */}
               {/* ns__custom_end unit: appSpec, comp: Apps, loc: renderEnding */}
             </>

@@ -19,6 +19,10 @@ import UserTypeCreationForm from '../AppSpec/UserTypeCreationForm';
 import InfoTypeCreationForm from '../AppSpec/InfoTypeCreationForm';
 import ScreenCreationForm from '../AppSpec/ScreenCreationForm';
 import SubInfoTypeCreationForm from '../../custom/SubInfoTypeCreationForm';
+import { ProgressProvider } from '../../context/ProgressContext';
+import App from '../AppSpec/App';
+import { flattenData } from '../../flattenData';
+import AppTitleAccordion from '../../custom/AppTitleAccordion';
 
 const CustomColorLib = withStyles({
   MuStepIcon: {
@@ -68,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
   },
   customDiv: {
     paddingBottom: '2em',
-  }
+  },
 }));
 
 function getSteps() {
@@ -80,8 +84,6 @@ function getSteps() {
     'First Sub Info Type',
   ];
 }
-
-
 
 function CreateForm({
   handleChange,
@@ -96,44 +98,40 @@ function CreateForm({
   customerId,
   createApp,
 }) {
+  debugger
+
+  const [first, setFirst] = useState('');
+  const [second, setSecond] = useState('');
+  const [third, setThird] = useState('');
+  const [appValue, updateAppValue] = useState(app);
+
+  
+  // const apps = unitData.map((el) => flattenData(el));
+
+  // const[ first, setFirst ] = useState('');
+  // const[ first, setFirst ] = useState('');
+  // const[ first, setFirst ] = useState('');
+
+  const progress = {
+    first: first,
+    setFirst: setFirst,
+    second: second,
+    setSecond: setSecond,
+    third: third,
+    setThird: setThird,
+    fourth: {},
+    fifth: {},
+  };
+
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
   const steps = getSteps();
 
   const values = {
-    handleChange,
-    nextStep,
-    hasApp,
-    keyId,
-    parentId,
-    app,
-    selected,
     refetchQueries,
-    onSelect,
+    customerId,
+    parentId
   };
-
-  function getStepContent(stepIndex, action, values) {  
-    switch (stepIndex) {
-      case 0:
-        return <FormAppDetails handleChange={action} values={values}  />;
-      case 1:
-        return <UserTypeCreationForm handleChange={action} values={values}   />;
-      case 2:
-        return <ScreenCreationForm handleChange={action} values={values}  />;
-      case 3:
-        return <> 
-        <FormAppDetails handleChange={action} values={values}  />
-        <UserTypeCreationForm handleChange={action} values={values}   />
-        </>
-
-        {/* </> <InfoTypeCreationForm handleChange={action} values={values}   />; */}
-      case 4:
-        return <SubInfoTypeCreationForm handleChange={action} values={values} />;
-      default:
-        return 'Unknown stepIndex';
-    }
-  }
-
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -142,6 +140,45 @@ function CreateForm({
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+
+  function getStepContent(stepIndex, action, values) {
+    debugger;
+    switch (stepIndex) {
+      case 0:
+        return <FormAppDetails handleChange={action} values={values} handleNext={handleNext} />;
+      case 1:
+        return (
+          <>
+          {app && app.map((apps) => (
+            <AppTitleAccordion title={apps.value} />
+          ) )}
+        
+            <UserTypeCreationForm handleChange={action} values={values} handleNext={handleNext}  />
+          </>
+        );
+      case 2:
+        return <ScreenCreationForm handleChange={action} values={values} handleNext={handleNext}  />;
+      case 3:
+        return (
+          <>
+            <FormAppDetails handleChange={action} values={values} />
+            <UserTypeCreationForm handleChange={action} values={values} />
+          </>
+        );
+
+        {
+          /* </> <InfoTypeCreationForm handleChange={action} values={values}   />; */
+        }
+      case 4:
+        return (
+          <SubInfoTypeCreationForm handleChange={action} values={values} />
+        );
+      default:
+        return 'Unknown stepIndex';
+    }
+  }
+
+ 
 
   const handleReset = () => {
     setActiveStep(0);
@@ -178,21 +215,27 @@ function CreateForm({
               <Button onClick={handleReset}>Reset</Button>
             </div>
           ) : (
-            <div className={classes.customDiv} >
-              <Typography className={classes.instructions}>
-                {getStepContent(activeStep, handleChange,values)}
-              </Typography>
+            <div className={classes.customDiv}>
+              <ProgressProvider value={progress}>
+                <Typography className={classes.instructions}>
+                  {getStepContent(activeStep, handleChange, values)}
+                </Typography>
+              </ProgressProvider>
               <div className={classes.buttonWrapper}>
-              <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
+                {/* <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
                 Back
-              </Button>
-                <Button
-                  variant='contained'
-                  onClick={handleNext}
-                  className={classes.customButton}
-                >
-                  {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                </Button>
+              </Button> */}
+                {activeStep === 0 ? (
+                  <Button
+                    variant='contained'
+                    onClick={handleNext}
+                    className={classes.customButton}
+                  >
+                    NEXT`
+                  </Button>
+                ) : (
+                  ''
+                )}
               </div>
             </div>
           )}

@@ -4,7 +4,7 @@
   please follow all rules at https://bit.ly/nsFrontEndRules
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { graphql } from '@apollo/react-hoc';
 import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
@@ -18,7 +18,8 @@ import Description from '../../components/AppSpec/Description';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
 import { keyframes } from 'styled-components';
-import { multiStepContext  } from '../StepperContext'
+import ProgressContext from '../../context/ProgressContext';
+
 
 // ns__custom_end unit: appSpec, comp: DescriptionCreationForm, loc: addedImports
 
@@ -116,9 +117,11 @@ function AppCreationForm({
   createApp,
   refetchQueries,
   validateUserTypes,
-  values
+  values,
+  handleNext
   
 }) {
+  debugger;
   const [appValue, updateAppValue] = useState('');
   const [descValue, UpdateDescValue] = useState('');
   const [loading, updateLoading] = useState(false);
@@ -127,7 +130,11 @@ function AppCreationForm({
   const showCalloutBox = callout || validateUserTypes === 0;
   const showDescCallOutBox = descCall || validateUserTypes === 0;
 
- 
+  const progress = useContext(ProgressContext);
+
+  // useEffect(()=>{
+  //   updateAppValue(progress.first);
+  // }, []);
 
   let callOutText =
     "What is your app name? (Don't worry, you can change it later! )";
@@ -137,6 +144,7 @@ function AppCreationForm({
 
   function handleChange(e) {
     updateAppValue(e.target.value);
+    // progress.setFirst(e.target.value);
   }
   function handleDescChange(e) {
     UpdateDescValue(e.target.value);
@@ -155,7 +163,7 @@ function AppCreationForm({
       variables: {
         actionId: CREATE_APP_FOR_APP_SPEC_ACTION_ID,
         executionParameters: JSON.stringify({
-          parentInstanceId: values.parentId,
+          parentInstanceId: values.customerId,
           value: appValue,
         }),
         unrestricted: false,
@@ -165,11 +173,14 @@ function AppCreationForm({
 
     updateAppValue('');
     updateLoading(false);
+    handleNext(e);
+
   }
 
   function handleKeyPress(e) {
     if (e.charCode === 13) {
       handleSubmit(e);
+
     }
   }
   // ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: beforeReturn
@@ -181,7 +192,6 @@ function AppCreationForm({
     setDescCall(!descCall);
   };
   // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: beforeReturn
-debugger;
   return (
     <>
       <Form>

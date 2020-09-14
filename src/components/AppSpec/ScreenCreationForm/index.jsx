@@ -9,7 +9,7 @@
 // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: beforeImports
 
 // ns__start_section imports
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { graphql } from '@apollo/react-hoc';
 import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
@@ -29,7 +29,7 @@ import {
   Component,
 } from '@material-ui/core';
 import { keyframes } from 'styled-components';
-import { multiStepContext } from '../../../custom/StepperContext';
+import ProgressContext from '../../../context/ProgressContext';
 // <!-- prettier-ignore-end -->
 // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: addedImports
 // ns__end_section imports
@@ -178,13 +178,19 @@ function ScreenCreationForm({
   } else {
     callOutText = `What is the Screen name ${label ? `for ${label}` : ''}`;
   }
+  const progress = useContext(ProgressContext);
+
   // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: beginning
 
   // ns__start_section handleChange
   function handleChange(e) {
     updateScreenValue(e.target.value);
+    // progress.setThird(e.target.value);
   }
   // ns__end_section handleChange
+  // useEffect(() => {
+  //   updateScreenValue(progress.third);
+  // }, []);
 
   // ns__start_section handleSubmit
   async function handleSubmit(e) {
@@ -239,10 +245,7 @@ function ScreenCreationForm({
           className={styles.textField}
           label={callOutText}
           value={screenValue}
-          onChange={(e) => {
-            handleChange(e);
-            onChange(e.target.value);
-          }}
+          onChange={handleChange}
           onKeyPress={handleKeyPress}
           disabled={disabled || loading}
           variant='outlined'

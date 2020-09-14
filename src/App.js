@@ -1,10 +1,11 @@
 /* eslint-disable react/jsx-wrap-multilines */
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './scss/style.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import ScrollToTop from 'react-router-scroll-top';
 import Confirmation from './components/Pages/Confirmation';
+
 
 const AppFooter = React.lazy(() => import('./components/AppFooter'));
 const Home = React.lazy(() => import('./components/Pages/Home'));
@@ -24,7 +25,6 @@ const termsAndConditions = React.lazy(() =>
 );
 const TempVideo = React.lazy(() => import('./components/Pages/Temp-video'));
 const Schedule = React.lazy(() => import('./components/Pages/Schedule'));
-
 
 const App = () => {
   const childRef = useRef();
@@ -60,9 +60,11 @@ const App = () => {
               <AppFooter noAction />
             </Route>
             <Route exact path={`${process.env.PUBLIC_URL}/staging`}>
-              <Staging
-                onSignUp={() => childRef.current.modalHandlerRegistration()}
-              />
+              
+                <Staging
+                  onSignUp={() => childRef.current.modalHandlerRegistration()}
+                />
+              
             </Route>
 
             <Route exact path={`${process.env.PUBLIC_URL}/schedule`}>
@@ -91,7 +93,6 @@ const App = () => {
                   onSignUp={() => childRef.current.modalHandlerRegistration()}
                 />
               </Route>
-
 
               <Route
                 exact

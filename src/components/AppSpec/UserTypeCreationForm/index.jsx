@@ -9,7 +9,7 @@
 // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: beforeImports
 
 // ns__start_section imports
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { graphql } from '@apollo/react-hoc';
 import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
@@ -23,7 +23,8 @@ import { makeStyles } from '@material-ui/core';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
 import { TextField, InputAdornment } from '@material-ui/core';
-import { multiStepContext } from '../../../custom/StepperContext';
+import ProgressContext from '../../../context/ProgressContext';
+
 // <!-- prettier-ignore-end -->
 // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: addedImports
 // ns__end_section imports
@@ -116,6 +117,7 @@ const useStyles = makeStyles({
 // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: beforeFunction
 
 // ns__start_section function
+debugger;
 function UserTypeCreationForm({
   parentId,
   createUserType,
@@ -127,8 +129,11 @@ function UserTypeCreationForm({
   userTypeCreationCount,
   disabled,
   textLabel,
+  values,
+  handleNext
   // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: addedProps
 }) {
+  debugger;
   const [userTypeValue, updateUserTypeValue] = useState('');
   const [loading, updateLoading] = useState(false);
   // ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: beginning
@@ -141,12 +146,19 @@ function UserTypeCreationForm({
   } else {
     callOutText = `What is the User Type ${label ? `for ${label}` : ''}`;
   }
+  const progress = useContext(ProgressContext);
+
   // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: beginning
 
   // ns__start_section handleChange
   function handleChange(e) {
     updateUserTypeValue(e.target.value);
+    // progress.setSecond(e.target.value);
   }
+
+  // useEffect(() => {
+  //   updateUserTypeValue(progress.second);
+  // }, []);
   // ns__end_section handleChange
 
   // ns__start_replacement handleSubmit
@@ -164,7 +176,7 @@ function UserTypeCreationForm({
       variables: {
         actionId: CREATE_USER_TYPE_FOR_APP_SPEC_ACTION_ID,
         executionParameters: JSON.stringify({
-          parentInstanceId: parentId,
+          parentInstanceId: values.parentId,
           value: userTypeValue,
         }),
         unrestricted: false,
@@ -176,6 +188,8 @@ function UserTypeCreationForm({
 
     updateUserTypeValue('');
     updateLoading(false);
+    handleNext(e);
+    
   }
 
   // ns__end_replacement handleSubmit
