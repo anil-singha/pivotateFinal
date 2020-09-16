@@ -53,7 +53,6 @@ const AppStyleWrapper = styled.div(
 `
 );
 
-
 // ns__end_section stylingSection
 
 // ns__start_section button
@@ -103,6 +102,8 @@ function App({
   const [isDeleting, updateIsDeleting] = useState(false);
 
   // ns__custom_start unit: appSpec, comp: App, loc: beginning
+  // ns__custom_end unit: appSpec, comp: App, loc: beginning
+
   const userTypeData =
     app.children &&
     app.children.find((child) => child.typeId === TYPE_USER_TYPE_ID);
@@ -111,7 +112,6 @@ function App({
     app.children &&
     app.children.find((child) => child.typeId === TYPE_DESCRIPTION_ID);
   const descriptions = descriptionData ? descriptionData.instances : [];
-  // ns__custom_end unit: appSpec, comp: App, loc: beginning
 
   // ns__custom_start unit: appSpec, comp: App, loc: beforeReturn
   // ns__custom_end unit: appSpec, comp: App, loc: beforeReturn
@@ -223,10 +223,11 @@ function App({
 
   // ns__start_replacement functionReturn
   return (
-    <Container maxWidth='sm'>
+    <>
       <AppTitleAccordion
         title={appValue}
         description={descriptions[0] && descriptions[0].value}
+        userTypes={userTypes}
       />
       <Button type='button' onClick={() => updateIsEditMode(true)}>
         &#9998;
@@ -241,18 +242,18 @@ function App({
         label={appValue}
         refetchQueries={refetchQueries}
       />
-      {!descriptions.length ? (
+      {/* {!descriptions.length ? (
         <Descriptions
           descriptions={descriptions}
           appId={app.id}
           label={appValue}
           refetchQueries={refetchQueries}
         />
-      ) : null}
+      ) : null} */}
 
       {/* ns__custom_start unit: appSpec, comp: App, loc: renderEnding */}
       {/* ns__custom_end unit: appSpec, comp: App, loc: renderEnding */}
-    </Container>
+    </>
   );
   // ns__end_replacement functionReturn
 }

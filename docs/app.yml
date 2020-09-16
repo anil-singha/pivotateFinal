@@ -1,0 +1,4 @@
+userClass: customer
+appName: pivotate
+units:
+  - AppSpec

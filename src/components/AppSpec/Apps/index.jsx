@@ -36,6 +36,7 @@ const AppsStyleWrapper = styled.div`
   // ns__custom_start unit: appSpec, comp: Apps, loc: styling
   // add a prop called \`show\`
   padding-top: 5rem;
+  padding-bottom: 5rem;
   // display: flex;
   // flex-wrap: wrap;
   // justify-content: space-evenly;
@@ -144,7 +145,8 @@ class Apps extends Component {
 
           return (
             <>
-              {noApp ? (
+            <Container maxWidth='sm'>
+            {noApp ? (
                 <FirstTimeAppCreationForm
                   customerId={customerId}
                   refetchQueries={refetchQueries}
@@ -181,6 +183,9 @@ class Apps extends Component {
 
               {/* ns__custom_start unit: appSpec, comp: Apps, loc: renderEnding */}
               {/* ns__custom_end unit: appSpec, comp: Apps, loc: renderEnding */}
+
+            </Container>
+              
             </>
           );
         }}
@@ -192,5 +197,15 @@ class Apps extends Component {
   // ns__end_section render
 }
 // ns__end_section function
+
+// ns__start_section  compose
+// ns__end_section  compose
+
+// ns__start_section propTypes
+Apps.propTypes = {
+  // ns__custom_start unit: appSpec, comp: Apps, loc: addedPropTypes
+  // ns__custom_end unit: appSpec, comp: Apps, loc: addedPropTypes
+};
+// ns__end_section propTypes
 
 export default Apps;

@@ -24,7 +24,7 @@ import { keyframes } from 'styled-components';
 import {  makeStyles } from '@material-ui/core';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CloseIcon from '@material-ui/icons/Close';
-import { TextField, InputAdornment } from '@material-ui/core';
+import { TextField, InputAdornment, Container } from '@material-ui/core';
 // <!-- prettier-ignore-end -->
 // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: addedImports
 // ns__end_section imports
@@ -43,13 +43,16 @@ const Form = styled.div`
 `;
 // ns__end_section stylingSection
 
+// ns__start_replacement button
+// ns__end_replacement button
 
 // ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: beforeFunction
 const Label = styled.label`
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  width: 100%;
+  // display: flex;
+  // align-items: center;
+  // flex-direction: row;
+  // width: 100%;
+  margin-top: 1rem;
 `;
 
 const fadeInDown = keyframes`
@@ -113,6 +116,9 @@ const useStyles = makeStyles({
   textField: {
     width: '100%',
   },
+  customContainer: {
+    marginTop: '1rem'
+  }
 });
 // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: beforeFunction
 
@@ -205,7 +211,7 @@ function UserTypeCreationForm({
   // ns__start_replacement return
 
   return (
-    <Form>
+    <Container className={styles.customContainer} maxWidth='sm'>
       {/* ns__custom_start unit: appSpec, comp: UserTypeCreationForm, loc: insideReturn */}
       <Label htmlFor='userType-value'>
         <TextField
@@ -238,7 +244,7 @@ function UserTypeCreationForm({
         </CalloutBox>
       ) : null}
       {/* ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: insideReturn */}
-    </Form>
+    </Container>
   );
 
   // ns__end_replacement return
