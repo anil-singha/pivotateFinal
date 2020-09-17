@@ -20,7 +20,6 @@ const CustomAccordion = styled(Container)`
 `;
 
 function AppTitleAccordion({ title, description, children, userTypes }) {
-  console.log('childrennnnnnnnnnnn', userTypes);
   const styles = useStyles();
   const [expanded, setExpanded] = useState('panel1');
   const [openEdit, setOpenEdit] = useState(false);
@@ -64,14 +63,13 @@ function AppTitleAccordion({ title, description, children, userTypes }) {
         );
     }
   }
-  console.log('modaalll', openEdit);
 
   return (
     <>
       <CustomAccordion maxWidth='sm'>
         <Accordion
-          expanded={expanded === 'panel1'}
-          onChange={handleAccordionChange('panel1')}
+          // expanded={expanded === 'panel1'}
+          // onChange={handleAccordionChange('panel1')}
           className={styles.accordion}
         >
           {/* <AccordionActions className={styles.accordionButtonsWrapper}> */}

@@ -125,6 +125,7 @@ class Apps extends Component {
           if (error) {
             return `Error: ${error.graphQLErrors}`;
           }
+          console.log('helllll',data);
 
           const apps = data.unitData.map((el) => flattenData(el));
 

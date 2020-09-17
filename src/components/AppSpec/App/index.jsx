@@ -116,15 +116,15 @@ function App({
   // ns__custom_start unit: appSpec, comp: App, loc: beforeReturn
   // ns__custom_end unit: appSpec, comp: App, loc: beforeReturn
 
-  // ns__start_section notSelected
-  if (!selected) {
-    return (
-      <AppStyleWrapper onClick={() => onSelect(app.id)}>
-        {appValue}
-      </AppStyleWrapper>
-    );
-  }
-  // ns__end_section notSelected
+  // ns__start_replacement notSelected
+  // if (!selected) {
+  //   return (
+  //     <AppStyleWrapper onClick={() => onSelect(app.id)}>
+  //       {appValue}
+  //     </AppStyleWrapper>
+  //   );
+  // }
+  // ns__end_replacement notSelected
 
   // ns__start_section change
   function handleAppValueChange(e) {

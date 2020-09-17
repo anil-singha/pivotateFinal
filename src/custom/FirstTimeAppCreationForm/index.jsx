@@ -164,6 +164,7 @@ function AppCreationForm({
   const [loading, updateLoading] = useState(false);
   const [callout, setCallout] = useState(false);
   const [descCall, setDescCall] = useState(false);
+  const [da, setDa] = useState([]);
 
   const showCalloutBox = callout || validateUserTypes === 0;
   const showDescCallOutBox = descCall || validateUserTypes === 0;
@@ -188,7 +189,7 @@ function AppCreationForm({
 
     updateLoading(true);
 
-    await createApp({
+    let app = await createApp({
       variables: {
         actionId: CREATE_APP_FOR_APP_SPEC_ACTION_ID,
         executionParameters: JSON.stringify({
@@ -200,11 +201,13 @@ function AppCreationForm({
       refetchQueries,
     });
 
+    let results = JSON.parse(app.data.execute);
+
     await createDescription({
       variables: {
         actionId: CREATE_DESCRIPTION_FOR_APP_SPEC_ACTION_ID,
         executionParameters: JSON.stringify({
-          parentInstanceId: parentId,
+          parentInstanceId: results.instanceId,
           value: descriptionValue,
         }),
         unrestricted: false,
