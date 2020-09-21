@@ -149,7 +149,7 @@ function InfoTypeCreationForm({
   if (infoTypeValueCount < 5) {
     callOutText = textLabel;
   } else {
-    callOutText = `What is the Info Type ${label ? `for ${label}` : ''}`;
+    callOutText = `What is a Info Type ${label ? `for ${label}` : ''}`;
   }
   // ns__custom_end unit: appSpec, comp: InfoTypeCreationForm, loc: beginning
 
@@ -215,7 +215,7 @@ function InfoTypeCreationForm({
       <Label htmlFor='infoType-value'>
         <TextField
           className={styles.textField}
-          label={callOutText}
+          label='New Info Type'
           onChange={handleChange}
           onKeyPress={handleKeyPress}
           value={infoTypeValue}

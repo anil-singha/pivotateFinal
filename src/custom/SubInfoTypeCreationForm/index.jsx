@@ -194,7 +194,7 @@ const SubInfoTypeCreationForm = ({
       <Label htmlFor='screen-value'>
         <TextField
           className={styles.textField}
-          label={`New Sub Info Type  ${label ? `for ${label}` : ''}`}
+          label={`New Sub Info Type`}
           onChange={handleChange}
           onKeyPress={handleKeyPress}
           value={subInfoValue}

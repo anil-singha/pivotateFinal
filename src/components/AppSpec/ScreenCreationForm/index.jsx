@@ -163,7 +163,7 @@ function ScreenCreationForm({
   if (userTypeCreationCount < 5) {
     callOutText = textLabel;
   } else {
-    callOutText = `What is the Screen name ${label ? `for ${label}` : ''}`;
+    callOutText = `What is a Screen name ${label ? `for ${label}` : ''}`;
   }
   // ns__custom_end unit: appSpec, comp: ScreenCreationForm, loc: beginning
 
@@ -224,7 +224,7 @@ function ScreenCreationForm({
       <Label htmlFor='screen-value'>
         <TextField
           className={styles.textField}
-          label={callOutText}
+          label='New Screen'
           value={screenValue}
           onChange={(e) => {
             handleChange(e);

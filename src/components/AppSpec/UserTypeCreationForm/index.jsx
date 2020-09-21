@@ -146,7 +146,7 @@ function UserTypeCreationForm({
   if (userTypeCreationCount < 4) {
     callOutText = textLabel;
   } else {
-    callOutText = `What is the User Type ${label ? `for ${label}` : ''}`;
+    callOutText = `What is a User Type ${label ? `for ${label}` : ''}`;
   }
   // ns__custom_end unit: appSpec, comp: UserTypeCreationForm, loc: beginning
 
@@ -216,7 +216,7 @@ function UserTypeCreationForm({
       <Label htmlFor='userType-value'>
         <TextField
           className={styles.textField}
-          label={callOutText}
+          label='User Type'
           value={userTypeValue}
           onChange={(e) => {
             handleChange(e);

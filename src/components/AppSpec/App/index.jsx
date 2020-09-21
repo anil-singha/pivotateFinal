@@ -165,7 +165,7 @@ function App({
       <AppStyleWrapper>
         <EditInstanceForm
           id={app.id}
-          label={`What's the preferred title ${
+          label={`What's a preferred title ${
             appValue ? `for ${appValue}?` : `off you App?`
           }`}
           value={appValue}
